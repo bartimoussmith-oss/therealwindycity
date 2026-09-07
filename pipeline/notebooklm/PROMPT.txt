@@ -1,0 +1,34 @@
+NOTEBOOKLM PROMPT PACK - Cheyenne meeting-minutes notebook
+=========================================================
+Upload the files in pipeline/notebooklm/ (cheyenne_minutes_YYYY.md, one per year,
+plus any of your own verbatim transcripts) as sources in ONE NotebookLM notebook.
+Then paste the following, with your question at the top:
+
+---
+MY QUESTION: <<paste your question here>>
+
+Answer using ONLY the uploaded meeting sources. Find the strongest on-the-record
+moments, then reply with STRICT JSON only - no markdown fences, no commentary:
+
+{
+ "hook": "<= 8 words: the on-screen opener for a short video",
+ "narration": "<= 80 words: neutral answer script, citing meeting dates",
+ "segments": [
+  {"clip_id": <CLIP_ID number from the source header>,
+   "date": "YYYY-MM-DD",
+   "quote": "<= 35-word VERBATIM quote from that meeting's minutes",
+   "source_label": "Cheyenne City Council - Mon DD, YYYY",
+   "start": null, "end": null}
+ ]
+}
+
+Rules: 3-6 segments, strongest first. Every quote must appear verbatim in the
+sources - do not invent meetings, dates, quotes, or clip_ids. If a source file
+contains video timestamps (e.g. your sync-to-video transcripts), put them in
+start/end as "HH:MM:SS"; otherwise null.
+---
+
+Save the JSON reply as answer.json, fill any null start/end (from your sync
+transcripts or by scrubbing the player at cheyenne.granicus.com), then run:
+    python3 cheyenne_pipeline.py answer answer.json
+which renders a vertical 1080x1920 captioned social reel automatically.

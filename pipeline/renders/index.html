@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE CALLER — Screening Room</title>
+<style>
+  :root { color-scheme: dark; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0d1117; color: #e6edf3; font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; min-height: 100vh; }
+  header { padding: 28px 20px 10px; text-align: center; }
+  header h1 { font-size: 22px; letter-spacing: 4px; color: #ffd166; font-weight: 800; }
+  header p { color: #8fa3b8; font-size: 13px; margin-top: 6px; }
+  .now { text-align: center; margin: 14px 0 4px; }
+  .now .t { font-size: 17px; font-weight: 700; }
+  .now .s { color: #8fa3b8; font-size: 12.5px; margin-top: 3px; }
+  .stage { display: flex; justify-content: center; padding: 14px; }
+  video { height: 68vh; max-height: 860px; aspect-ratio: 9/16; background: #000; border-radius: 14px; border: 1px solid #21262d; box-shadow: 0 10px 40px rgba(0,0,0,.6); }
+  .playlist { max-width: 760px; margin: 6px auto 0; padding: 0 16px 8px; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
+  .chip { text-align: left; background: #161b22; border: 1px solid #21262d; border-radius: 10px; padding: 12px 14px; cursor: pointer; color: #e6edf3; transition: border-color .15s; }
+  .chip:hover { border-color: #4da3ff; }
+  .chip.active { border-color: #ffd166; background: #1c2030; }
+  .chip .n { display: flex; justify-content: space-between; gap: 8px; font-weight: 700; font-size: 14px; }
+  .chip .n .dur { color: #8fa3b8; font-weight: 400; white-space: nowrap; }
+  .chip .d { color: #8fa3b8; font-size: 12px; margin-top: 4px; line-height: 1.45; }
+  .chip .tag { display: inline-block; font-size: 10px; letter-spacing: 1px; color: #0d1117; background: #ffd166; border-radius: 4px; padding: 2px 6px; margin-top: 7px; font-weight: 800; }
+  .chip .tag.tape { background: #ff8fa3; }
+  .dl { max-width: 760px; margin: 14px auto 0; padding: 0 16px; }
+  .dl a { color: #4da3ff; font-size: 13px; text-decoration: none; margin-right: 18px; line-height: 2; }
+  .dl a:hover { text-decoration: underline; }
+  footer { text-align: center; color: #8fa3b8; font-size: 12px; padding: 26px 20px 34px; line-height: 1.8; }
+  footer b { color: #e6edf3; }
+</style>
+</head>
+<body>
+<header>
+  <h1>THE CALLER — SCREENING ROOM</h1>
+  <p>City of Cheyenne public meeting video &middot; minutes clips 1071 &amp; 1093 &middot; captions from the city's own archive</p>
+</header>
+
+<div class="now">
+  <div class="t" id="nowTitle"></div>
+  <div class="s" id="nowSub"></div>
+</div>
+
+<div class="stage">
+  <video id="player" controls playsinline preload="metadata" crossorigin="use-credentials"></video>
+</div>
+
+<div class="playlist" id="pl"></div>
+
+<div class="dl" id="dl"></div>
+
+<footer>
+  <b>Every cut microphone is an exhibit. Every bypassed hand is an exhibit.</b><br>
+  The clerk's minutes count four interruption events that night. The tape counts more.<br>
+  Sources on screen throughout &middot; full post kits linked above the footer
+</footer>
+
+<script>
+const PL = [
+  { f: "THE_CALLER_TAPE.mp4", v: "THE_CALLER_TAPE.vtt", t: "THE CALLER: TAPE EDITION", d: "13:51", tag: "NEW", tape: true,
+    s: "The actual tape — Mar 9 &amp; Apr 27, 2026. His voice, their gavels, every cut as it happened." },
+  { f: "THE_CALLER.mp4", v: "THE_CALLER.vtt", t: "THE CALLER (cards edition)", d: "1:59",
+    s: "The complete incident file — clerk's minutes vs. verbatim record, every card sourced." },
+  { f: "THE_RECORD_SPEAKS_VOICES.mp4", v: null, t: "THE RECORD SPEAKS: VOICES", d: "2:37", tape: true,
+    s: "Nemecek and Moody in their own words, from the dais." },
+  { f: "S1_48_HOURS.mp4", v: "S1_48_HOURS.vtt", t: "S1 · 48 HOURS", d: "1:55", tape: true,
+    s: "From \u201cfew resources\u201d to $0 in two days." },
+  { f: "S2_THE_74M_LIST.mp4", v: "S2_THE_74M_LIST.vtt", t: "S2 · THE 74M LIST", d: "1:43", tape: true,
+    s: "\u201cRemove $22 million\u201d — the amendment war, 0–9." },
+  { f: "S3_THE_TWO_TIES.mp4", v: "S3_THE_TWO_TIES.vtt", t: "S3 · THE TWO TIES", d: "0:45",
+    s: "47 speakers, two 5–5 ties, one unanimous deadline." },
+  { f: "S4_THE_214.mp4", v: "S4_THE_214.vtt", t: "S4 · THE 214", d: "0:52",
+    s: "65% once-only · 214 people · 3,191 bookings · 16%." },
+  { f: "S5_ONE_NIGHT_IN_APRIL.mp4", v: "S5_ONE_NIGHT_IN_APRIL.vtt", t: "S5 · ONE NIGHT IN APRIL", d: "0:45",
+    s: "The Apr 13 trio, the Apr 27 war, and the Sept 14 return." }
+];
+
+const player = document.getElementById("player");
+const pl = document.getElementById("pl");
+const dl = document.getElementById("dl");
+let cur = -1;
+
+PL.forEach((it, i) => {
+  const b = document.createElement("button");
+  b.className = "chip";
+  b.innerHTML = `<div class="n"><span>${it.t}</span><span class="dur">${it.d}</span></div>
+    <div class="d">${it.s}</div>` +
+    (it.tag ? `<span class="tag">${it.tag}</span>` : "") +
+    (it.tape && !it.tag ? `<span class="tag tape">REAL TAPE</span>` : "");
+  b.onclick = () => load(i);
+  pl.appendChild(b);
+
+  const a = document.createElement("a");
+  a.href = it.f; a.download = it.f; a.textContent = "↓ " + it.f;
+  dl.appendChild(a);
+});
+const kits = document.createElement("span");
+["POST_THE_CALLER_TAPE.txt", "POST_ALL_FIVE.txt", "POST_THE_RECORD_SPEAKS.txt"].forEach(k => {
+  const a = document.createElement("a");
+  a.href = k; a.textContent = k.replace(".txt", "");
+  dl.appendChild(a);
+});
+
+function load(i) {
+  const it = PL[i];
+  cur = i;
+  player.innerHTML = "";
+  const src = document.createElement("source");
+  src.src = it.f; src.type = "video/mp4";
+  player.appendChild(src);
+  if (it.v) {
+    const tr = document.createElement("track");
+    tr.kind = "captions"; tr.label = "English"; tr.srclang = "en";
+    tr.src = it.v; tr.default = true;
+    player.appendChild(tr);
+  }
+  player.load();
+  document.getElementById("nowTitle").textContent = it.t + "  (" + it.d + ")";
+  document.getElementById("nowSub").innerHTML = it.s;
+  document.querySelectorAll(".chip").forEach((c, j) => c.classList.toggle("active", j === i));
+}
+load(0);
+player.addEventListener("error", () => {
+  document.getElementById("nowSub").textContent = "Playback error — try the download link below.";
+});
+</script>
+</body>
+</html>
