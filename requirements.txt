@@ -1,0 +1,11 @@
+# Core engine: Python 3.10+ standard library ONLY. Nothing here is required
+# for `run.py selftest`, `init`, `crawl` (HTML/RSS/TXT), `work`, `digest`,
+# or `request`.
+#
+# Optional capability upgrades:
+pdfplumber>=0.11      # text-layer PDF extraction
+pytesseract>=0.3      # OCR hook for scanned PDFs (needs the tesseract binary too)
+Pillow>=10            # image handling for OCR
+streamlit>=1.35       # Module 5 dashboard (dashboard/app.py)
+# requests>=2.31      # optional; engine already uses stdlib urllib so sites see
+                      # the exact identifying User-Agent without extra config
