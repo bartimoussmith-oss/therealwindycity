@@ -68,11 +68,11 @@ Coordination is not optional here.
 
 ### claim: rag-vector-db — RAG vector DB + transcript cleanup + YouTube-archive wing
 - worker: arena-agent
-- status: active
-- stage: claim filed; next: build on branch arena/rag-pipeline
+- status: blocked-awaiting-merge
+- stage: PR #1 open (arena/rag-pipeline -> main, 3 commits, 47 files, mergeable); awaiting owner review/merge
 - scope: NEW DIRS/FILES ONLY: rag/, youtube-archive/, pipeline/corpus_clean/ (sample outputs); READ-FIRST.md (this claim + stage updates). Explicitly NOT touching: streamlit twins, requirements.txt, data/, .github/, engine/, existing pipeline/*, uploads/, Entity_Database/, README.md
 - started: 2026-09-10T11:20Z
-- updated: 2026-09-10T11:20Z
+- updated: 2026-09-10T12:08Z
 - notes: additive-only; videos stay out of git per repo rule (YouTube + Releases); PR to main for owner merge, no direct main pushes beyond this claim
 
 ## Current repo state (updated 2026-09-10T11:05Z)
