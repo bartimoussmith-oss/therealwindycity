@@ -1,27 +1,24 @@
-"""THE REAL WINDY CITY — mega console (v5).
+"""The Real Windy City — civic console for Cheyenne / Laramie County.
 
-ONE process, TWO faces, switchable from the sidebar (shareable via ?face=):
+One Streamlit process, two faces, switched from the sidebar (deep-linkable
+with ?face=index):
 
-  FACE 1 — "◈ Windy City Ledger":
-    * Engine tabs: fingerprinted documents, verbatim-quote alerts,
-      silent-edit wire, PRA paperwork (data/engine.db, civic-cycle Action).
-    * NEW v5: freshness line (true last-crawl timestamp), breaking banner
-      (watchlist hits <48 h), Digest tab, Minutes Archive tab (17 years of
-      transcripts, searched in place), Tips tab (public intake via GitHub).
-    * Recovered vault tabs: Sept-7 orphan-recovery rows behind
-      leads-not-facts banners — NOW with the auto-verification bridge:
-      every row is greped against pipeline/corpus transcripts each cycle and
-      badges flip to "✅ found in record" with file + meeting date attached.
-    * Canon Library: every root-level Markdown dossier.
+  * Windy City Ledger — the working console. The sidebar groups the views
+    into sections: live operations (alerts, silent edits, digest), the
+    record (search, the 17-year minutes archive, the canon library), the
+    video vault (produced segments, evidence clips, full city meetings),
+    intake (tips and PRA paperwork), and the recovered vault tabs, which
+    stay behind leads-not-facts banners until each row checks out against
+    the transcript corpus.
+  * Transparency Index — entity dossiers and a document viewer. Reads
+    Entity_Database/*.json when the indexer has built them, and otherwise
+    falls back to a heuristic index assembled live from the dossiers, so
+    the face is never dark.
 
-  FACE 2 — "🏛 Transparency Index":
-    Global Dashboard / Entity Dossier / Document Viewer. Reads committed
-    Entity_Database/*.json when present; otherwise auto-builds a heuristic
-    index live from the dossier corpus so the face is never dark.
-
-Deploy with EITHER entry filename: streamlit_app.py or
-Transparency_Index_App.py (identical twins shipped).
+streamlit_app.py and Transparency_Index_App.py are kept as identical twins
+on purpose: whichever one Streamlit Cloud points at, the app boots.
 """
+
 from __future__ import annotations
 
 import glob
@@ -167,6 +164,330 @@ def _verdict(ver: dict, table: str, i: int):
     return r if r.get("status") == "found-in-record" and r.get("hits") else None
 
 
+def _vault_ver() -> dict:
+    """One place that reads the vault-verification JSON (header + vault views)."""
+    json_mtime = VERIF_JSON.stat().st_mtime if VERIF_JSON.exists() else 0.0
+    return _verification(str(ROOT), json_mtime)
+
+
+def _view_home():
+    page = ROOT / "public" / "index.html"
+    st.caption("The static ledger, regenerated every scheduler cycle.")
+    if page.exists():
+        components.html(page.read_text(), height=3200, scrolling=True)
+    else:
+        st.info("public/index.html not built yet — civic-cycle builds it.")
+def _view_alerts():
+    st.subheader("Watchlist alerts — verbatim quotes, linked records")
+    rows = _engine_q("SELECT a.created_at, a.term, a.snippet, d.url, d.title "
+                     "FROM alerts a JOIN documents d ON d.id=a.document_id "
+                     "ORDER BY a.id DESC LIMIT 300")
+    if not rows:
+        st.info("Engine ledger empty here — civic-cycle will fill it.")
+    for r in rows:
+        with st.expander(f"{r['created_at']} · {r['term']} · {r['title']}"):
+            st.markdown(f"> {r['snippet']}")
+            st.markdown(f"[source record]({r['url']})")
+def _view_edits():
+    st.subheader("Silent edits — SHA-256 drift on already-published pages")
+    rows = _engine_q("SELECT v.captured_at, v.seq, v.change_summary, d.url, d.title "
+                     "FROM versions v JOIN documents d ON d.id=v.document_id "
+                     "WHERE v.seq>1 ORDER BY v.id DESC")
+    if rows:
+        for r in rows:
+            st.warning(f"**{r['title']}** — seq {r['seq']} · {r['captured_at']} · "
+                       f"{r['change_summary']} · [source]({r['url']})")
+    else:
+        st.success("None yet. A quiet ledger is a true report.")
+def _view_search():
+    if db is None or not ENGINE_DB.exists():
+        st.info("Engine not present.")
+    else:
+        q = st.text_input("Plain-English query over every captured document",
+                          "annexation")
+        if q:
+            conn = db.connect()
+            hits = db.search(conn, q)
+            conn.close()
+            st.caption(f"{len(hits)} document(s) match")
+            for r in hits:
+                st.markdown(f"**doc #{r['doc_id']}** · `{r['source']}` · {r['title']}")
+                if r.get("snip"):
+                    st.markdown(f"> {r['snip']}")
+def _view_paperwork():
+    st.info("Drafts are review-and-send. The machine does not mail letters; "
+            "you sign, you send.")
+    for r in _engine_q("SELECT id, kind, subject, created_at, body FROM requests "
+                       "ORDER BY id DESC LIMIT 50"):
+        with st.expander(f"#{r['id']} [{r['kind']}] {r['subject']} · {r['created_at']}"):
+            st.markdown(r["body"])
+
+# ---------- digest ----------------------------------------------------
+def _view_digest():
+    st.subheader("📰 Digest — what changed lately")
+    week = (datetime.now(timezone.utc) - timedelta(days=7)).strftime(
+        "%Y-%m-%dT%H:%M:%SZ")
+    new_alerts = _engine_q("SELECT COUNT(*) n FROM alerts WHERE created_at>=?",
+                           (week,))[0]["n"]
+    new_docs = _engine_q("SELECT COUNT(*) n FROM documents WHERE first_seen>=?",
+                         (week,))[0]["n"]
+    new_edits = _engine_q("SELECT COUNT(*) n FROM versions WHERE seq>1 AND "
+                          "captured_at>=?", (week,))[0]["n"]
+    a, b, c = st.columns(3)
+    a.metric("New watchlist hits (7 days)", new_alerts)
+    b.metric("New documents fingerprinted (7 days)", new_docs)
+    c.metric("Silent edits (7 days)", new_edits)
+    st.markdown("**Latest documents on the wire**")
+    st.dataframe(_engine_q("SELECT title, source, last_checked, size_bytes "
+                           "FROM documents ORDER BY last_checked DESC LIMIT 15"),
+                 use_container_width=True, hide_index=True)
+    for cand in ("public/digest.md", "public/digest.html"):
+        fp = ROOT / cand
+        if fp.exists():
+            st.markdown("**Cycle digest (published)**")
+            (st.markdown if cand.endswith(".md") else
+             lambda t: components.html(t, height=600, scrolling=True))(
+                fp.read_text(errors="replace"))
+
+# ---------- recovered vault tabs (with verification bridge) ---------
+def _view_battles():
+    ver = _vault_ver()
+    st.warning(VAULT_BANNER)
+    st.subheader("⚔️ Statutory Battles — public-comment interventions")
+    rows = _legacy_q(VAULT_QUERIES["public_comment_battles"])
+    for i, r in enumerate(rows):
+        v = _verdict(ver, "public_comment_battles", i)
+        r["record_evidence"] = ("✅ " + v["hits"][0]["file"] +
+                                (f" ({v['hits'][0]['date']})"
+                                 if v["hits"][0]["date"] else "")) if v else "—"
+    st.dataframe(rows, use_container_width=True, hide_index=True)
+    outcomes = {}
+    for r in rows:
+        outcomes[r["outcome_status"] or "unknown"] = outcomes.get(
+            r["outcome_status"] or "unknown", 0) + 1
+    if outcomes:
+        st.caption("Outcomes")
+        st.bar_chart(outcomes)
+def _view_veracity():
+    ver = _vault_ver()
+    st.warning(VAULT_BANNER)
+    st.subheader("🔍 Veracity Ledger — documented-say/unsay pairs")
+    for i, r in enumerate(_legacy_q(VAULT_QUERIES["veracity_contradictions"])):
+        with st.container(border=True):
+            st.markdown(f"**{r['topic']}** — {r['contradiction_type']}")
+            a, b = st.columns(2)
+            a.error(f"First position ({r['speaker_denial']}, {r['date_denial']}):\n\n"
+                    f"_{r['quote_denial']}_")
+            b.info(f"Later record ({r['speaker_validation']}, "
+                   f"{r['date_validation']}):\n\n_{r['quote_validation']}_")
+            v = _verdict(ver, "veracity_contradictions", i)
+            if v:
+                h = v["hits"][0]
+                st.success(f"✅ Found in the record: `{h['file']}`"
+                           + (f" — meeting of {h['date']}" if h["date"] else ""))
+                with st.expander("Matched context from the transcript"):
+                    st.markdown(f"> …{h['context']}…")
+            else:
+                st.caption(f"Seed significance: {r['significance']} · "
+                           f"not yet matched in the transcript corpus — a lead, "
+                           f"not a fact.")
+def _view_vouchers():
+    ver = _vault_ver()
+    st.warning(VAULT_BANNER)
+    st.subheader("🧾 Voucher Audit — money claims tracked")
+    rows = _legacy_q(VAULT_QUERIES["voucher_forensics"])
+    for i, r in enumerate(rows):
+        v = _verdict(ver, "voucher_forensics", i)
+        r["record_evidence"] = ("✅ " + v["hits"][0]["file"]) if v else "—"
+    tot = sum(r["amount"] or 0 for r in rows)
+    c1, c2 = st.columns(2)
+    c1.metric("Vault-tracked spend", f"${tot:,.2f}")
+    c2.metric("Rows matched to corpus this cycle",
+              sum(1 for r in rows if r["record_evidence"] != "—"),
+              delta="next: attach check-register URLs", delta_color="off")
+    st.dataframe(rows, use_container_width=True, hide_index=True)
+    by_dept = {}
+    for r in rows:
+        by_dept[r["department"] or "unknown"] = (
+            by_dept.get(r["department"] or "unknown", 0) + (r["amount"] or 0))
+    if by_dept:
+        st.caption("Spend by department ($)")
+        st.bar_chart(by_dept)
+def _view_environment():
+    ver = _vault_ver()
+    st.warning(VAULT_BANNER)
+    st.subheader("☣️ Environmental Matrix")
+    rows = _legacy_q(VAULT_QUERIES["environmental_zones"])
+    for i, r in enumerate(rows):
+        v = _verdict(ver, "environmental_zones", i)
+        r["record_evidence"] = ("✅ " + v["hits"][0]["file"]) if v else "—"
+    st.dataframe(rows, use_container_width=True, hide_index=True)
+
+# ---------- minutes archive -------------------------------------------
+def _view_minutes():
+    st.subheader("📜 Minutes Archive — search 17 years of the record")
+    if not CORPUS_DIR.is_dir():
+        st.info("The transcript corpus (pipeline/corpus/) isn't in this "
+                "checkout. It rides along automatically once the repo "
+                "carrying it is deployed.")
+    else:
+        files = sorted(CORPUS_DIR.glob("*.txt"))
+        sig = (len(files), max((f.stat().st_mtime for f in files), default=0))
+        corpus = _corpus(str(ROOT), sig)
+        dates = sorted({d["date"] for d in corpus if d["date"]})
+        st.caption(f"{len(corpus)} transcripts indexed"
+                   + (f" · {dates[0]} → {dates[-1]}" if dates else "")
+                   + " · verbatim context, hand-verifiable with ctrl-F")
+        q = st.text_input("Search every word (all terms must appear)",
+                          "annexation", key="corpus_q")
+        if q and corpus_search is not None:
+            hits = corpus_search.search(corpus, q)
+            st.caption(f"{len(hits)} transcript(s) match")
+            for h in hits:
+                with st.expander(f"{h['date'] or 'undated'} · {h['file']}"):
+                    st.markdown(f"> …{h['snippet']}…")
+
+# ---------- tips ------------------------------------------------------
+def _view_tips():
+    st.subheader("💡 Got something the ledger should see?")
+    st.markdown(
+        "The machine watches published sources; people see things first. A good "
+        "tip is **verifiable**: a URL, a document (with `sha256sum`), a meeting "
+        "number + timestamp, or a verbatim quote — never a rumor.")
+    st.link_button("📥 File a tip (GitHub issue form)",
+                   "https://github.com/bartimoussmith-oss/therealwindycity/"
+                   "issues/new?template=tip.md")
+    st.caption("Tips are read by a human. This mailbox never triggers letters or "
+               "contact with officials on its own.")
+
+# ---------- canon library ---------------------------------------------
+def _view_canon():
+    st.subheader("🗄 The Canon Library — every dossier in the repo")
+    st.caption("Root-level Markdown only. The uploads/ archive (~70 MB) stays "
+               "out of the reader on purpose — use intake.py's reports for it.")
+    docs = []
+    for fp in sorted(ROOT.glob("*.md")):
+        if fp.name in SKIP:
+            continue
+        raw = fp.read_text(errors="replace")
+        words = len(raw.split())
+        docs.append({"name": fp.name, "series": _canon_series(fp.name),
+                     "words": words, "read_min": max(1, round(words / 200)),
+                     "excerpt": " ".join(raw.split())[:220], "body": raw})
+    st.caption(f"{len(docs)} documents · "
+               + " · ".join(f"{s}: {sum(1 for d in docs if d['series']==s)}"
+                            for s in dict.fromkeys(d['series'] for d in docs)))
+    col_a, col_b = st.columns([1, 2])
+    series_pick = col_a.selectbox("Series", ["All"] + sorted({d["series"] for d in docs}))
+    term = col_b.text_input("Search titles + excerpts", "")
+    view = [d for d in docs
+            if (series_pick == "All" or d["series"] == series_pick)
+            and (term.lower() in (d["name"] + d["excerpt"]).lower())]
+    for d in view:
+        with st.expander(f"{d['series']} · **{d['name']}** — {d['words']:,} words "
+                         f"(~{d['read_min']} min)"):
+            st.caption(d["excerpt"] + "…")
+            if d["words"] > 4000:
+                st.caption("Large file — rendering first section; open the repo file "
+                           "for the full text.")
+                st.markdown(d["body"][:15000])
+            else:
+                st.markdown(d["body"])
+def _view_video():
+    st.subheader("🎬 Video Vault — the record on tape")
+    st.caption("Produced segments and evidence clips cut from the City of "
+               "Cheyenne's official meeting video (public record), plus "
+               "every indexed city meeting on the city's YouTube channel.")
+    REN = ROOT / "pipeline" / "renders"
+    VID = ROOT / "pipeline" / "videos"
+    try:
+        cv = json.loads((ROOT / "pipeline" / "cityvideos.json").read_text())
+    except Exception:
+        cv = {}
+
+    segs = sorted(REN.glob("*.mp4")) if REN.is_dir() else []
+    if segs:
+        st.markdown("**The Record Speaks — produced segments (captioned)**")
+        seg = st.selectbox("Segment", segs,
+                           format_func=lambda p: p.stem.replace("_", " "),
+                           key="vv_seg")
+        sub = seg.with_suffix(".vtt")
+        st.video(str(seg), subtitles=str(sub) if sub.exists() else None)
+        posts = {f.name: f for f in REN.glob("POST_*.txt")}
+        stem = seg.stem
+        post = posts.get("POST_ALL_FIVE.txt") if stem[:2] in (
+            "S1", "S2", "S3", "S4", "S5") else None
+        post = next((f for n, f in posts.items()
+                     if n[5:-4] and n[5:-4] in stem), post)
+        if post:
+            with st.expander("Post copy for this segment"):
+                st.caption(post.read_text(errors="replace")[:2000])
+    else:
+        st.info("No produced segments under pipeline/renders/ yet.")
+
+    clips = sorted(VID.glob("*.mp4")) if VID.is_dir() else []
+    if clips:
+        st.markdown("**Evidence clips — verified tape**")
+        clip = st.selectbox("Clip", clips,
+                            format_func=lambda p: p.stem.replace("_", " "),
+                            key="vv_clip")
+        st.video(str(clip))
+        TAPE = {"apr27": "2026-04-27", "mar9": "2026-03-09"}
+        dkey = next((d for p, d in TAPE.items()
+                     if clip.stem.startswith(p + "_")), None)
+        info = (cv.get("verified_tape", {}).get(dkey) or {}) if dkey else {}
+        ytid = info.get("id")
+        if ytid:
+            secs = 0
+            if info.get("cut_at"):
+                secs = sum(v * 60 ** i for i, v in enumerate(
+                    reversed([int(x) for x in info["cut_at"].split(":")])))
+            t = "&t=%ds" % secs if secs else ""
+            st.markdown(
+                f"Full meeting ({dkey}): [youtube.com/watch?v={ytid}{t}]"
+                f"(https://www.youtube.com/watch?v={ytid}{t})"
+                + (f" — {info['note']}" if info.get("note") else ""))
+    else:
+        st.info("No evidence clips under pipeline/videos/ yet.")
+
+    meets = cv.get("meetings", {})
+    if meets:
+        st.markdown("**Full meetings — City of Cheyenne YouTube channel**")
+        mdate = st.selectbox("Meeting date", sorted(meets, reverse=True),
+                             key="vv_meet")
+        minfo = meets.get(mdate) or {}
+        ytid = minfo.get("id") if isinstance(minfo, dict) else minfo
+        if ytid:
+            st.video(f"https://www.youtube.com/watch?v={ytid}")
+        st.caption("Live Granicus captions remain out of scope (no VTT "
+                   "served); auto-captions are pullable via yt-dlp — see "
+                   "pipeline/cityvideos.json.")
+# Sidebar sections: label -> [(tab label, view function)]. Views render inside
+# per-section sub-tabs; single-view sections skip the sub-tab strip entirely.
+SECTIONS = {
+    "◈ Overview":       [("◈ Ledger", _view_home)],
+    "📡 Live operations": [
+        ("🚩 Live Alerts", _view_alerts),
+        ("⚠️ Silent Edits", _view_edits),
+        ("📰 Digest", _view_digest),
+    ],
+    "🔎 The record": [
+        ("🔎 Search", _view_search),
+        ("📜 Minutes Archive", _view_minutes),
+        ("🗄 Canon Library", _view_canon),
+    ],
+    "🎬 Video vault":   [("🎬 Video Vault", _view_video)],
+    "✉️ Intake":        [("💡 Tips", _view_tips),
+                         ("✉️ Paperwork", _view_paperwork)],
+    "🗃 Legacy vault": [
+        ("⚔️ Battles*", _view_battles),
+        ("🔍 Veracity*", _view_veracity),
+        ("🧾 Vouchers*", _view_vouchers),
+        ("☣️ Environment*", _view_environment),
+    ],
+}
+
+
 def render_ledger():
     eng_stats = {r["k"]: r["v"] for r in _engine_q(
         "SELECT 'documents' k, COUNT(*) v FROM documents UNION ALL "
@@ -186,8 +507,7 @@ def render_ledger():
         "JOIN documents d ON d.id=a.document_id WHERE a.created_at >= ?",
         (cutoff,))]
 
-    json_mtime = VERIF_JSON.stat().st_mtime if VERIF_JSON.exists() else 0.0
-    ver = _verification(str(ROOT), json_mtime)
+    ver = _vault_ver()
     ver_rows = ver.get("rows", {})
     found_n = sum(1 for r in ver_rows.values()
                   if r.get("status") == "found-in-record")
@@ -209,310 +529,18 @@ def render_ledger():
             f"“{r['term']}” in {r['title']}" for r in breaking[:5])
             + (" …see Live Alerts." if len(breaking) > 5 else ""))
 
-    tabs = st.tabs(["◈ Ledger", "🚩 Live Alerts", "⚠️ Silent Edits", "🔎 Search",
-                    "✉️ Paperwork", "📰 Digest", "⚔️ Battles*", "🔍 Veracity*",
-                    "🧾 Vouchers*", "☣️ Environment*", "📜 Minutes Archive",
-                    "💡 Tips", "🗄 Canon Library", "🎬 Video Vault"])
-
-    # ---------- engine tabs ---------------------------------------------
-    with tabs[0]:
-        page = ROOT / "public" / "index.html"
-        st.caption("The static ledger, regenerated every scheduler cycle.")
-        if page.exists():
-            components.html(page.read_text(), height=3200, scrolling=True)
-        else:
-            st.info("public/index.html not built yet — civic-cycle builds it.")
-
-    with tabs[1]:
-        st.subheader("Watchlist alerts — verbatim quotes, linked records")
-        rows = _engine_q("SELECT a.created_at, a.term, a.snippet, d.url, d.title "
-                         "FROM alerts a JOIN documents d ON d.id=a.document_id "
-                         "ORDER BY a.id DESC LIMIT 300")
-        if not rows:
-            st.info("Engine ledger empty here — civic-cycle will fill it.")
-        for r in rows:
-            with st.expander(f"{r['created_at']} · {r['term']} · {r['title']}"):
-                st.markdown(f"> {r['snippet']}")
-                st.markdown(f"[source record]({r['url']})")
-
-    with tabs[2]:
-        st.subheader("Silent edits — SHA-256 drift on already-published pages")
-        rows = _engine_q("SELECT v.captured_at, v.seq, v.change_summary, d.url, d.title "
-                         "FROM versions v JOIN documents d ON d.id=v.document_id "
-                         "WHERE v.seq>1 ORDER BY v.id DESC")
-        if rows:
-            for r in rows:
-                st.warning(f"**{r['title']}** — seq {r['seq']} · {r['captured_at']} · "
-                           f"{r['change_summary']} · [source]({r['url']})")
-        else:
-            st.success("None yet. A quiet ledger is a true report.")
-
-    with tabs[3]:
-        if db is None or not ENGINE_DB.exists():
-            st.info("Engine not present.")
-        else:
-            q = st.text_input("Plain-English query over every captured document",
-                              "annexation")
-            if q:
-                conn = db.connect()
-                hits = db.search(conn, q)
-                conn.close()
-                st.caption(f"{len(hits)} document(s) match")
-                for r in hits:
-                    st.markdown(f"**doc #{r['doc_id']}** · `{r['source']}` · {r['title']}")
-                    if r.get("snip"):
-                        st.markdown(f"> {r['snip']}")
-
-    with tabs[4]:
-        st.info("Drafts are review-and-send. The machine does not mail letters; "
-                "you sign, you send.")
-        for r in _engine_q("SELECT id, kind, subject, created_at, body FROM requests "
-                           "ORDER BY id DESC LIMIT 50"):
-            with st.expander(f"#{r['id']} [{r['kind']}] {r['subject']} · {r['created_at']}"):
-                st.markdown(r["body"])
-
-    # ---------- digest ----------------------------------------------------
-    with tabs[5]:
-        st.subheader("📰 Digest — what changed lately")
-        week = (datetime.now(timezone.utc) - timedelta(days=7)).strftime(
-            "%Y-%m-%dT%H:%M:%SZ")
-        new_alerts = _engine_q("SELECT COUNT(*) n FROM alerts WHERE created_at>=?",
-                               (week,))[0]["n"]
-        new_docs = _engine_q("SELECT COUNT(*) n FROM documents WHERE first_seen>=?",
-                             (week,))[0]["n"]
-        new_edits = _engine_q("SELECT COUNT(*) n FROM versions WHERE seq>1 AND "
-                              "captured_at>=?", (week,))[0]["n"]
-        a, b, c = st.columns(3)
-        a.metric("New watchlist hits (7 days)", new_alerts)
-        b.metric("New documents fingerprinted (7 days)", new_docs)
-        c.metric("Silent edits (7 days)", new_edits)
-        st.markdown("**Latest documents on the wire**")
-        st.dataframe(_engine_q("SELECT title, source, last_checked, size_bytes "
-                               "FROM documents ORDER BY last_checked DESC LIMIT 15"),
-                     use_container_width=True, hide_index=True)
-        for cand in ("public/digest.md", "public/digest.html"):
-            fp = ROOT / cand
-            if fp.exists():
-                st.markdown("**Cycle digest (published)**")
-                (st.markdown if cand.endswith(".md") else
-                 lambda t: components.html(t, height=600, scrolling=True))(
-                    fp.read_text(errors="replace"))
-
-    # ---------- recovered vault tabs (with verification bridge) ---------
-    with tabs[6]:
-        st.warning(VAULT_BANNER)
-        st.subheader("⚔️ Statutory Battles — public-comment interventions")
-        rows = _legacy_q(VAULT_QUERIES["public_comment_battles"])
-        for i, r in enumerate(rows):
-            v = _verdict(ver, "public_comment_battles", i)
-            r["record_evidence"] = ("✅ " + v["hits"][0]["file"] +
-                                    (f" ({v['hits'][0]['date']})"
-                                     if v["hits"][0]["date"] else "")) if v else "—"
-        st.dataframe(rows, use_container_width=True, hide_index=True)
-        outcomes = {}
-        for r in rows:
-            outcomes[r["outcome_status"] or "unknown"] = outcomes.get(
-                r["outcome_status"] or "unknown", 0) + 1
-        if outcomes:
-            st.caption("Outcomes")
-            st.bar_chart(outcomes)
-
-    with tabs[7]:
-        st.warning(VAULT_BANNER)
-        st.subheader("🔍 Veracity Ledger — documented-say/unsay pairs")
-        for i, r in enumerate(_legacy_q(VAULT_QUERIES["veracity_contradictions"])):
-            with st.container(border=True):
-                st.markdown(f"**{r['topic']}** — {r['contradiction_type']}")
-                a, b = st.columns(2)
-                a.error(f"First position ({r['speaker_denial']}, {r['date_denial']}):\n\n"
-                        f"_{r['quote_denial']}_")
-                b.info(f"Later record ({r['speaker_validation']}, "
-                       f"{r['date_validation']}):\n\n_{r['quote_validation']}_")
-                v = _verdict(ver, "veracity_contradictions", i)
-                if v:
-                    h = v["hits"][0]
-                    st.success(f"✅ Found in the record: `{h['file']}`"
-                               + (f" — meeting of {h['date']}" if h["date"] else ""))
-                    with st.expander("Matched context from the transcript"):
-                        st.markdown(f"> …{h['context']}…")
-                else:
-                    st.caption(f"Seed significance: {r['significance']} · "
-                               f"not yet matched in the transcript corpus — a lead, "
-                               f"not a fact.")
-
-    with tabs[8]:
-        st.warning(VAULT_BANNER)
-        st.subheader("🧾 Voucher Audit — money claims tracked")
-        rows = _legacy_q(VAULT_QUERIES["voucher_forensics"])
-        for i, r in enumerate(rows):
-            v = _verdict(ver, "voucher_forensics", i)
-            r["record_evidence"] = ("✅ " + v["hits"][0]["file"]) if v else "—"
-        tot = sum(r["amount"] or 0 for r in rows)
-        c1, c2 = st.columns(2)
-        c1.metric("Vault-tracked spend", f"${tot:,.2f}")
-        c2.metric("Rows matched to corpus this cycle",
-                  sum(1 for r in rows if r["record_evidence"] != "—"),
-                  delta="next: attach check-register URLs", delta_color="off")
-        st.dataframe(rows, use_container_width=True, hide_index=True)
-        by_dept = {}
-        for r in rows:
-            by_dept[r["department"] or "unknown"] = (
-                by_dept.get(r["department"] or "unknown", 0) + (r["amount"] or 0))
-        if by_dept:
-            st.caption("Spend by department ($)")
-            st.bar_chart(by_dept)
-
-    with tabs[9]:
-        st.warning(VAULT_BANNER)
-        st.subheader("☣️ Environmental Matrix")
-        rows = _legacy_q(VAULT_QUERIES["environmental_zones"])
-        for i, r in enumerate(rows):
-            v = _verdict(ver, "environmental_zones", i)
-            r["record_evidence"] = ("✅ " + v["hits"][0]["file"]) if v else "—"
-        st.dataframe(rows, use_container_width=True, hide_index=True)
-
-    # ---------- minutes archive -------------------------------------------
-    with tabs[10]:
-        st.subheader("📜 Minutes Archive — search 17 years of the record")
-        if not CORPUS_DIR.is_dir():
-            st.info("The transcript corpus (pipeline/corpus/) isn't in this "
-                    "checkout. It rides along automatically once the repo "
-                    "carrying it is deployed.")
-        else:
-            files = sorted(CORPUS_DIR.glob("*.txt"))
-            sig = (len(files), max((f.stat().st_mtime for f in files), default=0))
-            corpus = _corpus(str(ROOT), sig)
-            dates = sorted({d["date"] for d in corpus if d["date"]})
-            st.caption(f"{len(corpus)} transcripts indexed"
-                       + (f" · {dates[0]} → {dates[-1]}" if dates else "")
-                       + " · verbatim context, hand-verifiable with ctrl-F")
-            q = st.text_input("Search every word (all terms must appear)",
-                              "annexation", key="corpus_q")
-            if q and corpus_search is not None:
-                hits = corpus_search.search(corpus, q)
-                st.caption(f"{len(hits)} transcript(s) match")
-                for h in hits:
-                    with st.expander(f"{h['date'] or 'undated'} · {h['file']}"):
-                        st.markdown(f"> …{h['snippet']}…")
-
-    # ---------- tips ------------------------------------------------------
-    with tabs[11]:
-        st.subheader("💡 Got something the ledger should see?")
-        st.markdown(
-            "The machine watches published sources; people see things first. A good "
-            "tip is **verifiable**: a URL, a document (with `sha256sum`), a meeting "
-            "number + timestamp, or a verbatim quote — never a rumor.")
-        st.link_button("📥 File a tip (GitHub issue form)",
-                       "https://github.com/bartimoussmith-oss/therealwindycity/"
-                       "issues/new?template=tip.md")
-        st.caption("Tips are read by a human. This mailbox never triggers letters or "
-                   "contact with officials on its own.")
-
-    # ---------- canon library ---------------------------------------------
-    with tabs[12]:
-        st.subheader("🗄 The Canon Library — every dossier in the repo")
-        st.caption("Root-level Markdown only. The uploads/ archive (~70 MB) stays "
-                   "out of the reader on purpose — use intake.py's reports for it.")
-        docs = []
-        for fp in sorted(ROOT.glob("*.md")):
-            if fp.name in SKIP:
-                continue
-            raw = fp.read_text(errors="replace")
-            words = len(raw.split())
-            docs.append({"name": fp.name, "series": _canon_series(fp.name),
-                         "words": words, "read_min": max(1, round(words / 200)),
-                         "excerpt": " ".join(raw.split())[:220], "body": raw})
-        st.caption(f"{len(docs)} documents · "
-                   + " · ".join(f"{s}: {sum(1 for d in docs if d['series']==s)}"
-                                for s in dict.fromkeys(d['series'] for d in docs)))
-        col_a, col_b = st.columns([1, 2])
-        series_pick = col_a.selectbox("Series", ["All"] + sorted({d["series"] for d in docs}))
-        term = col_b.text_input("Search titles + excerpts", "")
-        view = [d for d in docs
-                if (series_pick == "All" or d["series"] == series_pick)
-                and (term.lower() in (d["name"] + d["excerpt"]).lower())]
-        for d in view:
-            with st.expander(f"{d['series']} · **{d['name']}** — {d['words']:,} words "
-                             f"(~{d['read_min']} min)"):
-                st.caption(d["excerpt"] + "…")
-                if d["words"] > 4000:
-                    st.caption("Large file — rendering first section; open the repo file "
-                               "for the full text.")
-                    st.markdown(d["body"][:15000])
-                else:
-                    st.markdown(d["body"])
-
-
-    with tabs[13]:
-        st.subheader("🎬 Video Vault — the record on tape")
-        st.caption("Produced segments and evidence clips cut from the City of "
-                   "Cheyenne's official meeting video (public record), plus "
-                   "every indexed city meeting on the city's YouTube channel.")
-        REN = ROOT / "pipeline" / "renders"
-        VID = ROOT / "pipeline" / "videos"
-        try:
-            cv = json.loads((ROOT / "pipeline" / "cityvideos.json").read_text())
-        except Exception:
-            cv = {}
-
-        segs = sorted(REN.glob("*.mp4")) if REN.is_dir() else []
-        if segs:
-            st.markdown("**The Record Speaks — produced segments (captioned)**")
-            seg = st.selectbox("Segment", segs,
-                               format_func=lambda p: p.stem.replace("_", " "),
-                               key="vv_seg")
-            sub = seg.with_suffix(".vtt")
-            st.video(str(seg), subtitles=str(sub) if sub.exists() else None)
-            posts = {f.name: f for f in REN.glob("POST_*.txt")}
-            stem = seg.stem
-            post = posts.get("POST_ALL_FIVE.txt") if stem[:2] in (
-                "S1", "S2", "S3", "S4", "S5") else None
-            post = next((f for n, f in posts.items()
-                         if n[5:-4] and n[5:-4] in stem), post)
-            if post:
-                with st.expander("Post copy for this segment"):
-                    st.caption(post.read_text(errors="replace")[:2000])
-        else:
-            st.info("No produced segments under pipeline/renders/ yet.")
-
-        clips = sorted(VID.glob("*.mp4")) if VID.is_dir() else []
-        if clips:
-            st.markdown("**Evidence clips — verified tape**")
-            clip = st.selectbox("Clip", clips,
-                                format_func=lambda p: p.stem.replace("_", " "),
-                                key="vv_clip")
-            st.video(str(clip))
-            TAPE = {"apr27": "2026-04-27", "mar9": "2026-03-09"}
-            dkey = next((d for p, d in TAPE.items()
-                         if clip.stem.startswith(p + "_")), None)
-            info = (cv.get("verified_tape", {}).get(dkey) or {}) if dkey else {}
-            ytid = info.get("id")
-            if ytid:
-                secs = 0
-                if info.get("cut_at"):
-                    secs = sum(v * 60 ** i for i, v in enumerate(
-                        reversed([int(x) for x in info["cut_at"].split(":")])))
-                t = "&t=%ds" % secs if secs else ""
-                st.markdown(
-                    f"Full meeting ({dkey}): [youtube.com/watch?v={ytid}{t}]"
-                    f"(https://www.youtube.com/watch?v={ytid}{t})"
-                    + (f" — {info['note']}" if info.get("note") else ""))
-        else:
-            st.info("No evidence clips under pipeline/videos/ yet.")
-
-        meets = cv.get("meetings", {})
-        if meets:
-            st.markdown("**Full meetings — City of Cheyenne YouTube channel**")
-            mdate = st.selectbox("Meeting date", sorted(meets, reverse=True),
-                                 key="vv_meet")
-            minfo = meets.get(mdate) or {}
-            ytid = minfo.get("id") if isinstance(minfo, dict) else minfo
-            if ytid:
-                st.video(f"https://www.youtube.com/watch?v={ytid}")
-            st.caption("Live Granicus captions remain out of scope (no VTT "
-                       "served); auto-captions are pullable via yt-dlp — see "
-                       "pipeline/cityvideos.json.")
-
+    # Section nav in the sidebar replaces the old 14-across tab strip — same
+    # views, grouped the way people actually come looking for them.
+    st.sidebar.markdown("#### Sections")
+    pick = st.sidebar.radio("Go to", list(SECTIONS), key="ledger_section",
+                            label_visibility="collapsed")
+    chosen = SECTIONS[pick]
+    if len(chosen) == 1:
+        chosen[0][1]()
+    else:
+        for (_, fn), tab in zip(chosen, st.tabs([lbl for lbl, _ in chosen])):
+            with tab:
+                fn()
 
 # =========================================================================
 # FACE 2 — Transparency Index (entity lineage; auto-indexing fallback)
