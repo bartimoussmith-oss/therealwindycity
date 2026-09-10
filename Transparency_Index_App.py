@@ -3,8 +3,10 @@
 One Streamlit process, two faces, switched from the sidebar (deep-linkable
 with ?face=index):
 
-  * Windy City Ledger — the working console. It opens on the Start
-    Here guide — an adaptive six-stage wizard that drills each
+  * Windy City Ledger — the working console. It opens on a looping reel
+    of the most contentious moments spoken at the meetings (autoplay
+    muted, sourced chapter by chapter), then the Start Here guide — an
+    adaptive six-stage wizard that drills each
     viewer down into the parts of the record that touch them —
     and the sidebar groups the views
     into sections: live operations (alerts, silent edits, digest), the
@@ -993,7 +995,59 @@ def _render_brief():
                "hours, so 📡 Live operations is worth a bookmark.")
 
 
+# The front-door reel: contentious moments, in order, with links to the full
+# source meeting. Timestamps are cumulative starts in CONTENTION_REEL.mp4 —
+# keep in sync with pipeline/build_reel.py's ORDER.
+REEL_CHAPTERS = [
+    ("0:00", "The cut — a speaker cut mid-sentence (Mar 9)",
+     "https://www.youtube.com/watch?v=19tQtLA8klo&t=16449s"),
+    ("1:50", "The return — 73 minutes later (Mar 9)",
+     "https://www.youtube.com/watch?v=19tQtLA8klo&t=20878s"),
+    ("3:50", "First recognition of the night (Apr 27)",
+     "https://www.youtube.com/watch?v=y9vnXtjZpR0"),
+    ("5:45", "Nine recognitions of one councilmember (Apr 27)",
+     "https://www.youtube.com/watch?v=y9vnXtjZpR0"),
+    ("7:35", "The pile-on (Apr 27)",
+     "https://www.youtube.com/watch?v=y9vnXtjZpR0"),
+    ("10:10", "The bypassed hand (Apr 27)",
+     "https://www.youtube.com/watch?v=y9vnXtjZpR0&t=9862s"),
+    ("12:45", "1:30 AM — the last item (Apr 27)",
+     "https://www.youtube.com/watch?v=y9vnXtjZpR0"),
+    ("14:05", "The Moody swap", None),
+    ("15:25", "The Nemecek quote", None),
+]
+
+
+def _view_reel():
+    st.subheader("🔥 The Record Speaks — the most contentious moments, on loop")
+    st.caption("Nine verbatim moments from official city-meeting video, "
+               "seventeen minutes, playing on loop. Browsers start autoplay "
+               "muted — click the 🔊 on the player for sound. Every moment "
+               "is sourced below.")
+    reel = ROOT / "pipeline" / "renders" / "CONTENTION_REEL.mp4"
+    if reel.exists():
+        st.video(str(reel), autoplay=True, muted=True, loop=True)
+        st.markdown("**What you're watching — each moment links to the full "
+                    "meeting tape:**")
+        for ts, label, url in REEL_CHAPTERS:
+            if url:
+                st.markdown(f"- `{ts}` **{label}** — [full meeting]({url})")
+            else:
+                st.markdown(f"- `{ts}` **{label}** — in the Video vault")
+    else:
+        st.info("The reel isn't built in this checkout yet — run "
+                "`pipeline/build_reel.py` (needs ffmpeg).")
+    st.divider()
+    col1, col2 = st.columns(2)
+    col1.button("🧭 Start here — find what affects you",
+                on_click=_guide_jump, args=("🧭 Start Here",),
+                type="primary")
+    col2.button("🎬 All segments & evidence clips",
+                on_click=_guide_jump, args=("🎬 Video vault",))
+
+
 SECTIONS = {
+    "🔥 The Record Speaks": [("🔥 The Contention Reel", _view_reel)],
     "🧭 Start Here":     [("🧭 Find your brief", _view_guide)],
     "◈ Overview":       [("◈ Ledger", _view_home)],
     "📡 Live operations": [

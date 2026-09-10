@@ -4,10 +4,10 @@
 > making any change.** It describes the current repo state and the claim
 > protocol that keeps concurrent workers from stepping on each other.
 
-> New here? The console opens with an adaptive **Start Here** wizard —
-> six short stages that drill you down into the parts of the record
-> that touch your life, with a scored brief and an auditable
-> every-rule-that-fired panel at the end.
+> The console opens on **The Record Speaks** — a looping reel of the
+> most contentious moments spoken at the meetings, each chapter
+> sourced to the full tape — then the adaptive **Start Here** wizard
+> drills you into the parts of the record that touch your life.
 
 An automated public-records watchdog. It **politely** collects documents from public
 government and news endpoints, fingerprints every file cryptographically, detects
