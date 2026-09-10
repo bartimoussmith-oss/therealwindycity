@@ -1,0 +1,41 @@
+name: meeting-watch
+
+# Hourly sweep during governing-body meeting windows (Mon + Tue evenings MT,
+# i.e. 00:00-05:59 UTC Tue + Wed): agendas/packets drop minutes before
+# gavels, and six hours is too slow to catch a silent re-post before the vote.
+on:
+  schedule:
+    - cron: "37 0-5 * * 2,3"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+concurrency:
+  group: meeting-watch
+  cancel-in-progress: false
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install optional parsers
+        run: pip install pdfplumber
+      - name: Run one civic cycle (crawl -> extract/diff -> digest -> publish)
+        run: python3 -u engine/scheduler.py --once
+      - name: Verify recovered vault rows against the transcript corpus
+        run: python3 -u engine/verify_vault.py
+      - name: Rebuild the entity index
+        run: python3 -u engine/entity_index.py
+      - name: Publish the RSS alert feed
+        run: python3 -u engine/gen_feed.py
+      - name: Commit if anything changed
+        run: |
+          git config user.name "civic-engine-bot"
+          git config user.email "civic-engine@localhost"
+          git add data public Entity_Database
+          git commit -m "meeting-night sweep $(date -u +%Y-%m-%dT%H:%MZ)" && git push \
+            || echo "nothing moved during this sweep"

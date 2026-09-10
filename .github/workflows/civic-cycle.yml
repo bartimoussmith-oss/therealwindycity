@@ -1,0 +1,53 @@
+name: civic-cycle
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"   # every 6 hours, offset off the top of the hour
+  workflow_dispatch: {}      # manual "Run workflow" button too
+
+permissions:
+  contents: write            # so the action can commit the refreshed ledger
+concurrency:
+  group: civic-cycle
+  cancel-in-progress: false
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install optional parsers
+        run: pip install pdfplumber
+      - name: Run one civic cycle (crawl -> extract/diff -> digest -> publish)
+        run: python3 -u engine/scheduler.py --once
+      - name: Verify recovered vault rows against the transcript corpus
+        run: python3 -u engine/verify_vault.py
+      - name: Rebuild the entity index (Transparency Index face)
+        run: python3 -u engine/entity_index.py
+      - name: Publish the RSS alert feed
+        run: python3 -u engine/gen_feed.py
+      - name: Commit the ledger if anything changed
+        run: |
+          git config user.name "civic-engine-bot"
+          git config user.email "civic-engine@localhost"
+          git add data public Entity_Database
+          if git commit -m "civic cycle $(date -u +%Y-%m-%dT%H:%MZ)"; then
+            git push
+            echo "CYCLE_COMMITTED=true" >> "$GITHUB_ENV"
+          else
+            echo "ledger unchanged — quiet day is a true report"
+          fi
+      - name: Phone push via ntfy.sh (optional — set repo secret NTFY_TOPIC)
+        if: ${{ env.CYCLE_COMMITTED == 'true' && env.NTFY_TOPIC != '' }}
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: |
+          COUNTS=$(python3 -c "import sqlite3; c=sqlite3.connect('data/engine.db'); \
+print(c.execute('SELECT COUNT(*) FROM alerts').fetchone()[0], 'alerts /', \
+c.execute('SELECT COUNT(*) FROM documents').fetchone()[0], 'docs')")
+          curl -fsS -H "Title: Windy City ledger updated" \
+               -d "civic cycle committed — ${COUNTS}" \
+               "https://ntfy.sh/${NTFY_TOPIC}"
