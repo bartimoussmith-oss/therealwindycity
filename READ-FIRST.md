@@ -66,7 +66,18 @@ Coordination is not optional here.
 
 ## Active claims
 
-*(none right now — the repo is stable and fully deployed)*
+### claim: guide-v2-deep — adaptive multi-stage wizard + weighted scoring
+- worker: console-worker (main agent)
+- status: active
+- stage: building — 6-stage wizard (role → topics → booleans → per-topic
+  follow-ups → depth/format → scored brief), profile archetype, match bars,
+  next-step chains, fired-rules audit panel
+- scope: Transparency_Index_App.py, streamlit_app.py (twins), README.md,
+  READ-FIRST.md (this claim + close-out)
+- started: 2026-09-10T10:05Z
+- updated: 2026-09-10T10:05Z
+- notes: no other active claims; replaces the v1 single-page guide in place
+ — the repo is stable and fully deployed)*
 
 ## Current repo state (updated 2026-09-10T09:55Z)
 
