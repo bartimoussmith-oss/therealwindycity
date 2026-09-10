@@ -66,7 +66,20 @@ Coordination is not optional here.
 
 ## Active claims
 
-*(none right now — the repo is stable and fully deployed)*
+### claim: contention-reel — autoplay looping opener of contentious moments
+- worker: console-worker (main agent)
+- status: active
+- stage: building — ffmpeg concat of the 9 evidence clips into one looping
+  reel; new default first section (autoplay muted + loop) with chapter
+  links to source meetings; build script committed for reproducibility
+- scope: Transparency_Index_App.py, streamlit_app.py (twins), README.md,
+  pipeline/build_reel.py, pipeline/renders/CONTENTION_REEL.mp4 (new asset),
+  READ-FIRST.md (this claim + close-out)
+- started: 2026-09-10T10:15Z
+- updated: 2026-09-10T10:15Z
+- notes: reel is a derived artifact — rebuildable from pipeline/videos/ via
+  build_reel.py; not embedded in the deploy tar on purpose
+ — the repo is stable and fully deployed)*
 
 ## Current repo state (updated 2026-09-10T10:00Z)
 
