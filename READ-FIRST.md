@@ -66,7 +66,23 @@ Coordination is not optional here.
 
 ## Active claims
 
-*(none right now — the repo is stable and fully deployed)*
+### claim: context-pane — ordinance history + transcript deep-links under the reel
+- worker: console-worker (main agent)
+- status: active
+- stage: recon — checking transcript timestamp formats, ordinance mention
+  density, and clip-to-meeting mapping before building: (1) meeting card
+  column (date/type/transcript), (2) ordinance-history column (full
+  lifecycle across bodies, agenda/docs, meeting playlist), (3) caption/
+  transcript column with time-jump links
+- scope: Transparency_Index_App.py, streamlit_app.py (twins),
+  engine/ordinance_index.py, pipeline/ordinance_history.json (built),
+  README.md, READ-FIRST.md (this claim + close-out)
+- started: 2026-09-10T10:35Z
+- updated: 2026-09-10T10:35Z
+- notes: word-level click needs JS a plain Streamlit app can't do —
+  delivering timestamp-level jumps instead unless data says otherwise;
+  no fabricated ordinance history — index is grep-derived from the corpus
+ — the repo is stable and fully deployed)*
 
 ## Current repo state (updated 2026-09-10T10:20Z)
 
