@@ -1,0 +1,19 @@
+# arena/rag-pipeline claim — ignore rules for the new wings only.
+# (Repo previously had no .gitignore; nothing existing is affected.)
+
+# Full-run RAG database (rebuilt locally; only rag/vectordb_sample/ is committed)
+rag/vectordb/
+rag/text_cache/
+
+# YouTube wing: downloaded media + secrets + run state (see youtube-archive/README.md)
+youtube-archive/videos/
+youtube-archive/documents/
+youtube-archive/client_secrets.json
+youtube-archive/yt_token.json
+youtube-archive/upload_state.json
+youtube-archive/*.part
+
+# Python noise
+__pycache__/
+*.pyc
+.venv/

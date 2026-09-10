@@ -1,0 +1,7 @@
+# RAG + transcript pipeline (repo root: pip install -r rag/requirements-rag.txt)
+# Pinned to versions verified 2026-09-10. Chroma's default ONNX embeddings are
+# used — no torch, no API key, works offline after first model download.
+chromadb==1.5.9
+pypdf>=4.0
+# Optional (faster/better PDF text; the code falls back to pypdf):
+# pdfplumber>=0.10

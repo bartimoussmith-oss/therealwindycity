@@ -1,0 +1,175 @@
+{
+  "people": [
+    "Patrick Collins",
+    "Michelle Aldrich",
+    "Kathy Emmons",
+    "Ken Esquibel",
+    "Pete Laybourn",
+    "Mark Moody",
+    "Mark Rinne",
+    "Tom Segrave",
+    "Jeff White",
+    "Lawrence Wolfe",
+    "Kylie Soden",
+    "Miller"
+  ],
+  "places": [
+    "Cheyenne",
+    "Laramie County",
+    "Happy Jack Road",
+    "Municipal Building",
+    "Council Chambers",
+    "2101 O'Neil Avenue",
+    "East Lincolnway",
+    "Dell Range Boulevard",
+    "Pershing Boulevard",
+    "Converse Avenue",
+    "Whitney Road",
+    "Sweetgrass Drive",
+    "North Range Business Park"
+  ],
+  "terms": [
+    "Board of Public Utilities",
+    "BOPU",
+    "Consent Agenda",
+    "governing body",
+    "roll call",
+    "Point of Order",
+    "Specific Purpose Sales Tax",
+    "Optional 1% Sales Tax",
+    "Unified Development Code",
+    "Project Jade",
+    "Project Latigo"
+  ],
+  "ordinances": [],
+  "people_titles": {
+    "Patrick Collins": "Mayor",
+    "Michelle Aldrich": "Dr.",
+    "Kathy Emmons": "Dr.",
+    "Ken Esquibel": "Mr.",
+    "Pete Laybourn": "Mr.",
+    "Mark Moody": "Mr.",
+    "Mark Rinne": "Dr.",
+    "Tom Segrave": "Mr.",
+    "Jeff White": "Mr.",
+    "Lawrence Wolfe": "Mr.",
+    "Kylie Soden": "Ms.",
+    "Miller": ""
+  },
+  "confusions": [
+    [
+      "take the role",
+      "take the roll"
+    ],
+    [
+      "role call",
+      "roll call"
+    ],
+    [
+      "Mr. Wolf",
+      "Mr. Wolfe"
+    ],
+    [
+      "Mr. Emmens",
+      "Dr. Emmons"
+    ],
+    [
+      "Dr. Emmens",
+      "Dr. Emmons"
+    ],
+    [
+      "Dr. Emmons",
+      "Dr. Emmons"
+    ],
+    [
+      "Emmens",
+      "Emmons"
+    ],
+    [
+      "Mr. Esabel",
+      "Mr. Esquibel"
+    ],
+    [
+      "Mr. Esquibel",
+      "Mr. Esquibel"
+    ],
+    [
+      "Mr. Esel",
+      "Mr. Esquibel"
+    ],
+    [
+      "Esel",
+      "Esquibel"
+    ],
+    [
+      "Esabel",
+      "Esquibel"
+    ],
+    [
+      "Mr. Leborn",
+      "Mr. Laybourn"
+    ],
+    [
+      "Mr. Laybourn",
+      "Mr. Laybourn"
+    ],
+    [
+      "Leborn",
+      "Laybourn"
+    ],
+    [
+      "Mr. Segrave",
+      "Mr. Segrave"
+    ],
+    [
+      "Mr. Crave",
+      "Mr. Segrave"
+    ],
+    [
+      "Dr. Rennie",
+      "Dr. Rinne"
+    ],
+    [
+      "Dr. Renie",
+      "Dr. Rinne"
+    ],
+    [
+      "Renie",
+      "Rinne"
+    ],
+    [
+      "Dr. Aldridge",
+      "Dr. Aldrich"
+    ],
+    [
+      "Aldridge",
+      "Aldrich"
+    ],
+    [
+      "O'Neal Avenue",
+      "O'Neil Avenue"
+    ],
+    [
+      "Laybournne",
+      "Laybourn"
+    ],
+    [
+      "Lelaybornne",
+      "Laybourn"
+    ],
+    [
+      "Labbornne",
+      "Laybourn"
+    ],
+    [
+      "Larry County",
+      "Laramie County"
+    ]
+  ],
+  "regex_confusions": [
+    [
+      "\\bWolf\\b(?=\\s+vot)",
+      "Wolfe"
+    ]
+  ]
+}
