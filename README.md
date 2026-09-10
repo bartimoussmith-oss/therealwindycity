@@ -4,6 +4,9 @@
 > making any change.** It describes the current repo state and the claim
 > protocol that keeps concurrent workers from stepping on each other.
 
+> New here? The console opens with a three-question **Start Here**
+> guide that routes you to the parts of the record that touch your life.
+
 An automated public-records watchdog. It **politely** collects documents from public
 government and news endpoints, fingerprints every file cryptographically, detects
 silent edits, extracts searchable text, flags watchlist terms with verbatim quotes,
