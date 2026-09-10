@@ -4,8 +4,9 @@ One Streamlit process, two faces, switched from the sidebar (deep-linkable
 with ?face=index):
 
   * Windy City Ledger — the working console. It opens on the Start
-    Here guide (three questions that route each viewer to the parts
-    of the record that touch them), and the sidebar groups the views
+    Here guide — an adaptive six-stage wizard that drills each
+    viewer down into the parts of the record that touch them —
+    and the sidebar groups the views
     into sections: live operations (alerts, silent edits, digest), the
     record (search, the 17-year minutes archive, the canon library), the
     video vault (produced segments, evidence clips, full city meetings),
@@ -471,9 +472,13 @@ def _view_video():
 # Sidebar sections: label -> [(tab label, view function)]. Views render inside
 # per-section sub-tabs; single-view sections skip the sub-tab strip entirely.
 # ---------------------------------------------------------------------------
-# Start Here guide — question-driven routing into the record. Deliberately a
-# plain rules engine, not a model: every recommendation carries its because-of
-# so a viewer can audit the logic, and the answers never leave the browser.
+# Start Here guide — an adaptive question wizard. Six stages: who → what →
+# specifics → drill-down → depth → brief. Deliberately a plain, auditable
+# rules engine (no model, no tracking): every recommendation carries its
+# because-of, the fired rules land in an audit panel, and answers live only
+# in this browser session. The complexity is in the branching, not the
+# burden — a viewer answers a handful of questions; the tree behind them is
+# deep, because follow-ups only appear for the topics they picked.
 # ---------------------------------------------------------------------------
 
 GUIDE_ROLES = [
@@ -495,6 +500,69 @@ GUIDE_TOPICS = [
     ("Ballots and elections, including the Nov 3 contest", "elections"),
 ]
 
+GUIDE_BOOLEANS = [
+    ("g_owner", "I own my home (property taxes hit me directly)", "money"),
+    ("g_tap", "I drink city tap water", "water"),
+    ("g_west", "I live west of town, near the Belvoir–High Plains corridor", None),
+    ("g_voter", "I voted in the last city election", "elections"),
+    ("g_watcher", "I've watched or attended a city meeting", "process"),
+]
+
+# Per-topic follow-ups — rendered ONLY for topics the viewer picked.
+GUIDE_FOLLOWUPS = {
+    "water": ("What's the water concern, specifically?", [
+        ("What I'm paying", "w-bill"),
+        ("Supply and drought capacity", "w-supply"),
+        ("Groundwater contamination risk", "w-ground"),
+        ("Hookups for new development", "w-hookups"),
+    ]),
+    "money": ("How deep do you want to follow the money?", [
+        ("Just the headlines", "m-head"),
+        ("Voucher line items", "m-voucher"),
+        ("The capital-projects list", "m-capital"),
+        ("Pull the receipts myself (PRA)", "m-pra"),
+    ]),
+    "datacenter": ("Which angle on the data-center boom?", [
+        ("Land and annexation votes", "d-land"),
+        ("Power and water demand", "d-power"),
+        ("Jobs and tax-abatement claims", "d-jobs"),
+        ("What it means for my street", "d-near"),
+    ]),
+    "environment": ("Which environmental concern?", [
+        ("Groundwater", "e-ground"),
+        ("Air quality", "e-air"),
+        ("How review actually happens", "e-review"),
+    ]),
+    "process": ("What bothers you about how meetings run?", [
+        ("Agendas that change late", "p-agenda"),
+        ("Documents edited after the fact", "p-edits"),
+        ("Closed sessions and executive excuses", "p-closed"),
+        ("Getting a word in (public comment)", "p-comment"),
+    ]),
+    "officials": ("Whose conduct are you tracking?", [
+        ("Mayor and council overall", "o-council"),
+        ("One specific official", "o-person"),
+        ("The candidates on Nov 3", "o-candidates"),
+    ]),
+    "elections": ("Elections — what do you need?", [
+        ("The referendum questions", "el-ref"),
+        ("Council and mayoral races", "el-races"),
+        ("How and where to vote", "el-mech"),
+    ]),
+    "roads": ("Roads — what kind of issue?", [
+        ("A specific project near me", "r-project"),
+        ("Maintenance and potholes", "r-maint"),
+        ("The capital plan for streets", "r-capital"),
+    ]),
+}
+
+GUIDE_DEPTH = [("⚡ Two minutes", 4), ("☕ One evening", 7), ("🦉 The full dive", 99)]
+GUIDE_FORMAT = ["📖 Read the record", "🎬 Watch the tape",
+                "🔎 Search it myself", "🔔 Get updates"]
+GUIDE_STAGES = 6
+_STAGE_NAMES = ["who you are", "what touches you", "a few specifics",
+                "drill-down", "how deep", "your brief"]
+
 
 def _guide_jump(section, q=None, canon=None):
     """Send the viewer to a section, optionally preloading its search box."""
@@ -505,144 +573,422 @@ def _guide_jump(section, q=None, canon=None):
         st.session_state["canon_term"] = canon
 
 
+def _gval(key, default=None):
+    """Read a wizard answer. Streamlit prunes widget-key state once the
+    widget stops rendering, so the Next/Back buttons snapshot every stage
+    into w_-prefixed plain keys; live widget value wins when present."""
+    s = st.session_state
+    if key in s:
+        return s[key]
+    return s.get("w_" + key, default)
+
+
+def _guide_snapshot():
+    """Copy the current stage's live widget values into plain session keys."""
+    s = st.session_state
+    for k in ("g_role", "g_topics", "g_depth", "g_format"):
+        if k in s:
+            s["w_" + k] = s[k]
+    for k, _lbl, _tag in GUIDE_BOOLEANS:
+        if k in s:
+            s["w_" + k] = s[k]
+    for t in GUIDE_FOLLOWUPS:
+        if f"f_{t}" in s:
+            s["w_f_" + t] = s[f"f_{t}"]
+
+
+def _guide_next():
+    _guide_snapshot()
+    st.session_state["g_step"] = min(GUIDE_STAGES,
+                                     st.session_state.get("g_step", 1) + 1)
+
+
+def _guide_back():
+    _guide_snapshot()
+    st.session_state["g_step"] = max(1, st.session_state.get("g_step", 1) - 1)
+
+
+def _guide_restart():
+    protected = ("ledger_section", "g_restart")
+    for k in list(st.session_state):
+        if (k.startswith(("g_", "f_", "w_")) and not k.endswith("_btn")
+                and k not in protected):
+            del st.session_state[k]
+
+
+def _guide_answers():
+    """(tags, sub-choices) from the session — single source of truth."""
+    role = dict(GUIDE_ROLES).get(_gval("g_role", "") or "", "")
+    topics = _gval("g_topics") or []
+    tags = {role} | {t for lbl, t in GUIDE_TOPICS if lbl in topics}
+    for key, _lbl, tag in GUIDE_BOOLEANS:
+        if _gval(key) and tag:
+            tags.add(tag)
+    if _gval("g_west"):
+        tags |= {"datacenter", "environment"}
+    sub = {}
+    for t, (_q, opts) in GUIDE_FOLLOWUPS.items():
+        if t in tags:
+            m = dict(opts).get(_gval(f"f_{t}", "") or "")
+            if m:
+                sub[t] = m
+    return tags, sub
+
+
 def _view_guide():
     st.subheader("🧭 Start here — get *your* brief, not the whole haystack")
-    st.caption("Three quick questions. Plain rules, no model: every "
-               "recommendation below shows its because-of, and nothing you "
-               "pick leaves your browser.")
+    st.caption("A short adaptive interview: who you are, what touches you, "
+               "how deep you want to go. Plain rules under the hood — the "
+               "audit panel shows every rule that fired. Nothing you pick "
+               "leaves your browser.")
+    step = st.session_state.get("g_step", 1)
+    st.progress(step / GUIDE_STAGES)
+    left, right = st.columns([3, 1])
+    left.caption(f"Step {step} of {GUIDE_STAGES} · {_STAGE_NAMES[step - 1]}")
+    if step < GUIDE_STAGES:
+        right.button("Next →", key="g_next_btn", on_click=_guide_next,
+                     type="primary")
+    else:
+        right.button("↺ Start over", key="g_restart", on_click=_guide_restart)
+    if step > 1:
+        st.button("← Back", key="g_back_btn", on_click=_guide_back)
 
-    st.radio("1 · Who are you here as?", [lbl for lbl, _ in GUIDE_ROLES],
-             key="g_role")
-    st.multiselect("2 · Which of these touch your life? (pick any)",
-                   [lbl for lbl, _ in GUIDE_TOPICS], key="g_topics")
-    st.markdown("3 · Check what's true for you — every check adds to your brief:")
-    st.checkbox("I own my home (property taxes hit me directly)", key="g_owner")
-    st.checkbox("I drink city tap water", key="g_tap")
-    st.checkbox("I live west of town, near the Belvoir–High Plains corridor",
-                key="g_west")
-    st.checkbox("I voted in the last city election", key="g_voter")
-    st.checkbox("I've watched or attended a city meeting", key="g_watcher")
+    if step == 1:
+        opts = [lbl for lbl, _ in GUIDE_ROLES]
+        cur = _gval("g_role")
+        st.radio("Who are you here as?", opts, key="g_role",
+                 index=opts.index(cur) if cur in opts else 0)
+    elif step == 2:
+        opts = [lbl for lbl, _ in GUIDE_TOPICS]
+        cur = _gval("g_topics") or []
+        st.multiselect("Which of these touch your life? (pick any)", opts,
+                       key="g_topics",
+                       default=[o for o in cur if o in opts])
+    elif step == 3:
+        st.markdown("Check what's true for you — every check widens the net:")
+        for key, lbl, _tag in GUIDE_BOOLEANS:
+            st.checkbox(lbl, key=key, value=bool(_gval(key)))
+    elif step == 4:
+        tags, _ = _guide_answers()
+        ups = [(t, q) for t, (q, _o) in GUIDE_FOLLOWUPS.items() if t in tags]
+        if ups:
+            st.markdown("Fine-tuning — one follow-up per topic you picked:")
+            for t, question in ups:
+                opts = [lbl for lbl, _ in GUIDE_FOLLOWUPS[t][1]]
+                cur = _gval(f"f_{t}")
+                st.radio(question, opts, key=f"f_{t}",
+                         index=opts.index(cur) if cur in opts else 0)
+        else:
+            st.info("No topics picked — nothing to drill into. Go Back and "
+                    "pick some, or Next for your baseline brief.")
+    elif step == 5:
+        dopts = [lbl for lbl, _ in GUIDE_DEPTH]
+        dcur = _gval("g_depth")
+        st.radio("How deep do you want to go right now?", dopts,
+                 key="g_depth", index=dopts.index(dcur) if dcur in dopts else 1)
+        fopts = GUIDE_FORMAT
+        fcur = _gval("g_format")
+        st.radio("And how do you like your evidence?", fopts, key="g_format",
+                 index=fopts.index(fcur) if fcur in fopts else 0)
+    else:
+        _render_brief()
 
-    role = dict(GUIDE_ROLES).get(st.session_state.get("g_role", ""), "")
-    topics = st.session_state.get("g_topics") or []
-    tags = {role} | {t for lbl, t in GUIDE_TOPICS if lbl in topics}
-    if st.session_state.get("g_owner"):
-        tags.add("money")
-    if st.session_state.get("g_tap"):
-        tags.add("water")
-    if st.session_state.get("g_west"):
-        tags |= {"datacenter", "environment"}
-    if st.session_state.get("g_voter"):
-        tags.add("elections")
-    if st.session_state.get("g_watcher"):
-        tags.add("process")
+
+def _render_brief():
+    tags, sub = _guide_answers()
+    trace = []
+
+    def T(why):
+        trace.append(why)
 
     recs = []
 
-    def rec(title, because, section, q=None, canon=None):
-        recs.append((title, because, section, q, canon))
+    def add(title, because, section, match, q=None, canon=None, nxt=None):
+        for m in match:
+            T(f"“{title}” ← {m}")
+        recs.append({"title": title, "because": because, "section": section,
+                     "q": q, "canon": canon, "nxt": nxt,
+                     "score": float(len(match))})
 
     if "money" in tags:
-        rec("Follow the money — the voucher forensics",
-            "You flagged taxes and spending. The vault tracks spending line by "
-            "line with the receipts attached — worth ten minutes of anyone's "
-            "property-tax bill.", "🗃 Legacy vault")
-        rec("Watch “S2: The 74M List”",
+        m = ["you flagged taxes and spending"]
+        if _gval("g_owner"):
+            m.append("you own your home")
+        add("Follow the money — the voucher forensics",
+            "The vault tracks spending line by line with the receipts "
+            "attached — worth ten minutes of anyone's property-tax bill.",
+            "🗃 Legacy vault", m,
+            nxt=("Then search the minutes for “voucher”", "🔎 The record",
+                 "voucher", None))
+        add("Watch “S2: The 74M List”",
             "The film cut of the capital-project list — the fastest way to "
             "see what the money argument is actually about.",
-            "🎬 Video vault")
-        rec("Search 17 years of minutes for “6th penny”",
-            "Every time the sales-tax question came up, verbatim, with the "
-            "meeting dates attached.", "🔎 The record", q="6th penny")
+            "🎬 Video vault", ["taxes and spending"])
+        add("Search 17 years of minutes for “6th penny”",
+            "Every time the sales-tax question came up, verbatim, with "
+            "meeting dates attached.", "🔎 The record",
+            ["taxes and spending"], q="6th penny")
+        if sub.get("money") == "m-voucher":
+            add("The voucher tables, row by row",
+                "You chose line items — the Vouchers view is the table "
+                "itself, sources linked per row.", "🗃 Legacy vault",
+                ["you chose voucher line items"])
+        if sub.get("money") == "m-capital":
+            add("The capital-projects paper trail",
+                "You chose the capital list — here's every capital motion "
+                "in the record.", "🔎 The record",
+                ["you chose the capital list"], q="capital")
+        if sub.get("money") == "m-pra":
+            add("The PRA drafting bench",
+                "You chose to pull the receipts yourself — these are "
+                "filled-in Wyoming PRA drafts waiting for a human to send.",
+                "✉️ Intake", ["you chose: pull the receipts yourself"])
     if "water" in tags:
-        rec("Your water, on the record",
-            "You flagged water. The environmental matrix tracks the water "
-            "and groundwater items, and the archive holds every water "
-            "discussion the councils have had.",
-            "🗃 Legacy vault")
-        rec("Search the minutes for “water”",
+        m = ["you flagged water"]
+        if _gval("g_tap"):
+            m.append("you drink the tap water")
+        add("Your water, on the record",
+            "The environmental matrix keeps the water and groundwater items "
+            "in one place, each linked to its source document.",
+            "🗃 Legacy vault", m)
+        add("Search the minutes for “water”",
             "Moratorium votes, utility extensions, supply studies — the "
             "paper trail behind whatever ends up in your bill.",
-            "🔎 The record", q="water")
+            "🔎 The record", ["you flagged water"], q="water")
+        if sub.get("water") == "w-supply":
+            add("BOPU — the water utility's own record",
+                "You chose supply — every mention of the Board of Public "
+                "Utilities, verbatim.", "🔎 The record",
+                ["you chose supply and drought capacity"], q="BOPU")
+        if sub.get("water") == "w-ground":
+            add("Groundwater, everywhere it appears",
+                "You chose contamination risk — this is the aquifer paper "
+                "trail.", "🔎 The record",
+                ["you chose groundwater risk"], q="groundwater")
+        if sub.get("water") == "w-bill":
+            add("What goes into a water bill",
+                "You chose cost — the rate and fee discussions, in the "
+                "dossiers.", "🔎 The record",
+                ["you chose what you're paying"], canon="water")
+        if sub.get("water") == "w-hookups":
+            add("Utility extensions — who gets hooked up",
+                "You chose new-development hookups — every extension the "
+                "council has voted on.", "🔎 The record",
+                ["you chose development hookups"], q="utility extension")
     if "datacenter" in tags:
-        rec("The data-center boom, filed and footnoted",
-            "Annexations, zoning, the ranch-land fights — this is the "
-            "dossier line that grew this whole archive. Start with the "
-            "Battles view and the data-center brief.",
-            "🗃 Legacy vault")
-        rec("Watch “S1: 48 Hours”",
+        m = ["you flagged the data-center boom"]
+        if _gval("g_west"):
+            m.append("you live near the corridor")
+        add("The data-center boom, filed and footnoted",
+            "Annexations, zoning, the ranch-land fights — the dossier line "
+            "that grew this whole archive. Start with Battles and the "
+            "data-center brief.", "🗃 Legacy vault", m)
+        add("Watch “S1: 48 Hours”",
             "The cut that shows how fast the annexation votes moved.",
-            "🎬 Video vault")
-        rec("Search the minutes for “annexation”",
+            "🎬 Video vault", ["data-center boom"])
+        add("Search the minutes for “annexation”",
             "The full paper trail, meeting by meeting.", "🔎 The record",
-            q="annexation")
+            ["data-center boom"], q="annexation")
+        if sub.get("datacenter") == "d-power":
+            add("Power and water demand on the record",
+                "You chose the power angle — every electric-capacity "
+                "discussion, verbatim.", "🔎 The record",
+                ["you chose power and water demand"], q="electric")
+        if sub.get("datacenter") == "d-jobs":
+            add("Jobs and abatement claims, checked",
+                "You chose the jobs claims — see what was promised vs. what "
+                "the record shows.", "🔎 The record",
+                ["you chose jobs and abatement claims"], canon="abatement")
+        if sub.get("datacenter") == "d-near":
+            add("The Highlands corridors, in the dossiers",
+                "You chose your street — the Highlands files are the "
+                "closest to the ground.", "🔎 The record",
+                ["you chose what it means for your street"],
+                canon="highlands")
     if "environment" in tags:
-        rec("Groundwater, air, and environmental review",
+        add("Groundwater, air, and environmental review",
             "The environmental matrix keeps the review items in one place, "
-            "each linked back to its source document.",
-            "🗃 Legacy vault")
-        rec("Search the minutes for “groundwater”",
-            "Where the environmental record actually lives.", "🔎 The record",
-            q="groundwater")
+            "each linked back to its source document.", "🗃 Legacy vault",
+            ["you flagged the environment"])
+        add("Search the minutes for “groundwater”",
+            "Where the environmental record actually lives.",
+            "🔎 The record", ["you flagged the environment"], q="groundwater")
+        if sub.get("environment") == "e-air":
+            add("Air quality in the record",
+                "You chose air — every air-quality discussion, verbatim.",
+                "🔎 The record", ["you chose air quality"], q="air quality")
+        if sub.get("environment") == "e-review":
+            add("How environmental review actually happens",
+                "You chose the review process — permits, hearings, and "
+                "what triggers what.", "🔎 The record",
+                ["you chose how review happens"], q="permit")
     if "process" in tags:
-        rec("The silent-edits wire",
+        m = ["you flagged how meetings run"]
+        if _gval("g_watcher"):
+            m.append("you've attended the meetings")
+        add("The silent-edits wire",
             "Documents on the city site that changed after the fact — each "
             "one diffed, timestamped, and linked. This tab existing at all "
-            "is the point.", "📡 Live operations")
-        rec("How to read a meeting like an investigator",
+            "is the point.", "📡 Live operations", m)
+        add("How to read a meeting like an investigator",
             "The Minutes Archive is 17 years of verbatim transcripts, "
             "searchable word by word. Ctrl-F is a civic instrument.",
-            "🔎 The record")
+            "🔎 The record", ["how meetings run"])
+        if sub.get("process") == "p-agenda":
+            add("Agenda changes, caught in the act",
+                "You chose late-changing agendas — the edits wire plus the "
+                "agenda history.", "🔎 The record",
+                ["you chose late agendas"], q="agenda")
+        if sub.get("process") == "p-closed":
+            add("Executive sessions — every claimed exception",
+                "You chose closed doors — each executive session with the "
+                "statute cited.", "🔎 The record",
+                ["you chose closed sessions"], q="executive session")
+        if sub.get("process") == "p-comment":
+            add("Public comment — how to get your three minutes",
+                "You chose speaking up — the rules and the record of public "
+                "comment, in one place.", "🔎 The record",
+                ["you chose public comment"], q="public comment")
     if "officials" in tags:
-        rec("Who said what — the veracity files",
-            "First positions next to later positions, so the record does the "
-            "comparing for you.", "🗃 Legacy vault")
-        rec("The tape archive",
-            "Verified clips with timestamps back to the full meeting video — "
-            "including the cuts that made the news. The Caller tape is the "
-            "one people ask about first.", "🎬 Video vault")
-        rec("The canon library, by person",
+        add("Who said what — the veracity files",
+            "First positions next to later positions, so the record does "
+            "the comparing for you.", "🗃 Legacy vault",
+            ["you flagged officials"])
+        add("The tape archive",
+            "Verified clips with timestamps back to the full meeting video "
+            "— including the cuts that made the news. The Caller tape is "
+            "the one people ask about first.", "🎬 Video vault",
+            ["you flagged officials"])
+        add("The canon library, by person",
             "Every dossier on the officials and the races, organized by "
-            "series.", "🔎 The record", canon="miller")
+            "series.", "🔎 The record", ["you flagged officials"],
+            canon="miller")
+        if sub.get("officials") == "o-candidates":
+            add("The Nov 3 candidate files",
+                "You chose the candidates — the election-year dossiers.",
+                "🔎 The record", ["you chose the candidates"], canon="2026")
     if "elections" in tags:
-        rec("Ballot season, on the record",
+        m = ["you flagged elections"]
+        if _gval("g_voter"):
+            m.append("you voted last time")
+        add("Ballot season, on the record",
             "The digest tracks what moved each week, and the alerts flag "
             "watchlist language within 48 hours of it posting.",
-            "📡 Live operations")
-        rec("Search the canon for “referendum”",
+            "📡 Live operations", m)
+        add("Search the canon for “referendum”",
             "The referendum dossiers and everything filed around them.",
-            "🔎 The record", canon="referendum")
-    if role == "press":
-        rec("Reporter's kit — full-text search",
-            "FTS over everything fingerprinted, plus 17 years of transcripts. "
-            "Every alert carries a verbatim quote, a source URL, and a fetch "
-            "timestamp — citeable as-is.", "🔎 The record")
-        rec("The PRA drafting bench",
-            "Wyoming Public Records Act request drafts, filled in and ready "
-            "for a human to send. Wrong-statute citations are a reporter's "
-            "fastest way to get stonewalled.", "✉️ Intake")
+            "🔎 The record", ["you flagged elections"], canon="referendum")
+        if sub.get("elections") == "el-mech":
+            add("How and where to vote",
+                "You chose mechanics — the election-process files.",
+                "🔎 The record", ["you chose how to vote"], canon="election")
     if "roads" in tags:
-        rec("Roads and construction in the record",
+        add("Roads and construction in the record",
             "Search the minutes for the street and project names you drive "
-            "past — most capital work shows up in a vote before it shows up "
-            "on the ground.", "🔎 The record", q="street")
+            "past — most capital work shows up in a vote before it shows "
+            "up on the ground.", "🔎 The record",
+            ["you flagged roads"], q="street")
+        if sub.get("roads") == "r-project":
+            add("Find your specific project",
+                "You chose a project near you — construction motions, "
+                "verbatim.", "🔎 The record",
+                ["you chose a specific project"], q="construction")
+        if sub.get("roads") == "r-maint":
+            add("Maintenance and potholes — the record",
+                "You chose maintenance — what the city said it would fix.",
+                "🔎 The record", ["you chose maintenance"], q="maintenance")
+    if "press" in tags:
+        add("Reporter's kit — full-text search",
+            "FTS over everything fingerprinted, plus 17 years of "
+            "transcripts. Every alert carries a verbatim quote, a source "
+            "URL, and a fetch timestamp — citeable as-is.",
+            "🔎 The record", ["you're a reporter or researcher"])
+        add("The PRA drafting bench",
+            "Wyoming Public Records Act request drafts, filled in and "
+            "ready for a human to send. Wrong-statute citations are a "
+            "reporter's fastest way to get stonewalled.", "✉️ Intake",
+            ["you're a reporter or researcher"])
+    if "observer" in tags:
+        add("The story so far",
+            "Not local? The digest is the catch-up: what moved, when, with "
+            "links.", "📡 Live operations",
+            ["you're following the story"])
+
+    # format preference re-weights the ranking
+    fmt = _gval("g_format") or ""
+    boosts = {"🔔 Get updates": "📡 Live operations",
+              "🎬 Watch the tape": "🎬 Video vault",
+              "🔎 Search it myself": "🔎 The record",
+              "📖 Read the record": "🗃 Legacy vault"}
+    if fmt in boosts:
+        for r in recs:
+            if r["section"] == boosts[fmt]:
+                r["score"] += 0.5
+        T(f"format “{fmt}” → +0.5 to {boosts[fmt]} recommendations")
+
+    depth = dict(GUIDE_DEPTH).get(_gval("g_depth") or "☕ One evening", 7)
+    recs.sort(key=lambda r: -r["score"])
+
+    archetypes = [
+        ({"datacenter", "environment"}, "Corridor watcher",
+         "you live where the boom meets the water table — the annexation "
+         "and groundwater threads are yours"),
+        ({"water", "money"}, "Bill-and-bill taxpayer",
+         "the rate discussions and the spending votes are your beat"),
+        ({"process"}, "Meeting-night regular",
+         "you know how the gavel sounds — now see what changes after the "
+         "minutes post"),
+        ({"officials"}, "Accountability tracker",
+         "you follow the people, not just the votes"),
+        ({"elections"}, "Ballot-season voter",
+         "you show up in November — this keeps the record between elections"),
+        ({"business"}, "Main-street operator",
+         "fees, rates, and the boom's ripple effects are your ledger"),
+        ({"press"}, "Reporter on deadline",
+         "verbatim quotes, timestamps, and a PRA bench — built for citing"),
+    ]
+    name, desc = "Curious citizen", "the baseline brief fits everyone"
+    best = 0
+    for need, n, d in archetypes:
+        hit = len(need & tags)
+        if hit > best:
+            best, name, desc = hit, n, d
 
     st.divider()
     if recs:
-        st.success(f"Your brief — {len(recs)} place{'s' if len(recs) != 1 else ''} "
-                   "to start, each one because of something you told me:")
-        for i, (title, because, section, q, canon) in enumerate(recs):
+        shown = recs[:depth]
+        st.info(f"**Your profile: {name}.** "
+                f"In plain words, {desc}.")
+        st.success(f"Your brief — {len(shown)} place"
+                   f"{'s' if len(shown) != 1 else ''} to start, ranked by "
+                   f"how strongly your answers pointed at them:")
+        for i, r in enumerate(shown):
             with st.container(border=True):
-                st.markdown(f"**{i + 1}. {title}**")
-                st.caption(because)
+                st.markdown(f"**{i + 1}. {r['title']}**")
+                st.caption(r["because"])
+                n = max(0, min(5, int(r["score"])))
+                st.caption("match " + "▰" * n + "▱" * (5 - n)
+                           + f"  ·  {r['score']:.1f}")
                 st.button("Take me there →", key=f"g_go_{i}",
-                          on_click=_guide_jump, args=(section, q, canon),
-                          use_container_width=False)
+                          on_click=_guide_jump,
+                          args=(r["section"], r["q"], r["canon"]))
+                if depth == 99 and r["nxt"]:
+                    nt, ns, nq, nc = r["nxt"]
+                    st.button(f"Then: {nt}", key=f"g_nx_{i}",
+                              on_click=_guide_jump, args=(ns, nq, nc))
     else:
-        st.info("Nothing checked — no problem. Everyone's baseline: the "
-                "**Live Alerts** and **Digest** tabs under Live operations, "
-                "and the **Minutes Archive** under The record. Or pick a "
-                "checkbox above and watch the brief build itself.")
+        st.info("Nothing answered — no problem. Everyone's baseline: the "
+                "**Live Alerts** and **Digest** views under Live operations, "
+                "and the **Minutes Archive** under The record. Or go Back "
+                "and answer a question or two and watch the brief build.")
+    with st.expander("🔍 Audit these recommendations — every rule that fired"):
+        if trace:
+            for line in trace:
+                st.markdown(f"- {line}")
+        else:
+            st.markdown("- (no rules fired — you answered nothing)")
+        st.caption("No model, no tracking: the rules above are the entire "
+                   "decision, and your answers never left this browser tab.")
     st.caption("Whoever you are: the alert feed updates itself every six "
                "hours, so 📡 Live operations is worth a bookmark.")
 
