@@ -212,7 +212,7 @@ def render_ledger():
     tabs = st.tabs(["◈ Ledger", "🚩 Live Alerts", "⚠️ Silent Edits", "🔎 Search",
                     "✉️ Paperwork", "📰 Digest", "⚔️ Battles*", "🔍 Veracity*",
                     "🧾 Vouchers*", "☣️ Environment*", "📜 Minutes Archive",
-                    "💡 Tips", "🗄 Canon Library"])
+                    "💡 Tips", "🗄 Canon Library", "🎬 Video Vault"])
 
     # ---------- engine tabs ---------------------------------------------
     with tabs[0]:
@@ -441,6 +441,77 @@ def render_ledger():
                     st.markdown(d["body"][:15000])
                 else:
                     st.markdown(d["body"])
+
+
+    with tabs[13]:
+        st.subheader("🎬 Video Vault — the record on tape")
+        st.caption("Produced segments and evidence clips cut from the City of "
+                   "Cheyenne's official meeting video (public record), plus "
+                   "every indexed city meeting on the city's YouTube channel.")
+        REN = ROOT / "pipeline" / "renders"
+        VID = ROOT / "pipeline" / "videos"
+        try:
+            cv = json.loads((ROOT / "pipeline" / "cityvideos.json").read_text())
+        except Exception:
+            cv = {}
+
+        segs = sorted(REN.glob("*.mp4")) if REN.is_dir() else []
+        if segs:
+            st.markdown("**The Record Speaks — produced segments (captioned)**")
+            seg = st.selectbox("Segment", segs,
+                               format_func=lambda p: p.stem.replace("_", " "),
+                               key="vv_seg")
+            sub = seg.with_suffix(".vtt")
+            st.video(str(seg), subtitles=str(sub) if sub.exists() else None)
+            posts = {f.name: f for f in REN.glob("POST_*.txt")}
+            stem = seg.stem
+            post = posts.get("POST_ALL_FIVE.txt") if stem[:2] in (
+                "S1", "S2", "S3", "S4", "S5") else None
+            post = next((f for n, f in posts.items()
+                         if n[5:-4] and n[5:-4] in stem), post)
+            if post:
+                with st.expander("Post copy for this segment"):
+                    st.caption(post.read_text(errors="replace")[:2000])
+        else:
+            st.info("No produced segments under pipeline/renders/ yet.")
+
+        clips = sorted(VID.glob("*.mp4")) if VID.is_dir() else []
+        if clips:
+            st.markdown("**Evidence clips — verified tape**")
+            clip = st.selectbox("Clip", clips,
+                                format_func=lambda p: p.stem.replace("_", " "),
+                                key="vv_clip")
+            st.video(str(clip))
+            TAPE = {"apr27": "2026-04-27", "mar9": "2026-03-09"}
+            dkey = next((d for p, d in TAPE.items()
+                         if clip.stem.startswith(p + "_")), None)
+            info = (cv.get("verified_tape", {}).get(dkey) or {}) if dkey else {}
+            ytid = info.get("id")
+            if ytid:
+                secs = 0
+                if info.get("cut_at"):
+                    secs = sum(v * 60 ** i for i, v in enumerate(
+                        reversed([int(x) for x in info["cut_at"].split(":")])))
+                t = "&t=%ds" % secs if secs else ""
+                st.markdown(
+                    f"Full meeting ({dkey}): [youtube.com/watch?v={ytid}{t}]"
+                    f"(https://www.youtube.com/watch?v={ytid}{t})"
+                    + (f" — {info['note']}" if info.get("note") else ""))
+        else:
+            st.info("No evidence clips under pipeline/videos/ yet.")
+
+        meets = cv.get("meetings", {})
+        if meets:
+            st.markdown("**Full meetings — City of Cheyenne YouTube channel**")
+            mdate = st.selectbox("Meeting date", sorted(meets, reverse=True),
+                                 key="vv_meet")
+            minfo = meets.get(mdate) or {}
+            ytid = minfo.get("id") if isinstance(minfo, dict) else minfo
+            if ytid:
+                st.video(f"https://www.youtube.com/watch?v={ytid}")
+            st.caption("Live Granicus captions remain out of scope (no VTT "
+                       "served); auto-captions are pullable via yt-dlp — see "
+                       "pipeline/cityvideos.json.")
 
 
 # =========================================================================
