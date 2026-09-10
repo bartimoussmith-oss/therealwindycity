@@ -1,0 +1,22 @@
+# Video files live on YouTube / Internet Archive, NOT in git (see README).
+# A single council meeting (~1 GB) exceeds GitHub's 100 MB per-file limit.
+videos/
+documents/
+*.mp4
+*.mov
+*.mpeg4
+*.webm
+*.mkv
+*.part
+
+# Secrets — never commit these
+client_secrets.json
+yt_token.json
+
+# Local run state (large, machine-specific)
+upload_state.json
+
+# Python noise
+__pycache__/
+*.pyc
+.venv/
