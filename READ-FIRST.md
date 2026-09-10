@@ -66,7 +66,23 @@ Coordination is not optional here.
 
 ## Active claims
 
-*(none right now — the repo is stable and fully deployed)*
+### claim: media-backfill — full meeting media + docs into repo/releases
+- worker: console-worker (main agent)
+- status: active
+- stage: building — (1) Colab backfill cell: auto-captions for all 260
+  indexed meetings into pipeline/captions/, full-meeting audio to GitHub
+  Releases (per-year), polite docs crawl; (2) app: Recordings & captions
+  view driven by pipeline/media_manifest.json; (3) capacity/robots
+  constraints documented (video cannot live in git; Granicus disallowed)
+- scope: tools/colab_media_backfill.py, Transparency_Index_App.py,
+  streamlit_app.py (twins), pipeline/media_manifest.json (scaffold),
+  pipeline/captions/ (built by the cell), README.md, READ-FIRST.md
+- started: 2026-09-10T11:00Z
+- updated: 2026-09-10T11:00Z
+- notes: release-asset upload path verified live (smoke test passed);
+  video-to-GitHub rejected on size (100MB blob cap, ~130GB total) —
+  audio+captions in, video stays YouTube-linked pending archive.org call
+ — the repo is stable and fully deployed)*
 
 ## Current repo state (updated 2026-09-10T10:45Z)
 
