@@ -66,7 +66,19 @@ Coordination is not optional here.
 
 ## Active claims
 
-*(none right now — the repo is stable and fully deployed)*
+### claim: viewer-guide — question-driven Start Here routing for new viewers
+- worker: console-worker (main agent)
+- status: active
+- stage: building — adding a 🧭 Start Here section: multiple-choice + boolean
+  questions, a transparent rules engine, and jump-buttons that route viewers
+  into the existing sections (with prefilled searches where useful)
+- scope: Transparency_Index_App.py, streamlit_app.py (twins, kept identical),
+  README.md, READ-FIRST.md (this claim + final log entry)
+- started: 2026-09-10T09:41Z
+- updated: 2026-09-10T09:41Z
+- notes: no conflicts expected — no other active claims; sections/dispatcher
+  untouched structurally, one section prepended
+
 
 ## Current repo state (updated 2026-09-10T09:20Z)
 
