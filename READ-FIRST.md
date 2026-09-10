@@ -66,20 +66,9 @@ Coordination is not optional here.
 
 ## Active claims
 
-### claim: guide-v2-deep — adaptive multi-stage wizard + weighted scoring
-- worker: console-worker (main agent)
-- status: active
-- stage: building — 6-stage wizard (role → topics → booleans → per-topic
-  follow-ups → depth/format → scored brief), profile archetype, match bars,
-  next-step chains, fired-rules audit panel
-- scope: Transparency_Index_App.py, streamlit_app.py (twins), README.md,
-  READ-FIRST.md (this claim + close-out)
-- started: 2026-09-10T10:05Z
-- updated: 2026-09-10T10:05Z
-- notes: no other active claims; replaces the v1 single-page guide in place
- — the repo is stable and fully deployed)*
+*(none right now — the repo is stable and fully deployed)*
 
-## Current repo state (updated 2026-09-10T09:55Z)
+## Current repo state (updated 2026-09-10T10:00Z)
 
 **What this is:** a civic-transparency console for Cheyenne / Laramie County —
 an automated public-records watchdog plus a research archive. One Streamlit
@@ -89,7 +78,7 @@ auto-redeploys from `main`).
 - **Site:** https://therealwindycity.streamlit.app — public. (curl sees a 303
   to `share.streamlit.io` first; that's the normal session handshake, not a
   login wall.)
-- **App structure:** ledger face opens on the 🧭 Start Here guide (multiple-choice + boolean questions, transparent rules engine, jump buttons with prefilled searches), then six sidebar sections (Overview / Live
+- **App structure:** ledger face opens on the 🧭 Start Here wizard (six adaptive stages, per-topic follow-ups, weighted scoring with match bars, profile archetype, next-step chains, fired-rules audit panel), then six sidebar sections (Overview / Live
   operations / The record / Video vault / Intake / Legacy vault — the legacy
   vault rows stay behind leads-not-facts banners until auto-verified against
   the transcript corpus) + Transparency Index face (entity dossiers).
@@ -135,3 +124,4 @@ auto-redeploys from `main`).
 - 2026-09-10 09:20Z — bartimoussmith-oss: READ-FIRST.md created (this file) +
   pointers added to README and both entry files.
 - 2026-09-10 09:55Z — console-worker: Start Here guide shipped — question-driven routing (roles, topics, five booleans) into the existing sections, with because-of copy on every card and search prefills for the minutes archive and canon library.
+- 2026-09-10 10:00Z — console-worker: guide v2 shipped — six-stage adaptive wizard with snapshot-backed answers (Streamlit prunes unrendered widget state; caught in harness, fixed with the Next-button snapshot pattern), weighted scoring, profiles, and the fired-rules audit panel.
