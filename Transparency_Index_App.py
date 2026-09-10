@@ -3,7 +3,9 @@
 One Streamlit process, two faces, switched from the sidebar (deep-linkable
 with ?face=index):
 
-  * Windy City Ledger — the working console. The sidebar groups the views
+  * Windy City Ledger — the working console. It opens on the Start
+    Here guide (three questions that route each viewer to the parts
+    of the record that touch them), and the sidebar groups the views
     into sections: live operations (alerts, silent edits, digest), the
     record (search, the 17-year minutes archive, the canon library), the
     video vault (produced segments, evidence clips, full city meetings),
@@ -381,8 +383,9 @@ def _view_canon():
                + " · ".join(f"{s}: {sum(1 for d in docs if d['series']==s)}"
                             for s in dict.fromkeys(d['series'] for d in docs)))
     col_a, col_b = st.columns([1, 2])
-    series_pick = col_a.selectbox("Series", ["All"] + sorted({d["series"] for d in docs}))
-    term = col_b.text_input("Search titles + excerpts", "")
+    series_pick = col_a.selectbox("Series", ["All"] + sorted({d["series"] for d in docs}),
+                                   key="canon_series")
+    term = col_b.text_input("Search titles + excerpts", "", key="canon_term")
     view = [d for d in docs
             if (series_pick == "All" or d["series"] == series_pick)
             and (term.lower() in (d["name"] + d["excerpt"]).lower())]
@@ -467,7 +470,185 @@ def _view_video():
                    "pipeline/cityvideos.json.")
 # Sidebar sections: label -> [(tab label, view function)]. Views render inside
 # per-section sub-tabs; single-view sections skip the sub-tab strip entirely.
+# ---------------------------------------------------------------------------
+# Start Here guide — question-driven routing into the record. Deliberately a
+# plain rules engine, not a model: every recommendation carries its because-of
+# so a viewer can audit the logic, and the answers never leave the browser.
+# ---------------------------------------------------------------------------
+
+GUIDE_ROLES = [
+    ("I live inside Cheyenne city limits", "city"),
+    ("I live in Laramie County, outside the city", "county"),
+    ("I own or run a business here", "business"),
+    ("I'm not local — I'm following the story", "observer"),
+    ("I'm a reporter or researcher", "press"),
+]
+
+GUIDE_TOPICS = [
+    ("My water bill and the city's water supply", "water"),
+    ("My property taxes and how the city spends money", "money"),
+    ("The data-center boom — annexations, ranch land, power", "datacenter"),
+    ("Roads and construction where I live", "roads"),
+    ("Groundwater, air, and environmental review", "environment"),
+    ("How meetings run — agendas, minutes, edits, closed doors", "process"),
+    ("What specific officials say and do", "officials"),
+    ("Ballots and elections, including the Nov 3 contest", "elections"),
+]
+
+
+def _guide_jump(section, q=None, canon=None):
+    """Send the viewer to a section, optionally preloading its search box."""
+    st.session_state["ledger_section"] = section
+    if q is not None:
+        st.session_state["corpus_q"] = q
+    if canon is not None:
+        st.session_state["canon_term"] = canon
+
+
+def _view_guide():
+    st.subheader("🧭 Start here — get *your* brief, not the whole haystack")
+    st.caption("Three quick questions. Plain rules, no model: every "
+               "recommendation below shows its because-of, and nothing you "
+               "pick leaves your browser.")
+
+    st.radio("1 · Who are you here as?", [lbl for lbl, _ in GUIDE_ROLES],
+             key="g_role")
+    st.multiselect("2 · Which of these touch your life? (pick any)",
+                   [lbl for lbl, _ in GUIDE_TOPICS], key="g_topics")
+    st.markdown("3 · Check what's true for you — every check adds to your brief:")
+    st.checkbox("I own my home (property taxes hit me directly)", key="g_owner")
+    st.checkbox("I drink city tap water", key="g_tap")
+    st.checkbox("I live west of town, near the Belvoir–High Plains corridor",
+                key="g_west")
+    st.checkbox("I voted in the last city election", key="g_voter")
+    st.checkbox("I've watched or attended a city meeting", key="g_watcher")
+
+    role = dict(GUIDE_ROLES).get(st.session_state.get("g_role", ""), "")
+    topics = st.session_state.get("g_topics") or []
+    tags = {role} | {t for lbl, t in GUIDE_TOPICS if lbl in topics}
+    if st.session_state.get("g_owner"):
+        tags.add("money")
+    if st.session_state.get("g_tap"):
+        tags.add("water")
+    if st.session_state.get("g_west"):
+        tags |= {"datacenter", "environment"}
+    if st.session_state.get("g_voter"):
+        tags.add("elections")
+    if st.session_state.get("g_watcher"):
+        tags.add("process")
+
+    recs = []
+
+    def rec(title, because, section, q=None, canon=None):
+        recs.append((title, because, section, q, canon))
+
+    if "money" in tags:
+        rec("Follow the money — the voucher forensics",
+            "You flagged taxes and spending. The vault tracks spending line by "
+            "line with the receipts attached — worth ten minutes of anyone's "
+            "property-tax bill.", "🗃 Legacy vault")
+        rec("Watch “S2: The 74M List”",
+            "The film cut of the capital-project list — the fastest way to "
+            "see what the money argument is actually about.",
+            "🎬 Video vault")
+        rec("Search 17 years of minutes for “6th penny”",
+            "Every time the sales-tax question came up, verbatim, with the "
+            "meeting dates attached.", "🔎 The record", q="6th penny")
+    if "water" in tags:
+        rec("Your water, on the record",
+            "You flagged water. The environmental matrix tracks the water "
+            "and groundwater items, and the archive holds every water "
+            "discussion the councils have had.",
+            "🗃 Legacy vault")
+        rec("Search the minutes for “water”",
+            "Moratorium votes, utility extensions, supply studies — the "
+            "paper trail behind whatever ends up in your bill.",
+            "🔎 The record", q="water")
+    if "datacenter" in tags:
+        rec("The data-center boom, filed and footnoted",
+            "Annexations, zoning, the ranch-land fights — this is the "
+            "dossier line that grew this whole archive. Start with the "
+            "Battles view and the data-center brief.",
+            "🗃 Legacy vault")
+        rec("Watch “S1: 48 Hours”",
+            "The cut that shows how fast the annexation votes moved.",
+            "🎬 Video vault")
+        rec("Search the minutes for “annexation”",
+            "The full paper trail, meeting by meeting.", "🔎 The record",
+            q="annexation")
+    if "environment" in tags:
+        rec("Groundwater, air, and environmental review",
+            "The environmental matrix keeps the review items in one place, "
+            "each linked back to its source document.",
+            "🗃 Legacy vault")
+        rec("Search the minutes for “groundwater”",
+            "Where the environmental record actually lives.", "🔎 The record",
+            q="groundwater")
+    if "process" in tags:
+        rec("The silent-edits wire",
+            "Documents on the city site that changed after the fact — each "
+            "one diffed, timestamped, and linked. This tab existing at all "
+            "is the point.", "📡 Live operations")
+        rec("How to read a meeting like an investigator",
+            "The Minutes Archive is 17 years of verbatim transcripts, "
+            "searchable word by word. Ctrl-F is a civic instrument.",
+            "🔎 The record")
+    if "officials" in tags:
+        rec("Who said what — the veracity files",
+            "First positions next to later positions, so the record does the "
+            "comparing for you.", "🗃 Legacy vault")
+        rec("The tape archive",
+            "Verified clips with timestamps back to the full meeting video — "
+            "including the cuts that made the news. The Caller tape is the "
+            "one people ask about first.", "🎬 Video vault")
+        rec("The canon library, by person",
+            "Every dossier on the officials and the races, organized by "
+            "series.", "🔎 The record", canon="miller")
+    if "elections" in tags:
+        rec("Ballot season, on the record",
+            "The digest tracks what moved each week, and the alerts flag "
+            "watchlist language within 48 hours of it posting.",
+            "📡 Live operations")
+        rec("Search the canon for “referendum”",
+            "The referendum dossiers and everything filed around them.",
+            "🔎 The record", canon="referendum")
+    if role == "press":
+        rec("Reporter's kit — full-text search",
+            "FTS over everything fingerprinted, plus 17 years of transcripts. "
+            "Every alert carries a verbatim quote, a source URL, and a fetch "
+            "timestamp — citeable as-is.", "🔎 The record")
+        rec("The PRA drafting bench",
+            "Wyoming Public Records Act request drafts, filled in and ready "
+            "for a human to send. Wrong-statute citations are a reporter's "
+            "fastest way to get stonewalled.", "✉️ Intake")
+    if "roads" in tags:
+        rec("Roads and construction in the record",
+            "Search the minutes for the street and project names you drive "
+            "past — most capital work shows up in a vote before it shows up "
+            "on the ground.", "🔎 The record", q="street")
+
+    st.divider()
+    if recs:
+        st.success(f"Your brief — {len(recs)} place{'s' if len(recs) != 1 else ''} "
+                   "to start, each one because of something you told me:")
+        for i, (title, because, section, q, canon) in enumerate(recs):
+            with st.container(border=True):
+                st.markdown(f"**{i + 1}. {title}**")
+                st.caption(because)
+                st.button("Take me there →", key=f"g_go_{i}",
+                          on_click=_guide_jump, args=(section, q, canon),
+                          use_container_width=False)
+    else:
+        st.info("Nothing checked — no problem. Everyone's baseline: the "
+                "**Live Alerts** and **Digest** tabs under Live operations, "
+                "and the **Minutes Archive** under The record. Or pick a "
+                "checkbox above and watch the brief build itself.")
+    st.caption("Whoever you are: the alert feed updates itself every six "
+               "hours, so 📡 Live operations is worth a bookmark.")
+
+
 SECTIONS = {
+    "🧭 Start Here":     [("🧭 Find your brief", _view_guide)],
     "◈ Overview":       [("◈ Ledger", _view_home)],
     "📡 Live operations": [
         ("🚩 Live Alerts", _view_alerts),
