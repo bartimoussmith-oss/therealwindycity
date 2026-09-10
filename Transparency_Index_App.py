@@ -19,6 +19,9 @@ streamlit_app.py and Transparency_Index_App.py are kept as identical twins
 on purpose: whichever one Streamlit Cloud points at, the app boots.
 """
 
+# Contributors and agents: READ-FIRST.md at the repo root is the coordination
+# file — read it and file a claim there before changing anything in here.
+
 from __future__ import annotations
 
 import glob

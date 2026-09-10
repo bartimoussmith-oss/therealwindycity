@@ -1,5 +1,9 @@
 # Civic Transparency Engine — Cheyenne / Laramie County build
 
+> **Agents / collaborators: read [`READ-FIRST.md`](READ-FIRST.md) before
+> making any change.** It describes the current repo state and the claim
+> protocol that keeps concurrent workers from stepping on each other.
+
 An automated public-records watchdog. It **politely** collects documents from public
 government and news endpoints, fingerprints every file cryptographically, detects
 silent edits, extracts searchable text, flags watchlist terms with verbatim quotes,
