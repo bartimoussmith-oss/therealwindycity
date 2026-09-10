@@ -1215,6 +1215,98 @@ def _view_reel():
                 on_click=_guide_jump, args=("🎬 Video vault",))
 
 
+@st.cache_data(show_spinner=False)
+def _media_manifest():
+    fp = ROOT / "pipeline" / "media_manifest.json"
+    if not fp.exists():
+        return {"meetings": {}}
+    try:
+        return json.loads(fp.read_text())
+    except Exception:
+        return {"meetings": {}}
+
+
+@st.cache_data(show_spinner=False)
+def _vtt_cues(rel: str):
+    """Auto-caption VTT -> [(second, text)], rolling duplicates collapsed.
+    Machine transcripts: search/jump-grade, not quotable like the clerk
+    record — the view says so too."""
+    fp = ROOT / rel
+    if not fp.exists():
+        return []
+    ts = re.compile(r"^(?:(\d{1,2}):)?(\d{1,2}):(\d{2})[.,]\d{3}\s*-->")
+    cues, last, pending, cur_sec = [], None, None, 0
+    for line in fp.read_text(errors="replace").splitlines() + [""]:
+        stripped = line.strip()
+        m = ts.match(stripped)
+        if m:
+            if pending:
+                text = " ".join(re.sub(r"<[^>]+>", "", " ".join(pending)).split())
+                if text and text != last:
+                    cues.append((cur_sec, text))
+                    last = text
+            h, mi, s = (m.group(1) or "0"), m.group(2), m.group(3)
+            cur_sec = int(h) * 3600 + int(mi) * 60 + int(s)
+            pending = []
+            continue
+        if not stripped or stripped == "WEBVTT" or stripped.startswith(("NOTE", "Kind:", "Language:")):
+            if pending:
+                text = " ".join(re.sub(r"<[^>]+>", "", " ".join(pending)).split())
+                if text and text != last:
+                    cues.append((cur_sec, text))
+                    last = text
+                pending = None
+            continue
+        if pending is not None and "-->" not in stripped:
+            pending.append(stripped)
+    return cues
+
+
+def _view_media():
+    st.subheader("📼 Recordings & captions — every indexed meeting")
+    manifest = _media_manifest().get("meetings", {})
+    n_caps = sum(1 for v in manifest.values() if v.get("captions"))
+    n_aud = sum(1 for v in manifest.values() if v.get("audio"))
+    st.caption(f"{len(manifest)} meetings in the media manifest · "
+               f"{n_caps} captioned · {n_aud} with full audio · captions are "
+               "machine transcripts (search/jump-grade); the clerk-written "
+               "record stays the quotable one. Grows via the media backfill "
+               "cell (tools/colab_media_backfill.py).")
+    if not manifest:
+        st.info("Nothing in the manifest yet — run the media backfill cell "
+                "in Colab (MODE='captions' is the quick pass).")
+        return
+    date = st.selectbox("Meeting", sorted(manifest, reverse=True),
+                        key="media_date")
+    minfo = manifest.get(date) or {}
+    ytid = minfo.get("yt")
+    if not (date and ytid):
+        st.info("No media indexed for this date yet.")
+        return
+    st.markdown(f"**{date}** — [tape on YouTube]"
+                f"(https://www.youtube.com/watch?v={ytid})")
+    if minfo.get("audio"):
+        st.audio(minfo["audio"])
+        st.caption("Full-meeting audio — streamed from the repo's GitHub "
+                   "Release archive.")
+    cues = _vtt_cues(minfo["captions"]) if minfo.get("captions") else []
+    if cues:
+        st.markdown("**Captions — every line jumps the tape:**")
+        max_min = int(cues[-1][0] // 60)
+        minute = st.number_input("Jump to minute", 0, max_min,
+                                 min(60, max_min), key="media_min")
+        window = [c for c in cues
+                  if minute * 60 <= c[0] < minute * 60 + 300][:120]
+        for sec, text in window:
+            st.markdown(f"[`{_sec_to_hms(sec)}`]({_yt_url(ytid, sec)}) {text[:110]}")
+        st.caption("Caption links open the tape at the exact second; the "
+                   "audio player above runs off the same clock.")
+    else:
+        st.video(_yt_url(ytid))
+        st.caption("No caption file yet — the backfill cell picks these up "
+                   "per meeting.")
+
+
 SECTIONS = {
     "🔥 The Record Speaks": [("🔥 The Contention Reel", _view_reel)],
     "🧭 Start Here":     [("🧭 Find your brief", _view_guide)],
@@ -1229,7 +1321,8 @@ SECTIONS = {
         ("📜 Minutes Archive", _view_minutes),
         ("🗄 Canon Library", _view_canon),
     ],
-    "🎬 Video vault":   [("🎬 Video Vault", _view_video)],
+    "🎬 Video vault":   [("🎬 Video Vault", _view_video),
+                       ("📼 Recordings & captions", _view_media)],
     "✉️ Intake":        [("💡 Tips", _view_tips),
                          ("✉️ Paperwork", _view_paperwork)],
     "🗃 Legacy vault": [
