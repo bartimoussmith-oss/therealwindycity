@@ -5,9 +5,12 @@
 > protocol that keeps concurrent workers from stepping on each other.
 
 > The console opens on **The Record Speaks** — a looping reel of the
-> most contentious moments spoken at the meetings, each chapter
-> sourced to the full tape — then the adaptive **Start Here** wizard
-> drills you into the parts of the record that touch your life.
+> most contentious moments spoken at the meetings. Under the player,
+> a context pane tracks the playing moment: the meeting (date, body,
+> full tape), the ordinances being spoken about with their complete
+> reading histories across every body, and clickable captions that
+> jump the tape to the exact second. Then the adaptive **Start Here**
+> wizard drills you into the parts of the record that touch you.
 
 An automated public-records watchdog. It **politely** collects documents from public
 government and news endpoints, fingerprints every file cryptographically, detects

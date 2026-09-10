@@ -998,45 +998,214 @@ def _render_brief():
 # The front-door reel: contentious moments, in order, with links to the full
 # source meeting. Timestamps are cumulative starts in CONTENTION_REEL.mp4 —
 # keep in sync with pipeline/build_reel.py's ORDER.
+REEL_MEETINGS = {
+    "mar9": {"date": "2026-03-09", "body": "Governing Body — City Council",
+             "file": "pipeline/corpus/extra/mar9.txt",
+             "yt": "19tQtLA8klo", "tape": True},
+    "apr27": {"date": "2026-04-27", "body": "Governing Body — City Council",
+              "file": "pipeline/corpus/extra/apr27.txt",
+              "yt": "y9vnXtjZpR0", "tape": True},
+}
+
+# (reel timestamp, label, meeting key, verified tape second -- None where
+# the moment's exact tape time isn't verified yet)
 REEL_CHAPTERS = [
-    ("0:00", "The cut — a speaker cut mid-sentence (Mar 9)",
-     "https://www.youtube.com/watch?v=19tQtLA8klo&t=16449s"),
-    ("1:50", "The return — 73 minutes later (Mar 9)",
-     "https://www.youtube.com/watch?v=19tQtLA8klo&t=20878s"),
-    ("3:50", "First recognition of the night (Apr 27)",
-     "https://www.youtube.com/watch?v=y9vnXtjZpR0"),
-    ("5:45", "Nine recognitions of one councilmember (Apr 27)",
-     "https://www.youtube.com/watch?v=y9vnXtjZpR0"),
-    ("7:35", "The pile-on (Apr 27)",
-     "https://www.youtube.com/watch?v=y9vnXtjZpR0"),
-    ("10:10", "The bypassed hand (Apr 27)",
-     "https://www.youtube.com/watch?v=y9vnXtjZpR0&t=9862s"),
-    ("12:45", "1:30 AM — the last item (Apr 27)",
-     "https://www.youtube.com/watch?v=y9vnXtjZpR0"),
-    ("14:05", "The Moody swap", None),
-    ("15:25", "The Nemecek quote", None),
+    ("0:00", "The cut — a speaker cut mid-sentence", "mar9", 16449),
+    ("1:50", "The return — 73 minutes later", "mar9", 20878),
+    ("3:50", "First recognition of the night", "apr27", None),
+    ("5:45", "Nine recognitions of one councilmember", "apr27", None),
+    ("7:35", "The pile-on", "apr27", None),
+    ("10:10", "The bypassed hand", "apr27", 9862),
+    ("12:45", "1:30 AM — the last item", "apr27", None),
+    ("14:05", "The Moody swap", None, None),
+    ("15:25", "The Nemecek quote", None, None),
 ]
+
+RAW_BASE = "https://raw.githubusercontent.com/bartimoussmith-oss/therealwindycity/main"
+
+
+def _sec_to_hms(sec: int) -> str:
+    return f"{sec // 3600}:{sec % 3600 // 60:02d}:{sec % 60:02d}"
+
+
+def _yt_url(ytid: str, sec=None) -> str:
+    base = f"https://www.youtube.com/watch?v={ytid}"
+    return base + (f"&t={sec}s" if sec is not None else "")
+
+
+@st.cache_data(show_spinner=False)
+def _transcript_lines(rel: str):
+    """Parse a full-tape transcript into [(second, text)] — the Granicus
+    caption lines are video-relative, which is what makes time-jumps real."""
+    out = []
+    fp = ROOT / rel
+    if not fp.exists():
+        return out
+    for line in fp.read_text(errors="replace").splitlines():
+        m = re.match(r"^(\d{2}):(\d{2}):(\d{2})\s+(.*)$", line.strip())
+        if m:
+            h, mi, s, text = m.groups()
+            out.append((int(h) * 3600 + int(mi) * 60 + int(s), text))
+    return out
+
+
+@st.cache_data(show_spinner=False)
+def _ordinance_index():
+    fp = ROOT / "pipeline" / "ordinance_history.json"
+    if not fp.exists():
+        return {}
+    try:
+        return json.loads(fp.read_text()).get("ordinances", {})
+    except Exception:
+        return {}
+
+
+@st.cache_data(show_spinner=False)
+def _city_meetings():
+    fp = ROOT / "pipeline" / "cityvideos.json"
+    if not fp.exists():
+        return {}
+    try:
+        data = json.loads(fp.read_text()).get("meetings", {})
+        out = {}
+        for date, minfo in data.items():
+            ytid = minfo.get("id") if isinstance(minfo, dict) else minfo
+            if ytid:
+                out[date] = ytid
+        return out
+    except Exception:
+        return {}
 
 
 def _view_reel():
     st.subheader("🔥 The Record Speaks — the most contentious moments, on loop")
     st.caption("Nine verbatim moments from official city-meeting video, "
                "seventeen minutes, playing on loop. Browsers start autoplay "
-               "muted — click the 🔊 on the player for sound. Every moment "
-               "is sourced below.")
+               "muted — click the 🔊 on the player for sound. Below the "
+               "player: the meeting, the ordinances being spoken about, and "
+               "clickable captions — all three follow whichever moment you "
+               "pick.")
     reel = ROOT / "pipeline" / "renders" / "CONTENTION_REEL.mp4"
     if reel.exists():
         st.video(str(reel), autoplay=True, muted=True, loop=True)
-        st.markdown("**What you're watching — each moment links to the full "
-                    "meeting tape:**")
-        for ts, label, url in REEL_CHAPTERS:
-            if url:
-                st.markdown(f"- `{ts}` **{label}** — [full meeting]({url})")
-            else:
-                st.markdown(f"- `{ts}` **{label}** — in the Video vault")
     else:
         st.info("The reel isn't built in this checkout yet — run "
                 "`pipeline/build_reel.py` (needs ffmpeg).")
+        return
+
+    st.markdown("**What you're watching** — pick a moment; the context "
+                "columns underneath track it:")
+    labels = [f"`{ts}` {label}" for ts, label, _m, _s in REEL_CHAPTERS]
+    pick = st.selectbox("Moment", labels, key="reel_ctx",
+                        label_visibility="collapsed")
+    ch = REEL_CHAPTERS[labels.index(pick)]
+    meet = REEL_MEETINGS.get(ch[2])
+
+    c1, c2, c3 = st.columns(3)
+
+    # ---- column 1: the meeting ------------------------------------------
+    with c1:
+        st.markdown("**📺 The meeting**")
+        if meet:
+            st.markdown(f"**{meet['date']}**\n{meet['body']}")
+            tape_at = ch[3]
+            if tape_at is not None:
+                st.markdown(f"[▶ Full tape at {_sec_to_hms(tape_at)}]"
+                            f"({_yt_url(meet['yt'], tape_at)}) — the moment "
+                            f"in context")
+            else:
+                st.markdown(f"[▶ Full meeting tape]({_yt_url(meet['yt'])})")
+            st.markdown(f"[📜 Transcript source]({RAW_BASE}/{meet['file']})")
+            st.caption("The in-app caption viewer with time-jumps is in the "
+                       "right-hand column.")
+        else:
+            st.info("Source meeting pending verification — this clip "
+                    "predates the verified-tape index. The Canon Library "
+                    "holds the written record around it.")
+
+    # ---- column 2: ordinances -------------------------------------------
+    with c2:
+        st.markdown("**⚖️ Ordinances in play**")
+        ords = []
+        if meet:
+            idx = _ordinance_index()
+            ords = [e for e in idx.values()
+                    if any(m["date"] == meet["date"] for m in e["mentions"])]
+            ords.sort(key=lambda e: -len(e["mentions"]))
+        if ords:
+            st.caption(f"{len(ords)} ordinance item"
+                       f"{'s' if len(ords) != 1 else ''} spoken about in "
+                       f"this meeting — open one for its full history:")
+            for e in ords[:6]:
+                label = (f"No. {e['number']}" if e.get("number")
+                         else (e.get("title") or e["key"])[:56])
+                with st.expander(f"{label} — {len(e['mentions'])} mention"
+                                 f"{'s' if len(e['mentions']) != 1 else ''}"):
+                    for m in e["mentions"]:
+                        ytid = _city_meetings().get(m["date"])
+                        jump = (f"[▶]({_yt_url(ytid)}) " if ytid else "")
+                        st.markdown(f"- {jump}`{m['date']}` · {m['body']} · "
+                                    f"{m['stage']}")
+                    st.caption("Each ▶ opens that meeting's tape — the "
+                               "player can't auto-queue a playlist, so it's "
+                               "one click per leg.")
+        else:
+            st.caption("No ordinance mentions indexed for this meeting "
+                       "yet — the index grows as transcripts are ingested "
+                       "each cycle.")
+        docs = _engine_q("SELECT title, url FROM documents "
+                         "WHERE lower(title) LIKE '%agenda%' "
+                         "OR lower(url) LIKE '%agenda%' "
+                         "ORDER BY last_checked DESC LIMIT 5")
+        if docs:
+            st.markdown("**Agenda & fingerprinted documents**")
+            for d in docs:
+                st.markdown(f"- [{d['title'][:60]}]({d['url']})")
+            st.caption("Plus everything the crawler has fingerprinted — "
+                       "see the Ledger.")
+        else:
+            st.caption("Agenda documents appear here as the crawler "
+                       "fingerprints them (it runs every 6 hours).")
+
+    # ---- column 3: captions ---------------------------------------------
+    with c3:
+        st.markdown("**💬 Captions — click a line, the tape jumps**")
+        if meet and meet.get("tape"):
+            lines = _transcript_lines(meet["file"])
+            anchor = ch[3]
+            if anchor is not None:
+                window = [l for l in lines
+                          if anchor - 45 <= l[0] <= anchor + 150][:45]
+                st.caption(f"Transcript around {_sec_to_hms(anchor)} — "
+                           "what's being said in this moment:")
+            else:
+                window = lines[:45]
+                st.caption("Exact tape time for this moment isn't verified "
+                           "yet — showing the meeting open:")
+            for sec, text in window:
+                st.markdown(f"[`{_sec_to_hms(sec)}`]({_yt_url(meet['yt'], sec)})"
+                            f" {text[:100]}")
+            with st.expander("📜 Full transcript — every line is a jump link"):
+                if lines:
+                    max_min = int(lines[-1][0] // 60)
+                    minute = st.number_input("Jump to minute", 0, max_min,
+                                             key="reel_min")
+                    around = [l for l in lines
+                              if minute * 60 <= l[0] < minute * 60 + 240][:100]
+                    for sec, text in around:
+                        st.markdown(
+                            f"[`{_sec_to_hms(sec)}`]"
+                            f"({_yt_url(meet['yt'], sec)}) {text[:110]}")
+                    st.caption("Word-level click needs custom JavaScript "
+                               "this app deliberately doesn't ship — "
+                               "timestamp-level is the honest version, and "
+                               "each link lands on the exact second.")
+        else:
+            st.info("Caption-linked transcripts exist for the two verified "
+                    "tape meetings (Mar 9 and Apr 27, 2026). Pick a moment "
+                    "from one of those — or browse every meeting in the "
+                    "Video vault.")
+
     st.divider()
     col1, col2 = st.columns(2)
     col1.button("🧭 Start here — find what affects you",
