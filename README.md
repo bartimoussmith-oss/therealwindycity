@@ -22,15 +22,19 @@ human to review and send**.
 ## Quickstart
 
 ```bash
-cd civic-engine
-python3 run.py selftest        # proves the full pipeline offline, zero installs
+python3 run.py selftest        # prove the full pipeline offline, zero installs
 python3 run.py init            # create ./data/engine.db and load config
 python3 run.py crawl           # polite pull of every enabled source
 python3 run.py work            # process queued extraction/scan jobs
 python3 run.py digest          # write data/out/digest-<today>.md
 python3 run.py request pra --help
-streamlit run dashboard/app.py # Module 5 dashboard (optional dep)
+streamlit run Transparency_Index_App.py   # the console (streamlit_app.py is an identical twin)
 ```
+
+On Streamlit Community Cloud the console runs from this repo directly, and a
+GitHub Action (`civic-cycle`) runs `engine/scheduler.py --once` every six hours
+— plus hourly sweeps on Monday/Tuesday meeting nights — committing any ledger
+changes back to `main`.
 
 ## Seeded sources (config/sources.json)
 
