@@ -66,25 +66,9 @@ Coordination is not optional here.
 
 ## Active claims
 
-### claim: context-pane — ordinance history + transcript deep-links under the reel
-- worker: console-worker (main agent)
-- status: active
-- stage: recon — checking transcript timestamp formats, ordinance mention
-  density, and clip-to-meeting mapping before building: (1) meeting card
-  column (date/type/transcript), (2) ordinance-history column (full
-  lifecycle across bodies, agenda/docs, meeting playlist), (3) caption/
-  transcript column with time-jump links
-- scope: Transparency_Index_App.py, streamlit_app.py (twins),
-  engine/ordinance_index.py, pipeline/ordinance_history.json (built),
-  README.md, READ-FIRST.md (this claim + close-out)
-- started: 2026-09-10T10:35Z
-- updated: 2026-09-10T10:35Z
-- notes: word-level click needs JS a plain Streamlit app can't do —
-  delivering timestamp-level jumps instead unless data says otherwise;
-  no fabricated ordinance history — index is grep-derived from the corpus
- — the repo is stable and fully deployed)*
+*(none right now — the repo is stable and fully deployed)*
 
-## Current repo state (updated 2026-09-10T10:20Z)
+## Current repo state (updated 2026-09-10T10:45Z)
 
 **What this is:** a civic-transparency console for Cheyenne / Laramie County —
 an automated public-records watchdog plus a research archive. One Streamlit
@@ -94,7 +78,7 @@ auto-redeploys from `main`).
 - **Site:** https://therealwindycity.streamlit.app — public. (curl sees a 303
   to `share.streamlit.io` first; that's the normal session handshake, not a
   login wall.)
-- **App structure:** ledger face opens on the 🔥 contention reel (17-minute autoplay looping compilation of the nine most contentious spoken moments, chapter-sourced to the full meeting tapes; rebuild via pipeline/build_reel.py), then the 🧭 Start Here wizard (six adaptive stages, per-topic follow-ups, weighted scoring with match bars, profile archetype, next-step chains, fired-rules audit panel), then six sidebar sections (Overview / Live
+- **App structure:** ledger face opens on the 🔥 contention reel (17-minute autoplay looping compilation of the nine most contentious spoken moments, chapter-sourced to the full meeting tapes, with a three-column context pane: meeting card, ordinance histories (engine/ordinance_index.py -> pipeline/ordinance_history.json, 153 ordinances / 309 mentions), and clickable timestamped captions; rebuild the reel via pipeline/build_reel.py), then the 🧭 Start Here wizard (six adaptive stages, per-topic follow-ups, weighted scoring with match bars, profile archetype, next-step chains, fired-rules audit panel), then six sidebar sections (Overview / Live
   operations / The record / Video vault / Intake / Legacy vault — the legacy
   vault rows stay behind leads-not-facts banners until auto-verified against
   the transcript corpus) + Transparency Index face (entity dossiers).
@@ -142,3 +126,4 @@ auto-redeploys from `main`).
 - 2026-09-10 09:55Z — console-worker: Start Here guide shipped — question-driven routing (roles, topics, five booleans) into the existing sections, with because-of copy on every card and search prefills for the minutes archive and canon library.
 - 2026-09-10 10:00Z — console-worker: guide v2 shipped — six-stage adaptive wizard with snapshot-backed answers (Streamlit prunes unrendered widget state; caught in harness, fixed with the Next-button snapshot pattern), weighted scoring, profiles, and the fired-rules audit panel.
 - 2026-09-10 10:20Z — console-worker: contention reel shipped — CONTENTION_REEL.mp4 (17:25, 25 MB, nine clips, autoplay-mute-loop opener) with chapter links to the source meetings; pipeline/build_reel.py committed so the reel stays rebuildable.
+- 2026-09-10 10:45Z — console-worker: context pane shipped under the reel — meeting cards (tape + transcript links), ordinance-history column with per-mention tape jumps, caption lines that link to the exact tape second, and a minute-jumping full-transcript viewer; ordinance index builder committed with its built JSON.
