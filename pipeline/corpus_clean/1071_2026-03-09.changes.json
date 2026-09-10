@@ -1,0 +1,185 @@
+[
+ {
+  "kind": "confusion",
+  "before": "take the role",
+  "after": "take the roll",
+  "count": 1
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Wolf",
+  "after": "Mr. Wolfe",
+  "count": 11
+ },
+ {
+  "kind": "confusion",
+  "before": "Dr. Emmens",
+  "after": "Dr. Emmons",
+  "count": 15
+ },
+ {
+  "kind": "confusion",
+  "before": "Dr. Emmons",
+  "after": "Dr. Emmons",
+  "count": 15
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Esabel",
+  "after": "Mr. Esquibel",
+  "count": 3
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Esquibel",
+  "after": "Mr. Esquibel",
+  "count": 3
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Esel",
+  "after": "Mr. Esquibel",
+  "count": 2
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Leborn",
+  "after": "Mr. Laybourn",
+  "count": 12
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Laybourn",
+  "after": "Mr. Laybourn",
+  "count": 12
+ },
+ {
+  "kind": "confusion",
+  "before": "Leborn",
+  "after": "Laybourn",
+  "count": 3
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Crave",
+  "after": "Mr. Segrave",
+  "count": 14
+ },
+ {
+  "kind": "confusion",
+  "before": "Dr. Renie",
+  "after": "Dr. Rinne",
+  "count": 7
+ },
+ {
+  "kind": "confusion",
+  "before": "Dr. Aldridge",
+  "after": "Dr. Aldrich",
+  "count": 14
+ },
+ {
+  "kind": "confusion",
+  "before": "Aldridge",
+  "after": "Aldrich",
+  "count": 2
+ },
+ {
+  "kind": "confusion",
+  "before": "O'Neal Avenue",
+  "after": "O'Neil Avenue",
+  "count": 1
+ },
+ {
+  "kind": "confusion",
+  "before": "Laybournne",
+  "after": "Laybourn",
+  "count": 1
+ },
+ {
+  "kind": "confusion",
+  "before": "Lelaybornne",
+  "after": "Laybourn",
+  "count": 2
+ },
+ {
+  "kind": "confusion",
+  "before": "Labbornne",
+  "after": "Laybourn",
+  "count": 1
+ },
+ {
+  "kind": "confusion",
+  "before": "Larry County",
+  "after": "Laramie County",
+  "count": 2
+ },
+ {
+  "kind": "regex",
+  "before": "\\bWolf\\b(?=\\s+vot)",
+  "after": "Wolfe",
+  "count": 1
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Dr. Ammons.",
+  "after": "Dr. Emmons",
+  "score": 0.889,
+  "context": ", >> Mr. Blue? >> Mayor, through the members of council and Dr. Ammons. Yes, that's 100% accurate. Uh we presently have um added ho"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Laramie Countyy's",
+  "after": "Laramie County's",
+  "score": 0.966,
+  "context": "representative. Well, we have all we might have a quorum of Laramie Countyy's House of Representatives here today. >> Corporations, [snor"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "an's lack of familiarity with city code is not a good look. Councilman Wolf remarked that a large number of hours had already been spen"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Labour",
+  "after": "Councilwoman Laybourn",
+  "score": 0.895,
+  "context": " I know there was discussion um in the last meeting with uh Councilman Labour when he questioned about pulling this parcel out and the ci"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Labour",
+  "after": "Councilwoman Laybourn",
+  "score": 0.895,
+  "context": "east a portion of it, um I think the action keeps moving as Councilman Labour once again said. So, I will be in no vote on the substitute"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "helsea McCort, Ward One. Uh, first a quick appreciation for Councilman Wolf and for Councilman White for uh listening to us um in what "
+ },
+ {
+  "kind": "fuzzy",
+  "before": "unified development codes",
+  "after": "Unified Development Code",
+  "score": 0.98,
+  "context": " racing. There's uh the adult businesses. Everything on the unified development codes um annual review work plan and most importantly the compreh"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Mr. Labour",
+  "after": "Mr. Laybourn",
+  "score": 0.9,
+  "context": ">> I >> I. >> Those opposed? >> No. >> Now, Mr. uh Wolf and Mr. Labour knows the substitute is adopted and we're back on the main "
+ },
+ {
+  "kind": "fuzzy",
+  "before": "21101 O'Neil Avenue,",
+  "after": "2101 O'Neil Avenue",
+  "score": 0.971,
+  "context": "arch 23rd, 2026 at 6 o'clock p.m. in city council chambers, 21101 O'Neil Avenue, Cheyenne, Wyoming and via electronic conference meeting for"
+ }
+]

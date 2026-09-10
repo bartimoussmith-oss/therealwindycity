@@ -1,0 +1,167 @@
+[
+ {
+  "kind": "confusion",
+  "before": "take the role",
+  "after": "take the roll",
+  "count": 1
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Wolf",
+  "after": "Mr. Wolfe",
+  "count": 14
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Emmens",
+  "after": "Dr. Emmons",
+  "count": 6
+ },
+ {
+  "kind": "confusion",
+  "before": "Dr. Emmens",
+  "after": "Dr. Emmons",
+  "count": 21
+ },
+ {
+  "kind": "confusion",
+  "before": "Dr. Emmons",
+  "after": "Dr. Emmons",
+  "count": 27
+ },
+ {
+  "kind": "confusion",
+  "before": "Emmens",
+  "after": "Emmons",
+  "count": 3
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Esabel",
+  "after": "Mr. Esquibel",
+  "count": 2
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Esquibel",
+  "after": "Mr. Esquibel",
+  "count": 2
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Leborn",
+  "after": "Mr. Laybourn",
+  "count": 10
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Laybourn",
+  "after": "Mr. Laybourn",
+  "count": 10
+ },
+ {
+  "kind": "confusion",
+  "before": "Leborn",
+  "after": "Laybourn",
+  "count": 1
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Crave",
+  "after": "Mr. Segrave",
+  "count": 13
+ },
+ {
+  "kind": "confusion",
+  "before": "Dr. Renie",
+  "after": "Dr. Rinne",
+  "count": 8
+ },
+ {
+  "kind": "confusion",
+  "before": "Renie",
+  "after": "Rinne",
+  "count": 2
+ },
+ {
+  "kind": "confusion",
+  "before": "Dr. Aldridge",
+  "after": "Dr. Aldrich",
+  "count": 20
+ },
+ {
+  "kind": "confusion",
+  "before": "O'Neal Avenue",
+  "after": "O'Neil Avenue",
+  "count": 1
+ },
+ {
+  "kind": "confusion",
+  "before": "Laybournne",
+  "after": "Laybourn",
+  "count": 5
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Mooney,",
+  "after": "Councilman Moody",
+  "score": 0.909,
+  "context": " final wishes. >> Mr. Mayor, Mr. Mr. Mayor through you. Uh, Councilman Mooney, there there was nothing like that. No. >> Right. Thank you."
+ },
+ {
+  "kind": "fuzzy",
+  "before": "North Range BISMs Park",
+  "after": "North Range Business Park",
+  "score": 0.894,
+  "context": "oop water systems fail repeatedly. Um I walk my dogs in the North Range BISMs Park and I've seen uh drilling companies come in on a Friday nig"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Laram County",
+  "after": "Laramie County",
+  "score": 0.923,
+  "context": "cally we're rural folks who uh exist in the eastern half of Laram County where the state engineer has declared that we have a water "
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Laram County.",
+  "after": "Laramie County",
+  "score": 0.923,
+  "context": " data centers already in existence or under construction in Laram County. We're the mecca of data centers. There's one in Gillette. T"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "councilman Wolf",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "to do is because you are exactly right um um uh the council councilman Wolf that this is kind of the last city's opportunity and the fo"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf,",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "s. And uh anyways, I just wanted to say that I thought that Councilman Wolf, what you had to say was really good about, you know, what's"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "zen brings up the data, when the audit becomes too precise, Councilman Wolf calls them a go a chat jeep. >> Mr. Miller, your time's up."
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Mr. Labour.",
+  "after": "Mr. Laybourn",
+  "score": 0.9,
+  "context": "ugust. >> That is correct, sir. >> All right. Thank you, >> Mr. Labour. >> Thank you, Mr. Mayor. Um, the reason I asked this to be "
+ },
+ {
+  "kind": "fuzzy",
+  "before": "21101 O'Neil Avenue,",
+  "after": "2101 O'Neil Avenue",
+  "score": 0.971,
+  "context": " held May 11th, 2026 at 6:00 p.m. in city council chambers, 21101 O'Neil Avenue, Cheyenne, Wyoming, and via electronic conference meeting fo"
+ }
+]

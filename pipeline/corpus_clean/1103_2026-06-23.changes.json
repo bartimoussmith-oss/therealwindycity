@@ -1,0 +1,507 @@
+[
+ {
+  "kind": "confusion",
+  "before": "Mr. Wolf",
+  "after": "Mr. Wolfe",
+  "count": 16
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Emmens",
+  "after": "Dr. Emmons",
+  "count": 10
+ },
+ {
+  "kind": "confusion",
+  "before": "Dr. Emmens",
+  "after": "Dr. Emmons",
+  "count": 15
+ },
+ {
+  "kind": "confusion",
+  "before": "Dr. Emmons",
+  "after": "Dr. Emmons",
+  "count": 25
+ },
+ {
+  "kind": "confusion",
+  "before": "Emmens",
+  "after": "Emmons",
+  "count": 8
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Esabel",
+  "after": "Mr. Esquibel",
+  "count": 2
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Esquibel",
+  "after": "Mr. Esquibel",
+  "count": 2
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Esel",
+  "after": "Mr. Esquibel",
+  "count": 1
+ },
+ {
+  "kind": "confusion",
+  "before": "Esel",
+  "after": "Esquibel",
+  "count": 3
+ },
+ {
+  "kind": "confusion",
+  "before": "Esabel",
+  "after": "Esquibel",
+  "count": 2
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Leborn",
+  "after": "Mr. Laybourn",
+  "count": 4
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Laybourn",
+  "after": "Mr. Laybourn",
+  "count": 4
+ },
+ {
+  "kind": "confusion",
+  "before": "Leborn",
+  "after": "Laybourn",
+  "count": 11
+ },
+ {
+  "kind": "confusion",
+  "before": "Mr. Crave",
+  "after": "Mr. Segrave",
+  "count": 3
+ },
+ {
+  "kind": "confusion",
+  "before": "Dr. Renie",
+  "after": "Dr. Rinne",
+  "count": 6
+ },
+ {
+  "kind": "confusion",
+  "before": "Renie",
+  "after": "Rinne",
+  "count": 2
+ },
+ {
+  "kind": "confusion",
+  "before": "Dr. Aldridge",
+  "after": "Dr. Aldrich",
+  "count": 12
+ },
+ {
+  "kind": "confusion",
+  "before": "Aldridge",
+  "after": "Aldrich",
+  "count": 2
+ },
+ {
+  "kind": "confusion",
+  "before": "O'Neal Avenue",
+  "after": "O'Neil Avenue",
+  "count": 2
+ },
+ {
+  "kind": "confusion",
+  "before": "Laybournne",
+  "after": "Laybourn",
+  "count": 9
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Crave,",
+  "after": "Councilman Segrave",
+  "score": 0.882,
+  "context": ". discussion. >> I have one question. Uh >> Dr. Aldrich, >> Councilman Crave, uh through you. I am just want to uh confirm that the extra"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Crave.",
+  "after": "Councilman Segrave",
+  "score": 0.882,
+  "context": "with that? >> James. Captain James. >> Captain James. >> Uh Councilman Crave. Captain David Jenkins Shine Police Department. Our on call "
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Dr. Emmans.",
+  "after": "Dr. Emmons",
+  "score": 0.889,
+  "context": "e. >> Second. >> We have a motion by Dr. Aldrich, second by Dr. Emmans. >> Mr. President, I move to amend by substitute dated June "
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf.",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "nd I so move. >> Is there a second? >> Second. >> Second by Councilman Wolf. Discussion on the DAS. Discussion. >> Hearing none. Uh, cou"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Mr. Labour.",
+  "after": "Mr. Laybourn",
+  "score": 0.9,
+  "context": " Yes. >> Dr. Dr. Emmons. >> Yes. >> Mr. Esquibel. >> Hi. >> Mr. Labour. >> Hi. >> This item is unanimously adopted. Next item, plea"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Dr. Emmans.",
+  "after": "Dr. Emmons",
+  "score": 0.889,
+  "context": "ve on second reading and I so move. >> Second. >> Second by Dr. Emmans. Discussion. Dis uh Dr. Thank you, Mr. Chair. Um, I just wan"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf.",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": " So I just wanted to share that. Thank you, Dr. Emmons. Uh, Councilman Wolf. >> Uh, thank you, Mr. President, through you. Uh, just to p"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf.",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "e law contrary to Mr. Miller's uh objections. >> Thank you, Councilman Wolf. Further discussion? >> Discussion hearing? None. All in fav"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf.",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "nd I so move. >> Is there a second? >> Second. >> Second by Councilman Wolf. Discussion. Discussion. Seeing none, all in favor signify b"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Crave,",
+  "after": "Councilman Segrave",
+  "score": 0.882,
+  "context": "ifer? Go ahead. >> Mr. Christensen, you can go ahead. >> Uh Councilman Crave, can you hear me? >> Yes, sir. We can. >> Uh just for the re"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Crave,",
+  "after": "Councilman Segrave",
+  "score": 0.882,
+  "context": "ou hear me? >> Yes, sir. We can. >> Uh just for the record, Councilman Crave, just wanted to point out that the um Wallick Road resoning "
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": " facilitate a massive land sale for the political elite. As Councilman Wolf stated verbatim on the record, \"What is the benefit to the "
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Labour?",
+  "after": "Councilwoman Laybourn",
+  "score": 0.895,
+  "context": "d annexation? >> Mr. Evans. >> Uh Mr. President, for you to Councilman Labour? as there are portions of the existing sweet grass uh subdiv"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf.",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "esidential annexation. >> Thank you. Any further questions? Councilman Wolf. >> Uh thank you Mr. President through you. Um Mr. Dr. Emmon"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf.",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": " our team is here to answer any questions. >> Thank you Mr. Councilman Wolf. >> Uh Mr. Irving don't go. >> Councilman Wolf. >> Thank you"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf.",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "hank you Mr. Councilman Wolf. >> Uh Mr. Irving don't go. >> Councilman Wolf. >> Thank you Mr. President through you. Um Mr. Considering "
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "ity and this project. So, we're open to discussions. >> Mr. Councilman Wolf >> President followup, please. Thank you. Uh, through you u"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf.",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": " problems for Microsoft? Council President through you, uh, Councilman Wolf. Um, Microsoft would like to progress the project as soon as"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf.",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "ss annexation agreement? >> Council President, through you, Councilman Wolf. Um, I have read a portion. I have not completely reviewed t"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf.",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "completely reviewed the Sweetgrass annexation agreement. >> Councilman Wolf. >> Um, so you understand that that was entered into with th"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Mr. Labour's",
+  "after": "Mr. Laybourn's",
+  "score": 0.9,
+  "context": "u also understand that that uh what my motion actually it's Mr. Labour's motion and mine. Um is at this stage just a suggestion to t"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf.",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "and that part of it? >> Council President through you to uh Councilman Wolf. Yes, I understand. >> Okay. M >> Mr. President, point of or"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf.",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "support it. Thank you. >> Thank you, Councilman Escobel. Uh Councilman Wolf. >> Thank you, Mr. President. Through you, uh Mr. President,"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf.",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "the mayor and his staff would do. Okay, we have a motion by Councilman Wolf. >> Point of parlatory procedure. What What exactly is the m"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf,",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": " And do we have a second? >> Second. >> We have a motion by Councilman Wolf, a second by Councilman Laybourn. When we have a motion to a"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "ing the motion to postpone this annexation for four months. Councilman Wolf has just proposed a delay to negotiate the $50 million comm"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "is room without securing a single dollar for the taxpayers. Councilman Wolf explicitly confessed to the Microsoft representative that t"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf,",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "his city today. >> Thank you, sir. >> Mr. Mr. President, >> Councilman Wolf, >> thank you. Uh few questions for Mr. Noble uh through you"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf.",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "the opportunity to put this on public record. >> Thank you, Councilman Wolf. >> Thank you, Mr. President, through you. Thank you for you"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Mr. Labour.",
+  "after": "Mr. Laybourn",
+  "score": 0.9,
+  "context": "ybody vote I on this. Thank you. >> All right. Anyone else? Mr. Labour. Um, so we don't have any comments online from the council p"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Mr. Labour,",
+  "after": "Mr. Laybourn",
+  "score": 0.9,
+  "context": "ment. I'm trying I'm just trying to push the meeting along. Mr. Labour, we're going to have another opport opportunity after this d"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf,",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "ir votes. >> No. >> Okay. The uh hands of those in favor is Councilman Wolf, Councilman Moody, Councilman Laybourn. The motion to amend "
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf.",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "out annexation, not about data centers. >> Well, thank you, Councilman Wolf. Um, go ahead and and let's let's hear the rest of your >> A"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "ea whether that's true or not for the Highlands project. >> Councilman Wolf is her opinion, please. >> Yes. >> Further. >> Thank you. >"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf.",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "hose uh city resources by annexing the property. Thank you, Councilman Wolf. >> Mr. President, through you um to my third issue that I w"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf,",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "Bloom, >> Sarah, three to members of council. First of all, Councilman Wolf, I really appreciate all the work you put into this. I I don"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf,",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "'re speaking to or something? chair, member of council, uh, Councilman Wolf, I'm talking about Boulder, Colorado. They started with a Da"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Labour.",
+  "after": "Councilwoman Laybourn",
+  "score": 0.895,
+  "context": "t. Mr. Chairman, >> further discussion. Further discussion. Councilman Labour. [clears throat] >> Thank you, Mr. President. in the uh on t"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf,",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "Yes. And those opposed? >> No. >> No. >> Hands of the nose. Councilman Wolf, Councilman Moody, Councilman Laybourn. The action is approv"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Labor,",
+  "after": "Councilman Laybourn",
+  "score": 0.914,
+  "context": " >> No. >> Hands of the nose, please. Uh, Councilman Moody, Councilman Labor, the action is approved. Uh, I've been asked uh that we take"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "hting act going through the whole council process is waved. Councilman Wolf defended the statutory evasion, stating verbatim, \"The legi"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Lelayourne",
+  "after": "Councilman Laybourn",
+  "score": 0.9,
+  "context": " Furthermore, you are doing this based on a temporal fraud. Councilman Lelayourne exposed the developer timeline, stating verbatim, \"icrosoft"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf,",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": " I. >> And those opposed. >> Hands on the nose, please. Uh, Councilman Wolf, Moody, and Laybourn. The motion is approved. Next item, ple"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf.",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "ve on second reading and I so move. >> Second. >> Second by Councilman Wolf. Discussion. discussion. Seeing none, all in favor signify b"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "eeded residential housing for a corporate ghost project. As Councilman Wolf questioned regarding this massive undefined timeline, if th"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Labour.",
+  "after": "Councilwoman Laybourn",
+  "score": 0.895,
+  "context": "postpone. Discussion on the postponement. >> Discussion. Uh Councilman Labour. >> Could [clears throat] we have an explanation of uh the m"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Dr. Reinnie.",
+  "after": "Dr. Rinne",
+  "score": 0.889,
+  "context": "econd. >> There is >> point of order, Mr. President. >> Uh, Dr. Reinnie. >> Thank you. Um, historically when something didn't get a "
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Labour.",
+  "after": "Councilwoman Laybourn",
+  "score": 0.895,
+  "context": "'ll be an I vote. Thank you. >> Thank you. Anyone else? Uh, Councilman Labour. >> Mr. President, I believe uh item 32A was pulled off the "
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf.",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": "d. >> We have a second by Councilman White. Discussion. Uh, Councilman Wolf. >> Uh, thank you, Mr. President. Through you. Um, just a bi"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf.",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": " vote yes uh on this. So thank you. >> Thank you. Thank you Councilman Wolf. Further discussion. >> Councilman Esquibel. No >> I'm sorry"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Laram County",
+  "after": "Laramie County",
+  "score": 0.923,
+  "context": "son, Kathy Emmons, Jeffrey O'Halerin, and Mike Bates to the Laram County Community Juvenile Services Joint Powers Board, Anthony Ort"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Laram County",
+  "after": "Laramie County",
+  "score": 0.923,
+  "context": "tem, please. >> 35B. Appointments of Michael Sanchez to the Laram County Community Juvenile Services Joint Powers Board. Bria Hammoc"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "21101 O'Neil Avenue,",
+  "after": "2101 O'Neil Avenue",
+  "score": 0.971,
+  "context": "held July 13, 2026 at 6 o'clock PM in city council chambers 21101 O'Neil Avenue, Cheyenne, Wyoming, and via electronic conference meeting fo"
+ },
+ {
+  "kind": "fuzzy",
+  "before": "21101 O'Neil Avenue,",
+  "after": "2101 O'Neil Avenue",
+  "score": 0.971,
+  "context": "held July 13, 2026 at 6 o'clock PM in city council chambers 21101 O'Neil Avenue, Cheyenne, Wyoming and via electronic conference meeting to "
+ },
+ {
+  "kind": "fuzzy",
+  "before": "Councilman Wolf",
+  "after": "Councilman Wolfe",
+  "score": 0.968,
+  "context": " this um upcoming Saturday will be uh Super Day and that uh Councilman Wolf and I will be manning a booth at Super Day for the city cou"
+ }
+]
