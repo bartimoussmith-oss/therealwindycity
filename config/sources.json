@@ -1,0 +1,57 @@
+{
+  "identity": {
+    "user_agent": "CheyenneCivicTransparencyEngine/0.1 (public-records research; contact: you@example.org)",
+    "contact": "you@example.org  <-- PUT YOUR REAL CONTACT HERE; honest UAs get blocked less",
+    "delay_seconds_per_host": 3,
+    "max_docs_per_source_per_run": 40
+  },
+  "sources": [
+    {
+      "name": "city_council_minutes_agendas",
+      "type": "html",
+      "url": "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas",
+      "enabled": true,
+      "notes": "CONFIRMED 2026-09-05. Covers Council/Finance/Public Services/COW/Work Sessions. LIVE-RUN FINDING: the actual agenda packets/minutes are served from cheyenne.granicus.com, whose robots.txt disallows automated access — the engine refused them by design (see LEGAL.md). Get those PDFs by browser, by bulk-access request to the City Clerk, or by PRA request."
+    },
+    {
+      "name": "city_news_articles",
+      "type": "html",
+      "url": "https://www.cheyennecity.org/News-articles",
+      "enabled": true,
+      "notes": "City press releases; closures, contract awards, public hearing notices."
+    },
+    {
+      "name": "cap_city_news_rss",
+      "type": "rss",
+      "url": "https://capcity.news/feed",
+      "enabled": true,
+      "notes": "WordPress feed (standard /feed path). Primary beat reporter on warrants, moratorium, referendum, Latigo."
+    },
+    {
+      "name": "wte_local_rss",
+      "type": "rss",
+      "url": "http://www.wyomingnews.com/search/?f=rss&l=50&s=start_time&sd=desc",
+      "enabled": true,
+      "notes": "TownNews search-RSS. FIRST-RUN FINDING 2026-09-05: endpoint returned HTTP 429 (rate-limited). Run at most ~once/day, identify yourself in the UA, or leave disabled and read in a browser."
+    },
+    {
+      "name": "laramie_county_main",
+      "type": "html",
+      "url": "https://www.laramiecountywy.gov/",
+      "enabled": false,
+      "notes": "DISABLED pending verification: /AgendaCenter and /Agenda-Center both 404 on this CMS. Confirm the commissioners' agenda path manually, then enable."
+    },
+    {
+      "name": "bopu_board",
+      "type": "html",
+      "url": "https://www.cheyennebopu.org/",
+      "enabled": false,
+      "notes": "DISABLED pending verification of board minutes/agendas path. Owner of the fill-and-flush discharge policy, so worth wiring correctly."
+    }
+  ],
+  "document_link_patterns": [
+    "agenda", "minutes", "packet", "ordinance", "resolution",
+    "staff.?report", "application", "zone.?change", "annexation",
+    "\\.pdf($|\\?)", "\\.docx?($|\\?)", "\\.xlsx?($|\\?)", "\\.csv($|\\?)", "\\.txt($|\\?)"
+  ]
+}
