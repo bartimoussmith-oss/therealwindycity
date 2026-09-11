@@ -60,7 +60,7 @@ Coordination is not optional here.
 - stage: what step you are on RIGHT NOW (update me at every major step)
 - scope: paths this claim covers
 - started: 2026-09-10T09:20Z
-- updated: 2026-09-11T18:45Z
+- updated: 2026-09-10T09:20Z
 - notes: (coordination messages append here as "- 09:20Z name: ...")
 ```
 
