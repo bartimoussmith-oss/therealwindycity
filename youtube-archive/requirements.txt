@@ -1,0 +1,8 @@
+# Cheyenne archive toolkit
+requests>=2.31
+tqdm>=4.66
+pypdf>=4.0  # PDF page counts in the documents manifest
+# YouTube upload only:
+google-api-python-client>=2.100
+google-auth-httplib2>=0.1.0
+google-auth-oauthlib>=1.2.0
