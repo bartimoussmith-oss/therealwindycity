@@ -3,9 +3,9 @@
 One Streamlit process, two faces, switched from the sidebar (deep-linkable
 with ?face=index):
 
-  * Windy City Ledger — the working console. It opens on a looping reel
+  * Ledger HQ — the working console. It opens on a looping reel
     of the most contentious moments spoken at the meetings (autoplay
-    muted, sourced chapter by chapter), then the Start Here guide — an
+    muted, sourced chapter by chapter), then the Choose Your Mission guide — an
     adaptive six-stage wizard that drills each
     viewer down into the parts of the record that touch them —
     and the sidebar groups the views
@@ -22,6 +22,10 @@ with ?face=index):
 
 streamlit_app.py and Transparency_Index_App.py are kept as identical twins
 on purpose: whichever one Streamlit Cloud points at, the app boots.
+
+Skinned as HEROES OF THE PUBLIC RECORD (owner-directed comic-book
+re-theme, 2026-09-11): presentation only — every query, widget, and
+behavior is unchanged, and the twins are still byte-identical.
 """
 
 # Contributors and agents: READ-FIRST.md at the repo root is the coordination
@@ -54,8 +58,8 @@ LEGACY_DB = ROOT / "cheyenne_watchdog.db"
 VERIF_JSON = ROOT / "data" / "vault_verification.json"
 CORPUS_DIR = ROOT / "pipeline" / "corpus"
 
-st.set_page_config(page_title="The Real Windy City",
-                   page_icon="🌬", layout="wide")
+st.set_page_config(page_title="The Real Windy City — Heroes of the Public Record",
+                   page_icon="🦸", layout="wide")
 
 # =========================================================================
 # data plumbing (shared)
@@ -178,15 +182,307 @@ def _vault_ver() -> dict:
     return _verification(str(ROOT), json_mtime)
 
 
+# =========================================================================
+# HEROES OF THE PUBLIC RECORD — comic-universe skin (presentation only)
+# =========================================================================
+# Owner-directed re-theme (2026-09-11). This block adds a stylesheet, a
+# cover masthead, the Hero Roster, and the Join-the-Roster intake. It
+# changes NO query, widget, or behavior anywhere else in this file.
+# Twins rule: edit streamlit_app.py, then copy it byte-for-byte over
+# Transparency_Index_App.py — never let them diverge.
+
+_COMIC_CSS = """<style>
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:ital,wght@0,400;0,700;1,400&display=swap');
+.stApp{background-color:#f4ecd8;
+background-image:radial-gradient(#ddd2b8 1.2px,transparent 1.3px);
+background-size:15px 15px}
+.stApp h1,.stApp h2,.stApp h3{font-family:'Bangers',Impact,'Arial Black',sans-serif;
+letter-spacing:.04em;text-transform:uppercase;color:#141414}
+.stApp a{color:#b4432f !important;font-weight:700}
+.rv-cover{background:#141414;color:#f4ecd8;border:4px solid #0a0a0a;
+box-shadow:8px 8px 0 #b4432f;padding:22px 22px 16px;margin:6px 0 18px;
+transform:rotate(-.4deg)}
+.rv-kicker{font-family:'Comic Neue','Comic Sans MS',cursive;font-weight:700;
+font-size:.85rem;letter-spacing:.35em;color:#ffd93b}
+.rv-title{font-family:'Bangers',Impact,'Arial Black',sans-serif;
+font-size:clamp(40px,6.5vw,76px);line-height:1;margin:6px 0 4px;color:#fff;
+text-shadow:3px 3px 0 #b4432f,6px 6px 0 #0a0a0a}
+.rv-issue{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0}
+.rv-issue span{background:#ffd93b;color:#141414;font-family:'Bangers',Impact,sans-serif;
+font-size:1rem;letter-spacing:.08em;padding:2px 12px;border:2px solid #0a0a0a;
+box-shadow:3px 3px 0 #000}
+.rv-tagline{font-family:'Comic Neue','Comic Sans MS',cursive;font-style:italic;
+font-size:1.05rem;color:#f4ecd8}
+.rv-strip{margin-top:12px;background:#b4432f;color:#fff;font-weight:700;
+font-size:.85rem;letter-spacing:.04em;padding:6px 12px;border:2px solid #0a0a0a}
+.rv-hero{background:linear-gradient(135deg,#ffd93b 0%,#ffb52e 60%,#f08a1d 100%);
+border:4px solid #0a0a0a;box-shadow:8px 8px 0 #0a0a0a;padding:20px;margin:14px 0}
+.rv-hero h2{margin:0;font-size:clamp(30px,4.5vw,52px);color:#141414;
+text-shadow:2px 2px 0 #fff}
+.rv-hero .aka{font-family:'Comic Neue','Comic Sans MS',cursive;font-weight:700}
+.rv-stats{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.rv-stats span{background:#141414;color:#ffd93b;font-family:'Bangers',Impact,sans-serif;
+font-size:1.15rem;letter-spacing:.05em;padding:4px 14px;border:2px solid #0a0a0a;
+box-shadow:3px 3px 0 rgba(0,0,0,.35)}
+.rv-card{background:#fffdf7;border:3px solid #0a0a0a;box-shadow:6px 6px 0 #0a0a0a;
+padding:14px 16px;margin:10px 0}
+.rv-card h3{margin:0 0 6px;font-size:1.5rem}
+.rv-card p{margin:6px 0;font-size:.95rem}
+.rv-power{display:inline-block;background:#141414;color:#fff;font-weight:700;
+font-size:.78rem;letter-spacing:.03em;padding:2px 10px;margin:2px 4px 2px 0;
+border:2px solid #0a0a0a}
+.rv-pow{display:inline-block;background:#e33e2b;color:#fff;
+font-family:'Bangers',Impact,sans-serif;font-size:1.3rem;letter-spacing:.06em;
+padding:14px 22px;margin:4px 12px 4px 0;transform:rotate(-6deg);
+clip-path:polygon(50% 0%,61% 12%,75% 5%,79% 19%,94% 17%,93% 32%,107% 35%,100% 47%,110% 58%,97% 63%,100% 78%,86% 78%,83% 93%,70% 88%,61% 100%,53% 88%,39% 95%,36% 81%,21% 83%,22% 68%,8% 65%,14% 53%,4% 42%,17% 37%,14% 22%,28% 22%,32% 8%,44% 13%)}
+.rv-oath{background:#141414;color:#ffd93b;border:3px solid #0a0a0a;
+box-shadow:6px 6px 0 #b4432f;padding:14px 18px;margin:14px 0;text-align:center;
+font-family:'Bangers',Impact,sans-serif;font-size:clamp(20px,3vw,30px);
+letter-spacing:.08em}
+.rv-src{font-size:.8rem;color:#5a6672}
+div[data-testid="stMetric"]{background:#fffdf7;border:3px solid #0a0a0a;
+box-shadow:5px 5px 0 #0a0a0a;padding:10px;transform:rotate(-.4deg)}
+div[data-testid="stMetricValue"]{font-family:'Bangers',Impact,sans-serif}
+div[data-testid="stButton"] button,div[data-testid="stLinkButton"] a{
+font-family:'Bangers',Impact,'Arial Black',sans-serif !important;
+font-size:1.1rem !important;letter-spacing:.05em !important;text-transform:uppercase;
+background:#ffd93b !important;color:#141414 !important;
+border:3px solid #0a0a0a !important;border-radius:0 !important;
+box-shadow:4px 4px 0 #0a0a0a !important}
+div[data-testid="stButton"] button:hover,div[data-testid="stLinkButton"] a:hover{
+transform:translate(-1px,-1px);box-shadow:5px 5px 0 #0a0a0a !important}
+button[data-testid="stTab"]{font-weight:800 !important;text-transform:uppercase;
+letter-spacing:.03em}
+button[data-testid="stTab"][aria-selected="true"]{color:#b4432f !important}
+div[data-testid="stExpander"]{border:2px solid #0a0a0a;background:#fffdf7}
+</style>"""
+
+
+def _comic_boot():
+    """Inject the comic stylesheet once per session (idempotent)."""
+    if st.session_state.get("_comic_booted"):
+        return
+    st.session_state["_comic_booted"] = True
+    st.markdown(_COMIC_CSS, unsafe_allow_html=True)
+
+
+def _comic_masthead():
+    """Cover banner. Static HTML — no widgets, no state, no queries."""
+    st.markdown(
+        """<div class="rv-cover">
+<div class="rv-kicker">THE REAL WINDY CITY PRESENTS</div>
+<div class="rv-title">HEROES OF THE PUBLIC RECORD</div>
+<div class="rv-issue"><span>ISSUE #001</span><span>CHEYENNE · WYOMING</span>
+<span>EVERY PANEL SOURCED</span></div>
+<div class="rv-tagline">Wind belongs on the prairie. Not in the minutes.</div>
+<div class="rv-strip">🦸 THE ROSTER IS REAL — mic'd, minuted, or published, every
+one of them · NO SECRET IDENTITIES: the record is the superpower ·
+<strong>NEW HEROES WANTED</strong> — your three minutes are waiting ↓</div>
+</div>""",
+        unsafe_allow_html=True,
+    )
+
+
+_GH = "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/"
+_TIP = ("https://github.com/bartimoussmith-oss/therealwindycity/"
+        "issues/new?template=tip.md")
+
+
+def _view_roster():
+    st.subheader("🦸 Meet the Roster — heroes of the public record")
+    st.markdown(
+        "Every hero below earned their panel **on the record** — quoted from "
+        "meeting tapes, minutes, or published reporting, with the canon linked "
+        "under each card. Powers are metaphor. The record is not.")
+    st.markdown(
+        """<div class="rv-hero"><h2>CHARLES MILLER</h2>
+<div class="aka">“THE PERMANENT RECORD” · a.k.a. THE ZOOM CALLER ·
+HEADLINER — Legal / Record Wing</div>
+<div class="rv-stats"><span>484 STATEMENTS</span><span>59 MEETINGS</span>
+<span>132 INTERRUPTIONS SURVIVED</span><span>20 MONTHS</span>
+<span>7H 44M LONGEST NIGHT</span></div>
+<div><span class="rv-pow">POW!</span>
+<span class="rv-power">🎙 THE LONG MIC</span>
+<span class="rv-power">📜 VERBATIM RECALL</span>
+<span class="rv-power">⚖ THE TOPANGA KEY</span>
+<span class="rv-power">🎯 ADMISSION HUNTING</span>
+<span class="rv-power">🌙 THE 1:41 A.M. CLOSER</span></div>
+<p><b>Origin story:</b> the Farm Wars (late 2025) → the Highlands Circuit —
+seven meetings, ≈68 documented turns → the July 13 finale, adjourned
+1:41 a.m.: <i>“The trap is sprung. See you in district court.”</i>
+The city's own lawyer confirmed the substance of his central doctrine as
+Wyoming law on July 6 — disputing only its name.</p>
+</div>""",
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        f"[📖 Full dossier: `miller-dossier.md`]({_GH}miller-dossier.md) · "
+        f"[🎙 The Zoom Caller]({_GH}miller-the-zoom-caller.md) · "
+        f"[🗄 Canon index]({_GH}miller-canon-index.md)")
+    left, right = st.columns(2)
+    with left:
+        st.markdown(
+            """<div class="rv-card"><h3>📋 THE PETITIONERS</h3>
+<p><b>Electoral Wing</b> — Madrid (referendum organizer; the Madrid
+hold petition) · Huylar · Hasenauer · Chirro (Ward 1). Madrid speaks
+the doctrine on the mic himself: <i>“arbitrary and capricious because
+there's no plan at all.”</i></p>
+<span class="rv-power">POWER: THE GROUND GAME</span></div>""",
+            unsafe_allow_html=True,
+        )
+        st.markdown(
+            """<div class="rv-card"><h3>🎤 THE PUBLIC BODY</h3>
+<p><b>Street Wing</b> — 20+ repeat mic-takers filling hours: Scigliano,
+McAdams, Nicely, Leech, Kamargo, Tolman, Duncan… plus Don Taylor, who
+read the national numbers into the record (833 groups · 49 states ·
+300+ bills). Politics on the Plaza. The Capitol, 7/19.</p>
+<span class="rv-power">POWER: BODIES IN THE ROOM</span></div>""",
+            unsafe_allow_html=True,
+        )
+        st.markdown(
+            """<div class="rv-card"><h3>⚙ THE ENGINE</h3>
+<p><b>Archive Wing</b> — fingerprints every published page, catches
+silent edits by hash, and sweeps every six hours (hourly on meeting
+nights). It never sleeps so the record never blinks.</p>
+<span class="rv-power">POWER: NEVER SLEEPS</span></div>""",
+            unsafe_allow_html=True,
+        )
+    with right:
+        st.markdown(
+            """<div class="rv-card"><h3>🗳 THE DISSENTING BLOC</h3>
+<p><b>3 of 10</b> — Wolf · Moody · Laybourn. The moratorium (Moody the
+lone yes, 8–1) · the $50M community-benefits push · the delay
+amendments. Every one failed. Every one is <b>on the record</b>.</p>
+<span class="rv-power">POWER: THE RECORDED NO</span></div>""",
+            unsafe_allow_html=True,
+        )
+        st.markdown(
+            """<div class="rv-card"><h3>📡 THE SIGNAL</h3>
+<p><b>Media Wing</b> — “The Real Windy City”: founded March 30, 2026,
+<i>before</i> the Highlands petition existed. 91 followers, 16K-view
+flagship reel, group-seeded reach — plus the Citizen Action Directory:
+how to fight city hall for $0.00.</p>
+<span class="rv-power">POWER: THE 16K REACH</span></div>""",
+            unsafe_allow_html=True,
+        )
+        st.markdown(
+            """<div class="rv-card"><h3>📰 THE PRESS CORPS</h3>
+<p><b>Fourth-Estate Allies</b> — the published reporting this ledger
+stands on: Cap City News · Cowboy State Daily · Wyoming Tribune Eagle ·
+and the legislators who answered on the record.</p>
+<span class="rv-power">POWER: INK THAT STICKS</span></div>""",
+            unsafe_allow_html=True,
+        )
+    st.markdown(
+        f"<p class='rv-src'>Roster mapped from the movement's own ecosystem map "
+        f"(`miller-dossier.md` §10) + the published timeline. The Roster honors "
+        f"on-the-record acts — mic, minutes, or ink. "
+        f"[Read the map]({_GH}miller-dossier.md).</p>",
+        unsafe_allow_html=True,
+    )
+    with st.expander("🦹 Know the enemy — FORCES, not faces"):
+        st.markdown(
+            "This book has no secret villains with names. People get **quoted**; "
+            "**forces** get fought:")
+        st.markdown(
+            "- 🌫 **THE SILENT EDIT** — published pages that change with no "
+            "changelog. (This ledger fingerprints every one.)\n"
+            "- 🔨 **THE GAVEL** — 132 interruptions and counting. Every cut "
+            "microphone is an exhibit.\n"
+            "- 🌀 **THE MAZE** — portals citizens can't navigate. The archive "
+            "exists to walk them through it.\n"
+            "- ✅ **THE RUBBER STAMP** — 8–1s and 0–9s without findings. The "
+            "Roster's answer is always the same: put it on the record.\n"
+            "- ⬛ **THE REDACTION** — what they won't print, the Engine "
+            "re-checks every six hours.")
+    st.markdown('<div class="rv-oath">READ THE STATUTE · QUOTE THE RECORD '
+                '· SIGN YOUR NAME</div>', unsafe_allow_html=True)
+    st.button("✋ Join the Roster", key="roster_cta", on_click=_join_jump,
+              use_container_width=True)
+
+
+def _join_jump():
+    """Sidebar + roster CTAs land here (runs pre-script, like _guide_jump)."""
+    st.session_state["ledger_section"] = "✋ Join the Roster"
+
+
+def _view_recruit():
+    st.subheader("✋ Your Power Awaits — new heroes wanted")
+    st.markdown(
+        """<div class="rv-hero"><h2>EVERYBODY'S GOT IT IN THEM</h2>
+<p>Courage is the only origin story that matters. Every power on the
+Roster started the same way: <b>one citizen, one mic, three minutes.</b>
+No cape required. No permission needed. The mic is public — and the
+next panel is yours.</p>
+</div>""",
+        unsafe_allow_html=True,
+    )
+    st.markdown("### ⚡ Choose your power")
+    c1, c2, c3 = st.columns(3)
+    with c1:
+        st.markdown(
+            """<div class="rv-card"><h3>🎙 TAKE THE MIC</h3>
+<p>Three minutes at public comment moves text — 'verify' survived a
+warrant ordinance because somebody showed up and said the words.</p></div>""",
+            unsafe_allow_html=True,
+        )
+        st.link_button("📻 Remote-speaker kit",
+                       f"{_GH}remote-speaker-kit-2026-08-24.md")
+        st.link_button("🗒 Study a speaking file",
+                       f"{_GH}MILLER-speaking-file-8-24-26.md")
+    with c2:
+        st.markdown(
+            """<div class="rv-card"><h3>📨 SEND A SIGNAL</h3>
+<p>See something first? A URL, a document hash, a meeting timestamp, a
+verbatim quote — verifiable tips only. Never rumors.</p></div>""",
+            unsafe_allow_html=True,
+        )
+        st.link_button("📥 File a tip (issue form)", _TIP)
+        st.markdown(
+            """<div class="rv-card"><h3>📜 FILE THE PAPERWORK</h3>
+<p>Wyoming Public Records Act drafts — the machine drafts, <b>you</b>
+sign and send. Open ✉️ Signals &amp; Paperwork → Paperwork Arsenal.</p>
+</div>""",
+            unsafe_allow_html=True,
+        )
+    with c3:
+        st.markdown(
+            """<div class="rv-card"><h3>🎬 CUT THE TAPE</h3>
+<p>Watch the montages, share the reels, learn the exhibits. Open the
+<b>Screening Room</b> page (sidebar, under the console).</p></div>""",
+            unsafe_allow_html=True,
+        )
+        st.page_link("pages/1_Screening_Room.py", label="🎬 Open Screening Room")
+        st.markdown(
+            """<div class="rv-card"><h3>🗳 SHOW UP</h3>
+<p>Meetings run Monday/Tuesday nights — the Engine sweeps hourly those
+nights for a reason. And circle <b>November 3, 2026</b>.</p></div>""",
+            unsafe_allow_html=True,
+        )
+    st.markdown("### 🗺 Your first mission (this week)")
+    st.markdown(
+        "1. **Watch one tape** — 🎬 The Tapes → Montage Theater (start with "
+        "THE CALLER).\n"
+        "2. **Read one fight** — 📰 The Daily Ledger, top alert, then the "
+        "linked record.\n"
+        "3. **Take one action** — send a signal, file a records request, or "
+        "take the mic. Then tell the Roster how it went (same mailbox).")
+    st.markdown('<div class="rv-oath">READ THE STATUTE · QUOTE THE RECORD '
+                '· SIGN YOUR NAME</div>', unsafe_allow_html=True)
+    st.caption("No affiliation with any individual, candidate, or committee — "
+               "then, now, always. Powers are metaphor; the record is real.")
+
+
+
 def _view_home():
     page = ROOT / "public" / "index.html"
-    st.caption("The static ledger, regenerated every scheduler cycle.")
+    st.caption("📰 The front page — reprinted fresh every scheduler cycle.")
     if page.exists():
         components.html(page.read_text(), height=3200, scrolling=True)
     else:
         st.info("public/index.html not built yet — civic-cycle builds it.")
 def _view_alerts():
-    st.subheader("Watchlist alerts — verbatim quotes, linked records")
+    st.subheader("🚩 Action Alerts — tripwires with verbatim quotes + linked records")
     rows = _engine_q("SELECT a.created_at, a.term, a.snippet, d.url, d.title "
                      "FROM alerts a JOIN documents d ON d.id=a.document_id "
                      "ORDER BY a.id DESC LIMIT 300")
@@ -197,7 +493,7 @@ def _view_alerts():
             st.markdown(f"> {r['snippet']}")
             st.markdown(f"[source record]({r['url']})")
 def _view_edits():
-    st.subheader("Silent edits — SHA-256 drift on already-published pages")
+    st.subheader("⚠️ Shape-Shifters Caught — silent edits fingerprinted by SHA-256 drift")
     rows = _engine_q("SELECT v.captured_at, v.seq, v.change_summary, d.url, d.title "
                      "FROM versions v JOIN documents d ON d.id=v.document_id "
                      "WHERE v.seq>1 ORDER BY v.id DESC")
@@ -232,7 +528,7 @@ def _view_paperwork():
 
 # ---------- digest ----------------------------------------------------
 def _view_digest():
-    st.subheader("📰 Digest — what changed lately")
+    st.subheader("📰 The Daily Ledger — what moved lately")
     week = (datetime.now(timezone.utc) - timedelta(days=7)).strftime(
         "%Y-%m-%dT%H:%M:%SZ")
     new_alerts = _engine_q("SELECT COUNT(*) n FROM alerts WHERE created_at>=?",
@@ -244,7 +540,7 @@ def _view_digest():
     a, b, c = st.columns(3)
     a.metric("New watchlist hits (7 days)", new_alerts)
     b.metric("New documents fingerprinted (7 days)", new_docs)
-    c.metric("Silent edits (7 days)", new_edits)
+    c.metric("Shape-shifters (7 days)", new_edits)
     st.markdown("**Latest documents on the wire**")
     st.dataframe(_engine_q("SELECT title, source, last_checked, size_bytes "
                            "FROM documents ORDER BY last_checked DESC LIMIT 15"),
@@ -261,7 +557,7 @@ def _view_digest():
 def _view_battles():
     ver = _vault_ver()
     st.warning(VAULT_BANNER)
-    st.subheader("⚔️ Statutory Battles — public-comment interventions")
+    st.subheader("⚔️ Battle Records — every statutory clash, blow by blow")
     rows = _legacy_q(VAULT_QUERIES["public_comment_battles"])
     for i, r in enumerate(rows):
         v = _verdict(ver, "public_comment_battles", i)
@@ -279,7 +575,7 @@ def _view_battles():
 def _view_veracity():
     ver = _vault_ver()
     st.warning(VAULT_BANNER)
-    st.subheader("🔍 Veracity Ledger — documented-say/unsay pairs")
+    st.subheader("🔍 The Lie Detector — documented say/unsay pairs")
     for i, r in enumerate(_legacy_q(VAULT_QUERIES["veracity_contradictions"])):
         with st.container(border=True):
             st.markdown(f"**{r['topic']}** — {r['contradiction_type']}")
@@ -302,7 +598,7 @@ def _view_veracity():
 def _view_vouchers():
     ver = _vault_ver()
     st.warning(VAULT_BANNER)
-    st.subheader("🧾 Voucher Audit — money claims tracked")
+    st.subheader("🧾 The Money Trail — every dollar claim, tracked")
     rows = _legacy_q(VAULT_QUERIES["voucher_forensics"])
     for i, r in enumerate(rows):
         v = _verdict(ver, "voucher_forensics", i)
@@ -324,7 +620,7 @@ def _view_vouchers():
 def _view_environment():
     ver = _vault_ver()
     st.warning(VAULT_BANNER)
-    st.subheader("☣️ Environmental Matrix")
+    st.subheader("☣️ The Toxic Files — environmental evidence")
     rows = _legacy_q(VAULT_QUERIES["environmental_zones"])
     for i, r in enumerate(rows):
         v = _verdict(ver, "environmental_zones", i)
@@ -333,7 +629,7 @@ def _view_environment():
 
 # ---------- minutes archive -------------------------------------------
 def _view_minutes():
-    st.subheader("📜 Minutes Archive — search 17 years of the record")
+    st.subheader("📜 17 Years of Tapes — search the whole minutes archive")
     if not CORPUS_DIR.is_dir():
         st.info("The transcript corpus (pipeline/corpus/) isn't in this "
                 "checkout. It rides along automatically once the repo "
@@ -357,12 +653,12 @@ def _view_minutes():
 
 # ---------- tips ------------------------------------------------------
 def _view_tips():
-    st.subheader("💡 Got something the ledger should see?")
+    st.subheader("💡 Send a Signal — got something the Roster should see?")
     st.markdown(
         "The machine watches published sources; people see things first. A good "
         "tip is **verifiable**: a URL, a document (with `sha256sum`), a meeting "
         "number + timestamp, or a verbatim quote — never a rumor.")
-    st.link_button("📥 File a tip (GitHub issue form)",
+    st.link_button("📥 Send a Signal — file a tip (GitHub issue form)",
                    "https://github.com/bartimoussmith-oss/therealwindycity/"
                    "issues/new?template=tip.md")
     st.caption("Tips are read by a human. This mailbox never triggers letters or "
@@ -370,7 +666,7 @@ def _view_tips():
 
 # ---------- canon library ---------------------------------------------
 def _view_canon():
-    st.subheader("🗄 The Canon Library — every dossier in the repo")
+    st.subheader("🗄 The Longboxes — every dossier in the canon")
     st.caption("Root-level Markdown only. The uploads/ archive (~70 MB) stays "
                "out of the reader on purpose — use intake.py's reports for it.")
     docs = []
@@ -403,7 +699,7 @@ def _view_canon():
             else:
                 st.markdown(d["body"])
 def _view_video():
-    st.subheader("🎬 Video Vault — the record on tape")
+    st.subheader("🎬 Montage Theater — the record on tape")
     st.caption("Produced segments and evidence clips cut from the City of "
                "Cheyenne's official meeting video (public record), plus "
                "every indexed city meeting on the city's YouTube channel.")
@@ -416,7 +712,7 @@ def _view_video():
 
     segs = sorted(REN.glob("*.mp4")) if REN.is_dir() else []
     if segs:
-        st.markdown("**The Record Speaks — produced segments (captioned)**")
+        st.markdown("**🔥 Origin Tapes — produced segments (captioned)**")
         seg = st.selectbox("Segment", segs,
                            format_func=lambda p: p.stem.replace("_", " "),
                            key="vv_seg")
@@ -474,7 +770,7 @@ def _view_video():
 # Sidebar sections: label -> [(tab label, view function)]. Views render inside
 # per-section sub-tabs; single-view sections skip the sub-tab strip entirely.
 # ---------------------------------------------------------------------------
-# Start Here guide — an adaptive question wizard. Six stages: who → what →
+# Choose-Your-Mission guide — an adaptive question wizard. Six stages: who → what →
 # specifics → drill-down → depth → brief. Deliberately a plain, auditable
 # rules engine (no model, no tracking): every recommendation carries its
 # because-of, the fired rules land in an audit panel, and answers live only
@@ -638,7 +934,7 @@ def _guide_answers():
 
 
 def _view_guide():
-    st.subheader("🧭 Start here — get *your* brief, not the whole haystack")
+    st.subheader("🧭 Choose Your Mission — get *your* brief, not the whole haystack")
     st.caption("A short adaptive interview: who you are, what touches you, "
                "how deep you want to go. Plain rules under the hood — the "
                "audit panel shows every rule that fired. Nothing you pick "
@@ -719,32 +1015,32 @@ def _render_brief():
         add("Follow the money — the voucher forensics",
             "The vault tracks spending line by line with the receipts "
             "attached — worth ten minutes of anyone's property-tax bill.",
-            "🗃 Legacy vault", m,
-            nxt=("Then search the minutes for “voucher”", "🔎 The record",
+            "🗃 Case Files", m,
+            nxt=("Then search the minutes for “voucher”", "🔎 Evidence Vault",
                  "voucher", None))
         add("Watch “S2: The 74M List”",
             "The film cut of the capital-project list — the fastest way to "
             "see what the money argument is actually about.",
-            "🎬 Video vault", ["taxes and spending"])
+            "🎬 The Tapes", ["taxes and spending"])
         add("Search 17 years of minutes for “6th penny”",
             "Every time the sales-tax question came up, verbatim, with "
-            "meeting dates attached.", "🔎 The record",
+            "meeting dates attached.", "🔎 Evidence Vault",
             ["taxes and spending"], q="6th penny")
         if sub.get("money") == "m-voucher":
             add("The voucher tables, row by row",
-                "You chose line items — the Vouchers view is the table "
-                "itself, sources linked per row.", "🗃 Legacy vault",
+                "You chose line items — the Money Trail view is the table "
+                "itself, sources linked per row.", "🗃 Case Files",
                 ["you chose voucher line items"])
         if sub.get("money") == "m-capital":
             add("The capital-projects paper trail",
                 "You chose the capital list — here's every capital motion "
-                "in the record.", "🔎 The record",
+                "in the record.", "🔎 Evidence Vault",
                 ["you chose the capital list"], q="capital")
         if sub.get("money") == "m-pra":
             add("The PRA drafting bench",
                 "You chose to pull the receipts yourself — these are "
                 "filled-in Wyoming PRA drafts waiting for a human to send.",
-                "✉️ Intake", ["you chose: pull the receipts yourself"])
+                "✉️ Signals & Paperwork", ["you chose: pull the receipts yourself"])
     if "water" in tags:
         m = ["you flagged water"]
         if _gval("g_tap"):
@@ -752,30 +1048,30 @@ def _render_brief():
         add("Your water, on the record",
             "The environmental matrix keeps the water and groundwater items "
             "in one place, each linked to its source document.",
-            "🗃 Legacy vault", m)
+            "🗃 Case Files", m)
         add("Search the minutes for “water”",
             "Moratorium votes, utility extensions, supply studies — the "
             "paper trail behind whatever ends up in your bill.",
-            "🔎 The record", ["you flagged water"], q="water")
+            "🔎 Evidence Vault", ["you flagged water"], q="water")
         if sub.get("water") == "w-supply":
             add("BOPU — the water utility's own record",
                 "You chose supply — every mention of the Board of Public "
-                "Utilities, verbatim.", "🔎 The record",
+                "Utilities, verbatim.", "🔎 Evidence Vault",
                 ["you chose supply and drought capacity"], q="BOPU")
         if sub.get("water") == "w-ground":
             add("Groundwater, everywhere it appears",
                 "You chose contamination risk — this is the aquifer paper "
-                "trail.", "🔎 The record",
+                "trail.", "🔎 Evidence Vault",
                 ["you chose groundwater risk"], q="groundwater")
         if sub.get("water") == "w-bill":
             add("What goes into a water bill",
                 "You chose cost — the rate and fee discussions, in the "
-                "dossiers.", "🔎 The record",
+                "dossiers.", "🔎 Evidence Vault",
                 ["you chose what you're paying"], canon="water")
         if sub.get("water") == "w-hookups":
             add("Utility extensions — who gets hooked up",
                 "You chose new-development hookups — every extension the "
-                "council has voted on.", "🔎 The record",
+                "council has voted on.", "🔎 Evidence Vault",
                 ["you chose development hookups"], q="utility extension")
     if "datacenter" in tags:
         m = ["you flagged the data-center boom"]
@@ -783,46 +1079,46 @@ def _render_brief():
             m.append("you live near the corridor")
         add("The data-center boom, filed and footnoted",
             "Annexations, zoning, the ranch-land fights — the dossier line "
-            "that grew this whole archive. Start with Battles and the "
-            "data-center brief.", "🗃 Legacy vault", m)
+            "that grew this whole archive. Start with Battle Records and the "
+            "data-center brief.", "🗃 Case Files", m)
         add("Watch “S1: 48 Hours”",
             "The cut that shows how fast the annexation votes moved.",
-            "🎬 Video vault", ["data-center boom"])
+            "🎬 The Tapes", ["data-center boom"])
         add("Search the minutes for “annexation”",
-            "The full paper trail, meeting by meeting.", "🔎 The record",
+            "The full paper trail, meeting by meeting.", "🔎 Evidence Vault",
             ["data-center boom"], q="annexation")
         if sub.get("datacenter") == "d-power":
             add("Power and water demand on the record",
                 "You chose the power angle — every electric-capacity "
-                "discussion, verbatim.", "🔎 The record",
+                "discussion, verbatim.", "🔎 Evidence Vault",
                 ["you chose power and water demand"], q="electric")
         if sub.get("datacenter") == "d-jobs":
             add("Jobs and abatement claims, checked",
                 "You chose the jobs claims — see what was promised vs. what "
-                "the record shows.", "🔎 The record",
+                "the record shows.", "🔎 Evidence Vault",
                 ["you chose jobs and abatement claims"], canon="abatement")
         if sub.get("datacenter") == "d-near":
             add("The Highlands corridors, in the dossiers",
                 "You chose your street — the Highlands files are the "
-                "closest to the ground.", "🔎 The record",
+                "closest to the ground.", "🔎 Evidence Vault",
                 ["you chose what it means for your street"],
                 canon="highlands")
     if "environment" in tags:
         add("Groundwater, air, and environmental review",
             "The environmental matrix keeps the review items in one place, "
-            "each linked back to its source document.", "🗃 Legacy vault",
+            "each linked back to its source document.", "🗃 Case Files",
             ["you flagged the environment"])
         add("Search the minutes for “groundwater”",
             "Where the environmental record actually lives.",
-            "🔎 The record", ["you flagged the environment"], q="groundwater")
+            "🔎 Evidence Vault", ["you flagged the environment"], q="groundwater")
         if sub.get("environment") == "e-air":
             add("Air quality in the record",
                 "You chose air — every air-quality discussion, verbatim.",
-                "🔎 The record", ["you chose air quality"], q="air quality")
+                "🔎 Evidence Vault", ["you chose air quality"], q="air quality")
         if sub.get("environment") == "e-review":
             add("How environmental review actually happens",
                 "You chose the review process — permits, hearings, and "
-                "what triggers what.", "🔎 The record",
+                "what triggers what.", "🔎 Evidence Vault",
                 ["you chose how review happens"], q="permit")
     if "process" in tags:
         m = ["you flagged how meetings run"]
@@ -831,44 +1127,44 @@ def _render_brief():
         add("The silent-edits wire",
             "Documents on the city site that changed after the fact — each "
             "one diffed, timestamped, and linked. This tab existing at all "
-            "is the point.", "📡 Live operations", m)
+            "is the point.", "📡 Mission Board", m)
         add("How to read a meeting like an investigator",
-            "The Minutes Archive is 17 years of verbatim transcripts, "
+            "The tape archive holds 17 years of verbatim transcripts, "
             "searchable word by word. Ctrl-F is a civic instrument.",
-            "🔎 The record", ["how meetings run"])
+            "🔎 Evidence Vault", ["how meetings run"])
         if sub.get("process") == "p-agenda":
             add("Agenda changes, caught in the act",
                 "You chose late-changing agendas — the edits wire plus the "
-                "agenda history.", "🔎 The record",
+                "agenda history.", "🔎 Evidence Vault",
                 ["you chose late agendas"], q="agenda")
         if sub.get("process") == "p-closed":
             add("Executive sessions — every claimed exception",
                 "You chose closed doors — each executive session with the "
-                "statute cited.", "🔎 The record",
+                "statute cited.", "🔎 Evidence Vault",
                 ["you chose closed sessions"], q="executive session")
         if sub.get("process") == "p-comment":
             add("Public comment — how to get your three minutes",
                 "You chose speaking up — the rules and the record of public "
-                "comment, in one place.", "🔎 The record",
+                "comment, in one place.", "🔎 Evidence Vault",
                 ["you chose public comment"], q="public comment")
     if "officials" in tags:
         add("Who said what — the veracity files",
             "First positions next to later positions, so the record does "
-            "the comparing for you.", "🗃 Legacy vault",
+            "the comparing for you.", "🗃 Case Files",
             ["you flagged officials"])
         add("The tape archive",
             "Verified clips with timestamps back to the full meeting video "
             "— including the cuts that made the news. The Caller tape is "
-            "the one people ask about first.", "🎬 Video vault",
+            "the one people ask about first.", "🎬 The Tapes",
             ["you flagged officials"])
         add("The canon library, by person",
             "Every dossier on the officials and the races, organized by "
-            "series.", "🔎 The record", ["you flagged officials"],
+            "series.", "🔎 Evidence Vault", ["you flagged officials"],
             canon="miller")
         if sub.get("officials") == "o-candidates":
             add("The Nov 3 candidate files",
                 "You chose the candidates — the election-year dossiers.",
-                "🔎 The record", ["you chose the candidates"], canon="2026")
+                "🔎 Evidence Vault", ["you chose the candidates"], canon="2026")
     if "elections" in tags:
         m = ["you flagged elections"]
         if _gval("g_voter"):
@@ -876,52 +1172,52 @@ def _render_brief():
         add("Ballot season, on the record",
             "The digest tracks what moved each week, and the alerts flag "
             "watchlist language within 48 hours of it posting.",
-            "📡 Live operations", m)
+            "📡 Mission Board", m)
         add("Search the canon for “referendum”",
             "The referendum dossiers and everything filed around them.",
-            "🔎 The record", ["you flagged elections"], canon="referendum")
+            "🔎 Evidence Vault", ["you flagged elections"], canon="referendum")
         if sub.get("elections") == "el-mech":
             add("How and where to vote",
                 "You chose mechanics — the election-process files.",
-                "🔎 The record", ["you chose how to vote"], canon="election")
+                "🔎 Evidence Vault", ["you chose how to vote"], canon="election")
     if "roads" in tags:
         add("Roads and construction in the record",
             "Search the minutes for the street and project names you drive "
             "past — most capital work shows up in a vote before it shows "
-            "up on the ground.", "🔎 The record",
+            "up on the ground.", "🔎 Evidence Vault",
             ["you flagged roads"], q="street")
         if sub.get("roads") == "r-project":
             add("Find your specific project",
                 "You chose a project near you — construction motions, "
-                "verbatim.", "🔎 The record",
+                "verbatim.", "🔎 Evidence Vault",
                 ["you chose a specific project"], q="construction")
         if sub.get("roads") == "r-maint":
             add("Maintenance and potholes — the record",
                 "You chose maintenance — what the city said it would fix.",
-                "🔎 The record", ["you chose maintenance"], q="maintenance")
+                "🔎 Evidence Vault", ["you chose maintenance"], q="maintenance")
     if "press" in tags:
         add("Reporter's kit — full-text search",
             "FTS over everything fingerprinted, plus 17 years of "
             "transcripts. Every alert carries a verbatim quote, a source "
             "URL, and a fetch timestamp — citeable as-is.",
-            "🔎 The record", ["you're a reporter or researcher"])
+            "🔎 Evidence Vault", ["you're a reporter or researcher"])
         add("The PRA drafting bench",
             "Wyoming Public Records Act request drafts, filled in and "
             "ready for a human to send. Wrong-statute citations are a "
-            "reporter's fastest way to get stonewalled.", "✉️ Intake",
+            "reporter's fastest way to get stonewalled.", "✉️ Signals & Paperwork",
             ["you're a reporter or researcher"])
     if "observer" in tags:
         add("The story so far",
             "Not local? The digest is the catch-up: what moved, when, with "
-            "links.", "📡 Live operations",
+            "links.", "📡 Mission Board",
             ["you're following the story"])
 
     # format preference re-weights the ranking
     fmt = _gval("g_format") or ""
-    boosts = {"🔔 Get updates": "📡 Live operations",
-              "🎬 Watch the tape": "🎬 Video vault",
-              "🔎 Search it myself": "🔎 The record",
-              "📖 Read the record": "🗃 Legacy vault"}
+    boosts = {"🔔 Get updates": "📡 Mission Board",
+              "🎬 Watch the tape": "🎬 The Tapes",
+              "🔎 Search it myself": "🔎 Evidence Vault",
+              "📖 Read the record": "🗃 Case Files"}
     if fmt in boosts:
         for r in recs:
             if r["section"] == boosts[fmt]:
@@ -980,8 +1276,8 @@ def _render_brief():
                               on_click=_guide_jump, args=(ns, nq, nc))
     else:
         st.info("Nothing answered — no problem. Everyone's baseline: the "
-                "**Live Alerts** and **Digest** views under Live operations, "
-                "and the **Minutes Archive** under The record. Or go Back "
+                "**Action Alerts** and **The Daily Ledger** views under Mission Board, "
+                "and **17 Years of Tapes** under Evidence Vault. Or go Back "
                 "and answer a question or two and watch the brief build.")
     with st.expander("🔍 Audit these recommendations — every rule that fired"):
         if trace:
@@ -992,7 +1288,7 @@ def _render_brief():
         st.caption("No model, no tracking: the rules above are the entire "
                    "decision, and your answers never left this browser tab.")
     st.caption("Whoever you are: the alert feed updates itself every six "
-               "hours, so 📡 Live operations is worth a bookmark.")
+               "hours, so the 📡 Mission Board is worth a bookmark.")
 
 
 # The front-door reel: contentious moments, in order, with links to the full
@@ -1078,7 +1374,7 @@ def _city_meetings():
 
 
 def _view_reel():
-    st.subheader("🔥 The Record Speaks — the most contentious moments, on loop")
+    st.subheader("🔥 Origin Tapes — the most contentious moments ever mic'd, on loop")
     st.caption("Nine verbatim moments from official city-meeting video, "
                "seventeen minutes, playing on loop. Browsers start autoplay "
                "muted — click the 🔊 on the player for sound. Below the "
@@ -1120,7 +1416,7 @@ def _view_reel():
                        "right-hand column.")
         else:
             st.info("Source meeting pending verification — this clip "
-                    "predates the verified-tape index. The Canon Library "
+                    "predates the verified-tape index. The Longboxes "
                     "holds the written record around it.")
 
     # ---- column 2: ordinances -------------------------------------------
@@ -1204,15 +1500,15 @@ def _view_reel():
             st.info("Caption-linked transcripts exist for the two verified "
                     "tape meetings (Mar 9 and Apr 27, 2026). Pick a moment "
                     "from one of those — or browse every meeting in the "
-                    "Video vault.")
+                    "The Tapes.")
 
     st.divider()
     col1, col2 = st.columns(2)
-    col1.button("🧭 Start here — find what affects you",
-                on_click=_guide_jump, args=("🧭 Start Here",),
+    col1.button("🧭 Choose your mission — find what affects you",
+                on_click=_guide_jump, args=("🧭 Choose Your Mission",),
                 type="primary")
     col2.button("🎬 All segments & evidence clips",
-                on_click=_guide_jump, args=("🎬 Video vault",))
+                on_click=_guide_jump, args=("🎬 The Tapes",))
 
 
 @st.cache_data(show_spinner=False)
@@ -1263,7 +1559,7 @@ def _vtt_cues(rel: str):
 
 
 def _view_media():
-    st.subheader("📼 Recordings & captions — every indexed meeting")
+    st.subheader("📼 Every Tape, Every Line — recordings & captions for every indexed meeting")
     manifest = _media_manifest().get("meetings", {})
     n_caps = sum(1 for v in manifest.values() if v.get("captions"))
     n_aud = sum(1 for v in manifest.values() if v.get("audio"))
@@ -1308,33 +1604,37 @@ def _view_media():
 
 
 SECTIONS = {
-    "🔥 The Record Speaks": [("🔥 The Contention Reel", _view_reel)],
-    "🧭 Start Here":     [("🧭 Find your brief", _view_guide)],
-    "◈ Overview":       [("◈ Ledger", _view_home)],
-    "📡 Live operations": [
-        ("🚩 Live Alerts", _view_alerts),
-        ("⚠️ Silent Edits", _view_edits),
-        ("📰 Digest", _view_digest),
+    "🔥 Origin Tapes": [("🔥 The Contention Reel", _view_reel)],
+    "🧭 Choose Your Mission":     [("🧭 Get Your Mission Brief", _view_guide)],
+    "🦸 Hero Roster":   [("🦸 Meet the Roster", _view_roster)],
+    "◈ Ledger HQ":       [("◈ Today's Front Page", _view_home)],
+    "📡 Mission Board": [
+        ("🚩 Action Alerts", _view_alerts),
+        ("⚠️ Silent Edits Caught", _view_edits),
+        ("📰 The Daily Ledger", _view_digest),
     ],
-    "🔎 The record": [
-        ("🔎 Search", _view_search),
-        ("📜 Minutes Archive", _view_minutes),
-        ("🗄 Canon Library", _view_canon),
+    "🔎 Evidence Vault": [
+        ("🔎 Search the Evidence", _view_search),
+        ("📜 17 Years of Tapes", _view_minutes),
+        ("🗄 The Longboxes", _view_canon),
     ],
-    "🎬 Video vault":   [("🎬 Video Vault", _view_video),
-                       ("📼 Recordings & captions", _view_media)],
-    "✉️ Intake":        [("💡 Tips", _view_tips),
-                         ("✉️ Paperwork", _view_paperwork)],
-    "🗃 Legacy vault": [
-        ("⚔️ Battles*", _view_battles),
-        ("🔍 Veracity*", _view_veracity),
-        ("🧾 Vouchers*", _view_vouchers),
-        ("☣️ Environment*", _view_environment),
+    "🎬 The Tapes":   [("🎬 Montage Theater", _view_video),
+                       ("📼 Every Tape, Every Line", _view_media)],
+    "✉️ Signals & Paperwork":        [("💡 Send a Signal", _view_tips),
+                         ("✉️ Paperwork Arsenal", _view_paperwork)],
+    "🗃 Case Files": [
+        ("⚔️ Battle Records*", _view_battles),
+        ("🔍 Lie Detector*", _view_veracity),
+        ("🧾 Money Trail*", _view_vouchers),
+        ("☣️ Toxic Files*", _view_environment),
     ],
+    "✋ Join the Roster": [("✋ Your Power Awaits", _view_recruit)],
 }
 
 
 def render_ledger():
+    _comic_boot()
+    _comic_masthead()
     eng_stats = {r["k"]: r["v"] for r in _engine_q(
         "SELECT 'documents' k, COUNT(*) v FROM documents UNION ALL "
         "SELECT 'alerts', COUNT(*) FROM alerts UNION ALL "
@@ -1371,15 +1671,21 @@ def render_ledger():
                f"RSS: `public/feed.xml` in the repo")
 
     if breaking:
-        st.error("🚨 **BREAKING (<48 h):** " + " · ".join(
+        st.error("🚨 **ACTION ALERT (<48 h):** " + " · ".join(
             f"“{r['term']}” in {r['title']}" for r in breaking[:5])
-            + (" …see Live Alerts." if len(breaking) > 5 else ""))
+            + (" …see Action Alerts." if len(breaking) > 5 else ""))
 
     # Section nav in the sidebar replaces the old 14-across tab strip — same
     # views, grouped the way people actually come looking for them.
-    st.sidebar.markdown("#### Sections")
+    st.sidebar.markdown("#### 📖 Chapters")
     pick = st.sidebar.radio("Go to", list(SECTIONS), key="ledger_section",
                             label_visibility="collapsed")
+    st.sidebar.markdown("---")
+    st.sidebar.markdown(
+        "🦸 **New heroes wanted.** Every power on this roster started as "
+        "one citizen, one mic, three minutes.")
+    st.sidebar.button("✋ Join the Roster", key="join_cta",
+                      on_click=_join_jump, use_container_width=True)
     chosen = SECTIONS[pick]
     if len(chosen) == 1:
         chosen[0][1]()
@@ -1394,6 +1700,8 @@ def render_ledger():
 
 
 def render_index():
+    _comic_boot()
+    _comic_masthead()
     try:
         import pandas as pd
         from bs4 import BeautifulSoup
@@ -1416,7 +1724,7 @@ def render_index():
         </style>
         """, unsafe_allow_html=True)
 
-    st.markdown("## 🏛️ The Cheyenne Transparency Index")
+    st.markdown("## 🏛️ The Forensic Files — Cheyenne Transparency Index")
     st.markdown("*An independent, document-backed forensic database of "
                 "Cheyenne Municipal Operations.*")
 
@@ -1570,10 +1878,10 @@ def _sync_face():
                                else "ledger")
 
 
-st.sidebar.markdown("### 🎛 Console Face")
+st.sidebar.markdown("### 🎛 Pick Your Title")
 st.sidebar.radio(
-    "Switch faces (shareable: add ?face=index to the URL)",
-    ["◈ Windy City Ledger", "🏛 Transparency Index"],
+    "Switch titles (shareable: add ?face=index to the URL)",
+    ["◈ Ledger HQ", "🏛 Transparency Index — Forensic Files"],
     index=1 if st.query_params.get("face") == "index" else 0,
     key="face_pick", on_change=_sync_face,
 )
@@ -1587,4 +1895,4 @@ else:
 st.caption("Engine v0.1 + recovered vault (auto-verified against the transcript "
            "corpus every cycle) + entity index face · public documents only · "
            "robots.txt honored · no affiliation with any individual, candidate, "
-           "or committee · * = legacy seed: lead until ✅ found in record")
+           "or committee · * = legacy seed: lead until ✅ found in record · the Roster honors on-the-record acts only")
