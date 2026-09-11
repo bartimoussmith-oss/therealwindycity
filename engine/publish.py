@@ -3,6 +3,7 @@ site — The Real Windy City Ledger. Zero external assets: survives sandboxed
 viewers, emails, and GitHub Pages unchanged. Voice: Cheyenne public-comment
 bare-knuckle. Substrate: nothing that isn't in the DB with a source URL, or in
 config/facts.json with a linked citation.
+Themed as HEROES OF THE PUBLIC RECORD (comic re-theme, 2026-09-11) — same data, same queries, new costume. Still zero external assets.
 """
 from __future__ import annotations
 
@@ -18,58 +19,77 @@ ROOT = Path(__file__).resolve().parent.parent
 PUBLIC = ROOT / "public"
 
 _CSS = """
-:root{--ink:#22303c;--paper:#f7f2e7;--rust:#b4432f;--gold:#d9a441;--sage:#5c7a4f;
+:root{--ink:#141414;--paper:#f4ecd8;--rust:#b4432f;--gold:#ffd93b;--sage:#5c7a4f;
 --faded:#6d7b86;--card:#fffdf7;--rule:#d8cfbc}
-*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);
+*{box-sizing:border-box}body{margin:0;background-color:var(--paper);
+background-image:radial-gradient(#ddd2b8 1.2px,transparent 1.3px);
+background-size:15px 15px;color:var(--ink);
 font-family:Georgia,'Times New Roman',serif;line-height:1.55}
 .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
-.mast{border-bottom:6px double var(--ink);padding:28px 0 18px;background:
-repeating-linear-gradient(180deg,var(--paper) 0 6px,#f1ead9 6px 7px)}
-.mast h1{font-size:clamp(34px,6vw,64px);letter-spacing:.02em;margin:0;
-font-family:'Courier New',Courier,monospace;font-weight:700}
-.kick{font-size:15px;color:var(--faded);margin:6px 0 0}
-.tag{display:inline-block;margin-top:10px;background:var(--ink);color:var(--paper);
-padding:6px 14px;font-family:'Courier New',monospace;font-size:14px;letter-spacing:.06em}
-.wind{display:flex;gap:10px;align-items:center;margin-top:14px;color:var(--rust);
+.mast{background:#141414;color:var(--paper);border:4px solid #0a0a0a;
+box-shadow:8px 8px 0 var(--rust);padding:24px 22px 18px;margin:18px 0 6px;
+transform:rotate(-.4deg)}
+.issue{display:inline-block;background:var(--gold);color:#141414;
+font-family:Impact,'Arial Black',sans-serif;font-size:15px;letter-spacing:.12em;
+padding:4px 14px;border:2px solid #000;box-shadow:3px 3px 0 #000;margin-bottom:10px}
+.mast h1{font-size:clamp(38px,6vw,66px);letter-spacing:.03em;margin:0;color:#fff;
+font-family:Impact,'Arial Black',sans-serif;font-weight:400;line-height:1;
+text-shadow:3px 3px 0 var(--rust),6px 6px 0 #000;text-transform:uppercase}
+.kick{font-size:15px;color:var(--paper);margin:8px 0 0;font-style:italic}
+.tag{display:inline-block;margin-top:10px;background:var(--rust);color:#fff;
+padding:6px 14px;font-family:Impact,'Arial Black',sans-serif;font-size:15px;
+letter-spacing:.08em;border:2px solid #000}
+.wind{display:flex;gap:10px;align-items:center;margin-top:14px;color:var(--gold);
 font-family:'Courier New',monospace;font-size:13px}
 .strip{display:flex;flex-wrap:wrap;gap:14px;margin:26px 0}
-.stat{flex:1 1 150px;background:var(--card);border:1px solid var(--rule);
-border-top:4px solid var(--rust);padding:14px 16px}
-.stat b{display:block;font-family:'Courier New',monospace;font-size:34px;line-height:1}
-.stat span{font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--faded)}
-h2{font-family:'Courier New',monospace;font-size:20px;letter-spacing:.05em;margin:34px 0 4px;
-border-bottom:2px solid var(--ink);padding-bottom:6px;text-transform:uppercase}
-h2:before{content:'≫ ';color:var(--rust)}
+.stat{flex:1 1 150px;background:var(--card);border:3px solid #0a0a0a;
+box-shadow:5px 5px 0 #0a0a0a;padding:14px 16px;transform:rotate(-.4deg)}
+.stat b{display:block;font-family:Impact,'Arial Black',sans-serif;font-weight:400;
+font-size:36px;line-height:1}
+.stat span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--faded)}
+h2{font-family:Impact,'Arial Black',sans-serif;font-weight:400;font-size:30px;
+letter-spacing:.05em;margin:34px 0 4px;color:var(--ink);
+border-bottom:4px solid var(--ink);padding-bottom:6px;text-transform:uppercase}
+h2:before{content:'★ ';color:var(--rust)}
 .rule{font-size:12.5px;color:var(--faded);margin:0 0 14px}
-.qotw{background:var(--card);border:1px solid var(--rule);border-left:6px solid var(--gold);
-padding:16px 18px} .qotw h3{margin:0 0 6px;font-size:20px}
+.qotw{background:var(--card);border:3px solid #0a0a0a;box-shadow:6px 6px 0 #0a0a0a;
+padding:16px 18px} .qotw h3{margin:0 0 6px;font-size:22px;
+font-family:Impact,'Arial Black',sans-serif;font-weight:400;letter-spacing:.03em}
 .watch{font-family:'Courier New',monospace;font-size:13px;color:var(--rust);margin-top:8px}
-table{width:100%;border-collapse:collapse;font-size:14.5px;background:var(--card)}
-th{font-family:'Courier New',monospace;text-transform:uppercase;font-size:11.5px;
-letter-spacing:.08em;text-align:left;border-bottom:2px solid var(--ink);padding:8px}
+table{width:100%;border-collapse:collapse;font-size:14.5px;background:var(--card);
+border:3px solid #0a0a0a;box-shadow:6px 6px 0 #0a0a0a}
+th{font-family:Impact,'Arial Black',sans-serif;font-weight:400;text-transform:uppercase;
+font-size:14px;letter-spacing:.08em;text-align:left;background:#141414;color:var(--gold);
+padding:8px}
 td{border-bottom:1px solid var(--rule);padding:8px;vertical-align:top}
 tr:hover td{background:#f3ecdc}
 .t{font-family:'Courier New',monospace;font-size:12px;color:var(--faded);white-space:nowrap}
 .qu{color:#3d4a56;font-style:italic}
-a{color:var(--rust)} .term{font-family:'Courier New',monospace;font-size:12px;
+a{color:var(--rust);font-weight:700} .term{font-family:'Courier New',monospace;font-size:12px;
 color:var(--sage);white-space:nowrap}
-.empty{border:1px dashed var(--faded);padding:16px;text-align:center;color:var(--faded);
-font-family:'Courier New',monospace;font-size:13px}
+.empty{border:3px dashed var(--faded);padding:16px;text-align:center;color:var(--faded);
+font-family:'Courier New',monospace;font-size:13px;background:var(--card)}
 .tl{list-style:none;margin:0;padding:0}
 .tl li{display:flex;gap:14px;padding:10px 0;border-bottom:1px solid var(--rule)}
 .tl time{flex:0 0 96px;font-family:'Courier New',monospace;font-size:12.5px;color:var(--rust)}
-.draft{background:var(--card);border:1px solid var(--rule);padding:14px 16px;margin:10px 0}
+.draft{background:var(--card);border:3px solid #0a0a0a;box-shadow:5px 5px 0 #0a0a0a;
+padding:14px 16px;margin:10px 0}
+.recruit{background:#141414;color:#fff;border:3px solid #0a0a0a;
+box-shadow:6px 6px 0 var(--rust);padding:18px;margin:30px 0 0;transform:rotate(-.4deg)}
+.recruit b{font-family:Impact,'Arial Black',sans-serif;font-weight:400;font-size:24px;
+letter-spacing:.05em;color:var(--gold)}
+.recruit p{margin:8px 0 0} .recruit a{color:var(--gold)}
 footer{margin:44px 0 26px;border-top:6px double var(--ink);padding-top:16px;
 font-size:12.5px;color:var(--faded)}
 .method li{margin:4px 0}
 .mono{font-family:'Courier New',monospace}
 """
 
-_WINDSOCK = """<svg width="44" height="34" viewBox="0 0 44 34" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-<rect x="4" y="2" width="2.4" height="30" fill="#22303c"/>
-<polygon points="7,4 30,7 30,13 7,16" fill="#b4432f"/>
-<polygon points="7,4 14,5.2 14,14.8 7,16" fill="#d9a441"/>
-<path d="M30 8 q9 1 12 3 M30 11 q9 0 12 1" stroke="#6d7b86" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+_EMBLEM = """<svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<polygon points="26,2 32,10 41,7 41,17 50,21 45,29 48,38 39,38 36,47 28,42 20,47 17,38 8,38 11,29 6,21 15,17 15,7 24,10" fill="#ffd93b" stroke="#0a0a0a" stroke-width="1.6"/>
+<circle cx="26" cy="24" r="9" fill="#b4432f" stroke="#0a0a0a" stroke-width="2"/>
+<rect x="24.6" y="30" width="2.8" height="10" fill="#f4ecd8" stroke="#0a0a0a" stroke-width="1"/>
+<rect x="20" y="40" width="12" height="2.6" fill="#f4ecd8" stroke="#0a0a0a" stroke-width="1"/>
 </svg>"""
 
 
@@ -155,32 +175,39 @@ def build() -> str:
   <h1>{_esc(site['title'])}</h1>
   <p class="kick">{_esc(site['kicker'])}</p>
   <span class="tag">{_esc(site['tagline'])}</span>
-  <div class="wind">{_WINDSOCK}<span>ledger generated {_esc(generated)} UTC · every entry links its record ·
+  <div class="issue">HEROES OF THE PUBLIC RECORD · ISSUE #001 · NEW HEROES WANTED</div>
+  <div class="wind">{_EMBLEM}<span>ledger generated {_esc(generated)} UTC · every entry links its record ·
   day {days_since_pet} since the petition was filed · clerk certification: pending</span></div>
 </header>
 
 <div class="strip">{stats_html}</div>
 
-<h2>The question of the week</h2>
+<h2>This week's cover story</h2>
 <p class="rule">One page. One fight. Read it and you're ahead of half the room.</p>
 <div class="qotw"><h3>{_esc(q['headline'])}</h3><p>{_esc(q['body'])}</p>
 <p class="watch">WATCH FOR: {_esc(q['watch_for'])}</p></div>
 
-<h2>Silent-edit wire</h2>
+<h2>Shape-shifter wire</h2>
 <p class="rule">SHA-256 fingerprints of every published page, re-checked on schedule. Same words, same hash. New words, new hash — and a public diff.</p>
 {edits_html}
 
-<h2>Fresh from the traps</h2>
+<h2>Fresh off the tripwires</h2>
 <p class="rule">Watchlist hits from the latest crawl. The quote is verbatim; the link is the record; the timestamp is the fetch.</p>
 {alerts_html}
 
-<h2>The record so far</h2>
+<h2>The saga so far</h2>
 <p class="rule">The 2026 chronology, each entry pinned to published reporting. Click [record]. Check the work.</p>
 <ul class="tl">{tl_html}</ul>
 
-<h2>Do the paperwork</h2>
+<h2>Arm yourself — do the paperwork</h2>
 <p class="rule">Wyoming Public Records Act drafts (W.S. §§ 16-4-201 to 16-4-205) and public comments, generated by the engine, sent by you.</p>
 {''.join(draft_links)}
+
+<div class="recruit"><b>🦸 NEW HEROES WANTED</b>
+<p>Every power on the Roster started as one citizen, one mic, three minutes.
+Read the statute. Quote the record. Sign your name. —
+<a href="https://github.com/bartimoussmith-oss/therealwindycity/issues/new?template=tip.md">send a signal</a> ·
+<a href="https://github.com/bartimoussmith-oss/therealwindycity">join the repo</a></p></div>
 
 <footer>
   <p><b>Method.</b> This site is generated from a local ledger of public pages and

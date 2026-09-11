@@ -2,6 +2,8 @@
 
 Drop-in Streamlit multipage: lives at  <repo>/pages/1_Screening_Room.py
 and auto-appears in the app sidebar next to the main console.
+Skinned to match HEROES OF THE PUBLIC RECORD (comic re-theme,
+2026-09-11) — presentation only; playlist and logic unchanged.
 Plays the verified-tape montages from pipeline/renders/ — zero new
 pip dependencies (stdlib + streamlit only).
 
@@ -64,7 +66,7 @@ def _text(path_str: str) -> str:
 def _label(i: int, it: dict) -> str:
     marks = []
     if it.get("new"):
-        marks.append("NEW")
+        marks.append("NEW ISSUE")
     if it.get("tape"):
         marks.append("REAL TAPE")
     tag = f"  [{' · '.join(marks)}]" if marks else ""
@@ -74,14 +76,21 @@ def _label(i: int, it: dict) -> str:
 # ---------------------------------------------------------------- masthead
 st.markdown(
     """<style>
-    .sr-mast{border-bottom:6px double #22303c;padding:4px 0 10px;margin-bottom:6px}
-    .sr-mast h2{font-family:'Courier New',monospace;font-size:1.7rem;margin:0;color:#22303c}
-    .sr-kick{color:#6d7b86;margin:2px 0 0;font-size:.95rem}
-    .sr-tag{display:inline-block;background:#22303c;color:#f7f2e7;padding:3px 10px;
-    font-family:'Courier New',monospace;font-size:.78rem;margin-top:8px;letter-spacing:.06em}
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+    .stApp{background-color:#f4ecd8;
+    background-image:radial-gradient(#ddd2b8 1.2px,transparent 1.3px);
+    background-size:15px 15px}
+    .sr-mast{background:#141414;border:4px solid #0a0a0a;box-shadow:6px 6px 0 #b4432f;
+    padding:16px 18px 12px;margin-bottom:10px;transform:rotate(-.4deg)}
+    .sr-mast h2{font-family:'Bangers',Impact,'Arial Black',sans-serif;font-size:2.4rem;
+    margin:0;color:#fff;letter-spacing:.05em;text-shadow:3px 3px 0 #b4432f}
+    .sr-kick{color:#f4ecd8;margin:2px 0 0;font-size:.95rem}
+    .sr-tag{display:inline-block;background:#ffd93b;color:#141414;padding:4px 12px;
+    font-family:'Bangers',Impact,sans-serif;font-size:1rem;margin-top:8px;
+    letter-spacing:.08em;border:2px solid #000;box-shadow:3px 3px 0 #000}
     .sr-src{color:#6d7b86;font-size:.85rem}
     </style>
-    <div class="sr-mast"><h2>SCREENING ROOM</h2>
+    <div class="sr-mast"><h2>🎬 SCREENING ROOM</h2>
     <p class="sr-kick">The city's own archive video, its own captions, its own clock —
     cut into vertical montages. Every claim sourced on screen.</p>
     <span class="sr-tag">The minutes count four. The tape counts more.</span></div>
