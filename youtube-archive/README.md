@@ -87,15 +87,17 @@ python scripts/download_granicus.py
 # Committees/Planning/extras from archive.org (works anywhere):
 python scripts/download_archiveorg.py
 ```
-- **Storage:** council MP4s run ~0.3–1.5 GB each. Budget **~500 GB–1 TB** for
-  everything (external USB drive is fine). Start with one committee to calibrate.
+- **Storage (measured 2026-09-11):** 751 archive.org videos = **221.9 GB**
+  (per-file measurement, `size_audit.json`) + 474 Granicus MP4s ≈ **285 GB**
+  (793 cataloged hours × ~800 kbps) + 18.9 GB docs = **~525 GB total**.
+  Budget 600 GB to be safe (external USB drive is fine).
 - Re-running is safe: finished files are skipped, partial files resume.
 
 ### Phase 3b — Download every agenda + supporting document + minutes
 ```bash
 # Test on one new + one old meeting:
 python scripts/download_granicus_docs.py --only 1126 31
-# Then everything (~20–40 GB total, several hrs unattended, resume-safe):
+# Then everything (measured 2026-09-11: 18.9 GB / 14,905 files, several hrs unattended, resume-safe):
 python scripts/download_granicus_docs.py
 ```
 - Saves per-meeting folders under `documents/` — `agenda.html`, one PDF per
