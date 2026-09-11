@@ -3,9 +3,10 @@
 One Streamlit process, two faces, switched from the sidebar (deep-linkable
 with ?face=index):
 
-  * Ledger HQ — the working console. It opens on a looping reel
-    of the most contentious moments spoken at the meetings (autoplay
-    muted, sourced chapter by chapter), then the Choose Your Mission guide — an
+  * Ledger HQ — the working console. It opens on the Miller Tapes
+    theater (every Charles Miller intervention autoplaying on loop —
+    picture starts instantly, first click anywhere brings sound), then the
+    contention reel, then the Choose Your Mission guide — an
     adaptive six-stage wizard that drills each
     viewer down into the parts of the record that touch them —
     and the sidebar groups the views
@@ -52,6 +53,11 @@ try:
     from engine import db, corpus_search, verify_vault, entity_index
 except Exception:  # engine tree absent -> engine tabs degrade, rest still works
     db = corpus_search = verify_vault = entity_index = None
+
+try:
+    from miller_theater import render_theater as _render_miller_theater
+except Exception:  # theater module absent -> front-door view degrades, rest works
+    _render_miller_theater = None
 
 ENGINE_DB = ROOT / "data" / "engine.db"
 LEGACY_DB = ROOT / "cheyenne_watchdog.db"
@@ -1603,7 +1609,17 @@ def _view_media():
                    "per meeting.")
 
 
+def _view_miller():
+    if _render_miller_theater is None:
+        st.info("The Miller Tapes aren't cued in this checkout yet — run "
+                "`python3 pipeline/build_miller_index.py` (needs the caption "
+                "tracks; see its docstring).")
+        return
+    _render_miller_theater(embed=True)
+
+
 SECTIONS = {
+    "🎬 Miller Tapes": [("🎬 Every Intervention, On Loop", _view_miller)],
     "🔥 Origin Tapes": [("🔥 The Contention Reel", _view_reel)],
     "🧭 Choose Your Mission":     [("🧭 Get Your Mission Brief", _view_guide)],
     "🦸 Hero Roster":   [("🦸 Meet the Roster", _view_roster)],
