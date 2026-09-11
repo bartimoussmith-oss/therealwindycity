@@ -68,11 +68,11 @@ Coordination is not optional here.
 
 ### claim: comic-universe — comic-book hero-universe re-theme of the website
 - worker: arena-agent
-- status: active
-- stage: claim filed; next: build on branch arena/comic-universe
+- status: blocked-awaiting-merge
+- stage: PR #2 open (arena/comic-universe -> main, 5 files, mergeable, twins identical); awaiting owner review/merge
 - scope: streamlit_app.py + Transparency_Index_App.py (IDENTICAL twins — copy, never diverge), pages/1_Screening_Room.py, engine/publish.py (static-ledger theme only), public/index.html (regenerated output); READ-FIRST.md (this claim + stage updates). Copy/CSS/labels ONLY — zero logic, data, or behavior changes. Explicitly NOT touching: engine/ (except publish.py theme), data/, pipeline/, uploads/, Entity_Database/, requirements.txt, .github/, rag/, youtube-archive/, README.md
 - started: 2026-09-11T18:35Z
-- updated: 2026-09-11T18:35Z
+- updated: 2026-09-11T18:45Z
 - notes: owner-directed override of twin protection (re-theme authorized by repo owner 2026-09-11); twins stay byte-identical; original hero characters only (no Marvel/DC IP, no named-person villains); PR to main for owner merge, no direct main pushes beyond this claim
 
 ### claim: rag-vector-db — RAG vector DB + transcript cleanup + YouTube-archive wing
