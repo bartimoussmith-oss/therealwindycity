@@ -69,7 +69,7 @@ Coordination is not optional here.
 ### claim: miller-tapes — auto-playing theater for every Miller intervention
 - worker: arena-agent
 - status: active
-- stage: built locally; next: push branch arena/miller-tapes + PR (PAT in hand)
+- stage: PR #3 open (arena/miller-tapes, mergeable clean); awaiting owner merge
 - scope: NEW FILES ONLY: pages/2_Miller_Tapes.py, pipeline/build_miller_index.py, pipeline/miller_interventions.json; READ-FIRST.md (this claim + stage updates). Caption tracks (pipeline/miller_captions/, refetchable) stay OUT of git. Explicitly NOT touching: streamlit twins, engine/, data/, pipeline/* (existing), uploads/, requirements.txt, .github/, rag/, youtube-archive/
 - started: 2026-09-11T20:45Z
 - updated: 2026-09-11T20:45Z
