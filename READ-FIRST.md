@@ -69,8 +69,8 @@ Coordination is not optional here.
 ### claim: miller-tapes — auto-playing theater for every Miller intervention
 - worker: arena-agent
 - status: active
-- stage: PR #3 open (arena/miller-tapes, mergeable clean); awaiting owner merge
-- scope: NEW FILES ONLY: pages/2_Miller_Tapes.py, pipeline/build_miller_index.py, pipeline/miller_interventions.json; READ-FIRST.md (this claim + stage updates). Caption tracks (pipeline/miller_captions/, refetchable) stay OUT of git. Explicitly NOT touching: streamlit twins, engine/, data/, pipeline/* (existing), uploads/, requirements.txt, .github/, rag/, youtube-archive/
+- stage: PR #3 updated (front door + first-gesture sound pushed); awaiting owner merge
+- scope: pages/2_Miller_Tapes.py (now thin wrapper), miller_theater.py (new shared module), pipeline/build_miller_index.py, pipeline/miller_interventions.json, twins (identical front-door chapter add); READ-FIRST.md (this claim + stage updates). Caption tracks (pipeline/miller_captions/, refetchable) stay OUT of git. Explicitly NOT touching: streamlit twins, engine/, data/, pipeline/* (existing), uploads/, requirements.txt, .github/, rag/, youtube-archive/
 - started: 2026-09-11T20:45Z
 - updated: 2026-09-11T20:45Z
 - notes: 616/616 blocks cued (median match 0.97, gold-checked); AppTest + JS syntax verified; PR to main for owner merge, no direct main pushes beyond this claim
