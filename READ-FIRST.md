@@ -68,8 +68,8 @@ Coordination is not optional here.
 
 ### claim: miller-tapes — auto-playing theater for every Miller intervention
 - worker: arena-agent
-- status: active
-- stage: PR #3 updated (front door + first-gesture sound pushed); awaiting owner merge
+- status: done
+- stage: PR #3 merged (e1bf0ac); branch deleted; theater live on front door
 - scope: pages/2_Miller_Tapes.py (now thin wrapper), miller_theater.py (new shared module), pipeline/build_miller_index.py, pipeline/miller_interventions.json, twins (identical front-door chapter add); READ-FIRST.md (this claim + stage updates). Caption tracks (pipeline/miller_captions/, refetchable) stay OUT of git. Explicitly NOT touching: streamlit twins, engine/, data/, pipeline/* (existing), uploads/, requirements.txt, .github/, rag/, youtube-archive/
 - started: 2026-09-11T20:45Z
 - updated: 2026-09-11T20:45Z
