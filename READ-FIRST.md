@@ -60,7 +60,7 @@ Coordination is not optional here.
 - stage: what step you are on RIGHT NOW (update me at every major step)
 - scope: paths this claim covers
 - started: 2026-09-10T09:20Z
-- updated: 2026-09-10T09:20Z
+- updated: 2026-09-11T18:45Z
 - notes: (coordination messages append here as "- 09:20Z name: ...")
 ```
 
@@ -68,8 +68,8 @@ Coordination is not optional here.
 
 ### claim: comic-universe — comic-book hero-universe re-theme of the website
 - worker: arena-agent
-- status: blocked-awaiting-merge
-- stage: PR #2 open (arena/comic-universe -> main, 5 files, mergeable, twins identical); awaiting owner review/merge
+- status: done
+- stage: PR #2 merged to main 8fcfd1c (2026-09-11); branch deleted
 - scope: streamlit_app.py + Transparency_Index_App.py (IDENTICAL twins — copy, never diverge), pages/1_Screening_Room.py, engine/publish.py (static-ledger theme only), public/index.html (regenerated output); READ-FIRST.md (this claim + stage updates). Copy/CSS/labels ONLY — zero logic, data, or behavior changes. Explicitly NOT touching: engine/ (except publish.py theme), data/, pipeline/, uploads/, Entity_Database/, requirements.txt, .github/, rag/, youtube-archive/, README.md
 - started: 2026-09-11T18:35Z
 - updated: 2026-09-11T18:45Z
@@ -77,11 +77,11 @@ Coordination is not optional here.
 
 ### claim: rag-vector-db — RAG vector DB + transcript cleanup + YouTube-archive wing
 - worker: arena-agent
-- status: blocked-awaiting-merge
-- stage: PR #1 open (arena/rag-pipeline -> main, 3 commits, 47 files, mergeable); awaiting owner review/merge
+- status: done
+- stage: PR #1 merged to main 56af0c6 (2026-09-11); branch deleted
 - scope: NEW DIRS/FILES ONLY: rag/, youtube-archive/, pipeline/corpus_clean/ (sample outputs); READ-FIRST.md (this claim + stage updates). Explicitly NOT touching: streamlit twins, requirements.txt, data/, .github/, engine/, existing pipeline/*, uploads/, Entity_Database/, README.md
 - started: 2026-09-10T11:20Z
-- updated: 2026-09-10T12:08Z
+- updated: 2026-09-11T18:45Z
 - notes: additive-only; videos stay out of git per repo rule (YouTube + Releases); PR to main for owner merge, no direct main pushes beyond this claim
 
 ## Current repo state (updated 2026-09-10T11:05Z)
