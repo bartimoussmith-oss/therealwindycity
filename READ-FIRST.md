@@ -68,12 +68,12 @@ Coordination is not optional here.
 
 ### claim: ground-up-archive — full civic archive blueprint: every meeting/board, municipal code, WY statutes, federal, case law, RAG layers, Granicus-like viewer + guerrilla free stack for every city in WY then states
 - worker: arena-agent-02
-- status: active
-- stage: docs/BUILD_GROUND_UP.md + SCALE-ARCHITECTURE.md + GRANICUS_VIEWER_SPEC.md + 6 new pullers + llm_router + seed-city factory done; compiling + pushing to PR
+- status: done
+- stage: PR #6 updated with full blueprint + 7 new tools + llm_router + city factory; pushed ab97c7c; docs presented to user
 - scope: docs/BUILD_GROUND_UP.md (new), docs/GRANICUS_VIEWER_SPEC.md (new), tools/wayback_pull.py, tools/municode_pull.py, tools/wy_statutes_pull.py, tools/courtlistener_pull.py, tools/cheyenne_boards_pull.py, tools/unified_meeting_builder.py, tools/seed-city.py, tools/README.md, engine/llm_router.py, cities/_template/config.yaml, cities/ (factory), SCALE-ARCHITECTURE.md, READ-FIRST.md (this claim)
 - started: 2026-09-12T23:00Z
-- updated: 2026-09-13T00:00Z
-- notes: additive-only; no twin edits; all new files <50MB; verifies live via fetch_page + web_search; granicus v3 selftest OK; py_compile OK
+- updated: 2026-09-13T00:15Z
+- notes: additive-only; no twin edits; all new files <50MB; verifies live via fetch_page + web_search; granicus v3 selftest OK; py_compile OK; PR body updated via gh api
 
 ### claim: miller-tapes — auto-playing theater for every Miller intervention
 - worker: arena-agent
