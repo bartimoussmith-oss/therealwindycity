@@ -18,8 +18,8 @@ graphics: karaoke word captions, speaker name tags, exhibit banners.
      "totally off base".
 
 Needs: cut_media/*.mp4 segment pulls (see pull_list.txt — yt-dlp
---download-sections, android client) + caption VTTs (miller_captions for the
-20 Miller videos, cut_captions for the rest). Renders
+--download-sections, android client) + cut_captions/*.vtt caption files.
+Renders
 renders/THE_CALLER_TAPE.mp4 (+.srt), same filename as v2 so the app, reel
 view, and post kits keep working. Run: python3 montage_caller_tape_v3.py
 """
@@ -36,8 +36,7 @@ from cut_graphics import build_ass  # noqa: E402
 FONT = find_font() or "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
 WORK = ROOT / "renders" / "caller_tape_v3_work"
 MEDIA = ROOT / "cut_media"
-CAP_MILLER = Path("/home/user/miller/pipeline/miller_captions")
-CAP_CUT = ROOT / "cut_captions"
+CAPTIONS = ROOT / "cut_captions"  # all 23 video VTTs live here
 OUT = ROOT / "renders" / "THE_CALLER_TAPE.mp4"
 W, H = 1080, 1920
 WHITE, GOLD, DIM, RED = "white", "0xFFD166", "0x8fa3b8", "0xFF6B6B"
@@ -50,28 +49,28 @@ def t(hms: str) -> float:
 
 # pull file -> (video id, pull start in tape seconds, caption dir)
 PULLS = {
-    "mar9_cut_src": ("19tQtLA8klo", t("04:29:30"), CAP_MILLER),
-    "mar9_return_src": ("19tQtLA8klo", t("05:47:00"), CAP_MILLER),
-    "s3_demand": ("19tQtLA8klo", t("02:40:45"), CAP_MILLER),
-    "apr27_first_src": ("y9vnXtjZpR0", t("02:17:00"), CAP_MILLER),
-    "apr27_hand_src": ("y9vnXtjZpR0", t("02:42:30"), CAP_MILLER),
-    "apr27_1301_src": ("y9vnXtjZpR0", t("03:00:00"), CAP_MILLER),
-    "apr27_pileon_src": ("y9vnXtjZpR0", t("03:09:00"), CAP_MILLER),
-    "apr27_nine_src": ("y9vnXtjZpR0", t("03:40:00"), CAP_MILLER),
-    "s1_admit": ("y9vnXtjZpR0", t("00:34:30"), CAP_MILLER),
-    "s1_cites": ("y9vnXtjZpR0", t("02:19:20"), CAP_MILLER),
-    "s1_postpone": ("y9vnXtjZpR0", t("02:40:30"), CAP_MILLER),
-    "s1_denial1": ("y9vnXtjZpR0", t("03:06:15"), CAP_MILLER),
-    "s1_denial2": ("y9vnXtjZpR0", t("03:59:50"), CAP_MILLER),
-    "s2_pitch": ("t17ft4xMMx4", t("01:16:45"), CAP_MILLER),
-    "s2_gag": ("t17ft4xMMx4", t("01:28:30"), CAP_MILLER),
-    "s2_charge": ("t17ft4xMMx4", t("02:03:50"), CAP_MILLER),
-    "s2_dismiss": ("bGt1XMfaTTw", t("05:00:10"), CAP_MILLER),
-    "s3_meaningless": ("RjSGlhh4q9s", t("05:27:15"), CAP_MILLER),
-    "s3_delivered": ("kAPVTM1oJTo", t("00:56:50"), CAP_CUT),
-    "s4_committee": ("Q3CI--6YUDY", t("00:46:50"), CAP_CUT),
-    "s4_relay": ("S49bb5GfUro", t("00:51:00"), CAP_MILLER),
-    "s4_offbase": ("S49bb5GfUro", t("00:56:10"), CAP_MILLER),
+    "mar9_cut_src": ("19tQtLA8klo", t("04:29:30"), CAPTIONS),
+    "mar9_return_src": ("19tQtLA8klo", t("05:47:00"), CAPTIONS),
+    "s3_demand": ("19tQtLA8klo", t("02:40:45"), CAPTIONS),
+    "apr27_first_src": ("y9vnXtjZpR0", t("02:17:00"), CAPTIONS),
+    "apr27_hand_src": ("y9vnXtjZpR0", t("02:42:30"), CAPTIONS),
+    "apr27_1301_src": ("y9vnXtjZpR0", t("03:00:00"), CAPTIONS),
+    "apr27_pileon_src": ("y9vnXtjZpR0", t("03:09:00"), CAPTIONS),
+    "apr27_nine_src": ("y9vnXtjZpR0", t("03:40:00"), CAPTIONS),
+    "s1_admit": ("y9vnXtjZpR0", t("00:34:30"), CAPTIONS),
+    "s1_cites": ("y9vnXtjZpR0", t("02:19:20"), CAPTIONS),
+    "s1_postpone": ("y9vnXtjZpR0", t("02:40:30"), CAPTIONS),
+    "s1_denial1": ("y9vnXtjZpR0", t("03:06:15"), CAPTIONS),
+    "s1_denial2": ("y9vnXtjZpR0", t("03:59:50"), CAPTIONS),
+    "s2_pitch": ("t17ft4xMMx4", t("01:16:45"), CAPTIONS),
+    "s2_gag": ("t17ft4xMMx4", t("01:28:30"), CAPTIONS),
+    "s2_charge": ("t17ft4xMMx4", t("02:03:50"), CAPTIONS),
+    "s2_dismiss": ("bGt1XMfaTTw", t("05:00:10"), CAPTIONS),
+    "s3_meaningless": ("RjSGlhh4q9s", t("05:27:15"), CAPTIONS),
+    "s3_delivered": ("kAPVTM1oJTo", t("00:56:50"), CAPTIONS),
+    "s4_committee": ("Q3CI--6YUDY", t("00:46:50"), CAPTIONS),
+    "s4_relay": ("S49bb5GfUro", t("00:51:00"), CAPTIONS),
+    "s4_offbase": ("S49bb5GfUro", t("00:56:10"), CAPTIONS),
 }
 
 MILLER = "CHARLES MILLER \u2014 Zoom caller"

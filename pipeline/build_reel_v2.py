@@ -20,8 +20,7 @@ from cut_graphics import build_ass  # noqa: E402
 
 WORK = ROOT / "renders" / "reel_v2_work"
 MEDIA = ROOT / "cut_media"
-CAP_MILLER = Path("/home/user/miller/pipeline/miller_captions")
-CAP_CUT = ROOT / "cut_captions"
+CAPTIONS = ROOT / "cut_captions"  # all 23 video VTTs live here
 OUT = ROOT / "renders" / "CONTENTION_REEL.mp4"
 
 
@@ -35,33 +34,33 @@ DAIS = "THE DAIS"
 
 # (pull, vid, pull_start, a, b, vtt_dir, tags, slug, srt_label)
 CLIPS = [
-    ("mar9_cut_src", "19tQtLA8klo", "04:29:30", "04:32:35", "04:34:25", CAP_MILLER,
+    ("mar9_cut_src", "19tQtLA8klo", "04:29:30", "04:32:35", "04:34:25", CAPTIONS,
      [("04:32:35", "04:34:08", MILLER), ("04:34:08", "04:34:25", DAIS)],
      "1 \u00b7 THE CUT \u2014 MAR 9, 10:34 PM", "0:00 \u2014 The cut: three minutes in, gavel mid-sentence (Mar 9, 10:34 p.m.)"),
-    ("mar9_return_src", "19tQtLA8klo", "05:47:00", "05:47:50", "05:49:50", CAP_MILLER,
+    ("mar9_return_src", "19tQtLA8klo", "05:47:00", "05:47:50", "05:49:50", CAPTIONS,
      [("05:47:50", "05:49:50", MILLER)],
      "2 \u00b7 MILLER \u2014 MAR 9, 11:48 PM", "1:50 \u2014 Miller: \u201cyou used a point of order to cut my microphone\u201d (Mar 9, 11:48 p.m.)"),
-    ("apr27_first_src", "y9vnXtjZpR0", "02:17:00", "02:18:30", "02:20:25", CAP_MILLER,
+    ("apr27_first_src", "y9vnXtjZpR0", "02:17:00", "02:18:30", "02:20:25", CAPTIONS,
      [("02:18:30", "02:18:47", MILLER), ("02:18:47", "02:19:00", DAIS),
       ("02:19:00", "02:20:15", MILLER), ("02:20:15", "02:20:25", DAIS)],
      "3 \u00b7 FIRST TURN \u2014 APR 27", "3:50 \u2014 First turn, interrupted; \u201cyour time\u2019s up\u201d (Apr 27, 8:19 p.m.)"),
-    ("apr27_nine_src", "y9vnXtjZpR0", "03:40:00", "03:41:30", "03:43:20", CAP_MILLER,
+    ("apr27_nine_src", "y9vnXtjZpR0", "03:40:00", "03:41:30", "03:43:20", CAPTIONS,
      [("03:41:30", "03:42:15", MILLER), ("03:42:15", "03:43:20", DAIS)],
      "4 \u00b7 NINE PEOPLE YELLING \u2014 APR 27", "5:45 \u2014 \u201cNine people yelling point of order at me\u201d (Apr 27, ~10:40 p.m.)"),
-    ("apr27_pileon_src", "y9vnXtjZpR0", "03:09:00", "03:09:45", "03:12:20", CAP_MILLER,
+    ("apr27_pileon_src", "y9vnXtjZpR0", "03:09:00", "03:09:45", "03:12:20", CAPTIONS,
      [("03:09:45", "03:10:30", DAIS), ("03:10:30", "03:11:50", MILLER), ("03:11:50", "03:12:20", DAIS)],
      "5 \u00b7 THE PILE-ON \u2014 APR 27", "7:35 \u2014 The pile-on: \u201cnot on the postponement\u201d \u2192 \u201cmotion and a second to call you out of order\u201d (Apr 27, 9:10 p.m.)"),
-    ("apr27_hand_src", "y9vnXtjZpR0", "02:42:30", "02:43:25", "02:46:00", CAP_MILLER,
+    ("apr27_hand_src", "y9vnXtjZpR0", "02:42:30", "02:43:25", "02:46:00", CAPTIONS,
      [("02:43:25", "02:44:25", DAIS), ("02:44:25", "02:44:30", "CITY CLERK"),
       ("02:44:30", "02:44:50", DAIS), ("02:44:50", "02:45:35", MILLER), ("02:45:35", "02:46:00", DAIS)],
      "6 \u00b7 THE BYPASSED HAND \u2014 APR 27", "10:10 \u2014 The bypassed hand: skipped \u2192 \u201cmoved on\u201d \u2192 apology \u2192 point of order anyway (Apr 27, 8:44 p.m.)"),
-    ("apr27_1301_src", "y9vnXtjZpR0", "03:00:00", "03:01:10", "03:02:30", CAP_MILLER,
+    ("apr27_1301_src", "y9vnXtjZpR0", "03:00:00", "03:01:10", "03:02:30", CAPTIONS,
      [("03:01:10", "03:01:46", MILLER), ("03:01:46", "03:02:30", DAIS)],
      "7 \u00b7 THE LAST ITEM \u2014 APR 27", "12:45 \u2014 \u201cI find you out of order, Mr. Miller\u201d mid-sentence (1:30 a.m.)"),
-    ("moody_src", "tUTtHJp87Iw", "00:27:40", "00:27:50", "00:29:10", CAP_MILLER,
+    ("moody_src", "tUTtHJp87Iw", "00:27:40", "00:27:50", "00:29:10", CAPTIONS,
      [("00:27:50", "00:28:20", DAIS), ("00:28:20", "00:29:10", "CHAIR SEGRAVE")],
      "8 \u00b7 \u2018REMOVE $22M\u2019 \u2014 JAN 14", "14:05 \u2014 \u201cRemove $22M from the consent agenda\u201d (Jan 14 COW)"),
-    ("nemecek_src", "tUTtHJp87Iw", "00:46:50", "00:47:10", "00:48:30", CAP_MILLER,
+    ("nemecek_src", "tUTtHJp87Iw", "00:46:50", "00:47:10", "00:48:30", CAPTIONS,
      [("00:47:10", "00:48:30", "VICKI NEMECEK \u2014 Public Works Director")],
      "9 \u00b7 \u2018LIPSTICK ON A PIG\u2019", "15:25 \u2014 \u201cLipstick on a pig\u201d \u2014 Public Works on the consent-agenda contract (finance committee)"),
 ]
