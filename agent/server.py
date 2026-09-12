@@ -271,6 +271,33 @@ class Handler(BaseHTTPRequestHandler):
                                  "or run `python3 -m agent pair` for a device token"}, 401)
 
     # -- routing ------------------------------------------------------------
+    def do_HEAD(self):
+        """HEAD support: proxies, PWAs and health checks probe with it."""
+        path = urllib.parse.urlsplit(self.path).path
+        if path in ("/", "/index.html"):
+            self.send_response(200)
+            self.send_header("Content-Type", "text/html; charset=utf-8")
+            self.send_header("Content-Length", str(len(
+                (STATIC_DIR / "webapp.html").read_bytes())))
+            self.end_headers()
+            return
+        if path == "/healthz":
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain; charset=utf-8")
+            self.send_header("Content-Length", "2")
+            self.end_headers()
+            return
+        if path.startswith("/api/") or path == "/manifest.webmanifest" or path == "/sw.js":
+            # answer with the same status a GET would give, body omitted
+            self.send_response(200 if self.app.authorised(self) else 401)
+            self.send_header("Content-Type", "application/json; charset=utf-8")
+            self.send_header("Content-Length", "0")
+            self.end_headers()
+            return
+        self.send_response(404)
+        self.send_header("Content-Length", "0")
+        self.end_headers()
+
     def do_GET(self):
         path = urllib.parse.urlsplit(self.path).path
         try:
