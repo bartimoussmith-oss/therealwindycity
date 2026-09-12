@@ -130,6 +130,19 @@ auto-redeploys from `main`).
 - **Owner todo:** rotate the GitHub PAT currently circulating in chats.
 
 ## Work log (append when you finish; newest last)
+- 2026-09-12 21:40Z — arena-agent: **portable-agent runtime shipped** — new top-level `agent/`
+  package (+ `AGENT.md`) giving the owner a local, device-portable, multi-agent runtime:
+  plan→parallel workers→independent verifier→synthesis, 15 audited tools (shell/files/grep/
+  polite web/git/`run.py`/sub-agents), three-tier command policy (deny/confirm/allow) with a
+  workspace jail, dry-run and full audit trail, SQLite state in `~/.windycity-agent/` (never
+  in the repo), installable PWA console for phone/Chromebook over the LAN, and installers for
+  Termux/Windows/Linux/macOS/Chromebook. Providers: Anthropic, any OpenAI-compatible endpoint,
+  Ollama, Claude CLI, and a paste-bridge so Arena.ai Agent Mode can drive the local machine
+  with no key (Arena publishes no API — documented honestly in `AGENT.md` §1, adapter slot
+  ready if one ever ships). Verified offline: 48/48 unit tests, `agent selftest` ALL PASS,
+  real tool execution through single/plan/swarm + paste bridge + live SSE console, worktree
+  isolation leaves the source tree untouched and creates no branches. Additive only — no
+  existing file (twins, engine, data, pipeline, requirements, .github) was modified.
 
 - 2026-09-10 05:04Z — windycity-deploy: v5 mega console + intel_index.json +
   prebuilt artifacts landed via the Colab cell (repo rebuilt after the Sept-7
