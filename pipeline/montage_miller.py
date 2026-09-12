@@ -10,6 +10,8 @@ Sources, strictly separated on every card:
   [MINUTES]  = city clerk's minutes (corpus, verbatim extracts)
   [VERBATIM] = Miller's own on-the-record words (user-supplied transcript indexes,
                authoritative per canon)
+v2 graphics: every card carries an EXHIBIT A..N stamp plus a color-coded
+SOURCE ribbon (gold = city minutes, white = verbatim record).
 Run:  python3 montage_miller.py   -> renders/THE_CALLER.mp4 (+.srt)
 """
 import subprocess, shutil, sys
@@ -62,6 +64,15 @@ def main():
         (WORK / f"n{tag}.txt").write_text(b["n"])
         (WORK / f"b{tag}.txt").write_text(wrap_text(b["b"], 29))
         (WORK / f"s{tag}.txt").write_text(b["s"])
+        (WORK / f"x{tag}.txt").write_text(f"EXHIBIT {chr(64 + i)}")
+        slow = b["s"].lower()
+        if "minutes" in slow:
+            stag, scol = "SOURCE \u00b7 CITY MINUTES", GOLD
+        elif "verbatim" in slow:
+            stag, scol = "SOURCE \u00b7 VERBATIM RECORD", WHITE
+        else:
+            stag, scol = "SOURCE \u00b7 PUBLIC RECORD", DIM
+        (WORK / f"g{tag}.txt").write_text(stag)
 
         def dt(tf, size, col, y, t0):
             return (f"drawtext=fontfile={FONT}:textfile={tf}:fontcolor={col}:fontsize={size}:"
@@ -71,6 +82,9 @@ def main():
               + "," + dt(str(WORK / f"n{tag}.txt"), 66, b["c"], "h*0.38", 1.2)
               + "," + dt(str(WORK / f"b{tag}.txt"), 43, WHITE, "h*0.58", 0.9)
               + "," + dt(str(WORK / f"s{tag}.txt"), 28, DIM, "h*0.87", 0.4)
+              + "," + dt(str(WORK / f"g{tag}.txt"), 30, scol, "h*0.825", 0.4)
+              + (f",drawtext=fontfile={FONT}:textfile={WORK / f'x{tag}.txt'}:fontcolor={RED}:"
+                 f"fontsize=40:x=w-text_w-48:y=48:alpha='clip((t-0.4)/0.6,0,1)'")
               + f",drawbox=x=0:y='ih-10':w='iw*{i}/{total}':h=10:color=0x4da3ff@0.85:t=fill")
         out = WORK / f"card_{tag}.mp4"
         run(["ffmpeg", "-y", "-f", "lavfi", "-i", vf,
