@@ -66,6 +66,15 @@ Coordination is not optional here.
 
 ## Active claims
 
+### claim: montage-studio-watermark — user montage studio: pull videos via transcriptions, stitch multi-meeting montages, export + share to social with Real Windy City watermark
+- worker: arena-agent-04
+- status: active
+- stage: built + verified py_compile OK, twins identical, committing + pushing to arena/01a095a9-therealwindycity
+- scope: engine/montage_builder.py, pages/6_Montage_Studio.py, pipeline/montage.py (extend watermark), tools/watermark.py, docs/MONTAGE_STUDIO.md, streamlit_app.py + Transparency_Index_App.py (identical twins — add montage studio nav), READ-FIRST.md (this claim)
+- started: 2026-09-13T01:15Z
+- updated: 2026-09-13T02:00Z
+- notes: additive + twin update for nav; watermark mandatory for shared videos; transcription-driven clip selection; multi-meeting stitch; export MP4+SRT+POST for social; storage server_data/<city>/montages/<id>/ manifest.json watermark_proof; ffmpeg drawtext bottom-right + top-left source burned every frame
+
 ### claim: region-preview-server — local server copy + RAG DB on server + external link preservation + scale to all WY cities + Streamlit region preview last 6 months real data
 - worker: arena-agent-03
 - status: done

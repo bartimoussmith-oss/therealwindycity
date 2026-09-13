@@ -1651,13 +1651,14 @@ SECTIONS = {
 def render_ledger():
     _comic_boot()
     _comic_masthead()
-    # NEW: Region preview + server archive banner (ground-up scale)
+    # NEW: Region preview + server archive + montage studio banner (ground-up scale)
     try:
-        st.info("🗺️ **NEW — Wyoming Region Preview (last 6 months real data) + Server Archive + Meeting Viewer** — open the sidebar → **Region View**, **Server Archive**, **Meeting Viewer** pages (multipage). Every meeting now has external_url preserved + local_path on your server (no dependency). RAG vectordb stored on server `server_data/<city>/vectordb/`. 23 WY cities seeded via `cities/wyoming_cities.json` + `tools/seed-city.py`. See `docs/BUILD_GROUND_UP.md` + `SCALE-ARCHITECTURE.md`.", icon="🚀")
-        col_r1, col_r2, col_r3 = st.columns(3)
-        col_r1.page_link("pages/3_Region_View.py", label="🗺️ Open Region View — last 6 months real data", use_container_width=True)
-        col_r2.page_link("pages/4_Server_Archive.py", label="💾 Open Server Archive — local copy + RAG", use_container_width=True)
-        col_r3.page_link("pages/5_Meeting_Viewer.py", label="🎬 Open Meeting Viewer — Granicus-like + toppings", use_container_width=True)
+        st.info("🗺️ **NEW — Wyoming Region Preview (last 6 months real data) + Server Archive + Meeting Viewer + Montage Studio (watermarked)** — open the sidebar → **Region View**, **Server Archive**, **Meeting Viewer**, **Montage Studio** pages (multipage). Every meeting now has external_url preserved + local_path on your server (no dependency). RAG vectordb stored on server `server_data/<city>/vectordb/`. 23 WY cities seeded via `cities/wyoming_cities.json` + `tools/seed-city.py`. Montage Studio: search transcriptions → pull videos via timestamps → stitch multi-meeting reels → export watermarked MP4+SRT+POST for social. See `docs/BUILD_GROUND_UP.md` + `docs/MONTAGE_STUDIO.md`.", icon="🚀")
+        col_r1, col_r2, col_r3, col_r4 = st.columns(4)
+        col_r1.page_link("pages/3_Region_View.py", label="🗺️ Region View — last 6 months", use_container_width=True)
+        col_r2.page_link("pages/4_Server_Archive.py", label="💾 Server Archive — local+RAG", use_container_width=True)
+        col_r3.page_link("pages/5_Meeting_Viewer.py", label="🎬 Meeting Viewer — Granicus-like", use_container_width=True)
+        col_r4.page_link("pages/6_Montage_Studio.py", label="✂️ Montage Studio — watermarked", use_container_width=True)
     except Exception:
         pass
     eng_stats = {r["k"]: r["v"] for r in _engine_q(
