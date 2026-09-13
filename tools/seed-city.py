@@ -17,7 +17,7 @@ Creates:
 
 Then you run the pullers with CITY=<slug> env.
 """
-import sys, shutil, pathlib, yaml, re
+import sys, shutil, pathlib, re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent

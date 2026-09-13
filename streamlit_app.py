@@ -1651,6 +1651,15 @@ SECTIONS = {
 def render_ledger():
     _comic_boot()
     _comic_masthead()
+    # NEW: Region preview + server archive banner (ground-up scale)
+    try:
+        st.info("🗺️ **NEW — Wyoming Region Preview (last 6 months real data) + Server Archive + Meeting Viewer** — open the sidebar → **Region View**, **Server Archive**, **Meeting Viewer** pages (multipage). Every meeting now has external_url preserved + local_path on your server (no dependency). RAG vectordb stored on server `server_data/<city>/vectordb/`. 23 WY cities seeded via `cities/wyoming_cities.json` + `tools/seed-city.py`. See `docs/BUILD_GROUND_UP.md` + `SCALE-ARCHITECTURE.md`.", icon="🚀")
+        col_r1, col_r2, col_r3 = st.columns(3)
+        col_r1.page_link("pages/3_Region_View.py", label="🗺️ Open Region View — last 6 months real data", use_container_width=True)
+        col_r2.page_link("pages/4_Server_Archive.py", label="💾 Open Server Archive — local copy + RAG", use_container_width=True)
+        col_r3.page_link("pages/5_Meeting_Viewer.py", label="🎬 Open Meeting Viewer — Granicus-like + toppings", use_container_width=True)
+    except Exception:
+        pass
     eng_stats = {r["k"]: r["v"] for r in _engine_q(
         "SELECT 'documents' k, COUNT(*) v FROM documents UNION ALL "
         "SELECT 'alerts', COUNT(*) FROM alerts UNION ALL "

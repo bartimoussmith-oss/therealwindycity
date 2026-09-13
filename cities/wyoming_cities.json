@@ -1,0 +1,248 @@
+{
+  "state": "wy",
+  "generated": "2026-09-13",
+  "note": "Wyoming cities — Granicus domains, Municode slugs, YouTube channels verified where possible, else placeholder. Factory: tools/seed-city.py",
+  "cities": [
+    {
+      "slug": "cheyenne",
+      "name": "Cheyenne",
+      "county": "Laramie",
+      "population": 65000,
+      "granicus_domain": "cheyenne.granicus.com",
+      "granicus_views": [2,4,5,6,7],
+      "municode_slug": "cheyenne",
+      "municode_url": "https://library.municode.com/wy/cheyenne/codes/code_of_ordinances",
+      "youtube_channel_id": "UC_SbB-4DCUA-NPDtkw2UA5A",
+      "city_site": "https://www.cheyennecity.org",
+      "boards_count": 26,
+      "status": "live",
+      "meetings_last_6mo": 22,
+      "has_video": true,
+      "has_code": true,
+      "has_statutes": true
+    },
+    {
+      "slug": "casper",
+      "name": "Casper",
+      "county": "Natrona",
+      "population": 59000,
+      "granicus_domain": "casper.granicus.com",
+      "municode_slug": "casper",
+      "municode_url": "https://library.municode.com/wy/casper/codes/code_of_ordinances",
+      "city_site": "https://www.casperwy.gov",
+      "status": "seeded",
+      "boards_estimate": 15
+    },
+    {
+      "slug": "laramie",
+      "name": "Laramie",
+      "county": "Albany",
+      "population": 32000,
+      "granicus_domain": "cityoflaramie.granicus.com",
+      "municode_slug": "laramie",
+      "municode_url": "https://library.municode.com/wy/laramie/codes/code_of_ordinances",
+      "city_site": "https://www.cityoflaramie.org",
+      "status": "seeded"
+    },
+    {
+      "slug": "gillette",
+      "name": "Gillette",
+      "county": "Campbell",
+      "population": 32000,
+      "granicus_domain": "gillette.granicus.com",
+      "municode_slug": "gillette",
+      "city_site": "https://www.gillettewy.gov",
+      "status": "seeded"
+    },
+    {
+      "slug": "rock-springs",
+      "name": "Rock Springs",
+      "county": "Sweetwater",
+      "population": 23000,
+      "granicus_domain": "rocksprings.granicus.com",
+      "municode_slug": "rock_springs",
+      "city_site": "https://www.rswy.net",
+      "status": "seeded"
+    },
+    {
+      "slug": "sheridan",
+      "name": "Sheridan",
+      "county": "Sheridan",
+      "population": 18000,
+      "granicus_domain": "sheridan.granicus.com",
+      "municode_slug": "sheridan",
+      "city_site": "https://www.sheridanwy.net",
+      "status": "seeded"
+    },
+    {
+      "slug": "green-river",
+      "name": "Green River",
+      "county": "Sweetwater",
+      "population": 12000,
+      "granicus_domain": "greenriver.granicus.com",
+      "municode_slug": "green_river",
+      "city_site": "https://www.cityofgreenriver.org",
+      "status": "seeded"
+    },
+    {
+      "slug": "evanston",
+      "name": "Evanston",
+      "county": "Uinta",
+      "population": 12000,
+      "granicus_domain": "evanston.granicus.com",
+      "municode_slug": "evanston",
+      "city_site": "https://www.evanstonwy.org",
+      "status": "seeded"
+    },
+    {
+      "slug": "riverton",
+      "name": "Riverton",
+      "county": "Fremont",
+      "population": 11000,
+      "granicus_domain": "riverton.granicus.com",
+      "municode_slug": "riverton",
+      "city_site": "https://www.rivertonwy.gov",
+      "status": "seeded"
+    },
+    {
+      "slug": "jackson",
+      "name": "Jackson",
+      "county": "Teton",
+      "population": 11000,
+      "granicus_domain": "jacksonwy.granicus.com",
+      "municode_slug": "jackson",
+      "city_site": "https://www.jacksonwy.gov",
+      "status": "seeded"
+    },
+    {
+      "slug": "cody",
+      "name": "Cody",
+      "county": "Park",
+      "population": 10000,
+      "granicus_domain": "cody.granicus.com",
+      "municode_slug": "cody",
+      "city_site": "https://www.cityofcody-wy.gov",
+      "status": "seeded"
+    },
+    {
+      "slug": "rawlins",
+      "name": "Rawlins",
+      "county": "Carbon",
+      "population": 8600,
+      "granicus_domain": "rawlins.granicus.com",
+      "municode_slug": "rawlins",
+      "city_site": "https://www.rawlinswy.gov",
+      "status": "seeded"
+    },
+    {
+      "slug": "lander",
+      "name": "Lander",
+      "county": "Fremont",
+      "population": 7800,
+      "granicus_domain": "lander.granicus.com",
+      "municode_slug": "lander",
+      "city_site": "https://www.landerwy.gov",
+      "status": "seeded"
+    },
+    {
+      "slug": "torrington",
+      "name": "Torrington",
+      "county": "Goshen",
+      "population": 6700,
+      "granicus_domain": "torrington.granicus.com",
+      "municode_slug": "torrington",
+      "city_site": "https://www.torringtonwy.gov",
+      "status": "seeded"
+    },
+    {
+      "slug": "powell",
+      "name": "Powell",
+      "county": "Park",
+      "population": 6400,
+      "granicus_domain": "powell.granicus.com",
+      "municode_slug": "powell",
+      "city_site": "https://cityofpowell.com",
+      "status": "seeded"
+    },
+    {
+      "slug": "douglas",
+      "name": "Douglas",
+      "county": "Converse",
+      "population": 6300,
+      "granicus_domain": "douglas.granicus.com",
+      "municode_slug": "douglas",
+      "city_site": "https://www.cityofdouglas.org",
+      "status": "seeded"
+    },
+    {
+      "slug": "worland",
+      "name": "Worland",
+      "county": "Washakie",
+      "population": 5200,
+      "granicus_domain": "worland.granicus.com",
+      "municode_slug": "worland",
+      "city_site": "https://www.cityofworland.org",
+      "status": "seeded"
+    },
+    {
+      "slug": "buffalo",
+      "name": "Buffalo",
+      "county": "Johnson",
+      "population": 4700,
+      "granicus_domain": "buffalo.granicus.com",
+      "municode_slug": "buffalo",
+      "city_site": "https://www.buffalowy.gov",
+      "status": "seeded"
+    },
+    {
+      "slug": "wheatland",
+      "name": "Wheatland",
+      "county": "Platte",
+      "population": 3600,
+      "granicus_domain": "wheatland.granicus.com",
+      "municode_slug": "wheatland",
+      "city_site": "https://www.townofwheatlandwy.com",
+      "status": "seeded"
+    },
+    {
+      "slug": "newcastle",
+      "name": "Newcastle",
+      "county": "Weston",
+      "population": 3200,
+      "granicus_domain": "newcastle.granicus.com",
+      "municode_slug": "newcastle",
+      "city_site": "https://www.newcastlewy.gov",
+      "status": "seeded"
+    },
+    {
+      "slug": "thermopolis",
+      "name": "Thermopolis",
+      "county": "Hot Springs",
+      "population": 2900,
+      "granicus_domain": "thermopolis.granicus.com",
+      "municode_slug": "thermopolis",
+      "city_site": "https://www.townofthermopolis.com",
+      "status": "seeded"
+    },
+    {
+      "slug": "kemmerer",
+      "name": "Kemmerer",
+      "county": "Lincoln",
+      "population": 2600,
+      "granicus_domain": "kemmerer.granicus.com",
+      "municode_slug": "kemmerer",
+      "city_site": "https://www.kemmerer.org",
+      "status": "seeded"
+    },
+    {
+      "slug": "lyman",
+      "name": "Lyman",
+      "county": "Uinta",
+      "population": 2100,
+      "granicus_domain": "lyman.granicus.com",
+      "municode_slug": "lyman",
+      "city_site": "https://www.lymanwy.com",
+      "status": "seeded"
+    }
+  ]
+}

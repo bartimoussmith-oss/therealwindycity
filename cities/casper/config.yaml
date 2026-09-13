@@ -1,0 +1,43 @@
+# City factory template — copy to cities/<slug>/config.yaml
+city: casper
+state: wy
+full_name: City of Cheyenne
+granicus:
+  domain: casper.granicus.com
+  view_ids: [2,4,5,6,7]  # auto-discover if empty
+  base_url: https://casper.granicus.com
+municode:
+  slug: casper
+  url: https://library.municode.com/wy/casper/codes/code_of_ordinances
+  supplement: 73
+youtube:
+  channel_id: UC_SbB-4DCUA-NPDtkw2UA5A
+  channel_url: https://www.youtube.com/@CityofCheyenne
+  index_file: pipeline/cityvideos.json
+boards:
+  source: https://www.caspercity.org/Your-Government/Boards-Commissions
+  count: 26
+  list:
+    - Active Transportation Advisory Committee
+    - Board of Adjustment
+    - Planning Commission
+    - Downtown Development Authority
+    - etc
+law:
+  wy_statutes: https://www.wyoleg.gov/stateStatutes/StatutesDownload
+  case_law_court: wy
+  municipal_code: municode
+federal:
+  eCFR: https://www.ecfr.gov
+  govinfo: https://www.govinfo.gov/bulkdata
+storage:
+  r2_bucket: therealwindycity
+  r2_prefix: cities/casper/
+  github_releases: true
+  internet_archive: true
+llm:
+  router: engine/llm_router.py
+  chain: [groq, gemini, cf_workers_ai, openrouter, ollama, extractive]
+domain: casper.granicus.com
+  subdomain: casper.granicus.com
+  streamlit: https://therealwindycity.streamlit.app
