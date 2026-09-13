@@ -68,12 +68,12 @@ Coordination is not optional here.
 
 ### claim: region-preview-server — local server copy + RAG DB on server + external link preservation + scale to all WY cities + Streamlit region preview last 6 months real data
 - worker: arena-agent-03
-- status: active
-- stage: city_registry + local_store + wyoming_cities.json (23 cities) + seed-city factory done + 3 new pages (Region View, Server Archive, Meeting Viewer) + server_sync.py + twins updated identical + Streamlit preview running on 8501; committing
+- status: done
+- stage: PR #6 pushed 26ebad3 with 23 WY cities factory + region preview (real 6mo) + server archive + meeting viewer + local_store + city_registry + server_sync; twins identical; preview live 8501; docs presented
 - scope: engine/city_registry.py, engine/local_store.py, cities/wyoming_cities.json, cities/*/config.yaml (23 WY cities), pages/3_Region_View.py, pages/4_Server_Archive.py, pages/5_Meeting_Viewer.py, tools/server_sync.py, tools/seed-city.py (fix yaml import), streamlit_app.py + Transparency_Index_App.py (identical twins — region nav banner), READ-FIRST.md (this claim)
 - started: 2026-09-13T00:30Z
-- updated: 2026-09-13T00:50Z
-- notes: additive + twin update authorized for region nav; no file >50MB; local server copy + external link preservation; recent 6 months real data preview; py_compile OK; Streamlit preview live
+- updated: 2026-09-13T01:00Z
+- notes: additive + twin update authorized for region nav; no file >50MB; local server copy + external link preservation; recent 6 months real data preview; py_compile OK; Streamlit preview live; pushed 26ebad3
 
 ### claim: ground-up-archive — full civic archive blueprint: every meeting/board, municipal code, WY statutes, federal, case law, RAG layers, Granicus-like viewer + guerrilla free stack for every city in WY then states
 - worker: arena-agent-02
