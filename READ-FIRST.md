@@ -66,6 +66,33 @@ Coordination is not optional here.
 
 ## Active claims
 
+### claim: montage-studio-watermark — user montage studio: pull videos via transcriptions, stitch multi-meeting montages, export + share to social with Real Windy City watermark
+- worker: arena-agent-04
+- status: done
+- stage: pushed e56464f Montage Studio watermarked + PR #6 body updated + Streamlit preview restarted 8501 live with 6 pages
+- scope: engine/montage_builder.py, pages/6_Montage_Studio.py, pipeline/montage.py (extend watermark), tools/watermark.py, docs/MONTAGE_STUDIO.md, streamlit_app.py + Transparency_Index_App.py (identical twins — add montage studio nav), READ-FIRST.md (this claim)
+- started: 2026-09-13T01:15Z
+- updated: 2026-09-13T02:02Z
+- notes: additive + twin update for nav; watermark mandatory for shared videos; transcription-driven clip selection; multi-meeting stitch; export MP4+SRT+POST for social; storage server_data/<city>/montages/<id>/ manifest.json watermark_proof; ffmpeg drawtext bottom-right + top-left source burned every frame; twins identical diff OK; py_compile OK; pushed e56464f; PR body updated via gh api; preview 8501 restarted
+
+### claim: region-preview-server — local server copy + RAG DB on server + external link preservation + scale to all WY cities + Streamlit region preview last 6 months real data
+- worker: arena-agent-03
+- status: done
+- stage: PR #6 pushed 26ebad3 with 23 WY cities factory + region preview (real 6mo) + server archive + meeting viewer + local_store + city_registry + server_sync; twins identical; preview live 8501; docs presented
+- scope: engine/city_registry.py, engine/local_store.py, cities/wyoming_cities.json, cities/*/config.yaml (23 WY cities), pages/3_Region_View.py, pages/4_Server_Archive.py, pages/5_Meeting_Viewer.py, tools/server_sync.py, tools/seed-city.py (fix yaml import), streamlit_app.py + Transparency_Index_App.py (identical twins — region nav banner), READ-FIRST.md (this claim)
+- started: 2026-09-13T00:30Z
+- updated: 2026-09-13T01:00Z
+- notes: additive + twin update authorized for region nav; no file >50MB; local server copy + external link preservation; recent 6 months real data preview; py_compile OK; Streamlit preview live; pushed 26ebad3
+
+### claim: ground-up-archive — full civic archive blueprint: every meeting/board, municipal code, WY statutes, federal, case law, RAG layers, Granicus-like viewer + guerrilla free stack for every city in WY then states
+- worker: arena-agent-02
+- status: done
+- stage: PR #6 updated with full blueprint + 7 new tools + llm_router + city factory; pushed ab97c7c; docs presented to user
+- scope: docs/BUILD_GROUND_UP.md (new), docs/GRANICUS_VIEWER_SPEC.md (new), tools/wayback_pull.py, tools/municode_pull.py, tools/wy_statutes_pull.py, tools/courtlistener_pull.py, tools/cheyenne_boards_pull.py, tools/unified_meeting_builder.py, tools/seed-city.py, tools/README.md, engine/llm_router.py, cities/_template/config.yaml, cities/ (factory), SCALE-ARCHITECTURE.md, READ-FIRST.md (this claim)
+- started: 2026-09-12T23:00Z
+- updated: 2026-09-13T00:15Z
+- notes: additive-only; no twin edits; all new files <50MB; verifies live via fetch_page + web_search; granicus v3 selftest OK; py_compile OK; PR body updated via gh api
+
 ### claim: miller-tapes — auto-playing theater for every Miller intervention
 - worker: arena-agent
 - status: done
