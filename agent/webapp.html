@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5">
+<meta name="theme-color" content="#0b0f14">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>windycity-agent</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%99%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0b0f14; --panel:#131a22; --panel-2:#18212b; --line:#243040; --ink:#e8eef6;
+    --dim:#93a4b8; --accent:#4ea1ff; --accent-2:#7dd3a0; --warn:#ffb454; --bad:#ff6b6b;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Roboto Mono",monospace;
+    --safe-b:env(safe-area-inset-bottom,0px); --safe-t:env(safe-area-inset-top,0px);
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);
+    font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overscroll-behavior-y:contain}
+  button,input,select,textarea{font:inherit;color:inherit}
+  button{cursor:pointer}
+  a{color:var(--accent)}
+
+  /* ---------- layout ---------- */
+  #app{display:flex;flex-direction:column;height:100%;max-width:900px;margin:0 auto}
+  header{position:sticky;top:0;z-index:20;background:rgba(11,15,20,.92);backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--line);padding:calc(8px + var(--safe-t)) 12px 8px;
+    display:flex;align-items:center;gap:10px}
+  header h1{font-size:15px;margin:0;font-weight:650;letter-spacing:.2px;white-space:nowrap}
+  .pill{font-size:11px;padding:3px 8px;border:1px solid var(--line);border-radius:999px;color:var(--dim);
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:44vw}
+  .pill.ok{color:var(--accent-2);border-color:#26543c}
+  .pill.warn{color:var(--warn);border-color:#5a4520}
+  .spacer{flex:1}
+  .iconbtn{background:var(--panel);border:1px solid var(--line);border-radius:10px;
+    min-width:40px;height:40px;padding:0 10px;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+  .iconbtn:active{background:var(--panel-2)}
+  .iconbtn[disabled]{opacity:.4}
+
+  main{flex:1;overflow-y:auto;padding:14px 12px 8px;-webkit-overflow-scrolling:touch}
+  .empty{color:var(--dim);text-align:center;padding:8vh 16px}
+  .empty h2{font-size:20px;margin:0 0 6px;color:var(--ink)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px}
+  .chip{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:13px;color:var(--ink)}
+
+  .msg{margin:0 0 14px}
+  .msg .who{font-size:11px;text-transform:uppercase;letter-spacing:.8px;color:var(--dim);margin-bottom:5px}
+  .bubble{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:11px 13px;
+    white-space:pre-wrap;word-wrap:break-word;overflow-wrap:anywhere}
+  .msg.user .bubble{background:#16283d;border-color:#24456b}
+  .msg.assistant .bubble{background:var(--panel-2)}
+  .msg.assistant.err .bubble{border-color:#5a2a2a;background:#221316}
+  .bubble code{font-family:var(--mono);font-size:13px;background:#0d1319;padding:1px 5px;border-radius:5px}
+  .bubble pre{font-family:var(--mono);font-size:12.5px;background:#0d1319;padding:10px;border-radius:10px;
+    overflow-x:auto;margin:8px 0 0}
+
+  .tool{border:1px dashed var(--line);border-radius:12px;margin:0 0 12px;background:#0f151c;overflow:hidden}
+  .tool summary{padding:9px 12px;font-family:var(--mono);font-size:12.5px;color:var(--dim);
+    display:flex;gap:8px;align-items:center;list-style:none}
+  .tool summary::-webkit-details-marker{display:none}
+  .tool[open] summary{border-bottom:1px dashed var(--line)}
+  .tool pre{margin:0;padding:10px 12px;font-family:var(--mono);font-size:12px;white-space:pre-wrap;
+    word-break:break-word;max-height:46vh;overflow:auto}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--accent-2);flex:0 0 auto}
+  .dot.bad{background:var(--bad)} .dot.run{background:var(--warn);animation:pulse 1.1s infinite}
+  @keyframes pulse{50%{opacity:.25}}
+
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px;margin:0 0 12px}
+  .card h3{margin:0 0 8px;font-size:13px;letter-spacing:.4px;text-transform:uppercase;color:var(--dim)}
+  .worker{border-left:3px solid var(--accent);padding-left:10px;margin:10px 0}
+  .worker .name{font-family:var(--mono);font-size:12.5px}
+  .verdict{font-family:var(--mono);font-size:12.5px;margin:4px 0}
+
+  .live{display:flex;align-items:center;gap:8px;color:var(--dim);font-size:13px;padding:6px 2px 12px}
+
+  footer{position:sticky;bottom:0;background:rgba(11,15,20,.96);backdrop-filter:blur(12px);
+    border-top:1px solid var(--line);padding:8px 12px calc(10px + var(--safe-b))}
+  .controls{display:flex;gap:8px;align-items:center;margin-bottom:8px;overflow-x:auto;padding-bottom:2px}
+  select,.mini{background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:7px 9px;font-size:13px}
+  .swatch{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--dim);white-space:nowrap}
+  .composer{display:flex;gap:8px;align-items:flex-end}
+  textarea{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:11px 13px;
+    resize:none;max-height:34vh;min-height:46px;outline:none}
+  textarea:focus{border-color:#33506f}
+  #send{background:var(--accent);border:none;color:#04121f;font-weight:700;border-radius:14px;
+    min-width:56px;height:46px;padding:0 16px}
+  #send.stop{background:var(--bad);color:#200}
+  #send[disabled]{opacity:.45}
+
+  .sheet{position:fixed;inset:0;background:rgba(3,6,9,.72);display:none;z-index:60;align-items:flex-end}
+  .sheet.on{display:flex}
+  .sheet .inner{background:var(--panel);border:1px solid var(--line);border-top-left-radius:18px;
+    border-top-right-radius:18px;width:100%;max-height:88vh;overflow:auto;padding:16px 14px calc(20px + var(--safe-b))}
+  .sheet h2{font-size:15px;margin:0 0 12px;display:flex;align-items:center;gap:8px}
+  .row{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line)}
+  .row:last-child{border-bottom:none}
+  .row label{color:var(--dim);font-size:13.5px}
+  .row input[type=text],.row input[type=number],.row input[type=password]{background:var(--panel-2);
+    border:1px solid var(--line);border-radius:9px;padding:7px 9px;width:min(58vw,340px);text-align:right}
+  .row input[type=checkbox]{width:20px;height:20px}
+  .btn{background:var(--panel-2);border:1px solid var(--line);border-radius:11px;padding:10px 14px;font-size:14px}
+  .btn.primary{background:var(--accent);border-color:var(--accent);color:#04121f;font-weight:650}
+  .btn.danger{background:#2a1416;border-color:#5a2a2a;color:#ffb4b4}
+  .btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .sess{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}
+  .sess .t{font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .sess .m{color:var(--dim);font-size:11.5px;white-space:nowrap}
+  .mono{font-family:var(--mono);font-size:12px;color:var(--dim);word-break:break-all}
+  #toast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + var(--safe-b));
+    background:#1d2a37;border:1px solid var(--line);padding:10px 14px;border-radius:12px;font-size:13.5px;
+    z-index:80;opacity:0;pointer-events:none;transition:opacity .2s;max-width:88vw}
+  #toast.on{opacity:1}
+  .hidden{display:none!important}
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <h1>⚙️ agent</h1>
+    <span class="pill" id="statusPill">connecting…</span>
+    <span class="spacer"></span>
+    <button class="iconbtn" id="btnSessions" title="Sessions">☰</button>
+    <button class="iconbtn" id="btnSettings" title="Settings">⚙︎</button>
+  </header>
+
+  <main id="main">
+    <div class="empty" id="empty">
+      <h2>Local agent, on your machine</h2>
+      <p>Give it a task. It runs real tools — shell, files, search, git, the civic pipeline — and shows its work.</p>
+      <div class="chips">
+        <button class="chip" data-t="Show me the repo layout and git status">repo status</button>
+        <button class="chip" data-t="Find every TODO in the repo and list file:line for each">grep todos</button>
+        <button class="chip" data-t="Run the civic engine selftest and summarize what it proves">run selftest</button>
+        <button class="chip" data-t="Summarize what changed in this repo in the last 10 commits">recent commits</button>
+        <button class="chip" data-t="Audit the most suspicious thing about the workspace and verify it">audit workspace</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="controls">
+      <select id="modeSel" title="agent topology">
+        <option value="single">single agent</option>
+        <option value="plan">plan → worker</option>
+        <option value="swarm">swarm (parallel + verifier)</option>
+      </select>
+      <select id="provSel" title="model provider"></select>
+      <label class="swatch"><input type="checkbox" id="dryChk"> dry-run</label>
+      <button class="mini" id="btnAudit">audit</button>
+      <button class="mini" id="btnNew">new</button>
+    </div>
+    <div class="composer">
+      <textarea id="input" rows="1" placeholder="Ask the agent to do something…" enterkeyhint="send"></textarea>
+      <button id="send">Run</button>
+    </div>
+  </footer>
+</div>
+
+<div class="sheet" id="sheet"><div class="inner" id="sheetInner"></div></div>
+<div id="toast"></div>
+
+<script>
+/* ---------- state ---------- */
+const S = {token:null, session:null, run:null, es:null, health:null, busy:false, providers:[]};
+const $ = s => document.querySelector(s);
+const main = $('#main');
+
+/* ---------- token handling ---------- */
+(function () {
+  const u = new URL(location.href);
+  const t = u.searchParams.get('token');
+  if (t) { localStorage.setItem('wy_token', t); u.searchParams.delete('token'); history.replaceState({}, '', u); }
+  S.token = localStorage.getItem('wy_token');
+})();
+
+async function api(path, opts = {}) {
+  const headers = Object.assign({'Content-Type':'application/json'}, opts.headers || {});
+  if (S.token) headers['Authorization'] = 'Bearer ' + S.token;
+  const url = path + (S.token && path.includes('?') ? '&' : (S.token && !path.includes('token=') && path.startsWith('/api/stream') ? '?' : '')) ;
+  const res = await fetch(path, Object.assign({}, opts, {headers}));
+  if (res.status === 401) { toast('Unauthorised — reopen with ?token=…'); throw new Error('401'); }
+  if (!res.ok) { const txt = await res.text(); throw new Error(res.status + ': ' + txt.slice(0,200)); }
+  return res.headers.get('Content-Type')?.includes('json') ? res.json() : res.text();
+}
+function toast(msg, ms = 3200) {
+  const el = $('#toast'); el.textContent = msg; el.classList.add('on');
+  clearTimeout(el._t); el._t = setTimeout(() => el.classList.remove('on'), ms);
+}
+
+/* ---------- boot ---------- */
+(async function boot() {
+  if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js').catch(()=>{});
+  try {
+    S.health = await api('/api/health');
+    renderStatus();
+  } catch (e) { $('#statusPill').textContent = 'offline'; }
+  try {
+    S.providers = await api('/api/providers');
+    const sel = $('#provSel');
+    sel.innerHTML = '<option value="">auto provider</option>' + S.providers.map(p =>
+      `<option value="${p.id}" ${p.ready?'':'data-x=1'}>${p.id}${p.ready?'':' (not ready)'}</option>`).join('');
+  } catch (e) {}
+  try {
+    const s = await api('/api/settings');
+    $('#modeSel').value = s.config.mode || 'single';
+    if (s.config.provider && s.config.provider !== 'auto') $('#provSel').value = s.config.provider;
+  } catch (e) {}
+  autoGrow();
+})();
+
+function renderStatus() {
+  const h = S.health, pill = $('#statusPill');
+  const ready = h.provider && h.provider !== 'demo';
+  pill.textContent = `${h.provider}/${h.model}`;
+  pill.className = 'pill ' + (ready ? 'ok' : 'warn');
+  pill.title = ready ? 'model wired' : 'no model wired — offline demo mode';
+  $('#provSel').title = h.workspace;
+}
+
+/* ---------- composer ---------- */
+const input = $('#input');
+function autoGrow(){ input.style.height = 'auto'; input.style.height = Math.min(input.scrollHeight, window.innerHeight*0.34) + 'px'; }
+input.addEventListener('input', autoGrow);
+input.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); send(); }
+});
+
+document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => {
+  input.value = c.dataset.t; autoGrow(); send();
+}));
+
+$('#send').addEventListener('click', () => S.busy ? stop() : send());
+
+async function send() {
+  const task = input.value.trim();
+  if (!task || S.busy) return;
+  input.value = ''; autoGrow();
+  appendMsg('user', task);
+  $('#empty')?.remove();
+  setBusy(true);
+  try {
+    const body = {task, session_id: S.session, mode: $('#modeSel').value,
+                  provider: $('#provSel').value || null, dry_run: $('#dryChk').checked};
+    const out = await api('/api/chat', {method:'POST', body: JSON.stringify(body)});
+    S.session = out.session_id; S.run = out.run_id;
+    stream(out.run_id);
+  } catch (e) { setBusy(false); appendMsg('assistant', 'Failed to start: ' + e.message, true); }
+}
+
+function stop() {
+  if (S.run) api('/api/stop', {method:'POST', body: JSON.stringify({run_id:S.run})}).catch(()=>{});
+  toast('stopping…');
+}
+function setBusy(b) {
+  S.busy = b; const btn = $('#send');
+  btn.textContent = b ? 'Stop' : 'Run'; btn.classList.toggle('stop', b);
+  btn.disabled = false;
+}
+
+/* ---------- transcript rendering ---------- */
+function appendMsg(role, text, isErr) {
+  const div = document.createElement('div');
+  div.className = 'msg ' + role + (isErr ? ' err' : '');
+  div.innerHTML = `<div class="who">${role}</div><div class="bubble"></div>`;
+  div.querySelector('.bubble').innerHTML = mdToHtml(text);
+  main.appendChild(div); scrollDown();
+  return div;
+}
+function appendTool(tool, args) {
+  const d = document.createElement('details');
+  d.className = 'tool';
+  d.innerHTML = `<summary><span class="dot run"></span><span>${escapeHtml(tool)}</span>
+    <span class="spacer"></span><span class="mono">${escapeHtml(short(args))}</span></summary><pre></pre>`;
+  main.appendChild(d); scrollDown();
+  return d;
+}
+function finishTool(node, ok, output) {
+  node.querySelector('.dot').className = 'dot ' + (ok ? '' : 'bad');
+  node.querySelector('pre').textContent = output || '(no output)';
+}
+function scrollDown(){ requestAnimationFrame(() => { main.scrollTop = main.scrollHeight; }); }
+function short(o){ const s = typeof o === 'string' ? o : JSON.stringify(o); return s.length > 90 ? s.slice(0,90)+'…' : s; }
+function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function mdToHtml(t) {
+  let s = escapeHtml(t || '');
+  s = s.replace(/```(\w*)\n([\s\S]*?)```/g, (m, l, code) => `<pre>${code}</pre>`);
+  s = s.replace(/`([^`\n]+)`/g, '<code>$1</code>');
+  s = s.replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>');
+  s = s.replace(/^### (.*)$/gm, '<b>$1</b>');
+  s = s.replace(/^- /gm, '• ');
+  return s;
+}
+
+/* ---------- live stream ---------- */
+function stream(runId) {
+  if (S.es) S.es.close();
+  const q = S.token ? '?token=' + encodeURIComponent(S.token) : '';
+  const es = new EventSource('/api/stream/' + runId + q);
+  S.es = es;
+  let live = null;
+  const live_ = (label) => {
+    if (!live) {
+      live = document.createElement('div');
+      live.className = 'live';
+      live.innerHTML = `<span class="dot run"></span><span>${escapeHtml(label)}</span>`;
+      main.appendChild(live); scrollDown();
+    } else live.querySelector('span:last-child').textContent = label;
+  };
+  const clearLive = () => { if (live) { live.remove(); live = null; } };
+
+  es.onmessage = (ev) => {
+    let e; try { e = JSON.parse(ev.data); } catch { return; }
+    if (e.kind === 'hello') return;
+    if (e.kind === 'step') return live_(`thinking · step ${e.step}/${e.max_steps}${e.agent && e.agent!=='main' ? ' · ' + e.agent : ''}`);
+    if (e.kind === 'plan') return void planCard(e.subtasks);
+    if (e.kind === 'worker_start') return live_(`worker ${e.worker} working: ${short(e.task)}`);
+    if (e.kind === 'worker_done') return void workerCard(e);
+    if (e.kind === 'phase') return live_(e.phase + (e.note ? ' · ' + e.note : ''));
+    if (e.kind === 'tool_call') { live_(`${e.tool} running…`); e._node = appendTool(e.tool, e.args); return; }
+    if (e.kind === 'tool_result') { live_(`${e.tool} ${e.ok ? 'done' : 'failed'}`); return; }
+    if (e.kind === 'bridge_prompt') return void bridgeCard(e);
+    if (e.kind === 'confirm_request') return void confirmCard(e);
+    if (e.kind === 'error') { clearLive(); appendMsg('assistant', 'Error: ' + e.error, true); return; }
+    if (e.kind === 'finished') {
+      clearLive(); es.close(); S.es = null; setBusy(false);
+      if (e.summary) appendMsg('assistant', e.summary, e.status === 'error');
+      if (e.cost_usd) toast(`done · ${e.steps ?? ''} steps · $${e.cost_usd}${e.cost_unknown ? ' (est.)' : ''}`);
+      else toast('done');
+      refreshSessions();
+    }
+  };
+  es.onerror = () => { /* browser retries; a finished run just re-plays */ };
+}
+
+/* ---------- cards ---------- */
+function planCard(subtasks) {
+  const c = document.createElement('div');
+  c.className = 'card';
+  c.innerHTML = '<h3>Plan</h3>' + (subtasks || []).map((s, i) =>
+    `<div class="worker"><div class="name">${i+1}. ${escapeHtml(s.role || 'worker')}</div>
+     <div>${escapeHtml(s.task || '')}</div>
+     ${s.deliverable ? `<div class="mono">deliverable: ${escapeHtml(s.deliverable)}</div>` : ''}</div>`).join('');
+  main.appendChild(c); scrollDown();
+}
+function workerCard(e) {
+  const c = document.createElement('div');
+  c.className = 'card';
+  c.innerHTML = `<h3>worker ${escapeHtml(e.worker)} — ${escapeHtml(e.status)}</h3>
+    ${e.diff ? `<pre>${escapeHtml(e.diff)}</pre>` : ''}
+    <details class="tool"><summary>report</summary><pre>${escapeHtml(e.summary || '')}</pre></details>`;
+  main.appendChild(c); scrollDown();
+}
+function bridgeCard(e) {
+  const c = document.createElement('div');
+  c.className = 'card';
+  c.innerHTML = `<h3>Paste bridge — hand this to Arena.ai, paste the reply back</h3>
+    <div class="btns"><button class="btn" id="copyP">Copy prompt</button>
+    <button class="btn" id="openA">Open Arena.ai ↗</button></div>
+    <details class="tool" open><summary>prompt sent to the model</summary><pre id="pp"></pre></details>
+    <textarea id="reply" rows="6" placeholder="Paste the assistant's reply here…"></textarea>
+    <div class="btns"><button class="btn primary" id="sendR">Send reply to agent</button></div>`;
+  main.appendChild(c); scrollDown();
+  c.querySelector('#pp').textContent = e.prompt;
+  c.querySelector('#copyP').onclick = async () => {
+    try { await navigator.clipboard.writeText(e.prompt); toast('prompt copied'); }
+    catch { const r = document.createRange(); r.selectNode(c.querySelector('#pp'));
+      getSelection().removeAllRanges(); getSelection().addRange(r); toast('selected — copy it'); }
+  };
+  c.querySelector('#openA').onclick = () => window.open('https://arena.ai/agent', '_blank', 'noopener');
+  c.querySelector('#sendR').onclick = async () => {
+    const reply = c.querySelector('#reply').value;
+    await api('/api/bridge', {method:'POST', body: JSON.stringify({run_id: S.run, reply})});
+    c.remove(); toast('reply delivered');
+  };
+}
+function confirmCard(e) {
+  const c = document.createElement('div');
+  c.className = 'card';
+  c.innerHTML = `<h3>Approve this action?</h3>
+    <div class="mono">${escapeHtml(e.tool)} · ${escapeHtml(e.reason || '')}</div>
+    <pre>${escapeHtml(short(e.args))}</pre>
+    <div class="btns"><button class="btn primary" id="yes">Approve</button>
+    <button class="btn danger" id="no">Deny</button></div>`;
+  main.appendChild(c); scrollDown();
+  const answer = async (v) => { await api('/api/confirm', {method:'POST', body: JSON.stringify({run_id:S.run, approve:v})}); c.remove(); toast(v ? 'approved' : 'denied'); };
+  c.querySelector('#yes').onclick = () => answer(true);
+  c.querySelector('#no').onclick = () => answer(false);
+}
+
+/* ---------- sheets ---------- */
+function sheet(html, after) {
+  const s = $('#sheet'); $('#sheetInner').innerHTML = html; s.classList.add('on');
+  s.onclick = ev => { if (ev.target === s) closeSheet(); };
+  after && after();
+}
+function closeSheet(){ $('#sheet').classList.remove('on'); }
+
+$('#btnSettings').addEventListener('click', async () => {
+  const s = await api('/api/settings');
+  const c = s.config;
+  sheet(`<h2>Settings <span class="spacer"></span><button class="btn" id="x">Close</button></h2>
+    <div class="row"><label>provider</label><input type="text" id="s_provider" value="${escapeHtml(c.provider||'auto')}"></div>
+    <div class="row"><label>model</label><input type="text" id="s_model" value="${escapeHtml(c.model||'')}"></div>
+    <div class="row"><label>default mode</label>
+      <select id="s_mode">${['single','plan','swarm'].map(m=>`<option ${c.mode===m?'selected':''}>${m}</option>`).join('')}</select></div>
+    <div class="row"><label>persona</label>
+      <select id="s_persona">${['operator','civic','terse'].map(m=>`<option ${c.persona===m?'selected':''}>${m}</option>`).join('')}</select></div>
+    <div class="row"><label>max steps / run</label><input type="number" id="s_max_steps" value="${c.max_steps||24}"></div>
+    <div class="row"><label>swarm width</label><input type="number" id="s_max_workers" value="${c.max_workers||4}"></div>
+    <div class="row"><label>polite delay (s/host)</label><input type="number" step="0.5" id="s_polite_delay" value="${c.polite_delay||3}"></div>
+    <div class="row"><label>network tools</label><input type="checkbox" id="s_network" ${c.network?'checked':''}></div>
+    <div class="row"><label>dry-run default</label><input type="checkbox" id="s_dry_run" ${c.dry_run?'checked':''}></div>
+    <div class="row"><label>require confirm</label><input type="checkbox" id="s_require_confirm" ${c.require_confirm?'checked':''}></div>
+    <div class="row"><label>custom base_url</label><input type="text" id="s_base_url" value="${escapeHtml(c.base_url||'')}" placeholder="http://host:1234/v1"></div>
+    <div class="row"><label>searxng url</label><input type="text" id="s_searx_url" value="${escapeHtml(c.searx_url||'')}"></div>
+    <div class="btns"><button class="btn primary" id="save">Save</button>
+      <button class="btn" id="guide">Setup guide</button></div>
+    <p class="mono">workspace ${escapeHtml(s.workspace)}<br>state ${escapeHtml(s.state_dir)}<br>
+      keys present: ${(s.secrets_present||[]).join(', ') || 'none (env or ~/.windycity-agent/secrets.json)'}</p>
+    <div class="btns"><button class="btn" id="lan">Show URLs for my other devices</button></div>`,
+  () => {
+    $('#x').onclick = closeSheet;
+    $('#guide').onclick = setupGuide;
+    $('#save').onclick = async () => {
+      const body = {
+        provider: $('#s_provider').value.trim(), model: $('#s_model').value.trim() || null,
+        mode: $('#s_mode').value, persona: $('#s_persona').value,
+        max_steps: +$('#s_max_steps').value, max_workers: +$('#s_max_workers').value,
+        polite_delay: +$('#s_polite_delay').value,
+        network: $('#s_network').checked, dry_run: $('#s_dry_run').checked,
+        require_confirm: $('#s_require_confirm').checked,
+        base_url: $('#s_base_url').value.trim() || null,
+        searx_url: $('#s_searx_url').value.trim() || null,
+      };
+      await api('/api/settings', {method:'POST', body: JSON.stringify(body)});
+      toast('saved'); S.health = await api('/api/health'); renderStatus(); closeSheet();
+    };
+    $('#lan').onclick = showUrls;
+  });
+});
+
+async function showUrls() {
+  const h = await api('/api/health');
+  sheet(`<h2>Open the agent on your other devices</h2>
+    <p class="mono">host: ${escapeHtml(h.hostname)} · port from the URL you are on</p>
+    ${(h.lan_ips||[]).map(ip => `<div class="row"><label>${escapeHtml(ip)}</label>
+      <button class="btn" onclick="copyText('http://${escapeHtml(ip)}:${location.port||8765}/')">Copy</button></div>`).join('')}
+    <p class="mono">Same Wi-Fi: just open the LAN URL. Away from home: put both devices on
+      Tailscale (free) and use the Tailscale IP, or run a tunnel. Add <code>?token=…</code> when a
+      token is set.</p>
+    <div class="btns"><button class="btn primary" onclick="document.querySelector('#sheet').classList.remove('on')">Done</button></div>`);
+}
+window.copyText = async (t) => { try { await navigator.clipboard.writeText(t); toast('copied'); } catch { toast(t); } };
+
+function setupGuide() {
+  sheet(`<h2>Setup, by device</h2>
+  <div class="card"><h3>Android (Termux)</h3><pre>pkg update && pkg install -y python git
+cd /sdcard/therealwindycity     # or clone it
+python3 -m agent doctor
+python3 -m agent serve --port 8765
+# then open http://&lt;phone-ip&gt;:8765 in Chrome and Install app</pre></div>
+  <div class="card"><h3>Windows</h3><pre>winget install Python.Python.3.12 Git.Git
+cd C:\\path\\to\\therealwindycity
+py -m agent doctor
+py -m agent serve --port 8765
+# allow Python through the firewall once, then open the LAN URL</pre></div>
+  <div class="card"><h3>Chromebook</h3><pre># No Linux dev env needed:
+#  1) run the agent on your phone or PC, open its LAN URL in Chrome → Install
+#  2) or, with Crostini: sudo apt install python3-pip && python3 -m agent serve</pre></div>
+  <div class="card"><h3>Model options</h3><pre>python3 -m agent key set anthropic      # cloud, strongest tool use
+python3 -m agent key set openai|openrouter|gemini|groq
+python3 -m agent config set provider ollama   # local, offline
+python3 -m agent run "task" --provider paste  # no key: drive it from Arena.ai</pre></div>
+  <div class="btns"><button class="btn primary" onclick="document.querySelector('#sheet').classList.remove('on')">Done</button></div>`);
+}
+
+$('#btnSessions').addEventListener('click', refreshSessions);
+async function refreshSessions() {
+  const rows = await api('/api/sessions?limit=40');
+  sheet(`<h2>Sessions <span class="spacer"></span><button class="btn" id="x2">Close</button></h2>
+    ${rows.length ? rows.map(s => `<div class="sess" data-id="${s.id}">
+      <div><div class="t">${escapeHtml(s.title || '(untitled)')}</div>
+      <div class="m">${new Date(s.updated*1000).toLocaleString()} · ${s.mode} · ${s.n} msg</div></div>
+      <button class="btn danger" data-del="${s.id}">✕</button></div>`).join('')
+      : '<p class="mono">No sessions yet.</p>'}`,
+  () => {
+    $('#x2').onclick = closeSheet;
+    document.querySelectorAll('.sess').forEach(el => el.addEventListener('click', async (ev) => {
+      if (ev.target.dataset.del) return;
+      openSession(el.dataset.id);
+    }));
+    document.querySelectorAll('[data-del]').forEach(b => b.addEventListener('click', async () => {
+      await fetch('/api/sessions/' + b.dataset.del, {method:'DELETE',
+        headers: S.token ? {'Authorization':'Bearer ' + S.token} : {}});
+      toast('deleted'); refreshSessions();
+    }));
+  });
+}
+async function openSession(id) {
+  const d = await api('/api/sessions/' + id);
+  S.session = id; S.run = null;
+  main.innerHTML = '';
+  const runIds = new Set((d.runs || []).map(r => r.id));
+  const audit = await api('/api/audit?run=' + ((d.runs[0] || {}).id || ''));
+  const failures = {}; (audit || []).forEach(a => { if (!a.ok) failures[a.tool] = a; });
+  const toolNodes = {};
+  (d.messages || []).forEach(m => {
+    if (m.role === 'user' || m.role === 'assistant' || m.role === 'note') {
+      if (m.content) appendMsg(m.role === 'note' ? 'assistant' : m.role, m.content);
+    } else if (m.role === 'tool') {
+      const node = appendTool(m.tool_name || 'tool', m.tool_args);
+      const a = failures[m.tool_name];
+      finishTool(node, m.ok !== 0, m.tool_result || '');
+    }
+  });
+  closeSheet(); toast('session loaded');
+  main.scrollTop = main.scrollHeight;
+}
+
+$('#btnAudit').addEventListener('click', async () => {
+  const rows = await api('/api/audit' + (S.run ? '?run=' + S.run : ''));
+  sheet(`<h2>Audit trail <span class="spacer"></span><button class="btn" id="x3">Close</button></h2>
+    <p class="mono">every tool call, its verdict, and whether it succeeded</p>
+    ${rows.length ? rows.map(r => `<div class="sess"><div><div class="mono">${new Date(r.ts*1000).toLocaleTimeString()} ·
+      ${escapeHtml(r.tool)} · ${escapeHtml(r.decision)} ${r.ok ? '✓' : '✗'}</div>
+      <div class="m">${escapeHtml(short(r.args))}</div></div></div>`).join('') : '<p class="mono">Nothing yet.</p>'}
+    <div class="btns"><button class="btn" id="mem">Memory</button>
+      <button class="btn" id="exp">Export state</button></div>`,
+  () => {
+    $('#x3').onclick = closeSheet;
+    $('#mem').onclick = async () => {
+      const m = await api('/api/memory');
+      sheet(`<h2>Memory</h2>${m.length ? m.map(r => `<div class="sess"><div>
+        <div class="mono">${escapeHtml(r.key)} [${escapeHtml(r.tags||'')}]</div>
+        <div class="m">${escapeHtml(String(r.value).slice(0,200))}</div></div></div>`).join('')
+        : '<p class="mono">Nothing stored yet. The agent writes here with memory_set.</p>'}
+        <div class="btns"><button class="btn primary" onclick="document.querySelector('#sheet').classList.remove('on')">Done</button></div>`);
+    };
+    $('#exp').onclick = () => window.open('/api/export', '_blank');
+  });
+});
+
+$('#btnNew').addEventListener('click', () => {
+  if (S.es) { S.es.close(); S.es = null; }
+  S.session = null; S.run = null; setBusy(false);
+  main.innerHTML = ''; toast('new session');
+  location.reload();
+});
+window.addEventListener('beforeunload', () => S.es && S.es.close());
+</script>
+</body>
+</html>
