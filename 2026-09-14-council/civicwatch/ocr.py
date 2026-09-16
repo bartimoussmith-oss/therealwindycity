@@ -8,12 +8,15 @@ from pathlib import Path
 import numpy as np
 import pypdfium2 as pdfium
 from rapidocr_onnxruntime import RapidOCR
-import civicwatch as cw
+import civicwatch as cw, resource
+resource.setrlimit(resource.RLIMIT_AS, (1100 << 20,) * 2)  # hard cap: die instead of freezing the box
 
 def ocr_pdf(path, engine, dpi=150, max_pages=60):
     pdf = pdfium.PdfDocument(str(path)); out = []
     for i in range(min(len(pdf), max_pages)):
-        img = pdf[i].render(scale=dpi / 72).to_pil().convert("RGB")
+        pg = pdf[i]; w, h = pg.get_size()
+        sc = min(dpi / 72, (2500 * 72 / max(w, h)) / 72)  # cap longest side ~2500px: bounded RAM regardless of page size
+        img = pg.render(scale=sc).to_pil().convert("RGB")
         res, _ = engine(np.array(img))
         lines = [r[1] for r in (res or [])]
         out.append((i + 1, "\n".join(lines)))
@@ -23,7 +26,7 @@ def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--min-words", type=int, default=20); ap.add_argument("--dpi", type=int, default=150)
     ap.add_argument("--limit", type=int, default=0); a = ap.parse_args()
     c = cw.db(); eng = RapidOCR()
-    rows = c.execute("SELECT id,path FROM docs WHERE words IS NULL OR words<? ORDER BY id", (a.min_words,)).fetchall()
+    rows = c.execute("SELECT id,path FROM docs WHERE (words IS NULL OR words<?) AND COALESCE(ocr,0)=0 ORDER BY id", (a.min_words,)).fetchall()
     if a.limit: rows = rows[:a.limit]
     print(f"{len(rows)} scanned docs to OCR", flush=True)
     for n, (did, path) in enumerate(rows, 1):
@@ -31,7 +34,7 @@ def main():
         if not p.exists():
             try: cw.save(c.execute("SELECT url FROM docs WHERE id=?", (did,)).fetchone()[0], p)
             except Exception as e: print(f"  doc{did}: fetch fail {e}"); continue
-        t = time.time()
+        t = time.time(); c.execute("UPDATE docs SET ocr=-1 WHERE id=?", (did,)); c.commit()  # -1 = attempted; survives a crash
         try: pages = ocr_pdf(p, eng, a.dpi)
         except Exception as e: print(f"  doc{did}: OCR fail {e}"); continue
         words = sum(len(x.split()) for _, x in pages)

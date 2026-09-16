@@ -159,11 +159,25 @@ def cmd_crawl(a):
     print("done")
 
 # ----------------------------------------------------------------------------- index
-def pdf_pages(path):
+def _pdf_pages_inproc(path):
     import pypdf
     try: r = pypdf.PdfReader(path)
     except Exception as e: return []
     return [(i + 1, (pg.extract_text() or "")) for i, pg in enumerate(r.pages)]
+
+PDF_MEM_MB = int(os.environ.get("CW_PDF_MEM_MB", "700")); PDF_TIMEOUT = int(os.environ.get("CW_PDF_TIMEOUT", "600"))
+def pdf_pages(path):
+    """pypdf in a memory/time-capped child. A pathological PDF (huge inline images, decompression bombs) then fails
+    cleanly -> 0 words -> picked up by ocr.py, instead of taking the whole box down. Output identical to in-process."""
+    import subprocess, json as _j, sys as _s
+    code = ("import resource,sys,json,civicwatch as cw;resource.setrlimit(resource.RLIMIT_AS,(%d<<20,)*2);"
+            "print(json.dumps(cw._pdf_pages_inproc(sys.argv[1])))") % PDF_MEM_MB
+    try:
+        r = subprocess.run([_s.executable, "-c", code, str(path)], capture_output=True, text=True, timeout=PDF_TIMEOUT, cwd=str(ROOT))
+        if r.returncode == 0 and r.stdout.strip(): return [tuple(x) for x in _j.loads(r.stdout)]
+        print(f"  pdf_pages capped/failed rc={r.returncode} {Path(path).name}: {r.stderr.strip().splitlines()[-1][:120] if r.stderr.strip() else ''}", flush=True)
+    except subprocess.TimeoutExpired: print(f"  pdf_pages timeout {Path(path).name}", flush=True)
+    return []
 
 def index_one(c, did, path):
     pgs = pdf_pages(path); words = 0
