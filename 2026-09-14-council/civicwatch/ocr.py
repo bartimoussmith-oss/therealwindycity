@@ -9,7 +9,7 @@ import numpy as np
 import pypdfium2 as pdfium
 from rapidocr_onnxruntime import RapidOCR
 import civicwatch as cw, resource
-resource.setrlimit(resource.RLIMIT_AS, (1100 << 20,) * 2)  # hard cap: die instead of freezing the box
+# (no RLIMIT_AS: onnxruntime reserves large virtual space; render cap below bounds real RSS)
 
 def ocr_pdf(path, engine, dpi=150, max_pages=60):
     pdf = pdfium.PdfDocument(str(path)); out = []
