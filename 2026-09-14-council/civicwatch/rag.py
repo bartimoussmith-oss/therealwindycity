@@ -27,7 +27,7 @@ from tokenizers import Tokenizer
 ROOT = Path(__file__).resolve().parent
 RAG = ROOT / "data" / "rag"; RAG.mkdir(parents=True, exist_ok=True)
 MODEL = ROOT / "models" / "minilm-l6-onnx"
-VEC = RAG / "vectors.f16.npy"; META = RAG / "chunks.sqlite"; MANIFEST = RAG / "manifest.json"
+VEC = RAG / "vectors.f16.npy"; RAW = RAG / "vectors.f16.raw"; META = RAG / "chunks.sqlite"; MANIFEST = RAG / "manifest.json"
 CIVIC = Path(os.environ.get("CIVIC_DB", ROOT / "data" / "civic.db"))
 CHUNK, OVERLAP, MAXTOK = 900, 150, 256
 SKIP_DIRS = {".git", "node_modules", "__pycache__", "vectordb", "vectors", ".venv", "dist", "videos", "text_cache", "raw"}
@@ -95,7 +95,8 @@ def iter_repo(repo):
     for p in sorted(repo.rglob("*")):
         if not p.is_file() or p.suffix.lower() not in REPO_EXT: continue
         if any(part in SKIP_DIRS for part in p.parts): continue
-        if "/data/rag/" in p.as_posix(): continue  # our own vector output
+        ap = p.as_posix()
+        if "/data/rag/" in ap or ap.endswith("vectors.f16.raw") or "/civicwatch/data/text/" in ap: continue  # our own outputs; text/ is already indexed page-by-page via civic.db
         if p.stat().st_size > 3_000_000 or p.stat().st_size == 0: continue
         try: text = p.read_text(errors="ignore")
         except Exception: continue
@@ -106,12 +107,23 @@ def iter_repo(repo):
             yield ("repo", rel, rel, i // 4000 + 1, text[i:i + 4000], rel)
 
 def cmd_build(a):
+    """Resumable: vectors are appended to RAW after every batch; meta rows committed alongside. On restart the two are
+    reconciled to the shorter length, then only chunk ids not already present are embedded. --rebuild wipes both."""
     emb = Embedder(); c = meta_db()
-    have = {r[0] for r in c.execute("SELECT id FROM chunks")} if not a.rebuild else set()
     if a.rebuild:
         c.executescript("DELETE FROM chunks; INSERT INTO chunks_fts(chunks_fts) VALUES('rebuild');"); c.commit()
-        if VEC.exists(): VEC.unlink()
-    vecs = [np.load(VEC).astype(np.float32)] if VEC.exists() and not a.rebuild else []
+        for f in (VEC, RAW):
+            if f.exists(): f.unlink()
+    if not RAW.exists() and VEC.exists(): RAW.write_bytes(np.load(VEC).astype(np.float16).tobytes())
+    n_raw = RAW.stat().st_size // (384 * 2) if RAW.exists() else 0
+    n_meta = c.execute("SELECT COUNT(*) FROM chunks").fetchone()[0]
+    n = min(n_raw, n_meta)
+    if n_raw != n_meta:
+        print(f"reconcile: raw {n_raw} meta {n_meta} -> {n}", flush=True)
+        c.execute("DELETE FROM chunks WHERE row>=?", (n,)); c.execute("INSERT INTO chunks_fts(chunks_fts) VALUES('rebuild')"); c.commit()
+        if RAW.exists():
+            with open(RAW, "r+b") as f: f.truncate(n * 384 * 2)
+    have = {r[0] for r in c.execute("SELECT id FROM chunks")}
     import itertools
     srcs = itertools.chain(iter_civic(), iter_repo(a.repo) if a.repo else ())  # streamed: never hold the corpus in RAM
     print(f"existing chunks {len(have)}", flush=True)
@@ -119,12 +131,13 @@ def cmd_build(a):
     def flush():
         nonlocal batch, meta, n_new
         if not batch: return
-        v = emb(batch); vecs.append(v)
+        v = emb(batch).astype(np.float16)
         base = c.execute("SELECT COALESCE(MAX(row),-1) FROM chunks").fetchone()[0] + 1
-        c.executemany("INSERT OR IGNORE INTO chunks(row,id,kind,source,label,page,start,text) VALUES(?,?,?,?,?,?,?,?)",
+        with open(RAW, "ab") as f: f.write(v.tobytes())
+        c.executemany("INSERT INTO chunks(row,id,kind,source,label,page,start,text) VALUES(?,?,?,?,?,?,?,?)",
                       [(base + i, *m) for i, m in enumerate(meta)]); c.commit()
         n_new += len(batch); batch, meta = [], []
-        print(f"  embedded {n_new} new chunks  {n_new/(time.time()-t0):.1f}/s", flush=True)
+        if n_new % 640 == 0: print(f"  embedded {n_new} new chunks  {n_new/(time.time()-t0):.1f}/s", flush=True)
     for kind, source, label, page, text, url in srcs:
         for start, ch in chunk_text(text):
             i = cid(source, page, start, ch)
@@ -132,10 +145,10 @@ def cmd_build(a):
             have.add(i); batch.append(ch); meta.append((i, kind, source, label, page, start, ch))
             if len(batch) >= 32: flush()
     flush()
-    allv = np.vstack(vecs) if vecs else np.zeros((0, 384), np.float32)
+    allv = np.fromfile(RAW, dtype=np.float16).reshape(-1, 384) if RAW.exists() else np.zeros((0, 384), np.float16)
     n_rows = c.execute("SELECT COUNT(*) FROM chunks").fetchone()[0]
     assert allv.shape[0] == n_rows, f"vector/meta mismatch {allv.shape[0]} vs {n_rows}"
-    np.save(VEC, allv.astype(np.float16))
+    np.save(VEC, allv)
     MANIFEST.write_text(json.dumps(dict(model="sentence-transformers/all-MiniLM-L6-v2 (onnx)", model_sha1_12=emb.fingerprint, dim=384,
         chunk=CHUNK, overlap=OVERLAP, max_tokens=MAXTOK, dtype="float16", n_chunks=int(n_rows), built=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         vectors_sha1=hashlib.sha1(VEC.read_bytes()).hexdigest()), indent=2))
