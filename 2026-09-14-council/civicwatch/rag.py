@@ -28,7 +28,7 @@ ROOT = Path(__file__).resolve().parent
 RAG = ROOT / "data" / "rag"; RAG.mkdir(parents=True, exist_ok=True)
 MODEL = ROOT / "models" / "minilm-l6-onnx"
 VEC = RAG / "vectors.f16.npy"; META = RAG / "chunks.sqlite"; MANIFEST = RAG / "manifest.json"
-CIVIC = ROOT / "data" / "civic.db"
+CIVIC = Path(os.environ.get("CIVIC_DB", ROOT / "data" / "civic.db"))
 CHUNK, OVERLAP, MAXTOK = 900, 150, 256
 SKIP_DIRS = {".git", "node_modules", "__pycache__", "vectordb", "vectors", ".venv", "dist", "videos", "text_cache", "raw"}
 REPO_EXT = {".md", ".txt", ".py", ".json", ".csv", ".yaml", ".yml", ".html", ".sql", ".sh"}
@@ -36,9 +36,9 @@ REPO_EXT = {".md", ".txt", ".py", ".json", ".csv", ".yaml", ".yml", ".html", ".s
 # ----------------------------------------------------------------------------- embedder
 class Embedder:
     def __init__(self):
-        self.tok = Tokenizer.from_file(str(MODEL / "tokenizer.json")); self.tok.enable_truncation(MAXTOK); self.tok.enable_padding()
+        self.tok = Tokenizer.from_file(str(MODEL / "tokenizer.json")); self.tok.enable_truncation(MAXTOK); self.tok.enable_padding(length=MAXTOK)  # fixed shape: one ORT arena block, no growth
         so = ort.SessionOptions(); so.intra_op_num_threads = 2; so.inter_op_num_threads = 1
-        so.execution_mode = ort.ExecutionMode.ORT_SEQUENTIAL; so.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_BASIC
+        so.execution_mode = ort.ExecutionMode.ORT_SEQUENTIAL; so.enable_cpu_mem_arena = False; so.enable_mem_pattern = False; so.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_BASIC
         self.s = ort.InferenceSession(str(MODEL / "model.onnx"), so, providers=["CPUExecutionProvider"])
         self.fingerprint = hashlib.sha1((MODEL / "model.onnx").read_bytes()).hexdigest()[:12]
     def __call__(self, texts, bs=32):
@@ -83,7 +83,7 @@ def meta_db():
 
 def iter_civic():
     if not CIVIC.exists(): return
-    c = sqlite3.connect(CIVIC)
+    c = sqlite3.connect(f"file:{CIVIC}?mode=ro", uri=True, timeout=120)
     q = """SELECT p.doc_id,p.page,p.text,m.date,m.kind,d.item_no,d.item_title,d.role,d.url FROM pages p JOIN docs d ON d.id=p.doc_id JOIN meetings m ON m.id=d.meeting_id
            WHERE length(p.text)>40 ORDER BY p.doc_id,p.page"""
     for did, page, text, date, kind, no, title, role, url in c.execute(q):
@@ -112,8 +112,9 @@ def cmd_build(a):
         c.executescript("DELETE FROM chunks; INSERT INTO chunks_fts(chunks_fts) VALUES('rebuild');"); c.commit()
         if VEC.exists(): VEC.unlink()
     vecs = [np.load(VEC).astype(np.float32)] if VEC.exists() and not a.rebuild else []
-    srcs = list(iter_civic()) + (list(iter_repo(a.repo)) if a.repo else [])
-    print(f"{len(srcs)} source pages/blocks; existing chunks {len(have)}", flush=True)
+    import itertools
+    srcs = itertools.chain(iter_civic(), iter_repo(a.repo) if a.repo else ())  # streamed: never hold the corpus in RAM
+    print(f"existing chunks {len(have)}", flush=True)
     batch, meta, n_new, t0 = [], [], 0, time.time()
     def flush():
         nonlocal batch, meta, n_new
@@ -129,7 +130,7 @@ def cmd_build(a):
             i = cid(source, page, start, ch)
             if i in have: continue
             have.add(i); batch.append(ch); meta.append((i, kind, source, label, page, start, ch))
-            if len(batch) >= 256: flush()
+            if len(batch) >= 32: flush()
     flush()
     allv = np.vstack(vecs) if vecs else np.zeros((0, 384), np.float32)
     n_rows = c.execute("SELECT COUNT(*) FROM chunks").fetchone()[0]
