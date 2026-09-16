@@ -17,3 +17,6 @@ youtube-archive/*.part
 __pycache__/
 *.pyc
 .venv/
+
+# civicwatch raw PDFs (re-fetchable via crawl)
+2026-09-14-council/civicwatch/data/raw/
