@@ -109,7 +109,9 @@ def parse_agenda(html):
 
 def save(url, dest):
     if dest.exists() and dest.stat().st_size > 0: return dest
-    b = get(url, binary=True); dest.write_bytes(b); return dest
+    b = get(url, binary=True)
+    if not b.startswith(b"%PDF-"): raise ValueError("not a PDF (item has no attachment)")
+    dest.write_bytes(b); return dest
 
 def cmd_crawl(a):
     c = db(); pubs = parse_publisher(get(PUB))
@@ -136,10 +138,13 @@ def cmd_crawl(a):
                     key = "clip_id" if m["clip_id"] else "event_id"
                     url = f"{BASE}MetaViewer.php?view_id=5&{key}={m['clip_id'] or m['event_id']}&meta_id={meta}"
                     p = mdir / f"{meta}.pdf"
+                    done = c.execute("SELECT words FROM docs WHERE url=?", (url,)).fetchone()
+                    if done and done[0] is not None and (TXT / f"{c.execute('SELECT id FROM docs WHERE url=?', (url,)).fetchone()[0]}.txt").exists(): continue
                     try: save(url, p)
                     except Exception as e: print("  attach fail", meta, e); continue
                     c.execute("INSERT OR IGNORE INTO docs(meeting_id,role,meta_id,item_no,item_title,url,path,sha1) VALUES(?,?,?,?,?,?,?,?)",
                               (mid, "attachment", meta, it["item_no"], it["title"][:200], url, str(p), hashlib.sha1(p.read_bytes()).hexdigest()))
+                    index_one(c, c.execute("SELECT id FROM docs WHERE url=?", (url,)).fetchone()[0], p)
         except Exception as e:
             print("  agenda fail", tag, e)
         if m["minutes_url"]:
@@ -148,6 +153,7 @@ def cmd_crawl(a):
                 save(m["minutes_url"], p)
                 c.execute("INSERT OR IGNORE INTO docs(meeting_id,role,meta_id,item_no,item_title,url,path,sha1) VALUES(?,?,?,?,?,?,?,?)",
                           (mid, "minutes", None, "", "MINUTES", m["minutes_url"], str(p), hashlib.sha1(p.read_bytes()).hexdigest()))
+                index_one(c, c.execute("SELECT id FROM docs WHERE url=?", (m["minutes_url"],)).fetchone()[0], p)
             except Exception as e: print("  minutes fail", tag, e)
         c.commit(); print(" ", tag, m["kind"], "items:", len(items) if 'items' in dir() else 0)
     print("done")
@@ -158,6 +164,15 @@ def pdf_pages(path):
     try: r = pypdf.PdfReader(path)
     except Exception as e: return []
     return [(i + 1, (pg.extract_text() or "")) for i, pg in enumerate(r.pages)]
+
+def index_one(c, did, path):
+    pgs = pdf_pages(path); words = 0
+    c.execute("DELETE FROM pages WHERE doc_id=?", (did,))
+    for n, t in pgs:
+        words += len(t.split()); c.execute("INSERT INTO pages(doc_id,page,text) VALUES(?,?,?)", (did, n, t))
+    c.execute("UPDATE docs SET pages=?,words=? WHERE id=?", (len(pgs), words, did))
+    (TXT / f"{did}.txt").write_text("\n\f".join(t for _, t in pgs)); c.commit()
+    return len(pgs), words
 
 def cmd_index(a):
     c = db()
@@ -192,7 +207,7 @@ PATTERNS = {
  "views":        re.compile(r"received\s+(\d+)\s+views and\s+(no|\d+)\s+comments", re.I),
  "public_comment":re.compile(r"Staff has received\s+(no|one|\d+)\s+(?:new\s+)?inquir", re.I),
  "postponed":    re.compile(r"POSTPONED FROM ([A-Z]+ \d{1,2}, \d{4})", re.I),
- "flood":        re.compile(r"([^.]*\b(?:flood ?plain|flood zones?)\b[^.]*\.)", re.I),
+ "flood":        re.compile(r"([^.\n]{20,}\b(?:flood ?plain|flood zones?)\b[^.\n]{10,}\.)", re.I),
  "holding_zone": re.compile(r"([^.]*holding zone[^.]*\.)", re.I),
  "verbal_use":   re.compile(r"([^.]*indicated verbally[^.]*\.)", re.I),
  "landowner_determined": re.compile(r"([^.]*landowner has determined[^.]*\.)", re.I),
@@ -221,7 +236,8 @@ def cmd_search(a):
     q = """SELECT d.id,d.path,m.date,d.item_no,d.item_title,p.page,snippet(pages_fts,0,'[[',']]','…',18)
            FROM pages_fts JOIN pages p ON p.id=pages_fts.rowid JOIN docs d ON d.id=p.doc_id JOIN meetings m ON m.id=d.meeting_id
            WHERE pages_fts MATCH ? ORDER BY rank LIMIT ?"""
-    for r in c.execute(q, (a.query, a.limit)):
+    qry = a.query if any(ch in a.query for ch in '"*()') or ' AND ' in a.query or ' OR ' in a.query else '"' + a.query.replace('"', '') + '"'
+    for r in c.execute(q, (qry, a.limit)):
         print(f"[{r[2]} item {r[3]} doc{r[0]} p{r[5]}] {r[4][:70]}\n    {r[6]}\n")
 
 # ----------------------------------------------------------------------------- graph
@@ -284,7 +300,6 @@ RULES = [
  ("STAFF_DENY", "HIGH", lambda F, it: "City staff recommends DENIAL" if any("den" in v.lower() for v in F.get("staff_rec", [])) else None),
  ("CRITERIA_FAIL", "HIGH", lambda F, it: f"Staff analysis: fails review criteria {', '.join(sorted(set(F['criteria_fail'])))}" if F.get("criteria_fail") else None),
  ("NOTICE_LATE_RECEIPT", "MED", lambda F, it: notice_check(F)),
- ("YEAR_MISMATCH", "MED", lambda F, it: year_check(F)),
  ("LOW_CONTIGUITY", "MED", lambda F, it: f"Contiguity only {F['contiguity'][0]}% (statutory floor is adjacency; <35% is a flag-lot pattern)" if
      F.get("contiguity") and float(F["contiguity"][0]) < 35 else None),
  ("HOLDING_ZONE", "MED", lambda F, it: "Staff describes assigned zone as a 'holding zone' — placeholder for follow-on rezone" if F.get("holding_zone") else None),
@@ -304,16 +319,11 @@ def notice_check(F):
         d = datetime.strptime(F["notice_deadline"][0], "%B %d, %Y"); r = datetime.strptime(F["notice_receipt"][0], "%B %d, %Y")
         if r > d: return f"Notice: deadline {d.date()} but earliest confirmed receipt {r.date()} (mailed {F.get('notice_mailed', ['?'])[0]}). Statute keys on mailing — use as record-quality point, not as void."
     except Exception: return None
-def year_check(F):
-    yrs = set(F.get("year_mismatch_years", []))
-    if len(yrs) > 1 and min(yrs) < max(yrs) - 0: return None
-    return None
-
 def cmd_brief(a):
     c = db()
     if a.event: mid = c.execute("SELECT id FROM meetings WHERE event_id=?", (a.event,)).fetchone()
     else: mid = c.execute("SELECT id FROM meetings WHERE clip_id=?", (a.clip,)).fetchone()
-    if not mid: sys.exit("meeting not crawled"); mid = mid[0]
+    if not mid: sys.exit("meeting not crawled")
     mid = mid[0]
     m = c.execute("SELECT kind,date FROM meetings WHERE id=?", (mid,)).fetchone()
     out = [f"# CivicWatch brief — {m[0]} {m[1]}\n", "Deterministic rule hits only. Every line cites doc id + page; verify the span before quoting.\n"]
@@ -350,6 +360,68 @@ def cmd_brief(a):
     out.insert(2, f"\n**Sponsorship concentration:** " + ", ".join(f"{k or '(committee)'}: {v}" for k, v in sorted(sponsor_count.items(), key=lambda x: -x[1])[:5]) + f"  \n**Rule hits:** {hits_total} across {len(docs)} attachments\n")
     text = "\n".join(out); Path(a.out).write_text(text); print(text[:4000]); print(f"\n… wrote {a.out}")
 
+# ----------------------------------------------------------------------------- votes (from minutes)
+ITEM_HDR = re.compile(r"^\s*(?:\[CA\]\s*)?(ORDINANCE|RESOLUTION|Public Hearing|Consideration|Contract|Agreement|Lease|Grant|Appointment|Bid)[^\n]*", re.I)
+def parse_minutes(text):
+    """Split minutes into item blocks; extract result, dissenters, public speakers, points of order."""
+    text = re.sub(r"[ \t]+", " ", text)
+    text = re.sub(r"(?<![.:])\n(?!\s*\n)(?!\s*(?:\[CA\]|ORDINANCE|RESOLUTION|PUBLIC HEARING|Public Hearing))", " ", text)  # unwrap soft line breaks
+    blocks = re.split(r"\n(?=\s*(?:\[CA\]\s*)?(?:ORDINANCE|RESOLUTION|PUBLIC HEARING|Public Hearing)\b)", text)
+    out = []
+    for b in blocks:
+        head = b.strip().split("\n")[0][:220]
+        res = [m.group(0) for m in re.finditer(r"Motion(?: to [^.]{0,60})? (?:carried|failed)\.", b)]
+        no = [m.group(1) for m in re.finditer(r"with the exception of ((?:(?:Mr|Dr|Ms|Mrs)\. [A-Z][a-z]+(?:,? and |, )?)+) voting [“\"]?no", b)]
+        no += [m.group(1) for m in re.finditer(r"Voting [“\"]?no[”\"]? – all members[^.]*?exception of ((?:(?:Mr|Dr|Ms|Mrs)\. [A-Z][a-z]+(?:,? and |, )?)+) voting [“\"]?yes", b)]
+        yes_all = bool(re.search(r"Voting [“\"]?yes[”\"]? – all members of the governing body\s*(?:present)?\s*\.", b))
+        failed_all = bool(re.search(r"Voting [“\"]?no[”\"]? – all members", b))
+        spk = re.findall(r"Public comments? (?:was|were) made by:\s*([^.]+?)\.", b)
+        poo = re.findall(r"During comments made by ([A-Z][a-zA-Z]+ [A-Z][a-zA-Z]+)[^.]*point(?:s)? of order", b)
+        post = re.findall(r"(?:postpone|refer)[^.]*?(?:report|until)[^.]*?([A-Z][a-z]+ \d{1,2}, \d{4})", b)
+        if res or no or spk:
+            out.append(dict(item=head, results=res, dissent=no, unanimous=(yes_all and not no) or failed_all, speakers=spk, points_of_order=poo, postponed_to=post))
+    return out
+
+def cmd_votes(a):
+    c = db(); q = "SELECT m.date,d.id FROM docs d JOIN meetings m ON m.id=d.meeting_id WHERE d.role='minutes'"
+    if a.date: q += f" AND m.date='{a.date}'"
+    rows = []
+    for date, did in c.execute(q + " ORDER BY m.date").fetchall():
+        text = "\n".join(t for (t,) in c.execute("SELECT text FROM pages WHERE doc_id=? ORDER BY page", (did,)))
+        for v in parse_minutes(text):
+            if a.grep and not re.search(a.grep, v["item"], re.I): continue
+            rows.append((date, did, v))
+    tally = {}
+    for date, did, v in rows:
+        print(f"[{date} doc{did}] {v['item'][:120]}")
+        for r in v["results"]: print("    ", r)
+        if v["dissent"]: print("     NO:", "; ".join(v["dissent"]))
+        elif v["unanimous"]: print("     unanimous")
+        if v["speakers"]: print("     speakers:", v["speakers"][0][:200])
+        if v["points_of_order"]: print("     point-of-order vs:", ", ".join(v["points_of_order"]))
+        if v["postponed_to"]: print("     postponed/referred to:", v["postponed_to"][0])
+        for d in v["dissent"]:
+            for n in re.findall(r"(?:Mr\.|Dr\.|Ms\.|Mrs\.) [A-Z][a-z]+", d): tally[n] = tally.get(n, 0) + 1
+    if tally: print("\nDissent tally:", dict(sorted(tally.items(), key=lambda x: -x[1])))
+
+# ----------------------------------------------------------------------------- diff (same item across meetings)
+def cmd_diff(a):
+    """For each attachment in meeting A, find same PUDC file_no in earlier meetings and report identical vs changed packets."""
+    c = db()
+    mid = c.execute("SELECT id,date FROM meetings WHERE event_id=? OR clip_id=?", (a.event or -1, a.clip or -1)).fetchone()
+    if not mid: sys.exit("meeting not crawled")
+    mid, date = mid
+    for did, no, title, sha in c.execute("SELECT id,item_no,item_title,sha1 FROM docs WHERE meeting_id=? AND role='attachment'", (mid,)):
+        fnos = [r[0] for r in c.execute("SELECT DISTINCT value FROM facts WHERE doc_id=? AND kind='file_no'", (did,))]
+        if not fnos: continue
+        prior = c.execute(f"""SELECT DISTINCT m.date,d.id,d.item_no,d.sha1,d.words FROM facts f JOIN docs d ON d.id=f.doc_id JOIN meetings m ON m.id=d.meeting_id
+                              WHERE f.kind='file_no' AND f.value IN ({','.join('?'*len(fnos))}) AND m.date<? AND d.role='attachment' ORDER BY m.date""", (*fnos, date)).fetchall()
+        if not prior: continue
+        print(f"\n{date} item {no} — {title[:80]}  [{', '.join(fnos)}]")
+        for pd, pid, pno, psha, pw in prior:
+            tag = "IDENTICAL PACKET" if psha == sha else f"changed ({pw} words vs current)"
+            print(f"    {pd} item {pno} doc{pid}: {tag}")
+
 # ----------------------------------------------------------------------------- watch
 def cmd_watch(a):
     c = db(); pubs = parse_publisher(get(PUB)); new = []
@@ -372,5 +444,7 @@ if __name__ == "__main__":
     sp.add_parser("index"); sp.add_parser("extract"); sp.add_parser("watch")
     p = sp.add_parser("search"); p.add_argument("query"); p.add_argument("--limit", type=int, default=20)
     p = sp.add_parser("graph"); p.add_argument("--out", default=str(ROOT / "graph.html"))
+    p = sp.add_parser("diff"); p.add_argument("--event", type=int); p.add_argument("--clip", type=int)
+    p = sp.add_parser("votes"); p.add_argument("--date"); p.add_argument("--grep")
     p = sp.add_parser("brief"); p.add_argument("--event", type=int); p.add_argument("--clip", type=int); p.add_argument("--out", default=str(ROOT / "brief.md"))
     a = ap.parse_args(); globals()["cmd_" + a.cmd](a)
