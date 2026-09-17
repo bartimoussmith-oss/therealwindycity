@@ -11,6 +11,9 @@ Granicus (view_id=5) → raw PDFs → pypdf text (+ RapidOCR for scans) → SQLi
 - Scanned attachments (0 extractable words) are OCR'd with RapidOCR @150dpi; `docs.ocr=1` marks them. OCR text is machine-read — verify against the PDF before quoting.
 - `data/civic.db` — meetings / docs / pages / pages_fts / facts. `data/text/<docid>.txt` — page-delimited (`\f`) text per doc.
 
+## Fast path: finish on Colab
+Open `colab_finish.ipynb` in Colab (T4), add `GH_TOKEN` secret, Run all. ~20–30 min: OCR on GPU, embeddings on CPU (bit-identical), pushes `data/rag/` + updated `civic.db` back here. If `vectors.f16.npy.part*` files exist: `cat vectors.f16.npy.part* > vectors.f16.npy`.
+
 ## Commands
 ```
 python3 civicwatch.py crawl --since 2025-01-01 [--until 2025-12-31] [--kinds council,psc,finance]

@@ -3,7 +3,7 @@
 RapidOCR (ONNX, CPU) over pypdfium2 renders. Writes pages back into civic.db so FTS/extract/rag see them.
 Usage: python3 ocr.py [--min-words 20] [--dpi 150] [--limit N]
 """
-import argparse, sqlite3, sys, time
+import argparse, os, sqlite3, sys, time
 from pathlib import Path
 import numpy as np
 import pypdfium2 as pdfium
@@ -25,7 +25,9 @@ def ocr_pdf(path, engine, dpi=150, max_pages=60):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--min-words", type=int, default=20); ap.add_argument("--dpi", type=int, default=150)
     ap.add_argument("--limit", type=int, default=0); a = ap.parse_args()
-    c = cw.db(); eng = RapidOCR()
+    c = cw.db()
+    cuda = os.environ.get("OCR_CUDA") == "1"   # Colab/GPU: OCR_CUDA=1 (needs onnxruntime-gpu). Output text is the same either way.
+    eng = RapidOCR(det_use_cuda=cuda, rec_use_cuda=cuda, cls_use_cuda=cuda) if cuda else RapidOCR()
     rows = c.execute("SELECT id,path FROM docs WHERE (words IS NULL OR words<?) AND COALESCE(ocr,0)=0 ORDER BY id", (a.min_words,)).fetchall()
     if a.limit: rows = rows[:a.limit]
     print(f"{len(rows)} scanned docs to OCR", flush=True)

@@ -37,7 +37,7 @@ REPO_EXT = {".md", ".txt", ".py", ".json", ".csv", ".yaml", ".yml", ".html", ".s
 class Embedder:
     def __init__(self):
         self.tok = Tokenizer.from_file(str(MODEL / "tokenizer.json")); self.tok.enable_truncation(MAXTOK); self.tok.enable_padding(length=MAXTOK)  # fixed shape: one ORT arena block, no growth
-        so = ort.SessionOptions(); so.intra_op_num_threads = 2; so.inter_op_num_threads = 1
+        so = ort.SessionOptions(); so.intra_op_num_threads = int(os.environ.get("RAG_THREADS", "2")); so.inter_op_num_threads = 1
         so.execution_mode = ort.ExecutionMode.ORT_SEQUENTIAL; so.enable_cpu_mem_arena = False; so.enable_mem_pattern = False; so.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_BASIC
         self.s = ort.InferenceSession(str(MODEL / "model.onnx"), so, providers=["CPUExecutionProvider"])
         self.fingerprint = hashlib.sha1((MODEL / "model.onnx").read_bytes()).hexdigest()[:12]
@@ -143,7 +143,7 @@ def cmd_build(a):
             i = cid(source, page, start, ch)
             if i in have: continue
             have.add(i); batch.append(ch); meta.append((i, kind, source, label, page, start, ch))
-            if len(batch) >= 32: flush()
+            if len(batch) >= int(os.environ.get("RAG_BATCH", "32")): flush()
     flush()
     allv = np.fromfile(RAW, dtype=np.float16).reshape(-1, 384) if RAW.exists() else np.zeros((0, 384), np.float16)
     n_rows = c.execute("SELECT COUNT(*) FROM chunks").fetchone()[0]
