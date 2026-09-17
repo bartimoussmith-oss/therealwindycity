@@ -18,3 +18,7 @@ __pycache__/
 *.pyc
 .venv/
 
+
+# raw PDFs are on branch archive/raw-pdfs (Streamlit Cloud 1 GB clone limit)
+2026-09-14-council/civicwatch/data/raw/**
+!2026-09-14-council/civicwatch/data/raw/README.md

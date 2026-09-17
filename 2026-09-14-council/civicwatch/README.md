@@ -3,7 +3,7 @@
 Granicus (view_id=5) → raw PDFs → pypdf text (+ RapidOCR for scans) → SQLite + FTS5 → regex fact extraction → rule-engine briefs → deterministic vector RAG.
 **Zero-generative.** Every emitted fact/chunk is a verbatim span with `doc id + page`. Verify the span before quoting it.
 
-**Everything is committed. Nothing needs regenerating.** Raw PDFs, extracted text, OCR text, the SQLite DB, the embedding model, and the vector index are all in this folder. Clone → query.
+**Everything is committed. Nothing needs regenerating.** Extracted text, OCR text, the SQLite DB, the embedding model, and the vector index are on `main`. **Raw PDFs (2.9 GB) are on branch `archive/raw-pdfs`** — see `data/raw/README.md` for the one-line fetch. Kept off `main` only because Streamlit Cloud can't clone >1 GB.
 
 ## Corpus (see `data/rag/manifest.json` and `python3 rag.py stats` for exact final counts)
 - Meetings: every City Council (regular + special) meeting **Jan 13, 2025 → Sep 22, 2026**, plus Sep 21 PSC and Sep 22 Finance packets.
