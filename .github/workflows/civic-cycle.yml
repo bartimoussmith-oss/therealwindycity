@@ -21,6 +21,8 @@ jobs:
           python-version: "3.12"
       - name: Install optional parsers
         run: pip install pdfplumber
+      - name: Sync verbatim YouTube transcript corpus
+        run: python3 -u pipeline/sync_yt_corpus.py
       - name: Run one civic cycle (crawl -> extract/diff -> digest -> publish)
         run: python3 -u engine/scheduler.py --once
       - name: Verify recovered vault rows against the transcript corpus
@@ -33,7 +35,7 @@ jobs:
         run: |
           git config user.name "civic-engine-bot"
           git config user.email "civic-engine@localhost"
-          git add data public Entity_Database
+          git add data public Entity_Database pipeline/corpus_yt
           if git commit -m "civic cycle $(date -u +%Y-%m-%dT%H:%MZ)"; then
             git push
             echo "CYCLE_COMMITTED=true" >> "$GITHUB_ENV"
