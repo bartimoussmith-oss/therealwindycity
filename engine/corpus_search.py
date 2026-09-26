@@ -4,6 +4,11 @@ Used by the site's Minutes Archive tab and by verify_vault.py. Pure stdlib.
 The corpus lives at pipeline/corpus/*.txt in the repo (meeting minutes,
 2008-present, pushed from the Colab pipeline). Dates come from filenames
 like 1091_2026-04-13.txt.
+
+A second corpus lives at pipeline/corpus_yt/*.txt: verbatim YouTube
+transcripts mirrored from therealwindycity/The-Real-Windy-City- by
+pipeline/sync_yt_corpus.py (council, committees, work sessions, boards).
+Each loaded document carries a "source" field: "minutes" or "verbatim-yt".
 """
 from __future__ import annotations
 
@@ -22,21 +27,24 @@ def norm(s: str) -> str:
 
 
 def load_corpus(root: Path) -> list[dict]:
-    """All minutes transcripts under root/'pipeline'/'corpus' (+/*.txt)."""
-    cdir = Path(root) / "pipeline" / "corpus"
+    """All minutes transcripts under root/'pipeline'/'corpus' (+/*.txt),
+    plus verbatim YouTube transcripts under root/'pipeline'/'corpus_yt'."""
     out = []
-    if not cdir.is_dir():
-        return out
-    for fp in sorted(cdir.glob("*.txt")):
-        try:
-            text = fp.read_text(encoding="utf-8", errors="replace")
-        except OSError:
+    for dirname, source in (("corpus", "minutes"), ("corpus_yt", "verbatim-yt")):
+        cdir = Path(root) / "pipeline" / dirname
+        if not cdir.is_dir():
             continue
-        m = _DATE.search(fp.name)
-        out.append({"name": fp.name,
-                    "date": m.group(1) if m else "",
-                    "text": text,
-                    "norm": norm(text)})
+        for fp in sorted(cdir.glob("*.txt")):
+            try:
+                text = fp.read_text(encoding="utf-8", errors="replace")
+            except OSError:
+                continue
+            m = _DATE.search(fp.name)
+            out.append({"name": fp.name,
+                        "date": m.group(1) if m else "",
+                        "source": source,
+                        "text": text,
+                        "norm": norm(text)})
     return out
 
 
@@ -53,6 +61,7 @@ def search(corpus: list[dict], query: str, context: int = 220,
             i = doc["norm"].find(terms[0])
             lo, hi = max(0, i - context), i + len(terms[0]) + context
             hits.append({"file": doc["name"], "date": doc["date"],
+                         "source": doc.get("source", "minutes"),
                          "snippet": doc["norm"][lo:hi]})
         if len(hits) >= limit:
             break
