@@ -75,6 +75,15 @@ Coordination is not optional here.
 - updated: 2026-09-11T20:45Z
 - notes: 616/616 blocks cued (median match 0.97, gold-checked); AppTest + JS syntax verified; PR to main for owner merge, no direct main pushes beyond this claim
 
+### claim: oci-deploy — Oracle Cloud (us-phoenix-1) deployment kit for the whole stack
+- worker: arena-agent
+- status: active
+- stage: kit written + self-verified (53/53 checks) in `deploy/oracle/`; console + studio booted locally and answering 200; pushing branch for owner review
+- scope: NEW DIR ONLY `deploy/oracle/` (README runbook, bootstrap.sh, render_config.sh, update.sh, preflight.sh, selftest.sh, oci-launch.sh, cloud-init.yaml, systemd/*, nginx/*.template, env.example) + additive README.md "Deploying to your own hardware" section + READ-FIRST.md (this claim + work log). Explicitly NOT touching: the twins (streamlit_app.py / Transparency_Index_App.py), requirements.txt, engine/, data/, .github/, pipeline/, uploads/, Entity_Database/, public/, rag/, youtube-archive/
+- started: 2026-10-15T21:55Z
+- updated: 2026-10-15T22:05Z
+- notes: hosting only — no product logic, no data, no credential in any file. Services bind loopback; nginx is the only public door. The civic cycle on the VM is the GitHub Action's job minus the push (push block shipped commented-out, deploy key required to enable). Verified without a cloud account by rendering every artifact for both the domain and bare-IP configurations and checking them with systemd-analyze + structural assertions; `bash deploy/oracle/selftest.sh` reproduces it. Not verified (no OCI credentials in this sandbox, and none were requested): instance launch, certbot against real DNS, and nginx -t on the VM — `preflight.sh` is the gate for those on the box.
+
 ### claim: comic-universe — comic-book hero-universe re-theme of the website
 - worker: arena-agent
 - status: done
@@ -153,3 +162,4 @@ auto-redeploys from `main`).
 - 2026-09-10 10:20Z — console-worker: contention reel shipped — CONTENTION_REEL.mp4 (17:25, 25 MB, nine clips, autoplay-mute-loop opener) with chapter links to the source meetings; pipeline/build_reel.py committed so the reel stays rebuildable.
 - 2026-09-10 10:45Z — console-worker: context pane shipped under the reel — meeting cards (tape + transcript links), ordinance-history column with per-mention tape jumps, caption lines that link to the exact tape second, and a minute-jumping full-transcript viewer; ordinance index builder committed with its built JSON.
 - 2026-09-10 11:05Z — console-worker: media backfill shipped — resumable Colab cell (captions → pipeline/captions/, audio → Releases, optional video) + Recordings & captions view in the Video vault; release-asset upload path live-verified. Video-in-git rejected: 260 meetings ≈ 130 GB vs the 100 MB blob cap.
+- 2026-10-15 22:05Z — arena-agent (oci-deploy): Oracle Cloud deployment kit added under `deploy/oracle/` — one-shot bootstrap (Ubuntu 24.04 / Oracle Linux 9, x86 or Ampere ARM): service user + checkout to /opt/windycity, venv, engine init, three systemd units (console 8501, studio 8717, cycle timer :17/6h) and an nginx front door (console at /, static ledger at /ledger/, RSS at /feed.xml, studio on its own port or subdomain) with Let's Encrypt and OCI-specific host-firewall handling; plus preflight verification, fast update, OCI CLI launcher and cloud-init user-data. Selftest: 53 passed · 0 failed.
