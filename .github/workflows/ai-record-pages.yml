@@ -1,0 +1,98 @@
+name: ai-record-pages
+# Builds the AI-readable mirror of the whole Cheyenne meetings record
+# (every archived document as plain text + transcripts + minutes + indexes)
+# and publishes it to GitHub Pages:
+#   https://bartimoussmith-oss.github.io/therealwindycity/
+# Nothing generated is committed except the small OCR cache (ai-record-ocr/).
+# See tools/README-ai-record.md.
+
+on:
+  push:
+    branches: [main, "arena/**"]
+    paths:
+      - "tools/build_ai_record.py"
+      - "tools/render_ai_record.py"
+      - "tools/ai_record_extract.py"
+      - "tools/ai_record_ocr.py"
+      - "tools/ai_record_static/**"
+      - "pipeline/corpus/**"
+      - ".github/workflows/ai-record-pages.yml"
+  schedule:
+    - cron: "41 8 * * *"          # daily: picks up new archive files and continues OCR
+  workflow_dispatch:
+    inputs:
+      ocr_minutes:
+        description: "Minutes to spend OCR-ing scanned pages this run (0 = skip)"
+        default: "0"
+
+permissions:
+  contents: write                  # commit the OCR cache
+  pages: write
+  id-token: write
+
+concurrency:
+  group: ai-record-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install tools
+        run: |
+          pip install pymupdf beautifulsoup4 markdown wordninja rapidocr-onnxruntime
+          pip uninstall -y opencv-python || true
+          pip install opencv-python-headless
+      - name: Meeting index from Civic Cheyenne (same grouping as the site)
+        run: |
+          git clone -q --depth 1 https://github.com/therealwindycity/TheReelWindyCity.git /tmp/fe
+          (cd /tmp/fe && node scripts/build-data.mjs)
+      - name: Transcripts
+        run: git clone -q --depth 1 https://github.com/therealwindycity/The-Real-Windy-City-.git /tmp/tr
+      - name: Extract text from all six archive repos
+        run: python3 -u tools/ai_record_extract.py --text /tmp/text --trees /tmp/trees
+      - name: OCR scanned pages (incremental, cached in ai-record-ocr/)
+        if: ${{ github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.ocr_minutes != '0')) }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          OCR_MINUTES: ${{ github.event_name == 'schedule' && '240' || inputs.ocr_minutes }}
+        run: python3 -u tools/ai_record_ocr.py --text /tmp/text --cache ai-record-ocr --minutes "$OCR_MINUTES"
+      - name: Commit OCR cache
+        if: ${{ github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.ocr_minutes != '0')) }}
+        run: |
+          git config user.name "civic-engine-bot"
+          git config user.email "civic-engine@localhost"
+          git add ai-record-ocr
+          if git commit -q -m "ai-record OCR cache $(date -u +%Y-%m-%dT%H:%MZ)"; then
+            git pull -q --rebase && git push -q
+          else
+            echo "no new OCR pages"
+          fi
+      - name: Build Markdown record
+        run: |
+          python3 -u tools/build_ai_record.py --meetings /tmp/fe/src/data/meetings.json --text /tmp/text \
+            --ocr ai-record-ocr --transcripts /tmp/tr --minutes pipeline/corpus --trees /tmp/trees --out /tmp/ai-record
+      - name: Render static site
+        run: python3 -u tools/render_ai_record.py --src /tmp/ai-record --out _site --extra public/index.html=ledger.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

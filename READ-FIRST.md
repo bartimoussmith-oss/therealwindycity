@@ -66,6 +66,15 @@ Coordination is not optional here.
 
 ## Active claims
 
+### claim: ai-record — AI-readable static mirror of the whole record on GitHub Pages
+- worker: ai-record-worker
+- status: active
+- stage: workflow written; validating the CI build on branch arena/f2319f12-therealwindycity
+- scope: tools/build_ai_record.py, tools/render_ai_record.py, tools/ai_record_extract.py, tools/ai_record_ocr.py, tools/ai_record_static/, tools/README-ai-record.md, ai-record-ocr/ (new), .github/workflows/ai-record-pages.yml (new file only), .gitignore (append 2 lines), README.md (append one pointer section)
+- started: 2026-10-16T08:00Z
+- updated: 2026-10-16T09:10Z
+- notes: generated output (ai-record/, _site/) is NOT committed — CI rebuilds and deploys it; only the small OCR cache is committed.
+
 ### claim: miller-tapes — auto-playing theater for every Miller intervention
 - worker: arena-agent
 - status: done
