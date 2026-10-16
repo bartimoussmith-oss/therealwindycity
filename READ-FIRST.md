@@ -66,15 +66,6 @@ Coordination is not optional here.
 
 ## Active claims
 
-### claim: ai-record — AI-readable static mirror of the whole record on GitHub Pages
-- worker: ai-record-worker
-- status: active
-- stage: workflow written; validating the CI build on branch arena/f2319f12-therealwindycity
-- scope: tools/build_ai_record.py, tools/render_ai_record.py, tools/ai_record_extract.py, tools/ai_record_ocr.py, tools/ai_record_static/, tools/README-ai-record.md, ai-record-ocr/ (new), .github/workflows/ai-record-pages.yml (new file only), .gitignore (append 2 lines), README.md (append one pointer section)
-- started: 2026-10-16T08:00Z
-- updated: 2026-10-16T09:10Z
-- notes: generated output (ai-record/, _site/) is NOT committed — CI rebuilds and deploys it; only the small OCR cache is committed.
-
 ### claim: miller-tapes — auto-playing theater for every Miller intervention
 - worker: arena-agent
 - status: done
@@ -163,3 +154,4 @@ auto-redeploys from `main`).
 - 2026-09-10 10:45Z — console-worker: context pane shipped under the reel — meeting cards (tape + transcript links), ordinance-history column with per-mention tape jumps, caption lines that link to the exact tape second, and a minute-jumping full-transcript viewer; ordinance index builder committed with its built JSON.
 - 2026-09-10 11:05Z — console-worker: media backfill shipped — resumable Colab cell (captions → pipeline/captions/, audio → Releases, optional video) + Recordings & captions view in the Video vault; release-asset upload path live-verified. Video-in-git rejected: 260 meetings ≈ 130 GB vs the 100 MB blob cap.
 - 2026-10-16 — access-audit worker: ACCESS-TEST-2026-10-16.md (measured what can actually be read in all 9 repos: 5,122 archive docs / 81% text-extractable, 13% scanned, ~2% dead stubs; site "Ask the record" index covers ~5% of transcript text; claim-by-claim fact-check of prior AI answers; Miller objections table with timestamps + outcomes; fork/copy check) + tools/access_audit.py to reproduce. New files only; no claimed scope touched.
+- 2026-10-16 — ai-record-worker: AI-readable mirror shipped (claim ai-record, done). tools/{ai_record_extract,ai_record_ocr,build_ai_record,render_ai_record}.py + tools/ai_record_static/ build a JavaScript-free site of all 1,011 meetings (every archived document as page-marked plain text with quality labels, 2026 transcripts with video-linked timestamps, inlined minutes, year/body/keyword/statute/ordinance indexes, verified topic pages, llms.txt, sitemap, AI-crawler-friendly robots.txt). New workflow .github/workflows/ai-record-pages.yml rebuilds daily and deploys to https://bartimoussmith-oss.github.io/therealwindycity/ from main only; it also OCRs scanned pages incrementally and commits the cache to ai-record-ocr/. Generated output is gitignored (/ai-record/, /_site/). README got one pointer section. Docs: tools/README-ai-record.md.
