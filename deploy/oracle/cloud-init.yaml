@@ -1,0 +1,47 @@
+#cloud-config
+# ==============================================================================
+# The Real Windy City — OCI cloud-init user data
+#
+# Paste this into the console's "Show advanced options -> Management -> Cloud-init
+# script" box (or pass with --user-data-file in the OCI CLI / oci-launch.sh) and
+# the instance provisions itself on first boot: packages, code, venv, systemd,
+# nginx, firewall, first civic cycle.
+#
+# Change the three values under `write_files` (DOMAIN / LE_EMAIL) or drop
+# `write_files` entirely to boot on plain HTTP by IP.
+#
+# Deleting the user-data flag later does NOT affect the running box — cloud-init
+# only runs at first boot.
+# ==============================================================================
+package_update: true
+package_upgrade: false
+packages:
+  - git
+  - curl
+
+write_files:
+  - path: /etc/windycity/windycity.env
+    permissions: '0644'
+    content: |
+      WINDYCITY_USER=windycity
+      WINDYCITY_REPO=/opt/windycity
+      WINDYCITY_REMOTE=https://github.com/bartimoussmith-oss/therealwindycity.git
+      WINDYCITY_BRANCH=main
+      CONSOLE_PORT=8501
+      PIPELINE_PORT=8717
+      DOMAIN=
+      PIPELINE_DOMAIN=
+      STUDIO_PORT=8080
+      LE_EMAIL=
+      SWAP_MB=0
+
+runcmd:
+  - [ bash, -lc, 'git clone --branch main https://github.com/bartimoussmith-oss/therealwindycity.git /tmp/windycity' ]
+  - [ bash, -lc, 'bash /tmp/windycity/deploy/oracle/bootstrap.sh > /var/log/windycity-bootstrap.log 2>&1' ]
+  # first civic cycle immediately, so the public ledger is populated at first light
+  - [ bash, -lc, 'systemctl start windycity-cycle.service || true' ]
+  - [ bash, -lc, 'bash /opt/windycity/deploy/oracle/preflight.sh > /var/log/windycity-preflight.log 2>&1 || true' ]
+
+final_message: |
+  The Real Windy City is up. Check /var/log/windycity-preflight.log.
+  Surfaces: http://<this-ip>/  ·  /ledger/  ·  /feed.xml  ·  :8080 (studio)

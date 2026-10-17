@@ -1,0 +1,42 @@
+[Unit]
+Description=The Real Windy City — one civic cycle (crawl -> extract/diff -> digest -> publish)
+Documentation=https://github.com/bartimoussmith-oss/therealwindycity
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=__USER__
+Group=__USER__
+WorkingDirectory=__REPO__
+Environment=PYTHONUNBUFFERED=1
+Environment=HOME=__REPO__
+# Same job the GitHub Action 'civic-cycle' runs, minus the git push.
+# The cycle is idempotent and safe to run on any schedule; the timer drives it.
+ExecStart=__REPO__/.venv/bin/python -u __REPO__/engine/scheduler.py --once
+ExecStartPost=__REPO__/.venv/bin/python -u __REPO__/engine/verify_vault.py
+ExecStartPost=__REPO__/.venv/bin/python -u __REPO__/engine/entity_index.py
+ExecStartPost=__REPO__/.venv/bin/python -u __REPO__/engine/gen_feed.py
+TimeoutStartSec=1800
+Nice=10
+IOSchedulingClass=idle
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=windycity-cycle
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ReadWritePaths=__REPO__
+
+# --- OPTIONAL: commit the refreshed ledger back to GitHub -------------------
+# Off by default. If you want the VM to be the writer of record, create a
+# deploy key, keep it at /etc/windycity/deploy_key (0600, user windycity), add
+# the public half under repo Settings -> Deploy keys (write access), then
+# uncomment the two lines below and `systemctl daemon-reload`.
+#
+#Environment=GIT_SSH_COMMAND=ssh -i /etc/windycity/deploy_key -o IdentitiesOnly=yes -o StrictHostKeyChecking=accept-new
+#ExecStartPost=/bin/bash -lc 'cd __REPO__ && git add data public Entity_Database pipeline/corpus_yt && (git -c user.name=civic-engine-bot -c user.email=civic-engine@localhost commit -m "civic cycle $(date -u +%Y-%m-%dT%H:%MZ)" && git push) || echo "ledger unchanged — quiet day is a true report"'
+
+[Install]
+WantedBy=multi-user.target
