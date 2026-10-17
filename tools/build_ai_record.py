@@ -15,10 +15,14 @@ Inputs (all local; see tools/README-ai-record.md):
   --transcripts  checkout of therealwindycity/The-Real-Windy-City-
   --minutes    pipeline/corpus (Records of Proceedings text, 2008-2026)
   --trees      directory holding tree_<repo>.json (git tree snapshots)
+  --drive-db   optional WindyCityMeetings caption-transcript database
+               (drive-import/master_meetings_database.json.gz; see tools/ai_record_drive.py)
 
 Output is deterministic: same inputs, same bytes.
 """
 import argparse, collections, html, json, os, re, shutil, sys, urllib.parse
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import ai_record_drive
 from datetime import date
 
 SITE = "https://bartimoussmith-oss.github.io/therealwindycity/"
@@ -373,6 +377,79 @@ class Builder:
                 self.write(f"{rel_base}.part{i+1}.md", f"# Transcript: {label}, part {i+1} of {len(chunks)}\n\n{nav}\n\n---\n\n{c}\n\n---\n\n{nav}")
         return {"ytid": ytid, "path": rel_base + ".md", "words": len(body.split()), "source": t["path"]}
 
+    # ------------------------------------------------- caption database
+    DRIVE_SRC = "WindyCityMeetings/processed_database/master_meetings_database.json (Google Drive), committed as drive-import/master_meetings_database.json.gz"
+
+    def render_caption(self, rec, rel_base, label, m=None, note=None):
+        paras = [ai_record_drive.md_safe(p) for p in ai_record_drive.paragraphs(rec["text"])]
+        dsrc = {"database": "from the database", "title": "read from the video title"}.get(rec["date_source"], "")
+        head = [
+            f"# Caption transcript: {label}",
+            "",
+            f"*Machine caption transcript of {md_inline(rec['title'])}, a City of Cheyenne, Wyoming public session, from the WindyCityMeetings database. "
+            "The wording is the automatic captions, unchanged. There are no timestamps or punctuation, so it is wrapped into paragraphs for reading.*",
+            "",
+        ]
+        if m is not None:
+            head.append(f"- **Meeting:** [{BODY_LABELS.get(m['body'], m['body'])} — {iso_label(m['date'])}]({self.rel(rel_base + '.md', self.mpath(m))})")
+        head += [
+            f"- **Video title:** {md_inline(rec['title'])}",
+            f"- **Date:** {rec['date'] + ' (' + dsrc + ')' if rec['date'] else 'not given in the database or the title'}",
+            f"- **Database category:** {md_inline(rec['category'] or '')}" + (f" ({note})" if note else ""),
+            f"- **Length:** {rec['words']:,} words",
+            f"- **Database record:** `{rec['id']}` (source file `{rec['filename']}`)",
+            f"- **Source:** {self.DRIVE_SRC}",
+            "- **Accuracy:** automatic captions. Names and numbers are often misheard, and speakers are not identified. Check quotes against the official video or minutes before relying on them.",
+            "",
+        ]
+        if rec.get("dup_of"):
+            head += [f"*This record has the same text as database record `{rec['dup_of']}`.*", ""]
+        chunks, cur = [], []
+        size = 0
+        for pgh in paras:
+            if size + len(pgh) > PART_CHARS and cur:
+                chunks.append(cur); cur, size = [], 0
+            cur.append(pgh); size += len(pgh) + 2
+        if cur: chunks.append(cur)
+        bn = os.path.basename(rel_base)
+        if len(chunks) <= 1:
+            self.write(rel_base + ".md", "\n".join(head + ["---", ""]) + "\n" + "\n\n".join(chunks[0] if chunks else ["(no text)"]))
+        else:
+            listing = [f"The transcript is long, so it is split into {len(chunks)} parts:"] + \
+                      [f"- [Part {i+1}]({bn}.part{i+1}.md)" for i in range(len(chunks))]
+            self.write(rel_base + ".md", "\n".join(head + listing))
+            for i, c in enumerate(chunks):
+                nav = f"[← transcript overview]({bn}.md)"
+                if i > 0: nav += f" · [← part {i}]({bn}.part{i}.md)"
+                if i < len(chunks) - 1: nav += f" · [part {i+2} →]({bn}.part{i+2}.md)"
+                self.write(f"{rel_base}.part{i+1}.md", f"# Caption transcript: {label}, part {i+1} of {len(chunks)}\n\n{nav}\n\n---\n\n" + "\n\n".join(c) + f"\n\n---\n\n{nav}")
+        return {"path": rel_base + ".md", "words": rec["words"], "title": rec["title"], "id": rec["id"], "note": note}
+
+    def attach_drive(self, by_key):
+        """Attach caption records to meetings; create meetings for dated records of a known body."""
+        self.drive = ai_record_drive.load(self.a.drive_db) if getattr(self.a, "drive_db", None) else []
+        self.drive_loose = []
+        by_date = collections.defaultdict(list)
+        for m in self.meetings:
+            by_date[m["date"]].append(m)
+        for r in self.drive:
+            m, note = None, None
+            if r["date"] and r["body"]:
+                m = by_key.get((r["body"], r["date"]))
+                same_day = by_date.get(r["date"], [])
+                if (m is None and len(same_day) == 1 and r["body"] in ("city-council", "work-sessions")
+                        and same_day[0]["body"] in ("city-council", "work-sessions")):
+                    m = by_date[r["date"]][0]
+                    note = f"attached to the only meeting on this date; the database labels it {r['category']}"
+                if m is None:
+                    m = {"id": f"{r['body']}-{r['date']}", "body": r["body"], "date": r["date"], "docs": [], "official": {},
+                         "notes": ["known only from a recorded video in the caption-transcript database; no archived documents. The date comes from the database or the video title and is not confirmed by an agenda (it may be the upload date)"]}
+                    self.meetings.append(m); by_key[(r["body"], r["date"])] = m; by_date[r["date"]].append(m)
+            if m is not None:
+                m.setdefault("_cap_recs", []).append((r, note))
+            else:
+                self.drive_loose.append(r)
+
     # ----------------------------------------------------------- minutes
     def minutes_by_date(self):
         out = collections.defaultdict(list)
@@ -395,6 +472,7 @@ class Builder:
                 m = {"id": f"city-council-{d}", "body": "city-council", "date": d, "docs": [], "official": {}}
                 self.meetings.append(m); by_key[("city-council", d)] = m
             by_key[("city-council", d)]["_minutes"] = lst
+        self.attach_drive(by_key)
         self.meetings.sort(key=lambda m: (m["date"], m["body"], m["id"]))
         seq = collections.defaultdict(list)
         for m in self.meetings:
@@ -437,6 +515,15 @@ class Builder:
                 if r: trs.append(r)
             tr = trs[0] if trs else None
             m["_trs"] = trs
+            caps = []
+            for k, (r, note) in enumerate(m.get("_cap_recs", [])):
+                if r.get("dup_of") and any(c["id"] == r["dup_of"] for c in caps):
+                    continue                        # identical text already shown for this meeting
+                name = "captions" if k == 0 else f"captions-{k+1}"
+                caps.append(self.render_caption(r, f"documents/{self.year_of(m)}/{m['id']}/{name}",
+                                                f"{BODY_LABELS.get(m['body'], m['body'])} — {iso_label(m['date'])}", m, note))
+                texts.append(r["text"])
+            m["_caps"] = caps
             alltext = "\n".join(texts)
             kws = []
             for k, rx in KW_RE:
@@ -449,7 +536,7 @@ class Builder:
                 self.ordinances[mm.group(1)].add(m["id"])
             m["_kws"] = kws
             self.write_meeting(m, docs_info, tr, mins, seq[m["body"]])
-            summaries.append((m, len(docs_info), bool(tr), bool(mins), sum(1 for x in docs_info if x["status"].startswith(("full text", "agenda saved")))))
+            summaries.append((m, len(docs_info), bool(tr or caps), bool(mins), sum(1 for x in docs_info if x["status"].startswith(("full text", "agenda saved")))))
         self.m_by_id = {m["id"]: m for m in self.meetings}
         bound = {t["path"] for m in self.meetings for t in ([m.get("transcript")] if m.get("transcript") else []) + (m.get("transcripts") or [])}
         self.undated = []
@@ -462,6 +549,13 @@ class Builder:
                 r = self.render_transcript(None, [], t={"repo": "The-Real-Windy-City-", "path": rp}, label=title + " (date not published)",
                                            rel_base=f"documents/2026/undated/{slugify(f[:-3])}")
                 if r: self.undated.append((title, r))
+        self.loose_pages = []
+        for r in self.drive_loose:
+            y = r["date"][:4] if r["date"] else "undated"
+            slug = slugify(r["title"]) or r["id"]
+            rel_base = f"transcripts/{y}/{slug}-{r['id'].replace('_', '-')}"
+            info = self.render_caption(r, rel_base, md_inline(r["title"]) + (f" ({r['date']})" if r["date"] else ""))
+            self.loose_pages.append((r, info))
         self.write_indexes(summaries)
 
     def write_meeting(self, m, docs, tr, mins, seq):
@@ -469,14 +563,17 @@ class Builder:
         label = BODY_LABELS.get(m["body"], m["body"])
         dl = iso_label(m["date"])
         lines = [f"# {label} — {dl}", "",
-                 f"*Public meeting of the {label}, Cheyenne, Wyoming, held {dl}. This page links every archived document for the meeting as plain text, the transcript (2026 meetings), and the official Record of Proceedings where available.*", "",
+                 f"*Public meeting of the {label}, Cheyenne, Wyoming, held {dl}. This page links every archived document for the meeting as plain text, any transcripts of the meeting video, and the official Record of Proceedings where available.*", "",
                  f"- **Meeting ID:** `{m['id']}`",
                  f"- **Body:** {label}",
                  f"- **Date:** {m['date']}"]
         notes = [n for n in m.get("notes", []) if n]
         if notes: lines.append(f"- **Notes:** {'; '.join(notes)}")
         if m.get("upcoming"): lines.append("- **Status:** upcoming at the time of the snapshot")
-        lines.append(f"- **Archived documents:** {len(docs)}" + (f" · **Transcript:** yes ({tr['words']:,} words)" if tr else "") + (" · **Official minutes text:** yes" if mins else ""))
+        caps = m.get("_caps", [])
+        lines.append(f"- **Archived documents:** {len(docs)}" + (f" · **Transcript:** yes ({tr['words']:,} words)" if tr else "")
+                     + (f" · **Caption transcript:** yes ({sum(c['words'] for c in caps):,} words)" if caps else "")
+                     + (" · **Official minutes text:** yes" if mins else ""))
         i = seq.index(m)
         yr = m["date"][:4]; yrel = f"years/{yr}.md"; brel = f"bodies/{m['body']}.md"
         nav = [f"[Year {yr}]({self.rel(rel, yrel)})",
@@ -495,11 +592,14 @@ class Builder:
             lines += ["## Topics mentioned (keyword counts across all text for this meeting)", "",
                       ", ".join(f"{k} ({n})" for k, n in m["_kws"]), "",
                       f"*Counts are keyword matches to help you find things, not findings. See the [keyword index]({self.rel(rel, 'indexes/keywords.md')}).*", ""]
-        if tr:
+        if tr or caps:
             lines += ["## Transcript", ""]
-            for k, t in enumerate(m.get("_trs", [tr])):
+            for k, t in enumerate(m.get("_trs", []) if tr else []):
                 lab = "Full transcript with timestamps" if k == 0 else f"Additional transcript ({t['source'].split('/')[-1]})"
                 lines.append(f"- [{lab}]({self.rel(rel, t['path'])})" + (f" · [official video](https://www.youtube.com/watch?v={t['ytid']})" if t["ytid"] else ""))
+            for c in caps:
+                lines.append(f"- [Caption transcript: {md_inline(c['title'])}]({self.rel(rel, c['path'])}) ({c['words']:,} words, WindyCityMeetings database record `{c['id']}`)"
+                             + (f" — {c['note']}" if c.get("note") else ""))
             lines.append("")
         if docs:
             lines += ["## Archived documents", "",
@@ -542,6 +642,10 @@ class Builder:
             extra = []
             if y == "2026" and getattr(self, "undated", None):
                 extra = ["", "## Transcripts with no published date", ""] + [f"- [{t}]({self.rel(rel, r['path'])})" for t, r in self.undated]
+            loose = [(r, i) for r, i in getattr(self, "loose_pages", []) if r["date"] and r["date"][:4] == y]
+            if loose:
+                extra += ["", "## Other recorded sessions this year (caption transcripts)", ""] + \
+                         [f"- {r['date']}: [{md_inline(r['title'])}]({self.rel(rel, i['path'])}) ({r['words']:,} words)" for r, i in sorted(loose, key=lambda x: x[0]["date"])]
             self.write(rel, "\n".join([f"# Cheyenne public meetings in {y}", "",
                                        f"*{len(lst)} meetings. Every row links to a page with all of that meeting's documents as plain text.*", "",
                                        " · ".join(nav), ""] + hdr + [self.meeting_row(rel, *s) for s in lst] + extra))
@@ -586,17 +690,48 @@ class Builder:
             ms = sorted(self.ordinances[o], key=lambda i: self.m_by_id[i]["date"])
             out.append(f"| {o} | " + ", ".join(f"[{self.m_by_id[i]['date']}]({self.rel(rel, self.mpath(self.m_by_id[i]))})" for i in ms) + " |")
         self.write(rel, "\n".join(out))
+        # caption-transcript index
+        rel = "indexes/caption-transcripts.md"
+        rows = []
+        for m, *_ in summaries:
+            for c in m.get("_caps", []):
+                rows.append((m["date"], BODY_LABELS.get(m["body"], m["body"]), c["title"], c["words"], c["path"], c["id"]))
+        for r, i in getattr(self, "loose_pages", []):
+            rows.append((r["date"] or "", BODY_LABELS.get(r["body"], "") if r["body"] else "", r["title"], r["words"], i["path"], r["id"]))
+        dated = sorted([x for x in rows if x[0]], key=lambda x: (x[0], x[2]))
+        undated = sorted([x for x in rows if not x[0]], key=lambda x: x[2])
+        n_dup = sum(1 for r in self.drive if r.get("dup_of"))
+        out = ["# Caption transcripts (WindyCityMeetings database)", "",
+               f"*{len(rows):,} machine caption transcripts of City of Cheyenne meeting videos, about {sum(x[3] for x in rows):,} words in total. "
+               "Each one is listed here and also linked from its meeting page when the meeting is known. "
+               "These are automatic captions with no punctuation, timestamps, or speaker names, so check quotes against the official video or minutes.*", "",
+               f"- **Source:** {self.DRIVE_SRC}",
+               f"- **Records in the database:** {len(self.drive):,} ({n_dup} have the same text as another record; duplicates for the same meeting are shown once)",
+               f"- **Dates:** {sum(1 for r in self.drive if r['date_source'] == 'database'):,} from the database, {sum(1 for r in self.drive if r['date_source'] == 'title'):,} read from the video title, {sum(1 for r in self.drive if not r['date']):,} unknown",
+               "", "[Home](../README.md) · [Keyword index](keywords.md)", "",
+               f"## Dated ({len(dated):,})", "", "| Date | Body | Video title | Words | Record |", "|---|---|---|---|---|"]
+        out += [f"| {d} | {b} | [{md_escape_cell(t)}]({self.rel(rel, pth)}) | {w:,} | `{rid}` |" for d, b, t, w, pth, rid in dated]
+        out += ["", f"## Date not given ({len(undated):,})", "",
+                "*Many of these are numbered City Council uploads (\"City Council Meeting 23\"). The database has no date for them, and the title doesn't give one either.*", "",
+                "| Body (from title) | Video title | Words | Record |", "|---|---|---|---|"]
+        out += [f"| {b} | [{md_escape_cell(t)}]({self.rel(rel, pth)}) | {w:,} | `{rid}` |" for d, b, t, w, pth, rid in undated]
+        self.write(rel, "\n".join(out))
+        self.caption_rows = rows
         # catalog json
         cat = []
         for m, ndocs, has_tr, has_min, ntext in summaries:
             cat.append({"id": m["id"], "date": m["date"], "body": m["body"], "bodyLabel": BODY_LABELS.get(m["body"], m["body"]),
                         "page": SITE + self.mpath(m).replace(".md", ".html"), "markdown": REPO_BLOB + self.mpath(m),
                         "documents": ndocs, "documentsWithText": ntext, "transcript": has_tr, "minutesText": has_min,
+                        "captionTranscripts": [SITE + c["path"].replace(".md", ".html") for c in m.get("_caps", [])],
                         "official": m.get("official") or {}, "keywords": dict(m.get("_kws", []))})
         self.write("indexes/meetings.json", json.dumps({"generated": "from the archive snapshot", "count": len(cat), "meetings": cat}, indent=1))
         self.stats = {"meetings": len(summaries), "documents": sum(s[1] for s in summaries),
                       "transcripts": sum(1 for s in summaries if s[2]), "minutes": sum(1 for s in summaries if s[3]),
                       "years": f"{min(years)}–{max(years)}", "pages": self.pages_total, "chars": self.chars_total,
+                      "caption_transcripts": len(self.caption_rows),
+                      "caption_words": sum(x[3] for x in self.caption_rows),
+                      "caption_meetings": sum(1 for s in summaries if s[0].get("_caps")),
                       "quality": dict(self.quality)}
         json.dump(self.stats, open(os.path.join(self.out, "indexes", "stats.json"), "w"), indent=1)
         self.files.append("indexes/stats.json")
@@ -650,6 +785,7 @@ def main():
     ap.add_argument("--trees", required=True)
     ap.add_argument("--static", default="tools/ai_record_static")
     ap.add_argument("--out", default="ai-record")
+    ap.add_argument("--drive-db", help="caption-transcript database JSON(.gz) from Google Drive")
     a = ap.parse_args()
     b = Builder(a)
     b.build()

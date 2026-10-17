@@ -16,6 +16,8 @@ on:
       - "tools/ai_record_ocr.py"
       - "tools/ai_record_static/**"
       - "pipeline/corpus/**"
+      - "drive-import/**"
+      - "tools/ai_record_drive.py"
       - ".github/workflows/ai-record-pages.yml"
   schedule:
     - cron: "41 8 * * *"          # daily: picks up new archive files and continues OCR
@@ -79,7 +81,7 @@ jobs:
       - name: Build Markdown record
         run: |
           python3 -u tools/build_ai_record.py --meetings /tmp/fe/src/data/meetings.json --text /tmp/text \
-            --ocr ai-record-ocr --transcripts /tmp/tr --minutes pipeline/corpus --trees /tmp/trees --out /tmp/ai-record
+            --ocr ai-record-ocr --transcripts /tmp/tr --minutes pipeline/corpus --trees /tmp/trees --drive-db drive-import/master_meetings_database.json.gz --out /tmp/ai-record
       - name: Render static site
         run: python3 -u tools/render_ai_record.py --src /tmp/ai-record --out _site --extra public/index.html=ledger.html
       - uses: actions/upload-pages-artifact@v3

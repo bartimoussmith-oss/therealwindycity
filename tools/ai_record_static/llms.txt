@@ -1,6 +1,6 @@
 # Cheyenne, Wyoming public meetings record (plain text)
 
-> An AI-readable mirror of {{stat:meetings}} public meetings of the City of Cheyenne, Wyoming (and some Laramie County boards), {{stat:years}}. It has {{stat:documents}} archived agendas, packets, supporting documents, and minutes as plain Markdown, plus timestamped transcripts of 2026 meetings linked to the official video. No JavaScript or PDFs are needed. Each meeting is at meetings/<YEAR>/<body>-<YYYY-MM-DD>.html (or .md).
+> An AI-readable mirror of {{stat:meetings}} public meetings of the City of Cheyenne, Wyoming (and some Laramie County boards), {{stat:years}}. It has {{stat:documents}} archived agendas, packets, supporting documents, and minutes as plain Markdown, plus timestamped transcripts of 2026 meetings linked to the official video, and {{stat:caption_transcripts}} caption transcripts of meeting videos from 2017–2026 ({{stat:caption_words}} words). No JavaScript or PDFs are needed. Each meeting is at meetings/<YEAR>/<body>-<YYYY-MM-DD>.html (or .md).
 
 Body slugs: city-council, finance-committee, public-services-committee, work-sessions, planning-commission, board-of-adjustment, historic-preservation-board, urban-renewal-authority, board-of-county-commissioners.
 Every page is also available as Markdown at the same path with a .md extension.
@@ -10,6 +10,7 @@ Keyword counts are search aids, not findings. Transcripts are auto-captions: nam
 - [Home](https://bartimoussmith-oss.github.io/therealwindycity/index.html): what is here, how to navigate, how to cite
 - [Meeting catalog (JSON)](https://bartimoussmith-oss.github.io/therealwindycity/indexes/meetings.json): every meeting with URLs, document counts, official links, and keyword counts
 - [Keyword index](https://bartimoussmith-oss.github.io/therealwindycity/indexes/keywords.html): annexation, data centers, Microsoft, Chapter 1.28 warrants, referendum, sixth penny, sole source, Ardurra, Musco, and more, by meeting
+- [Caption transcripts](https://bartimoussmith-oss.github.io/therealwindycity/indexes/caption-transcripts.html): every meeting-video caption transcript in the WindyCityMeetings database, by date, linked to its meeting page
 - [Wyoming statute citations](https://bartimoussmith-oss.github.io/therealwindycity/indexes/statutes.html): every W.S. citation found, by meeting
 - [Ordinance numbers](https://bartimoussmith-oss.github.io/therealwindycity/indexes/ordinances.html): ordinance numbers from the Records of Proceedings
 

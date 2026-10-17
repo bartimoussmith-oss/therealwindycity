@@ -24,6 +24,7 @@ The fix is a static, JavaScript-free mirror:
 |---|---|---|
 | 1. Extract | `tools/ai_record_extract.py` | `<sha>.json` per file (PDF text per page, HTML text) + `tree_<repo>.json` |
 | 2. OCR (incremental) | `tools/ai_record_ocr.py` | `ai-record-ocr/<sha>.json`: OCR text for image-only pages, **committed** so each run continues the backlog |
+| 2b. Caption database | `tools/ai_record_drive.py` | Normalizes `drive-import/master_meetings_database.json.gz` (720 caption transcripts from Google Drive). Each one is attached to its meeting, or gets its own page plus an entry in `indexes/caption-transcripts` |
 | 3. Build | `tools/build_ai_record.py` | `ai-record/`: Markdown pages, indexes, topic pages (from `tools/ai_record_static/`) |
 | 4. Render | `tools/render_ai_record.py` | `_site/`: HTML + `.md` twins, robots.txt, sitemap.xml, llms.txt |
 | 5. Publish | `.github/workflows/ai-record-pages.yml` | GitHub Pages (deploys from `main` only) |
@@ -41,7 +42,7 @@ git clone --depth 1 https://github.com/therealwindycity/The-Real-Windy-City- /tm
 python3 tools/ai_record_extract.py --text /tmp/text --trees /tmp/trees          # ~10 min, ~7 GB transient
 python3 tools/ai_record_ocr.py --text /tmp/text --cache ai-record-ocr --minutes 30   # optional
 python3 tools/build_ai_record.py --meetings /tmp/fe/src/data/meetings.json --text /tmp/text \
-  --ocr ai-record-ocr --transcripts /tmp/tr --minutes pipeline/corpus --trees /tmp/trees --out ai-record
+  --ocr ai-record-ocr --transcripts /tmp/tr --minutes pipeline/corpus --trees /tmp/trees --drive-db drive-import/master_meetings_database.json.gz --out ai-record
 python3 tools/render_ai_record.py --src ai-record --out _site --extra public/index.html=ledger.html
 python3 -m http.server -d _site 8080
 ```
