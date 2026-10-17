@@ -102,3 +102,15 @@ engine/
   digest.py          Module 5 — daily evidence digest writer
 dashboard/app.py     Module 5 — Streamlit dashboard (optional)
 ```
+
+## AI-readable record (for ChatGPT, Perplexity, Google AI Mode, Claude, etc.)
+
+The whole archive — **1,000+ Cheyenne meetings, 2008–2026: every agenda, packet, supporting
+document and minutes file as plain text, plus timestamped 2026 transcripts** — is published as a
+plain-HTML/Markdown site that AI assistants and search engines can read directly:
+
+- **https://bartimoussmith-oss.github.io/therealwindycity/** (start here)
+- **https://bartimoussmith-oss.github.io/therealwindycity/llms.txt** (guide for AI tools)
+
+Rebuilt automatically by `.github/workflows/ai-record-pages.yml`; how it works:
+[`tools/README-ai-record.md`](tools/README-ai-record.md).
