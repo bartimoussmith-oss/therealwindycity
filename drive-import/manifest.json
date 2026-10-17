@@ -1,0 +1,48 @@
+{
+ "generated_by": "tools/colab_import_linked_db.py",
+ "imports": {
+  "master_meetings_database_linked.json.gz": {
+   "gzip_bytes": 19160694,
+   "imported_at": "2026-10-17T02:11:56Z",
+   "notes": "Deterministic gzip (mtime=0, no embedded filename): re-importing the same source reproduces the same bytes and sha256_gzip.",
+   "profile": {
+    "categories": {
+     "City Council": 277,
+     "Finance Committee": 145,
+     "Other/Supporting": 60,
+     "Planning Commission": 12,
+     "Public Services Committee": 89,
+     "Work Session": 137
+    },
+    "dates": {
+     "dated": 493,
+     "max": "2026-10-12",
+     "min": "2004-02-02"
+    },
+    "records": 720,
+    "records_without_turns": 0,
+    "top_level_fields": {
+     "agendas": 720,
+     "category": 720,
+     "date": 720,
+     "filename": 720,
+     "id": 720,
+     "minutes": 720,
+     "raw_text_length": 720,
+     "supporting_documents": 720,
+     "title": 720,
+     "turns": 720
+    },
+    "turn_fields": {
+     "speaker": 725,
+     "text": 725
+    },
+    "turn_text_chars": 39881789
+   },
+   "raw_bytes": 143461727,
+   "sha256_gzip": "2d8c0df07b7da85bfaedd4236d85b706630f3ee0df68d71747a4b11797ee5e89",
+   "sha256_raw": "912c801ca8fd9e965a454dd1d3ec9c85dff22b69445e8ec3f09caef966d4fbec",
+   "source_path": "/content/drive/MyDrive/WindyCityMeetings/processed_database/master_meetings_database_linked.json"
+  }
+ }
+}
