@@ -1,0 +1,13 @@
+# windycity-agent runs on the Python standard library alone — on purpose.
+#
+# Nothing here is required to start, to serve the phone console, to run the
+# civic pipeline, or to use a cloud model. That is what makes the runtime
+# installable on a phone (Termux), a Chromebook, and a locked-down Windows box
+# without a package manager.
+#
+# Optional extras, install only if you want them:
+#   pypdf pdfplumber pillow     # richer PDF/image extraction in the civic engine
+#   streamlit pandas plotly     # the civic console (root requirements.txt)
+#
+# Local models are served by Ollama or any OpenAI-compatible server — they are
+# external processes, not Python dependencies of this package.
