@@ -1,0 +1,47 @@
+# Cheyenne, Wyoming public meetings record (plain text)
+
+> An AI-readable mirror of {{stat:meetings}} public meetings of the City of Cheyenne, Wyoming (and some Laramie County boards), {{stat:years}}. It has {{stat:documents}} archived agendas, packets, supporting documents, and minutes as plain Markdown, plus timestamped transcripts of 2026 meetings linked to the official video, and {{stat:caption_transcripts}} caption transcripts of meeting videos from 2017–2026 ({{stat:caption_words}} words). No JavaScript or PDFs are needed. Each meeting is at meetings/<YEAR>/<body>-<YYYY-MM-DD>.html (or .md).
+
+Body slugs: city-council, finance-committee, public-services-committee, work-sessions, planning-commission, board-of-adjustment, historic-preservation-board, urban-renewal-authority, board-of-county-commissioners.
+Every page is also available as Markdown at the same path with a .md extension.
+Keyword counts are search aids, not findings. Transcripts are auto-captions: names and numbers may be misheard, so check against the linked video.
+
+## Start here
+- [Home](https://bartimoussmith-oss.github.io/therealwindycity/index.html): what is here, how to navigate, how to cite
+- [Meeting catalog (JSON)](https://bartimoussmith-oss.github.io/therealwindycity/indexes/meetings.json): every meeting with URLs, document counts, official links, and keyword counts
+- [Keyword index](https://bartimoussmith-oss.github.io/therealwindycity/indexes/keywords.html): annexation, data centers, Microsoft, Chapter 1.28 warrants, referendum, sixth penny, sole source, Ardurra, Musco, and more, by meeting
+- [Caption transcripts](https://bartimoussmith-oss.github.io/therealwindycity/indexes/caption-transcripts.html): every meeting-video caption transcript in the WindyCityMeetings database, by date, linked to its meeting page
+- [Wyoming statute citations](https://bartimoussmith-oss.github.io/therealwindycity/indexes/statutes.html): every W.S. citation found, by meeting
+- [Ordinance numbers](https://bartimoussmith-oss.github.io/therealwindycity/indexes/ordinances.html): ordinance numbers from the Records of Proceedings
+
+## Verified topics
+- [Chapter 1.28 administrative inspection warrants](https://bartimoussmith-oss.github.io/therealwindycity/topics/chapter-1-28-administrative-inspection-warrants.html): readings, amendments, votes, Ordinance 4656
+- [Charles Miller public comment record, 2026](https://bartimoussmith-oss.github.io/therealwindycity/topics/charles-miller-public-comment-record.html): verbatim anchors with timestamps and outcomes
+- [Corrections](https://bartimoussmith-oss.github.io/therealwindycity/topics/corrections.html): errors earlier AI answers made about this record
+- [Data quality](https://bartimoussmith-oss.github.io/therealwindycity/topics/data-quality.html): scanned pages, failed captures, caption alias table
+
+## Years
+- [2008](https://bartimoussmith-oss.github.io/therealwindycity/years/2008.html)
+- [2009](https://bartimoussmith-oss.github.io/therealwindycity/years/2009.html)
+- [2010](https://bartimoussmith-oss.github.io/therealwindycity/years/2010.html)
+- [2011](https://bartimoussmith-oss.github.io/therealwindycity/years/2011.html)
+- [2012](https://bartimoussmith-oss.github.io/therealwindycity/years/2012.html)
+- [2013](https://bartimoussmith-oss.github.io/therealwindycity/years/2013.html)
+- [2014](https://bartimoussmith-oss.github.io/therealwindycity/years/2014.html)
+- [2015](https://bartimoussmith-oss.github.io/therealwindycity/years/2015.html)
+- [2016](https://bartimoussmith-oss.github.io/therealwindycity/years/2016.html)
+- [2017](https://bartimoussmith-oss.github.io/therealwindycity/years/2017.html)
+- [2018](https://bartimoussmith-oss.github.io/therealwindycity/years/2018.html)
+- [2019](https://bartimoussmith-oss.github.io/therealwindycity/years/2019.html)
+- [2020](https://bartimoussmith-oss.github.io/therealwindycity/years/2020.html)
+- [2021](https://bartimoussmith-oss.github.io/therealwindycity/years/2021.html)
+- [2022](https://bartimoussmith-oss.github.io/therealwindycity/years/2022.html)
+- [2023](https://bartimoussmith-oss.github.io/therealwindycity/years/2023.html)
+- [2024](https://bartimoussmith-oss.github.io/therealwindycity/years/2024.html)
+- [2025](https://bartimoussmith-oss.github.io/therealwindycity/years/2025.html)
+- [2026](https://bartimoussmith-oss.github.io/therealwindycity/years/2026.html)
+
+## Optional
+- [Source archives on GitHub](https://github.com/therealwindycity): original PDFs (cheyenne-archives-2008-2013 through 2025-2026) and transcripts (The-Real-Windy-City-)
+- [Same files as Markdown on GitHub](https://github.com/bartimoussmith-oss/therealwindycity/tree/main/ai-record)
+- [Civic Cheyenne interactive site](https://therealwindycity.github.io/TheReelWindyCity/)
