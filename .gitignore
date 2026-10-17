@@ -28,3 +28,14 @@ __pycache__/
 /_site/
 # Google Drive connector download scratch dir
 /google_drive/
+
+# SEALED arrest name key — de-identified public tier is committed, names are not.
+# See data/arrests/README.md. Released only via .github/ISSUE_TEMPLATE/arrest-name-request.md
+/data/arrests/name_key.json
+/data/arrests/name_key.json.*
+
+# SQLite WAL/SHM sidecars — transient, recreated on open. Committing a stale
+# -wal next to engine.db can make SQLite replay it over the committed state.
+*.db-shm
+*.db-wal
+*.db-journal

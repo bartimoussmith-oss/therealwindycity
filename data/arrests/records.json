@@ -1,0 +1,1280 @@
+{
+ "category_rule": "Categories are charge groupings only. No category encodes a protected characteristic or a proxy for one, and no demographic field is derived or inferred.",
+ "caveats": [
+  "The arrest log is not a comprehensive document and may not represent all of the arrests made in a given time period.",
+  "The log does not contain information for juvenile offenders, suspects recommended for charges of a sexual nature, or information for persons arrested in Laramie County who have bonded or bailed out of the detention center before law enforcement releases the information.",
+  "Arrest is not a finding of guilt. Every entry is a recommended charge at the time of booking; cases may be dropped, reduced, or dismissed.",
+  "Names are withheld from this tier by owner policy. No demographic field is derived, inferred, or published: the categories above are charge groupings only and encode no protected characteristic or proxy for one."
+ ],
+ "generated_by": "tools/build_arrest_records.py",
+ "policy": "Arrest records published WITHOUT names. Names are released only on request, for public-safety and non-discriminatory research purposes only.",
+ "record_count": 65,
+ "records": [
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "assault_violence",
+    "officer_obstruction",
+    "public_order"
+   ],
+   "charge_count": 4,
+   "charges": [
+    "Strangulation of a Household Member: Minor Injury",
+    "Domestic Battery",
+    "Interference with a Peace Officer: No Injury",
+    "Public Intoxication"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-001",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "property_theft"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Criminal Trespass: Communication"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-002",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "impaired_driving"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "DUI"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-003",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Failure to Appear x2"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-004",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Failure to Register as a Sex Offender x2"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-005",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "drug_possession",
+    "warrant_court",
+    "officer_obstruction"
+   ],
+   "charge_count": 3,
+   "charges": [
+    "Probation Violation",
+    "Possession of Methamphetamine-Type Drug",
+    "Interference with a Peace Officer: No Injury"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-006",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "impaired_driving",
+    "traffic"
+   ],
+   "charge_count": 2,
+   "charges": [
+    "Speeding",
+    "DUI"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-007",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "assault_violence",
+    "officer_obstruction",
+    "public_order"
+   ],
+   "charge_count": 3,
+   "charges": [
+    "Simple Assault",
+    "Interference with a Peace Officer",
+    "Minor in Possession of Alcohol"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-008",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Failure to Pay"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-009",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "warrant_court",
+    "property_theft"
+   ],
+   "charge_count": 6,
+   "charges": [
+    "District Court Warrant: Probation Violation",
+    "Forgery: Uttering x2",
+    "Theft: Greater than $1",
+    "000 or Firearm/Livestock from Building",
+    "Theft: Less than $1",
+    "000 from Building"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-010",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "weapons"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Unlawfully Wearing or Carrying a Concealed Weapon"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-011",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "officer_obstruction"
+   ],
+   "charge_count": 2,
+   "charges": [
+    "Interference with a Peace Officer: No Injury",
+    "Fleeing/Eluding"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-012",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Court Order"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-013",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Wyoming Warrant: Misdemeanor"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-014",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "impaired_driving",
+    "traffic"
+   ],
+   "charge_count": 2,
+   "charges": [
+    "Lane Use",
+    "DUI"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-015",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "drug_possession",
+    "warrant_court"
+   ],
+   "charge_count": 2,
+   "charges": [
+    "Failure to Appear",
+    "Possession/Use of Drugs: Amphetamine-Type"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-016",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "property_theft"
+   ],
+   "charge_count": 2,
+   "charges": [
+    "Theft: Using or Disposing Greater than $1",
+    "000"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-017",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Failure to Appear"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-018",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "public_order"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Public Intoxication"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-019",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "impaired_driving",
+    "assault_violence",
+    "officer_obstruction"
+   ],
+   "charge_count": 3,
+   "charges": [
+    "Simple Assault on a Police Officer",
+    "Interference with a Peace Officer: No Injury",
+    "DUI"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-020",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Failure to Pay"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-021",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/28/26–8/31/26",
+   "categories": [
+    "officer_obstruction",
+    "public_order"
+   ],
+   "charge_count": 2,
+   "charges": [
+    "Interference with a Peace Officer: No Injury",
+    "Possession of Tobacco by a Minor"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-022",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/31/26–9/1/26",
+   "categories": [
+    "assault_violence",
+    "warrant_court",
+    "property_theft"
+   ],
+   "charge_count": 9,
+   "charges": [
+    "Aggravated Assault with Injury",
+    "Destruction of Property: Less than $1",
+    "000",
+    "Reckless Endangerment: Conduct",
+    "District Court Warrant: Failure to Comply",
+    "Theft: Greater than $1",
+    "000",
+    "District Court Warrant: Failure to Appear",
+    "NCIC Hold"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-023",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/31/26–9/1/26",
+   "categories": [
+    "assault_violence",
+    "warrant_court"
+   ],
+   "charge_count": 2,
+   "charges": [
+    "Child Endangerment: Meth Waste",
+    "ICE Detainer"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-024",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/31/26–9/1/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Parole/Probation Violator Arrest Without Warrant"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-025",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/31/26–9/1/26",
+   "categories": [
+    "assault_violence"
+   ],
+   "charge_count": 2,
+   "charges": [
+    "Domestic Violence",
+    "Strangulation of a Household Member: Minor Injury"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-026",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/31/26–9/1/26",
+   "categories": [
+    "drug_possession",
+    "public_order"
+   ],
+   "charge_count": 2,
+   "charges": [
+    "Possession/Use of Drugs: Amphetamine-Type",
+    "Disturbing the Peace and Disturbing Property"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-027",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/31/26–9/1/26",
+   "categories": [
+    "officer_obstruction"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Resisting Arrest"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-028",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/31/26–9/1/26",
+   "categories": [
+    "impaired_driving",
+    "drug_possession",
+    "traffic"
+   ],
+   "charge_count": 3,
+   "charges": [
+    "Duty upon Colliding with Unattended Vehicle/Property",
+    "Possession of Methamphetamine-Type Drug",
+    "DUI: Controlled Substance"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-029",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/31/26–9/1/26",
+   "categories": [
+    "assault_violence",
+    "public_order"
+   ],
+   "charge_count": 2,
+   "charges": [
+    "Disturbing the Peace and Disturbing Property",
+    "Fighting/Riotous Conduct"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-030",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/31/26–9/1/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Violating Temporary Protection Order"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-031",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/31/26–9/1/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 2,
+   "charges": [
+    "District Court Warrant: Failure to Comply",
+    "Wyoming Warrant"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-032",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/31/26–9/1/26",
+   "categories": [
+    "impaired_driving",
+    "assault_violence",
+    "officer_obstruction",
+    "public_order"
+   ],
+   "charge_count": 4,
+   "charges": [
+    "Fighting/Riotous Conduct",
+    "Interfering/Obstructing",
+    "Public Intoxication",
+    "Open Container"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-033",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "8/31/26–9/1/26",
+   "categories": [
+    "traffic"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Suspended Driver’s License"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-034",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/1/26–9/2/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Probation Violation"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-035",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/1/26–9/2/26",
+   "categories": [
+    "impaired_driving"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "DUI"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-036",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/1/26–9/2/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Failure to Comply"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-037",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/1/26–9/2/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Failure to Pay"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-038",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/1/26–9/2/26",
+   "categories": [
+    "drug_possession",
+    "warrant_court",
+    "property_theft"
+   ],
+   "charge_count": 5,
+   "charges": [
+    "Possession of Methamphetamine-Type Drug",
+    "Theft: Greater than $1",
+    "000",
+    "Failure to Register as a Sex Offender: Subsequent Violation",
+    "Possession of a Controlled Substance: Third Time or Subsequent"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-039",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/1/26–9/2/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "City Court Order"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-040",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/1/26–9/2/26",
+   "categories": [
+    "assault_violence"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Aggravated Assault with Injury x2"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-041",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/2/26–9/3/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "District Court Warrant: Failure to Comply"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-042",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/2/26–9/3/26",
+   "categories": [
+    "drug_possession",
+    "public_order"
+   ],
+   "charge_count": 2,
+   "charges": [
+    "Public Intoxication",
+    "Possession of Marijuana: Under 1/4 Ounce"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-043",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/2/26–9/3/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Failure to Appear"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-044",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/2/26–9/3/26",
+   "categories": [
+    "warrant_court",
+    "public_order"
+   ],
+   "charge_count": 2,
+   "charges": [
+    "Wyoming Warrant",
+    "Urinating in Public"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-045",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/2/26–9/3/26",
+   "categories": [
+    "warrant_court",
+    "property_theft",
+    "public_order"
+   ],
+   "charge_count": 4,
+   "charges": [
+    "Stalking: Communicating",
+    "Destruction of Property: Less than $1",
+    "000 x2",
+    "Breach of Peace"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-046",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/2/26–9/3/26",
+   "categories": [
+    "drug_possession",
+    "traffic"
+   ],
+   "charge_count": 7,
+   "charges": [
+    "Possession of Methamphetamine-Type Drug",
+    "Possession of a Controlled Substance: Third Time or Subsequent",
+    "Possession of Marijuana",
+    "Proof of Liability Insurance",
+    "Driver’s License",
+    "Speeding",
+    "Felon in Possession of a Weapon"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-047",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/2/26–9/3/26",
+   "categories": [
+    "property_theft"
+   ],
+   "charge_count": 2,
+   "charges": [
+    "Destruction of Property: Greater than $1",
+    "000"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-048",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/2/26–9/3/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Wyoming Warrant"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-049",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/2/26–9/3/26",
+   "categories": [
+    "impaired_driving",
+    "drug_possession"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "DUI/Drug Court Hold"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-050",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/2/26–9/3/26",
+   "categories": [
+    "impaired_driving",
+    "drug_possession"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "DUI/Drug Court Hold"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-051",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/3/26–9/4/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "NCIC Hold"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-052",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/3/26–9/4/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Parole/Probation Violator Arrest Without Warrant"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-053",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/3/26–9/4/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Failure to Appear"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-054",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/3/26–9/4/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Court Order"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-055",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/3/26–9/4/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "NCIC Hit"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-056",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/3/26–9/4/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Violating Temporary Protection Order"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-057",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/3/26–9/4/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Parole/Probation Violator Arrest Without Warrant"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-058",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/3/26–9/4/26",
+   "categories": [
+    "impaired_driving"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Pedestrian Under the Influence"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-059",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/3/26–9/4/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Court Order"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-060",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/3/26–9/4/26",
+   "categories": [
+    "public_order"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Public Intoxication"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-061",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/3/26–9/4/26",
+   "categories": [
+    "assault_violence"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Domestic Battery"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-062",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/3/26–9/4/26",
+   "categories": [
+    "traffic"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "Duty to Stop"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-063",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/3/26–9/4/26",
+   "categories": [
+    "warrant_court"
+   ],
+   "charge_count": 1,
+   "charges": [
+    "District Court Warrant: Failure to Comply"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-064",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  },
+  {
+   "arrest_window": "9/3/26–9/4/26",
+   "categories": [
+    "warrant_court",
+    "public_order"
+   ],
+   "charge_count": 2,
+   "charges": [
+    "Public Intoxication",
+    "Wyoming Warrant: Felony"
+   ],
+   "name": null,
+   "name_withheld": true,
+   "record_id": "LC-20260905-065",
+   "report": "Laramie County weekly arrest report (8/28/26–9/4/26) - Cheyenne, WY Cap City News",
+   "report_published": "2026-09-05T20:09:38+00:00",
+   "source_capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "source_sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008",
+   "source_url": "https://capcity.news/crime/2026/09/05/laramie-county-weekly-arrest-report-8-28-26-9-4-26/"
+  }
+ ],
+ "report_count": 1,
+ "reports": [
+  {
+   "capture": "a60833b88b21_laramie-county-weekly-arrest-report-8-28-26-9-4-26",
+   "sha256": "c75f0697337394b72c0f43822dc3f8403835f782792b700c86529790b851c008"
+  }
+ ],
+ "tier": "public-deidentified"
+}
