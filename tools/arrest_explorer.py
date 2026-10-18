@@ -17,6 +17,7 @@ from __future__ import annotations
 import csv
 import io
 import json
+import os
 import re
 from collections import Counter
 from pathlib import Path
@@ -30,8 +31,15 @@ ARREST_DIR = ROOT / "data" / "arrests"
 PUBLIC_FILES = ("master_records.json", "records.json")
 SEALED_FILES = ("keyring.jsonl", "name_key.json", "access_ledger.json")
 
-st.set_page_config(page_title="Arrest Record Explorer — de-identified",
-                   page_icon="🔒", layout="wide")
+# When this file is embedded inside a multipage Streamlit page (see
+# pages/22_Arrest_Database.py, which runs it via runpy after its own password
+# gate), the host page already owns set_page_config -- calling it twice makes
+# Streamlit raise. Skip it in that case.
+_EMBEDDED = bool(os.environ.get("ARREST_EXPLORER_EMBEDDED"))
+
+if not _EMBEDDED:
+    st.set_page_config(page_title="Arrest Record Explorer — de-identified",
+                       page_icon="🔒", layout="wide")
 
 
 @st.cache_data(show_spinner=False)
