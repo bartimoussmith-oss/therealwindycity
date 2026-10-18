@@ -154,6 +154,11 @@ def _prev_index():
             pass
 
 
+def _prev_estoppel_effect():
+    st.markdown("⚖️ Source-linked phrase-pattern leads for human review: commitments, record-building, issue chronology, and related cues.")
+    st.caption("The full page runs and caches the research aid automatically; it does not decide speaker attribution or legal effect.")
+
+
 PREVIEW = {
     "◈ Ledger HQ": _prev_front_page,
     "📡 Mission Board": _prev_mission_board,
@@ -170,6 +175,7 @@ PREVIEW = {
 EXTRA = [  # the two pre-existing standalone pages
     dict(page="16a_Miller_Tapes", key="🎬 Miller Tapes", icon="🎬", blurb="Every intervention, on loop", prev=_prev_miller),
     dict(page="16b_Screening_Room", key="🎞 Screening Room", icon="🎞", blurb="Montage theater", prev=_prev_tapes),
+    dict(page="23_Estoppel_Effect", key="⚖️ Estoppel-Effect Review", icon="⚖️", blurb="Source-linked chronology and commitment-pattern leads", prev=_prev_estoppel_effect),
 ]
 
 # --------------------------------------------------------------------- render
