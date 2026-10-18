@@ -18,6 +18,7 @@ from pathlib import Path
 from xml.etree import ElementTree
 
 from . import db
+from . import redact
 
 _LAST_HIT: dict[str, float] = {}
 _ROBOTS: dict[str, urllib.robotparser.RobotFileParser] = {}
@@ -173,11 +174,26 @@ def _hashable_bytes(url: str, raw: bytes) -> bytes:
 def _ingest_one(conn, source: str, url: str, title: str, raw: bytes,
                 published_at: str = "") -> str:
     url = _normalize_url(url)
+    # Arrest logs are published DE-IDENTIFIED: withhold person names before the
+    # capture is written anywhere git can see. Fail CLOSED -- refuse the capture
+    # rather than commit a name. Redacting here (before the fingerprint) means
+    # the stored bytes, the change-detection hash and the filename all describe
+    # the redacted artefact, so re-crawling the same live page stays "unchanged".
+    # See engine/redact.py.
+    sealed_names: list[str] = []
+    if redact.is_arrest_document(url=url, title=title):
+        try:
+            raw, sealed_names = redact.redact_bytes(raw, url=url, title=title)
+        except redact.RedactionError as e:
+            return f"REFUSED (redaction failed, names would leak): {e}"
     sha = hashlib.sha256(_hashable_bytes(url, raw)).hexdigest()
     name = re.sub(r"[^A-Za-z0-9._-]", "_",
                   Path(urllib.parse.urlsplit(url).path).name or "index.html")
     local = str(db.SNAP_DIR / f"{sha[:12]}_{name[-80:]}")
     Path(local).write_bytes(raw)
+    if sealed_names:
+        redact.seal_names(sealed_names, url=url, title=title, source=source,
+                          capture=Path(local).name)
     doc = db.get_document_by_url(conn, url)
     if doc is None:
         doc_id = db.insert_document(conn, source, url, title or url, local,

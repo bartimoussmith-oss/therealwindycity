@@ -9,6 +9,13 @@ rag/text_cache/
 youtube-archive/videos/
 youtube-archive/documents/
 youtube-archive/client_secrets.json
+
+# Streamlit local secrets -- the arrest page's access password lives here.
+# Never commit it: this repository is public.
+.streamlit/secrets.toml
+.streamlit/secrets/*.toml
+secrets.toml
+
 youtube-archive/yt_token.json
 youtube-archive/upload_state.json
 youtube-archive/*.part
@@ -28,3 +35,16 @@ __pycache__/
 /_site/
 # Google Drive connector download scratch dir
 /google_drive/
+
+# SEALED arrest name key — de-identified public tier is committed, names are not.
+# See data/arrests/README.md. Released only via .github/ISSUE_TEMPLATE/arrest-name-request.md
+/data/arrests/name_key.json
+/data/arrests/name_key.json.*
+
+# SQLite WAL/SHM sidecars — transient, recreated on open. Committing a stale
+# -wal next to engine.db can make SQLite replay it over the committed state.
+*.db-shm
+*.db-wal
+*.db-journal
+/data/arrests/keyring.jsonl
+/data/arrests/access_ledger.json

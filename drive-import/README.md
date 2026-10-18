@@ -10,15 +10,29 @@
 - **Used by:** `tools/ai_record_drive.py` → `tools/build_ai_record.py --drive-db` → the AI-readable site
   (meeting pages + `indexes/caption-transcripts.html`).
 
-### Not yet imported: `master_meetings_database_linked.json`
+### `master_meetings_database_linked.json.gz` — import tool ready, run it from Colab
 
-This 143 MB file is too large for the Drive connector, which caps transfers at 100 MB. To add it, run the following in Colab and the result can be downloaded and merged in:
+The linked export is 143,461,727 bytes: over GitHub's 100 MB blob limit and this
+repo's ~50 MB file rule, and over the Drive connector's 100 MB transfer cap. The
+bytes only exist on the machine that already has them, so the compression has to
+happen there. `tools/colab_import_linked_db.py` does the whole handoff:
 
 ```python
-import gzip, shutil
-src = '/content/drive/MyDrive/WindyCityMeetings/processed_database/master_meetings_database_linked.json'
-with open(src, 'rb') as fi, gzip.open(src + '.gz', 'wb', compresslevel=9) as fo:
-    shutil.copyfileobj(fi, fo)
+# in Colab, with Drive mounted and GH_PAT in Secrets (Contents: write)
+!python3 tools/colab_import_linked_db.py --repo /content/wc --push
 ```
 
-To refresh the main database, replace the `.gz` file with a newer export and push. The workflow rebuilds the site.
+It profiles the JSON (records, dated span, which fields the linked export adds
+over the plain master), gzips it deterministically (`mtime=0`, no embedded
+filename — the same source always yields the same SHA-256), writes
+`drive-import/manifest.json` with both checksums and sizes, refuses to commit
+above the ~50 MB rule, and pushes a `data/meetings-db-linked` branch with the
+compare link. Expected output: ~40–48 MB gzipped (the plain master compresses
+3.18×). Add `--allow-over` if it lands over 50 MB but under 100 MB.
+
+Nothing consumes the linked file yet: `tools/ai_record_drive.py` reads
+`master_meetings_database.json.gz`. Pointing the build at the linked export is a
+separate change once the data branch lands.
+
+To refresh the main database, replace the `.gz` file with a newer export and
+push. The workflow rebuilds the site.

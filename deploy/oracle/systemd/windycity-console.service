@@ -1,0 +1,39 @@
+[Unit]
+Description=The Real Windy City — civic console (Streamlit)
+Documentation=https://github.com/bartimoussmith-oss/therealwindycity
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=__USER__
+Group=__USER__
+WorkingDirectory=__REPO__
+Environment=PYTHONUNBUFFERED=1
+Environment=HOME=__REPO__
+# Streamlit on an internal socket only; nginx is the public door.
+# enableCORS/XSRF are off because the app is served same-origin through nginx.
+ExecStart=__REPO__/.venv/bin/streamlit run __REPO__/Transparency_Index_App.py \
+  --server.address 127.0.0.1 \
+  --server.port __CONSOLE_PORT__ \
+  --server.headless true \
+  --server.enableCORS false \
+  --server.enableXsrfProtection false \
+  --server.fileWatcherType none \
+  --browser.gatherUsageStats false
+Restart=always
+RestartSec=5
+TimeoutStopSec=20
+KillSignal=SIGINT
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=windycity-console
+
+# light hardening (the app only needs its own tree)
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ReadWritePaths=__REPO__
+
+[Install]
+WantedBy=multi-user.target

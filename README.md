@@ -48,6 +48,27 @@ GitHub Action (`civic-cycle`) runs `engine/scheduler.py --once` every six hours
 — plus hourly sweeps on Monday/Tuesday meeting nights — committing any ledger
 changes back to `main`.
 
+## Deploying to your own hardware (Oracle Cloud)
+
+`deploy/oracle/` is a complete deployment kit for an **OCI** VM in
+**us-phoenix-1** — the console, this pipeline's browser studio, the static
+ledger + RSS, and the civic cycle, behind one nginx front door with TLS.
+Zero credentials required (the box clones this public repo), and no service
+except nginx is reachable from the internet.
+
+```bash
+git clone https://github.com/bartimoussmith-oss/therealwindycity.git /tmp/wc
+sudo bash /tmp/wc/deploy/oracle/bootstrap.sh --domain your.domain --email you@example.com
+sudo bash /opt/windycity/deploy/oracle/preflight.sh     # verify before believing it
+```
+
+- `deploy/oracle/README.md` — the runbook: create the instance, open 80/443,
+  first light, day-2 operations, sizing.
+- `deploy/oracle/selftest.sh` — proves the kit's rendering, units and
+  invariants without a cloud account (`53 passed · 0 failed`).
+- `deploy/oracle/update.sh` — fast in-place update (pull → deps → restart).
+- `deploy/oracle/oci-launch.sh` + `cloud-init.yaml` — CLI/automated provisioning.
+
 ## Seeded sources (config/sources.json)
 
 - **City of Cheyenne — City Council Minutes & Agendas** (CONFIRMED live 2026-09-05 — covers Council, Finance Committee, Public Services Committee, Committee of the Whole, Work Sessions)

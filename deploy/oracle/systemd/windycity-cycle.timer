@@ -1,0 +1,15 @@
+[Unit]
+Description=Run the civic cycle every 6 hours (matches the GitHub Action cadence)
+Documentation=https://github.com/bartimoussmith-oss/therealwindycity
+
+[Timer]
+# :17 past the hour, every 6th hour, UTC — same offset as .github/workflows/civic-cycle.yml
+OnCalendar=*-*-* 01,07,13,19:17:00 UTC
+# If the VM was off/asleep at the scheduled moment, run once shortly after boot.
+Persistent=true
+RandomizedDelaySec=120
+AccuracySec=1min
+Unit=windycity-cycle.service
+
+[Install]
+WantedBy=timers.target

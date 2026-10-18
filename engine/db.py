@@ -15,6 +15,8 @@ import sqlite3
 import time
 from pathlib import Path
 
+from . import redact
+
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 SNAP_DIR = DATA / "snapshots"
@@ -196,6 +198,15 @@ def touch_checked(conn, doc_id: int):
 
 
 def index_text(conn, doc_id: int, source: str, title: str, content: str):
+    # Second layer of the arrest-log name gate: the extracted text and the FTS
+    # index are committed and public, so they must not carry names either.
+    # Ingest already redacted the snapshot; if a name reaches this point
+    # something upstream failed, so fail CLOSED and index nothing.
+    if redact.is_arrest_document(title=title):
+        content, sealed = redact.redact_text(content, title=title)
+        if sealed:
+            redact.seal_names(sealed, title=title, source=source,
+                              capture=f"text/{doc_id}.txt")
     text_path = TEXT_DIR / f"{doc_id}.txt"
     text_path.write_text(content, errors="replace")
     fts = conn.execute("SELECT value FROM meta WHERE key='fts_enabled'").fetchone()

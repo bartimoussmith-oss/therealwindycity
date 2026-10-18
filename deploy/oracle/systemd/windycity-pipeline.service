@@ -1,0 +1,29 @@
+[Unit]
+Description=The Real Windy City — Cheyenne pipeline studio (web UI)
+Documentation=https://github.com/bartimoussmith-oss/therealwindycity
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=__USER__
+Group=__USER__
+WorkingDirectory=__REPO__
+Environment=PYTHONUNBUFFERED=1
+Environment=HOME=__REPO__
+# ffmpeg is provided by the distro; the studio shells out to it for clips/reels.
+ExecStart=__REPO__/.venv/bin/python -u __REPO__/pipeline/webui.py --host 127.0.0.1 --port __PIPELINE_PORT__
+Restart=always
+RestartSec=5
+TimeoutStopSec=20
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=windycity-pipeline
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ReadWritePaths=__REPO__
+
+[Install]
+WantedBy=multi-user.target

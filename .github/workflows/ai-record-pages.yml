@@ -18,6 +18,9 @@ on:
       - "pipeline/corpus/**"
       - "drive-import/**"
       - "tools/ai_record_drive.py"
+      - "tools/build_arrest_page.py"
+      - "tools/arrest_page_seal.mjs"
+      - "data/arrests/**"
       - ".github/workflows/ai-record-pages.yml"
   schedule:
     - cron: "41 8 * * *"          # daily: picks up new archive files and continues OCR
@@ -84,6 +87,20 @@ jobs:
             --ocr ai-record-ocr --transcripts /tmp/tr --minutes pipeline/corpus --trees /tmp/trees --drive-db drive-import/master_meetings_database.json.gz --out /tmp/ai-record
       - name: Render static site
         run: python3 -u tools/render_ai_record.py --src /tmp/ai-record --out _site --extra public/index.html=ledger.html
+      # Password-gated arrest database -> https://<user>.github.io/therealwindycity/arrest/
+      # Static hosting has no server, so the gate is real client-side crypto:
+      # tools/build_arrest_page.py shapes the PUBLIC tier only (names and exact
+      # ages are already stripped and re-checked by a fail-closed structural
+      # gate), then tools/arrest_page_seal.mjs seals it with AES-256-GCM under a
+      # PBKDF2-HMAC-SHA256 key. The password comes from a repository secret and
+      # is never committed, never logged, and never present in the built site.
+      # If the secret is missing the step writes a notice page and publishes NO
+      # data rather than publishing an unprotected page; it exits 0 so a missing
+      # secret cannot break the rest of the mirror build.
+      - name: Arrest database page (sealed, AES-256-GCM)
+        env:
+          ARREST_PAGE_PASSWORD: ${{ secrets.ARREST_PAGE_PASSWORD }}
+        run: python3 -u tools/build_arrest_page.py --out _site/arrest
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
