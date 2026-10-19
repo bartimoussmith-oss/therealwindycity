@@ -1,68 +1,69 @@
 #!/data/data/com.termux/files/usr/bin/bash
-# setup_drive_sync.sh — one-shot Google Drive sync setup for Termux.
+# setup_drive_sync.sh — run this on the CHROMEBOOK's Termux.
 #
-# What this does, in order, with NO other steps needed from you:
+# Before running this: on your PHONE's Termux, run phone_authorize.sh,
+# tap Allow in the browser when it opens, and copy the { ... } JSON
+# line it prints at the end. You'll paste that ONE line into this
+# script when it asks — that is the ONLY manual step here.
+#
+# Everything else happens automatically:
 #   1. Installs/repairs rclone
-#   2. Wipes any previous broken service-account config (that approach
-#      cannot work on a personal Gmail account — see note at bottom)
-#   3. Creates an OAuth remote named "gdrive" authenticated as YOUR
-#      Google account, pointed at your Promethean_Telemetry_Sync folder
+#   2. Wipes any previous broken service-account config
+#   3. Builds the "gdrive" remote directly from the token you paste in
+#      (no browser, no localhost callback, no ChromeOS/Termux network
+#      sandboxing problem — the Chromebook never has to talk to Google's
+#      OAuth server itself)
 #   4. Verifies the connection
-#   5. Writes a corrected sync daemon (fixes the capture_output typo)
-#   6. Runs one manual test push so you SEE it work before trusting it
-#   7. Launches the daemon in the background with a wake-lock so Android
-#      doesn't kill it, and leaves it running after you close the script
-#
-# The ONLY thing you have to do by hand: when it prints a Google auth
-# link, open it in Chrome and tap Allow. Google requires that human
-# click for every OAuth app — no script, including this one, can skip it.
-#
-# Usage:
-#   cd ~/therealwindycity   (or wherever this repo is checked out)
-#   bash tools/setup_drive_sync.sh
+#   5. Writes a corrected sync daemon
+#   6. Runs a real test push so you SEE it work
+#   7. Launches the daemon in the background with a wake-lock
 set -e
 
 DRIVE_FOLDER_ID="${DRIVE_FOLDER_ID:-15QE9muLTPuA2B4DVwEqDwfxWtM7kujfz}"
 REMOTE_NAME="${REMOTE_NAME:-gdrive}"
 
-echo "=== [1/7] Installing rclone ==="
-if ! command -v rclone >/dev/null 2>&1; then
-  pkg update -y
-  pkg install -y rclone
-fi
+echo "=== [1/8] Installing rclone ==="
+command -v rclone >/dev/null 2>&1 || { pkg update -y; pkg install -y rclone; }
 rclone version | head -1
 
 echo
-echo "=== [2/7] Removing any previous broken config ==="
+echo "=== [2/8] Removing any previous broken config ==="
 mkdir -p "$HOME/.config/rclone"
-# Only touch our own remote name, never nuke a whole working config file.
-if [ -f "$HOME/.config/rclone/rclone.conf" ]; then
-  rclone config delete "$REMOTE_NAME" >/dev/null 2>&1 || true
-fi
+rclone config delete "$REMOTE_NAME" >/dev/null 2>&1 || true
 rm -f "$HOME/gdrive-key.json"
 
 echo
-echo "=== [3/7] Creating OAuth remote '$REMOTE_NAME' (your real account) ==="
-echo "    >>> A Google sign-in link will appear below. Open it in Chrome"
-echo "    >>> and tap Allow. This script will continue automatically"
-echo "    >>> the moment you finish — nothing else to type."
-echo
-rclone config create "$REMOTE_NAME" drive \
-  scope drive \
-  root_folder_id "$DRIVE_FOLDER_ID"
+echo "=== [3/8] Paste the token from your phone ==="
+if [ -z "$DRIVE_TOKEN" ]; then
+  echo "Run phone_authorize.sh on your phone first if you haven't."
+  echo "Paste the ENTIRE { ... } line it printed, then press Enter:"
+  read -r DRIVE_TOKEN
+fi
 
-echo
-echo "=== [4/7] Verifying the connection ==="
-if rclone lsd "$REMOTE_NAME": ; then
-  echo "OK: authenticated and folder reachable."
-else
-  echo "FAILED: rclone could not list the folder. Stopping here — do not"
-  echo "proceed to the daemon until 'rclone lsd $REMOTE_NAME:' succeeds."
+if [ -z "$DRIVE_TOKEN" ]; then
+  echo "No token entered. Stopping — nothing else can run without it."
   exit 1
 fi
 
 echo
-echo "=== [5/7] Writing the corrected sync daemon ==="
+echo "=== [4/8] Creating the 'gdrive' remote from that token (no browser needed here) ==="
+rclone config create --non-interactive "$REMOTE_NAME" drive \
+  scope drive \
+  root_folder_id "$DRIVE_FOLDER_ID" \
+  token "$DRIVE_TOKEN"
+
+echo
+echo "=== [5/8] Verifying the connection ==="
+if rclone lsd "$REMOTE_NAME": ; then
+  echo "OK: authenticated and folder reachable."
+else
+  echo "FAILED: the token may be stale (they expire fast if unused) or mistyped."
+  echo "Re-run phone_authorize.sh on your phone to get a fresh one, then re-run this script."
+  exit 1
+fi
+
+echo
+echo "=== [6/8] Writing the corrected sync daemon ==="
 mkdir -p output
 mkdir -p tools
 cat > tools/drive_sync_daemon.py <<PYEOF
@@ -100,7 +101,7 @@ PYEOF
 echo "Wrote tools/drive_sync_daemon.py"
 
 echo
-echo "=== [6/7] Test push before trusting the loop ==="
+echo "=== [7/8] Test push before trusting the loop ==="
 TESTFILE="output/setup_test_$(date -u +%Y%m%dT%H%M%SZ).json"
 echo "{\"test\":\"setup_drive_sync.sh\",\"time\":\"$(date -u +%FT%TZ)\"}" > "$TESTFILE"
 rclone copy output/ "$REMOTE_NAME": --update -v
@@ -108,7 +109,7 @@ echo "--- files currently on the remote ---"
 rclone lsl "$REMOTE_NAME":
 
 echo
-echo "=== [7/7] Launching the background daemon ==="
+echo "=== [8/8] Launching the background daemon ==="
 pkill -f drive_sync_daemon.py 2>/dev/null || true
 command -v termux-wake-lock >/dev/null 2>&1 && termux-wake-lock || true
 nohup python3 tools/drive_sync_daemon.py > sync.log 2>&1 &
@@ -120,8 +121,3 @@ echo "Done. Check status any time with:"
 echo "  ps aux | grep drive_sync_daemon"
 echo "  tail -f sync.log"
 echo "  rclone lsl ${REMOTE_NAME}:"
-echo
-echo "NOTE: the old service-account approach (gdrive-key.json,"
-echo "service_account_file=...) is removed on purpose. Service accounts"
-echo "have zero storage quota on a personal (non-Workspace) Google Drive"
-echo "and can never upload there, no matter how the JSON key is formatted."
