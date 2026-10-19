@@ -92,3 +92,11 @@ going forward is: UDC item 19 does not apply to this easement property
 (outside city limits), the gravel surface is an independent Air Force
 decision, and the only unresolved thread is long-term liability/insurance
 once the City's 1-year easement gives way to the promised longer-term lease.
+
+## Post-comment discussion (motion/vote in progress, item not yet closed)
+Motion to approve: Councilman Laybourne, second by Councilwoman Emmons.
+Laybourne spoke in support, calling it a "long sought and really wonderful
+project," and raised a future consideration: the Greenway trail connection/
+loop "very much part of the original master plan" should be included or at
+least considered for this area going forward. Transcript cuts off before the
+vote tally and before the committee moves to the next agenda item.
