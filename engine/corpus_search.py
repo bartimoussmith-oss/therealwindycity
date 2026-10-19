@@ -8,7 +8,16 @@ like 1091_2026-04-13.txt.
 A second corpus lives at pipeline/corpus_yt/*.txt: verbatim YouTube
 transcripts mirrored from therealwindycity/The-Real-Windy-City- by
 pipeline/sync_yt_corpus.py (council, committees, work sessions, boards).
-Each loaded document carries a "source" field: "minutes" or "verbatim-yt".
+
+A third corpus lives at pipeline/corpus_omni/*.txt: verbatim auto-caption
+transcripts harvested directly from the full @TheCityofCheyenne YouTube
+channel by tools/headless_transcript_harvester.py, matched against scraped
+agenda/ordinance documents by tools/build_omni_knowledge_base.py (whose
+richer, per-meeting JSON output lives at
+pipeline/omni_knowledge_base/meetings.jsonl).
+
+Each loaded document carries a "source" field: "minutes", "verbatim-yt", or
+"omni-auto-captions".
 """
 from __future__ import annotations
 
@@ -28,9 +37,11 @@ def norm(s: str) -> str:
 
 def load_corpus(root: Path) -> list[dict]:
     """All minutes transcripts under root/'pipeline'/'corpus' (+/*.txt),
-    plus verbatim YouTube transcripts under root/'pipeline'/'corpus_yt'."""
+    plus verbatim YouTube transcripts under root/'pipeline'/'corpus_yt',
+    plus channel-harvested auto-captions under root/'pipeline'/'corpus_omni'."""
     out = []
-    for dirname, source in (("corpus", "minutes"), ("corpus_yt", "verbatim-yt")):
+    for dirname, source in (("corpus", "minutes"), ("corpus_yt", "verbatim-yt"),
+                             ("corpus_omni", "omni-auto-captions")):
         cdir = Path(root) / "pipeline" / dirname
         if not cdir.is_dir():
             continue

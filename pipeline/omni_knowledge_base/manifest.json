@@ -1,0 +1,33 @@
+{
+ "built_at": "2026-10-19T13:18:08+00:00",
+ "input_dir": ".staging",
+ "transcript_shards": [
+  "Cheyenne_Omni_Corpus_Shard_1.md",
+  "Cheyenne_Omni_Corpus_Shard_2.md"
+ ],
+ "document_shards": [
+  "Cheyenne_Municipal_Shard_1.md",
+  "Cheyenne_Municipal_Shard_10.md",
+  "Cheyenne_Municipal_Shard_11.md",
+  "Cheyenne_Municipal_Shard_12.md",
+  "Cheyenne_Municipal_Shard_13.md",
+  "Cheyenne_Municipal_Shard_14.md",
+  "Cheyenne_Municipal_Shard_15.md",
+  "Cheyenne_Municipal_Shard_16.md",
+  "Cheyenne_Municipal_Shard_17.md",
+  "Cheyenne_Municipal_Shard_2.md",
+  "Cheyenne_Municipal_Shard_3.md",
+  "Cheyenne_Municipal_Shard_4.md",
+  "Cheyenne_Municipal_Shard_5.md",
+  "Cheyenne_Municipal_Shard_6.md",
+  "Cheyenne_Municipal_Shard_7.md",
+  "Cheyenne_Municipal_Shard_8.md",
+  "Cheyenne_Municipal_Shard_9.md"
+ ],
+ "total_transcripts": 200,
+ "total_documents": 835,
+ "documents_matched": 0,
+ "documents_unmatched": 835,
+ "transcripts_with_no_documents": 200,
+ "note": "Snapshot build. Re-run this script whenever more Cheyenne_Omni_Corpus_Shard_*.md / Cheyenne_Municipal_Shard_*.md files land in --input-dir to extend it \u2014 matching recomputes from scratch each run, it does not need the old output."
+}
