@@ -7,9 +7,15 @@ more shard files are harvested; it fully rebuilds from source each time.
 
 ## Files
 
-- **meetings.jsonl** — the primary artifact. One JSON object per line, one
-  line per harvested meeting. Load with `pandas.read_json(path, lines=True)`
-  or stream line-by-line in any language. Fields per record:
+- **meetings.jsonl** (or **meetings_part1.jsonl, meetings_part2.jsonl, ...**
+  once the corpus is large) — the primary artifact. One JSON object per
+  line, one line per harvested meeting. GitHub rejects any single committed
+  file over 100MB, so once the combined output would exceed that this
+  script automatically splits it into size-capped `meetings_partN.jsonl`
+  shards instead (see `manifest.json` → `meetings_files` for the exact list
+  to load — concatenating their lines reconstructs the full dataset).
+  Load with `pandas.read_json(path, lines=True)` per shard, or stream
+  line-by-line in any language. Fields per record:
   - `youtube_id`, `date` (YYYY-MM-DD), `kind` (meeting type, best-effort),
     `title`, `video_url`, `transcript` (full auto-caption text),
     `transcript_chars`, `source_shard`

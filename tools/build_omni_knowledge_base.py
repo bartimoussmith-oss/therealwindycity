@@ -254,18 +254,50 @@ def main() -> int:
             })
         matched_doc_count += 1
 
-    meetings_path = out_dir / "meetings.jsonl"
+    # GitHub rejects any single committed file over 100MB, so meetings.jsonl
+    # is written as size-capped shards (meetings_part1.jsonl, _part2, ...)
+    # instead of one monolithic file once the corpus grows large enough.
+    MAX_SHARD_BYTES = 80 * 1024 * 1024  # 80MB safety margin under GitHub's 100MB hard limit
     unmatched_transcripts = []
-    with meetings_path.open("w", encoding="utf-8") as f:
-        for t in transcripts:
-            docs = t.pop("documents", [])
-            if not docs:
-                unmatched_transcripts.append({
-                    "youtube_id": t["youtube_id"], "date": t["date"], "title": t["title"],
-                })
-            record = {**t, "documents": docs, "document_count": len(docs)}
-            f.write(json.dumps(record, ensure_ascii=False) + "\n")
-            build_corpus_omni_file(corpus_omni_dir, t)
+    meetings_shard_names: list[str] = []
+    shard_index = 1
+    shard_bytes = 0
+    shard_file = None
+
+    def _open_next_shard():
+        nonlocal shard_file, shard_index, shard_bytes
+        if shard_file is not None:
+            shard_file.close()
+        name = f"meetings_part{shard_index}.jsonl"
+        meetings_shard_names.append(name)
+        shard_file = (out_dir / name).open("w", encoding="utf-8")
+        shard_bytes = 0
+        shard_index += 1
+
+    _open_next_shard()
+    for t in transcripts:
+        docs = t.pop("documents", [])
+        if not docs:
+            unmatched_transcripts.append({
+                "youtube_id": t["youtube_id"], "date": t["date"], "title": t["title"],
+            })
+        record = {**t, "documents": docs, "document_count": len(docs)}
+        line = json.dumps(record, ensure_ascii=False) + "\n"
+        line_bytes = len(line.encode("utf-8"))
+        if shard_bytes + line_bytes > MAX_SHARD_BYTES and shard_bytes > 0:
+            _open_next_shard()
+        shard_file.write(line)
+        shard_bytes += line_bytes
+        build_corpus_omni_file(corpus_omni_dir, t)
+    shard_file.close()
+
+    # single-file name is kept only when everything fits in one shard, so
+    # small corpora still get the simple meetings.jsonl path from before
+    if len(meetings_shard_names) == 1:
+        single = out_dir / meetings_shard_names[0]
+        meetings_path = out_dir / "meetings.jsonl"
+        single.rename(meetings_path)
+        meetings_shard_names = ["meetings.jsonl"]
 
     (out_dir / "unmatched_documents.json").write_text(
         json.dumps(unmatched_documents, indent=1, ensure_ascii=False), encoding="utf-8")
@@ -277,6 +309,7 @@ def main() -> int:
         "input_dir": str(input_dir),
         "transcript_shards": [p.name for p in omni_paths],
         "document_shards": [p.name for p in municipal_paths],
+        "meetings_files": meetings_shard_names,
         "total_transcripts": len(transcripts),
         "total_documents": len(documents),
         "documents_matched": matched_doc_count,
@@ -300,9 +333,15 @@ more shard files are harvested; it fully rebuilds from source each time.
 
 ## Files
 
-- **meetings.jsonl** — the primary artifact. One JSON object per line, one
-  line per harvested meeting. Load with `pandas.read_json(path, lines=True)`
-  or stream line-by-line in any language. Fields per record:
+- **meetings.jsonl** (or **meetings_part1.jsonl, meetings_part2.jsonl, ...**
+  once the corpus is large) — the primary artifact. One JSON object per
+  line, one line per harvested meeting. GitHub rejects any single committed
+  file over 100MB, so once the combined output would exceed that this
+  script automatically splits it into size-capped `meetings_partN.jsonl`
+  shards instead (see `manifest.json` → `meetings_files` for the exact list
+  to load — concatenating their lines reconstructs the full dataset).
+  Load with `pandas.read_json(path, lines=True)` per shard, or stream
+  line-by-line in any language. Fields per record:
   - `youtube_id`, `date` (YYYY-MM-DD), `kind` (meeting type, best-effort),
     `title`, `video_url`, `transcript` (full auto-caption text),
     `transcript_chars`, `source_shard`
@@ -366,7 +405,8 @@ to change as that happens.
 """
     (out_dir / "README.md").write_text(readme, encoding="utf-8")
 
-    print(f"[+] wrote {meetings_path} ({len(transcripts)} meetings)")
+    meetings_desc = ", ".join(meetings_shard_names)
+    print(f"[+] wrote {out_dir}/[{meetings_desc}] ({len(transcripts)} meetings)")
     print(f"[+] {matched_doc_count}/{len(documents)} documents matched to a meeting")
     print(f"[+] {len(unmatched_documents)} documents unmatched, {len(unmatched_transcripts)} transcripts with no documents")
     print(f"[+] {len(transcripts)} per-meeting .txt files written to {corpus_omni_dir}")
