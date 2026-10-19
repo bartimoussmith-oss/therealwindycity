@@ -64,3 +64,31 @@ Engineer, and Mary Kay Hill, CFD Board of Directors, 10/19/2026).
 - Not yet addressed on the record: who bears cost if the Air Force exercises
   its 120-day termination right, given the City (not CFD) holds the insurance/
   restoration obligation under the easement terms.
+
+## Outcome (confirmed live — delivered, staff responded directly)
+Delivered nearly verbatim from v3. Engineer Cobb responded directly on the
+record:
+1. Jurisdictional rebuttal: the easement property is OUTSIDE Cheyenne city
+   limits (Air Force jurisdiction), so the City's UDC - including item 19 -
+   has no legal application there. The aggregate surfacing is driven by the
+   Air Force's own on-site detention requirements, not by item 19's
+   exceptions. "There is no relationship... this is just a timing issue."
+   This cuts the legal-mechanism claim (item 19 does NOT actually enable this
+   lot), though it does not deny the coincidence/timing point, which Cobb
+   himself labeled "a timing issue" rather than disputing outright.
+2. Liability question NOT directly answered: Cobb deflected to "the
+   agreements coming forthright" and addressed only construction-phase
+   contractor insurance ("contractor will be responsible with their insurance
+   to cover anything during construction... standard agreements with
+   anyone"). The long-term insurance/restoration obligation under the 120-day
+   Air Force termination clause remains unaddressed - worth tracking when the
+   construction agreement and long-term lease come before committee.
+Committee moved toward a motion afterward; no further public comment.
+
+CORRECTION FOR THE RECORD if referencing this item again: do not repeat the
+claim that this lot "relies on item 19's exceptions" as established fact -
+staff rebutted that specific mechanism (jurisdiction). The accurate framing
+going forward is: UDC item 19 does not apply to this easement property
+(outside city limits), the gravel surface is an independent Air Force
+decision, and the only unresolved thread is long-term liability/insurance
+once the City's 1-year easement gives way to the promised longer-term lease.
