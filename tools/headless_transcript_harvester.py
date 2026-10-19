@@ -47,7 +47,8 @@ SHARD_DIR = Path("output")
 STATE_FILE = OUTPUT_DIR / ".harvest_state.json"
 LOG_FILE = OUTPUT_DIR / "harvest_errors.log"
 SHARD_SIZE = 100
-REQUEST_SLEEP_SECONDS = 2.0
+REQUEST_SLEEP_SECONDS = 4.0
+RATE_LIMIT_BACKOFF_SECONDS = 45
 
 # Known bot-check / rate-limit phrases so a run tells you plainly what's
 # actually blocking it instead of silently reporting "no transcript".
@@ -181,19 +182,38 @@ def save_state(state: dict) -> None:
     STATE_FILE.write_text(json.dumps(state, indent=1))
 
 
-def fetch_transcript(video_id: str, date: str):
+def _run_yt_dlp(video_id: str, date: str) -> subprocess.CompletedProcess:
     out_tpl = str(OUTPUT_DIR / f"{date}_{video_id}")
     cmd = [
         "yt-dlp", "--skip-download", "--write-auto-subs",
         "--sub-langs", "en.*,en", "--convert-subs", "vtt",
         "--retries", "3", "--fragment-retries", "3",
-        "--extractor-args", "youtube:player_client=default,android",
+        "--sleep-requests", "2",
+        # android/ios clients don't need yt-dlp's JS "n challenge" solver
+        # (the deno-based signature decipherer, which panics/crashes on
+        # this Termux/Android build) - avoids wasted retries that were
+        # tipping some videos over into HTTP 429 Too Many Requests.
+        "--extractor-args", "youtube:player_client=android,ios",
         "-o", out_tpl, f"https://www.youtube.com/watch?v={video_id}",
     ]
-    result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+    return subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+
+
+def fetch_transcript(video_id: str, date: str):
+    result = _run_yt_dlp(video_id, date)
     vtt_files = sorted(OUTPUT_DIR.glob(f"{date}_{video_id}*.vtt"))
+
     if not vtt_files:
         err = (result.stderr or result.stdout or "").strip()
+        if "429" in err or "too many requests" in err.lower():
+            print(f"    [*] hit a rate limit, backing off {RATE_LIMIT_BACKOFF_SECONDS}s and retrying once...", flush=True)
+            time.sleep(RATE_LIMIT_BACKOFF_SECONDS)
+            result = _run_yt_dlp(video_id, date)
+            vtt_files = sorted(OUTPUT_DIR.glob(f"{date}_{video_id}*.vtt"))
+            if not vtt_files:
+                err = (result.stderr or result.stdout or "").strip()
+
+    if not vtt_files:
         if err:
             log_error(f"{date} {video_id}:\n{err}")
         return None, err[-500:]
