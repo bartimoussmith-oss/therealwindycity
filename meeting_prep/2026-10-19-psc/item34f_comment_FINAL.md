@@ -100,3 +100,12 @@ project," and raised a future consideration: the Greenway trail connection/
 loop "very much part of the original master plan" should be included or at
 least considered for this area going forward. Transcript cuts off before the
 vote tally and before the committee moves to the next agenda item.
+
+## FINAL outcome (meeting adjourned)
+Item 34(f) passed, motion by Laybourne, second by Emmons, unanimous. Laybourne
+raised the Greenway trail connection as a future consideration. Councilman
+Rinney spoke in favor, noting the project should relieve neighborhood impact
+south of CFD grounds, but remarked "I think it's sad that we traded a golf
+course for a parking lot" / "we paved paradise and put up a parking lot."
+This was the final agenda item - committee finished early and adjourned
+immediately after the vote. No further items tonight.
