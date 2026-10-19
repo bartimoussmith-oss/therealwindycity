@@ -1,0 +1,88 @@
+name: IVIC Agenda Screen
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'pipeline/docs/**'
+  workflow_dispatch:
+    inputs:
+      agenda_file:
+        description: 'Optional repository-relative path to one local agenda file; leave blank to scan agenda-named files in pipeline/docs.'
+        required: false
+        type: string
+      source_url:
+        description: 'Optional source URL to record for one agenda file; it is metadata only and is never fetched.'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ivic-agenda-screen-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  screen-local-agendas:
+    name: Screen local agenda documents
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install optional PDF text extractor
+        run: python -m pip install --disable-pip-version-check pypdf
+
+      - name: Build source-linked pre-meeting screen
+        env:
+          AGENDA_FILE: ${{ github.event.inputs.agenda_file }}
+          SOURCE_URL: ${{ github.event.inputs.source_url }}
+        run: |
+          if [[ -n "$AGENDA_FILE" ]]; then
+            args=(--input "$AGENDA_FILE" --out output/municipal_analysis_report.json)
+            if [[ -n "$SOURCE_URL" ]]; then
+              args+=(--source-url "$SOURCE_URL")
+            fi
+            python scripts/analyze_meetings.py "${args[@]}"
+          else
+            if [[ -n "$SOURCE_URL" ]]; then
+              echo "SOURCE_URL is recorded only for a single --input; ignoring it for a directory scan."
+            fi
+            python scripts/analyze_meetings.py \
+              --input-dir pipeline/docs \
+              --out output/municipal_analysis_report.json
+          fi
+
+      - name: Add concise results to the workflow summary
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          from pathlib import Path
+
+          report = json.loads(Path('output/municipal_analysis_report.json').read_text(encoding='utf-8'))
+          print('# IVIC agenda pre-screen')
+          print()
+          print(f"**Status:** `{report['overall_status']}`  ")
+          print(f"**Input agenda documents:** {report['input_document_count']}  ")
+          print(f"**Agenda rows extracted:** {report['agenda_row_count_extracted']}")
+          print()
+          print('This is a local-document source lead, not a legal finding. Verify the official agenda and packet; an agenda does not establish meeting conduct, speaker treatment, timing, injury, intent, or liability.')
+          for document in report['documents']:
+              print()
+              print(f"- {document.get('meeting_body') or 'Meeting body not identified'} — {document.get('meeting_date') or 'date not identified'}: {document['agenda_row_count_extracted']} row(s), `{document['status']}`")
+          PY
+
+      - name: Upload the JSON report
+        uses: actions/upload-artifact@v4
+        with:
+          name: ivic-agenda-pre-screen
+          path: output/municipal_analysis_report.json
+          if-no-files-found: error
+          retention-days: 14
