@@ -63,42 +63,13 @@ else
 fi
 
 echo
-echo "=== [6/8] Writing the corrected sync daemon ==="
+echo "=== [6/8] Fetching the current sync daemon (single source of truth) ==="
 mkdir -p output
 mkdir -p tools
-cat > tools/drive_sync_daemon.py <<PYEOF
-import time
-import subprocess
-from pathlib import Path
-from datetime import datetime, timezone
-
-REMOTE = "${REMOTE_NAME}:"
-
-def sync_loop():
-    print("=== DRIVE SYNC DAEMON ACTIVE (60s interval) ===", flush=True)
-    local_watch_dir = Path("output")
-    local_watch_dir.mkdir(parents=True, exist_ok=True)
-
-    while True:
-        try:
-            json_files = list(local_watch_dir.glob("**/*.json"))
-            for file_path in json_files:
-                if ".processing" in file_path.name:
-                    continue
-                cmd = ["rclone", "copy", str(file_path), REMOTE, "--update", "--quiet"]
-                result = subprocess.run(cmd, capture_output=True, text=True)
-                if result.returncode == 0:
-                    print(f"[{datetime.now(timezone.utc).isoformat()}] synced -> {file_path.name}", flush=True)
-                else:
-                    print(f"[!] sync error for {file_path.name}: {result.stderr.strip()}", flush=True)
-        except Exception as e:
-            print(f"[!] daemon error: {e}", flush=True)
-        time.sleep(60)
-
-if __name__ == "__main__":
-    sync_loop()
-PYEOF
+BASE_URL="https://raw.githubusercontent.com/bartimoussmith-oss/therealwindycity/arena/ee3b8c9e-therealwindycity/tools"
+curl -fsSL -o tools/drive_sync_daemon.py "$BASE_URL/drive_sync_daemon.py"
 echo "Wrote tools/drive_sync_daemon.py"
+echo "(Run setup_drive_sync_controls.sh next for Start/Stop/Status + notification + boot autostart.)"
 
 echo
 echo "=== [7/8] Test push before trusting the loop ==="
