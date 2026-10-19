@@ -44,3 +44,19 @@ level of attention before this resolution reaches final consideration.
 Source: staff memo meta_id 151349; live transcript
 09_item32_staff_report_continued.txt (Connor White, Planning & Development
 Department staff report, 10/19/2026).
+
+## Outcome (confirmed live)
+Delivered nearly verbatim. Passed, motion to adopt by Dr. Emmons, second by
+Councilman Rinney, unanimous ("aye," one member joking about missing the
+neon palm trees). Pushback/context from committee: 10am-2am hours mirror
+state statute (gaming licenses now treated like liquor licenses per last
+year's legislation) - committee believes it cannot be more restrictive on
+hours. One member noted this site has a history of neighborhood noise
+complaints as an active bar, and gaming may reduce impact versus that prior
+use. Applicant rep Brent Rhodes (307 Horse Racing/Wyoming Downs) stated this
+is the first of every OTB location in the city going through this special-use
+process under the new local-control bill - expect recurrence. Staff corrected
+two distance claims live: Lebhardt Elementary is farther than the stated 1,500
+ft (walking-distance measurement, not straight-line), and the "church" cited
+900 ft away is no longer a church - it's now a nonprofit agency. Parking-math
+(games vs. seats) question was raised but not directly answered on the record.
