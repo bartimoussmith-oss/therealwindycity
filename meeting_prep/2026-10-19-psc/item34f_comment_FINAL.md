@@ -41,3 +41,16 @@ Source: F.E. Warren AFB Grant of Easement, meta_id 151346 (full 9-chunk review,
 Exhibits A-D); UDC §6.2.8 (item 19) new exceptions (c)(3) Low-Usage/Overflow
 Parking and (c)(4) Regional Stormwater Management, meta_id 151355; cross-
 referenced against item19_comment_FINAL.md addendum.
+
+## Live confirmation (staff report in progress, meeting clock ~43:00)
+Presenter: Tom Cobb, City Engineer (pinch-hitting for mayor/chief of staff), not
+Bloom. Cobb confirms on the record: this is a construction easement between the
+City and the U.S. Air Force "for the use of the property for F.E. Warren to
+support Cheyenne Frontier Days CFD operations in 2027, and for the construction
+of the parking lot" - matches the researched Exhibit A language exactly. New
+detail: Cobb describes it as a "non-exclusive" easement, and confirms it is
+"one year, no cost" to the City - consistent with the Nov 1 2026 - Nov 1 2027
+term already on file. Acreage figure was cut off mid-sentence in this transcript
+chunk ("approximately..."); watch next upload for the number and any
+pavement/surface-type detail. Script below still stands as drafted - nothing
+live so far contradicts it.
