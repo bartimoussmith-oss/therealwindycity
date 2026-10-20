@@ -76,6 +76,60 @@ Full detail in the raw transcript. Headline items: (a) expand the no-NDA clause 
 
 **Councilwoman Kathy Emmons** responded immediately and directly: supported moving forward with the **staff draft as written**, arguing Bowie's amendments would "completely upend the whole thing" and require restarting the ordinance from scratch, while still endorsing the safeguards already built into the staff version.
 
-## 8. Status as of the end of the provided transcript
+## 8. THE VOTE — UPDATED: the Commission is adopting this in pieces, and tightening it as it goes
 
-**No motion and no vote had occurred** as of the last exchange captured (Commissioner Tripp asking about sound-mitigation alternatives to buffer walls; staff mid-answer on equipment redesign options). Whether the Commission adopted staff's draft as-is, adopted Rand's lower 40/45 dBA numbers, considered any of Bowie's floor amendments, or postponed again, is **unknown pending further transcript**. Flag any later transcript segment covering the actual motion/vote for immediate addition to this file and the Facebook article.
+A second transcript segment covering the actual motion and vote has been received and added to
+`RAW_TRANSCRIPT_PLTA-26-5_hearing.md`. Key developments:
+
+- **Water/cooling language resolved (not literally a vote yet, but consensus reached):** The
+  "closed-loop cooling" fight flagged back on Oct. 5 is over. Councilman Mark Rennie, who'd
+  pushed for a strict closed-loop mandate, met with BOPU's Bryce Dorr and agreed to **narrower,
+  more technology-neutral language**: instead of mandating "closed loop" systems by name
+  (which could lock out future, even more water-efficient technology), the draft now
+  **prohibits direct evaporative cooling using a potable water supply** — achieving the same
+  practical intent (no evaporative water loss to cooling) without freezing the code to one
+  specific technology. BOPU's stated reason for resisting a rigid closed-loop mandate: the
+  "energy-water nexus" requires case-by-case evaluation of on-site water use vs. water
+  consumed during the power generation that supplies the facility.
+- **Tonal noise:** staff agreed, on the record, to a general directive to address tonal noise
+  "to the extent possible" (raised by nearly every public commenter who mentioned Rob Rand),
+  but explicitly **did not commit to specific enforceable language that night**, citing the
+  practical difficulty of Hertz-band-specific regulation.
+- **MOTION:** Commissioner Laird moved the full staff-recommended package (verbatim staff
+  recommendation language) as a single motion. Seconded.
+- **AMENDMENT — adopt Dr. Rand's noise table:** Commissioner Tripp moved to replace the
+  staff's own (already-tightened) Table 1-2 with **Rob Rand's recommended, even lower numbers**
+  — **40 dBA nighttime / 45 dBA daytime at residential property lines** (down from staff's
+  45/55, and down from the pre-existing 2025 policy's 55/60). **PASSED 4–1** (Mathia, Tripp,
+  Hibbins, Connor yes; **Laird — the commissioner who made the main motion — voted no**).
+  This is a real, numeric win for the public-comment/Rand-report campaign, not just a stated
+  intention — it is now part of the pending motion.
+- **PROCESS CHANGE:** Commissioners Mathia and Connor, citing the volume of tonight's public
+  comment on lighting and noise, successfully moved to **"divide the question"** — breaking
+  the single omnibus motion into separate per-section votes (1.1.8, 1.1.9, 1.4.3, 4.5.3, 4.5.4,
+  5.7.1, 5.8.9) rather than an up-or-down vote on the whole package. **PASSED 5–0 unanimous.**
+- **Section-by-section votes so far:**
+  - **1.1.8 Public Records; No Confidentiality Agreements — APPROVED 5–0, unanimous, as written.**
+  - **1.1.9 Development Agreements — APPROVED 5–0, unanimous, as written.**
+  - **1.4.3 Defined Terms — IN PROGRESS.** Already includes the adopted Rand noise table.
+    Commissioner Connor then proposed **narrowing the daytime window from 7am–10pm to
+    7am–9pm**, so the stricter 40 dBA nighttime limit kicks in an hour earlier (9 p.m.
+    instead of 10 p.m.) — an explicit follow-through on her earlier floor comment that the
+    original time windows "forgot about small children." **Transcript ends before a second
+    or vote on this amendment.**
+  - **4.5.3 (Water/Sewerage), 4.5.4 (Utilities), 5.7.1 (Data Centers), 5.8.9 (Construction
+    Uses) — NOT YET REACHED.** None of Councilman Bowie's floor amendments (1,000-ft setback,
+    monthly water/electricity reporting, NDA scope expansion to nonprofits/EDOs, on-site-only
+    wind/solar) had been formally moved or voted on as of this transcript's end.
+- **Also resolved on the record:** rooftop/elevated cooling fans (the specific equipment
+  behind the loudest crypto-mining complaints tonight) are addressed directly in 5.7.1 —
+  prohibited unless fully enclosed in an acoustically attenuated mechanical penthouse. Staff
+  distinguished this from the separate, broader question of industrial-zone design standards
+  (fence height, aesthetics), which it called "probably independent of the data center
+  conversation" and more appropriate for a future, separate amendment.
+
+**Status: the Commission is actively adopting PLTA-26-5 section-by-section, has already voted to
+make it stricter than staff proposed (Rand's table), and has two sections fully approved
+(1.1.8, 1.1.9) with the rest — including the core 5.7.1 Data Centers section — still pending as
+of the last transcript provided.** Flag any further transcript segment covering 1.4.3's final
+vote and the remaining sections (4.5.3, 4.5.4, 5.7.1, 5.8.9) for immediate addition here.

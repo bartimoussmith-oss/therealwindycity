@@ -240,4 +240,82 @@ Follow-up — framed some long-duration construction sites as effectively "quasi
 
 **Commissioner Tripp** (phone) — asked whether staff had reviewed Dr. Rand's full report and their assessment of its recommendations, given its number-one public-concern status. Seth Lloyd: reviewed the entire report; most suggestions are "grammatical," generally acceptable, **except** recommends keeping the term "discernible" (used throughout the rest of the UDC) rather than adopting Rand's suggested "regulated noise." On substantive points: Rand recommends lowering nighttime residential from **45 to 40 dBA**, and daytime residential from **55 to 45 dBA**, and clarifying the standard applies to residential *uses*, not just residential *zones*. Staff stated no objection to either change, noting large-scale/hyperscale data centers tend to run at similar sound output day and night, meaning the nighttime figure functions as the binding/controlling limit regardless — so lowering daytime to 45 "probably isn't much of an issue" if nighttime also drops to 40. Staff also had no objection to applying the standard based on residential **use** rather than zoning district alone. Rand's DBC recommendation was characterized as functionally equivalent to the staff's existing dBC-minus-dBA approach, just presented in table form instead of narrative text. Staff's overall assessment: "I don't take any issue with his substantive recommendations... I don't think that they're bad recommendations... if the Planning Commission wants to go to the levels recommended by [Rand], I don't think that would be a problem."
 
-**Commissioner Tripp**, follow-up — asked about sound-mitigation options beyond buffer walls (given visual-impact concerns raised in public comment), and whether current standards (absent buffer walls) would effectively render some facilities unable to operate. Seth Lloyd: various options exist — different equipment configurations produce different noise profiles (narrowband vs. broadband sound), equipment-level redesign to shift problematic frequency bands, and sound walls as "probably the easiest" option without redesigning the entire facility — explaining why operators tend to default to walls. [TRANSCRIPT ENDS HERE — mid-response, before further options are listed, before any motion or vote.]
+**Commissioner Tripp**, follow-up — asked about sound-mitigation options beyond buffer walls (given visual-impact concerns raised in public comment), and whether current standards (absent buffer walls) would effectively render some facilities unable to operate. Seth Lloyd: various options exist — different equipment configurations produce different noise profiles (narrowband vs. broadband sound), equipment-level redesign to shift problematic frequency bands, and sound walls as "probably the easiest" option without redesigning the entire facility — explaining why operators tend to default to walls. Noted the sound-wall/aesthetics conversation is really about industrial design standards (which the UDC currently lacks for industrial zones generally — no design guidelines or fence-height limits) and is "probably independent of the data center conversation."
+
+Director Bloom added: the staff report's proposed 5.7.1 already addresses one major mitigation option directly — a **prohibition on rooftop/elevated cooling fans** (the type behind the loudest crypto-facility complaints raised tonight) unless fully enclosed in an acoustically attenuated mechanical penthouse or equivalent structure that fully blocks the sound.
+
+---
+
+## Commission discussion continues — water/cooling language, tonal noise, then the motion
+
+**Commissioner Laird**, before a motion — raised the status of the water-cooling language, recalling that at the prior (postponed) meeting, Councilman Rennie had pushed hard for mandatory **closed-loop water cooling systems**, while Bryce Dorr of the Board of Public Utilities (BOPU) had called in opposed to locking that in so rigidly. Asked whether there had been subsequent discussion leading to the modified language now on screen.
+
+Staff (Seth Lloyd): the first sentence of the current draft reflects BOPU's preference; the second sentence reflects "almost verbatim" what Councilman Rennie asked for at the last meeting — both were left in, by agreement, pending direct discussion since both parties were present.
+
+**Bryce Dorr, Cheyenne Board of Public Utilities** — explained the "energy-water nexus" is complicated for data centers because on-site water consumption must be balanced against water consumed during the power-generation process that supplies the facility; BOPU wants evaluation **case-by-case** rather than a rigid, closed-loop-only mandate (since "closed loop" can mean many different technologies, and a rigid mandate could preclude future, even-more-water-efficient technology). Dorr proposed replacing a broad closed-loop directive with more targeted restrictive language: prohibiting **direct evaporative water cooling / direct evaporative cooling using a potable water supply** — which Dorr said achieves the same intent Councilman Rennie was seeking without locking the code to one specific technology.
+
+**Councilman Mark Rennie, Ward 2 resident** — confirmed he had requested the closed-loop language after the prior meeting, but on reflection agreed a strict closed-loop-only mandate could block future, more water-efficient technology. Said he has since met directly with Dorr and BOPU staff (Mr. Strong, Mr. Brooks) and believes they've reached agreeable language, though he flagged he may still try to refine it further if/when the ordinance reaches City Council.
+
+**[Chair]** — asked staff whether there's a way to address **tonal noise** specifically (raised repeatedly throughout public comment) even if not fully "wordsmithed" tonight — e.g., via a sound-table reference or a directive for staff to address it going forward.
+
+Staff (Seth Lloyd): agreeable to a recommendation that tonal noise be addressed "to the extent possible." Noted dBA and dBC are both broad, multi-frequency-weighted measures, and a narrow, highly annoying tone could exist within an otherwise-compliant broad reading. Some other communities have tried regulating by specific Hertz bands, which staff believes would be "very difficult to enforce... probably not impossible, but... definitely a challenge." Agreed to look into whether workable, enforceable tonal-noise language exists, but did not commit to specific text that night.
+
+---
+
+## THE MOTION AND VOTES (first segment)
+
+**Commissioner Laird** made the main motion: *"I move to recommend the governing body approve text amendments to the Unified Development Code creating 1.1.8 Public Records, No Confidentiality Agreements; 1.1.9 Development Agreements; 5.7.1 Data Centers; and 5.8.9 Construction Uses; and amending 1.4.3 Defined Terms, 4.5.3 Water and Sewerage, and 4.5.4 Utilities, as outlined in this staff report and recommended by staff, noting the amendments meet the review criteria of UDC 2.4.1; and further, the Planning Commission authorizes the City Attorney's Office to make minor, non-substantive, technical, or legal corrections to the draft ordinance prior to final consideration by the City Council, provided such changes do not, in the determination of the planning staff, materially alter the intent of the ordinance or conflict with this recommendation."* Seconded.
+
+**Amendment #1 — Commissioner Justin Tripp** moved to amend Section 1.4.3 (Table 1-2) by **replacing the staff-proposed noise-limit table with Dr. Rob Rand's recommended table** (the lower 40 dBA nighttime / 45 dBA daytime residential limits). Seconded (by Commissioner Connor, per clarification). No further discussion.
+
+**Roll call on Amendment #1 (adopt Rand's table):**
+- Bob Mathia — Yes
+- Justin Tripp — Yes
+- Darryl Hibbins — Yes
+- Tony Laird — **No**
+- Megan Connor — Yes
+
+**Result: PASSES, 4–1.** Dr. Rand's lower noise table (40 dBA nighttime / 45 dBA daytime for residential property lines, down from staff's own already-tightened 45/55) is adopted into the amended main motion. Commissioner Laird — who made the original main motion using staff's numbers — was the lone dissenting vote on lowering them further.
+
+**Commissioner Mathia** then expressed hesitation about moving too fast, citing the volume and substance of tonight's public comment on lighting and noise, and said he wasn't sure the Commission was ready to approve the full package tonight.
+
+**Commissioner Connor** agreed, and proposed — "in the interest of time... in the interest of getting this right" — **dividing the single omnibus motion into separate motions/votes for each numbered code section** (1.1.8, 1.1.9, 1.4.3, 4.5.3, 4.5.4, 5.7.1, 5.8.9), so that commissioners could approve, amend, or postpone individual sections without having to reject (or accept) the entire ordinance as one package.
+
+Staff clarified the correct procedural term is "divide the question," confirmed it requires its own motion, second, and vote, and confirmed sections would most likely be taken in UDC numerical order rather than the order listed in the main motion.
+
+**Commissioner Mathia** moved to divide the question (into per-section votes, taken in UDC order, starting with 1.1.8). Seconded.
+
+**Roll call on dividing the question:**
+- Darryl Hibbins — Yes
+- Tony Laird — Yes
+- Bob Mathia — Yes
+- Justin Tripp — Yes
+- Megan Connor — Yes
+
+**Result: PASSES, 5–0 (unanimous).** The Commission will now vote section-by-section rather than on the ordinance as a whole.
+
+### Section-by-section votes
+
+**1.1.8 Public Records; No Confidentiality Agreements** — no proposed amendments from the Commission. Roll call (as recommended/as written):
+- Darryl Hibbins — Yes
+- Megan Connor — Yes
+- Tony Laird — Yes
+- Bob Mathia — Yes
+- Justin Tripp — Yes
+
+**Result: APPROVED UNANIMOUSLY, 5–0, as written** (no NDA/confidentiality-agreement provision, public-records declaration).
+
+**1.1.9 Development Agreements** — no proposed amendments from the Commission. Roll call (as written):
+- Justin Tripp — Yes
+- [unclear/Mathia] — Yes
+- Tony Laird — Yes
+- Darryl Hibbins — Yes
+- Megan Connor — Yes
+
+**Result: APPROVED UNANIMOUSLY, 5–0, as written** (development-agreement authority, requires Council approval).
+
+**1.4.3 Defined Terms** (as already amended to include Dr. Rand's noise table; also includes new definitions for Discernible Noise, Temporary Construction Use, and Workforce Accommodation Quarters) — discussion reopened:
+
+**Commissioner Connor** proposed a further amendment: change the **daytime window from 7:00 a.m.–10:00 p.m. to 7:00 a.m.–9:00 p.m.**, meaning the stricter nighttime noise limit (40 dBA residential, per the just-adopted Rand table) would begin at **9:00 p.m. instead of 10:00 p.m.** — directly following up on her earlier comment that the original time windows didn't adequately account for small children's bedtimes.
+
+**[TRANSCRIPT ENDS HERE — mid-discussion of the 9 p.m. nighttime-start amendment, before a second, vote, or any further section (4.5.3, 4.5.4, 5.7.1, 5.8.9) is taken up. Outcome of 1.4.3 and all remaining sections is UNKNOWN pending further transcript.]**
