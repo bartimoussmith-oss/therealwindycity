@@ -60,7 +60,29 @@ Per the staff report itself: *"This item was advertised in the paper for the Oct
 
 ---
 
+## ⚡ LIVE UPDATE: the hearing actually happened — see `live_transcript/`
+A live transcript of tonight's actual hearing (user-provided, meeting clock ~18:04–19:58)
+has been processed into `live_transcript/PC_MEETING_LIVE_NOTES.md`. It supersedes the
+"zero public comment" expectation from the written staff report — the hearing drew roughly
+20 in-person/phone speakers plus extensive Commission discussion. Headline developments:
+- Staff revised the noise rules again since Oct. 5 (now measures at any potentially affected
+  nearby property, not just abutting parcels; tightened the dBC loophole to "20 or more").
+- An independent acoustician, **Rob Rand** (funded by the Albany County Conservancy),
+  recommended dropping the residential nighttime limit from 45 dBA to **40 dBA** and daytime
+  from 55 to **45 dBA** — staff said on the record it has no objection to the Commission
+  adopting those numbers.
+- Extensive testimony centered on one specific, already-operating facility — a **CleanSpark**
+  Bitcoin-mining data center at Camp Stool — as the real-world case study for noise, not a
+  hypothetical.
+- Councilman Mark Bowie proposed a detailed set of floor amendments (1,000-ft setbacks,
+  monthly water/electricity-usage reporting, NDA restrictions extended to nonprofits/EDOs,
+  on-site-only wind/solar); Councilwoman Kathy Emmons pushed back, urging the Commission to
+  pass the staff draft as-is rather than "upend the whole thing."
+- **The transcript ends before any motion or vote** — outcome unknown, check for an update.
+
 ## Files in this dossier
+- `live_transcript/RAW_TRANSCRIPT_PLTA-26-5_hearing.md` — full raw transcript of tonight's hearing.
+- `live_transcript/PC_MEETING_LIVE_NOTES.md` — organized, fact-by-fact extraction of the above.
 - `supporting_documents/STAFF_REPORT_PLTA-26-5.md` — full reconstructed text of the City's official Sept. 30, 2026 staff report (source PDF linked inside).
 - `supporting_documents/EXISTING_2025_NOISE_POLICY.md` — the Aug. 20, 2025 zoning-interpretation memo this amendment would formalize/tighten (baseline noise numbers).
 - `supporting_documents/OCT5_MEETING_COVERAGE.md` — press coverage of the Oct. 5, 2026 postponement (why it got punted, what commissioners asked).
