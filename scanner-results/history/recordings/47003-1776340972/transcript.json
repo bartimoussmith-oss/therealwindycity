@@ -1,0 +1,118 @@
+{
+  "archive_id": "47003-1776340972",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776340972",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/16/2026",
+    "startDisplay": "06:02 AM",
+    "endDisplay": "06:32 AM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 1223.92,
+      "end_seconds": 1225.18,
+      "text": "10-4-1-4.",
+      "words": [
+        {
+          "start_seconds": 1223.92,
+          "end_seconds": 1224.32,
+          "text": " 10",
+          "probability": 0.06945700198411942
+        },
+        {
+          "start_seconds": 1224.32,
+          "end_seconds": 1224.54,
+          "text": "-4",
+          "probability": 0.49313703179359436
+        },
+        {
+          "start_seconds": 1224.54,
+          "end_seconds": 1224.76,
+          "text": "-1",
+          "probability": 0.9704461693763733
+        },
+        {
+          "start_seconds": 1224.76,
+          "end_seconds": 1225.18,
+          "text": "-4.",
+          "probability": 0.9613741636276245
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1228.9,
+      "end_seconds": 1229.98,
+      "text": "10-1-8-6-20.",
+      "words": [
+        {
+          "start_seconds": 1228.9,
+          "end_seconds": 1229.24,
+          "text": " 10",
+          "probability": 0.07752750813961029
+        },
+        {
+          "start_seconds": 1229.24,
+          "end_seconds": 1229.42,
+          "text": "-1",
+          "probability": 0.665359616279602
+        },
+        {
+          "start_seconds": 1229.42,
+          "end_seconds": 1229.56,
+          "text": "-8",
+          "probability": 0.9481807947158813
+        },
+        {
+          "start_seconds": 1229.56,
+          "end_seconds": 1229.74,
+          "text": "-6",
+          "probability": 0.9554482400417328
+        },
+        {
+          "start_seconds": 1229.74,
+          "end_seconds": 1229.98,
+          "text": "-20.",
+          "probability": 0.7650345265865326
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1230.0,
+      "end_seconds": 1230.24,
+      "text": "Thank you.",
+      "words": [
+        {
+          "start_seconds": 1230.0,
+          "end_seconds": 1230.06,
+          "text": " Thank",
+          "probability": 0.23726141452789307
+        },
+        {
+          "start_seconds": 1230.06,
+          "end_seconds": 1230.24,
+          "text": " you.",
+          "probability": 0.9800077080726624
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    }
+  ]
+}

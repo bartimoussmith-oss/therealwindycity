@@ -1,0 +1,175 @@
+{
+  "archive_id": "47003-1776286973",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776286973",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/15/2026",
+    "startDisplay": "03:02 PM",
+    "endDisplay": "03:32 PM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 105.34,
+      "end_seconds": 105.82,
+      "text": "Good afternoon.",
+      "words": [
+        {
+          "start_seconds": 105.34,
+          "end_seconds": 105.53999999999999,
+          "text": " Good",
+          "probability": 0.3477877974510193
+        },
+        {
+          "start_seconds": 105.53999999999999,
+          "end_seconds": 105.82,
+          "text": " afternoon.",
+          "probability": 0.9312597513198853
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 110.84,
+      "end_seconds": 111.42,
+      "text": "1503.",
+      "words": [
+        {
+          "start_seconds": 110.84,
+          "end_seconds": 111.42,
+          "text": " 1503.",
+          "probability": 0.5861096978187561
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    },
+    {
+      "start_seconds": 818.18,
+      "end_seconds": 820.48,
+      "text": "Okay, I'm 4-1-10-42, have a good day.",
+      "words": [
+        {
+          "start_seconds": 818.18,
+          "end_seconds": 818.54,
+          "text": " Okay,",
+          "probability": 0.029794588685035706
+        },
+        {
+          "start_seconds": 818.58,
+          "end_seconds": 818.68,
+          "text": " I'm",
+          "probability": 0.5872648060321808
+        },
+        {
+          "start_seconds": 818.68,
+          "end_seconds": 818.86,
+          "text": " 4",
+          "probability": 0.3306528329849243
+        },
+        {
+          "start_seconds": 818.86,
+          "end_seconds": 819.0,
+          "text": "-1",
+          "probability": 0.7683998346328735
+        },
+        {
+          "start_seconds": 819.0,
+          "end_seconds": 819.18,
+          "text": "-10",
+          "probability": 0.8980317711830139
+        },
+        {
+          "start_seconds": 819.18,
+          "end_seconds": 819.5,
+          "text": "-42,",
+          "probability": 0.815272867679596
+        },
+        {
+          "start_seconds": 819.84,
+          "end_seconds": 819.88,
+          "text": " have",
+          "probability": 0.9090027213096619
+        },
+        {
+          "start_seconds": 819.88,
+          "end_seconds": 819.94,
+          "text": " a",
+          "probability": 0.9902660250663757
+        },
+        {
+          "start_seconds": 819.94,
+          "end_seconds": 820.0,
+          "text": " good",
+          "probability": 0.9901728630065918
+        },
+        {
+          "start_seconds": 820.0,
+          "end_seconds": 820.48,
+          "text": " day.",
+          "probability": 0.988376796245575
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 823.04,
+      "end_seconds": 824.92,
+      "text": "Have a good day, 15-15.",
+      "words": [
+        {
+          "start_seconds": 823.04,
+          "end_seconds": 823.44,
+          "text": " Have",
+          "probability": 0.9815797209739685
+        },
+        {
+          "start_seconds": 823.44,
+          "end_seconds": 823.56,
+          "text": " a",
+          "probability": 0.9980534315109253
+        },
+        {
+          "start_seconds": 823.56,
+          "end_seconds": 823.64,
+          "text": " good",
+          "probability": 0.9818872213363647
+        },
+        {
+          "start_seconds": 823.64,
+          "end_seconds": 823.84,
+          "text": " day,",
+          "probability": 0.9988716244697571
+        },
+        {
+          "start_seconds": 824.14,
+          "end_seconds": 824.52,
+          "text": " 15",
+          "probability": 0.9348371624946594
+        },
+        {
+          "start_seconds": 824.52,
+          "end_seconds": 824.92,
+          "text": "-15.",
+          "probability": 0.9420332908630371
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    }
+  ]
+}

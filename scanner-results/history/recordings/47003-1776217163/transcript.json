@@ -1,0 +1,307 @@
+{
+  "archive_id": "47003-1776217163",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776217163",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/14/2026",
+    "startDisplay": "07:39 PM",
+    "endDisplay": "08:09 PM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1865.736,
+  "segments": [
+    {
+      "start_seconds": 785.46,
+      "end_seconds": 787.14,
+      "text": "Shine 1-98, OA.",
+      "words": [
+        {
+          "start_seconds": 785.46,
+          "end_seconds": 786.0,
+          "text": " Shine",
+          "probability": 0.12060108035802841
+        },
+        {
+          "start_seconds": 786.0,
+          "end_seconds": 786.16,
+          "text": " 1",
+          "probability": 0.07574695348739624
+        },
+        {
+          "start_seconds": 786.16,
+          "end_seconds": 786.56,
+          "text": "-98,",
+          "probability": 0.5667042434215546
+        },
+        {
+          "start_seconds": 786.6,
+          "end_seconds": 787.14,
+          "text": " OA.",
+          "probability": 0.6648004949092865
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 790.27,
+      "end_seconds": 790.53,
+      "text": "1-98.",
+      "words": [
+        {
+          "start_seconds": 790.27,
+          "end_seconds": 790.37,
+          "text": " 1",
+          "probability": 0.0404294915497303
+        },
+        {
+          "start_seconds": 790.37,
+          "end_seconds": 790.53,
+          "text": "-98.",
+          "probability": 0.9859126508235931
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 795.65,
+      "end_seconds": 797.47,
+      "text": "Could be a physical domestic.",
+      "words": [
+        {
+          "start_seconds": 795.65,
+          "end_seconds": 795.91,
+          "text": " Could",
+          "probability": 0.29480499029159546
+        },
+        {
+          "start_seconds": 795.91,
+          "end_seconds": 796.11,
+          "text": " be",
+          "probability": 0.950015127658844
+        },
+        {
+          "start_seconds": 796.11,
+          "end_seconds": 796.43,
+          "text": " a",
+          "probability": 0.8129447102546692
+        },
+        {
+          "start_seconds": 796.43,
+          "end_seconds": 797.03,
+          "text": " physical",
+          "probability": 0.9676553606987
+        },
+        {
+          "start_seconds": 797.03,
+          "end_seconds": 797.47,
+          "text": " domestic.",
+          "probability": 0.13391056656837463
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1318.56,
+      "end_seconds": 1319.8,
+      "text": "Channel for KAOI",
+      "words": [
+        {
+          "start_seconds": 1318.56,
+          "end_seconds": 1318.96,
+          "text": " Channel",
+          "probability": 0.04087914898991585
+        },
+        {
+          "start_seconds": 1318.96,
+          "end_seconds": 1319.2,
+          "text": " for",
+          "probability": 0.38755717873573303
+        },
+        {
+          "start_seconds": 1319.2,
+          "end_seconds": 1319.8,
+          "text": " KAOI",
+          "probability": 0.2804846726357937
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1326.38,
+      "end_seconds": 1331.67,
+      "text": "This is an FPDI truck versus pedestrian.",
+      "words": [
+        {
+          "start_seconds": 1326.38,
+          "end_seconds": 1326.84,
+          "text": " This",
+          "probability": 0.12465491890907288
+        },
+        {
+          "start_seconds": 1326.84,
+          "end_seconds": 1327.22,
+          "text": " is",
+          "probability": 0.9379132390022278
+        },
+        {
+          "start_seconds": 1327.22,
+          "end_seconds": 1327.62,
+          "text": " an",
+          "probability": 0.2702297866344452
+        },
+        {
+          "start_seconds": 1329.19,
+          "end_seconds": 1330.25,
+          "text": " FPDI",
+          "probability": 0.38064725200335187
+        },
+        {
+          "start_seconds": 1330.25,
+          "end_seconds": 1330.93,
+          "text": " truck",
+          "probability": 0.4975731074810028
+        },
+        {
+          "start_seconds": 1330.93,
+          "end_seconds": 1331.25,
+          "text": " versus",
+          "probability": 0.6804013252258301
+        },
+        {
+          "start_seconds": 1331.25,
+          "end_seconds": 1331.67,
+          "text": " pedestrian.",
+          "probability": 0.9454136490821838
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1527.73,
+      "end_seconds": 1529.71,
+      "text": "Try in 125, 1032, have a good night.",
+      "words": [
+        {
+          "start_seconds": 1527.73,
+          "end_seconds": 1527.99,
+          "text": " Try",
+          "probability": 0.08644936233758926
+        },
+        {
+          "start_seconds": 1527.99,
+          "end_seconds": 1528.11,
+          "text": " in",
+          "probability": 0.36083081364631653
+        },
+        {
+          "start_seconds": 1528.11,
+          "end_seconds": 1528.47,
+          "text": " 125,",
+          "probability": 0.9168093204498291
+        },
+        {
+          "start_seconds": 1528.77,
+          "end_seconds": 1529.11,
+          "text": " 1032,",
+          "probability": 0.6007018983364105
+        },
+        {
+          "start_seconds": 1529.41,
+          "end_seconds": 1529.45,
+          "text": " have",
+          "probability": 0.5960757732391357
+        },
+        {
+          "start_seconds": 1529.45,
+          "end_seconds": 1529.55,
+          "text": " a",
+          "probability": 0.9340699911117554
+        },
+        {
+          "start_seconds": 1529.55,
+          "end_seconds": 1529.57,
+          "text": " good",
+          "probability": 0.354704886674881
+        },
+        {
+          "start_seconds": 1529.57,
+          "end_seconds": 1529.71,
+          "text": " night.",
+          "probability": 0.9805864095687866
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1533.09,
+      "end_seconds": 1533.79,
+      "text": "Thank you.",
+      "words": [
+        {
+          "start_seconds": 1533.09,
+          "end_seconds": 1533.57,
+          "text": " Thank",
+          "probability": 0.28098541498184204
+        },
+        {
+          "start_seconds": 1533.57,
+          "end_seconds": 1533.79,
+          "text": " you.",
+          "probability": 0.9832757711410522
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1534.09,
+      "end_seconds": 1534.59,
+      "text": "United 2003.",
+      "words": [
+        {
+          "start_seconds": 1534.09,
+          "end_seconds": 1534.27,
+          "text": " United",
+          "probability": 0.7450864315032959
+        },
+        {
+          "start_seconds": 1534.27,
+          "end_seconds": 1534.59,
+          "text": " 2003.",
+          "probability": 0.4019952714443207
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    }
+  ]
+}

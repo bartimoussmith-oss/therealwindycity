@@ -1,0 +1,76 @@
+{
+  "archive_id": "47003-1776279813",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776279813",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/15/2026",
+    "startDisplay": "01:03 PM",
+    "endDisplay": "01:33 PM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 1412.58,
+      "end_seconds": 1413.36,
+      "text": "That's one.",
+      "words": [
+        {
+          "start_seconds": 1412.58,
+          "end_seconds": 1413.2,
+          "text": " That's",
+          "probability": 0.3463277295231819
+        },
+        {
+          "start_seconds": 1413.2,
+          "end_seconds": 1413.36,
+          "text": " one.",
+          "probability": 0.270136296749115
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1419.12,
+      "end_seconds": 1419.76,
+      "text": "1326.",
+      "words": [
+        {
+          "start_seconds": 1419.12,
+          "end_seconds": 1419.76,
+          "text": " 1326.",
+          "probability": 0.5081963837146759
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition"
+      ]
+    },
+    {
+      "start_seconds": 1538.37,
+      "end_seconds": 1539.39,
+      "text": "1320.",
+      "words": [
+        {
+          "start_seconds": 1538.37,
+          "end_seconds": 1539.39,
+          "text": " 1320.",
+          "probability": 0.5913099944591522
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    }
+  ]
+}

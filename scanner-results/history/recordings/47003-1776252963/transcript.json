@@ -1,0 +1,200 @@
+{
+  "archive_id": "47003-1776252963",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776252963",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/15/2026",
+    "startDisplay": "05:36 AM",
+    "endDisplay": "06:06 AM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 1018.91,
+      "end_seconds": 1019.49,
+      "text": "Good morning.",
+      "words": [
+        {
+          "start_seconds": 1018.91,
+          "end_seconds": 1019.25,
+          "text": " Good",
+          "probability": 0.3809492886066437
+        },
+        {
+          "start_seconds": 1019.25,
+          "end_seconds": 1019.49,
+          "text": " morning.",
+          "probability": 0.9286965131759644
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1023.89,
+      "end_seconds": 1024.73,
+      "text": "That coming 41?",
+      "words": [
+        {
+          "start_seconds": 1023.89,
+          "end_seconds": 1024.21,
+          "text": " That",
+          "probability": 0.36381885409355164
+        },
+        {
+          "start_seconds": 1024.21,
+          "end_seconds": 1024.43,
+          "text": " coming",
+          "probability": 0.9321511387825012
+        },
+        {
+          "start_seconds": 1024.43,
+          "end_seconds": 1024.73,
+          "text": " 41?",
+          "probability": 0.9188368320465088
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1154.61,
+      "end_seconds": 1157.31,
+      "text": "Cheyenne Inspector, 3M1041, good morning.",
+      "words": [
+        {
+          "start_seconds": 1154.61,
+          "end_seconds": 1155.29,
+          "text": " Cheyenne",
+          "probability": 0.8242629865805308
+        },
+        {
+          "start_seconds": 1155.29,
+          "end_seconds": 1155.63,
+          "text": " Inspector,",
+          "probability": 0.32847893238067627
+        },
+        {
+          "start_seconds": 1155.99,
+          "end_seconds": 1156.71,
+          "text": " 3M1041,",
+          "probability": 0.8124904483556747
+        },
+        {
+          "start_seconds": 1156.99,
+          "end_seconds": 1157.05,
+          "text": " good",
+          "probability": 0.9336514472961426
+        },
+        {
+          "start_seconds": 1157.05,
+          "end_seconds": 1157.31,
+          "text": " morning.",
+          "probability": 0.9939722418785095
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1164.58,
+      "end_seconds": 1165.4,
+      "text": "Good morning, Cheyenne 554.",
+      "words": [
+        {
+          "start_seconds": 1164.58,
+          "end_seconds": 1164.58,
+          "text": " Good",
+          "probability": 0.08726833015680313
+        },
+        {
+          "start_seconds": 1164.58,
+          "end_seconds": 1164.62,
+          "text": " morning,",
+          "probability": 0.9806551933288574
+        },
+        {
+          "start_seconds": 1164.76,
+          "end_seconds": 1164.92,
+          "text": " Cheyenne",
+          "probability": 0.7882324854532877
+        },
+        {
+          "start_seconds": 1164.92,
+          "end_seconds": 1165.4,
+          "text": " 554.",
+          "probability": 0.8337616920471191
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1537.4,
+      "end_seconds": 1538.68,
+      "text": "It's good morning at 6 o'clock.",
+      "words": [
+        {
+          "start_seconds": 1537.4,
+          "end_seconds": 1537.76,
+          "text": " It's",
+          "probability": 0.7410295903682709
+        },
+        {
+          "start_seconds": 1537.76,
+          "end_seconds": 1537.92,
+          "text": " good",
+          "probability": 0.26633137464523315
+        },
+        {
+          "start_seconds": 1537.92,
+          "end_seconds": 1538.1,
+          "text": " morning",
+          "probability": 0.3861011862754822
+        },
+        {
+          "start_seconds": 1538.1,
+          "end_seconds": 1538.26,
+          "text": " at",
+          "probability": 0.6297202706336975
+        },
+        {
+          "start_seconds": 1538.26,
+          "end_seconds": 1538.4,
+          "text": " 6",
+          "probability": 0.6236757040023804
+        },
+        {
+          "start_seconds": 1538.4,
+          "end_seconds": 1538.4,
+          "text": " o",
+          "probability": 0.7546871304512024
+        },
+        {
+          "start_seconds": 1538.4,
+          "end_seconds": 1538.68,
+          "text": "'clock.",
+          "probability": 0.97733074426651
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    }
+  ]
+}

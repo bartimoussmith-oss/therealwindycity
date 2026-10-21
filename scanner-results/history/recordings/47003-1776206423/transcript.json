@@ -1,0 +1,548 @@
+{
+  "archive_id": "47003-1776206423",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776206423",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/14/2026",
+    "startDisplay": "04:40 PM",
+    "endDisplay": "05:10 PM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 1015.33,
+      "end_seconds": 1016.33,
+      "text": "Shine 5-4",
+      "words": [
+        {
+          "start_seconds": 1015.33,
+          "end_seconds": 1015.85,
+          "text": " Shine",
+          "probability": 0.22292651236057281
+        },
+        {
+          "start_seconds": 1015.85,
+          "end_seconds": 1016.09,
+          "text": " 5",
+          "probability": 0.35890594124794006
+        },
+        {
+          "start_seconds": 1016.09,
+          "end_seconds": 1016.33,
+          "text": "-4",
+          "probability": 0.7937068045139313
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1023.33,
+      "end_seconds": 1024.09,
+      "text": "I'm 1042.",
+      "words": [
+        {
+          "start_seconds": 1023.33,
+          "end_seconds": 1023.71,
+          "text": " I'm",
+          "probability": 0.7062356770038605
+        },
+        {
+          "start_seconds": 1023.71,
+          "end_seconds": 1024.09,
+          "text": " 1042.",
+          "probability": 0.620272696018219
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition"
+      ]
+    },
+    {
+      "start_seconds": 1024.41,
+      "end_seconds": 1025.19,
+      "text": "Have a good night.",
+      "words": [
+        {
+          "start_seconds": 1024.41,
+          "end_seconds": 1024.47,
+          "text": " Have",
+          "probability": 0.9712258577346802
+        },
+        {
+          "start_seconds": 1024.47,
+          "end_seconds": 1024.57,
+          "text": " a",
+          "probability": 0.9785586595535278
+        },
+        {
+          "start_seconds": 1024.57,
+          "end_seconds": 1024.59,
+          "text": " good",
+          "probability": 0.9659572839736938
+        },
+        {
+          "start_seconds": 1024.59,
+          "end_seconds": 1025.19,
+          "text": " night.",
+          "probability": 0.9866874814033508
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition"
+      ]
+    },
+    {
+      "start_seconds": 1029.09,
+      "end_seconds": 1029.93,
+      "text": "1042, have a good night.",
+      "words": [
+        {
+          "start_seconds": 1029.09,
+          "end_seconds": 1029.33,
+          "text": " 1042,",
+          "probability": 0.8448315858840942
+        },
+        {
+          "start_seconds": 1029.47,
+          "end_seconds": 1029.67,
+          "text": " have",
+          "probability": 0.7949126362800598
+        },
+        {
+          "start_seconds": 1029.67,
+          "end_seconds": 1029.85,
+          "text": " a",
+          "probability": 0.969386875629425
+        },
+        {
+          "start_seconds": 1029.85,
+          "end_seconds": 1029.93,
+          "text": " good",
+          "probability": 0.7132587432861328
+        },
+        {
+          "start_seconds": 1029.93,
+          "end_seconds": 1029.93,
+          "text": " night.",
+          "probability": 0.9183139801025391
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition"
+      ]
+    },
+    {
+      "start_seconds": 1030.09,
+      "end_seconds": 1031.01,
+      "text": "1042, have a good night.",
+      "words": [
+        {
+          "start_seconds": 1030.09,
+          "end_seconds": 1030.17,
+          "text": " 1042,",
+          "probability": 0.5136690810322762
+        },
+        {
+          "start_seconds": 1030.17,
+          "end_seconds": 1030.17,
+          "text": " have",
+          "probability": 0.9636322855949402
+        },
+        {
+          "start_seconds": 1030.17,
+          "end_seconds": 1030.17,
+          "text": " a",
+          "probability": 0.9939082860946655
+        },
+        {
+          "start_seconds": 1030.17,
+          "end_seconds": 1030.23,
+          "text": " good",
+          "probability": 0.9266740083694458
+        },
+        {
+          "start_seconds": 1030.23,
+          "end_seconds": 1031.01,
+          "text": " night.",
+          "probability": 0.9725009202957153
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition"
+      ]
+    },
+    {
+      "start_seconds": 1031.01,
+      "end_seconds": 1031.47,
+      "text": "Have a good night.",
+      "words": [
+        {
+          "start_seconds": 1031.01,
+          "end_seconds": 1031.01,
+          "text": " Have",
+          "probability": 0.34210437536239624
+        },
+        {
+          "start_seconds": 1031.01,
+          "end_seconds": 1031.01,
+          "text": " a",
+          "probability": 0.9946556091308594
+        },
+        {
+          "start_seconds": 1031.01,
+          "end_seconds": 1031.01,
+          "text": " good",
+          "probability": 0.9537017345428467
+        },
+        {
+          "start_seconds": 1031.01,
+          "end_seconds": 1031.47,
+          "text": " night.",
+          "probability": 0.9541177749633789
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1579.57,
+      "end_seconds": 1579.99,
+      "text": "Thank you, Cheyenne.",
+      "words": [
+        {
+          "start_seconds": 1579.57,
+          "end_seconds": 1579.57,
+          "text": " Thank",
+          "probability": 0.014303422532975674
+        },
+        {
+          "start_seconds": 1579.57,
+          "end_seconds": 1579.63,
+          "text": " you,",
+          "probability": 0.952095091342926
+        },
+        {
+          "start_seconds": 1579.79,
+          "end_seconds": 1579.99,
+          "text": " Cheyenne.",
+          "probability": 0.7693808178106943
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1580.07,
+      "end_seconds": 1580.77,
+      "text": "I have 1042.",
+      "words": [
+        {
+          "start_seconds": 1580.07,
+          "end_seconds": 1580.09,
+          "text": " I",
+          "probability": 0.5125536322593689
+        },
+        {
+          "start_seconds": 1580.09,
+          "end_seconds": 1580.23,
+          "text": " have",
+          "probability": 0.2545531690120697
+        },
+        {
+          "start_seconds": 1580.23,
+          "end_seconds": 1580.77,
+          "text": " 1042.",
+          "probability": 0.7414781451225281
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1580.95,
+      "end_seconds": 1581.65,
+      "text": "Have a good night.",
+      "words": [
+        {
+          "start_seconds": 1580.95,
+          "end_seconds": 1580.95,
+          "text": " Have",
+          "probability": 0.8177104592323303
+        },
+        {
+          "start_seconds": 1580.95,
+          "end_seconds": 1581.03,
+          "text": " a",
+          "probability": 0.98908931016922
+        },
+        {
+          "start_seconds": 1581.03,
+          "end_seconds": 1581.07,
+          "text": " good",
+          "probability": 0.9277399778366089
+        },
+        {
+          "start_seconds": 1581.07,
+          "end_seconds": 1581.65,
+          "text": " night.",
+          "probability": 0.9906214475631714
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition"
+      ]
+    },
+    {
+      "start_seconds": 1584.1,
+      "end_seconds": 1584.34,
+      "text": "1040.",
+      "words": [
+        {
+          "start_seconds": 1584.1,
+          "end_seconds": 1584.34,
+          "text": " 1040.",
+          "probability": 0.6487514972686768
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition"
+      ]
+    },
+    {
+      "start_seconds": 1584.48,
+      "end_seconds": 1584.72,
+      "text": "Have a good night.",
+      "words": [
+        {
+          "start_seconds": 1584.48,
+          "end_seconds": 1584.48,
+          "text": " Have",
+          "probability": 0.9712204933166504
+        },
+        {
+          "start_seconds": 1584.48,
+          "end_seconds": 1584.6,
+          "text": " a",
+          "probability": 0.9974433183670044
+        },
+        {
+          "start_seconds": 1584.6,
+          "end_seconds": 1584.6,
+          "text": " good",
+          "probability": 0.9529094696044922
+        },
+        {
+          "start_seconds": 1584.6,
+          "end_seconds": 1584.72,
+          "text": " night.",
+          "probability": 0.9912856221199036
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition"
+      ]
+    },
+    {
+      "start_seconds": 1584.84,
+      "end_seconds": 1585.02,
+      "text": "Have a good night.",
+      "words": [
+        {
+          "start_seconds": 1584.84,
+          "end_seconds": 1584.92,
+          "text": " Have",
+          "probability": 0.051121942698955536
+        },
+        {
+          "start_seconds": 1584.92,
+          "end_seconds": 1585.02,
+          "text": " a",
+          "probability": 0.9927284717559814
+        },
+        {
+          "start_seconds": 1585.02,
+          "end_seconds": 1585.02,
+          "text": " good",
+          "probability": 0.7228822708129883
+        },
+        {
+          "start_seconds": 1585.02,
+          "end_seconds": 1585.02,
+          "text": " night.",
+          "probability": 0.7846974730491638
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1585.02,
+      "end_seconds": 1585.2,
+      "text": "Have a good night.",
+      "words": [
+        {
+          "start_seconds": 1585.02,
+          "end_seconds": 1585.02,
+          "text": " Have",
+          "probability": 0.23523710668087006
+        },
+        {
+          "start_seconds": 1585.02,
+          "end_seconds": 1585.02,
+          "text": " a",
+          "probability": 0.996599018573761
+        },
+        {
+          "start_seconds": 1585.02,
+          "end_seconds": 1585.08,
+          "text": " good",
+          "probability": 0.692283570766449
+        },
+        {
+          "start_seconds": 1585.08,
+          "end_seconds": 1585.2,
+          "text": " night.",
+          "probability": 0.8045189380645752
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1585.2,
+      "end_seconds": 1585.32,
+      "text": "Have a good night.",
+      "words": [
+        {
+          "start_seconds": 1585.2,
+          "end_seconds": 1585.2,
+          "text": " Have",
+          "probability": 0.5646015405654907
+        },
+        {
+          "start_seconds": 1585.2,
+          "end_seconds": 1585.2,
+          "text": " a",
+          "probability": 0.9974654912948608
+        },
+        {
+          "start_seconds": 1585.2,
+          "end_seconds": 1585.2,
+          "text": " good",
+          "probability": 0.8005321025848389
+        },
+        {
+          "start_seconds": 1585.2,
+          "end_seconds": 1585.32,
+          "text": " night.",
+          "probability": 0.8811542391777039
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition"
+      ]
+    },
+    {
+      "start_seconds": 1585.32,
+      "end_seconds": 1585.36,
+      "text": "Have a good night.",
+      "words": [
+        {
+          "start_seconds": 1585.32,
+          "end_seconds": 1585.32,
+          "text": " Have",
+          "probability": 0.7085858583450317
+        },
+        {
+          "start_seconds": 1585.32,
+          "end_seconds": 1585.32,
+          "text": " a",
+          "probability": 0.9980600476264954
+        },
+        {
+          "start_seconds": 1585.32,
+          "end_seconds": 1585.32,
+          "text": " good",
+          "probability": 0.875010073184967
+        },
+        {
+          "start_seconds": 1585.32,
+          "end_seconds": 1585.36,
+          "text": " night.",
+          "probability": 0.9382628202438354
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition"
+      ]
+    },
+    {
+      "start_seconds": 1585.58,
+      "end_seconds": 1585.82,
+      "text": "Have a good night.",
+      "words": [
+        {
+          "start_seconds": 1585.58,
+          "end_seconds": 1585.82,
+          "text": " Have",
+          "probability": 0.726654589176178
+        },
+        {
+          "start_seconds": 1585.82,
+          "end_seconds": 1585.82,
+          "text": " a",
+          "probability": 0.9985228180885315
+        },
+        {
+          "start_seconds": 1585.82,
+          "end_seconds": 1585.82,
+          "text": " good",
+          "probability": 0.9089414477348328
+        },
+        {
+          "start_seconds": 1585.82,
+          "end_seconds": 1585.82,
+          "text": " night.",
+          "probability": 0.9575851559638977
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition"
+      ]
+    }
+  ]
+}

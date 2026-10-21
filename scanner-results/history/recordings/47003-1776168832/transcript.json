@@ -1,0 +1,199 @@
+{
+  "archive_id": "47003-1776168832",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776168832",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/14/2026",
+    "startDisplay": "06:13 AM",
+    "endDisplay": "06:43 AM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 223.61,
+      "end_seconds": 226.69,
+      "text": "That'll be $10.74, can you change it to a $10.50 NR?",
+      "words": [
+        {
+          "start_seconds": 223.61,
+          "end_seconds": 223.99,
+          "text": " That'll",
+          "probability": 0.45610707253217697
+        },
+        {
+          "start_seconds": 223.99,
+          "end_seconds": 224.15,
+          "text": " be",
+          "probability": 0.9939017295837402
+        },
+        {
+          "start_seconds": 224.15,
+          "end_seconds": 224.35,
+          "text": " $10",
+          "probability": 0.3646848797798157
+        },
+        {
+          "start_seconds": 224.35,
+          "end_seconds": 224.81,
+          "text": ".74,",
+          "probability": 0.9153706729412079
+        },
+        {
+          "start_seconds": 224.97,
+          "end_seconds": 225.09,
+          "text": " can",
+          "probability": 0.25675225257873535
+        },
+        {
+          "start_seconds": 225.09,
+          "end_seconds": 225.17,
+          "text": " you",
+          "probability": 0.9942269325256348
+        },
+        {
+          "start_seconds": 225.17,
+          "end_seconds": 225.35,
+          "text": " change",
+          "probability": 0.9880883097648621
+        },
+        {
+          "start_seconds": 225.35,
+          "end_seconds": 225.49,
+          "text": " it",
+          "probability": 0.5601941347122192
+        },
+        {
+          "start_seconds": 225.49,
+          "end_seconds": 225.65,
+          "text": " to",
+          "probability": 0.986315131187439
+        },
+        {
+          "start_seconds": 225.65,
+          "end_seconds": 225.83,
+          "text": " a",
+          "probability": 0.6947770118713379
+        },
+        {
+          "start_seconds": 225.83,
+          "end_seconds": 226.07,
+          "text": " $10",
+          "probability": 0.9370374083518982
+        },
+        {
+          "start_seconds": 226.07,
+          "end_seconds": 226.35,
+          "text": ".50",
+          "probability": 0.9377180635929108
+        },
+        {
+          "start_seconds": 226.35,
+          "end_seconds": 226.69,
+          "text": " NR?",
+          "probability": 0.09918151050806046
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 227.65,
+      "end_seconds": 228.17000000000002,
+      "text": "$6.16.",
+      "words": [
+        {
+          "start_seconds": 227.65,
+          "end_seconds": 227.82999999999998,
+          "text": " $6",
+          "probability": 0.70143923163414
+        },
+        {
+          "start_seconds": 227.82999999999998,
+          "end_seconds": 228.17000000000002,
+          "text": ".16.",
+          "probability": 0.8344202637672424
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    },
+    {
+      "start_seconds": 1591.55,
+      "end_seconds": 1592.61,
+      "text": "3-6-3-1.",
+      "words": [
+        {
+          "start_seconds": 1591.55,
+          "end_seconds": 1592.21,
+          "text": " 3",
+          "probability": 0.016021162271499634
+        },
+        {
+          "start_seconds": 1592.21,
+          "end_seconds": 1592.33,
+          "text": "-6",
+          "probability": 0.4846574515104294
+        },
+        {
+          "start_seconds": 1592.33,
+          "end_seconds": 1592.45,
+          "text": "-3",
+          "probability": 0.8994922339916229
+        },
+        {
+          "start_seconds": 1592.45,
+          "end_seconds": 1592.61,
+          "text": "-1.",
+          "probability": 0.5863857269287109
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1594.23,
+      "end_seconds": 1595.23,
+      "text": "3-6-3-1.",
+      "words": [
+        {
+          "start_seconds": 1594.23,
+          "end_seconds": 1594.61,
+          "text": " 3",
+          "probability": 0.8774217367172241
+        },
+        {
+          "start_seconds": 1594.61,
+          "end_seconds": 1594.79,
+          "text": "-6",
+          "probability": 0.9687408804893494
+        },
+        {
+          "start_seconds": 1594.79,
+          "end_seconds": 1595.03,
+          "text": "-3",
+          "probability": 0.991329699754715
+        },
+        {
+          "start_seconds": 1595.03,
+          "end_seconds": 1595.23,
+          "text": "-1.",
+          "probability": 0.9767861664295197
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "archive_id": "47003-1776283393",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776283393",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/15/2026",
+    "startDisplay": "02:03 PM",
+    "endDisplay": "02:33 PM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 1823.47,
+      "end_seconds": 1825.93,
+      "text": "To Kenny Fochner, 3-6 Union, David.",
+      "words": [
+        {
+          "start_seconds": 1823.47,
+          "end_seconds": 1823.81,
+          "text": " To",
+          "probability": 0.053880635648965836
+        },
+        {
+          "start_seconds": 1823.81,
+          "end_seconds": 1824.01,
+          "text": " Kenny",
+          "probability": 0.9485651254653931
+        },
+        {
+          "start_seconds": 1824.01,
+          "end_seconds": 1824.45,
+          "text": " Fochner,",
+          "probability": 0.6568324565887451
+        },
+        {
+          "start_seconds": 1824.57,
+          "end_seconds": 1824.73,
+          "text": " 3",
+          "probability": 0.4565680921077728
+        },
+        {
+          "start_seconds": 1824.73,
+          "end_seconds": 1824.99,
+          "text": "-6",
+          "probability": 0.8610283136367798
+        },
+        {
+          "start_seconds": 1824.99,
+          "end_seconds": 1825.49,
+          "text": " Union,",
+          "probability": 0.8859655261039734
+        },
+        {
+          "start_seconds": 1825.73,
+          "end_seconds": 1825.93,
+          "text": " David.",
+          "probability": 0.9815430045127869
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1830.0,
+      "end_seconds": 1830.7,
+      "text": "14-32.",
+      "words": [
+        {
+          "start_seconds": 1830.0,
+          "end_seconds": 1830.38,
+          "text": " 14",
+          "probability": 0.7036955952644348
+        },
+        {
+          "start_seconds": 1830.38,
+          "end_seconds": 1830.7,
+          "text": "-32.",
+          "probability": 0.3973749876022339
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    }
+  ]
+}

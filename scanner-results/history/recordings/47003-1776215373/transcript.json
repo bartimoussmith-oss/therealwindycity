@@ -1,0 +1,143 @@
+{
+  "archive_id": "47003-1776215373",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776215373",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/14/2026",
+    "startDisplay": "07:09 PM",
+    "endDisplay": "07:39 PM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 337.12,
+      "end_seconds": 340.82,
+      "text": "John, when you can clear me this AOA, this is no report.",
+      "words": [
+        {
+          "start_seconds": 337.12,
+          "end_seconds": 337.62,
+          "text": " John,",
+          "probability": 0.5939261317253113
+        },
+        {
+          "start_seconds": 337.76,
+          "end_seconds": 337.82,
+          "text": " when",
+          "probability": 0.49636074900627136
+        },
+        {
+          "start_seconds": 337.82,
+          "end_seconds": 338.0,
+          "text": " you",
+          "probability": 0.7515013217926025
+        },
+        {
+          "start_seconds": 338.0,
+          "end_seconds": 338.28,
+          "text": " can",
+          "probability": 0.9541829824447632
+        },
+        {
+          "start_seconds": 338.28,
+          "end_seconds": 338.52,
+          "text": " clear",
+          "probability": 0.9908139109611511
+        },
+        {
+          "start_seconds": 338.52,
+          "end_seconds": 338.68,
+          "text": " me",
+          "probability": 0.9967137575149536
+        },
+        {
+          "start_seconds": 338.68,
+          "end_seconds": 338.88,
+          "text": " this",
+          "probability": 0.8337670564651489
+        },
+        {
+          "start_seconds": 338.88,
+          "end_seconds": 339.4,
+          "text": " AOA,",
+          "probability": 0.8304040133953094
+        },
+        {
+          "start_seconds": 340.0,
+          "end_seconds": 340.06,
+          "text": " this",
+          "probability": 0.9597383141517639
+        },
+        {
+          "start_seconds": 340.06,
+          "end_seconds": 340.28,
+          "text": " is",
+          "probability": 0.9723232388496399
+        },
+        {
+          "start_seconds": 340.28,
+          "end_seconds": 340.52,
+          "text": " no",
+          "probability": 0.4930236339569092
+        },
+        {
+          "start_seconds": 340.52,
+          "end_seconds": 340.82,
+          "text": " report.",
+          "probability": 0.9784760475158691
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 342.32,
+      "end_seconds": 343.56,
+      "text": "Thank you, 19-19-14.",
+      "words": [
+        {
+          "start_seconds": 342.32,
+          "end_seconds": 342.62,
+          "text": " Thank",
+          "probability": 0.8998875617980957
+        },
+        {
+          "start_seconds": 342.62,
+          "end_seconds": 342.74,
+          "text": " you,",
+          "probability": 0.9891933798789978
+        },
+        {
+          "start_seconds": 342.82,
+          "end_seconds": 342.94,
+          "text": " 19",
+          "probability": 0.38236069679260254
+        },
+        {
+          "start_seconds": 342.94,
+          "end_seconds": 343.28,
+          "text": "-19",
+          "probability": 0.8569813072681427
+        },
+        {
+          "start_seconds": 343.28,
+          "end_seconds": 343.56,
+          "text": "-14.",
+          "probability": 0.8791557550430298
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    }
+  ]
+}

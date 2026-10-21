@@ -1,0 +1,365 @@
+{
+  "archive_id": "47003-1776186733",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776186733",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/14/2026",
+    "startDisplay": "11:12 AM",
+    "endDisplay": "11:42 AM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 1.26,
+      "end_seconds": 2.4,
+      "text": "10-4, 11-11.",
+      "words": [
+        {
+          "start_seconds": 1.26,
+          "end_seconds": 1.72,
+          "text": " 10",
+          "probability": 0.23568978905677795
+        },
+        {
+          "start_seconds": 1.72,
+          "end_seconds": 1.9,
+          "text": "-4,",
+          "probability": 0.9042953252792358
+        },
+        {
+          "start_seconds": 2.0,
+          "end_seconds": 2.18,
+          "text": " 11",
+          "probability": 0.8736535310745239
+        },
+        {
+          "start_seconds": 2.18,
+          "end_seconds": 2.4,
+          "text": "-11.",
+          "probability": 0.9704248011112213
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 126.93,
+      "end_seconds": 130.79,
+      "text": "1-6-5-3, entering 1051 on the blind. It is going to be big owls.",
+      "words": [
+        {
+          "start_seconds": 126.93,
+          "end_seconds": 127.45,
+          "text": " 1",
+          "probability": 0.1861366331577301
+        },
+        {
+          "start_seconds": 127.45,
+          "end_seconds": 127.61,
+          "text": "-6",
+          "probability": 0.5406054556369781
+        },
+        {
+          "start_seconds": 127.61,
+          "end_seconds": 127.81,
+          "text": "-5",
+          "probability": 0.7532570958137512
+        },
+        {
+          "start_seconds": 127.81,
+          "end_seconds": 128.05,
+          "text": "-3,",
+          "probability": 0.28328556939959526
+        },
+        {
+          "start_seconds": 128.19,
+          "end_seconds": 128.37,
+          "text": " entering",
+          "probability": 0.621474027633667
+        },
+        {
+          "start_seconds": 128.37,
+          "end_seconds": 128.95,
+          "text": " 1051",
+          "probability": 0.8100532293319702
+        },
+        {
+          "start_seconds": 128.95,
+          "end_seconds": 129.13,
+          "text": " on",
+          "probability": 0.33314642310142517
+        },
+        {
+          "start_seconds": 129.13,
+          "end_seconds": 129.17,
+          "text": " the",
+          "probability": 0.9894105792045593
+        },
+        {
+          "start_seconds": 129.17,
+          "end_seconds": 129.37,
+          "text": " blind.",
+          "probability": 0.923466682434082
+        },
+        {
+          "start_seconds": 129.55,
+          "end_seconds": 129.59,
+          "text": " It",
+          "probability": 0.9831418991088867
+        },
+        {
+          "start_seconds": 129.59,
+          "end_seconds": 129.73,
+          "text": " is",
+          "probability": 0.9398460388183594
+        },
+        {
+          "start_seconds": 129.73,
+          "end_seconds": 129.85,
+          "text": " going",
+          "probability": 0.8191187381744385
+        },
+        {
+          "start_seconds": 129.85,
+          "end_seconds": 129.93,
+          "text": " to",
+          "probability": 0.9950260519981384
+        },
+        {
+          "start_seconds": 129.93,
+          "end_seconds": 130.03,
+          "text": " be",
+          "probability": 0.9973794221878052
+        },
+        {
+          "start_seconds": 130.03,
+          "end_seconds": 130.21,
+          "text": " big",
+          "probability": 0.6305334568023682
+        },
+        {
+          "start_seconds": 130.21,
+          "end_seconds": 130.79,
+          "text": " owls.",
+          "probability": 0.6174363121390343
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 131.19,
+      "end_seconds": 133.59,
+      "text": "ETA is going to be drive time approximately 20 minutes.",
+      "words": [
+        {
+          "start_seconds": 131.19,
+          "end_seconds": 131.47,
+          "text": " ETA",
+          "probability": 0.7150451838970184
+        },
+        {
+          "start_seconds": 131.47,
+          "end_seconds": 131.71,
+          "text": " is",
+          "probability": 0.668867826461792
+        },
+        {
+          "start_seconds": 131.71,
+          "end_seconds": 131.87,
+          "text": " going",
+          "probability": 0.9519718289375305
+        },
+        {
+          "start_seconds": 131.87,
+          "end_seconds": 131.95,
+          "text": " to",
+          "probability": 0.9955514073371887
+        },
+        {
+          "start_seconds": 131.95,
+          "end_seconds": 132.03,
+          "text": " be",
+          "probability": 0.8348441123962402
+        },
+        {
+          "start_seconds": 132.03,
+          "end_seconds": 132.21,
+          "text": " drive",
+          "probability": 0.9426224231719971
+        },
+        {
+          "start_seconds": 132.21,
+          "end_seconds": 132.47,
+          "text": " time",
+          "probability": 0.9472800493240356
+        },
+        {
+          "start_seconds": 132.47,
+          "end_seconds": 132.81,
+          "text": " approximately",
+          "probability": 0.7176176905632019
+        },
+        {
+          "start_seconds": 132.81,
+          "end_seconds": 133.19,
+          "text": " 20",
+          "probability": 0.9229937791824341
+        },
+        {
+          "start_seconds": 133.19,
+          "end_seconds": 133.59,
+          "text": " minutes.",
+          "probability": 0.9857296943664551
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    },
+    {
+      "start_seconds": 134.75,
+      "end_seconds": 135.19,
+      "text": "6-5-3.",
+      "words": [
+        {
+          "start_seconds": 134.75,
+          "end_seconds": 134.83,
+          "text": " 6",
+          "probability": 0.06307604163885117
+        },
+        {
+          "start_seconds": 134.83,
+          "end_seconds": 134.97,
+          "text": "-5",
+          "probability": 0.9345425665378571
+        },
+        {
+          "start_seconds": 134.97,
+          "end_seconds": 135.19,
+          "text": "-3.",
+          "probability": 0.6568058580160141
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 136.44,
+      "end_seconds": 137.68,
+      "text": "You're welcome. 11-13.",
+      "words": [
+        {
+          "start_seconds": 136.44,
+          "end_seconds": 136.84,
+          "text": " You're",
+          "probability": 0.9566347897052765
+        },
+        {
+          "start_seconds": 136.84,
+          "end_seconds": 137.02,
+          "text": " welcome.",
+          "probability": 0.997012734413147
+        },
+        {
+          "start_seconds": 137.22,
+          "end_seconds": 137.42000000000002,
+          "text": " 11",
+          "probability": 0.802491307258606
+        },
+        {
+          "start_seconds": 137.42000000000002,
+          "end_seconds": 137.68,
+          "text": "-13.",
+          "probability": 0.8716392517089844
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    },
+    {
+      "start_seconds": 1242.37,
+      "end_seconds": 1244.35,
+      "text": "Try one six six, pretend that the order's on-chain.",
+      "words": [
+        {
+          "start_seconds": 1242.37,
+          "end_seconds": 1242.85,
+          "text": " Try",
+          "probability": 0.032539982348680496
+        },
+        {
+          "start_seconds": 1242.85,
+          "end_seconds": 1242.99,
+          "text": " one",
+          "probability": 0.4295344352722168
+        },
+        {
+          "start_seconds": 1242.99,
+          "end_seconds": 1243.15,
+          "text": " six",
+          "probability": 0.7924460172653198
+        },
+        {
+          "start_seconds": 1243.15,
+          "end_seconds": 1243.35,
+          "text": " six,",
+          "probability": 0.7411606311798096
+        },
+        {
+          "start_seconds": 1243.47,
+          "end_seconds": 1243.63,
+          "text": " pretend",
+          "probability": 0.1540675014257431
+        },
+        {
+          "start_seconds": 1243.63,
+          "end_seconds": 1243.77,
+          "text": " that",
+          "probability": 0.8249785304069519
+        },
+        {
+          "start_seconds": 1243.77,
+          "end_seconds": 1243.89,
+          "text": " the",
+          "probability": 0.918545663356781
+        },
+        {
+          "start_seconds": 1243.89,
+          "end_seconds": 1244.09,
+          "text": " order's",
+          "probability": 0.6324544548988342
+        },
+        {
+          "start_seconds": 1244.09,
+          "end_seconds": 1244.17,
+          "text": " on",
+          "probability": 0.965722918510437
+        },
+        {
+          "start_seconds": 1244.17,
+          "end_seconds": 1244.35,
+          "text": "-chain.",
+          "probability": 0.548400342464447
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    }
+  ]
+}

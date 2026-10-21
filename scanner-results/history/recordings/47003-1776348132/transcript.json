@@ -1,0 +1,189 @@
+{
+  "archive_id": "47003-1776348132",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776348132",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/16/2026",
+    "startDisplay": "08:02 AM",
+    "endDisplay": "08:32 AM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 1606.95,
+      "end_seconds": 1619.82,
+      "text": "We'll be with PDN County at the Air Force Base gate for our assistance.",
+      "words": [
+        {
+          "start_seconds": 1606.95,
+          "end_seconds": 1607.59,
+          "text": " We'll",
+          "probability": 0.2781637832522392
+        },
+        {
+          "start_seconds": 1614.15,
+          "end_seconds": 1614.79,
+          "text": " be",
+          "probability": 0.8071255087852478
+        },
+        {
+          "start_seconds": 1614.79,
+          "end_seconds": 1615.11,
+          "text": " with",
+          "probability": 0.9359820485115051
+        },
+        {
+          "start_seconds": 1615.11,
+          "end_seconds": 1615.89,
+          "text": " PDN",
+          "probability": 0.7985186874866486
+        },
+        {
+          "start_seconds": 1615.89,
+          "end_seconds": 1616.23,
+          "text": " County",
+          "probability": 0.5821651220321655
+        },
+        {
+          "start_seconds": 1616.23,
+          "end_seconds": 1616.53,
+          "text": " at",
+          "probability": 0.9046770334243774
+        },
+        {
+          "start_seconds": 1616.53,
+          "end_seconds": 1616.79,
+          "text": " the",
+          "probability": 0.9863191843032837
+        },
+        {
+          "start_seconds": 1616.79,
+          "end_seconds": 1617.01,
+          "text": " Air",
+          "probability": 0.8614533543586731
+        },
+        {
+          "start_seconds": 1617.01,
+          "end_seconds": 1617.27,
+          "text": " Force",
+          "probability": 0.9902166128158569
+        },
+        {
+          "start_seconds": 1617.27,
+          "end_seconds": 1617.67,
+          "text": " Base",
+          "probability": 0.8843212723731995
+        },
+        {
+          "start_seconds": 1617.67,
+          "end_seconds": 1618.35,
+          "text": " gate",
+          "probability": 0.4730112850666046
+        },
+        {
+          "start_seconds": 1618.6,
+          "end_seconds": 1619.54,
+          "text": " for",
+          "probability": 0.6866618394851685
+        },
+        {
+          "start_seconds": 1619.54,
+          "end_seconds": 1619.68,
+          "text": " our",
+          "probability": 0.18715791404247284
+        },
+        {
+          "start_seconds": 1619.68,
+          "end_seconds": 1619.82,
+          "text": " assistance.",
+          "probability": 0.34528133273124695
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1620.0,
+      "end_seconds": 1620.7,
+      "text": "package.",
+      "words": [
+        {
+          "start_seconds": 1620.0,
+          "end_seconds": 1620.7,
+          "text": " package.",
+          "probability": 0.3710128962993622
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1621.87,
+      "end_seconds": 1622.79,
+      "text": "I'm 10-8-20.",
+      "words": [
+        {
+          "start_seconds": 1621.87,
+          "end_seconds": 1622.19,
+          "text": " I'm",
+          "probability": 0.4428276866674423
+        },
+        {
+          "start_seconds": 1622.19,
+          "end_seconds": 1622.33,
+          "text": " 10",
+          "probability": 0.20172147452831268
+        },
+        {
+          "start_seconds": 1622.33,
+          "end_seconds": 1622.49,
+          "text": "-8",
+          "probability": 0.3918220102787018
+        },
+        {
+          "start_seconds": 1622.49,
+          "end_seconds": 1622.79,
+          "text": "-20.",
+          "probability": 0.7720019519329071
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1623.05,
+      "end_seconds": 1623.35,
+      "text": "Thank you.",
+      "words": [
+        {
+          "start_seconds": 1623.05,
+          "end_seconds": 1623.35,
+          "text": " Thank",
+          "probability": 0.02339169941842556
+        },
+        {
+          "start_seconds": 1623.35,
+          "end_seconds": 1623.35,
+          "text": " you.",
+          "probability": 0.935453474521637
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    }
+  ]
+}

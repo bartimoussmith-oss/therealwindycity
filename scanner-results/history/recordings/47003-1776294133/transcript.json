@@ -1,0 +1,142 @@
+{
+  "archive_id": "47003-1776294133",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776294133",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/15/2026",
+    "startDisplay": "05:02 PM",
+    "endDisplay": "05:32 PM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 797.55,
+      "end_seconds": 799.63,
+      "text": "Ah, have a good day. 1740.",
+      "words": [
+        {
+          "start_seconds": 797.55,
+          "end_seconds": 798.13,
+          "text": " Ah,",
+          "probability": 0.1395716667175293
+        },
+        {
+          "start_seconds": 798.21,
+          "end_seconds": 798.21,
+          "text": " have",
+          "probability": 0.39702552556991577
+        },
+        {
+          "start_seconds": 798.21,
+          "end_seconds": 798.27,
+          "text": " a",
+          "probability": 0.9975392818450928
+        },
+        {
+          "start_seconds": 798.27,
+          "end_seconds": 798.35,
+          "text": " good",
+          "probability": 0.9501605033874512
+        },
+        {
+          "start_seconds": 798.35,
+          "end_seconds": 798.71,
+          "text": " day.",
+          "probability": 0.9991076588630676
+        },
+        {
+          "start_seconds": 799.05,
+          "end_seconds": 799.63,
+          "text": " 1740.",
+          "probability": 0.6494481861591339
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1559.23,
+      "end_seconds": 1559.97,
+      "text": "I'm out of here.",
+      "words": [
+        {
+          "start_seconds": 1559.23,
+          "end_seconds": 1559.75,
+          "text": " I'm",
+          "probability": 0.11249206215143204
+        },
+        {
+          "start_seconds": 1559.75,
+          "end_seconds": 1559.75,
+          "text": " out",
+          "probability": 0.23992718756198883
+        },
+        {
+          "start_seconds": 1559.75,
+          "end_seconds": 1559.81,
+          "text": " of",
+          "probability": 0.39568662643432617
+        },
+        {
+          "start_seconds": 1559.81,
+          "end_seconds": 1559.97,
+          "text": " here.",
+          "probability": 0.5062989592552185
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1560.0,
+      "end_seconds": 1564.68,
+      "text": "Have a good night, 1727.",
+      "words": [
+        {
+          "start_seconds": 1560.0,
+          "end_seconds": 1560.52,
+          "text": " Have",
+          "probability": 0.5779417157173157
+        },
+        {
+          "start_seconds": 1560.52,
+          "end_seconds": 1561.92,
+          "text": " a",
+          "probability": 0.9969415068626404
+        },
+        {
+          "start_seconds": 1563.2,
+          "end_seconds": 1563.26,
+          "text": " good",
+          "probability": 0.9623713493347168
+        },
+        {
+          "start_seconds": 1563.26,
+          "end_seconds": 1563.52,
+          "text": " night,",
+          "probability": 0.9950946569442749
+        },
+        {
+          "start_seconds": 1563.86,
+          "end_seconds": 1564.68,
+          "text": " 1727.",
+          "probability": 0.8194212317466736
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "archive_id": "47003-1776165252",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776165252",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/14/2026",
+    "startDisplay": "05:14 AM",
+    "endDisplay": "05:44 AM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1863.684,
+  "segments": [
+    {
+      "start_seconds": 1652.67,
+      "end_seconds": 1654.13,
+      "text": "Yeah, I'm sorry, sir.",
+      "words": [
+        {
+          "start_seconds": 1652.67,
+          "end_seconds": 1653.19,
+          "text": " Yeah,",
+          "probability": 0.02616613171994686
+        },
+        {
+          "start_seconds": 1653.33,
+          "end_seconds": 1653.61,
+          "text": " I'm",
+          "probability": 0.4526321440935135
+        },
+        {
+          "start_seconds": 1653.61,
+          "end_seconds": 1653.79,
+          "text": " sorry,",
+          "probability": 0.43895718455314636
+        },
+        {
+          "start_seconds": 1653.91,
+          "end_seconds": 1654.13,
+          "text": " sir.",
+          "probability": 0.2823618948459625
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1660.5,
+      "end_seconds": 1661.82,
+      "text": "Keep seeing the copy, thank you, S-540.",
+      "words": [
+        {
+          "start_seconds": 1660.5,
+          "end_seconds": 1660.78,
+          "text": " Keep",
+          "probability": 0.39682865142822266
+        },
+        {
+          "start_seconds": 1660.78,
+          "end_seconds": 1660.96,
+          "text": " seeing",
+          "probability": 0.6889371871948242
+        },
+        {
+          "start_seconds": 1660.96,
+          "end_seconds": 1661.04,
+          "text": " the",
+          "probability": 0.20089736580848694
+        },
+        {
+          "start_seconds": 1661.04,
+          "end_seconds": 1661.2,
+          "text": " copy,",
+          "probability": 0.8814906477928162
+        },
+        {
+          "start_seconds": 1661.4,
+          "end_seconds": 1661.4,
+          "text": " thank",
+          "probability": 0.38349246978759766
+        },
+        {
+          "start_seconds": 1661.4,
+          "end_seconds": 1661.52,
+          "text": " you,",
+          "probability": 0.9930602312088013
+        },
+        {
+          "start_seconds": 1661.64,
+          "end_seconds": 1661.64,
+          "text": " S",
+          "probability": 0.4448421895503998
+        },
+        {
+          "start_seconds": 1661.64,
+          "end_seconds": 1661.82,
+          "text": "-540.",
+          "probability": 0.5968083441257477
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    }
+  ]
+}

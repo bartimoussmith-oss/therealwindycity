@@ -1,0 +1,163 @@
+{
+  "archive_id": "47003-1776285183",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776285183",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/15/2026",
+    "startDisplay": "02:33 PM",
+    "endDisplay": "03:03 PM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 33.31,
+      "end_seconds": 35.97,
+      "text": "To Kenny Fochner, 3-6 Union, David.",
+      "words": [
+        {
+          "start_seconds": 33.31,
+          "end_seconds": 33.77,
+          "text": " To",
+          "probability": 0.04714936390519142
+        },
+        {
+          "start_seconds": 33.77,
+          "end_seconds": 33.97,
+          "text": " Kenny",
+          "probability": 0.8607295155525208
+        },
+        {
+          "start_seconds": 33.97,
+          "end_seconds": 34.41,
+          "text": " Fochner,",
+          "probability": 0.6077650884787241
+        },
+        {
+          "start_seconds": 34.51,
+          "end_seconds": 34.71,
+          "text": " 3",
+          "probability": 0.41381293535232544
+        },
+        {
+          "start_seconds": 34.71,
+          "end_seconds": 34.95,
+          "text": "-6",
+          "probability": 0.884660542011261
+        },
+        {
+          "start_seconds": 34.95,
+          "end_seconds": 35.43,
+          "text": " Union,",
+          "probability": 0.8853575587272644
+        },
+        {
+          "start_seconds": 35.69,
+          "end_seconds": 35.97,
+          "text": " David.",
+          "probability": 0.9787307381629944
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 40.04,
+      "end_seconds": 40.68,
+      "text": "14-32.",
+      "words": [
+        {
+          "start_seconds": 40.04,
+          "end_seconds": 40.28,
+          "text": " 14",
+          "probability": 0.721007764339447
+        },
+        {
+          "start_seconds": 40.28,
+          "end_seconds": 40.68,
+          "text": "-32.",
+          "probability": 0.9436619281768799
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    },
+    {
+      "start_seconds": 629.52,
+      "end_seconds": 629.98,
+      "text": "Goodnight.",
+      "words": [
+        {
+          "start_seconds": 629.52,
+          "end_seconds": 629.98,
+          "text": " Goodnight.",
+          "probability": 0.38321056962013245
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 630.0,
+      "end_seconds": 630.54,
+      "text": "Go ahead.",
+      "words": [
+        {
+          "start_seconds": 630.0,
+          "end_seconds": 630.28,
+          "text": " Go",
+          "probability": 0.05634955316781998
+        },
+        {
+          "start_seconds": 630.28,
+          "end_seconds": 630.54,
+          "text": " ahead.",
+          "probability": 0.9975327253341675
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 637.6,
+      "end_seconds": 642.04,
+      "text": "14, first two.",
+      "words": [
+        {
+          "start_seconds": 637.6,
+          "end_seconds": 638.2,
+          "text": " 14,",
+          "probability": 0.10222822427749634
+        },
+        {
+          "start_seconds": 641.7,
+          "end_seconds": 641.84,
+          "text": " first",
+          "probability": 0.7002262473106384
+        },
+        {
+          "start_seconds": 641.84,
+          "end_seconds": 642.04,
+          "text": " two.",
+          "probability": 0.6439355611801147
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    }
+  ]
+}

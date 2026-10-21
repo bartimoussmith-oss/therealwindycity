@@ -1,0 +1,692 @@
+{
+  "archive_id": "47003-1776267283",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776267283",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/15/2026",
+    "startDisplay": "09:34 AM",
+    "endDisplay": "10:04 AM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 211.9,
+      "end_seconds": 220.0,
+      "text": "9-3 status check 9-3-5",
+      "words": [
+        {
+          "start_seconds": 211.9,
+          "end_seconds": 212.48,
+          "text": " 9",
+          "probability": 0.42929092049598694
+        },
+        {
+          "start_seconds": 212.48,
+          "end_seconds": 212.66,
+          "text": "-3",
+          "probability": 0.4936410114169121
+        },
+        {
+          "start_seconds": 212.66,
+          "end_seconds": 212.96,
+          "text": " status",
+          "probability": 0.9861141443252563
+        },
+        {
+          "start_seconds": 212.96,
+          "end_seconds": 213.3,
+          "text": " check",
+          "probability": 0.9722195863723755
+        },
+        {
+          "start_seconds": 215.35,
+          "end_seconds": 217.31,
+          "text": " 9",
+          "probability": 0.5673944354057312
+        },
+        {
+          "start_seconds": 219.52,
+          "end_seconds": 219.72,
+          "text": "-3",
+          "probability": 0.6305867284536362
+        },
+        {
+          "start_seconds": 219.72,
+          "end_seconds": 220.0,
+          "text": "-5",
+          "probability": 0.594163179397583
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 544.5,
+      "end_seconds": 554.13,
+      "text": "69-3, do you have any printer paper by chance?",
+      "words": [
+        {
+          "start_seconds": 544.5,
+          "end_seconds": 545.22,
+          "text": " 69",
+          "probability": 0.4974793493747711
+        },
+        {
+          "start_seconds": 545.22,
+          "end_seconds": 545.62,
+          "text": "-3,",
+          "probability": 0.6336037069559097
+        },
+        {
+          "start_seconds": 552.61,
+          "end_seconds": 552.75,
+          "text": " do",
+          "probability": 0.2395353764295578
+        },
+        {
+          "start_seconds": 552.75,
+          "end_seconds": 552.79,
+          "text": " you",
+          "probability": 0.9927932024002075
+        },
+        {
+          "start_seconds": 552.79,
+          "end_seconds": 552.87,
+          "text": " have",
+          "probability": 0.9820288419723511
+        },
+        {
+          "start_seconds": 552.87,
+          "end_seconds": 553.01,
+          "text": " any",
+          "probability": 0.7957118153572083
+        },
+        {
+          "start_seconds": 553.01,
+          "end_seconds": 553.29,
+          "text": " printer",
+          "probability": 0.866141676902771
+        },
+        {
+          "start_seconds": 553.29,
+          "end_seconds": 553.61,
+          "text": " paper",
+          "probability": 0.968543529510498
+        },
+        {
+          "start_seconds": 553.61,
+          "end_seconds": 553.91,
+          "text": " by",
+          "probability": 0.31148356199264526
+        },
+        {
+          "start_seconds": 553.91,
+          "end_seconds": 554.13,
+          "text": " chance?",
+          "probability": 0.9990400671958923
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 555.66,
+      "end_seconds": 556.54,
+      "text": "I believe I do.",
+      "words": [
+        {
+          "start_seconds": 555.66,
+          "end_seconds": 555.9,
+          "text": " I",
+          "probability": 0.9455046653747559
+        },
+        {
+          "start_seconds": 555.9,
+          "end_seconds": 556.14,
+          "text": " believe",
+          "probability": 0.9934065341949463
+        },
+        {
+          "start_seconds": 556.14,
+          "end_seconds": 556.32,
+          "text": " I",
+          "probability": 0.9890095591545105
+        },
+        {
+          "start_seconds": 556.32,
+          "end_seconds": 556.54,
+          "text": " do.",
+          "probability": 0.9991987347602844
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    },
+    {
+      "start_seconds": 595.26,
+      "end_seconds": 595.66,
+      "text": "Go ahead.",
+      "words": [
+        {
+          "start_seconds": 595.26,
+          "end_seconds": 595.58,
+          "text": " Go",
+          "probability": 0.18541711568832397
+        },
+        {
+          "start_seconds": 595.58,
+          "end_seconds": 595.66,
+          "text": " ahead.",
+          "probability": 0.8588786721229553
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 605.58,
+      "end_seconds": 613.3,
+      "text": "10-51 is hooking up to the vehicle now. You can show me clear, and then can you create another port call and show me 23.",
+      "words": [
+        {
+          "start_seconds": 605.58,
+          "end_seconds": 606.14,
+          "text": " 10",
+          "probability": 0.6180046200752258
+        },
+        {
+          "start_seconds": 606.14,
+          "end_seconds": 606.34,
+          "text": "-51",
+          "probability": 0.5817295014858246
+        },
+        {
+          "start_seconds": 606.34,
+          "end_seconds": 607.26,
+          "text": " is",
+          "probability": 0.8550407290458679
+        },
+        {
+          "start_seconds": 607.26,
+          "end_seconds": 607.72,
+          "text": " hooking",
+          "probability": 0.9128528833389282
+        },
+        {
+          "start_seconds": 607.72,
+          "end_seconds": 607.82,
+          "text": " up",
+          "probability": 0.9643107652664185
+        },
+        {
+          "start_seconds": 607.82,
+          "end_seconds": 607.94,
+          "text": " to",
+          "probability": 0.9648333787918091
+        },
+        {
+          "start_seconds": 607.94,
+          "end_seconds": 608.02,
+          "text": " the",
+          "probability": 0.993769109249115
+        },
+        {
+          "start_seconds": 608.02,
+          "end_seconds": 608.3,
+          "text": " vehicle",
+          "probability": 0.9898584485054016
+        },
+        {
+          "start_seconds": 608.3,
+          "end_seconds": 608.66,
+          "text": " now.",
+          "probability": 0.9527598023414612
+        },
+        {
+          "start_seconds": 609.08,
+          "end_seconds": 609.18,
+          "text": " You",
+          "probability": 0.9075605869293213
+        },
+        {
+          "start_seconds": 609.18,
+          "end_seconds": 609.3,
+          "text": " can",
+          "probability": 0.9924254417419434
+        },
+        {
+          "start_seconds": 609.3,
+          "end_seconds": 609.46,
+          "text": " show",
+          "probability": 0.9967674016952515
+        },
+        {
+          "start_seconds": 609.46,
+          "end_seconds": 609.58,
+          "text": " me",
+          "probability": 0.9869389533996582
+        },
+        {
+          "start_seconds": 609.58,
+          "end_seconds": 609.86,
+          "text": " clear,",
+          "probability": 0.5928623080253601
+        },
+        {
+          "start_seconds": 610.12,
+          "end_seconds": 610.36,
+          "text": " and",
+          "probability": 0.40790659189224243
+        },
+        {
+          "start_seconds": 610.36,
+          "end_seconds": 610.58,
+          "text": " then",
+          "probability": 0.9350687861442566
+        },
+        {
+          "start_seconds": 610.58,
+          "end_seconds": 610.76,
+          "text": " can",
+          "probability": 0.8707325458526611
+        },
+        {
+          "start_seconds": 610.76,
+          "end_seconds": 610.86,
+          "text": " you",
+          "probability": 0.9912751913070679
+        },
+        {
+          "start_seconds": 610.86,
+          "end_seconds": 611.08,
+          "text": " create",
+          "probability": 0.9909451007843018
+        },
+        {
+          "start_seconds": 611.08,
+          "end_seconds": 611.34,
+          "text": " another",
+          "probability": 0.9924272894859314
+        },
+        {
+          "start_seconds": 611.34,
+          "end_seconds": 611.72,
+          "text": " port",
+          "probability": 0.7265959978103638
+        },
+        {
+          "start_seconds": 611.72,
+          "end_seconds": 612.06,
+          "text": " call",
+          "probability": 0.9577374458312988
+        },
+        {
+          "start_seconds": 612.06,
+          "end_seconds": 612.48,
+          "text": " and",
+          "probability": 0.4801255762577057
+        },
+        {
+          "start_seconds": 612.48,
+          "end_seconds": 612.68,
+          "text": " show",
+          "probability": 0.7957220077514648
+        },
+        {
+          "start_seconds": 612.68,
+          "end_seconds": 612.86,
+          "text": " me",
+          "probability": 0.9933318495750427
+        },
+        {
+          "start_seconds": 612.86,
+          "end_seconds": 613.3,
+          "text": " 23.",
+          "probability": 0.7991307377815247
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 614.76,
+      "end_seconds": 615.14,
+      "text": "10-4.",
+      "words": [
+        {
+          "start_seconds": 614.76,
+          "end_seconds": 614.94,
+          "text": " 10",
+          "probability": 0.7380627393722534
+        },
+        {
+          "start_seconds": 614.94,
+          "end_seconds": 615.14,
+          "text": "-4.",
+          "probability": 0.9706138372421265
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    },
+    {
+      "start_seconds": 976.21,
+      "end_seconds": 976.65,
+      "text": "Thank you.",
+      "words": [
+        {
+          "start_seconds": 976.21,
+          "end_seconds": 976.33,
+          "text": " Thank",
+          "probability": 0.02062174864113331
+        },
+        {
+          "start_seconds": 976.33,
+          "end_seconds": 976.65,
+          "text": " you.",
+          "probability": 0.9186798334121704
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 998.98,
+      "end_seconds": 1003.92,
+      "text": "It looks like this driver is required to have ignition interlock and rerun a KQ.",
+      "words": [
+        {
+          "start_seconds": 998.98,
+          "end_seconds": 999.24,
+          "text": " It",
+          "probability": 0.16416813433170319
+        },
+        {
+          "start_seconds": 999.24,
+          "end_seconds": 999.54,
+          "text": " looks",
+          "probability": 0.9801231026649475
+        },
+        {
+          "start_seconds": 999.54,
+          "end_seconds": 999.82,
+          "text": " like",
+          "probability": 0.9930287003517151
+        },
+        {
+          "start_seconds": 999.82,
+          "end_seconds": 1000.52,
+          "text": " this",
+          "probability": 0.9777411222457886
+        },
+        {
+          "start_seconds": 1000.52,
+          "end_seconds": 1000.82,
+          "text": " driver",
+          "probability": 0.9917832612991333
+        },
+        {
+          "start_seconds": 1000.82,
+          "end_seconds": 1001.0,
+          "text": " is",
+          "probability": 0.8630691170692444
+        },
+        {
+          "start_seconds": 1001.0,
+          "end_seconds": 1001.28,
+          "text": " required",
+          "probability": 0.9627187252044678
+        },
+        {
+          "start_seconds": 1001.28,
+          "end_seconds": 1001.46,
+          "text": " to",
+          "probability": 0.9876505732536316
+        },
+        {
+          "start_seconds": 1001.46,
+          "end_seconds": 1001.62,
+          "text": " have",
+          "probability": 0.9901694655418396
+        },
+        {
+          "start_seconds": 1001.62,
+          "end_seconds": 1002.08,
+          "text": " ignition",
+          "probability": 0.9284112453460693
+        },
+        {
+          "start_seconds": 1002.08,
+          "end_seconds": 1002.66,
+          "text": " interlock",
+          "probability": 0.7274228781461716
+        },
+        {
+          "start_seconds": 1002.66,
+          "end_seconds": 1002.9,
+          "text": " and",
+          "probability": 0.2349650114774704
+        },
+        {
+          "start_seconds": 1002.9,
+          "end_seconds": 1003.22,
+          "text": " rerun",
+          "probability": 0.6561980843544006
+        },
+        {
+          "start_seconds": 1003.22,
+          "end_seconds": 1003.44,
+          "text": " a",
+          "probability": 0.40236204862594604
+        },
+        {
+          "start_seconds": 1003.44,
+          "end_seconds": 1003.92,
+          "text": " KQ.",
+          "probability": 0.9546322822570801
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1004.94,
+      "end_seconds": 1012.98,
+      "text": "Make sure that is still required and then can also get a CQ and see if he has any priors for operating without an interlock.",
+      "words": [
+        {
+          "start_seconds": 1004.94,
+          "end_seconds": 1005.46,
+          "text": " Make",
+          "probability": 0.9634058475494385
+        },
+        {
+          "start_seconds": 1005.46,
+          "end_seconds": 1005.64,
+          "text": " sure",
+          "probability": 0.9987891316413879
+        },
+        {
+          "start_seconds": 1005.64,
+          "end_seconds": 1005.9,
+          "text": " that",
+          "probability": 0.9941567182540894
+        },
+        {
+          "start_seconds": 1005.9,
+          "end_seconds": 1006.08,
+          "text": " is",
+          "probability": 0.902184009552002
+        },
+        {
+          "start_seconds": 1006.08,
+          "end_seconds": 1006.58,
+          "text": " still",
+          "probability": 0.9988263249397278
+        },
+        {
+          "start_seconds": 1006.58,
+          "end_seconds": 1007.28,
+          "text": " required",
+          "probability": 0.9939032196998596
+        },
+        {
+          "start_seconds": 1007.28,
+          "end_seconds": 1007.64,
+          "text": " and",
+          "probability": 0.7901812195777893
+        },
+        {
+          "start_seconds": 1007.64,
+          "end_seconds": 1007.86,
+          "text": " then",
+          "probability": 0.9130285978317261
+        },
+        {
+          "start_seconds": 1007.86,
+          "end_seconds": 1008.06,
+          "text": " can",
+          "probability": 0.8934643268585205
+        },
+        {
+          "start_seconds": 1008.06,
+          "end_seconds": 1008.24,
+          "text": " also",
+          "probability": 0.984635055065155
+        },
+        {
+          "start_seconds": 1008.24,
+          "end_seconds": 1008.46,
+          "text": " get",
+          "probability": 0.9914699196815491
+        },
+        {
+          "start_seconds": 1008.46,
+          "end_seconds": 1008.6,
+          "text": " a",
+          "probability": 0.99177086353302
+        },
+        {
+          "start_seconds": 1008.6,
+          "end_seconds": 1009.34,
+          "text": " CQ",
+          "probability": 0.9864242374897003
+        },
+        {
+          "start_seconds": 1009.34,
+          "end_seconds": 1009.7,
+          "text": " and",
+          "probability": 0.2803530991077423
+        },
+        {
+          "start_seconds": 1009.7,
+          "end_seconds": 1009.86,
+          "text": " see",
+          "probability": 0.9834163188934326
+        },
+        {
+          "start_seconds": 1009.86,
+          "end_seconds": 1009.94,
+          "text": " if",
+          "probability": 0.9972694516181946
+        },
+        {
+          "start_seconds": 1009.94,
+          "end_seconds": 1010.0,
+          "text": " he",
+          "probability": 0.8924152851104736
+        },
+        {
+          "start_seconds": 1010.0,
+          "end_seconds": 1010.12,
+          "text": " has",
+          "probability": 0.9922776222229004
+        },
+        {
+          "start_seconds": 1010.12,
+          "end_seconds": 1010.28,
+          "text": " any",
+          "probability": 0.9926716089248657
+        },
+        {
+          "start_seconds": 1010.28,
+          "end_seconds": 1011.02,
+          "text": " priors",
+          "probability": 0.9939482510089874
+        },
+        {
+          "start_seconds": 1011.02,
+          "end_seconds": 1011.38,
+          "text": " for",
+          "probability": 0.9498933553695679
+        },
+        {
+          "start_seconds": 1011.38,
+          "end_seconds": 1011.82,
+          "text": " operating",
+          "probability": 0.9911912083625793
+        },
+        {
+          "start_seconds": 1011.82,
+          "end_seconds": 1012.38,
+          "text": " without",
+          "probability": 0.8904100060462952
+        },
+        {
+          "start_seconds": 1012.38,
+          "end_seconds": 1012.52,
+          "text": " an",
+          "probability": 0.983227014541626
+        },
+        {
+          "start_seconds": 1012.52,
+          "end_seconds": 1012.98,
+          "text": " interlock.",
+          "probability": 0.9977269768714905
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1014.41,
+      "end_seconds": 1014.69,
+      "text": "Jennifer.",
+      "words": [
+        {
+          "start_seconds": 1014.41,
+          "end_seconds": 1014.69,
+          "text": " Jennifer.",
+          "probability": 0.33111175894737244
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    }
+  ]
+}

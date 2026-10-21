@@ -1,0 +1,119 @@
+{
+  "archive_id": "47003-1776335602",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776335602",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/16/2026",
+    "startDisplay": "04:33 AM",
+    "endDisplay": "05:03 AM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 1516.34,
+      "end_seconds": 1517.92,
+      "text": "10-4-1, 10-4-1, good morning.",
+      "words": [
+        {
+          "start_seconds": 1516.34,
+          "end_seconds": 1516.72,
+          "text": " 10",
+          "probability": 0.07234315574169159
+        },
+        {
+          "start_seconds": 1516.72,
+          "end_seconds": 1516.96,
+          "text": "-4",
+          "probability": 0.6247846186161041
+        },
+        {
+          "start_seconds": 1516.96,
+          "end_seconds": 1517.12,
+          "text": "-1,",
+          "probability": 0.7941920757293701
+        },
+        {
+          "start_seconds": 1517.22,
+          "end_seconds": 1517.3,
+          "text": " 10",
+          "probability": 0.8924140334129333
+        },
+        {
+          "start_seconds": 1517.3,
+          "end_seconds": 1517.46,
+          "text": "-4",
+          "probability": 0.9379320442676544
+        },
+        {
+          "start_seconds": 1517.46,
+          "end_seconds": 1517.64,
+          "text": "-1,",
+          "probability": 0.991265743970871
+        },
+        {
+          "start_seconds": 1517.68,
+          "end_seconds": 1517.76,
+          "text": " good",
+          "probability": 0.9243702292442322
+        },
+        {
+          "start_seconds": 1517.76,
+          "end_seconds": 1517.92,
+          "text": " morning.",
+          "probability": 0.9869233965873718
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1518.88,
+      "end_seconds": 1519.92,
+      "text": "4-1, good morning, Ed.",
+      "words": [
+        {
+          "start_seconds": 1518.88,
+          "end_seconds": 1519.2,
+          "text": " 4",
+          "probability": 0.7825512886047363
+        },
+        {
+          "start_seconds": 1519.2,
+          "end_seconds": 1519.36,
+          "text": "-1,",
+          "probability": 0.9931034743785858
+        },
+        {
+          "start_seconds": 1519.42,
+          "end_seconds": 1519.48,
+          "text": " good",
+          "probability": 0.9972345232963562
+        },
+        {
+          "start_seconds": 1519.48,
+          "end_seconds": 1519.7,
+          "text": " morning,",
+          "probability": 0.9986388087272644
+        },
+        {
+          "start_seconds": 1519.84,
+          "end_seconds": 1519.92,
+          "text": " Ed.",
+          "probability": 0.192572683095932
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "archive_id": "47003-1776319491",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776319491",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/16/2026",
+    "startDisplay": "12:04 AM",
+    "endDisplay": "12:34 AM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1863.684,
+  "segments": [
+    {
+      "start_seconds": 717.47,
+      "end_seconds": 719.97,
+      "text": "Two and I'll have first-hand calls. Thanks, and good night.",
+      "words": [
+        {
+          "start_seconds": 717.47,
+          "end_seconds": 717.97,
+          "text": " Two",
+          "probability": 0.08318173140287399
+        },
+        {
+          "start_seconds": 717.97,
+          "end_seconds": 718.09,
+          "text": " and",
+          "probability": 0.7153230905532837
+        },
+        {
+          "start_seconds": 718.09,
+          "end_seconds": 718.25,
+          "text": " I'll",
+          "probability": 0.945486307144165
+        },
+        {
+          "start_seconds": 718.25,
+          "end_seconds": 718.41,
+          "text": " have",
+          "probability": 0.9970501661300659
+        },
+        {
+          "start_seconds": 718.41,
+          "end_seconds": 718.65,
+          "text": " first",
+          "probability": 0.906331479549408
+        },
+        {
+          "start_seconds": 718.65,
+          "end_seconds": 718.87,
+          "text": "-hand",
+          "probability": 0.5353783071041107
+        },
+        {
+          "start_seconds": 718.87,
+          "end_seconds": 719.23,
+          "text": " calls.",
+          "probability": 0.9556158185005188
+        },
+        {
+          "start_seconds": 719.57,
+          "end_seconds": 719.67,
+          "text": " Thanks,",
+          "probability": 0.8877427577972412
+        },
+        {
+          "start_seconds": 719.79,
+          "end_seconds": 719.83,
+          "text": " and",
+          "probability": 0.5964401364326477
+        },
+        {
+          "start_seconds": 719.83,
+          "end_seconds": 719.97,
+          "text": " good",
+          "probability": 0.403837651014328
+        },
+        {
+          "start_seconds": 719.97,
+          "end_seconds": 719.97,
+          "text": " night.",
+          "probability": 0.6892266869544983
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 720.75,
+      "end_seconds": 722.37,
+      "text": "Have a good night, it's midnight fifteen.",
+      "words": [
+        {
+          "start_seconds": 720.75,
+          "end_seconds": 721.25,
+          "text": " Have",
+          "probability": 0.936507523059845
+        },
+        {
+          "start_seconds": 721.25,
+          "end_seconds": 721.37,
+          "text": " a",
+          "probability": 0.9978614449501038
+        },
+        {
+          "start_seconds": 721.37,
+          "end_seconds": 721.45,
+          "text": " good",
+          "probability": 0.6724780201911926
+        },
+        {
+          "start_seconds": 721.45,
+          "end_seconds": 721.67,
+          "text": " night,",
+          "probability": 0.990035891532898
+        },
+        {
+          "start_seconds": 721.81,
+          "end_seconds": 721.89,
+          "text": " it's",
+          "probability": 0.733797624707222
+        },
+        {
+          "start_seconds": 721.89,
+          "end_seconds": 721.99,
+          "text": " midnight",
+          "probability": 0.7804356813430786
+        },
+        {
+          "start_seconds": 721.99,
+          "end_seconds": 722.37,
+          "text": " fifteen.",
+          "probability": 0.5035656690597534
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    }
+  ]
+}
