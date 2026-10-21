@@ -1,0 +1,29 @@
+{
+  "status": "success",
+  "transcription_step": "success",
+  "recorded_at_utc": "2026-10-21T22:09:43.843121+00:00",
+  "run_id": "39684280722",
+  "run_attempt": "1",
+  "workflow_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/39684280722",
+  "result_directory": "scanner-results/runs/39684280722-1",
+  "files": [
+    "transcript.json",
+    "transcript.txt"
+  ],
+  "settings": {
+    "model": "tiny.en",
+    "device": "cpu",
+    "compute_type": "int8",
+    "language": "en",
+    "vad_filter": true,
+    "condition_on_previous_text": false
+  },
+  "review_required": true,
+  "review_flags": [
+    "unverified_automated_transcription",
+    "not_a_verified_incident_report",
+    "segment_offsets_not_wall_clock_times"
+  ],
+  "visibility": "public",
+  "notice": "Automated transcript may contain errors. Do not treat it as verified reporting. Raw audio, credentials, and diagnostic logs are not committed."
+}
