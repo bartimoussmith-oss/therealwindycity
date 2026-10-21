@@ -1,4 +1,4 @@
-name: Scanner archive test
+name: Laramie Archive Transcriber
 on:
   workflow_dispatch:
     inputs:
