@@ -1,0 +1,983 @@
+{
+  "checked_at_utc": "2026-10-21T23:08:37.886194+00:00",
+  "credentials_used": false,
+  "status": "finished_requires_analysis",
+  "pages": [
+    {
+      "page": "dashboard",
+      "document_http_status": 200,
+      "final_location": {
+        "host": "laramiecounty-letmsp.connect.socrata.com",
+        "path": "/"
+      },
+      "visible_password_fields": 0,
+      "visible_email_fields": 0,
+      "iframe_hosts": [
+        "laramiecounty-letmsp.connect.socrata.com",
+        "platform.twitter.com"
+      ],
+      "script_hosts": [
+        "api.mapbox.com",
+        "cdn.forge.tylertech.com",
+        "cdn.jsdelivr.net",
+        "cdn.pendo.io",
+        "cdn3.devexpress.com",
+        "cdnjs.cloudflare.com",
+        "laramiecounty-letmsp.connect.socrata.com",
+        "platform.twitter.com",
+        "www.google-analytics.com"
+      ],
+      "body_child_count": 28
+    },
+    {
+      "page": "login_entry",
+      "document_http_status": 200,
+      "final_location": {
+        "host": "laramiecounty-letmsp.connect.socrata.com",
+        "path": "/auth_login.html"
+      },
+      "visible_password_fields": 1,
+      "visible_email_fields": 1,
+      "iframe_hosts": [
+        "laramiecounty-letmsp.connect.socrata.com"
+      ],
+      "script_hosts": [
+        "cdn.auth0.com",
+        "code.jquery.com",
+        "global.oktacdn.com",
+        "socrata.auth0.com"
+      ],
+      "body_child_count": 1
+    }
+  ],
+  "responses": [
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/",
+      "http_status": 200,
+      "resource_type": "document",
+      "method": "GET"
+    },
+    {
+      "host": "cdnjs.cloudflare.com",
+      "path": "/ajax/libs/ng-tags-input/3.2.0/ng-tags-input.bootstrap.min.css",
+      "http_status": 200,
+      "resource_type": "stylesheet",
+      "method": "GET"
+    },
+    {
+      "host": "cdnjs.cloudflare.com",
+      "path": "/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "cdnjs.cloudflare.com",
+      "path": "/ajax/libs/font-awesome/6.1.2/css/all.css",
+      "http_status": 200,
+      "resource_type": "stylesheet",
+      "method": "GET"
+    },
+    {
+      "host": "fonts.googleapis.com",
+      "path": "/css",
+      "http_status": 200,
+      "resource_type": "stylesheet",
+      "method": "GET"
+    },
+    {
+      "host": "cdnjs.cloudflare.com",
+      "path": "/ajax/libs/font-awesome/6.1.2/css/v4-shims.min.css",
+      "http_status": 200,
+      "resource_type": "stylesheet",
+      "method": "GET"
+    },
+    {
+      "host": "cdnjs.cloudflare.com",
+      "path": "/ajax/libs/jquery/3.7.1/jquery.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "cdnjs.cloudflare.com",
+      "path": "/ajax/libs/ng-tags-input/3.2.0/ng-tags-input.min.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "cdnjs.cloudflare.com",
+      "path": "/ajax/libs/moment.js/2.29.4/moment.min.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "cdnjs.cloudflare.com",
+      "path": "/ajax/libs/jquery-migrate/3.4.1/jquery-migrate.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "cdnjs.cloudflare.com",
+      "path": "/ajax/libs/js-beautify/1.14.7/beautify-html.min.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "cdnjs.cloudflare.com",
+      "path": "/ajax/libs/angular-ui-bootstrap/2.5.6/ui-bootstrap-tpls.min.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "api.mapbox.com",
+      "path": "/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.css",
+      "http_status": 200,
+      "resource_type": "stylesheet",
+      "method": "GET"
+    },
+    {
+      "host": "cdn.jsdelivr.net",
+      "path": "/npm/[identifier-withheld]/dist/js/bootstrap.bundle.min.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "api.mapbox.com",
+      "path": "/mapbox-gl-js/plugins/mapbox-gl-draw/v1.0.9/mapbox-gl-draw.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "platform.twitter.com",
+      "path": "/widgets.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "cdn.jsdelivr.net",
+      "path": "/npm/[identifier-withheld]/lodash.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "cdn.jsdelivr.net",
+      "path": "/npm/[identifier-withheld]/[identifier-withheld]/dist/esm/index.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "cdn.jsdelivr.net",
+      "path": "/npm/[identifier-withheld]/[identifier-withheld]/turf.min.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/assets/[identifier-withheld]",
+      "http_status": 200,
+      "resource_type": "stylesheet",
+      "method": "GET"
+    },
+    {
+      "host": "cdn.forge.tylertech.com",
+      "path": "/v1/libs/[identifier-withheld]/[identifier-withheld]/index.js",
+      "http_status": 404,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/assets/[identifier-withheld]",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/static_js/mapbox-gl.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "cdn3.devexpress.com",
+      "path": "/jslib/22.1.6/css/dx.light.css",
+      "http_status": 200,
+      "resource_type": "stylesheet",
+      "method": "GET"
+    },
+    {
+      "host": "cdn3.devexpress.com",
+      "path": "/jslib/22.1.6/js/dx.all.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "cdn3.devexpress.com",
+      "path": "/jslib/22.1.6/css/dx.common.css",
+      "http_status": 200,
+      "resource_type": "stylesheet",
+      "method": "GET"
+    },
+    {
+      "host": "fonts.gstatic.com",
+      "path": "/s/opensans/v44/memvYaGs126MiZpBA-UvWbX2vVnXBbObj2OVTS-muw.woff2",
+      "http_status": 200,
+      "resource_type": "font",
+      "method": "GET"
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/auth/auth0",
+      "http_status": 302,
+      "resource_type": "document",
+      "method": "GET"
+    },
+    {
+      "host": "socrata.auth0.com",
+      "path": "/authorize",
+      "http_status": 302,
+      "resource_type": "document",
+      "method": "GET"
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/auth/oauth2/callback",
+      "http_status": 302,
+      "resource_type": "document",
+      "method": "GET"
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/svg/mapboxgl-ctrl-zoom-in.svg",
+      "http_status": 200,
+      "resource_type": "image",
+      "method": "GET"
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/svg/mapboxgl-ctrl-fullscreen.svg",
+      "http_status": 200,
+      "resource_type": "image",
+      "method": "GET"
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/svg/mapboxgl-ctrl-compass.svg",
+      "http_status": 200,
+      "resource_type": "image",
+      "method": "GET"
+    },
+    {
+      "host": "fonts.gstatic.com",
+      "path": "/s/opensans/v44/memtYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWqWuU6F.woff2",
+      "http_status": 200,
+      "resource_type": "font",
+      "method": "GET"
+    },
+    {
+      "host": "cdnjs.cloudflare.com",
+      "path": "/ajax/libs/font-awesome/6.1.2/webfonts/fa-solid-900.woff2",
+      "http_status": 200,
+      "resource_type": "font",
+      "method": "GET"
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/svg/mapboxgl-ctrl-zoom-out.svg",
+      "http_status": 200,
+      "resource_type": "image",
+      "method": "GET"
+    },
+    {
+      "host": "www.google-analytics.com",
+      "path": "/analytics.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "cdn.pendo.io",
+      "path": "/agent/static/2cc57f6a-e901-45a8-7458-a3f39136ec60/pendo.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": null,
+      "path": "[non-http]",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/api/shapes_extent.json",
+      "http_status": 200,
+      "resource_type": "xhr",
+      "method": "GET",
+      "json_type": "list",
+      "list_length": 3
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/assets/[identifier-withheld]",
+      "http_status": 200,
+      "resource_type": "image",
+      "method": "GET"
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/assets/icomoon.ttf",
+      "http_status": 200,
+      "resource_type": "font",
+      "method": "GET"
+    },
+    {
+      "host": "api.mapbox.com",
+      "path": "/styles/v1/socrata/ciwo5ilpz00in2qoiahsqyz5b",
+      "http_status": 200,
+      "resource_type": "fetch",
+      "method": "GET",
+      "json_type": "dict",
+      "top_level_keys": [
+        "version",
+        "name",
+        "metadata",
+        "center",
+        "zoom",
+        "bearing",
+        "pitch",
+        "sources",
+        "sprite",
+        "glyphs",
+        "layers",
+        "created",
+        "modified",
+        "id",
+        "owner",
+        "visibility",
+        "protected",
+        "draft"
+      ],
+      "list_lengths": {
+        "center": 2,
+        "layers": 100
+      }
+    },
+    {
+      "host": "api.mapbox.com",
+      "path": "/styles/v1/socrata/ciwo5ilpz00in2qoiahsqyz5b/65klq17p6pr0fir2rzzr6dcme/sprite.png",
+      "http_status": 200,
+      "resource_type": "fetch",
+      "method": "GET"
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/api/tickets/other_pins_count.json",
+      "http_status": 200,
+      "resource_type": "xhr",
+      "method": "GET",
+      "json_type": "dict",
+      "top_level_keys": [],
+      "list_lengths": {}
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/api/shapes.json",
+      "http_status": 200,
+      "resource_type": "xhr",
+      "method": "GET",
+      "json_type": "list",
+      "list_length": 3
+    },
+    {
+      "host": "api.mapbox.com",
+      "path": "/styles/v1/socrata/ciwo5ilpz00in2qoiahsqyz5b/65klq17p6pr0fir2rzzr6dcme/sprite.json",
+      "http_status": 200,
+      "resource_type": "fetch",
+      "method": "GET",
+      "json_type": "dict",
+      "top_level_keys": [
+        "airfield-15",
+        "airport-15",
+        "alcohol-shop-15",
+        "amusement-park-15",
+        "aquarium-15",
+        "art-gallery-15",
+        "attraction-15",
+        "bakery-15",
+        "bank-15",
+        "bar-15",
+        "beer-15",
+        "bicycle-15",
+        "bicycle-share-15",
+        "bus-15",
+        "cafe-15",
+        "campsite-15",
+        "car-15",
+        "castle-15",
+        "cemetery-15",
+        "cinema-15",
+        "circle-15",
+        "circle-stroked-15",
+        "clothing-store-15",
+        "college-15",
+        "dentist-15",
+        "doctor-15",
+        "dog-park-15",
+        "drinking-water-15",
+        "embassy-15",
+        "entrance-15"
+      ],
+      "list_lengths": {}
+    },
+    {
+      "host": "api.mapbox.com",
+      "path": "/v4/mapbox.mapbox-streets-v8.json",
+      "http_status": 200,
+      "resource_type": "fetch",
+      "method": "GET",
+      "json_type": "dict",
+      "top_level_keys": [
+        "attribution",
+        "bounds",
+        "center",
+        "created",
+        "filesize",
+        "format",
+        "id",
+        "language_options",
+        "mapbox_logo",
+        "maxzoom",
+        "minzoom",
+        "modified",
+        "name",
+        "private",
+        "scheme",
+        "tilejson",
+        "tiles",
+        "vector_layers",
+        "webpage",
+        "worldview_default",
+        "worldview_options"
+      ],
+      "list_lengths": {
+        "bounds": 4,
+        "center": 3,
+        "tiles": 2,
+        "vector_layers": 16
+      }
+    },
+    {
+      "host": "platform.twitter.com",
+      "path": "/widgets/widget_iframe.1227a5674072e080ffb1ba14ac0c1079.html",
+      "http_status": 200,
+      "resource_type": "document",
+      "method": "GET"
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/api/tickets/clusters.json",
+      "http_status": 200,
+      "resource_type": "xhr",
+      "method": "GET",
+      "json_type": "dict",
+      "top_level_keys": [
+        "api_data",
+        "soql_queries"
+      ],
+      "list_lengths": {
+        "api_data": 0,
+        "soql_queries": 0
+      }
+    },
+    {
+      "host": "api.mapbox.com",
+      "path": "/v4/mapbox.mapbox-streets-v8/[identifier-withheld]/[identifier-withheld]/191.vector.pbf",
+      "http_status": 200,
+      "resource_type": "fetch",
+      "method": "GET"
+    },
+    {
+      "host": "api.mapbox.com",
+      "path": "/v4/mapbox.mapbox-streets-v8/[identifier-withheld]/[identifier-withheld]/190.vector.pbf",
+      "http_status": 200,
+      "resource_type": "fetch",
+      "method": "GET"
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/api/tickets_trends/historical_wise.json",
+      "http_status": 200,
+      "resource_type": "xhr",
+      "method": "GET",
+      "json_type": "dict",
+      "top_level_keys": [
+        "api_data",
+        "soql_queries"
+      ],
+      "list_lengths": {
+        "api_data": 0,
+        "soql_queries": 0
+      }
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/api/tickets/details.json",
+      "http_status": 200,
+      "resource_type": "xhr",
+      "method": "GET",
+      "json_type": "dict",
+      "top_level_keys": [
+        "api_data",
+        "soql_queries"
+      ],
+      "list_lengths": {
+        "soql_queries": 0
+      }
+    },
+    {
+      "host": "api.mapbox.com",
+      "path": "/v4/mapbox.mapbox-streets-v8/[identifier-withheld]/[identifier-withheld]/95.vector.pbf",
+      "http_status": 200,
+      "resource_type": "fetch",
+      "method": "GET"
+    },
+    {
+      "host": "events.mapbox.com",
+      "path": "/events/v2",
+      "http_status": 204,
+      "resource_type": "fetch",
+      "method": "POST"
+    },
+    {
+      "host": "api.mapbox.com",
+      "path": "/fonts/v1/socrata/Open%20Sans%20Regular,Arial%20Unicode%20MS%20Regular/0-255.pbf",
+      "http_status": 200,
+      "resource_type": "fetch",
+      "method": "GET"
+    },
+    {
+      "host": "api.mapbox.com",
+      "path": "/fonts/v1/socrata/Open%20Sans%20Bold,Arial%20Unicode%20MS%20Bold/0-255.pbf",
+      "http_status": 200,
+      "resource_type": "fetch",
+      "method": "GET"
+    },
+    {
+      "host": "api.mapbox.com",
+      "path": "/fonts/v1/socrata/Open%20Sans%20Semibold,Arial%20Unicode%20MS%20Bold/0-255.pbf",
+      "http_status": 200,
+      "resource_type": "fetch",
+      "method": "GET"
+    },
+    {
+      "host": "syndication.twitter.com",
+      "path": "/settings",
+      "http_status": 200,
+      "resource_type": "fetch",
+      "method": "GET",
+      "json_type": "dict",
+      "top_level_keys": [
+        "should_obtain_cookie_consent",
+        "features"
+      ],
+      "list_lengths": {}
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/api/shapes.geojson",
+      "http_status": 200,
+      "resource_type": "fetch",
+      "method": "GET",
+      "json_type": "dict",
+      "top_level_keys": [
+        "type",
+        "features"
+      ],
+      "list_lengths": {
+        "features": 57
+      }
+    },
+    {
+      "host": "www.google-analytics.com",
+      "path": "/j/collect",
+      "http_status": 200,
+      "resource_type": "xhr",
+      "method": "POST"
+    },
+    {
+      "host": "data.pendo.io",
+      "path": "/data/guide.gif/2cc57f6a-e901-45a8-7458-a3f39136ec60",
+      "http_status": 200,
+      "resource_type": "image",
+      "method": "GET"
+    },
+    {
+      "host": "data.pendo.io",
+      "path": "/data/recordingconf/2cc57f6a-e901-45a8-7458-a3f39136ec60",
+      "http_status": 200,
+      "resource_type": "fetch",
+      "method": "GET",
+      "json_type": "dict",
+      "top_level_keys": [
+        "enable",
+        "keyframeEventFrequency",
+        "keyframeTimeFrequency",
+        "recordingSizeLimit",
+        "inactivityDuration",
+        "maskedSelectors",
+        "unmaskedSelectors",
+        "blockedSelectors",
+        "maskInputOptions",
+        "privateByDefault",
+        "recordCrossOriginIframes"
+      ],
+      "list_lengths": {
+        "maskedSelectors": 1,
+        "unmaskedSelectors": 15,
+        "blockedSelectors": 2
+      }
+    },
+    {
+      "host": "api.mapbox.com",
+      "path": "/map-sessions/v1",
+      "http_status": 200,
+      "resource_type": "fetch",
+      "method": "GET"
+    },
+    {
+      "host": "data.pendo.io",
+      "path": "/data/guide.js/2cc57f6a-e901-45a8-7458-a3f39136ec60",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "data.pendo.io",
+      "path": "/data/ptm.gif/2cc57f6a-e901-45a8-7458-a3f39136ec60",
+      "http_status": 200,
+      "resource_type": "image",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/[identifier-withheld]/UbSIMbnFK7nM12mpkr4eajHZ8Nc/SoOiDbT04SFfshmFS3RB2MwD9Z0.guide.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/[identifier-withheld]/UbSIMbnFK7nM12mpkr4eajHZ8Nc/biFAPM6xiD20zSnmAsD-gsOvj9w.guide.css",
+      "http_status": 200,
+      "resource_type": "stylesheet",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/[identifier-withheld]/UbSIMbnFK7nM12mpkr4eajHZ8Nc/Be10vMkP_dNt924gFO-k0uEF-Ik.dom.jsonp",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/[identifier-withheld]/s-M4wILrqAFff8uwjjX3UCChpOk/MsaI_nGcgANUe16GhLVM26kuGi8.dom.jsonp",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/U6uJLBbhzIMvoq7O8TVZ_ZPP6RM/ypeFy-JkCMA04yjZr_S0T1_vUtM/5BzgMk2-8I_dl-ciOVNd274cWS8.dom.jsonp",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "data.pendo.io",
+      "path": "/data/rec/2cc57f6a-e901-45a8-7458-a3f39136ec60",
+      "http_status": 200,
+      "resource_type": "fetch",
+      "method": "POST",
+      "inspection": "unavailable"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/xHMF3xNtg8nF9YFeuVX9sJUKg68/yB9JYoodCnJxagCof6q-XYpA1d4/nRTytax13jNnRjus4vNZEPxZO00.dom.jsonp",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/ST3YWwk1vh0cd6Z7kKhaemeN2ko/2IoGnt9cg0eER57zbqov0bz0Ji8/W6_RgXDUPeanNKzV5zN_2MoOAZU.dom.jsonp",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/cQBf-W2wxUjyhpXITN-k0VJWvA4/ZoepwoFA52d5rszqxy3w8YUZl8U/E58_6gBU1nAPtkSpLLKcW3-wHss.dom.jsonp",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/Dq4NX_t5JaMfmnzJcoyrTela12M/LpI5zycZQrh82pj7um9uVVZZ2jw/iYziYnPIkWJ68gdOCvu1JHMzNsA.dom.jsonp",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/YFFtijxJRqgvPN3r_IT4cOCZfQ0/Q0BCsHdBsO4gGswOcNTsjrlMGk0/L1YqwpiDvrYYZbVt32faVrTViZM.dom.jsonp",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/YYeeb7kwQqWy7pBXEv0aSTBNPFQ/i6LlFoASJWXoe7-jE3eWlwTIWWk/jORqN3IDUdMjAXoG_Gn9mSlazSg.dom.jsonp",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/yYriWtHuM2cgno97WaYeEvjysN0/M41GmhpQVaO65jUk9JdKxROGrJk/XP-AeH6s7TiTK9u8Rzxm8suIJNQ.dom.jsonp",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/HD8QD-lSO-nHdoT2sPwxt9JxkI0/HRi7LsA95aoa0dyweIX1leejO1g/x8DEyqyLH0jHbTF-N3rgudAc1wU.dom.jsonp",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/0LxsYjVpVK6JCitHKj7KqrjXyc0/cOXw06RFwUTYLMNvhYaCOYOwN4I/E6h60_5BxzQ-okFwf2dtauyotCM.dom.jsonp",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/sTnblqdoWp_YEgqJnPYxUejOT9o/_5nHXFru0w6GjE4h2BJQvCezFOI/apU7VXOnapUDiO6-KQtolduCIRg.dom.jsonp",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/v1yfZ2AgEbjgOESJVzLvC3Cu80U/qgkHbhermrYFNqjom-WlMlKXQiQ/WbCTAWAoKaHnWCcrdZe1LeUrZLw.dom.jsonp",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/Wq_haNWZgpSIa0W1MsVINbTHfG0/phr11nUKFjqKWt7viCvaA_5bldA/5zBTVgn7KhNShzPV6hJlsi7Bb8c.dom.jsonp",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/G4iku8KzY73T8xn1aUYNUJ7mzNY/LG-35apaOmndf83Rr8zz4DexGpA/RmYaket9kyNfrvEylt1aInrZisc.dom.jsonp",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/bogUnBFcv-lp_gco_LXRvNpEUKw/PRoBNgY1BwhBiOrBCYiQRY4P9XY/0qtFRNfsFFMUhS0TQB1j0H1R3aM.dom.jsonp",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/IPNxyKfoMW5l6Oy3TSA_eNjXs2I/SkQ12SCuuBmTfmQTOx2DMXZKD7o/wVwUnxlMxmxjWGyourQvRpTd324.dom.jsonp",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "pendo-static-5458378806263808.storage.googleapis.com",
+      "path": "/guide-content/O2xgsKk_8L86dEVkQiDcNf43oDU/3JHveqK8QvS6-C7aHmM-R1e8g-k/Jq0lrrW0uIgKg9xlZML0m4L_Cxg.dom.jsonp",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/auth_login.html",
+      "http_status": 200,
+      "resource_type": "document",
+      "method": "GET"
+    },
+    {
+      "host": "code.jquery.com",
+      "path": "/jquery-3.7.1.min.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "global.oktacdn.com",
+      "path": "/okta-signin-widget/7.16.2/css/okta-sign-in.min.css",
+      "http_status": 200,
+      "resource_type": "stylesheet",
+      "method": "GET"
+    },
+    {
+      "host": "cdn.auth0.com",
+      "path": "/js/auth0/9.11/auth0.min.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "cdn.auth0.com",
+      "path": "/js/lock/11.35.0/lock.min.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "global.oktacdn.com",
+      "path": "/okta-signin-widget/7.16.2/js/okta-sign-in.min.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "cdn.auth0.com",
+      "path": "/js/lock/11.35.0/en.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "socrata.auth0.com",
+      "path": "/client/dN5EjJAVyuBQptlUvGVTw03ggX8kkmCl.js",
+      "http_status": 200,
+      "resource_type": "script",
+      "method": "GET"
+    },
+    {
+      "host": "laramiecounty-letmsp.connect.socrata.com",
+      "path": "/images/tyler-logo.png",
+      "http_status": 200,
+      "resource_type": "image",
+      "method": "GET"
+    },
+    {
+      "host": "socrata.auth0.com",
+      "path": "/authorize",
+      "http_status": 200,
+      "resource_type": "document",
+      "method": "GET"
+    }
+  ],
+  "failed_requests": [
+    {
+      "host": "cdn.forge.tylertech.com",
+      "path": "/v1/libs/[identifier-withheld]/[identifier-withheld]/index.js",
+      "resource_type": "script"
+    },
+    {
+      "host": "cdn.forge.tylertech.com",
+      "path": "/v1/libs/[identifier-withheld]/[identifier-withheld]/forge.css",
+      "resource_type": "stylesheet"
+    },
+    {
+      "host": "cdn.forge.tylertech.com",
+      "path": "/v1/libs/[identifier-withheld]/[identifier-withheld]/forge.css",
+      "resource_type": "stylesheet"
+    },
+    {
+      "host": "cdn.forge.tylertech.com",
+      "path": "/v1/libs/[identifier-withheld]/[identifier-withheld]/index.js",
+      "resource_type": "script"
+    },
+    {
+      "host": "data.pendo.io",
+      "path": "/data/rec/2cc57f6a-e901-45a8-7458-a3f39136ec60",
+      "resource_type": "fetch"
+    }
+  ],
+  "candidate_dataset_ids": [
+    "28is-xicw",
+    "2iyf-sica",
+    "2rdc-p7hz",
+    "3kwn-xwak",
+    "4wbh-gkhh",
+    "6d2n-p6v6",
+    "7g97-g2bj",
+    "8iju-q4wq",
+    "9mq6-m663",
+    "am9f-2asj",
+    "b9nz-a9kb",
+    "bjcv-ncda",
+    "bm7s-5tcm",
+    "c23b-ka2y",
+    "c2vd-vf25",
+    "cj34-gjvv",
+    "duww-6an7",
+    "etar-j43g",
+    "f9mu-89k4",
+    "fast-food",
+    "fkw8-wwew",
+    "gufr-x2xg",
+    "haus-735n",
+    "hdz9-b8ch",
+    "hsfq-p7cr",
+    "i5td-6wqd",
+    "iguz-m3v5",
+    "ijry-iguh",
+    "j5va-nk8z",
+    "jgtq-znyx",
+    "jijd-p2qy",
+    "jxk6-anbz",
+    "line-join",
+    "list-item",
+    "m9tz-xs4u",
+    "pqqx-6dt2",
+    "s3kj-tdhi",
+    "sr27-kjj3",
+    "szbx-ryqt",
+    "text-font",
+    "text-halo",
+    "text-line",
+    "text-size",
+    "town-hall",
+    "ty8f-u7he",
+    "vidp-5aub",
+    "vipf-brze",
+    "yhe8-tg46",
+    "ztqt-4hhi"
+  ],
+  "notice": "Public unauthenticated diagnostic. No credentials, cookies, query strings, page text, screenshots, incident rows, or response bodies are saved. Endpoints and IDs are candidates only."
+}
