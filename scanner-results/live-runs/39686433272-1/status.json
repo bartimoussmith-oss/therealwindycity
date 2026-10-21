@@ -2,8 +2,8 @@
   "feed_id": "47003",
   "status": "capturing",
   "started_at_utc": "2026-10-21T22:26:32.057576+00:00",
-  "last_audio_at_utc": "2026-10-21T22:57:48.492826+00:00",
-  "bytes_received": 3878912,
+  "last_audio_at_utc": "2026-10-21T23:02:51.697002+00:00",
+  "bytes_received": 4485120,
   "segments_saved": 36,
   "connections": [
     {
@@ -15,5 +15,5 @@
   "continuous_capture_guaranteed": false,
   "planned_capture_seconds": 3900,
   "notice": "Best-effort public unverified capture. Separate runs may overlap or have gaps. Raw audio is temporary; recent archives are processed separately, not yet reconciled against live gaps.",
-  "heartbeat_at_utc": "2026-10-21T22:57:49.808787+00:00"
+  "heartbeat_at_utc": "2026-10-21T23:02:52.644025+00:00"
 }
