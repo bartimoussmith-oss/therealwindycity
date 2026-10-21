@@ -14,12 +14,49 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg
-          python -m pip install openai-whisper
+          python -m pip install openai-whisper requests
       - name: Record five minutes
+        env:
+          BROADCASTIFY_USERNAME: ${{ secrets.BROADCASTIFY_USERNAME }}
+          BROADCASTIFY_PASSWORD: ${{ secrets.BROADCASTIFY_PASSWORD }}
         shell: bash
         run: |
           set -o pipefail
-          timeout 420 ffmpeg -nostdin -hide_banner -loglevel warning -rw_timeout 30000000 -i 'https://audio.broadcastify.com/47003.mp3' -t 300 -vn -ac 1 -ar 16000 -y results/capture.wav 2>&1 | tee results/capture.log
+          timeout 420 python -u - <<'PY' 2>&1 | tee results/capture.log
+          import os, subprocess, time
+          import requests
+
+          username = os.environ.get('BROADCASTIFY_USERNAME', '')
+          password = os.environ.get('BROADCASTIFY_PASSWORD', '')
+          if not username or not password:
+              raise SystemExit('Missing BROADCASTIFY_USERNAME or BROADCASTIFY_PASSWORD repository secret.')
+          url = 'https://audio.broadcastify.com/47003.mp3'
+          try:
+              with requests.get(url, auth=(username, password), stream=True, timeout=(20, 30), allow_redirects=False) as response:
+                  print('Audio server HTTP status:', response.status_code)
+                  if response.status_code != 200:
+                      raise SystemExit('Audio access failed. No credentials or response body logged.')
+                  content_type = response.headers.get('Content-Type', '').lower()
+                  if 'text/' in content_type or 'json' in content_type:
+                      raise SystemExit('Server returned non-audio content; capture stopped.')
+                  started = time.monotonic()
+                  total = 0
+                  with open('results/capture.mp3', 'wb') as output:
+                      for chunk in response.iter_content(chunk_size=1024):
+                          if chunk:
+                              output.write(chunk)
+                              total += len(chunk)
+                          if time.monotonic() - started >= 300:
+                              break
+                  elapsed = time.monotonic() - started
+                  print(f'Received {total} bytes over {elapsed:.1f} seconds.')
+                  if not total or elapsed < 295:
+                      raise SystemExit('Stream ended before the five-minute capture completed.')
+          except requests.RequestException as exc:
+              raise SystemExit('Audio request failed: ' + type(exc).__name__)
+          subprocess.run(['ffmpeg', '-nostdin', '-hide_banner', '-loglevel', 'warning', '-i', 'results/capture.mp3', '-t', '300', '-vn', '-ac', '1', '-ar', '16000', '-y', 'results/capture.wav'], check=True, timeout=60)
+          print('Capture decoded successfully.')
+          PY
       - name: Transcribe
         shell: bash
         run: |
@@ -28,7 +65,7 @@ jobs:
           whisper results/capture.wav --model tiny.en --device cpu --fp16 False --language en --output_format txt --output_dir results 2>&1 | tee results/transcription.log
       - name: Remove audio
         if: always()
-        run: rm -f results/capture.wav
+        run: rm -f results/capture.wav results/capture.mp3
       - name: Save transcript and logs
         if: always()
         uses: actions/upload-artifact@v4
