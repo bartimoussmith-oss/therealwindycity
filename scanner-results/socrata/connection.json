@@ -1,0 +1,22 @@
+{
+  "checked_at_utc": "2026-10-21T22:52:30.901935+00:00",
+  "portal": "https://laramiecounty-letmsp.connect.socrata.com",
+  "login_entry": "https://laramiecounty-letmsp.connect.socrata.com/auth_login.html?auto_close=true",
+  "status": "same_session_dashboard_inspected_requires_record_validation",
+  "login_form_submitted": true,
+  "authentication_verified": false,
+  "correlation_enabled": false,
+  "dashboard_date_filter": {
+    "start": "2020-01-01",
+    "end": "2026-10-04"
+  },
+  "notice": "Read-only diagnostic. No account details, cookies, credentials, screenshots, HTML dumps, or incident rows are published. Candidate endpoints require validation. Dashboard retains supplied filters, not full archive scope.",
+  "dashboard_requests": [],
+  "candidate_dataset_ids": [],
+  "errors": [],
+  "secrets_present": true,
+  "login_destination_host": "laramiecounty-letmsp.connect.socrata.com",
+  "session_identity_http_status": 404,
+  "dashboard_document_http_status": 200,
+  "dashboard_destination_host": "laramiecounty-letmsp.connect.socrata.com"
+}
