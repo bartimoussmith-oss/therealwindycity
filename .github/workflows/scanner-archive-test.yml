@@ -1,0 +1,90 @@
+name: Scanner archive test
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Archive date MM/DD/YYYY; blank uses the date of sample 47003-1792597004'
+        required: false
+        type: string
+permissions:
+  contents: read
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Prepare
+        run: |
+          mkdir -p results
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install requests faster-whisper
+      - name: Download and transcribe one archive
+        env:
+          ARCHIVE_DATE: ${{ inputs.date }}
+          BC_USER: ${{ secrets.BROADCASTIFY_USERNAME }}
+          BC_PASS: ${{ secrets.BROADCASTIFY_PASSWORD }}
+        shell: bash
+        run: |
+          set -o pipefail
+          python -u - <<'PY' 2>&1 | tee results/run.log
+          import datetime, json, os, re
+          from pathlib import Path
+          from zoneinfo import ZoneInfo
+          import requests
+          from faster_whisper import WhisperModel
+
+          if not os.environ.get('BC_USER') or not os.environ.get('BC_PASS'):
+              raise SystemExit('Missing Broadcastify repository secrets.')
+          supplied = os.environ.get('ARCHIVE_DATE', '').strip()
+          day = datetime.datetime.strptime(supplied, '%m/%d/%Y').date() if supplied else datetime.datetime.fromtimestamp(1792597004, ZoneInfo('America/Denver')).date()
+          session = requests.Session()
+          session.headers['User-Agent'] = 'ScannerArchiveTest/1.0'
+          response = session.post('https://www.broadcastify.com/login/', data={'username': os.environ['BC_USER'], 'password': os.environ['BC_PASS'], 'action': 'auth', 'redirect': 'https://www.broadcastify.com'}, allow_redirects=False, timeout=30)
+          if not any(cookie.name == 'bcfyuser1' and cookie.value for cookie in session.cookies):
+              raise SystemExit(f'Archive login failed (HTTP {response.status_code}); response and cookies withheld.')
+          response = session.get('https://www.broadcastify.com/archives/ajax.php', params={'feedId': '47003', 'date': day.strftime('%m/%d/%Y')}, timeout=30)
+          response.raise_for_status()
+          try:
+              rows = response.json()['data']
+          except (ValueError, KeyError, TypeError):
+              raise SystemExit('Archive listing was not the expected JSON. No response body logged.')
+          if not rows:
+              raise SystemExit('No archives listed on this date. Try another date.')
+          archive_id = str(rows[0][0])
+          if not re.fullmatch(r'[A-Za-z0-9_.-]+', archive_id):
+              raise SystemExit('Unexpected archive identifier; stopping.')
+          print('Available recordings on date:', len(rows))
+          print('Testing one recording:', archive_id, 'date:', day.isoformat())
+          download_url = f'https://www.broadcastify.com/archives/downloadv2/47003/{day:%Y%m%d}/{archive_id}'
+          audio = Path('results/archive.mp3')
+          with session.get(download_url, stream=True, timeout=(30, 60)) as response:
+              response.raise_for_status()
+              content_type = response.headers.get('Content-Type', '').lower()
+              if 'text/' in content_type or 'json' in content_type:
+                  raise SystemExit('Download returned non-audio content; stopping.')
+              with audio.open('wb') as output:
+                  for chunk in response.iter_content(65536):
+                      output.write(chunk)
+                      if output.tell() > 100_000_000:
+                          raise SystemExit('Archive exceeded 100 MB test limit.')
+          print('Downloaded bytes:', audio.stat().st_size)
+          model = WhisperModel('tiny.en', device='cpu', compute_type='int8')
+          segments, info = model.transcribe(str(audio), language='en', vad_filter=True, condition_on_previous_text=False)
+          result = {'feed_id': '47003', 'archive_id': archive_id, 'listing_date': day.isoformat(), 'source': download_url, 'notice': 'Automated unverified transcript; may contain errors. Recording-clock timestamps are not inferred from segment offsets.', 'segments': []}
+          for segment in segments:
+              result['segments'].append({'start_seconds': segment.start, 'end_seconds': segment.end, 'text': segment.text.strip()})
+          Path('results/transcript.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
+          Path('results/transcript.txt').write_text(result['notice'] + '\n' + '\n'.join(f"[{s['start_seconds']:.1f}-{s['end_seconds']:.1f}] {s['text']}" for s in result['segments']), encoding='utf-8')
+          print('Completed transcription; segments:', len(result['segments']))
+          PY
+      - name: Delete audio
+        if: always()
+        run: rm -f results/archive.mp3
+      - name: Save results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scanner-archive-test-${{ github.run_id }}
+          path: results/
+          retention-days: 7
