@@ -1,0 +1,35 @@
+name: Scanner best-effort live and recovery
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/scanner-continuous.yml', 'scripts/scanner_continuous.py']
+  workflow_dispatch:
+  schedule:
+    - cron: '41 * * * *'
+permissions:
+  contents: write
+jobs:
+  scanner:
+    strategy:
+      fail-fast: false
+      matrix:
+        mode: [live, recent]
+    concurrency:
+      group: scanner-${{ matrix.mode }}-${{ matrix.mode == 'live' && github.run_id || 'serial' }}
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    timeout-minutes: 110
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install requests 'faster-whisper==1.2.1' 'av==18.1.0'
+      - name: Capture or recover
+        env:
+          BC_USER: ${{ secrets.BROADCASTIFY_USERNAME }}
+          BC_PASS: ${{ secrets.BROADCASTIFY_PASSWORD }}
+        run: python scripts/scanner_continuous.py '${{ matrix.mode }}'
