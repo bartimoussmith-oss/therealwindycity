@@ -1,0 +1,23 @@
+name: Launch Laramie transcription
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/launch-laramie.yml']
+permissions:
+  actions: write
+  contents: read
+jobs:
+  launch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Start fresh-start workflow
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'laramie-archive-fresh-start.yml',
+              ref: 'main'
+            });
