@@ -1,22 +1,169 @@
 {
-  "checked_at_utc": "2026-10-21T22:52:30.901935+00:00",
-  "portal": "https://laramiecounty-letmsp.connect.socrata.com",
-  "login_entry": "https://laramiecounty-letmsp.connect.socrata.com/auth_login.html?auto_close=true",
-  "status": "same_session_dashboard_inspected_requires_record_validation",
+  "checked_at_utc": "2026-10-21T23:31:12.979991+00:00",
+  "status": "application_inspected_no_detail_rows_observed",
+  "secrets_present": true,
   "login_form_submitted": true,
   "authentication_verified": false,
+  "record_access_observed": false,
   "correlation_enabled": false,
+  "login_hosts": [
+    "laramiecounty-letmsp.connect.socrata.com"
+  ],
+  "blocked_hosts": [
+    "platform.twitter.com",
+    "cdn.pendo.io",
+    "www.google-analytics.com",
+    "events.mapbox.com"
+  ],
+  "application_responses": [
+    {
+      "phase": "dashboard_after_login",
+      "path": "/api/shapes_extent.json",
+      "http_status": 200,
+      "query_parameter_names": []
+    },
+    {
+      "phase": "dashboard_after_login",
+      "path": "/api/shapes.json",
+      "http_status": 200,
+      "query_parameter_names": [
+        "only_meta"
+      ]
+    },
+    {
+      "phase": "dashboard_after_login",
+      "path": "/api/shapes.geojson",
+      "http_status": 200,
+      "query_parameter_names": [
+        "simplify_for_zoom"
+      ],
+      "top_level_keys": [
+        "type",
+        "features"
+      ]
+    },
+    {
+      "phase": "dashboard_after_login",
+      "path": "/api/tickets/other_pins_count.json",
+      "http_status": 200,
+      "query_parameter_names": [
+        "categories",
+        "end_date",
+        "start_date"
+      ],
+      "top_level_keys": [
+        "tickets_count"
+      ]
+    },
+    {
+      "phase": "dashboard_after_login",
+      "path": "/api/tickets_trends/historical_wise.json",
+      "http_status": 200,
+      "query_parameter_names": [
+        "categories",
+        "end_date",
+        "lat1",
+        "lat2",
+        "lng1",
+        "lng2",
+        "shape_group_id",
+        "start_date",
+        "zoom"
+      ],
+      "top_level_keys": [
+        "api_data",
+        "soql_queries"
+      ],
+      "api_data_keys": [
+        "records"
+      ],
+      "record_count_returned": 3525,
+      "row_fields": [
+        "count",
+        "dataset_id",
+        "date",
+        "super_category",
+        "ticket_dataset_entry_id"
+      ],
+      "underlying_dataset_ids": [
+        "35sf-bu8v",
+        "cvz7-2j69"
+      ]
+    },
+    {
+      "phase": "dashboard_after_login",
+      "path": "/api/tickets/clusters.json",
+      "http_status": 200,
+      "query_parameter_names": [
+        "categories",
+        "end_date",
+        "lat1",
+        "lat2",
+        "lng1",
+        "lng2",
+        "shape_group_id",
+        "start_date",
+        "zoom"
+      ],
+      "top_level_keys": [
+        "api_data",
+        "soql_queries"
+      ],
+      "api_data_keys": [
+        "records"
+      ],
+      "record_count_returned": 5005,
+      "row_fields": [
+        "count",
+        "dataset_id",
+        "snap",
+        "super_category"
+      ],
+      "underlying_dataset_ids": [
+        "35sf-bu8v",
+        "cvz7-2j69"
+      ]
+    },
+    {
+      "phase": "dashboard_after_login",
+      "path": "/api/tickets/details.json",
+      "http_status": 200,
+      "query_parameter_names": [
+        "categories",
+        "end_date",
+        "lat1",
+        "lat2",
+        "lng1",
+        "lng2",
+        "shape_group_id",
+        "start_date",
+        "zoom"
+      ],
+      "top_level_keys": [
+        "api_data",
+        "soql_queries"
+      ],
+      "api_data_keys": [
+        "records",
+        "count",
+        "incomplete"
+      ],
+      "record_count_returned": 0,
+      "row_fields": [],
+      "incomplete": true,
+      "reported_count": 431018,
+      "underlying_dataset_ids": [
+        "35sf-bu8v",
+        "cvz7-2j69"
+      ]
+    }
+  ],
+  "errors": [],
+  "notice": "Read-only application diagnostic. No account identifiers, credentials, cookies, screenshots, HTML dumps, or incident rows are published. Form submission and nonempty public responses do not alone prove authentication.",
   "dashboard_date_filter": {
     "start": "2020-01-01",
-    "end": "2026-10-04"
+    "end": "2026-10-21"
   },
-  "notice": "Read-only diagnostic. No account details, cookies, credentials, screenshots, HTML dumps, or incident rows are published. Candidate endpoints require validation. Dashboard retains supplied filters, not full archive scope.",
-  "dashboard_requests": [],
-  "candidate_dataset_ids": [],
-  "errors": [],
-  "secrets_present": true,
-  "login_destination_host": "laramiecounty-letmsp.connect.socrata.com",
-  "session_identity_http_status": 404,
-  "dashboard_document_http_status": 200,
-  "dashboard_destination_host": "laramiecounty-letmsp.connect.socrata.com"
+  "logout_control_visible": false,
+  "authentication_notice": "Login submitted through normal Auth0 flow; session identity still requires a verified application-specific check. A logout element or successful record response alone is not conclusive."
 }
