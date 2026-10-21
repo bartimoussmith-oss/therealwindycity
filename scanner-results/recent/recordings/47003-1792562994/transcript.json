@@ -1,0 +1,118 @@
+{
+  "archive_id": "47003-1792562994",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1792562994",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "10/21/2026",
+    "startDisplay": "12:09 AM",
+    "endDisplay": "12:29 AM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1249.308,
+  "segments": [
+    {
+      "start_seconds": 543.63,
+      "end_seconds": 546.29,
+      "text": "This vegetable 50 a morning fire can cancel",
+      "words": [
+        {
+          "start_seconds": 543.63,
+          "end_seconds": 544.21,
+          "text": " This",
+          "probability": 0.40011560916900635
+        },
+        {
+          "start_seconds": 544.21,
+          "end_seconds": 544.53,
+          "text": " vegetable",
+          "probability": 0.4753904640674591
+        },
+        {
+          "start_seconds": 544.53,
+          "end_seconds": 544.85,
+          "text": " 50",
+          "probability": 0.49123045802116394
+        },
+        {
+          "start_seconds": 544.85,
+          "end_seconds": 545.15,
+          "text": " a",
+          "probability": 0.26105359196662903
+        },
+        {
+          "start_seconds": 545.15,
+          "end_seconds": 545.37,
+          "text": " morning",
+          "probability": 0.15496011078357697
+        },
+        {
+          "start_seconds": 545.37,
+          "end_seconds": 545.65,
+          "text": " fire",
+          "probability": 0.9934089183807373
+        },
+        {
+          "start_seconds": 545.65,
+          "end_seconds": 545.91,
+          "text": " can",
+          "probability": 0.9617497324943542
+        },
+        {
+          "start_seconds": 545.91,
+          "end_seconds": 546.29,
+          "text": " cancel",
+          "probability": 0.8416156768798828
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1161.03,
+      "end_seconds": 1161.93,
+      "text": "Have a good night Tyler.",
+      "words": [
+        {
+          "start_seconds": 1161.03,
+          "end_seconds": 1161.37,
+          "text": " Have",
+          "probability": 0.5476364493370056
+        },
+        {
+          "start_seconds": 1161.37,
+          "end_seconds": 1161.51,
+          "text": " a",
+          "probability": 0.9804438352584839
+        },
+        {
+          "start_seconds": 1161.51,
+          "end_seconds": 1161.53,
+          "text": " good",
+          "probability": 0.9476383328437805
+        },
+        {
+          "start_seconds": 1161.53,
+          "end_seconds": 1161.73,
+          "text": " night",
+          "probability": 0.9758470058441162
+        },
+        {
+          "start_seconds": 1161.73,
+          "end_seconds": 1161.93,
+          "text": " Tyler.",
+          "probability": 0.731840968132019
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    }
+  ]
+}
