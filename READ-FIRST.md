@@ -66,6 +66,7 @@ Coordination is not optional here.
 
 ## Active claims
 
+
 ### claim: miller-estoppel-white-paper-expansion — source expansion and Wyoming-law analysis for the Miller estoppel-effect white paper
 - worker: arena-agent
 - status: done
@@ -217,3 +218,28 @@ auto-redeploys from `main`).
 - 2026-10-18 22:23Z — arena-agent (estoppel-effect-algorithm live integration): following the user's explicit request to apply the research aid to the running site, added `pages/23_Estoppel_Effect.py`. Opening the page automatically builds the analysis, caches it by both input-file hashes, exposes filters and human-review excerpts, and offers JSON/CSV downloads plus a manual rebuild. Added a home-page card in both identical Streamlit entrypoints. Installed Streamlit only in `/tmp` for AppTest validation: the new page rendered 926 source records / 7,678 event clusters / 479 comparison leads with 0 exceptions; the home app showed the new link with 0 exceptions. This is not live until the branch is merged into the deployed `main` branch and Streamlit Cloud completes its normal redeploy.
 
 - 2026-10-18 22:25Z — arena-agent (estoppel-effect-algorithm): PR #11 merged to `main` as `f4fc5086066a0891777f501d35844c9914c962fc`, so the Streamlit Community Cloud auto-deploy trigger is in place. The repository documents that the app runs from `main`; the external Streamlit live URL could not be checked from this sandbox, so actual redeploy completion remains unverified.
+
+
+### claim: archive-freshness — honest status and deployment verification
+- worker: arena-freshness
+- status: done
+- stage: six unit tests passed; synthetic build/render (12 pages) and artifact verifier passed; not deployed
+- scope: tools/build_ai_record.py, NEW tools/ai_record_status.py, NEW tools/check_ai_record.py, NEW tools/test_ai_record_status.py, tools/README-ai-record.md, .github/workflows/ai-record-pages.yml, READ-FIRST.md (claim/log only)
+- started: 2026-10-21T12:20Z
+- updated: 2026-10-21T12:20Z
+- notes: Additive status clarification; preserve source records and existing prose. No other app or repository changes.
+
+- result: Added a static freshness/coverage panel and snapshot metadata, local and post-deploy SHA/run verification, and deployment boundaries documentation. No source data, Streamlit twins, or external repositories changed. Full corpus/network publication was not run.
+
+
+### claim: deployment-agent-handoff — publish cross-repository repair instructions
+- worker: arena-freshness
+- status: done
+- stage: handoff written; publishing with completed freshness safeguards on this session branch
+- scope: NEW DEPLOYMENT-REPAIR-HANDOFF.md; READ-FIRST.md (claim/work-log only); commit and publish the completed archive-freshness changes on this session branch
+- started: 2026-10-21T13:09Z
+- updated: 2026-10-21T13:09Z
+- notes: No external repository changes or live deployments in this task.
+
+
+- result: DEPLOYMENT-REPAIR-HANDOFF.md documents external-repository fixes, diagnosis-only Streamlit work, publication of this repo’s pending changes, acceptance tests, and evidence requirements. No live deployment performed.
