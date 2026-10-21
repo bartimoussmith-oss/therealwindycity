@@ -10,6 +10,9 @@ on:
   push:
     branches: [main, "arena/**"]
     paths:
+      - "tools/ai_record_status.py"
+      - "tools/check_ai_record.py"
+      - "tools/test_ai_record_status.py"
       - "tools/build_ai_record.py"
       - "tools/render_ai_record.py"
       - "tools/ai_record_extract.py"
@@ -56,6 +59,8 @@ jobs:
           pip install pymupdf beautifulsoup4 markdown wordninja rapidocr-onnxruntime
           pip uninstall -y opencv-python || true
           pip install opencv-python-headless
+      - name: Test snapshot and deployment safeguards
+        run: python3 -m unittest discover -s tools -p 'test_ai_record_status.py' -v
       - name: Meeting index from Civic Cheyenne (same grouping as the site)
         run: |
           git clone -q --depth 1 https://github.com/therealwindycity/TheReelWindyCity.git /tmp/fe
@@ -87,6 +92,8 @@ jobs:
             --ocr ai-record-ocr --transcripts /tmp/tr --minutes pipeline/corpus --trees /tmp/trees --drive-db drive-import/master_meetings_database.json.gz --out /tmp/ai-record
       - name: Render static site
         run: python3 -u tools/render_ai_record.py --src /tmp/ai-record --out _site --extra public/index.html=ledger.html
+      - name: Verify rendered snapshot and key pages
+        run: python3 tools/check_ai_record.py --site _site --revision "$GITHUB_SHA" --run "$GITHUB_RUN_ID"
       # Password-gated arrest database -> https://<user>.github.io/therealwindycity/arrest/
       # Static hosting has no server, so the gate is real client-side crypto:
       # tools/build_arrest_page.py shapes the PUBLIC tier only (names and exact
@@ -115,3 +122,12 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Verify the published build (not just deployment completion)
+        env:
+          PUBLISHED_URL: ${{ steps.deployment.outputs.page_url }}
+        run: python3 tools/check_ai_record.py --url "$PUBLISHED_URL" --revision "$GITHUB_SHA" --run "$GITHUB_RUN_ID" --attempts 6

@@ -735,6 +735,9 @@ class Builder:
                       "quality": dict(self.quality)}
         json.dump(self.stats, open(os.path.join(self.out, "indexes", "stats.json"), "w"), indent=1)
         self.files.append("indexes/stats.json")
+        from ai_record_status import snapshot_status, status_panel
+        status = snapshot_status(cat, self.stats)
+        self.write("indexes/status.json", json.dumps(status, indent=2))
         # curated pages: copy from tools/ai_record_static, expanding {{yt:meeting-id@HH:MM:SS}} and {{m:meeting-id}}
         static = self.a.static
         for root, _, fs in os.walk(static):
@@ -743,6 +746,9 @@ class Builder:
                 relp = os.path.relpath(src, static).replace(os.sep, "/")
                 txt = open(src, encoding="utf-8").read()
                 txt = self.expand(relp, txt)
+                if relp == "README.md":
+                    heading, separator, rest = txt.partition("\n\n")
+                    txt = heading + "\n\n" + status_panel(status) + rest
                 self.write(relp, txt)
 
     def expand(self, relp, txt):

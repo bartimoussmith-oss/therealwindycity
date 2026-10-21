@@ -55,3 +55,48 @@ Edit `tools/ai_record_static/` (home page, `llms.txt`, `topics/*`). These placeh
 - `{{stat:meetings}}`, `{{stat:documents}}`, `{{stat:pages}}`, `{{stat:transcripts}}`, `{{stat:minutes}}`, `{{stat:years}}`: snapshot counts.
 
 **Rule for topic pages:** only state what the transcript or minutes show, with a timestamp or meeting link.
+
+## Snapshot freshness and publication verification
+
+The homepage now adds a server-rendered **Archive status and coverage** panel,
+with `indexes/status.json` carrying the same snapshot metadata. This does not
+require JavaScript. Latest indexed date means the maximum date in the meeting
+catalog, including posted meetings; it is not evidence of continuous coverage,
+a completed meeting, or a verified outcome. Collection-check and verified-outcome
+metadata remain null until a provenance-backed implementation records them.
+Build timestamps are explicitly separate. Counts describe generated holdings,
+not the universe of city records or a whole-corpus OCR backlog.
+
+`status.json` records the build SHA and workflow run ID (local builds use
+`local-unversioned`). This metadata is intentionally time-dependent, unlike the
+record text. The Pages workflow runs unit tests, checks the rendered artifact,
+and after deployment fetches the public site to compare both SHA and run ID.
+It also checks the status panel, catalog count consistency, llms.txt, corrections,
+data quality, and a sample meeting page. A successful upload alone is no longer
+a successful verification. Public checks retry six times for CDN propagation,
+then fail visibly rather than claim publication. This is a smoke check, not a
+browser rendering test, an exhaustive link audit, or an official-source audit.
+The stale-upcoming safeguard detects explicit ISO dates near an “upcoming” label;
+it does not interpret all natural-language date formats.
+
+```bash
+python3 -m unittest discover -s tools -p 'test_ai_record_status.py' -v
+python3 tools/check_ai_record.py --site _site
+# Compare a published build to the expected action revision and run:
+python3 tools/check_ai_record.py --url https://bartimoussmith-oss.github.io/therealwindycity/ \
+  --revision <expected-commit-sha> --run <expected-run-id> --attempts 6
+```
+
+### Separate deployments (not interchangeable)
+
+| Address | Project / control boundary |
+|---|---|
+| https://bartimoussmith-oss.github.io/therealwindycity/ | This repository's plain-text mirror; this workflow verifies it |
+| https://therealwindycity.github.io/The-Real-Windy-City-/ | Separate archive repository and Pages workflow |
+| https://therealwindycity.github.io/TheReelWindyCity/ | Separate Civic Cheyenne repository and Pages workflow |
+| https://therealwindycity.streamlit.app/ | Streamlit app; Pages success does not verify its application health |
+
+Changes here do not fix or redeploy the other repositories. In particular, the
+Civic Cheyenne “upcoming” cards and the alternate archive's city-sync/deployment
+coupling need fixes in their owning repositories. No live-health claims are
+stored in this directory table; inspect each service independently.
