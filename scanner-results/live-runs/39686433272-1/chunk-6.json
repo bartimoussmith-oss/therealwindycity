@@ -1,0 +1,23 @@
+{
+  "capture_started_at_utc": "2026-10-21T22:51:47.673407+00:00",
+  "capture_ended_at_utc": "2026-10-21T22:56:48.289857+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 215.1,
+      "end_seconds": 217.06,
+      "text": "Is that Charlie 29 out of the deal?",
+      "avg_logprob": -0.5673791660982019,
+      "review_required": true
+    },
+    {
+      "start_seconds": 218.2,
+      "end_seconds": 218.76,
+      "text": "16-55",
+      "avg_logprob": -0.5673791660982019,
+      "review_required": true
+    }
+  ]
+}
