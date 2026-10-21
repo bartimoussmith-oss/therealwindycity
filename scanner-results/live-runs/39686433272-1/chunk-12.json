@@ -1,0 +1,107 @@
+{
+  "capture_started_at_utc": "2026-10-21T23:22:08.294379+00:00",
+  "capture_ended_at_utc": "2026-10-21T23:27:10.573020+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 184.74,
+      "end_seconds": 185.74,
+      "text": "Smash Charlie 21.",
+      "avg_logprob": -0.33290567994117737,
+      "review_required": true
+    },
+    {
+      "start_seconds": 186.56,
+      "end_seconds": 186.98,
+      "text": "Charlie 21.",
+      "avg_logprob": -0.33290567994117737,
+      "review_required": true
+    },
+    {
+      "start_seconds": 193.1,
+      "end_seconds": 197.26,
+      "text": "I'll be in route with Charlie 2, so there's no that 9-1-1 can't go if you can cancel the other unit.",
+      "avg_logprob": -0.33290567994117737,
+      "review_required": true
+    },
+    {
+      "start_seconds": 198.8,
+      "end_seconds": 200.12,
+      "text": "Charlie 28 has already arrived on scene.",
+      "avg_logprob": -0.33290567994117737,
+      "review_required": true
+    },
+    {
+      "start_seconds": 201.6,
+      "end_seconds": 201.94,
+      "text": "Okay.",
+      "avg_logprob": -0.33290567994117737,
+      "review_required": true
+    },
+    {
+      "start_seconds": 229.47,
+      "end_seconds": 231.01,
+      "text": "Dispatch, Charlie 28.",
+      "avg_logprob": -0.37686002254486084,
+      "review_required": true
+    },
+    {
+      "start_seconds": 233.53,
+      "end_seconds": 234.13,
+      "text": "Charlie 28.",
+      "avg_logprob": -0.37686002254486084,
+      "review_required": true
+    },
+    {
+      "start_seconds": 241.71,
+      "end_seconds": 248.67,
+      "text": "Make contact with residents. A child got a hold of the phone. No emergency. You can cancel all of the units. I'll be clear.",
+      "avg_logprob": -0.298362405494202,
+      "review_required": true
+    },
+    {
+      "start_seconds": 250.41,
+      "end_seconds": 252.67,
+      "text": "I'll show you back in.",
+      "avg_logprob": -0.47395365097020803,
+      "review_required": true
+    },
+    {
+      "start_seconds": 253.65,
+      "end_seconds": 254.73,
+      "text": "Two or seven back in.",
+      "avg_logprob": -0.47395365097020803,
+      "review_required": true
+    },
+    {
+      "start_seconds": 257.27,
+      "end_seconds": 257.72,
+      "text": "1726.",
+      "avg_logprob": -0.11478530540562316,
+      "review_required": true
+    },
+    {
+      "start_seconds": 260.8,
+      "end_seconds": 261.68,
+      "text": "The professional X amount.",
+      "avg_logprob": -0.11478530540562316,
+      "review_required": true
+    },
+    {
+      "start_seconds": 262.7,
+      "end_seconds": 263.36,
+      "text": "1726.",
+      "avg_logprob": -0.11478530540562316,
+      "review_required": true
+    },
+    {
+      "start_seconds": 263.94,
+      "end_seconds": 263.96,
+      "text": "1726.",
+      "avg_logprob": -0.11478530540562316,
+      "review_required": true
+    }
+  ]
+}
