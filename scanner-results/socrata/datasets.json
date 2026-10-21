@@ -1,0 +1,51 @@
+{
+  "checked_at_utc": "2026-10-21T23:22:47.553639+00:00",
+  "host": "https://laramiecountywy-sheriff.data.socrata.com",
+  "status": "finished_requires_review",
+  "datasets": [
+    {
+      "dataset_id": "35sf-bu8v",
+      "category": "Incidents",
+      "status": "validation_blocked_or_failed",
+      "authenticated_access_observed": false,
+      "http_checks": [
+        {
+          "path": "/api/views/35sf-bu8v.json",
+          "status": 403,
+          "authentication_used": false
+        },
+        {
+          "path": "/api/views/35sf-bu8v.json",
+          "status": 403,
+          "authentication_used": true
+        }
+      ],
+      "last_http_status": 403,
+      "error_type": "RuntimeError",
+      "notice": "Raw response and exception withheld. Inspect HTTP statuses and schema; do not infer invalid credentials from a missing endpoint."
+    },
+    {
+      "dataset_id": "cvz7-2j69",
+      "category": "Cases",
+      "status": "validation_blocked_or_failed",
+      "authenticated_access_observed": false,
+      "http_checks": [
+        {
+          "path": "/api/views/cvz7-2j69.json",
+          "status": 403,
+          "authentication_used": false
+        },
+        {
+          "path": "/api/views/cvz7-2j69.json",
+          "status": 403,
+          "authentication_used": true
+        }
+      ],
+      "last_http_status": 403,
+      "error_type": "RuntimeError",
+      "notice": "Raw response and exception withheld. Inspect HTTP statuses and schema; do not infer invalid credentials from a missing endpoint."
+    }
+  ],
+  "correlation_enabled": false,
+  "notice": "Read-only source validation. Two pages of at most 25 rows per source are inspected in memory. No incident rows, account details, credentials, cookies, or raw errors are published. No full import has run."
+}
