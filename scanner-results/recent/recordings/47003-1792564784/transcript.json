@@ -1,0 +1,572 @@
+{
+  "archive_id": "47003-1792564784",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1792564784",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "10/21/2026",
+    "startDisplay": "12:39 AM",
+    "endDisplay": "01:09 AM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 72.98,
+      "end_seconds": 74.74,
+      "text": "Dispatch, call 211 traffic.",
+      "words": [
+        {
+          "start_seconds": 72.98,
+          "end_seconds": 73.64,
+          "text": " Dispatch,",
+          "probability": 0.0544879324734211
+        },
+        {
+          "start_seconds": 73.9,
+          "end_seconds": 73.9,
+          "text": " call",
+          "probability": 0.21003487706184387
+        },
+        {
+          "start_seconds": 73.9,
+          "end_seconds": 74.22,
+          "text": " 211",
+          "probability": 0.9429402947425842
+        },
+        {
+          "start_seconds": 74.22,
+          "end_seconds": 74.74,
+          "text": " traffic.",
+          "probability": 0.7603548169136047
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 76.09,
+      "end_seconds": 76.28999999999999,
+      "text": "Call 211.",
+      "words": [
+        {
+          "start_seconds": 76.09,
+          "end_seconds": 76.09,
+          "text": " Call",
+          "probability": 0.8437097668647766
+        },
+        {
+          "start_seconds": 76.09,
+          "end_seconds": 76.28999999999999,
+          "text": " 211.",
+          "probability": 0.9780555963516235
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    },
+    {
+      "start_seconds": 85.47,
+      "end_seconds": 87.47,
+      "text": "The Nation Way and Crook 2 County Truck.",
+      "words": [
+        {
+          "start_seconds": 85.47,
+          "end_seconds": 85.77,
+          "text": " The",
+          "probability": 0.5703691244125366
+        },
+        {
+          "start_seconds": 85.77,
+          "end_seconds": 86.11,
+          "text": " Nation",
+          "probability": 0.25041520595550537
+        },
+        {
+          "start_seconds": 86.11,
+          "end_seconds": 86.28999999999999,
+          "text": " Way",
+          "probability": 0.31012773513793945
+        },
+        {
+          "start_seconds": 86.28999999999999,
+          "end_seconds": 86.43,
+          "text": " and",
+          "probability": 0.7910427451133728
+        },
+        {
+          "start_seconds": 86.43,
+          "end_seconds": 86.67,
+          "text": " Crook",
+          "probability": 0.7798343002796173
+        },
+        {
+          "start_seconds": 86.67,
+          "end_seconds": 86.81,
+          "text": " 2",
+          "probability": 0.6274484992027283
+        },
+        {
+          "start_seconds": 86.81,
+          "end_seconds": 87.09,
+          "text": " County",
+          "probability": 0.6865754127502441
+        },
+        {
+          "start_seconds": 87.09,
+          "end_seconds": 87.47,
+          "text": " Truck.",
+          "probability": 0.538648784160614
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 88.45,
+      "end_seconds": 89.75,
+      "text": "519, Tom and I.",
+      "words": [
+        {
+          "start_seconds": 88.45,
+          "end_seconds": 88.99,
+          "text": " 519,",
+          "probability": 0.880637913942337
+        },
+        {
+          "start_seconds": 89.15,
+          "end_seconds": 89.37,
+          "text": " Tom",
+          "probability": 0.29923489689826965
+        },
+        {
+          "start_seconds": 89.37,
+          "end_seconds": 89.55,
+          "text": " and",
+          "probability": 0.38694512844085693
+        },
+        {
+          "start_seconds": 89.55,
+          "end_seconds": 89.75,
+          "text": " I.",
+          "probability": 0.5172632932662964
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 90.0,
+      "end_seconds": 91.0,
+      "text": "Red Fort Ranger.",
+      "words": [
+        {
+          "start_seconds": 90.0,
+          "end_seconds": 90.36,
+          "text": " Red",
+          "probability": 0.6206368803977966
+        },
+        {
+          "start_seconds": 90.36,
+          "end_seconds": 90.64,
+          "text": " Fort",
+          "probability": 0.5159440040588379
+        },
+        {
+          "start_seconds": 90.64,
+          "end_seconds": 91.0,
+          "text": " Ranger.",
+          "probability": 0.564663290977478
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    },
+    {
+      "start_seconds": 91.92,
+      "end_seconds": 92.7,
+      "text": "It was your fight.",
+      "words": [
+        {
+          "start_seconds": 91.92,
+          "end_seconds": 92.34,
+          "text": " It",
+          "probability": 0.033875323832035065
+        },
+        {
+          "start_seconds": 92.34,
+          "end_seconds": 92.42,
+          "text": " was",
+          "probability": 0.9190237522125244
+        },
+        {
+          "start_seconds": 92.42,
+          "end_seconds": 92.52,
+          "text": " your",
+          "probability": 0.3014630079269409
+        },
+        {
+          "start_seconds": 92.52,
+          "end_seconds": 92.7,
+          "text": " fight.",
+          "probability": 0.8196597695350647
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 510.82,
+      "end_seconds": 513.56,
+      "text": "This may fall 6-2. I'll be able to pull to 11.",
+      "words": [
+        {
+          "start_seconds": 510.82,
+          "end_seconds": 511.38,
+          "text": " This",
+          "probability": 0.5287167429924011
+        },
+        {
+          "start_seconds": 511.38,
+          "end_seconds": 511.52,
+          "text": " may",
+          "probability": 0.060994528234004974
+        },
+        {
+          "start_seconds": 511.52,
+          "end_seconds": 511.74,
+          "text": " fall",
+          "probability": 0.6705594062805176
+        },
+        {
+          "start_seconds": 511.74,
+          "end_seconds": 512.04,
+          "text": " 6",
+          "probability": 0.3135278820991516
+        },
+        {
+          "start_seconds": 512.04,
+          "end_seconds": 512.26,
+          "text": "-2.",
+          "probability": 0.5279228687286377
+        },
+        {
+          "start_seconds": 512.38,
+          "end_seconds": 512.44,
+          "text": " I'll",
+          "probability": 0.9503521919250488
+        },
+        {
+          "start_seconds": 512.44,
+          "end_seconds": 512.58,
+          "text": " be",
+          "probability": 0.9903603792190552
+        },
+        {
+          "start_seconds": 512.58,
+          "end_seconds": 512.66,
+          "text": " able",
+          "probability": 0.7903544306755066
+        },
+        {
+          "start_seconds": 512.66,
+          "end_seconds": 512.88,
+          "text": " to",
+          "probability": 0.9956668615341187
+        },
+        {
+          "start_seconds": 512.88,
+          "end_seconds": 513.18,
+          "text": " pull",
+          "probability": 0.9340491890907288
+        },
+        {
+          "start_seconds": 513.18,
+          "end_seconds": 513.34,
+          "text": " to",
+          "probability": 0.6105745434761047
+        },
+        {
+          "start_seconds": 513.34,
+          "end_seconds": 513.56,
+          "text": " 11.",
+          "probability": 0.4549534022808075
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 514.98,
+      "end_seconds": 515.38,
+      "text": "Hello, version.",
+      "words": [
+        {
+          "start_seconds": 514.98,
+          "end_seconds": 515.14,
+          "text": " Hello,",
+          "probability": 0.731281042098999
+        },
+        {
+          "start_seconds": 515.34,
+          "end_seconds": 515.38,
+          "text": " version.",
+          "probability": 0.21566030383110046
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 895.36,
+      "end_seconds": 899.1,
+      "text": "Shine, 190. I'll be 1042 with first call, stop 3, have a good night.",
+      "words": [
+        {
+          "start_seconds": 895.36,
+          "end_seconds": 895.9,
+          "text": " Shine,",
+          "probability": 0.3820478618144989
+        },
+        {
+          "start_seconds": 895.94,
+          "end_seconds": 896.24,
+          "text": " 190.",
+          "probability": 0.3751491904258728
+        },
+        {
+          "start_seconds": 896.82,
+          "end_seconds": 896.96,
+          "text": " I'll",
+          "probability": 0.987824946641922
+        },
+        {
+          "start_seconds": 896.96,
+          "end_seconds": 897.06,
+          "text": " be",
+          "probability": 0.996290922164917
+        },
+        {
+          "start_seconds": 897.06,
+          "end_seconds": 897.64,
+          "text": " 1042",
+          "probability": 0.818598598241806
+        },
+        {
+          "start_seconds": 897.64,
+          "end_seconds": 897.84,
+          "text": " with",
+          "probability": 0.8703164458274841
+        },
+        {
+          "start_seconds": 897.84,
+          "end_seconds": 898.02,
+          "text": " first",
+          "probability": 0.3648603558540344
+        },
+        {
+          "start_seconds": 898.02,
+          "end_seconds": 898.22,
+          "text": " call,",
+          "probability": 0.6260325908660889
+        },
+        {
+          "start_seconds": 898.3,
+          "end_seconds": 898.4,
+          "text": " stop",
+          "probability": 0.2263524830341339
+        },
+        {
+          "start_seconds": 898.4,
+          "end_seconds": 898.64,
+          "text": " 3,",
+          "probability": 0.503527820110321
+        },
+        {
+          "start_seconds": 898.72,
+          "end_seconds": 898.8,
+          "text": " have",
+          "probability": 0.49709686636924744
+        },
+        {
+          "start_seconds": 898.8,
+          "end_seconds": 898.88,
+          "text": " a",
+          "probability": 0.9947450160980225
+        },
+        {
+          "start_seconds": 898.88,
+          "end_seconds": 898.94,
+          "text": " good",
+          "probability": 0.9968603849411011
+        },
+        {
+          "start_seconds": 898.94,
+          "end_seconds": 899.1,
+          "text": " night.",
+          "probability": 0.9897533655166626
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 901.14,
+      "end_seconds": 902.16,
+      "text": "Thanks for having me.",
+      "words": [
+        {
+          "start_seconds": 901.14,
+          "end_seconds": 901.64,
+          "text": " Thanks",
+          "probability": 0.8699038624763489
+        },
+        {
+          "start_seconds": 901.64,
+          "end_seconds": 901.8,
+          "text": " for",
+          "probability": 0.07046318054199219
+        },
+        {
+          "start_seconds": 901.8,
+          "end_seconds": 901.92,
+          "text": " having",
+          "probability": 0.7375763654708862
+        },
+        {
+          "start_seconds": 901.92,
+          "end_seconds": 902.16,
+          "text": " me.",
+          "probability": 0.616818904876709
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 902.2,
+      "end_seconds": 902.34,
+      "text": "Good night.",
+      "words": [
+        {
+          "start_seconds": 902.2,
+          "end_seconds": 902.2,
+          "text": " Good",
+          "probability": 0.7894389033317566
+        },
+        {
+          "start_seconds": 902.2,
+          "end_seconds": 902.34,
+          "text": " night.",
+          "probability": 0.4458218812942505
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 902.52,
+      "end_seconds": 903.1,
+      "text": "I'll talk to you later.",
+      "words": [
+        {
+          "start_seconds": 902.52,
+          "end_seconds": 902.6,
+          "text": " I'll",
+          "probability": 0.18551059067249298
+        },
+        {
+          "start_seconds": 902.6,
+          "end_seconds": 902.64,
+          "text": " talk",
+          "probability": 0.17205560207366943
+        },
+        {
+          "start_seconds": 902.64,
+          "end_seconds": 902.8,
+          "text": " to",
+          "probability": 0.9402709007263184
+        },
+        {
+          "start_seconds": 902.8,
+          "end_seconds": 902.96,
+          "text": " you",
+          "probability": 0.6565405130386353
+        },
+        {
+          "start_seconds": 902.96,
+          "end_seconds": 903.1,
+          "text": " later.",
+          "probability": 0.5874454975128174
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 903.48,
+      "end_seconds": 903.68,
+      "text": "Thanks for having me.",
+      "words": [
+        {
+          "start_seconds": 903.48,
+          "end_seconds": 903.68,
+          "text": " Thanks",
+          "probability": 0.18836210668087006
+        },
+        {
+          "start_seconds": 903.68,
+          "end_seconds": 903.68,
+          "text": " for",
+          "probability": 0.36455872654914856
+        },
+        {
+          "start_seconds": 903.68,
+          "end_seconds": 903.68,
+          "text": " having",
+          "probability": 0.8538452982902527
+        },
+        {
+          "start_seconds": 903.68,
+          "end_seconds": 903.68,
+          "text": " me.",
+          "probability": 0.9439151883125305
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition",
+        "low_confidence_words"
+      ]
+    }
+  ]
+}
