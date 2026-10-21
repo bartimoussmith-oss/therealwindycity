@@ -1,0 +1,23 @@
+{
+  "capture_started_at_utc": "2026-10-21T23:17:05.220032+00:00",
+  "capture_ended_at_utc": "2026-10-21T23:22:05.423622+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 80.08,
+      "end_seconds": 81.52,
+      "text": "I'm trying to, 5-10-42.",
+      "avg_logprob": -0.46071915328502655,
+      "review_required": true
+    },
+    {
+      "start_seconds": 84.75,
+      "end_seconds": 85.51,
+      "text": "17-18.",
+      "avg_logprob": -0.46071915328502655,
+      "review_required": true
+    }
+  ]
+}
