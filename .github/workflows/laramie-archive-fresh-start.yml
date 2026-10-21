@@ -1,0 +1,54 @@
+name: Laramie Archive Fresh Start
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/laramie-archive-fresh-start.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  fresh-archive-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Check out verified corrected workflow revision
+        uses: actions/checkout@v4
+        with:
+          ref: 2b75dfeee1c9b73e4a8c3c7ddc7c2d834fbc8ac1
+          persist-credentials: false
+      - name: Install transcription dependencies
+        run: |
+          mkdir -p results
+          python -m pip install requests faster-whisper PyYAML
+      - name: Run corrected archive capture and transcription
+        env:
+          ARCHIVE_DATE: ''
+          BC_USER: ${{ secrets.BROADCASTIFY_USERNAME }}
+          BC_PASS: ${{ secrets.BROADCASTIFY_PASSWORD }}
+        run: |
+          python -u - <<'PY'
+          from pathlib import Path
+          import subprocess
+          import yaml
+
+          workflow = yaml.safe_load(Path('.github/workflows/scanner-archive-test.yml').read_text())
+          steps = workflow['jobs']['archive']['steps']
+          command = next(step['run'] for step in steps if step.get('name') == 'Download and transcribe one archive')
+          if '/archives/api/play.php' not in command or '/archives/ajax.php' in command:
+              raise SystemExit('Corrected endpoint verification failed; refusing to run.')
+          print('Running corrected archive code for sample 47003-1792597004.', flush=True)
+          result = subprocess.run(['bash', '-e', '-o', 'pipefail', '-c', command])
+          raise SystemExit(result.returncode)
+          PY
+      - name: Remove audio
+        if: always()
+        run: rm -f results/archive.mp3
+      - name: Save transcript and diagnostic logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: laramie-fresh-start-${{ github.run_id }}
+          path: results/
+          retention-days: 7
+          if-no-files-found: warn
