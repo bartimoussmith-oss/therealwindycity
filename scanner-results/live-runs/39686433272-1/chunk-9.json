@@ -1,0 +1,93 @@
+{
+  "capture_started_at_utc": "2026-10-21T23:06:57.719148+00:00",
+  "capture_ended_at_utc": "2026-10-21T23:12:00.283023+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 45.63,
+      "end_seconds": 47.15,
+      "text": "I'm sorry. I'm sorry. Do you have a unit?",
+      "avg_logprob": -0.7210886192321777,
+      "review_required": true
+    },
+    {
+      "start_seconds": 51.35,
+      "end_seconds": 52.35,
+      "text": "You've lost 1707.",
+      "avg_logprob": -0.7210886192321777,
+      "review_required": true
+    },
+    {
+      "start_seconds": 146.42000000000002,
+      "end_seconds": 147.74,
+      "text": "Shining, 190 traffic.",
+      "avg_logprob": -0.9971286700322077,
+      "review_required": true
+    },
+    {
+      "start_seconds": 149.52,
+      "end_seconds": 149.98,
+      "text": "Go ahead.",
+      "avg_logprob": -0.9971286700322077,
+      "review_required": true
+    },
+    {
+      "start_seconds": 155.39,
+      "end_seconds": 158.45,
+      "text": "7-9, 25 southbound, NPR on a white stand.",
+      "avg_logprob": -0.5217727212344899,
+      "review_required": true
+    },
+    {
+      "start_seconds": 203.51,
+      "end_seconds": 204.59,
+      "text": "9-1-1, hang up.",
+      "avg_logprob": -0.6430460283389459,
+      "review_required": true
+    },
+    {
+      "start_seconds": 206.38,
+      "end_seconds": 208.7,
+      "text": "I'll try to do something.",
+      "avg_logprob": -0.863551139831543,
+      "review_required": true
+    },
+    {
+      "start_seconds": 216.54,
+      "end_seconds": 221.76,
+      "text": "Charlie 28, Charlie 207 at 1546 Ruger Drive, 1546 Ruger Drive.",
+      "avg_logprob": -0.5240511011618835,
+      "review_required": true
+    },
+    {
+      "start_seconds": 222.32,
+      "end_seconds": 223.4,
+      "text": "So no one opened line.",
+      "avg_logprob": -0.5240511011618835,
+      "review_required": true
+    },
+    {
+      "start_seconds": 224.16,
+      "end_seconds": 224.88,
+      "text": "No hands from call back.",
+      "avg_logprob": -0.5240511011618835,
+      "review_required": true
+    },
+    {
+      "start_seconds": 227.34,
+      "end_seconds": 228.32,
+      "text": "Thirteen.",
+      "avg_logprob": -0.6772146920363108,
+      "review_required": true
+    },
+    {
+      "start_seconds": 229.0,
+      "end_seconds": 230.28,
+      "text": "Thirteen times.",
+      "avg_logprob": -0.6772146920363108,
+      "review_required": true
+    }
+  ]
+}
