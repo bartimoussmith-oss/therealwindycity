@@ -1,55 +1,118 @@
 name: Laramie Archive Fresh Start
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/laramie-archive-fresh-start.yml'
   workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: laramie-private-results
+  cancel-in-progress: false
 jobs:
   fresh-archive-test:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
-      - name: Check out verified corrected workflow revision
+      - name: Check out verified archive code
         uses: actions/checkout@v4
         with:
           ref: 2b75dfeee1c9b73e4a8c3c7ddc7c2d834fbc8ac1
+          persist-credentials: false
+      - name: Require private storage credential
+        env:
+          RESULTS_TOKEN: ${{ secrets.SCANNER_RESULTS_TOKEN }}
+        run: |
+          if [ -z "$RESULTS_TOKEN" ]; then
+            echo 'Add SCANNER_RESULTS_TOKEN with Contents read/write access to the private results repository before running.'
+            exit 1
+          fi
+      - name: Verify private results access
+        id: storage
+        uses: actions/checkout@v4
+        with:
+          repository: bartimoussmith-oss/laramie-scanner-private
+          ref: main
+          token: ${{ secrets.SCANNER_RESULTS_TOKEN }}
+          path: private-results
           persist-credentials: false
       - name: Install transcription dependencies
         run: |
           mkdir -p results
           python -m pip install requests 'faster-whisper==1.2.1' 'av==18.1.0' PyYAML
           python -m pip check
-      - name: Run corrected archive capture and transcription
+      - name: Transcribe without public transcript logs
+        id: transcribe
         env:
           ARCHIVE_DATE: ''
           BC_USER: ${{ secrets.BROADCASTIFY_USERNAME }}
           BC_PASS: ${{ secrets.BROADCASTIFY_PASSWORD }}
         run: |
-          python -u - <<'PY'
+          python - <<'PY'
           from pathlib import Path
           import subprocess
           import yaml
-
           workflow = yaml.safe_load(Path('.github/workflows/scanner-archive-test.yml').read_text())
           steps = workflow['jobs']['archive']['steps']
           command = next(step['run'] for step in steps if step.get('name') == 'Download and transcribe one archive')
           if '/archives/api/play.php' not in command or '/archives/ajax.php' in command:
-              raise SystemExit('Corrected endpoint verification failed; refusing to run.')
-          print('Running corrected archive code for sample 47003-1792597004.', flush=True)
-          result = subprocess.run(['bash', '-e', '-o', 'pipefail', '-c', command])
-          raise SystemExit(result.returncode)
+              raise SystemExit('Archive endpoint verification failed.')
+          result = subprocess.run(['bash', '-e', '-o', 'pipefail', '-c', command], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+          if result.returncode:
+              raise SystemExit('Archive transcription failed; raw diagnostics withheld from public logs.')
           PY
-      - name: Remove audio
+      - name: Save private transcripts and status
+        if: ${{ always() && steps.storage.outcome == 'success' }}
+        env:
+          RESULTS_TOKEN: ${{ secrets.SCANNER_RESULTS_TOKEN }}
+          TRANSCRIBE_OUTCOME: ${{ steps.transcribe.outcome }}
+        run: |
+          python - <<'PY'
+          import base64, datetime, json, os, subprocess
+          from pathlib import Path
+          root = Path('private-results')
+          run_id = os.environ['GITHUB_RUN_ID']
+          attempt = os.environ['GITHUB_RUN_ATTEMPT']
+          relative = Path('runs') / (run_id + '-' + attempt)
+          target = root / relative
+          target.mkdir(parents=True, exist_ok=True)
+          saved = []
+          for name in ('transcript.json', 'transcript.txt'):
+              source = Path('results') / name
+              if source.is_file():
+                  (target / name).write_bytes(source.read_bytes())
+                  saved.append(name)
+          outcome = os.environ.get('TRANSCRIBE_OUTCOME', 'unknown')
+          complete = outcome == 'success' and len(saved) == 2
+          status = {
+              'status': 'success' if complete else 'incomplete',
+              'transcription_step': outcome,
+              'recorded_at_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+              'run_id': run_id, 'run_attempt': attempt,
+              'workflow_url': os.environ['GITHUB_SERVER_URL'] + '/' + os.environ['GITHUB_REPOSITORY'] + '/actions/runs/' + run_id,
+              'result_directory': str(relative),
+              'files': saved,
+              'settings': {'model': 'tiny.en', 'device': 'cpu', 'compute_type': 'int8', 'language': 'en', 'vad_filter': True, 'condition_on_previous_text': False},
+              'review_required': True,
+              'review_flags': ['unverified_automated_transcription', 'not_for_automatic_publication', 'segment_offsets_not_wall_clock_times'],
+              'diagnostic': 'Transcript files saved.' if complete else 'Run incomplete; raw diagnostics intentionally not published.'
+          }
+          text = json.dumps(status, indent=2) + '\n'
+          (target / 'status.json').write_text(text, encoding='utf-8')
+          (root / 'latest.json').write_text(text, encoding='utf-8')
+          def git(*args, env=None):
+              process = subprocess.run(['git', '-C', str(root), *args], env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+              if process.returncode:
+                  raise SystemExit('Private results save failed; credentials and raw diagnostics withheld.')
+          git('config', 'user.name', 'github-actions[bot]')
+          git('config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com')
+          git('add', '--', str(relative), 'latest.json')
+          git('commit', '-m', 'Save scanner results for run ' + run_id + ' attempt ' + attempt)
+          env = os.environ.copy()
+          auth = base64.b64encode(('x-access-token:' + env.pop('RESULTS_TOKEN')).encode()).decode()
+          env['GIT_CONFIG_COUNT'] = '1'
+          env['GIT_CONFIG_KEY_0'] = 'http.https://github.com/.extraheader'
+          env['GIT_CONFIG_VALUE_0'] = 'AUTHORIZATION: basic ' + auth
+          git('push', 'origin', 'HEAD:main', env=env)
+          print('Results and status saved to the private repository.')
+          PY
+      - name: Remove local audio and diagnostics
         if: always()
-        run: rm -f results/archive.mp3
-      - name: Save transcript and diagnostic logs
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: laramie-fresh-start-${{ github.run_id }}
-          path: results/
-          retention-days: 7
-          if-no-files-found: warn
+        run: rm -rf results
