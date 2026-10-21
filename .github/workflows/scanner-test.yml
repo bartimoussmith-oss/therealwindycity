@@ -1,0 +1,39 @@
+name: Scanner transcription test
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Prepare output
+        run: mkdir -p results
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install openai-whisper
+      - name: Record five minutes
+        shell: bash
+        run: |
+          set -o pipefail
+          timeout 420 ffmpeg -nostdin -hide_banner -loglevel warning -rw_timeout 30000000 -i 'https://audio.broadcastify.com/47003.mp3' -t 300 -vn -ac 1 -ar 16000 -y results/capture.wav 2>&1 | tee results/capture.log
+      - name: Transcribe
+        shell: bash
+        run: |
+          set -o pipefail
+          echo 'AUTOMATED UNVERIFIED TRANSCRIPT: may contain errors. Not for automatic publication.' > results/NOTICE.txt
+          whisper results/capture.wav --model tiny.en --device cpu --fp16 False --language en --output_format txt --output_dir results 2>&1 | tee results/transcription.log
+      - name: Remove audio
+        if: always()
+        run: rm -f results/capture.wav
+      - name: Save transcript and logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scanner-test-${{ github.run_id }}
+          path: results/
+          retention-days: 1
+          if-no-files-found: warn
