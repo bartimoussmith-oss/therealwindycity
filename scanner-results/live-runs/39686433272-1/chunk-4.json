@@ -1,0 +1,44 @@
+{
+  "capture_started_at_utc": "2026-10-21T22:41:43.510535+00:00",
+  "capture_ended_at_utc": "2026-10-21T22:46:45.536521+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 104.38,
+      "end_seconds": 106.08,
+      "text": "Dispatch, PD-3 traffic.",
+      "avg_logprob": -0.4988243744291108,
+      "review_required": true
+    },
+    {
+      "start_seconds": 107.42,
+      "end_seconds": 107.96000000000001,
+      "text": "PD-3.",
+      "avg_logprob": -0.4988243744291108,
+      "review_required": true
+    },
+    {
+      "start_seconds": 116.39,
+      "end_seconds": 119.65,
+      "text": "U.S. 30 into IED service road.",
+      "avg_logprob": -0.4988243744291108,
+      "review_required": true
+    },
+    {
+      "start_seconds": 120.0,
+      "end_seconds": 123.3,
+      "text": "on David Victor 3919, Wyoming.",
+      "avg_logprob": -0.46510216780006886,
+      "review_required": true
+    },
+    {
+      "start_seconds": 125.61,
+      "end_seconds": 126.27,
+      "text": "1643.",
+      "avg_logprob": -0.46510216780006886,
+      "review_required": true
+    }
+  ]
+}
