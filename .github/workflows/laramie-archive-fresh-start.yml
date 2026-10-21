@@ -20,7 +20,8 @@ jobs:
       - name: Install transcription dependencies
         run: |
           mkdir -p results
-          python -m pip install requests faster-whisper PyYAML
+          python -m pip install requests 'faster-whisper==1.2.1' 'av==18.1.0' PyYAML
+          python -m pip check
       - name: Run corrected archive capture and transcription
         env:
           ARCHIVE_DATE: ''
