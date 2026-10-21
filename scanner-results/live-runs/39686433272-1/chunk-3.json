@@ -1,0 +1,86 @@
+{
+  "capture_started_at_utc": "2026-10-21T22:36:40.756444+00:00",
+  "capture_ended_at_utc": "2026-10-21T22:41:41.483339+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 24.5,
+      "end_seconds": 25.2,
+      "text": "29 transport.",
+      "avg_logprob": -0.5194145398480552,
+      "review_required": true
+    },
+    {
+      "start_seconds": 26.08,
+      "end_seconds": 26.68,
+      "text": "29.",
+      "avg_logprob": -0.5194145398480552,
+      "review_required": true
+    },
+    {
+      "start_seconds": 27.34,
+      "end_seconds": 27.44,
+      "text": "29.",
+      "avg_logprob": -0.5194145398480552,
+      "review_required": true
+    },
+    {
+      "start_seconds": 30.0,
+      "end_seconds": 31.34,
+      "text": "Co-operative female to the jail.",
+      "avg_logprob": -0.5572603270411491,
+      "review_required": true
+    },
+    {
+      "start_seconds": 32.88,
+      "end_seconds": 33.4,
+      "text": "1637.",
+      "avg_logprob": -0.5572603270411491,
+      "review_required": true
+    },
+    {
+      "start_seconds": 183.22,
+      "end_seconds": 185.36,
+      "text": "All 59 dispatch, pass suicide threat.",
+      "avg_logprob": -0.4165461132923762,
+      "review_required": true
+    },
+    {
+      "start_seconds": 188.7,
+      "end_seconds": 188.98,
+      "text": "59.",
+      "avg_logprob": -0.4165461132923762,
+      "review_required": true
+    },
+    {
+      "start_seconds": 196.3,
+      "end_seconds": 200.8,
+      "text": "All 59 at 2800 East Persian Boulevard 28, there's our East Persian Boulevard East High School.",
+      "avg_logprob": -0.4165461132923762,
+      "review_required": true
+    },
+    {
+      "start_seconds": 201.16,
+      "end_seconds": 202.86,
+      "text": "This is a safe to tell on a suicide threat.",
+      "avg_logprob": -0.4165461132923762,
+      "review_required": true
+    },
+    {
+      "start_seconds": 204.62,
+      "end_seconds": 205.0,
+      "text": "59.",
+      "avg_logprob": -0.4165461132923762,
+      "review_required": true
+    },
+    {
+      "start_seconds": 206.22,
+      "end_seconds": 207.07999999999998,
+      "text": "16, 59.",
+      "avg_logprob": -0.4165461132923762,
+      "review_required": true
+    }
+  ]
+}
