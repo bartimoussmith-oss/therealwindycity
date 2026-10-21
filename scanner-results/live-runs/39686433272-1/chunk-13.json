@@ -1,0 +1,114 @@
+{
+  "capture_started_at_utc": "2026-10-21T23:27:11.755834+00:00",
+  "capture_ended_at_utc": "2026-10-21T23:31:35.353111+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 68.4,
+      "end_seconds": 70.8,
+      "text": "Paul 50, Paul 6-9 dispatch to the special vehicle.",
+      "avg_logprob": -0.4681141089115824,
+      "review_required": true
+    },
+    {
+      "start_seconds": 73.74,
+      "end_seconds": 74.22,
+      "text": "Paul 50.",
+      "avg_logprob": -0.4681141089115824,
+      "review_required": true
+    },
+    {
+      "start_seconds": 76.89,
+      "end_seconds": 77.43,
+      "text": "Paul 6-9.",
+      "avg_logprob": -0.4681141089115824,
+      "review_required": true
+    },
+    {
+      "start_seconds": 92.13,
+      "end_seconds": 105.99,
+      "text": "Hall 50, Hall 69 at 1609 Fremont Avenue, 1609 Fremont Avenue, can't be stopped at that location, but can see a truck in the driveway, the real grainy, some frontier, two county trucks, 6206.",
+      "avg_logprob": -0.3685974529091741,
+      "review_required": true
+    },
+    {
+      "start_seconds": 107.73,
+      "end_seconds": 108.37,
+      "text": "Hall 50.",
+      "avg_logprob": -0.3685974529091741,
+      "review_required": true
+    },
+    {
+      "start_seconds": 110.95,
+      "end_seconds": 111.95,
+      "text": "17-20.",
+      "avg_logprob": -0.8831565483756687,
+      "review_required": true
+    },
+    {
+      "start_seconds": 119.64,
+      "end_seconds": 119.9,
+      "text": "All righty.",
+      "avg_logprob": -0.8831565483756687,
+      "review_required": true
+    },
+    {
+      "start_seconds": 120.0,
+      "end_seconds": 122.44,
+      "text": "Paul 48, dispatch, suspicious person.",
+      "avg_logprob": -0.4772574053870307,
+      "review_required": true
+    },
+    {
+      "start_seconds": 123.96,
+      "end_seconds": 124.1,
+      "text": "85.",
+      "avg_logprob": -0.4772574053870307,
+      "review_required": true
+    },
+    {
+      "start_seconds": 125.24,
+      "end_seconds": 126.24,
+      "text": "Paul 48.",
+      "avg_logprob": -0.4772574053870307,
+      "review_required": true
+    },
+    {
+      "start_seconds": 142.44,
+      "end_seconds": 148.4,
+      "text": "Paul 85, Paul 48, at 4505 Bridge Road, 4505 Bridge Road, at the Maverick.",
+      "avg_logprob": -0.4772574053870307,
+      "review_required": true
+    },
+    {
+      "start_seconds": 148.4,
+      "end_seconds": 149.74,
+      "text": "Every person juvenile.",
+      "avg_logprob": -0.9310620852879116,
+      "review_required": true
+    },
+    {
+      "start_seconds": 150.0,
+      "end_seconds": 155.48,
+      "text": "walk out of the store pulling items out of their clothing. At least they might be stolen.",
+      "avg_logprob": -0.43791366474969046,
+      "review_required": true
+    },
+    {
+      "start_seconds": 155.82,
+      "end_seconds": 163.21,
+      "text": "They then ran westbound on foot. Maybe five all the way by for now. Copy, right. All for",
+      "avg_logprob": -0.43791366474969046,
+      "review_required": true
+    },
+    {
+      "start_seconds": 163.21,
+      "end_seconds": 167.91,
+      "text": "eight, especially. I'll show you back in. All for eight, I guess. 1729.",
+      "avg_logprob": -0.43791366474969046,
+      "review_required": true
+    }
+  ]
+}
