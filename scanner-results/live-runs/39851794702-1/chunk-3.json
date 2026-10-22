@@ -1,0 +1,86 @@
+{
+  "capture_started_at_utc": "2026-10-22T20:57:42.375759+00:00",
+  "capture_ended_at_utc": "2026-10-22T21:02:42.459945+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 8.18,
+      "end_seconds": 9.12,
+      "text": "to the jail.",
+      "avg_logprob": -0.7414013613825259,
+      "review_required": true
+    },
+    {
+      "start_seconds": 11.43,
+      "end_seconds": 12.03,
+      "text": "1457.",
+      "avg_logprob": -0.7414013613825259,
+      "review_required": true
+    },
+    {
+      "start_seconds": 29.28,
+      "end_seconds": 29.66,
+      "text": "That's okay.",
+      "avg_logprob": -0.7414013613825259,
+      "review_required": true
+    },
+    {
+      "start_seconds": 30.0,
+      "end_seconds": 30.88,
+      "text": "We'll be following 59.",
+      "avg_logprob": -0.4235520235129765,
+      "review_required": true
+    },
+    {
+      "start_seconds": 33.17,
+      "end_seconds": 33.77,
+      "text": "1450.",
+      "avg_logprob": -0.4235520235129765,
+      "review_required": true
+    },
+    {
+      "start_seconds": 88.66,
+      "end_seconds": 89.98,
+      "text": "I saw you in the last year.",
+      "avg_logprob": -0.8342203768816862,
+      "review_required": true
+    },
+    {
+      "start_seconds": 91.76,
+      "end_seconds": 92.8,
+      "text": "Fourteen-fifteen-eight.",
+      "avg_logprob": -0.6746006011962891,
+      "review_required": true
+    },
+    {
+      "start_seconds": 200.14,
+      "end_seconds": 201.07999999999998,
+      "text": "Go for 70.",
+      "avg_logprob": -0.7384873520244252,
+      "review_required": true
+    },
+    {
+      "start_seconds": 205.27,
+      "end_seconds": 205.65,
+      "text": "Go.",
+      "avg_logprob": -0.7384873520244252,
+      "review_required": true
+    },
+    {
+      "start_seconds": 215.84,
+      "end_seconds": 217.02,
+      "text": "Go for it.",
+      "avg_logprob": -0.3870886848086402,
+      "review_required": true
+    },
+    {
+      "start_seconds": 224.02,
+      "end_seconds": 225.88,
+      "text": "Is there traffic for dispatch on L.A. 1?",
+      "avg_logprob": -0.3870886848086402,
+      "review_required": true
+    }
+  ]
+}
