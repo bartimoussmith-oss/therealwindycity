@@ -1,0 +1,37 @@
+{
+  "capture_started_at_utc": "2026-10-22T18:12:46.210893+00:00",
+  "capture_ended_at_utc": "2026-10-22T18:17:48.508726+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 143.34,
+      "end_seconds": 148.84,
+      "text": "All area law enforcement in Cheyenne Area Patrol traffic is playing at the 374th I-88E Sound.",
+      "avg_logprob": -0.8326456283821779,
+      "review_required": true
+    },
+    {
+      "start_seconds": 149.56,
+      "end_seconds": 149.96,
+      "text": "This is a white...",
+      "avg_logprob": -0.8326456283821779,
+      "review_required": true
+    },
+    {
+      "start_seconds": 150.0,
+      "end_seconds": 157.1,
+      "text": "I am pulling a block soft side trailer, lane 28, 524, 877, 524, 877,",
+      "avg_logprob": -0.43841020452479523,
+      "review_required": true
+    },
+    {
+      "start_seconds": 157.94,
+      "end_seconds": 163.6,
+      "text": "tractor door has FBR transportation, vehicles all over the road, clear traffic at 1215.",
+      "avg_logprob": -0.43841020452479523,
+      "review_required": true
+    }
+  ]
+}
