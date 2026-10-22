@@ -1,0 +1,107 @@
+{
+  "capture_started_at_utc": "2026-10-22T21:17:53.586267+00:00",
+  "capture_ended_at_utc": "2026-10-22T21:22:54.198970+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 166.85,
+      "end_seconds": 169.87,
+      "text": "12-17, 12-26, dispatch Larceny.",
+      "avg_logprob": -0.5018909467118127,
+      "review_required": true
+    },
+    {
+      "start_seconds": 171.15,
+      "end_seconds": 171.69,
+      "text": "7-10.",
+      "avg_logprob": -0.5018909467118127,
+      "review_required": true
+    },
+    {
+      "start_seconds": 172.93,
+      "end_seconds": 173.73,
+      "text": "12-26.",
+      "avg_logprob": -0.5018909467118127,
+      "review_required": true
+    },
+    {
+      "start_seconds": 192.69,
+      "end_seconds": 200.29,
+      "text": "12-17, 12-26, we're going to be at Safe House, 714 West Fox Farm Road, 714 West Fox Farm Road.",
+      "avg_logprob": -0.2507726103067398,
+      "review_required": true
+    },
+    {
+      "start_seconds": 200.75,
+      "end_seconds": 202.55,
+      "text": "R.P.'s reporting that she didn't get all of her stuff.",
+      "avg_logprob": -0.2507726103067398,
+      "review_required": true
+    },
+    {
+      "start_seconds": 204.13,
+      "end_seconds": 207.55,
+      "text": "Subject is going to be a white female, 45 years old, wearing a jeans and a purple shirt.",
+      "avg_logprob": -0.2507726103067398,
+      "review_required": true
+    },
+    {
+      "start_seconds": 207.71,
+      "end_seconds": 209.82999999999998,
+      "text": "By the name of Nicole, CRPS.",
+      "avg_logprob": -0.2507726103067398,
+      "review_required": true
+    },
+    {
+      "start_seconds": 210.0,
+      "end_seconds": 213.61,
+      "text": "We serve dinner all by yourself.",
+      "avg_logprob": -0.6454684212803841,
+      "review_required": true
+    },
+    {
+      "start_seconds": 214.83,
+      "end_seconds": 215.01,
+      "text": "Copy.",
+      "avg_logprob": -0.6454684212803841,
+      "review_required": true
+    },
+    {
+      "start_seconds": 215.19,
+      "end_seconds": 216.01,
+      "text": "Well, it's my first little street weekend.",
+      "avg_logprob": -0.6454684212803841,
+      "review_required": true
+    },
+    {
+      "start_seconds": 216.93,
+      "end_seconds": 218.01,
+      "text": "17 back in, thanks.",
+      "avg_logprob": -0.6454684212803841,
+      "review_required": true
+    },
+    {
+      "start_seconds": 218.75,
+      "end_seconds": 219.55,
+      "text": "15, 21.",
+      "avg_logprob": -0.6454684212803841,
+      "review_required": true
+    },
+    {
+      "start_seconds": 229.01,
+      "end_seconds": 230.39,
+      "text": "47, 45, you can clear.",
+      "avg_logprob": -0.6454684212803841,
+      "review_required": true
+    },
+    {
+      "start_seconds": 231.82999999999998,
+      "end_seconds": 232.35,
+      "text": "80, 70.",
+      "avg_logprob": -0.6454684212803841,
+      "review_required": true
+    }
+  ]
+}
