@@ -1,0 +1,51 @@
+{
+  "capture_started_at_utc": "2026-10-22T21:02:43.641689+00:00",
+  "capture_ended_at_utc": "2026-10-22T21:07:45.596201+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 44.03,
+      "end_seconds": 45.47,
+      "text": "Scratchball, C9, I'm out.",
+      "avg_logprob": -0.8249987781047821,
+      "review_required": true
+    },
+    {
+      "start_seconds": 46.989999999999995,
+      "end_seconds": 47.47,
+      "text": "15, entry.",
+      "avg_logprob": -0.8249987781047821,
+      "review_required": true
+    },
+    {
+      "start_seconds": 103.26,
+      "end_seconds": 106.6,
+      "text": "I can't afford.",
+      "avg_logprob": -1.1135558187961578,
+      "review_required": true
+    },
+    {
+      "start_seconds": 280.51,
+      "end_seconds": 283.21,
+      "text": "Charlie 28, Charlie 50, dispatch, physical domestic.",
+      "avg_logprob": -0.5187350667041281,
+      "review_required": true
+    },
+    {
+      "start_seconds": 284.33,
+      "end_seconds": 285.05,
+      "text": "Charlie 28.",
+      "avg_logprob": -0.5187350667041281,
+      "review_required": true
+    },
+    {
+      "start_seconds": 286.31,
+      "end_seconds": 286.57,
+      "text": "Attention.",
+      "avg_logprob": -0.5187350667041281,
+      "review_required": true
+    }
+  ]
+}
