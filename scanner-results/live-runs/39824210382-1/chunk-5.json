@@ -1,0 +1,51 @@
+{
+  "capture_started_at_utc": "2026-10-22T17:57:37.664481+00:00",
+  "capture_ended_at_utc": "2026-10-22T18:02:39.622592+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 4.56,
+      "end_seconds": 7.4,
+      "text": "If we can get a PD unit over there, see if we can locate that.",
+      "avg_logprob": -0.36854842603206633,
+      "review_required": true
+    },
+    {
+      "start_seconds": 55.260000000000005,
+      "end_seconds": 57.9,
+      "text": "This past charge 38, I'll be clear back in.",
+      "avg_logprob": -0.5897068036229987,
+      "review_required": true
+    },
+    {
+      "start_seconds": 59.260000000000005,
+      "end_seconds": 59.739999999999995,
+      "text": "150.",
+      "avg_logprob": -0.5897068036229987,
+      "review_required": true
+    },
+    {
+      "start_seconds": 60.0,
+      "end_seconds": 60.22,
+      "text": "Thanks.",
+      "avg_logprob": -0.8287525177001953,
+      "review_required": true
+    },
+    {
+      "start_seconds": 181.46,
+      "end_seconds": 186.5,
+      "text": "When the ID date of birth can be 4-13-1993.",
+      "avg_logprob": -0.4754622312528746,
+      "review_required": true
+    },
+    {
+      "start_seconds": 195.58,
+      "end_seconds": 196.36,
+      "text": "10-4, 12 o'clock.",
+      "avg_logprob": -0.4754622312528746,
+      "review_required": true
+    }
+  ]
+}
