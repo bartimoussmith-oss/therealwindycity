@@ -1,0 +1,44 @@
+{
+  "capture_started_at_utc": "2026-10-22T18:02:40.385717+00:00",
+  "capture_ended_at_utc": "2026-10-22T18:07:42.363028+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 173.09,
+      "end_seconds": 174.29,
+      "text": "We done, I'll let her know.",
+      "avg_logprob": -0.8100172032912573,
+      "review_required": true
+    },
+    {
+      "start_seconds": 192.11,
+      "end_seconds": 206.17000000000002,
+      "text": "Call 203 over 203. I attempted to call LCFA. They did not answer. Phone went straight to voicemail.",
+      "avg_logprob": -0.4697448976578251,
+      "review_required": true
+    },
+    {
+      "start_seconds": 207.51,
+      "end_seconds": 208.15,
+      "text": "Copy.",
+      "avg_logprob": -0.4697448976578251,
+      "review_required": true
+    },
+    {
+      "start_seconds": 212.19,
+      "end_seconds": 215.99,
+      "text": "Poulter of three, College of O7, good meeting you.",
+      "avg_logprob": -1.1687890224986606,
+      "review_required": true
+    },
+    {
+      "start_seconds": 263.32,
+      "end_seconds": 266.88,
+      "text": "100, it's just confirming no need to contact LCFA.",
+      "avg_logprob": -0.5327732674777508,
+      "review_required": true
+    }
+  ]
+}
