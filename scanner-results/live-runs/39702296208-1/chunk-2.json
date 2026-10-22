@@ -1,0 +1,16 @@
+{
+  "capture_started_at_utc": "2026-10-22T00:57:58.532035+00:00",
+  "capture_ended_at_utc": "2026-10-22T01:03:00.490360+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 288.16,
+      "end_seconds": 290.8,
+      "text": "Charlie 21, 302, can you go to SL?",
+      "avg_logprob": -0.37038926780223846,
+      "review_required": true
+    }
+  ]
+}
