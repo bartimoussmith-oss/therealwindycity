@@ -1,0 +1,65 @@
+{
+  "capture_started_at_utc": "2026-10-22T13:08:22.401999+00:00",
+  "capture_ended_at_utc": "2026-10-22T13:13:23.342842+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 193.2,
+      "end_seconds": 209.8,
+      "text": "trying 93 93 go ahead you know files are down I can't get 28 to return I am not",
+      "avg_logprob": -0.5130735480267069,
+      "review_required": true
+    },
+    {
+      "start_seconds": 223.98,
+      "end_seconds": 227.68,
+      "text": "It's from two county, five seven, David Henry, Wyoming passenger.",
+      "avg_logprob": -0.7207064827283224,
+      "review_required": true
+    },
+    {
+      "start_seconds": 254.7,
+      "end_seconds": 260.7,
+      "text": "return. We now have to add in the Paul Tom for passenger car",
+      "avg_logprob": -0.43332683815146394,
+      "review_required": true
+    },
+    {
+      "start_seconds": 260.7,
+      "end_seconds": 265.82,
+      "text": "truck, but it's on a black 2020 Ford copy. Are we adding it after",
+      "avg_logprob": -0.43332683815146394,
+      "review_required": true
+    },
+    {
+      "start_seconds": 265.82,
+      "end_seconds": 269.78,
+      "text": "the county? Sometimes just for a minute. So it'd be two.",
+      "avg_logprob": -0.43332683815146394,
+      "review_required": true
+    },
+    {
+      "start_seconds": 270.0,
+      "end_seconds": 271.4,
+      "text": "5-7 David Henry.",
+      "avg_logprob": -0.5368987114533134,
+      "review_required": true
+    },
+    {
+      "start_seconds": 271.86,
+      "end_seconds": 272.74,
+      "text": "4 thanks.",
+      "avg_logprob": -0.5368987114533134,
+      "review_required": true
+    },
+    {
+      "start_seconds": 273.5,
+      "end_seconds": 274.86,
+      "text": "You're welcome 7-12.",
+      "avg_logprob": -0.5368987114533134,
+      "review_required": true
+    }
+  ]
+}
