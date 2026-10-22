@@ -1,0 +1,51 @@
+{
+  "capture_started_at_utc": "2026-10-22T21:38:06.334620+00:00",
+  "capture_ended_at_utc": "2026-10-22T21:43:06.492116+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 5.07,
+      "end_seconds": 8.43,
+      "text": "We have emergency traffic on Channel 1 still for the length launch.",
+      "avg_logprob": -0.4544131898631652,
+      "review_required": true
+    },
+    {
+      "start_seconds": 11.64,
+      "end_seconds": 13.4,
+      "text": "Good best, Paul, something going clear, emergency traffic.",
+      "avg_logprob": -0.4544131898631652,
+      "review_required": true
+    },
+    {
+      "start_seconds": 16.52,
+      "end_seconds": 19.74,
+      "text": "All units, we advise emergency traffic is local on Channel 1 at 1538.",
+      "avg_logprob": -0.4544131898631652,
+      "review_required": true
+    },
+    {
+      "start_seconds": 106.18,
+      "end_seconds": 108.12,
+      "text": "This way, short 38, I'm out.",
+      "avg_logprob": -0.7998290459314982,
+      "review_required": true
+    },
+    {
+      "start_seconds": 109.3,
+      "end_seconds": 109.88,
+      "text": "15 39.",
+      "avg_logprob": -0.7998290459314982,
+      "review_required": true
+    },
+    {
+      "start_seconds": 243.28,
+      "end_seconds": 245.82,
+      "text": "Charlie 207, shot 38, you can cancel.",
+      "avg_logprob": -0.5746757984161377,
+      "review_required": true
+    }
+  ]
+}
