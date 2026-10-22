@@ -1,0 +1,65 @@
+{
+  "capture_started_at_utc": "2026-10-22T18:38:02.894643+00:00",
+  "capture_ended_at_utc": "2026-10-22T18:42:24.495784+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 76.08,
+      "end_seconds": 77.34,
+      "text": "1 2 1 3 4 1 6 3",
+      "avg_logprob": -0.8300596475601196,
+      "review_required": true
+    },
+    {
+      "start_seconds": 94.91,
+      "end_seconds": 96.67,
+      "text": "4-2-1-3, 4-1-6-3.",
+      "avg_logprob": -0.39614278740353054,
+      "review_required": true
+    },
+    {
+      "start_seconds": 98.71000000000001,
+      "end_seconds": 99.91,
+      "text": "1-6-3, 30, good.",
+      "avg_logprob": -0.39614278740353054,
+      "review_required": true
+    },
+    {
+      "start_seconds": 101.87,
+      "end_seconds": 102.67,
+      "text": "Why do you need me?",
+      "avg_logprob": -0.39614278740353054,
+      "review_required": true
+    },
+    {
+      "start_seconds": 108.77,
+      "end_seconds": 109.05,
+      "text": "Yeah, bye.",
+      "avg_logprob": -0.39614278740353054,
+      "review_required": true
+    },
+    {
+      "start_seconds": 127.5,
+      "end_seconds": 132.48,
+      "text": "1-6-3-30, if you could block Fox 1 of the towers, it's really the trooper that just did it.",
+      "avg_logprob": -0.6384969419903226,
+      "review_required": true
+    },
+    {
+      "start_seconds": 132.56,
+      "end_seconds": 132.96,
+      "text": "Thank you.",
+      "avg_logprob": -0.6384969419903226,
+      "review_required": true
+    },
+    {
+      "start_seconds": 221.5,
+      "end_seconds": 222.6,
+      "text": "There's really 28 copies.",
+      "avg_logprob": -0.7028768327501085,
+      "review_required": true
+    }
+  ]
+}
