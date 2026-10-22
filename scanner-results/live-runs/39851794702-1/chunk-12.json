@@ -1,0 +1,58 @@
+{
+  "capture_started_at_utc": "2026-10-22T21:43:09.361555+00:00",
+  "capture_ended_at_utc": "2026-10-22T21:48:10.715064+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 36.54,
+      "end_seconds": 38.04,
+      "text": "So that's all you 40 traffic?",
+      "avg_logprob": -0.4687422141432762,
+      "review_required": true
+    },
+    {
+      "start_seconds": 39.24,
+      "end_seconds": 39.86,
+      "text": "Charlie 40.",
+      "avg_logprob": -0.4687422141432762,
+      "review_required": true
+    },
+    {
+      "start_seconds": 52.120000000000005,
+      "end_seconds": 52.879999999999995,
+      "text": "Road 217",
+      "avg_logprob": -0.4687422141432762,
+      "review_required": true
+    },
+    {
+      "start_seconds": 53.9,
+      "end_seconds": 55.94,
+      "text": "on Highway 213",
+      "avg_logprob": -0.4687422141432762,
+      "review_required": true
+    },
+    {
+      "start_seconds": 55.94,
+      "end_seconds": 58.08,
+      "text": "2 passenger 1-6",
+      "avg_logprob": -0.4687422141432762,
+      "review_required": true
+    },
+    {
+      "start_seconds": 58.08,
+      "end_seconds": 58.6,
+      "text": "victim.",
+      "avg_logprob": -0.4687422141432762,
+      "review_required": true
+    },
+    {
+      "start_seconds": 60.0,
+      "end_seconds": 64.06,
+      "text": "Victor Edward Black-Suever, 1544.",
+      "avg_logprob": -0.7067555231707436,
+      "review_required": true
+    }
+  ]
+}
