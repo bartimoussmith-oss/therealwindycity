@@ -1,0 +1,72 @@
+{
+  "capture_started_at_utc": "2026-10-22T12:38:02.519129+00:00",
+  "capture_ended_at_utc": "2026-10-22T12:43:03.397169+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 4.94,
+      "end_seconds": 11.42,
+      "text": "New bluff and college with 13 truck 8 4 9 5",
+      "avg_logprob": -0.4917201260725657,
+      "review_required": true
+    },
+    {
+      "start_seconds": 12.7,
+      "end_seconds": 20.78,
+      "text": "What was your cross with college you love psychology and",
+      "avg_logprob": -0.4917201260725657,
+      "review_required": true
+    },
+    {
+      "start_seconds": 21.74,
+      "end_seconds": 22.78,
+      "text": "four mile",
+      "avg_logprob": -0.4917201260725657,
+      "review_required": true
+    },
+    {
+      "start_seconds": 211.84,
+      "end_seconds": 213.62,
+      "text": "Dispatch Charlie 31 traffic.",
+      "avg_logprob": -0.425704026222229,
+      "review_required": true
+    },
+    {
+      "start_seconds": 215.12,
+      "end_seconds": 215.56,
+      "text": "Charlie 31.",
+      "avg_logprob": -0.425704026222229,
+      "review_required": true
+    },
+    {
+      "start_seconds": 225.94,
+      "end_seconds": 227.7,
+      "text": "U.S. 85 at truck left.",
+      "avg_logprob": -0.425704026222229,
+      "review_required": true
+    },
+    {
+      "start_seconds": 229.76,
+      "end_seconds": 230.86,
+      "text": "Say black, red.",
+      "avg_logprob": -0.425704026222229,
+      "review_required": true
+    },
+    {
+      "start_seconds": 231.57999999999998,
+      "end_seconds": 235.8,
+      "text": "Colorado temporary registration 8846839.",
+      "avg_logprob": -0.425704026222229,
+      "review_required": true
+    },
+    {
+      "start_seconds": 236.72,
+      "end_seconds": 237.04,
+      "text": "Copy.",
+      "avg_logprob": -0.425704026222229,
+      "review_required": true
+    }
+  ]
+}
