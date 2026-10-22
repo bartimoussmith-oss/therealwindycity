@@ -1,0 +1,16 @@
+{
+  "capture_started_at_utc": "2026-10-22T12:32:58.373079+00:00",
+  "capture_ended_at_utc": "2026-10-22T12:38:00.411902+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 295.26,
+      "end_seconds": 297.32,
+      "text": "dispatched Charlie-59 traffic.",
+      "avg_logprob": -0.8686832851833768,
+      "review_required": true
+    }
+  ]
+}
