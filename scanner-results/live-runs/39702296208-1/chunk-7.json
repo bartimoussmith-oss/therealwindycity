@@ -1,0 +1,44 @@
+{
+  "capture_started_at_utc": "2026-10-22T01:23:12.344976+00:00",
+  "capture_ended_at_utc": "2026-10-22T01:28:13.345130+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 170.66,
+      "end_seconds": 171.52,
+      "text": "Yes, basketball.",
+      "avg_logprob": -0.8576412017528827,
+      "review_required": true
+    },
+    {
+      "start_seconds": 173.95,
+      "end_seconds": 174.43,
+      "text": "12-23.",
+      "avg_logprob": -0.8576412017528827,
+      "review_required": true
+    },
+    {
+      "start_seconds": 182.51,
+      "end_seconds": 186.91,
+      "text": "Don't range in front terminal drive while I'm a two-passenger six-two Paul and Nora",
+      "avg_logprob": -0.5110974350701207,
+      "review_required": true
+    },
+    {
+      "start_seconds": 186.91,
+      "end_seconds": 190.27,
+      "text": "Black Ford when we're stopping the continual left-hand turn lane",
+      "avg_logprob": -0.5110974350701207,
+      "review_required": true
+    },
+    {
+      "start_seconds": 190.27,
+      "end_seconds": 191.59,
+      "text": "Did you do anything?",
+      "avg_logprob": -0.5110974350701207,
+      "review_required": true
+    }
+  ]
+}
