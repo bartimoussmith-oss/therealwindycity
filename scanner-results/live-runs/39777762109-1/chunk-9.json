@@ -1,0 +1,30 @@
+{
+  "capture_started_at_utc": "2026-10-22T13:03:18.698958+00:00",
+  "capture_ended_at_utc": "2026-10-22T13:08:20.456204+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 114.05,
+      "end_seconds": 114.83,
+      "text": "Charlie 50?",
+      "avg_logprob": -0.5997143313288689,
+      "review_required": true
+    },
+    {
+      "start_seconds": 117.86,
+      "end_seconds": 118.3,
+      "text": "About 138.",
+      "avg_logprob": -0.5997143313288689,
+      "review_required": true
+    },
+    {
+      "start_seconds": 119.24,
+      "end_seconds": 119.76,
+      "text": "705.",
+      "avg_logprob": -0.5997143313288689,
+      "review_required": true
+    }
+  ]
+}
