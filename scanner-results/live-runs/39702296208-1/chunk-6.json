@@ -1,0 +1,37 @@
+{
+  "capture_started_at_utc": "2026-10-22T01:18:10.527319+00:00",
+  "capture_ended_at_utc": "2026-10-22T01:23:10.655452+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 28.85,
+      "end_seconds": 29.77,
+      "text": "This is my phone system",
+      "avg_logprob": -1.2229373902082443,
+      "review_required": true
+    },
+    {
+      "start_seconds": 31.62,
+      "end_seconds": 32.44,
+      "text": "Call 1-6.",
+      "avg_logprob": -0.5089834785461426,
+      "review_required": true
+    },
+    {
+      "start_seconds": 33.7,
+      "end_seconds": 34.8,
+      "text": "Call 2-0-3.",
+      "avg_logprob": -0.5089834785461426,
+      "review_required": true
+    },
+    {
+      "start_seconds": 36.87,
+      "end_seconds": 37.57,
+      "text": "Thank you, Natey.",
+      "avg_logprob": -0.5089834785461426,
+      "review_required": true
+    }
+  ]
+}
