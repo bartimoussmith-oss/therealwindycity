@@ -1,0 +1,72 @@
+{
+  "capture_started_at_utc": "2026-10-22T12:53:11.190972+00:00",
+  "capture_ended_at_utc": "2026-10-22T12:58:12.289776+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 253.78,
+      "end_seconds": 255.16,
+      "text": "and just that's just us.",
+      "avg_logprob": -0.8003618528968409,
+      "review_required": true
+    },
+    {
+      "start_seconds": 257.02,
+      "end_seconds": 257.26,
+      "text": "Okay.",
+      "avg_logprob": -0.8003618528968409,
+      "review_required": true
+    },
+    {
+      "start_seconds": 257.26,
+      "end_seconds": 257.4,
+      "text": "Thank you.",
+      "avg_logprob": -0.8003618528968409,
+      "review_required": true
+    },
+    {
+      "start_seconds": 272.48,
+      "end_seconds": 278.98,
+      "text": "Charlie 50, Charlie 59 at the Loaf and Jug 1610 South Greeley Highway 1610 South Greeley",
+      "avg_logprob": -0.5461125824695978,
+      "review_required": true
+    },
+    {
+      "start_seconds": 278.98,
+      "end_seconds": 279.38,
+      "text": "Highway.",
+      "avg_logprob": -0.5461125824695978,
+      "review_required": true
+    },
+    {
+      "start_seconds": 279.8,
+      "end_seconds": 283.28,
+      "text": "Her view is reporting a male refusing to leave the property working on further.",
+      "avg_logprob": -0.5461125824695978,
+      "review_required": true
+    },
+    {
+      "start_seconds": 284.72,
+      "end_seconds": 290.72,
+      "text": "59 from Persian and Converse, this is Vassar 38, you can cancel Charlie 50 out there well.",
+      "avg_logprob": -0.5461125824695978,
+      "review_required": true
+    },
+    {
+      "start_seconds": 291.56,
+      "end_seconds": 291.8,
+      "text": "I copy.",
+      "avg_logprob": -0.5461125824695978,
+      "review_required": true
+    },
+    {
+      "start_seconds": 291.8,
+      "end_seconds": 292.54,
+      "text": "36, 57.",
+      "avg_logprob": -1.047184978212629,
+      "review_required": true
+    }
+  ]
+}
