@@ -1,0 +1,247 @@
+{
+  "capture_started_at_utc": "2026-10-22T01:48:25.475025+00:00",
+  "capture_ended_at_utc": "2026-10-22T01:53:26.558600+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 14.35,
+      "end_seconds": 17.01,
+      "text": "Call sixteen. Call eleven. Dispatched. Respecting.",
+      "avg_logprob": -0.6918097114562989,
+      "review_required": true
+    },
+    {
+      "start_seconds": 18.31,
+      "end_seconds": 18.83,
+      "text": "Affection.",
+      "avg_logprob": -0.6918097114562989,
+      "review_required": true
+    },
+    {
+      "start_seconds": 20.25,
+      "end_seconds": 20.63,
+      "text": "Hello.",
+      "avg_logprob": -0.6918097114562989,
+      "review_required": true
+    },
+    {
+      "start_seconds": 36.22,
+      "end_seconds": 40.8,
+      "text": "Call 1-6, Call 11 at 2541 East 9th Street to Unit B.",
+      "avg_logprob": -0.3652307423916492,
+      "review_required": true
+    },
+    {
+      "start_seconds": 41.019999999999996,
+      "end_seconds": 44.04,
+      "text": "2-5-4, 1 East 9th Street, Unit Boy.",
+      "avg_logprob": -0.3652307423916492,
+      "review_required": true
+    },
+    {
+      "start_seconds": 44.64,
+      "end_seconds": 47.78,
+      "text": "I'll be saying if there's homeless people in their vehicles,",
+      "avg_logprob": -0.3652307423916492,
+      "review_required": true
+    },
+    {
+      "start_seconds": 47.8,
+      "end_seconds": 49.94,
+      "text": "they were told to call us if they came back.",
+      "avg_logprob": -0.3652307423916492,
+      "review_required": true
+    },
+    {
+      "start_seconds": 50.4,
+      "end_seconds": 50.92,
+      "text": "Working on further.",
+      "avg_logprob": -0.3652307423916492,
+      "review_required": true
+    },
+    {
+      "start_seconds": 52.6,
+      "end_seconds": 52.86,
+      "text": "Call 1-6.",
+      "avg_logprob": -0.3652307423916492,
+      "review_required": true
+    },
+    {
+      "start_seconds": 57.370000000000005,
+      "end_seconds": 57.79,
+      "text": "Call 1.",
+      "avg_logprob": -0.3652307423916492,
+      "review_required": true
+    },
+    {
+      "start_seconds": 58.510000000000005,
+      "end_seconds": 59.15,
+      "text": "1940-9.",
+      "avg_logprob": -0.3652307423916492,
+      "review_required": true
+    },
+    {
+      "start_seconds": 60.62,
+      "end_seconds": 60.86,
+      "text": "Yeah.",
+      "avg_logprob": -0.3118437262518065,
+      "review_required": true
+    },
+    {
+      "start_seconds": 62.52,
+      "end_seconds": 62.9,
+      "text": "Thank you.",
+      "avg_logprob": -0.3118437262518065,
+      "review_required": true
+    },
+    {
+      "start_seconds": 62.94,
+      "end_seconds": 63.38,
+      "text": "Have a good night.",
+      "avg_logprob": -0.3118437262518065,
+      "review_required": true
+    },
+    {
+      "start_seconds": 63.48,
+      "end_seconds": 63.68,
+      "text": "Thank you.",
+      "avg_logprob": -0.3118437262518065,
+      "review_required": true
+    },
+    {
+      "start_seconds": 63.84,
+      "end_seconds": 63.96,
+      "text": "We're in.",
+      "avg_logprob": -0.3118437262518065,
+      "review_required": true
+    },
+    {
+      "start_seconds": 148.75,
+      "end_seconds": 149.89,
+      "text": "116 Paul 11",
+      "avg_logprob": -0.7546054323514303,
+      "review_required": true
+    },
+    {
+      "start_seconds": 150.0,
+      "end_seconds": 157.02,
+      "text": "Your suspect vehicle is going to be a silver minivan and a silver Dodge Durango. There's no description on the individuals",
+      "avg_logprob": -0.39969254167456375,
+      "review_required": true
+    },
+    {
+      "start_seconds": 157.88,
+      "end_seconds": 158.78,
+      "text": "All right",
+      "avg_logprob": -0.39969254167456375,
+      "review_required": true
+    },
+    {
+      "start_seconds": 160.04,
+      "end_seconds": 160.78,
+      "text": "Hello",
+      "avg_logprob": -0.39969254167456375,
+      "review_required": true
+    },
+    {
+      "start_seconds": 161.45,
+      "end_seconds": 161.82,
+      "text": "1950",
+      "avg_logprob": -0.39969254167456375,
+      "review_required": true
+    },
+    {
+      "start_seconds": 207.42000000000002,
+      "end_seconds": 207.88,
+      "text": "49",
+      "avg_logprob": -0.6605134606361389,
+      "review_required": true
+    },
+    {
+      "start_seconds": 210.56,
+      "end_seconds": 239.63,
+      "text": "All 49 call 85 at South Parsley Boulevard and Sundance Lane.",
+      "avg_logprob": -0.3964819627649644,
+      "review_required": true
+    },
+    {
+      "start_seconds": 240.0,
+      "end_seconds": 245.3,
+      "text": "South Parsley Boulevard and Sundance Plain, either just north or south of that location.",
+      "avg_logprob": -0.4546845313346032,
+      "review_required": true
+    },
+    {
+      "start_seconds": 245.48,
+      "end_seconds": 246.3,
+      "text": "RP wasn't sure.",
+      "avg_logprob": -0.4546845313346032,
+      "review_required": true
+    },
+    {
+      "start_seconds": 246.88,
+      "end_seconds": 251.0,
+      "text": "They think their vehicle parked weird on the road, has its flashing hazards lights, and",
+      "avg_logprob": -0.4546845313346032,
+      "review_required": true
+    },
+    {
+      "start_seconds": 251.0,
+      "end_seconds": 252.7,
+      "text": "nobody's there at the vehicle.",
+      "avg_logprob": -0.4546845313346032,
+      "review_required": true
+    },
+    {
+      "start_seconds": 253.52,
+      "end_seconds": 256.5,
+      "text": "It's described as either being black or dark blue passenger car.",
+      "avg_logprob": -0.4546845313346032,
+      "review_required": true
+    },
+    {
+      "start_seconds": 257.42,
+      "end_seconds": 258.36,
+      "text": "49, I'll advise.",
+      "avg_logprob": -0.4546845313346032,
+      "review_required": true
+    },
+    {
+      "start_seconds": 259.26,
+      "end_seconds": 260.58,
+      "text": "Copy, quality 5, shall we make it?",
+      "avg_logprob": -0.4546845313346032,
+      "review_required": true
+    },
+    {
+      "start_seconds": 261.84,
+      "end_seconds": 262.32,
+      "text": "95.",
+      "avg_logprob": -0.6804841546451345,
+      "review_required": true
+    },
+    {
+      "start_seconds": 264.06,
+      "end_seconds": 265.1,
+      "text": "Ninety-fifty two.",
+      "avg_logprob": -0.7442288875579834,
+      "review_required": true
+    },
+    {
+      "start_seconds": 276.1,
+      "end_seconds": 277.84,
+      "text": "This stuff's all over there.",
+      "avg_logprob": -0.3869883219401042,
+      "review_required": true
+    },
+    {
+      "start_seconds": 280.7,
+      "end_seconds": 281.72,
+      "text": "Thank you, thank you, thank you.",
+      "avg_logprob": -0.3869883219401042,
+      "review_required": true
+    }
+  ]
+}
