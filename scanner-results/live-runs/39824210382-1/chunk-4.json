@@ -1,0 +1,72 @@
+{
+  "capture_started_at_utc": "2026-10-22T17:52:34.901129+00:00",
+  "capture_ended_at_utc": "2026-10-22T17:57:36.485034+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 57.66,
+      "end_seconds": 59.96,
+      "text": "Try 93343, all the",
+      "avg_logprob": -1.1618435740470887,
+      "review_required": true
+    },
+    {
+      "start_seconds": 60.0,
+      "end_seconds": 60.96,
+      "text": "Two-twelve is blocked.",
+      "avg_logprob": -0.5126304989275725,
+      "review_required": true
+    },
+    {
+      "start_seconds": 62.42,
+      "end_seconds": 63.6,
+      "text": "Ten-four, eleven-fifty-three.",
+      "avg_logprob": -0.5126304989275725,
+      "review_required": true
+    },
+    {
+      "start_seconds": 220.29,
+      "end_seconds": 224.15,
+      "text": "Shine in on the M23LV assisting CPD with traffic control.",
+      "avg_logprob": -0.6442873350211552,
+      "review_required": true
+    },
+    {
+      "start_seconds": 225.77,
+      "end_seconds": 226.75,
+      "text": "10-4-11-66.",
+      "avg_logprob": -0.6442873350211552,
+      "review_required": true
+    },
+    {
+      "start_seconds": 274.88,
+      "end_seconds": 278.42,
+      "text": "Sign 190, will you add some information to the call for me real quick?",
+      "avg_logprob": -0.3117484638565465,
+      "review_required": true
+    },
+    {
+      "start_seconds": 290.56,
+      "end_seconds": 291.32,
+      "text": "Okay, just go ahead.",
+      "avg_logprob": -0.3117484638565465,
+      "review_required": true
+    },
+    {
+      "start_seconds": 298.57,
+      "end_seconds": 299.69,
+      "text": "Victim's name is going to be Damon.",
+      "avg_logprob": -0.3117484638565465,
+      "review_required": true
+    },
+    {
+      "start_seconds": 300.0,
+      "end_seconds": 300.34,
+      "text": "Sure.",
+      "avg_logprob": -0.8699954986572266,
+      "review_required": true
+    }
+  ]
+}
