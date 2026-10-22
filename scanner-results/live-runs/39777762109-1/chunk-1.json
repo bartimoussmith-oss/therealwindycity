@@ -1,0 +1,58 @@
+{
+  "capture_started_at_utc": "2026-10-22T12:22:51.701247+00:00",
+  "capture_ended_at_utc": "2026-10-22T12:27:54.353728+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 92.54,
+      "end_seconds": 95.06,
+      "text": "This man's currently 80, out of the jail.",
+      "avg_logprob": -0.4099548790189955,
+      "review_required": true
+    },
+    {
+      "start_seconds": 96.44,
+      "end_seconds": 97.12,
+      "text": "623",
+      "avg_logprob": -0.4099548790189955,
+      "review_required": true
+    },
+    {
+      "start_seconds": 185.42,
+      "end_seconds": 186.2,
+      "text": "Full performance.",
+      "avg_logprob": -1.1301542321840923,
+      "review_required": true
+    },
+    {
+      "start_seconds": 211.17,
+      "end_seconds": 222.61,
+      "text": "qualified one at East 19th Street in Converse, Converse Roundabout, East 19th Street in Converse Avenue, a vehicle jumped the median going the wrong way.",
+      "avg_logprob": -0.3345577380486897,
+      "review_required": true
+    },
+    {
+      "start_seconds": 223.17,
+      "end_seconds": 225.81,
+      "text": "It's a golden light, possibly Honda Civic.",
+      "avg_logprob": -0.3345577380486897,
+      "review_required": true
+    },
+    {
+      "start_seconds": 226.93,
+      "end_seconds": 233.79,
+      "text": "The last direction was going in the roundabout the wrong way, possibly going south.",
+      "avg_logprob": -0.3345577380486897,
+      "review_required": true
+    },
+    {
+      "start_seconds": 233.79,
+      "end_seconds": 234.45,
+      "text": "Yeah.",
+      "avg_logprob": -0.9748095512390137,
+      "review_required": true
+    }
+  ]
+}

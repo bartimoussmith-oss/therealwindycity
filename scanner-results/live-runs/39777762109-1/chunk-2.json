@@ -1,0 +1,23 @@
+{
+  "capture_started_at_utc": "2026-10-22T12:27:55.547536+00:00",
+  "capture_ended_at_utc": "2026-10-22T12:32:57.189377+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 235.2,
+      "end_seconds": 236.44,
+      "text": "I'm okay.",
+      "avg_logprob": -0.4786917914946874,
+      "review_required": true
+    },
+    {
+      "start_seconds": 237.48,
+      "end_seconds": 238.42000000000002,
+      "text": "Thank you.",
+      "avg_logprob": -0.4786917914946874,
+      "review_required": true
+    }
+  ]
+}
