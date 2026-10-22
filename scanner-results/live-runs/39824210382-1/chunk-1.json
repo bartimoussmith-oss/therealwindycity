@@ -1,0 +1,142 @@
+{
+  "capture_started_at_utc": "2026-10-22T17:37:24.855041+00:00",
+  "capture_ended_at_utc": "2026-10-22T17:42:26.705286+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 6.8,
+      "end_seconds": 11.12,
+      "text": "This is Paul 91, AOA.",
+      "avg_logprob": -0.4049701305727164,
+      "review_required": true
+    },
+    {
+      "start_seconds": 12.18,
+      "end_seconds": 12.9,
+      "text": "Paul 91.",
+      "avg_logprob": -0.4049701305727164,
+      "review_required": true
+    },
+    {
+      "start_seconds": 17.62,
+      "end_seconds": 21.42,
+      "text": "This open Paul 34 will be at 24th and Reed Avenue with city compliance.",
+      "avg_logprob": -0.4049701305727164,
+      "review_required": true
+    },
+    {
+      "start_seconds": 24.12,
+      "end_seconds": 24.72,
+      "text": "Paul 91.",
+      "avg_logprob": -0.4049701305727164,
+      "review_required": true
+    },
+    {
+      "start_seconds": 24.8,
+      "end_seconds": 25.42,
+      "text": "This open Paul 34 will be at 24th and Reed Avenue with city compliance.",
+      "avg_logprob": -0.4049701305727164,
+      "review_required": true
+    },
+    {
+      "start_seconds": 42.21,
+      "end_seconds": 54.59,
+      "text": "Charlie, 53, dispatch. Do you attach yourself to that weapons incident? Do you need details and do you want to cover her?",
+      "avg_logprob": -0.3329255180923562,
+      "review_required": true
+    },
+    {
+      "start_seconds": 58.730000000000004,
+      "end_seconds": 59.370000000000005,
+      "text": "No, I got it.",
+      "avg_logprob": -0.3329255180923562,
+      "review_required": true
+    },
+    {
+      "start_seconds": 60.0,
+      "end_seconds": 63.76,
+      "text": "I'm just going to call the RP and tell her if that's right.",
+      "avg_logprob": -0.2641226408862266,
+      "review_required": true
+    },
+    {
+      "start_seconds": 66.57,
+      "end_seconds": 67.19,
+      "text": "I copy.",
+      "avg_logprob": -0.2641226408862266,
+      "review_required": true
+    },
+    {
+      "start_seconds": 67.61,
+      "end_seconds": 67.63,
+      "text": "Hello.",
+      "avg_logprob": -0.2641226408862266,
+      "review_required": true
+    },
+    {
+      "start_seconds": 67.75,
+      "end_seconds": 68.03,
+      "text": "There's them.",
+      "avg_logprob": -0.2641226408862266,
+      "review_required": true
+    },
+    {
+      "start_seconds": 201.84,
+      "end_seconds": 203.16,
+      "text": "Trying 93 traffic.",
+      "avg_logprob": -0.7156534194946289,
+      "review_required": true
+    },
+    {
+      "start_seconds": 204.22,
+      "end_seconds": 204.78,
+      "text": "Thank you.",
+      "avg_logprob": -0.7156534194946289,
+      "review_required": true
+    },
+    {
+      "start_seconds": 204.88,
+      "end_seconds": 205.16,
+      "text": "Go ahead.",
+      "avg_logprob": -0.7156534194946289,
+      "review_required": true
+    },
+    {
+      "start_seconds": 218.37,
+      "end_seconds": 227.37,
+      "text": "8 and a half, I have 25 northbound. Edward, Tom, Adam, 469. Boy, I'll get you a state in a second. We're going to take the X to 8 ramp.",
+      "avg_logprob": -0.3293042759532514,
+      "review_required": true
+    },
+    {
+      "start_seconds": 285.44,
+      "end_seconds": 286.9,
+      "text": "This match also team backup.",
+      "avg_logprob": -0.8599358477762767,
+      "review_required": true
+    },
+    {
+      "start_seconds": 289.41,
+      "end_seconds": 289.93,
+      "text": "All 17.",
+      "avg_logprob": -0.8599358477762767,
+      "review_required": true
+    },
+    {
+      "start_seconds": 295.14,
+      "end_seconds": 298.02,
+      "text": "5-7, foul marker, 8, little patio.",
+      "avg_logprob": -0.8599358477762767,
+      "review_required": true
+    },
+    {
+      "start_seconds": 300.27,
+      "end_seconds": 301.05,
+      "text": "Hello, everyone.",
+      "avg_logprob": -0.8159093345914569,
+      "review_required": true
+    }
+  ]
+}
