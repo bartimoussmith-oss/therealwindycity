@@ -1,0 +1,51 @@
+{
+  "capture_started_at_utc": "2026-10-22T18:32:58.457201+00:00",
+  "capture_ended_at_utc": "2026-10-22T18:37:59.585385+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 78.31,
+      "end_seconds": 78.75,
+      "text": "There you go.",
+      "avg_logprob": -0.6879567823239735,
+      "review_required": true
+    },
+    {
+      "start_seconds": 78.78999999999999,
+      "end_seconds": 79.07,
+      "text": "I'll be clear.",
+      "avg_logprob": -0.6879567823239735,
+      "review_required": true
+    },
+    {
+      "start_seconds": 79.53,
+      "end_seconds": 82.26,
+      "text": "I'll be clear.",
+      "avg_logprob": -0.6879567823239735,
+      "review_required": true
+    },
+    {
+      "start_seconds": 169.95,
+      "end_seconds": 171.21,
+      "text": "I'm trying to get the 10-40-30.",
+      "avg_logprob": -1.0937772591908772,
+      "review_required": true
+    },
+    {
+      "start_seconds": 185.87,
+      "end_seconds": 194.65,
+      "text": "I'm 76 and my code 8 to change out uniforms and then once I'm finished then I'm going to add notes and I'll clear myself from the call.",
+      "avg_logprob": -0.3734839227464464,
+      "review_required": true
+    },
+    {
+      "start_seconds": 195.99,
+      "end_seconds": 196.79,
+      "text": "10-4-12-36",
+      "avg_logprob": -0.3734839227464464,
+      "review_required": true
+    }
+  ]
+}
