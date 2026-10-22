@@ -1,0 +1,114 @@
+{
+  "capture_started_at_utc": "2026-10-22T01:53:28.581350+00:00",
+  "capture_ended_at_utc": "2026-10-22T01:57:57.636130+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 68.4,
+      "end_seconds": 88.68,
+      "text": "Call 85. Call 75. Call 85. Call 75 at the micro... microtel in and suites 1400 West",
+      "avg_logprob": -0.5992725779933314,
+      "review_required": true
+    },
+    {
+      "start_seconds": 88.68,
+      "end_seconds": 89.68,
+      "text": "Lincoln Way 140.",
+      "avg_logprob": -0.5992725779933314,
+      "review_required": true
+    },
+    {
+      "start_seconds": 100.38,
+      "end_seconds": 104.68,
+      "text": "We're behind the building.",
+      "avg_logprob": -0.3878223686887507,
+      "review_required": true
+    },
+    {
+      "start_seconds": 107.8,
+      "end_seconds": 109.96000000000001,
+      "text": "Scratch fall twenty-two.",
+      "avg_logprob": -0.3878223686887507,
+      "review_required": true
+    },
+    {
+      "start_seconds": 109.96000000000001,
+      "end_seconds": 110.96000000000001,
+      "text": "Fall twenty-two.",
+      "avg_logprob": -0.3878223686887507,
+      "review_required": true
+    },
+    {
+      "start_seconds": 115.37,
+      "end_seconds": 115.71000000000001,
+      "text": "Clear.",
+      "avg_logprob": -0.3878223686887507,
+      "review_required": true
+    },
+    {
+      "start_seconds": 115.85,
+      "end_seconds": 117.77,
+      "text": "No report all being wrapped to the micro-hotel.",
+      "avg_logprob": -0.3878223686887507,
+      "review_required": true
+    },
+    {
+      "start_seconds": 117.91,
+      "end_seconds": 119.03,
+      "text": "You can cancel fall seventy-five.",
+      "avg_logprob": -0.3878223686887507,
+      "review_required": true
+    },
+    {
+      "start_seconds": 119.85,
+      "end_seconds": 119.97,
+      "text": "Okay.",
+      "avg_logprob": -0.3878223686887507,
+      "review_required": true
+    },
+    {
+      "start_seconds": 122.87,
+      "end_seconds": 123.71,
+      "text": "Thank you.",
+      "avg_logprob": -0.3804830359477623,
+      "review_required": true
+    },
+    {
+      "start_seconds": 126.2,
+      "end_seconds": 126.62,
+      "text": "Thank you.",
+      "avg_logprob": -0.3804830359477623,
+      "review_required": true
+    },
+    {
+      "start_seconds": 126.62,
+      "end_seconds": 126.64,
+      "text": "Thank you.",
+      "avg_logprob": -0.3804830359477623,
+      "review_required": true
+    },
+    {
+      "start_seconds": 126.78,
+      "end_seconds": 126.96,
+      "text": "Thank you.",
+      "avg_logprob": -0.3804830359477623,
+      "review_required": true
+    },
+    {
+      "start_seconds": 240.34,
+      "end_seconds": 242.34,
+      "text": "That's Apollo 22, Hahn 3.",
+      "avg_logprob": -1.0355130583047867,
+      "review_required": true
+    },
+    {
+      "start_seconds": 243.92,
+      "end_seconds": 244.68,
+      "text": "1957.",
+      "avg_logprob": -1.0355130583047867,
+      "review_required": true
+    }
+  ]
+}
