@@ -1,0 +1,149 @@
+{
+  "capture_started_at_utc": "2026-10-22T01:38:21.538750+00:00",
+  "capture_ended_at_utc": "2026-10-22T01:43:21.680844+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 110.59,
+      "end_seconds": 114.05,
+      "text": "Paul 85, Paul 11, dispatch urgent welfare check.",
+      "avg_logprob": -0.5327130059401194,
+      "review_required": true
+    },
+    {
+      "start_seconds": 115.89,
+      "end_seconds": 116.15,
+      "text": "85.",
+      "avg_logprob": -0.5327130059401194,
+      "review_required": true
+    },
+    {
+      "start_seconds": 141.32999999999998,
+      "end_seconds": 149.75,
+      "text": "5 to 11 at the Park Inn or Old Motel 6, 1735 Westland Road, 1735.",
+      "avg_logprob": -0.5598539543151856,
+      "review_required": true
+    },
+    {
+      "start_seconds": 150.0,
+      "end_seconds": 156.84,
+      "text": "Westland Road, either room 102 or 104, or they would like a check on their friend.",
+      "avg_logprob": -0.2956798657392844,
+      "review_required": true
+    },
+    {
+      "start_seconds": 157.04,
+      "end_seconds": 159.84,
+      "text": "They were talking to her on the phone, and then she just stopped responding.",
+      "avg_logprob": -0.2956798657392844,
+      "review_required": true
+    },
+    {
+      "start_seconds": 160.64,
+      "end_seconds": 163.56,
+      "text": "Native American female, 40 years old, name is Christine Madison.",
+      "avg_logprob": -0.2956798657392844,
+      "review_required": true
+    },
+    {
+      "start_seconds": 166.5,
+      "end_seconds": 166.9,
+      "text": "Hello.",
+      "avg_logprob": -0.39737358911713555,
+      "review_required": true
+    },
+    {
+      "start_seconds": 169.72,
+      "end_seconds": 170.6,
+      "text": "It's 1222.",
+      "avg_logprob": -0.3976295970735096,
+      "review_required": true
+    },
+    {
+      "start_seconds": 171.7,
+      "end_seconds": 172.14,
+      "text": "1222.",
+      "avg_logprob": -0.3976295970735096,
+      "review_required": true
+    },
+    {
+      "start_seconds": 173.48,
+      "end_seconds": 174.62,
+      "text": "Please stack this vandalism.",
+      "avg_logprob": -0.3976295970735096,
+      "review_required": true
+    },
+    {
+      "start_seconds": 174.88,
+      "end_seconds": 175.88,
+      "text": "I'll be at route with Paul 85.",
+      "avg_logprob": -0.3976295970735096,
+      "review_required": true
+    },
+    {
+      "start_seconds": 176.2,
+      "end_seconds": 177.16,
+      "text": "Paul 11 can cancel.",
+      "avg_logprob": -0.3976295970735096,
+      "review_required": true
+    },
+    {
+      "start_seconds": 177.66,
+      "end_seconds": 177.9,
+      "text": "Copy.",
+      "avg_logprob": -0.3976295970735096,
+      "review_required": true
+    },
+    {
+      "start_seconds": 178.1,
+      "end_seconds": 178.88,
+      "text": "Paul 11, this way back in.",
+      "avg_logprob": -0.3976295970735096,
+      "review_required": true
+    },
+    {
+      "start_seconds": 179.6,
+      "end_seconds": 179.86,
+      "text": "11.",
+      "avg_logprob": -0.3976295970735096,
+      "review_required": true
+    },
+    {
+      "start_seconds": 187.18,
+      "end_seconds": 196.18,
+      "text": "I'll be out on another traffic stop, Stillwater and Meadowland. Washington, Charles Lincoln-Young, 6-1-3-2. A white Genesis.",
+      "avg_logprob": -0.5076944955757686,
+      "review_required": true
+    },
+    {
+      "start_seconds": 197.84,
+      "end_seconds": 198.0,
+      "text": "Copy.",
+      "avg_logprob": -0.5076944955757686,
+      "review_required": true
+    },
+    {
+      "start_seconds": 198.0,
+      "end_seconds": 198.82,
+      "text": "You've got it.",
+      "avg_logprob": -0.6111962240795756,
+      "review_required": true
+    },
+    {
+      "start_seconds": 200.38,
+      "end_seconds": 201.3,
+      "text": "Oh, it's going to be fine.",
+      "avg_logprob": -0.6111962240795756,
+      "review_required": true
+    },
+    {
+      "start_seconds": 203.95,
+      "end_seconds": 208.55,
+      "text": "Logan and he's Pershing with two county passengers, one one David Johns, on a blue Toyota CS.",
+      "avg_logprob": -0.6111962240795756,
+      "review_required": true
+    }
+  ]
+}
