@@ -1,0 +1,79 @@
+{
+  "capture_started_at_utc": "2026-10-22T12:58:14.728590+00:00",
+  "capture_ended_at_utc": "2026-10-22T13:03:15.417391+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 36.29,
+      "end_seconds": 38.769999999999996,
+      "text": "Charlie 59, Charlie 38, dispatch update.",
+      "avg_logprob": -0.38203453117946407,
+      "review_required": true
+    },
+    {
+      "start_seconds": 42.769999999999996,
+      "end_seconds": 57.480000000000004,
+      "text": "Charlie 59, Charlie 38, your suspect is going to be a white male in his 20's gray hoodie",
+      "avg_logprob": -0.4568505848155302,
+      "review_required": true
+    },
+    {
+      "start_seconds": 57.480000000000004,
+      "end_seconds": 59.519999999999996,
+      "text": "and blue shorts named Sebastian Moore.",
+      "avg_logprob": -0.4568505848155302,
+      "review_required": true
+    },
+    {
+      "start_seconds": 60.0,
+      "end_seconds": 61.46,
+      "text": "It's going to be on the south side of the building.",
+      "avg_logprob": -0.27245418088776724,
+      "review_required": true
+    },
+    {
+      "start_seconds": 62.7,
+      "end_seconds": 62.9,
+      "text": "38.",
+      "avg_logprob": -0.27245418088776724,
+      "review_required": true
+    },
+    {
+      "start_seconds": 64.46,
+      "end_seconds": 65.64,
+      "text": "Charlie, 59, did you copy?",
+      "avg_logprob": -0.27245418088776724,
+      "review_required": true
+    },
+    {
+      "start_seconds": 67.62,
+      "end_seconds": 68.56,
+      "text": "59, copy direction.",
+      "avg_logprob": -0.27245418088776724,
+      "review_required": true
+    },
+    {
+      "start_seconds": 69.52,
+      "end_seconds": 69.88,
+      "text": "659.",
+      "avg_logprob": -0.27245418088776724,
+      "review_required": true
+    },
+    {
+      "start_seconds": 121.39,
+      "end_seconds": 122.81,
+      "text": "Dispatch, Charlie 31.",
+      "avg_logprob": -0.6875574588775635,
+      "review_required": true
+    },
+    {
+      "start_seconds": 134.25,
+      "end_seconds": 134.85,
+      "text": "7 o'clock.",
+      "avg_logprob": -0.6875574588775635,
+      "review_required": true
+    }
+  ]
+}
