@@ -1,0 +1,79 @@
+{
+  "capture_started_at_utc": "2026-10-22T21:33:02.366588+00:00",
+  "capture_ended_at_utc": "2026-10-22T21:38:03.462329+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 44.5,
+      "end_seconds": 44.9,
+      "text": "I'm sorry.",
+      "avg_logprob": -0.18695187720523518,
+      "review_required": true
+    },
+    {
+      "start_seconds": 53.34,
+      "end_seconds": 54.96,
+      "text": "I'm out with the other units.",
+      "avg_logprob": -0.4432185832411051,
+      "review_required": true
+    },
+    {
+      "start_seconds": 56.519999999999996,
+      "end_seconds": 57.28,
+      "text": "1533.",
+      "avg_logprob": -0.4432185832411051,
+      "review_required": true
+    },
+    {
+      "start_seconds": 172.22,
+      "end_seconds": 173.18,
+      "text": "Call 2 dispatch.",
+      "avg_logprob": -0.502970791525311,
+      "review_required": true
+    },
+    {
+      "start_seconds": 176.66,
+      "end_seconds": 176.94,
+      "text": "Call 2.",
+      "avg_logprob": -0.502970791525311,
+      "review_required": true
+    },
+    {
+      "start_seconds": 179.64,
+      "end_seconds": 179.98,
+      "text": "What's your...",
+      "avg_logprob": -0.502970791525311,
+      "review_required": true
+    },
+    {
+      "start_seconds": 180.0,
+      "end_seconds": 194.55,
+      "text": "location for fire enamour. We are at West 9th and Warren. I copy, thank you. I'll do that",
+      "avg_logprob": -0.47494543608972584,
+      "review_required": true
+    },
+    {
+      "start_seconds": 194.55,
+      "end_seconds": 208.94,
+      "text": "and be central on West 9th. I copy. 12-5, 12-7-2, 12-5, CPD.",
+      "avg_logprob": -0.47494543608972584,
+      "review_required": true
+    },
+    {
+      "start_seconds": 293.28,
+      "end_seconds": 293.88,
+      "text": "30",
+      "avg_logprob": -0.481627956032753,
+      "review_required": true
+    },
+    {
+      "start_seconds": 300.66,
+      "end_seconds": 301.6,
+      "text": "choice for you.",
+      "avg_logprob": -0.7424274342400687,
+      "review_required": true
+    }
+  ]
+}
