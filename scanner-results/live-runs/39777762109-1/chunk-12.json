@@ -1,0 +1,121 @@
+{
+  "capture_started_at_utc": "2026-10-22T13:18:28.415097+00:00",
+  "capture_ended_at_utc": "2026-10-22T13:23:28.649464+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 109.09,
+      "end_seconds": 112.61,
+      "text": "Okay 93. 93, go ahead.",
+      "avg_logprob": -0.7236287268725309,
+      "review_required": true
+    },
+    {
+      "start_seconds": 120.0,
+      "end_seconds": 123.92,
+      "text": "chat me the IT on-call number or just have one of them call my state call.",
+      "avg_logprob": -0.362631409532494,
+      "review_required": true
+    },
+    {
+      "start_seconds": 125.12,
+      "end_seconds": 127.5,
+      "text": "I will have them give you a call at 720.",
+      "avg_logprob": -0.362631409532494,
+      "review_required": true
+    },
+    {
+      "start_seconds": 165.7,
+      "end_seconds": 166.38,
+      "text": "Yes, Max.",
+      "avg_logprob": -0.7539206266403198,
+      "review_required": true
+    },
+    {
+      "start_seconds": 170.7,
+      "end_seconds": 171.28,
+      "text": "I'll try, huh?",
+      "avg_logprob": -0.7539206266403198,
+      "review_required": true
+    },
+    {
+      "start_seconds": 180.05,
+      "end_seconds": 186.29,
+      "text": "Central and Second Avenue, eight counting plate, seven six eight seven on a white Kia.",
+      "avg_logprob": -0.42307971930894694,
+      "review_required": true
+    },
+    {
+      "start_seconds": 187.83,
+      "end_seconds": 188.01,
+      "text": "Happy.",
+      "avg_logprob": -0.42307971930894694,
+      "review_required": true
+    },
+    {
+      "start_seconds": 200.77,
+      "end_seconds": 203.71,
+      "text": "Cheyenne six six, we'll be ten forty-one out of L.T.C.",
+      "avg_logprob": -0.42307971930894694,
+      "review_required": true
+    },
+    {
+      "start_seconds": 204.51,
+      "end_seconds": 206.05,
+      "text": "Good morning, you have seven twenty-one.",
+      "avg_logprob": -0.42307971930894694,
+      "review_required": true
+    },
+    {
+      "start_seconds": 256.8,
+      "end_seconds": 257.44,
+      "text": "It's okay.",
+      "avg_logprob": -0.5089606151861303,
+      "review_required": true
+    },
+    {
+      "start_seconds": 257.76,
+      "end_seconds": 258.44,
+      "text": "I'm okay.",
+      "avg_logprob": -0.48821406438946724,
+      "review_required": true
+    },
+    {
+      "start_seconds": 259.62,
+      "end_seconds": 260.2,
+      "text": "Thanks.",
+      "avg_logprob": -0.48821406438946724,
+      "review_required": true
+    },
+    {
+      "start_seconds": 260.36,
+      "end_seconds": 260.58,
+      "text": "Thank you.",
+      "avg_logprob": -0.48821406438946724,
+      "review_required": true
+    },
+    {
+      "start_seconds": 283.84,
+      "end_seconds": 285.56,
+      "text": "Charlie, thirty-one dispatch status.",
+      "avg_logprob": -0.5373018836975098,
+      "review_required": true
+    },
+    {
+      "start_seconds": 287.28,
+      "end_seconds": 287.8,
+      "text": "Thirty-one up there.",
+      "avg_logprob": -0.5373018836975098,
+      "review_required": true
+    },
+    {
+      "start_seconds": 290.42,
+      "end_seconds": 290.9,
+      "text": "10-23.",
+      "avg_logprob": -0.5373018836975098,
+      "review_required": true
+    }
+  ]
+}
