@@ -1,0 +1,16 @@
+{
+  "capture_started_at_utc": "2026-10-22T21:22:56.558374+00:00",
+  "capture_ended_at_utc": "2026-10-22T21:27:57.178842+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 40.61,
+      "end_seconds": 41.51,
+      "text": "Hopefully just",
+      "avg_logprob": -0.8944982528686524,
+      "review_required": true
+    }
+  ]
+}
