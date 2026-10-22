@@ -1,0 +1,37 @@
+{
+  "capture_started_at_utc": "2026-10-22T12:43:04.577502+00:00",
+  "capture_ended_at_utc": "2026-10-22T12:48:06.229626+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 43.36,
+      "end_seconds": 59.28,
+      "text": "I have a really high way in Wapiti Trail.",
+      "avg_logprob": -0.8942918300628662,
+      "review_required": true
+    },
+    {
+      "start_seconds": 60.0,
+      "end_seconds": 66.28,
+      "text": "Colorado license plate, Daniel, Julia, Charles, Henry, 6'5\".",
+      "avg_logprob": -0.5094853457477357,
+      "review_required": true
+    },
+    {
+      "start_seconds": 66.28,
+      "end_seconds": 67.82,
+      "text": "It's going to be a dark grey matter.",
+      "avg_logprob": -0.5094853457477357,
+      "review_required": true
+    },
+    {
+      "start_seconds": 68.96000000000001,
+      "end_seconds": 69.86,
+      "text": "Love you.",
+      "avg_logprob": -0.5094853457477357,
+      "review_required": true
+    }
+  ]
+}
