@@ -1,0 +1,93 @@
+{
+  "capture_started_at_utc": "2026-10-22T21:12:50.760529+00:00",
+  "capture_ended_at_utc": "2026-10-22T21:17:51.145275+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 125.7,
+      "end_seconds": 126.08,
+      "text": "What's that thing?",
+      "avg_logprob": -0.9053371118174659,
+      "review_required": true
+    },
+    {
+      "start_seconds": 127.98,
+      "end_seconds": 128.34,
+      "text": "Port 5.",
+      "avg_logprob": -0.9053371118174659,
+      "review_required": true
+    },
+    {
+      "start_seconds": 129.8,
+      "end_seconds": 130.5,
+      "text": "Port 87.",
+      "avg_logprob": -0.9053371118174659,
+      "review_required": true
+    },
+    {
+      "start_seconds": 159.68,
+      "end_seconds": 166.96,
+      "text": "All five, Paul 87, it's going to be at the Livingston Walmart, 580 Livingston Avenue, 580 Livingston Avenue, RPs reporting.",
+      "avg_logprob": -0.2826780623859829,
+      "review_required": true
+    },
+    {
+      "start_seconds": 167.3,
+      "end_seconds": 174.8,
+      "text": "There's a female there that's trespassing, it's going to be a Hispanic female, light blue shirt and black pants with blue hair by the name of Rachel Hernandez.",
+      "avg_logprob": -0.2826780623859829,
+      "review_required": true
+    },
+    {
+      "start_seconds": 176.46,
+      "end_seconds": 179.9,
+      "text": "And there's also going to be a Hispanic male in the 30s wearing a black hoodie.",
+      "avg_logprob": -0.2826780623859829,
+      "review_required": true
+    },
+    {
+      "start_seconds": 180.0,
+      "end_seconds": 185.3,
+      "text": "named Fabian Hernandez leaving the parking lot in a red Chevy Silverado",
+      "avg_logprob": -0.5186844538834136,
+      "review_required": true
+    },
+    {
+      "start_seconds": 185.3,
+      "end_seconds": 188.76,
+      "text": "bearing two-county truck 1-5-0 Norah.",
+      "avg_logprob": -0.5186844538834136,
+      "review_required": true
+    },
+    {
+      "start_seconds": 188.76,
+      "end_seconds": 189.3,
+      "text": "1-5",
+      "avg_logprob": -0.5186844538834136,
+      "review_required": true
+    },
+    {
+      "start_seconds": 190.86,
+      "end_seconds": 191.54,
+      "text": "47",
+      "avg_logprob": -0.5186844538834136,
+      "review_required": true
+    },
+    {
+      "start_seconds": 192.5,
+      "end_seconds": 193.86,
+      "text": "15-15",
+      "avg_logprob": -0.5186844538834136,
+      "review_required": true
+    },
+    {
+      "start_seconds": 203.2,
+      "end_seconds": 205.84,
+      "text": "Charlie 28, Charlie 53, can you go FL?",
+      "avg_logprob": -0.5186844538834136,
+      "review_required": true
+    }
+  ]
+}
