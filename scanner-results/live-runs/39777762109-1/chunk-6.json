@@ -1,0 +1,51 @@
+{
+  "capture_started_at_utc": "2026-10-22T12:48:08.177696+00:00",
+  "capture_ended_at_utc": "2026-10-22T12:53:09.500461+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 70.48,
+      "end_seconds": 73.48,
+      "text": "About 62, dispatch accident and injury.",
+      "avg_logprob": -0.9573069959878922,
+      "review_required": true
+    },
+    {
+      "start_seconds": 75.78,
+      "end_seconds": 76.14,
+      "text": "False history.",
+      "avg_logprob": -0.9573069959878922,
+      "review_required": true
+    },
+    {
+      "start_seconds": 90.18,
+      "end_seconds": 96.74,
+      "text": "Call 6-2 at 423 West Fox Farm Road, true by Hilton, 423 West Fox Farm Road.",
+      "avg_logprob": -0.27447629487141967,
+      "review_required": true
+    },
+    {
+      "start_seconds": 97.36,
+      "end_seconds": 102.26,
+      "text": "There is a crash in the parking lot between the truck and the passenger car, getting a better description of the vehicles.",
+      "avg_logprob": -0.27447629487141967,
+      "review_required": true
+    },
+    {
+      "start_seconds": 103.6,
+      "end_seconds": 104.28,
+      "text": "Call 6-3.",
+      "avg_logprob": -0.27447629487141967,
+      "review_required": true
+    },
+    {
+      "start_seconds": 105.22,
+      "end_seconds": 106.22,
+      "text": "Call 6-49.",
+      "avg_logprob": -0.27447629487141967,
+      "review_required": true
+    }
+  ]
+}
