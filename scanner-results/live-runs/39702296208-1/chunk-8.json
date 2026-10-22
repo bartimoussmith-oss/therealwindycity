@@ -1,0 +1,23 @@
+{
+  "capture_started_at_utc": "2026-10-22T01:28:14.530064+00:00",
+  "capture_ended_at_utc": "2026-10-22T01:33:15.561609+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 145.84,
+      "end_seconds": 146.36,
+      "text": "Over to you then.",
+      "avg_logprob": -0.9680316895246506,
+      "review_required": true
+    },
+    {
+      "start_seconds": 151.3,
+      "end_seconds": 152.18,
+      "text": "Nineteen thirty.",
+      "avg_logprob": -0.7051704781396049,
+      "review_required": true
+    }
+  ]
+}
