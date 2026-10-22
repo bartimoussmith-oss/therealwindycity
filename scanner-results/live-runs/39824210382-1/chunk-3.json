@@ -1,0 +1,100 @@
+{
+  "capture_started_at_utc": "2026-10-22T17:47:31.598577+00:00",
+  "capture_ended_at_utc": "2026-10-22T17:52:32.462977+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 21.85,
+      "end_seconds": 23.05,
+      "text": "I'll be around to that.",
+      "avg_logprob": -0.22669842142563362,
+      "review_required": true
+    },
+    {
+      "start_seconds": 24.49,
+      "end_seconds": 25.01,
+      "text": "I copy.",
+      "avg_logprob": -0.22669842142563362,
+      "review_required": true
+    },
+    {
+      "start_seconds": 25.19,
+      "end_seconds": 25.43,
+      "text": "Thank you.",
+      "avg_logprob": -0.22669842142563362,
+      "review_required": true
+    },
+    {
+      "start_seconds": 28.84,
+      "end_seconds": 29.8,
+      "text": "Ms. Michelle with 54.",
+      "avg_logprob": -0.22669842142563362,
+      "review_required": true
+    },
+    {
+      "start_seconds": 30.0,
+      "end_seconds": 33.18,
+      "text": "I'll be in a row, gee. 11-47.",
+      "avg_logprob": -0.5568194097402145,
+      "review_required": true
+    },
+    {
+      "start_seconds": 51.06,
+      "end_seconds": 52.78,
+      "text": "Ok, 9-3. I'll be in a row just for 43.",
+      "avg_logprob": -0.5568194097402145,
+      "review_required": true
+    },
+    {
+      "start_seconds": 53.1,
+      "end_seconds": 55.84,
+      "text": "Check on seeing if they're aware of the compressions.",
+      "avg_logprob": -0.5568194097402145,
+      "review_required": true
+    },
+    {
+      "start_seconds": 157.54,
+      "end_seconds": 162.06,
+      "text": "Slow him down get him around the scene bring him down here for me",
+      "avg_logprob": -0.6207739904522895,
+      "review_required": true
+    },
+    {
+      "start_seconds": 163.66,
+      "end_seconds": 166.84,
+      "text": "Five-thirty you could push everybody on the fucks for a phone cell phone",
+      "avg_logprob": -0.6207739904522895,
+      "review_required": true
+    },
+    {
+      "start_seconds": 178.99,
+      "end_seconds": 179.71,
+      "text": "Call five",
+      "avg_logprob": -0.6207739904522895,
+      "review_required": true
+    },
+    {
+      "start_seconds": 181.6,
+      "end_seconds": 181.68,
+      "text": "Bye.",
+      "avg_logprob": -0.6301322437468029,
+      "review_required": true
+    },
+    {
+      "start_seconds": 181.7,
+      "end_seconds": 181.78,
+      "text": "Bye.",
+      "avg_logprob": -0.6301322437468029,
+      "review_required": true
+    },
+    {
+      "start_seconds": 284.48,
+      "end_seconds": 284.84,
+      "text": "Bye, copy.",
+      "avg_logprob": -0.8199118035180228,
+      "review_required": true
+    }
+  ]
+}
