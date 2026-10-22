@@ -1,0 +1,37 @@
+{
+  "capture_started_at_utc": "2026-10-22T06:39:18.189777+00:00",
+  "capture_ended_at_utc": "2026-10-22T06:44:18.624863+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 30.0,
+      "end_seconds": 31.68,
+      "text": "Is that Charlie 29 traffic?",
+      "avg_logprob": -0.4869621242795672,
+      "review_required": true
+    },
+    {
+      "start_seconds": 34.269999999999996,
+      "end_seconds": 34.61,
+      "text": "Charlie 29.",
+      "avg_logprob": -0.4869621242795672,
+      "review_required": true
+    },
+    {
+      "start_seconds": 40.79,
+      "end_seconds": 43.67,
+      "text": "Central and 17th MDR on a red passenger car.",
+      "avg_logprob": -0.4869621242795672,
+      "review_required": true
+    },
+    {
+      "start_seconds": 45.35,
+      "end_seconds": 46.05,
+      "text": "Is that Charlie 29?",
+      "avg_logprob": -0.4869621242795672,
+      "review_required": true
+    }
+  ]
+}
