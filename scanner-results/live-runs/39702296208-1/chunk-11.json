@@ -1,0 +1,51 @@
+{
+  "capture_started_at_utc": "2026-10-22T01:43:22.861859+00:00",
+  "capture_ended_at_utc": "2026-10-22T01:48:23.451810+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 36.38,
+      "end_seconds": 38.76,
+      "text": "Oh, can I turn that room 1-0-1?",
+      "avg_logprob": -0.6515233784914016,
+      "review_required": true
+    },
+    {
+      "start_seconds": 40.38,
+      "end_seconds": 40.9,
+      "text": "1943.",
+      "avg_logprob": -0.6515233784914016,
+      "review_required": true
+    },
+    {
+      "start_seconds": 253.26,
+      "end_seconds": 254.38,
+      "text": "Do something, Tran.",
+      "avg_logprob": -0.5128889083862305,
+      "review_required": true
+    },
+    {
+      "start_seconds": 283.49,
+      "end_seconds": 284.71,
+      "text": "2-0 Team Trent.",
+      "avg_logprob": -0.6883021409694965,
+      "review_required": true
+    },
+    {
+      "start_seconds": 290.8,
+      "end_seconds": 292.86,
+      "text": "I'm 10-6-9. I'm clearing it right now. Thank you.",
+      "avg_logprob": -0.6883021409694965,
+      "review_required": true
+    },
+    {
+      "start_seconds": 295.17,
+      "end_seconds": 296.49,
+      "text": "Thank you. Thank you for your...",
+      "avg_logprob": -0.6883021409694965,
+      "review_required": true
+    }
+  ]
+}
