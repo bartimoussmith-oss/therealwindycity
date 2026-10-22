@@ -1,0 +1,72 @@
+{
+  "archive_id": "47003-1776430472",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776430472",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/17/2026",
+    "startDisplay": "06:54 AM",
+    "endDisplay": "07:24 AM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 654.84,
+      "end_seconds": 656.18,
+      "text": "I think it worked out for her.",
+      "words": [
+        {
+          "start_seconds": 654.84,
+          "end_seconds": 655.18,
+          "text": " I",
+          "probability": 0.04503829777240753
+        },
+        {
+          "start_seconds": 655.18,
+          "end_seconds": 655.32,
+          "text": " think",
+          "probability": 0.26989203691482544
+        },
+        {
+          "start_seconds": 655.32,
+          "end_seconds": 655.38,
+          "text": " it",
+          "probability": 0.5625562071800232
+        },
+        {
+          "start_seconds": 655.38,
+          "end_seconds": 655.6,
+          "text": " worked",
+          "probability": 0.395730197429657
+        },
+        {
+          "start_seconds": 655.6,
+          "end_seconds": 655.84,
+          "text": " out",
+          "probability": 0.709611177444458
+        },
+        {
+          "start_seconds": 655.84,
+          "end_seconds": 656.04,
+          "text": " for",
+          "probability": 0.6730908751487732
+        },
+        {
+          "start_seconds": 656.04,
+          "end_seconds": 656.18,
+          "text": " her.",
+          "probability": 0.7986944317817688
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,395 @@
+{
+  "archive_id": "47003-1776428682",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776428682",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/17/2026",
+    "startDisplay": "06:24 AM",
+    "endDisplay": "06:54 AM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1863.684,
+  "segments": [
+    {
+      "start_seconds": 0.0,
+      "end_seconds": 7.62,
+      "text": "Wyoming two counties, six, five, North Sam plate has a Wyoming flag background, 30 Cheyenne PD.",
+      "words": [
+        {
+          "start_seconds": 0.0,
+          "end_seconds": 0.34,
+          "text": " Wyoming",
+          "probability": 0.9818965196609497
+        },
+        {
+          "start_seconds": 0.34,
+          "end_seconds": 0.62,
+          "text": " two",
+          "probability": 0.4561367332935333
+        },
+        {
+          "start_seconds": 0.62,
+          "end_seconds": 1.0,
+          "text": " counties,",
+          "probability": 0.5995029807090759
+        },
+        {
+          "start_seconds": 1.38,
+          "end_seconds": 1.5,
+          "text": " six,",
+          "probability": 0.6671648621559143
+        },
+        {
+          "start_seconds": 2.66,
+          "end_seconds": 3.14,
+          "text": " five,",
+          "probability": 0.9901244044303894
+        },
+        {
+          "start_seconds": 3.44,
+          "end_seconds": 3.5,
+          "text": " North",
+          "probability": 0.35053446888923645
+        },
+        {
+          "start_seconds": 3.5,
+          "end_seconds": 4.02,
+          "text": " Sam",
+          "probability": 0.4915008246898651
+        },
+        {
+          "start_seconds": 4.02,
+          "end_seconds": 4.86,
+          "text": " plate",
+          "probability": 0.3530513644218445
+        },
+        {
+          "start_seconds": 5.12,
+          "end_seconds": 5.38,
+          "text": " has",
+          "probability": 0.9230883717536926
+        },
+        {
+          "start_seconds": 5.38,
+          "end_seconds": 5.52,
+          "text": " a",
+          "probability": 0.9560364484786987
+        },
+        {
+          "start_seconds": 5.52,
+          "end_seconds": 5.8,
+          "text": " Wyoming",
+          "probability": 0.9937492609024048
+        },
+        {
+          "start_seconds": 5.8,
+          "end_seconds": 6.08,
+          "text": " flag",
+          "probability": 0.8211135268211365
+        },
+        {
+          "start_seconds": 6.08,
+          "end_seconds": 6.58,
+          "text": " background,",
+          "probability": 0.9248666763305664
+        },
+        {
+          "start_seconds": 6.76,
+          "end_seconds": 7.0,
+          "text": " 30",
+          "probability": 0.49873292446136475
+        },
+        {
+          "start_seconds": 7.0,
+          "end_seconds": 7.38,
+          "text": " Cheyenne",
+          "probability": 0.719026709596316
+        },
+        {
+          "start_seconds": 7.38,
+          "end_seconds": 7.62,
+          "text": " PD.",
+          "probability": 0.931397557258606
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 8.32,
+      "end_seconds": 10.68,
+      "text": "This concludes the Monday night vehicle at 6.23 hours.",
+      "words": [
+        {
+          "start_seconds": 8.32,
+          "end_seconds": 8.36,
+          "text": " This",
+          "probability": 0.9809629917144775
+        },
+        {
+          "start_seconds": 8.36,
+          "end_seconds": 8.76,
+          "text": " concludes",
+          "probability": 0.9917693138122559
+        },
+        {
+          "start_seconds": 8.76,
+          "end_seconds": 9.02,
+          "text": " the",
+          "probability": 0.45064809918403625
+        },
+        {
+          "start_seconds": 9.02,
+          "end_seconds": 9.2,
+          "text": " Monday",
+          "probability": 0.07777877897024155
+        },
+        {
+          "start_seconds": 9.2,
+          "end_seconds": 9.38,
+          "text": " night",
+          "probability": 0.39739951491355896
+        },
+        {
+          "start_seconds": 9.38,
+          "end_seconds": 9.64,
+          "text": " vehicle",
+          "probability": 0.44694191217422485
+        },
+        {
+          "start_seconds": 9.64,
+          "end_seconds": 9.86,
+          "text": " at",
+          "probability": 0.886958122253418
+        },
+        {
+          "start_seconds": 9.86,
+          "end_seconds": 10.08,
+          "text": " 6",
+          "probability": 0.5520740747451782
+        },
+        {
+          "start_seconds": 10.08,
+          "end_seconds": 10.42,
+          "text": ".23",
+          "probability": 0.6828188598155975
+        },
+        {
+          "start_seconds": 10.42,
+          "end_seconds": 10.68,
+          "text": " hours.",
+          "probability": 0.8748325109481812
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 886.34,
+      "end_seconds": 888.64,
+      "text": "1-6-3, engine 41, good morning.",
+      "words": [
+        {
+          "start_seconds": 886.34,
+          "end_seconds": 886.8,
+          "text": " 1",
+          "probability": 0.021991776302456856
+        },
+        {
+          "start_seconds": 886.8,
+          "end_seconds": 887.02,
+          "text": "-6",
+          "probability": 0.7139091491699219
+        },
+        {
+          "start_seconds": 887.02,
+          "end_seconds": 887.34,
+          "text": "-3,",
+          "probability": 0.9692791402339935
+        },
+        {
+          "start_seconds": 887.44,
+          "end_seconds": 887.56,
+          "text": " engine",
+          "probability": 0.20927920937538147
+        },
+        {
+          "start_seconds": 887.56,
+          "end_seconds": 888.08,
+          "text": " 41,",
+          "probability": 0.9564182758331299
+        },
+        {
+          "start_seconds": 888.3,
+          "end_seconds": 888.38,
+          "text": " good",
+          "probability": 0.9527075290679932
+        },
+        {
+          "start_seconds": 888.38,
+          "end_seconds": 888.64,
+          "text": " morning.",
+          "probability": 0.9954789876937866
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 890.08,
+      "end_seconds": 892.1,
+      "text": "1-6-3, good morning, 6-5-8.",
+      "words": [
+        {
+          "start_seconds": 890.08,
+          "end_seconds": 890.28,
+          "text": " 1",
+          "probability": 0.9820866584777832
+        },
+        {
+          "start_seconds": 890.28,
+          "end_seconds": 890.46,
+          "text": "-6",
+          "probability": 0.9988418519496918
+        },
+        {
+          "start_seconds": 890.46,
+          "end_seconds": 890.66,
+          "text": "-3,",
+          "probability": 0.9948450326919556
+        },
+        {
+          "start_seconds": 890.8,
+          "end_seconds": 890.88,
+          "text": " good",
+          "probability": 0.906787633895874
+        },
+        {
+          "start_seconds": 890.88,
+          "end_seconds": 891.24,
+          "text": " morning,",
+          "probability": 0.998847484588623
+        },
+        {
+          "start_seconds": 891.54,
+          "end_seconds": 891.74,
+          "text": " 6",
+          "probability": 0.4115784764289856
+        },
+        {
+          "start_seconds": 891.74,
+          "end_seconds": 891.96,
+          "text": "-5",
+          "probability": 0.46447139978408813
+        },
+        {
+          "start_seconds": 891.96,
+          "end_seconds": 892.1,
+          "text": "-8.",
+          "probability": 0.9384319484233856
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1425.99,
+      "end_seconds": 1426.31,
+      "text": "Good morning.",
+      "words": [
+        {
+          "start_seconds": 1425.99,
+          "end_seconds": 1426.09,
+          "text": " Good",
+          "probability": 0.7000879645347595
+        },
+        {
+          "start_seconds": 1426.09,
+          "end_seconds": 1426.31,
+          "text": " morning.",
+          "probability": 0.9040263891220093
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    },
+    {
+      "start_seconds": 1427.13,
+      "end_seconds": 1427.79,
+      "text": "Two, seven, good morning.",
+      "words": [
+        {
+          "start_seconds": 1427.13,
+          "end_seconds": 1427.27,
+          "text": " Two,",
+          "probability": 0.3003443777561188
+        },
+        {
+          "start_seconds": 1427.31,
+          "end_seconds": 1427.49,
+          "text": " seven,",
+          "probability": 0.6111450791358948
+        },
+        {
+          "start_seconds": 1427.65,
+          "end_seconds": 1427.75,
+          "text": " good",
+          "probability": 0.8793443441390991
+        },
+        {
+          "start_seconds": 1427.75,
+          "end_seconds": 1427.79,
+          "text": " morning.",
+          "probability": 0.9981675148010254
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1428.13,
+      "end_seconds": 1428.57,
+      "text": "Six, three, seven.",
+      "words": [
+        {
+          "start_seconds": 1428.13,
+          "end_seconds": 1428.23,
+          "text": " Six,",
+          "probability": 0.49896323680877686
+        },
+        {
+          "start_seconds": 1428.31,
+          "end_seconds": 1428.39,
+          "text": " three,",
+          "probability": 0.5408538579940796
+        },
+        {
+          "start_seconds": 1428.47,
+          "end_seconds": 1428.57,
+          "text": " seven.",
+          "probability": 0.8683972358703613
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    }
+  ]
+}

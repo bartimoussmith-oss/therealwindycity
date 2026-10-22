@@ -1,0 +1,156 @@
+{
+  "archive_id": "47003-1776432262",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776432262",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/17/2026",
+    "startDisplay": "07:24 AM",
+    "endDisplay": "07:54 AM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 86.68,
+      "end_seconds": 87.52,
+      "text": "I'm trying to do it, Abby.",
+      "words": [
+        {
+          "start_seconds": 86.68,
+          "end_seconds": 86.92,
+          "text": " I'm",
+          "probability": 0.2216575387865305
+        },
+        {
+          "start_seconds": 86.92,
+          "end_seconds": 86.92,
+          "text": " trying",
+          "probability": 0.41103509068489075
+        },
+        {
+          "start_seconds": 86.92,
+          "end_seconds": 87.03999999999999,
+          "text": " to",
+          "probability": 0.6789210438728333
+        },
+        {
+          "start_seconds": 87.03999999999999,
+          "end_seconds": 87.24,
+          "text": " do",
+          "probability": 0.1465403139591217
+        },
+        {
+          "start_seconds": 87.24,
+          "end_seconds": 87.36,
+          "text": " it,",
+          "probability": 0.798079252243042
+        },
+        {
+          "start_seconds": 87.4,
+          "end_seconds": 87.52,
+          "text": " Abby.",
+          "probability": 0.4602815806865692
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 90.0,
+      "end_seconds": 90.44,
+      "text": "Send three-four.",
+      "words": [
+        {
+          "start_seconds": 90.0,
+          "end_seconds": 90.12,
+          "text": " Send",
+          "probability": 0.023667437955737114
+        },
+        {
+          "start_seconds": 90.12,
+          "end_seconds": 90.28,
+          "text": " three",
+          "probability": 0.4621714651584625
+        },
+        {
+          "start_seconds": 90.28,
+          "end_seconds": 90.44,
+          "text": "-four.",
+          "probability": 0.6791584342718124
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_or_repetition",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 181.17,
+      "end_seconds": 183.07,
+      "text": "sharing my dreams and leave that traffic apart",
+      "words": [
+        {
+          "start_seconds": 181.17,
+          "end_seconds": 181.71,
+          "text": " sharing",
+          "probability": 0.1220845878124237
+        },
+        {
+          "start_seconds": 181.71,
+          "end_seconds": 181.91,
+          "text": " my",
+          "probability": 0.9142394065856934
+        },
+        {
+          "start_seconds": 181.91,
+          "end_seconds": 182.13,
+          "text": " dreams",
+          "probability": 0.9355107545852661
+        },
+        {
+          "start_seconds": 182.13,
+          "end_seconds": 182.33,
+          "text": " and",
+          "probability": 0.3803555965423584
+        },
+        {
+          "start_seconds": 182.33,
+          "end_seconds": 182.43,
+          "text": " leave",
+          "probability": 0.29858171939849854
+        },
+        {
+          "start_seconds": 182.43,
+          "end_seconds": 182.55,
+          "text": " that",
+          "probability": 0.8736480474472046
+        },
+        {
+          "start_seconds": 182.55,
+          "end_seconds": 182.81,
+          "text": " traffic",
+          "probability": 0.9949683547019958
+        },
+        {
+          "start_seconds": 182.81,
+          "end_seconds": 183.07,
+          "text": " apart",
+          "probability": 0.06889760494232178
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    }
+  ]
+}

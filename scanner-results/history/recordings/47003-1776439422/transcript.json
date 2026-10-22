@@ -1,0 +1,235 @@
+{
+  "archive_id": "47003-1776439422",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776439422",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/17/2026",
+    "startDisplay": "09:23 AM",
+    "endDisplay": "09:53 AM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 288.13,
+      "end_seconds": 290.57,
+      "text": "9,340, left lane's open, we're moving.",
+      "words": [
+        {
+          "start_seconds": 288.13,
+          "end_seconds": 288.59,
+          "text": " 9",
+          "probability": 0.5529025197029114
+        },
+        {
+          "start_seconds": 288.59,
+          "end_seconds": 289.09,
+          "text": ",340,",
+          "probability": 0.536270909011364
+        },
+        {
+          "start_seconds": 289.45,
+          "end_seconds": 289.53,
+          "text": " left",
+          "probability": 0.9232745170593262
+        },
+        {
+          "start_seconds": 289.53,
+          "end_seconds": 289.81,
+          "text": " lane's",
+          "probability": 0.8216349184513092
+        },
+        {
+          "start_seconds": 289.81,
+          "end_seconds": 290.01,
+          "text": " open,",
+          "probability": 0.9897281527519226
+        },
+        {
+          "start_seconds": 290.23,
+          "end_seconds": 290.29,
+          "text": " we're",
+          "probability": 0.9827490150928497
+        },
+        {
+          "start_seconds": 290.29,
+          "end_seconds": 290.57,
+          "text": " moving.",
+          "probability": 0.9538004398345947
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    },
+    {
+      "start_seconds": 292.46,
+      "end_seconds": 292.86,
+      "text": "Uh-huh.",
+      "words": [
+        {
+          "start_seconds": 292.46,
+          "end_seconds": 292.62,
+          "text": " Uh",
+          "probability": 0.02093655802309513
+        },
+        {
+          "start_seconds": 292.62,
+          "end_seconds": 292.86,
+          "text": "-huh.",
+          "probability": 0.5309944450855255
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 297.58,
+      "end_seconds": 298.1,
+      "text": "90,000.",
+      "words": [
+        {
+          "start_seconds": 297.58,
+          "end_seconds": 297.8,
+          "text": " 90",
+          "probability": 0.64106684923172
+        },
+        {
+          "start_seconds": 297.8,
+          "end_seconds": 298.1,
+          "text": ",000.",
+          "probability": 0.3466856889426708
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1538.73,
+      "end_seconds": 1540.79,
+      "text": "9-4-1, 9-4-2, have a good day.",
+      "words": [
+        {
+          "start_seconds": 1538.73,
+          "end_seconds": 1539.05,
+          "text": " 9",
+          "probability": 0.34843769669532776
+        },
+        {
+          "start_seconds": 1539.05,
+          "end_seconds": 1539.23,
+          "text": "-4",
+          "probability": 0.6153194457292557
+        },
+        {
+          "start_seconds": 1539.23,
+          "end_seconds": 1539.45,
+          "text": "-1,",
+          "probability": 0.9810077548027039
+        },
+        {
+          "start_seconds": 1539.59,
+          "end_seconds": 1539.65,
+          "text": " 9",
+          "probability": 0.5093193650245667
+        },
+        {
+          "start_seconds": 1539.65,
+          "end_seconds": 1539.81,
+          "text": "-4",
+          "probability": 0.9710056483745575
+        },
+        {
+          "start_seconds": 1539.81,
+          "end_seconds": 1540.05,
+          "text": "-2,",
+          "probability": 0.992986649274826
+        },
+        {
+          "start_seconds": 1540.15,
+          "end_seconds": 1540.15,
+          "text": " have",
+          "probability": 0.2760923504829407
+        },
+        {
+          "start_seconds": 1540.15,
+          "end_seconds": 1540.19,
+          "text": " a",
+          "probability": 0.992219865322113
+        },
+        {
+          "start_seconds": 1540.19,
+          "end_seconds": 1540.25,
+          "text": " good",
+          "probability": 0.9406794905662537
+        },
+        {
+          "start_seconds": 1540.25,
+          "end_seconds": 1540.79,
+          "text": " day.",
+          "probability": 0.9904905557632446
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1542.23,
+      "end_seconds": 1543.59,
+      "text": "10-4-1, 9-4-2",
+      "words": [
+        {
+          "start_seconds": 1542.23,
+          "end_seconds": 1542.47,
+          "text": " 10",
+          "probability": 0.32438093423843384
+        },
+        {
+          "start_seconds": 1542.47,
+          "end_seconds": 1542.61,
+          "text": "-4",
+          "probability": 0.993274450302124
+        },
+        {
+          "start_seconds": 1542.61,
+          "end_seconds": 1542.83,
+          "text": "-1,",
+          "probability": 0.7757812440395355
+        },
+        {
+          "start_seconds": 1542.95,
+          "end_seconds": 1543.23,
+          "text": " 9",
+          "probability": 0.9250971674919128
+        },
+        {
+          "start_seconds": 1543.23,
+          "end_seconds": 1543.43,
+          "text": "-4",
+          "probability": 0.9398930370807648
+        },
+        {
+          "start_seconds": 1543.43,
+          "end_seconds": 1543.59,
+          "text": "-2",
+          "probability": 0.8345540761947632
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    }
+  ]
+}

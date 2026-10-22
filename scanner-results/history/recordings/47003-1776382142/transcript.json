@@ -1,0 +1,182 @@
+{
+  "archive_id": "47003-1776382142",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776382142",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/16/2026",
+    "startDisplay": "05:29 PM",
+    "endDisplay": "05:59 PM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 305.65,
+      "end_seconds": 306.55,
+      "text": "1733.",
+      "words": [
+        {
+          "start_seconds": 305.65,
+          "end_seconds": 306.55,
+          "text": " 1733.",
+          "probability": 0.666666254401207
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    },
+    {
+      "start_seconds": 778.56,
+      "end_seconds": 779.98,
+      "text": "back over to the...",
+      "words": [
+        {
+          "start_seconds": 778.56,
+          "end_seconds": 778.82,
+          "text": " back",
+          "probability": 0.7507501244544983
+        },
+        {
+          "start_seconds": 778.82,
+          "end_seconds": 779.22,
+          "text": " over",
+          "probability": 0.9785056710243225
+        },
+        {
+          "start_seconds": 779.22,
+          "end_seconds": 779.6,
+          "text": " to",
+          "probability": 0.8838606476783752
+        },
+        {
+          "start_seconds": 779.6,
+          "end_seconds": 779.98,
+          "text": " the...",
+          "probability": 0.367640882730484
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 780.0,
+      "end_seconds": 784.57,
+      "text": "have a very good night. Have a good night. 1740.",
+      "words": [
+        {
+          "start_seconds": 780.0,
+          "end_seconds": 780.26,
+          "text": " have",
+          "probability": 0.17177943885326385
+        },
+        {
+          "start_seconds": 780.26,
+          "end_seconds": 780.5,
+          "text": " a",
+          "probability": 0.5130658745765686
+        },
+        {
+          "start_seconds": 780.5,
+          "end_seconds": 780.5,
+          "text": " very",
+          "probability": 0.6178756952285767
+        },
+        {
+          "start_seconds": 780.5,
+          "end_seconds": 780.76,
+          "text": " good",
+          "probability": 0.8981735110282898
+        },
+        {
+          "start_seconds": 780.76,
+          "end_seconds": 781.22,
+          "text": " night.",
+          "probability": 0.9873427152633667
+        },
+        {
+          "start_seconds": 782.87,
+          "end_seconds": 783.23,
+          "text": " Have",
+          "probability": 0.9775256514549255
+        },
+        {
+          "start_seconds": 783.23,
+          "end_seconds": 783.37,
+          "text": " a",
+          "probability": 0.9980119466781616
+        },
+        {
+          "start_seconds": 783.37,
+          "end_seconds": 783.41,
+          "text": " good",
+          "probability": 0.9180285334587097
+        },
+        {
+          "start_seconds": 783.41,
+          "end_seconds": 783.67,
+          "text": " night.",
+          "probability": 0.9702085852622986
+        },
+        {
+          "start_seconds": 784.05,
+          "end_seconds": 784.57,
+          "text": " 1740.",
+          "probability": 0.9650011956691742
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1393.49,
+      "end_seconds": 1394.87,
+      "text": "Sorry 9-10-4-2",
+      "words": [
+        {
+          "start_seconds": 1393.49,
+          "end_seconds": 1394.05,
+          "text": " Sorry",
+          "probability": 0.13770240545272827
+        },
+        {
+          "start_seconds": 1394.05,
+          "end_seconds": 1394.29,
+          "text": " 9",
+          "probability": 0.3201805353164673
+        },
+        {
+          "start_seconds": 1394.29,
+          "end_seconds": 1394.43,
+          "text": "-10",
+          "probability": 0.574376106262207
+        },
+        {
+          "start_seconds": 1394.43,
+          "end_seconds": 1394.61,
+          "text": "-4",
+          "probability": 0.8578497469425201
+        },
+        {
+          "start_seconds": 1394.61,
+          "end_seconds": 1394.87,
+          "text": "-2",
+          "probability": 0.9920920431613922
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "archive_id": "47003-1776378562",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776378562",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/16/2026",
+    "startDisplay": "04:29 PM",
+    "endDisplay": "04:59 PM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 1070.3,
+      "end_seconds": 1070.9,
+      "text": "1647.",
+      "words": [
+        {
+          "start_seconds": 1070.3,
+          "end_seconds": 1070.9,
+          "text": " 1647.",
+          "probability": 0.23016448318958282
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1797.44,
+      "end_seconds": 1799.44,
+      "text": "Have a good night.",
+      "words": [
+        {
+          "start_seconds": 1797.44,
+          "end_seconds": 1798.14,
+          "text": " Have",
+          "probability": 0.05452880635857582
+        },
+        {
+          "start_seconds": 1798.14,
+          "end_seconds": 1799.14,
+          "text": " a",
+          "probability": 0.9945774078369141
+        },
+        {
+          "start_seconds": 1799.14,
+          "end_seconds": 1799.22,
+          "text": " good",
+          "probability": 0.9672978520393372
+        },
+        {
+          "start_seconds": 1799.22,
+          "end_seconds": 1799.44,
+          "text": " night.",
+          "probability": 0.9925349950790405
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1808.05,
+      "end_seconds": 1808.95,
+      "text": "Have a good night.",
+      "words": [
+        {
+          "start_seconds": 1808.05,
+          "end_seconds": 1808.45,
+          "text": " Have",
+          "probability": 0.8714502453804016
+        },
+        {
+          "start_seconds": 1808.45,
+          "end_seconds": 1808.61,
+          "text": " a",
+          "probability": 0.9944100975990295
+        },
+        {
+          "start_seconds": 1808.61,
+          "end_seconds": 1808.61,
+          "text": " good",
+          "probability": 0.8671146631240845
+        },
+        {
+          "start_seconds": 1808.61,
+          "end_seconds": 1808.95,
+          "text": " night.",
+          "probability": 0.8390980362892151
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    }
+  ]
+}

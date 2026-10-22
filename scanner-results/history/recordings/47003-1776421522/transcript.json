@@ -1,0 +1,160 @@
+{
+  "archive_id": "47003-1776421522",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776421522",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/17/2026",
+    "startDisplay": "04:25 AM",
+    "endDisplay": "04:55 AM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 1720.54,
+      "end_seconds": 1723.98,
+      "text": "I'm sorry. I'm 4-1-10-41. I'll be at the T Academy. Good morning.",
+      "words": [
+        {
+          "start_seconds": 1720.54,
+          "end_seconds": 1721.0,
+          "text": " I'm",
+          "probability": 0.7259602546691895
+        },
+        {
+          "start_seconds": 1721.0,
+          "end_seconds": 1721.02,
+          "text": " sorry.",
+          "probability": 0.7981531620025635
+        },
+        {
+          "start_seconds": 1721.12,
+          "end_seconds": 1721.16,
+          "text": " I'm",
+          "probability": 0.9740627706050873
+        },
+        {
+          "start_seconds": 1721.16,
+          "end_seconds": 1721.34,
+          "text": " 4",
+          "probability": 0.34865909814834595
+        },
+        {
+          "start_seconds": 1721.34,
+          "end_seconds": 1721.5,
+          "text": "-1",
+          "probability": 0.8601889312267303
+        },
+        {
+          "start_seconds": 1721.5,
+          "end_seconds": 1721.7,
+          "text": "-10",
+          "probability": 0.8972949683666229
+        },
+        {
+          "start_seconds": 1721.7,
+          "end_seconds": 1722.08,
+          "text": "-41.",
+          "probability": 0.8392631113529205
+        },
+        {
+          "start_seconds": 1722.7,
+          "end_seconds": 1722.86,
+          "text": " I'll",
+          "probability": 0.7167074680328369
+        },
+        {
+          "start_seconds": 1722.86,
+          "end_seconds": 1722.94,
+          "text": " be",
+          "probability": 0.9973840117454529
+        },
+        {
+          "start_seconds": 1722.94,
+          "end_seconds": 1723.04,
+          "text": " at",
+          "probability": 0.6816661953926086
+        },
+        {
+          "start_seconds": 1723.04,
+          "end_seconds": 1723.14,
+          "text": " the",
+          "probability": 0.974497377872467
+        },
+        {
+          "start_seconds": 1723.14,
+          "end_seconds": 1723.24,
+          "text": " T",
+          "probability": 0.11318325251340866
+        },
+        {
+          "start_seconds": 1723.24,
+          "end_seconds": 1723.54,
+          "text": " Academy.",
+          "probability": 0.6504796743392944
+        },
+        {
+          "start_seconds": 1723.92,
+          "end_seconds": 1723.92,
+          "text": " Good",
+          "probability": 0.8547449707984924
+        },
+        {
+          "start_seconds": 1723.92,
+          "end_seconds": 1723.98,
+          "text": " morning.",
+          "probability": 0.9888443350791931
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 1725.01,
+      "end_seconds": 1726.27,
+      "text": "Good morning. It's 4-52.",
+      "words": [
+        {
+          "start_seconds": 1725.01,
+          "end_seconds": 1725.33,
+          "text": " Good",
+          "probability": 0.9512438774108887
+        },
+        {
+          "start_seconds": 1725.33,
+          "end_seconds": 1725.55,
+          "text": " morning.",
+          "probability": 0.9936113953590393
+        },
+        {
+          "start_seconds": 1725.71,
+          "end_seconds": 1725.81,
+          "text": " It's",
+          "probability": 0.9574243128299713
+        },
+        {
+          "start_seconds": 1725.81,
+          "end_seconds": 1725.97,
+          "text": " 4",
+          "probability": 0.9605391025543213
+        },
+        {
+          "start_seconds": 1725.97,
+          "end_seconds": 1726.27,
+          "text": "-52.",
+          "probability": 0.8973829746246338
+        }
+      ],
+      "review_flags": [
+        "unverified"
+      ]
+    }
+  ]
+}

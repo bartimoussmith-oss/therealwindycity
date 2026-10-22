@@ -1,0 +1,344 @@
+{
+  "archive_id": "47003-1776448372",
+  "feed_id": "47003",
+  "model": "small.en",
+  "source": "https://www.broadcastify.com/archives/feed/47003/47003-1776448372",
+  "credit": "Laramie County Law Enforcement",
+  "license": "https://creativecommons.org/licenses/by/3.0/us/",
+  "metadata": {
+    "dateDisplay": "04/17/2026",
+    "startDisplay": "11:52 AM",
+    "endDisplay": "12:22 PM",
+    "tzDisplay": "MDT"
+  },
+  "notice": "Unverified automated transcription. Not a verified incident report. Offsets are not wall-clock times. Independent 30-second windows can split words at boundaries.",
+  "review_required": true,
+  "duration_seconds": 1864.728,
+  "segments": [
+    {
+      "start_seconds": 252.11,
+      "end_seconds": 253.59,
+      "text": "Should I get 40 traffic stuff?",
+      "words": [
+        {
+          "start_seconds": 252.11,
+          "end_seconds": 252.57,
+          "text": " Should",
+          "probability": 0.049109481275081635
+        },
+        {
+          "start_seconds": 252.57,
+          "end_seconds": 252.67,
+          "text": " I",
+          "probability": 0.9255450367927551
+        },
+        {
+          "start_seconds": 252.67,
+          "end_seconds": 252.75,
+          "text": " get",
+          "probability": 0.3581259548664093
+        },
+        {
+          "start_seconds": 252.75,
+          "end_seconds": 252.97,
+          "text": " 40",
+          "probability": 0.5865252017974854
+        },
+        {
+          "start_seconds": 252.97,
+          "end_seconds": 253.33,
+          "text": " traffic",
+          "probability": 0.9279729127883911
+        },
+        {
+          "start_seconds": 253.33,
+          "end_seconds": 253.59,
+          "text": " stuff?",
+          "probability": 0.855731189250946
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 254.88,
+      "end_seconds": 255.04,
+      "text": "Fine.",
+      "words": [
+        {
+          "start_seconds": 254.88,
+          "end_seconds": 255.04,
+          "text": " Fine.",
+          "probability": 0.15384745597839355
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 263.3,
+      "end_seconds": 269.98,
+      "text": "Eight and a half, I-25 southbound with Edward King Nora, Queen 0-9, Colorado Fleet, played on a Black Essie.",
+      "words": [
+        {
+          "start_seconds": 263.3,
+          "end_seconds": 263.44,
+          "text": " Eight",
+          "probability": 0.2286340445280075
+        },
+        {
+          "start_seconds": 263.44,
+          "end_seconds": 263.56,
+          "text": " and",
+          "probability": 0.8812097311019897
+        },
+        {
+          "start_seconds": 263.56,
+          "end_seconds": 263.66,
+          "text": " a",
+          "probability": 0.952409029006958
+        },
+        {
+          "start_seconds": 263.66,
+          "end_seconds": 263.86,
+          "text": " half,",
+          "probability": 0.9910380840301514
+        },
+        {
+          "start_seconds": 264.02,
+          "end_seconds": 264.02,
+          "text": " I",
+          "probability": 0.9435511827468872
+        },
+        {
+          "start_seconds": 264.02,
+          "end_seconds": 264.36,
+          "text": "-25",
+          "probability": 0.8948063850402832
+        },
+        {
+          "start_seconds": 264.36,
+          "end_seconds": 265.02,
+          "text": " southbound",
+          "probability": 0.6441313177347183
+        },
+        {
+          "start_seconds": 265.02,
+          "end_seconds": 265.26,
+          "text": " with",
+          "probability": 0.7680653929710388
+        },
+        {
+          "start_seconds": 265.26,
+          "end_seconds": 265.6,
+          "text": " Edward",
+          "probability": 0.6278921961784363
+        },
+        {
+          "start_seconds": 265.6,
+          "end_seconds": 265.9,
+          "text": " King",
+          "probability": 0.7772088050842285
+        },
+        {
+          "start_seconds": 265.9,
+          "end_seconds": 266.32,
+          "text": " Nora,",
+          "probability": 0.6747418642044067
+        },
+        {
+          "start_seconds": 266.58,
+          "end_seconds": 266.9,
+          "text": " Queen",
+          "probability": 0.7981180548667908
+        },
+        {
+          "start_seconds": 266.9,
+          "end_seconds": 267.32,
+          "text": " 0",
+          "probability": 0.3594536781311035
+        },
+        {
+          "start_seconds": 267.32,
+          "end_seconds": 267.68,
+          "text": "-9,",
+          "probability": 0.8763848841190338
+        },
+        {
+          "start_seconds": 267.98,
+          "end_seconds": 268.18,
+          "text": " Colorado",
+          "probability": 0.9841771125793457
+        },
+        {
+          "start_seconds": 268.18,
+          "end_seconds": 268.56,
+          "text": " Fleet,",
+          "probability": 0.3879118859767914
+        },
+        {
+          "start_seconds": 268.62,
+          "end_seconds": 268.88,
+          "text": " played",
+          "probability": 0.6113932132720947
+        },
+        {
+          "start_seconds": 268.88,
+          "end_seconds": 269.1,
+          "text": " on",
+          "probability": 0.9833486676216125
+        },
+        {
+          "start_seconds": 269.1,
+          "end_seconds": 269.32,
+          "text": " a",
+          "probability": 0.9335074424743652
+        },
+        {
+          "start_seconds": 269.32,
+          "end_seconds": 269.64,
+          "text": " Black",
+          "probability": 0.5465731620788574
+        },
+        {
+          "start_seconds": 269.64,
+          "end_seconds": 269.98,
+          "text": " Essie.",
+          "probability": 0.5229531675577164
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 270.0,
+      "end_seconds": 270.12,
+      "text": "See?",
+      "words": [
+        {
+          "start_seconds": 270.0,
+          "end_seconds": 270.12,
+          "text": " See?",
+          "probability": 0.17237290740013123
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    },
+    {
+      "start_seconds": 363.98,
+      "end_seconds": 370.02,
+      "text": "In 40 final step will be the McDonald's parking lot off exit 7. Perhaps there 157",
+      "words": [
+        {
+          "start_seconds": 363.98,
+          "end_seconds": 364.52,
+          "text": " In",
+          "probability": 0.15102824568748474
+        },
+        {
+          "start_seconds": 364.52,
+          "end_seconds": 365.16,
+          "text": " 40",
+          "probability": 0.3985157310962677
+        },
+        {
+          "start_seconds": 365.16,
+          "end_seconds": 365.5,
+          "text": " final",
+          "probability": 0.8050141930580139
+        },
+        {
+          "start_seconds": 365.5,
+          "end_seconds": 365.8,
+          "text": " step",
+          "probability": 0.21723105013370514
+        },
+        {
+          "start_seconds": 365.8,
+          "end_seconds": 365.94,
+          "text": " will",
+          "probability": 0.8647946715354919
+        },
+        {
+          "start_seconds": 365.94,
+          "end_seconds": 366.08,
+          "text": " be",
+          "probability": 0.9981721639633179
+        },
+        {
+          "start_seconds": 366.08,
+          "end_seconds": 366.26,
+          "text": " the",
+          "probability": 0.9901809692382812
+        },
+        {
+          "start_seconds": 366.26,
+          "end_seconds": 366.88,
+          "text": " McDonald's",
+          "probability": 0.908542811870575
+        },
+        {
+          "start_seconds": 366.88,
+          "end_seconds": 367.18,
+          "text": " parking",
+          "probability": 0.9878201484680176
+        },
+        {
+          "start_seconds": 367.18,
+          "end_seconds": 367.46,
+          "text": " lot",
+          "probability": 0.9734703302383423
+        },
+        {
+          "start_seconds": 367.46,
+          "end_seconds": 367.66,
+          "text": " off",
+          "probability": 0.9275546073913574
+        },
+        {
+          "start_seconds": 367.66,
+          "end_seconds": 367.96,
+          "text": " exit",
+          "probability": 0.9553384184837341
+        },
+        {
+          "start_seconds": 367.96,
+          "end_seconds": 368.48,
+          "text": " 7.",
+          "probability": 0.5435539484024048
+        },
+        {
+          "start_seconds": 368.84,
+          "end_seconds": 369.44,
+          "text": " Perhaps",
+          "probability": 0.2653151750564575
+        },
+        {
+          "start_seconds": 369.44,
+          "end_seconds": 369.66,
+          "text": " there",
+          "probability": 0.28669193387031555
+        },
+        {
+          "start_seconds": 369.66,
+          "end_seconds": 370.02,
+          "text": " 157",
+          "probability": 0.4995892345905304
+        }
+      ],
+      "review_flags": [
+        "unverified",
+        "low_confidence_words"
+      ]
+    }
+  ]
+}
