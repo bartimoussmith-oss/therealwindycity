@@ -1,0 +1,79 @@
+{
+  "capture_started_at_utc": "2026-10-22T13:13:26.216803+00:00",
+  "capture_ended_at_utc": "2026-10-22T13:18:27.235365+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 18.03,
+      "end_seconds": 19.89,
+      "text": "This is telepathy for privacy.",
+      "avg_logprob": -0.9436909317970276,
+      "review_required": true
+    },
+    {
+      "start_seconds": 35.01,
+      "end_seconds": 41.19,
+      "text": "O.S. 9th Street and Capitol Avenue. We're going to be a two-crowd passenger, three-two,",
+      "avg_logprob": -0.4550051038915461,
+      "review_required": true
+    },
+    {
+      "start_seconds": 41.33,
+      "end_seconds": 45.61,
+      "text": "Edward Young. It's going to be a dark gray sable.",
+      "avg_logprob": -0.4550051038915461,
+      "review_required": true
+    },
+    {
+      "start_seconds": 47.09,
+      "end_seconds": 47.75,
+      "text": "Seven-thirteen.",
+      "avg_logprob": -0.4550051038915461,
+      "review_required": true
+    },
+    {
+      "start_seconds": 48.89,
+      "end_seconds": 49.629999999999995,
+      "text": "Three-two-one.",
+      "avg_logprob": -0.4550051038915461,
+      "review_required": true
+    },
+    {
+      "start_seconds": 53.14,
+      "end_seconds": 57.5,
+      "text": "I still can't get a three-turn. Can you send me that vehicle information in the chat?",
+      "avg_logprob": -0.4550051038915461,
+      "review_required": true
+    },
+    {
+      "start_seconds": 57.66,
+      "end_seconds": 59.68,
+      "text": "And then I have another one that I'll need as well.",
+      "avg_logprob": -0.4550051038915461,
+      "review_required": true
+    },
+    {
+      "start_seconds": 60.98,
+      "end_seconds": 62.6,
+      "text": "10-4, I can go ahead with that upper one.",
+      "avg_logprob": -0.41698790064045027,
+      "review_required": true
+    },
+    {
+      "start_seconds": 64.4,
+      "end_seconds": 67.62,
+      "text": "Two counties, 7-1, Union, Henry, Wyoming passenger.",
+      "avg_logprob": -0.41698790064045027,
+      "review_required": true
+    },
+    {
+      "start_seconds": 69.18,
+      "end_seconds": 71.4,
+      "text": "10-4, I'll send him right over, 7-4, Chief.",
+      "avg_logprob": -0.41698790064045027,
+      "review_required": true
+    }
+  ]
+}
