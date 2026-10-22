@@ -1,0 +1,100 @@
+{
+  "capture_started_at_utc": "2026-10-22T07:32:13.392450+00:00",
+  "capture_ended_at_utc": "2026-10-22T07:37:14.489937+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 29.23,
+      "end_seconds": 29.97,
+      "text": "Paul For-",
+      "avg_logprob": -1.2002726395924885,
+      "review_required": true
+    },
+    {
+      "start_seconds": 30.0,
+      "end_seconds": 32.1,
+      "text": "Paul 5-1, dispatch, burglary.",
+      "avg_logprob": -0.5915166238943735,
+      "review_required": true
+    },
+    {
+      "start_seconds": 33.24,
+      "end_seconds": 33.74,
+      "text": "4-4.",
+      "avg_logprob": -0.5915166238943735,
+      "review_required": true
+    },
+    {
+      "start_seconds": 65.04,
+      "end_seconds": 76.82,
+      "text": "Paul 4, Paul 5-1 at the Firebird Motel, 1905 East Lincoln Way, room 125, that's 1905 East Lincoln Way, room 125.",
+      "avg_logprob": -0.2484238589251483,
+      "review_required": true
+    },
+    {
+      "start_seconds": 77.82,
+      "end_seconds": 83.24,
+      "text": "She said she woke up to a male coming through the window. She said that she beat him up and he ran away.",
+      "avg_logprob": -0.2484238589251483,
+      "review_required": true
+    },
+    {
+      "start_seconds": 83.74,
+      "end_seconds": 87.6,
+      "text": "A white or Hispanic male in about his 38th no-clothing description.",
+      "avg_logprob": -0.2484238589251483,
+      "review_required": true
+    },
+    {
+      "start_seconds": 87.6,
+      "end_seconds": 89.82,
+      "text": "She says that he should look",
+      "avg_logprob": -0.48580747180514866,
+      "review_required": true
+    },
+    {
+      "start_seconds": 91.0,
+      "end_seconds": 91.96,
+      "text": "Negative. Weapons.",
+      "avg_logprob": -0.3758713911319601,
+      "review_required": true
+    },
+    {
+      "start_seconds": 93.56,
+      "end_seconds": 94.46,
+      "text": "4-4",
+      "avg_logprob": -0.4571834173467424,
+      "review_required": true
+    },
+    {
+      "start_seconds": 95.06,
+      "end_seconds": 95.9,
+      "text": "4-4",
+      "avg_logprob": -0.4571834173467424,
+      "review_required": true
+    },
+    {
+      "start_seconds": 96.92,
+      "end_seconds": 97.86,
+      "text": "1-2-3",
+      "avg_logprob": -0.4571834173467424,
+      "review_required": true
+    },
+    {
+      "start_seconds": 165.25,
+      "end_seconds": 166.79,
+      "text": "They're special, I want to help.",
+      "avg_logprob": -0.8754298455185361,
+      "review_required": true
+    },
+    {
+      "start_seconds": 168.17000000000002,
+      "end_seconds": 168.65,
+      "text": "I'm 34.",
+      "avg_logprob": -0.8754298455185361,
+      "review_required": true
+    }
+  ]
+}
