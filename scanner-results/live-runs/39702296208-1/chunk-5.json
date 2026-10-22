@@ -1,0 +1,51 @@
+{
+  "capture_started_at_utc": "2026-10-22T01:13:08.719302+00:00",
+  "capture_ended_at_utc": "2026-10-22T01:18:09.766779+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 110.62,
+      "end_seconds": 115.46000000000001,
+      "text": "That's 2 on Wyoming 212, taking the passenger 8140 on a YT.",
+      "avg_logprob": -0.8822537385500394,
+      "review_required": true
+    },
+    {
+      "start_seconds": 117.22,
+      "end_seconds": 117.92,
+      "text": "19-14.",
+      "avg_logprob": -0.8822537385500394,
+      "review_required": true
+    },
+    {
+      "start_seconds": 137.94,
+      "end_seconds": 139.64,
+      "text": "Just vegetable peel through traffic",
+      "avg_logprob": -0.7067952591639298,
+      "review_required": true
+    },
+    {
+      "start_seconds": 140.76,
+      "end_seconds": 149.82999999999998,
+      "text": "Okay, I think we converse and mason way with farm and two trucks",
+      "avg_logprob": -0.7067952591639298,
+      "review_required": true
+    },
+    {
+      "start_seconds": 150.0,
+      "end_seconds": 152.6,
+      "text": "7-0-2, Mary, a maroon dog.",
+      "avg_logprob": -0.6165295974774794,
+      "review_required": true
+    },
+    {
+      "start_seconds": 154.0,
+      "end_seconds": 154.98,
+      "text": "19-15.",
+      "avg_logprob": -0.6165295974774794,
+      "review_required": true
+    }
+  ]
+}
