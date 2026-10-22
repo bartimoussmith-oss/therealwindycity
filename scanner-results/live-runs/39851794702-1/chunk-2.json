@@ -1,0 +1,23 @@
+{
+  "capture_started_at_utc": "2026-10-22T20:52:39.639249+00:00",
+  "capture_ended_at_utc": "2026-10-22T20:57:40.354070+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 296.26,
+      "end_seconds": 297.7,
+      "text": "That's Falcon 9 transport.",
+      "avg_logprob": -0.903486126347592,
+      "review_required": true
+    },
+    {
+      "start_seconds": 298.9,
+      "end_seconds": 299.7,
+      "text": "Falcon 9.",
+      "avg_logprob": -0.903486126347592,
+      "review_required": true
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "capture_started_at_utc": "2026-10-22T20:47:35.961870+00:00",
+  "capture_ended_at_utc": "2026-10-22T20:52:37.681715+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 117.86,
+      "end_seconds": 119.02,
+      "text": "All two for 59.",
+      "avg_logprob": -0.6505277082324028,
+      "review_required": true
+    },
+    {
+      "start_seconds": 224.29,
+      "end_seconds": 224.73,
+      "text": "$1.50.",
+      "avg_logprob": -0.1462867176708053,
+      "review_required": true
+    },
+    {
+      "start_seconds": 227.88,
+      "end_seconds": 228.34,
+      "text": "$1.76.",
+      "avg_logprob": -0.1462867176708053,
+      "review_required": true
+    },
+    {
+      "start_seconds": 229.54,
+      "end_seconds": 231.3,
+      "text": "$1.76.",
+      "avg_logprob": -0.1462867176708053,
+      "review_required": true
+    },
+    {
+      "start_seconds": 236.93,
+      "end_seconds": 237.55,
+      "text": "$1.76.",
+      "avg_logprob": -0.1462867176708053,
+      "review_required": true
+    },
+    {
+      "start_seconds": 239.09,
+      "end_seconds": 239.89,
+      "text": "$1.75.",
+      "avg_logprob": -0.1462867176708053,
+      "review_required": true
+    },
+    {
+      "start_seconds": 240.0,
+      "end_seconds": 267.28,
+      "text": "Hi, 30.",
+      "avg_logprob": -1.0450921399252755,
+      "review_required": true
+    },
+    {
+      "start_seconds": 273.73,
+      "end_seconds": 279.69,
+      "text": "I'm out with Charlie 38. We're on Tonto Road and Iron Mountain Road with a motorcyclist that came out.",
+      "avg_logprob": -0.38548188349779916,
+      "review_required": true
+    },
+    {
+      "start_seconds": 280.77,
+      "end_seconds": 281.29,
+      "text": "1451.",
+      "avg_logprob": -0.38548188349779916,
+      "review_required": true
+    },
+    {
+      "start_seconds": 353.74,
+      "end_seconds": 354.7,
+      "text": "Fourteen fifty-two.",
+      "avg_logprob": -0.6349907981024848,
+      "review_required": true
+    }
+  ]
+}
