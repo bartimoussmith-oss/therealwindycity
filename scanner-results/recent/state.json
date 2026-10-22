@@ -191,10 +191,11 @@
     "47003-1792620274"
   ],
   "errors": {},
-  "blocked": false,
+  "blocked": true,
   "inventory_complete": false,
-  "updated_at_utc": "2026-10-22T00:55:16.369931+00:00",
+  "updated_at_utc": "2026-10-22T00:55:20.139353+00:00",
   "completed_count": 54,
   "discovered_count": 133,
-  "status": "in_progress"
+  "status": "blocked",
+  "block_reason": "Provider returned HTTP 429"
 }
