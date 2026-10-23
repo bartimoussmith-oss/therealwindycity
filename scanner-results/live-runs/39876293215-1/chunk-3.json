@@ -1,0 +1,100 @@
+{
+  "capture_started_at_utc": "2026-10-23T00:19:22.420450+00:00",
+  "capture_ended_at_utc": "2026-10-23T00:24:23.165090+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 1.1,
+      "end_seconds": 2.84,
+      "text": "Dispatch 46, amount possible.",
+      "avg_logprob": -0.678270860151811,
+      "review_required": true
+    },
+    {
+      "start_seconds": 3.82,
+      "end_seconds": 4.38,
+      "text": "Thank you, thank you.",
+      "avg_logprob": -0.678270860151811,
+      "review_required": true
+    },
+    {
+      "start_seconds": 8.42,
+      "end_seconds": 9.12,
+      "text": "Call 86.",
+      "avg_logprob": -0.678270860151811,
+      "review_required": true
+    },
+    {
+      "start_seconds": 9.98,
+      "end_seconds": 10.76,
+      "text": "Officer in fact, he goes CPD.",
+      "avg_logprob": -0.678270860151811,
+      "review_required": true
+    },
+    {
+      "start_seconds": 52.1,
+      "end_seconds": 53.36,
+      "text": "1247, this rest should have a check.",
+      "avg_logprob": -0.6015641322502723,
+      "review_required": true
+    },
+    {
+      "start_seconds": 61.62,
+      "end_seconds": 81.28999999999999,
+      "text": "Call forty-seven dispatch status check Paul sixty-nine did all six nine. Are you with all forty seven? Oh, yeah",
+      "avg_logprob": -0.5951871497290475,
+      "review_required": true
+    },
+    {
+      "start_seconds": 82.35,
+      "end_seconds": 89.33,
+      "text": "Thank you, Tony",
+      "avg_logprob": -0.5951871497290475,
+      "review_required": true
+    },
+    {
+      "start_seconds": 118.24,
+      "end_seconds": 119.14,
+      "text": "That's 4-2 too.",
+      "avg_logprob": -1.0880216717720033,
+      "review_required": true
+    },
+    {
+      "start_seconds": 120.53,
+      "end_seconds": 122.69,
+      "text": "We'll do it to you.",
+      "avg_logprob": -0.4789777139822642,
+      "review_required": true
+    },
+    {
+      "start_seconds": 123.03,
+      "end_seconds": 124.21,
+      "text": "All 47's okay.",
+      "avg_logprob": -0.4789777139822642,
+      "review_required": true
+    },
+    {
+      "start_seconds": 126.69,
+      "end_seconds": 128.55,
+      "text": "Thank you sir. I appreciate that. 1821.",
+      "avg_logprob": -0.4789777139822642,
+      "review_required": true
+    },
+    {
+      "start_seconds": 168.9,
+      "end_seconds": 169.7,
+      "text": "Pals are clear.",
+      "avg_logprob": -0.8831031194755009,
+      "review_required": true
+    },
+    {
+      "start_seconds": 170.74,
+      "end_seconds": 171.52,
+      "text": "Go see the...",
+      "avg_logprob": -0.8831031194755009,
+      "review_required": true
+    }
+  ]
+}
