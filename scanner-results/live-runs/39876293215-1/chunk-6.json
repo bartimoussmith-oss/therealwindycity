@@ -1,0 +1,128 @@
+{
+  "capture_started_at_utc": "2026-10-23T00:34:29.582389+00:00",
+  "capture_ended_at_utc": "2026-10-23T00:39:30.706327+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 183.41,
+      "end_seconds": 186.21,
+      "text": "Paul, 69, Paul, 16, dispatch disturbance.",
+      "avg_logprob": -0.29887654131109065,
+      "review_required": true
+    },
+    {
+      "start_seconds": 187.65,
+      "end_seconds": 188.03,
+      "text": "Paul, 69.",
+      "avg_logprob": -0.29887654131109065,
+      "review_required": true
+    },
+    {
+      "start_seconds": 204.42000000000002,
+      "end_seconds": 205.92000000000002,
+      "text": "Paul, 69, Paul, 16.",
+      "avg_logprob": -0.29887654131109065,
+      "review_required": true
+    },
+    {
+      "start_seconds": 206.48,
+      "end_seconds": 209.26,
+      "text": "It's going to be at the laundry basket at 1415 Logan Avenue.",
+      "avg_logprob": -0.29887654131109065,
+      "review_required": true
+    },
+    {
+      "start_seconds": 209.46,
+      "end_seconds": 209.98,
+      "text": "1-4-1.",
+      "avg_logprob": -0.29887654131109065,
+      "review_required": true
+    },
+    {
+      "start_seconds": 210.0,
+      "end_seconds": 213.44,
+      "text": "We have an active verbal disturbance.",
+      "avg_logprob": -0.40660667741620865,
+      "review_required": true
+    },
+    {
+      "start_seconds": 214.16,
+      "end_seconds": 215.2,
+      "text": "This batch is working on further.",
+      "avg_logprob": -0.40660667741620865,
+      "review_required": true
+    },
+    {
+      "start_seconds": 216.72,
+      "end_seconds": 217.2,
+      "text": "Ball 6-9.",
+      "avg_logprob": -0.40660667741620865,
+      "review_required": true
+    },
+    {
+      "start_seconds": 218.06,
+      "end_seconds": 218.88,
+      "text": "Ball 6.",
+      "avg_logprob": -0.40660667741620865,
+      "review_required": true
+    },
+    {
+      "start_seconds": 219.36,
+      "end_seconds": 219.92,
+      "text": "Thank you 37.",
+      "avg_logprob": -0.40660667741620865,
+      "review_required": true
+    },
+    {
+      "start_seconds": 250.51,
+      "end_seconds": 253.61,
+      "text": "All 202 dispatch, shots fired, heard only?",
+      "avg_logprob": -0.5473549582741477,
+      "review_required": true
+    },
+    {
+      "start_seconds": 254.83,
+      "end_seconds": 255.13,
+      "text": "202",
+      "avg_logprob": -0.5473549582741477,
+      "review_required": true
+    },
+    {
+      "start_seconds": 267.52,
+      "end_seconds": 269.98,
+      "text": "All 202 dispatch, we're going to be 811 West 26th Street",
+      "avg_logprob": -0.5473549582741477,
+      "review_required": true
+    },
+    {
+      "start_seconds": 270.21,
+      "end_seconds": 275.15,
+      "text": "That's 811 W26 St. RPs reporting they heard a gunshot.",
+      "avg_logprob": -0.3798633500933647,
+      "review_required": true
+    },
+    {
+      "start_seconds": 276.23,
+      "end_seconds": 278.61,
+      "text": "One shot coming from the southeast.",
+      "avg_logprob": -0.3798633500933647,
+      "review_required": true
+    },
+    {
+      "start_seconds": 279.21,
+      "end_seconds": 280.33,
+      "text": "Only report thus far.",
+      "avg_logprob": -0.3798633500933647,
+      "review_required": true
+    },
+    {
+      "start_seconds": 283.39,
+      "end_seconds": 285.55,
+      "text": "all T1.2, T1.2, CPD",
+      "avg_logprob": -0.716900210827589,
+      "review_required": true
+    }
+  ]
+}
