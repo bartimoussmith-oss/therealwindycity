@@ -1,0 +1,86 @@
+{
+  "capture_started_at_utc": "2026-10-23T00:39:32.396328+00:00",
+  "capture_ended_at_utc": "2026-10-23T00:44:33.426400+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 91.2,
+      "end_seconds": 92.68,
+      "text": "That's my one take from now.",
+      "avg_logprob": -0.6109773367643356,
+      "review_required": true
+    },
+    {
+      "start_seconds": 93.2,
+      "end_seconds": 93.9,
+      "text": "Thank you everyone.",
+      "avg_logprob": -0.6109773367643356,
+      "review_required": true
+    },
+    {
+      "start_seconds": 103.73,
+      "end_seconds": 105.75,
+      "text": "The Arrangement Bluegrass, 16.",
+      "avg_logprob": -0.6109773367643356,
+      "review_required": true
+    },
+    {
+      "start_seconds": 107.33,
+      "end_seconds": 107.63,
+      "text": "Copy.",
+      "avg_logprob": -0.6109773367643356,
+      "review_required": true
+    },
+    {
+      "start_seconds": 226.88,
+      "end_seconds": 228.86,
+      "text": "2336, 12.9, dispatch, trespassing?",
+      "avg_logprob": -0.8375225830078125,
+      "review_required": true
+    },
+    {
+      "start_seconds": 230.88,
+      "end_seconds": 231.32,
+      "text": "1236.",
+      "avg_logprob": -0.8375225830078125,
+      "review_required": true
+    },
+    {
+      "start_seconds": 232.46,
+      "end_seconds": 232.8,
+      "text": "Cleaner.",
+      "avg_logprob": -0.8375225830078125,
+      "review_required": true
+    },
+    {
+      "start_seconds": 250.48,
+      "end_seconds": 256.88,
+      "text": "29 is going to be 1508 South Greeley Highway, lot 18. 1508 South Greeley Highway, lot 18.",
+      "avg_logprob": -0.33548000419841095,
+      "review_required": true
+    },
+    {
+      "start_seconds": 257.46,
+      "end_seconds": 260.14,
+      "text": "Review's reporting that there's a male that's violating the trespassing order.",
+      "avg_logprob": -0.33548000419841095,
+      "review_required": true
+    },
+    {
+      "start_seconds": 260.64,
+      "end_seconds": 263.38,
+      "text": "It's going to be a white male, 21 years old, wearing her black shirt and jeans.",
+      "avg_logprob": -0.33548000419841095,
+      "review_required": true
+    },
+    {
+      "start_seconds": 263.96,
+      "end_seconds": 269.14,
+      "text": "5'6\", 120 pounds. 36 in route. 29 in route.",
+      "avg_logprob": -0.33548000419841095,
+      "review_required": true
+    }
+  ]
+}
