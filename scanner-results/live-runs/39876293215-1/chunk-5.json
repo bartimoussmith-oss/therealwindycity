@@ -1,0 +1,72 @@
+{
+  "capture_started_at_utc": "2026-10-23T00:29:26.834842+00:00",
+  "capture_ended_at_utc": "2026-10-23T00:34:27.462980+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 145.1,
+      "end_seconds": 149.96,
+      "text": "Grandview Avenue, that's Del Range, and Grandview Avenue, R.P.'s reporting a...",
+      "avg_logprob": -0.5573698425292969,
+      "review_required": true
+    },
+    {
+      "start_seconds": 150.0,
+      "end_seconds": 153.98,
+      "text": "very drunk female driver in a dark gray 4 runner",
+      "avg_logprob": -0.319072167078654,
+      "review_required": true
+    },
+    {
+      "start_seconds": 153.98,
+      "end_seconds": 157.68,
+      "text": "with tinted windows last seen headed eastbound on the range.",
+      "avg_logprob": -0.319072167078654,
+      "review_required": true
+    },
+    {
+      "start_seconds": 159.08,
+      "end_seconds": 159.42,
+      "text": "12-6-5.",
+      "avg_logprob": -0.319072167078654,
+      "review_required": true
+    },
+    {
+      "start_seconds": 160.68,
+      "end_seconds": 165.44,
+      "text": "12-6-5 should be a white female in her 40s wearing a short sleeve shirt, blonde hair,",
+      "avg_logprob": -0.319072167078654,
+      "review_required": true
+    },
+    {
+      "start_seconds": 165.9,
+      "end_seconds": 167.28,
+      "text": "and heavily tattooed arms.",
+      "avg_logprob": -0.319072167078654,
+      "review_required": true
+    },
+    {
+      "start_seconds": 170.28,
+      "end_seconds": 171.32,
+      "text": "18-32.",
+      "avg_logprob": -0.319072167078654,
+      "review_required": true
+    },
+    {
+      "start_seconds": 173.12,
+      "end_seconds": 175.5,
+      "text": "This best spot's only five. Can you show me a route to the hospital?",
+      "avg_logprob": -0.573575187612463,
+      "review_required": true
+    },
+    {
+      "start_seconds": 176.6,
+      "end_seconds": 177.12,
+      "text": "Thank you very much.",
+      "avg_logprob": -0.573575187612463,
+      "review_required": true
+    }
+  ]
+}
