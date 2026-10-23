@@ -1,0 +1,51 @@
+{
+  "capture_started_at_utc": "2026-10-23T00:14:19.449716+00:00",
+  "capture_ended_at_utc": "2026-10-23T00:19:20.395992+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 157.44,
+      "end_seconds": 158.48,
+      "text": "Thank you, Dixieland.",
+      "avg_logprob": -0.8239080147309736,
+      "review_required": true
+    },
+    {
+      "start_seconds": 278.66,
+      "end_seconds": 279.36,
+      "text": "Thank you sir.",
+      "avg_logprob": -0.24112359652841897,
+      "review_required": true
+    },
+    {
+      "start_seconds": 279.5,
+      "end_seconds": 279.68,
+      "text": "Thank you.",
+      "avg_logprob": -0.24112359652841897,
+      "review_required": true
+    },
+    {
+      "start_seconds": 279.78,
+      "end_seconds": 279.92,
+      "text": "Thank you.",
+      "avg_logprob": -0.24112359652841897,
+      "review_required": true
+    },
+    {
+      "start_seconds": 279.92,
+      "end_seconds": 279.94,
+      "text": "Thank you.",
+      "avg_logprob": -0.24112359652841897,
+      "review_required": true
+    },
+    {
+      "start_seconds": 280.14,
+      "end_seconds": 280.42,
+      "text": "Thank you.",
+      "avg_logprob": -0.24112359652841897,
+      "review_required": true
+    }
+  ]
+}
