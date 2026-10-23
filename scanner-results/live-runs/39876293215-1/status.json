@@ -1,19 +1,23 @@
 {
   "feed_id": "47003",
-  "status": "capturing",
+  "status": "ended",
   "started_at_utc": "2026-10-23T00:09:14.237900+00:00",
-  "last_audio_at_utc": "2026-10-23T01:11:49.587058+00:00",
-  "bytes_received": 7639040,
+  "last_audio_at_utc": "2026-10-23T01:14:15.192321+00:00",
+  "bytes_received": 7929856,
   "segments_saved": 97,
   "connections": [
     {
       "connected_at_utc": "2026-10-23T00:09:16.148349+00:00",
-      "http_status": 200
+      "http_status": 200,
+      "disconnected_at_utc": "2026-10-23T01:14:17.633303+00:00"
     }
   ],
   "errors": [],
   "continuous_capture_guaranteed": false,
   "planned_capture_seconds": 3900,
   "notice": "Best-effort public unverified capture. Separate runs may overlap or have gaps. Raw audio is temporary; recent archives are processed separately, not yet reconciled against live gaps.",
-  "heartbeat_at_utc": "2026-10-23T01:11:49.807062+00:00"
+  "heartbeat_at_utc": "2026-10-23T01:14:18.174209+00:00",
+  "capture_ended_at_utc": "2026-10-23T01:14:17.634223+00:00",
+  "pending_queue_items": 0,
+  "run_ended_at_utc": "2026-10-23T01:14:18.174185+00:00"
 }
