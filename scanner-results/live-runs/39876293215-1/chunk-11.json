@@ -1,0 +1,16 @@
+{
+  "capture_started_at_utc": "2026-10-23T00:59:44.486286+00:00",
+  "capture_ended_at_utc": "2026-10-23T01:04:46.751186+00:00",
+  "model": "small.en",
+  "review_required": true,
+  "notice": "Unverified radio transcription. MP3 and transcription window boundaries may lose or split words. Offsets are not exact wall-clock times.",
+  "segments": [
+    {
+      "start_seconds": 168.45,
+      "end_seconds": 170.39,
+      "text": "Charlie 41, Charlie 21, good stuff.",
+      "avg_logprob": -0.7442104866107305,
+      "review_required": true
+    }
+  ]
+}
