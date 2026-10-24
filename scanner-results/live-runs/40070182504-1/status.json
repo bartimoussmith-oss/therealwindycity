@@ -1,0 +1,14 @@
+{
+  "feed_id": "47003",
+  "status": "starting",
+  "started_at_utc": "2026-10-24T06:26:30.154710+00:00",
+  "last_audio_at_utc": null,
+  "bytes_received": 0,
+  "segments_saved": 0,
+  "connections": [],
+  "errors": [],
+  "continuous_capture_guaranteed": false,
+  "planned_capture_seconds": 3900,
+  "notice": "Best-effort public unverified capture. Separate runs may overlap or have gaps. Raw audio is temporary; recent archives are processed separately, not yet reconciled against live gaps.",
+  "heartbeat_at_utc": "2026-10-24T06:26:30.154753+00:00"
+}
