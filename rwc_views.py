@@ -53,6 +53,8 @@ from pathlib import Path
 import streamlit as st
 import streamlit.components.v1 as components
 
+from civic_atlas.streamlit_integration import render_lens_option
+
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
@@ -729,6 +731,7 @@ def _view_video():
                            key="vv_seg")
         sub = seg.with_suffix(".vtt")
         st.video(str(seg), subtitles=str(sub) if sub.exists() else None)
+        render_lens_option("montage_segment", seg.name)
         posts = {f.name: f for f in REN.glob("POST_*.txt")}
         stem = seg.stem
         post = posts.get("POST_ALL_FIVE.txt") if stem[:2] in (
@@ -748,6 +751,7 @@ def _view_video():
                             format_func=lambda p: p.stem.replace("_", " "),
                             key="vv_clip")
         st.video(str(clip))
+        render_lens_option("evidence_clip", clip.name)
         TAPE = {"apr27": "2026-04-27", "mar9": "2026-03-09"}
         dkey = next((d for p, d in TAPE.items()
                      if clip.stem.startswith(p + "_")), None)
@@ -775,6 +779,7 @@ def _view_video():
         ytid = minfo.get("id") if isinstance(minfo, dict) else minfo
         if ytid:
             st.video(f"https://www.youtube.com/watch?v={ytid}")
+            render_lens_option("full_meeting", str(mdate), f"https://www.youtube.com/watch?v={ytid}")
         st.caption("Live Granicus captions remain out of scope (no VTT "
                    "served); auto-captions are pullable via yt-dlp — see "
                    "pipeline/cityvideos.json.")
@@ -1395,6 +1400,7 @@ def _view_reel():
     reel = ROOT / "pipeline" / "renders" / "CONTENTION_REEL.mp4"
     if reel.exists():
         st.video(str(reel), autoplay=True, muted=True, loop=True)
+        render_lens_option("contention_reel", "Contention Reel")
     else:
         st.info("The reel isn't built in this checkout yet — run "
                 "`pipeline/build_reel.py` (needs ffmpeg).")
@@ -1610,6 +1616,7 @@ def _view_media():
                    "audio player above runs off the same clock.")
     else:
         st.video(_yt_url(ytid))
+        render_lens_option("media_meeting", str(ytid), _yt_url(ytid))
         st.caption("No caption file yet — the backfill cell picks these up "
                    "per meeting.")
 

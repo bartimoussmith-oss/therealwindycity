@@ -114,6 +114,8 @@ if mp4.exists():
     left, stage, right = st.columns([1, 1.05, 1])
     with stage:
         st.video(_video_bytes(str(mp4)))
+    from civic_atlas.streamlit_integration import render_lens_option
+    render_lens_option("screening_room", it["t"])
     st.markdown(
         f'<p class="sr-src">Source: City of Cheyenne meeting archive (YouTube) · '
         f"minutes clips 1071 / 1093 · file: <code>{it['f']}</code></p>",
