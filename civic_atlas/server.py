@@ -80,7 +80,10 @@ class Handler(BaseHTTPRequestHandler):
             if Path(name).name!=name or p.suffix!='.mp4':return self.send_error(404)
         else:
             name=u.path.lstrip('/') or 'index.html'
-            if name not in {'index.html','app.js','lens.js','style.css'}:return self.send_error(404)
+            static_files={'index.html','app.js','lens.js','style.css',
+                          'osint.html','osint-atlas.html','osint-original.html',
+                          'osint/app.js','osint/style.css'}
+            if name not in static_files:return self.send_error(404)
             p=WEB/name
         if not p.is_file():return self.send_error(404)
         size=p.stat().st_size;start=0;end=size-1
