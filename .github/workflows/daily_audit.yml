@@ -1,0 +1,63 @@
+name: Scheduled Audit & Telemetry Sync
+
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: civic-ledger-writes
+  cancel-in-progress: false
+
+jobs:
+  audit_and_commit:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+      - name: Audit captured text files
+        shell: bash
+        run: |
+          set -euo pipefail
+          for directory in data/text data/snapshots uploads; do
+            if [ -d "$directory" ]; then
+              find "$directory" -type f \( -iname '*.txt' -o -iname '*.md' -o -iname '*.html' -o -iname '*.htm' \) -print0 | xargs -0 -r python3 unicode-audit.py
+            fi
+          done
+      - name: Initialize vault and build digest
+        run: |
+          python3 cheyenne_watchdog_vault.py
+          python3 run.py init
+          python3 run.py digest --days 1
+      - name: Commit generated audit telemetry
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for path in data public cheyenne_watchdog.db; do
+            if [ -e "$path" ]; then git add -- "$path"; fi
+          done
+          if git diff --staged --quiet; then
+            echo "No telemetry changes to commit."
+          else
+            git diff --staged --quiet || git commit -m "chore(audit): scheduled telemetry sync [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

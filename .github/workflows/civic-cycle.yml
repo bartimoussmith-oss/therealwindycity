@@ -2,50 +2,73 @@ name: civic-cycle
 
 on:
   schedule:
-    - cron: "17 */6 * * *"   # every 6 hours, offset off the top of the hour
-  workflow_dispatch: {}      # manual "Run workflow" button too
+    - cron: "15 */6 * * *"
+  workflow_dispatch: {}
 
 permissions:
-  contents: write            # so the action can commit the refreshed ledger
+  contents: write
+
 concurrency:
-  group: civic-cycle
+  group: civic-ledger-writes
   cancel-in-progress: false
 
 jobs:
   cycle:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Check out repository
+        uses: actions/checkout@v4
         with:
-          python-version: "3.12"
-      - name: Install optional parsers
-        run: pip install pdfplumber
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+      - name: Initialize databases
+        run: |
+          python3 run.py init
+          python3 cheyenne_watchdog_vault.py
       - name: Sync verbatim YouTube transcript corpus
         run: python3 -u pipeline/sync_yt_corpus.py
-      - name: Run one civic cycle (crawl -> extract/diff -> digest -> publish)
-        run: python3 -u engine/scheduler.py --once
-      - name: Verify recovered vault rows against the transcript corpus
+      - name: Run one civic cycle
+        run: python3 -u -m engine.scheduler --once
+      - name: Verify recovered vault rows
         run: python3 -u engine/verify_vault.py
-      - name: Rebuild the entity index (Transparency Index face)
+      - name: Rebuild entity index
         run: python3 -u engine/entity_index.py
-      - name: Publish the RSS alert feed
+      - name: Publish RSS alert feed
         run: python3 -u engine/gen_feed.py
-      - name: Commit the ledger if anything changed
+      - name: Commit generated ledger files
+        shell: bash
         run: |
-          git config user.name "civic-engine-bot"
-          git config user.email "civic-engine@localhost"
-          git add data public Entity_Database pipeline/corpus_yt
-          if git commit -m "civic cycle $(date -u +%Y-%m-%dT%H:%MZ)"; then
-            git push
-            echo "CYCLE_COMMITTED=true" >> "$GITHUB_ENV"
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for path in data public Entity_Database pipeline/corpus_yt cheyenne_watchdog.db; do
+            if [ -e "$path" ]; then git add -- "$path"; fi
+          done
+          if git diff --staged --quiet; then
+            echo "No generated ledger changes."
           else
-            echo "ledger unchanged — quiet day is a true report"
+            git commit -m "chore(ledger): automated civic-cycle update [skip ci]"
+            git pull --rebase origin main
+            git push origin HEAD:main
+            echo "CYCLE_COMMITTED=true" >> "$GITHUB_ENV"
           fi
-      - name: Phone push via ntfy.sh (optional — set repo secret NTFY_TOPIC)
-        if: ${{ env.CYCLE_COMMITTED == 'true' && env.NTFY_TOPIC != '' }}
+      - name: Optional phone notification
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        shell: bash
         run: |
-          COUNTS=$(python3 -c "import sqlite3; c=sqlite3.connect('data/engine.db'); print(c.execute('SELECT COUNT(*) FROM alerts').fetchone()[0], 'alerts /', c.execute('SELECT COUNT(*) FROM documents').fetchone()[0], 'docs')")
-          curl -fsS -H "Title: Windy City ledger updated" -d "civic cycle committed — ${COUNTS}" "https://ntfy.sh/${NTFY_TOPIC}"
+          set -euo pipefail
+          if [ "${CYCLE_COMMITTED:-false}" = true ] && [ -n "${NTFY_TOPIC:-}" ]; then
+            COUNTS=$(python3 -c "import sqlite3; c=sqlite3.connect('data/engine.db'); print(c.execute('SELECT COUNT(*) FROM alerts').fetchone()[0], 'alerts /', c.execute('SELECT COUNT(*) FROM documents').fetchone()[0], 'docs'); c.close()")
+            curl -fsS -H "Title: Windy City ledger updated" -d "civic cycle committed — ${COUNTS}" "https://ntfy.sh/${NTFY_TOPIC}"
+          fi
