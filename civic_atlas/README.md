@@ -44,6 +44,18 @@ Tab/window sharing uses `getDisplayMedia`, requires a secure context (HTTPS, or 
 
 The app provides **real-time rendering during playback or user-authorized screen capture**, not an automatic connection to a live city meeting feed. You may share a live player yourself. Archive MP4s are edited montages. A full continuous view requires an authorized full-length source that actually shows the dais. If the broadcast cuts to the speaker, the other members' reactions are not available; enlarging cannot recover off-camera faces or missing detail. No face recognition, identity inference, tracking, emotion inference, or behavioral scoring. Seat labels are user-entered, not verified identities. Automatic camera tracking and direct live-stream ingestion are not shipped features. Shared-tab/window input is available, but it does not inject controls into every external site or modify existing Streamlit players.
 
+## Laramie County OSINT Explorer workspaces
+
+The running standalone server also serves three independent map workspaces (the existing Civic Atlas home and its interface are unchanged):
+
+- `/osint-original.html` — original Gotham-style layout, with unsafe/fabricated sample graph claims removed and safer interaction handling.
+- `/osint-atlas.html` — separate GIS + Civic Atlas page. Selecting a GIS feature lets you search its visible attribute text against the local Civic Atlas index; results are lexical leads only.
+- `/osint.html` — upgraded standalone explorer with responsive layout, safer filter parsing, feature attribute inspection, and a source-bound attribute graph.
+
+All three share the public County Parcels, Zoning, Subdivision, and Pipelines ArcGIS services; layer toggles; simple validated attribute filters; a Turf.js 500-foot map-click buffer; and a relationship/attribute graph that only shows attributes from the selected actual GIS feature. The graph does **not** invent owners, registered agents, permits, intersections, or corporate relationships. The buffer is a circle for spatial context only; the app does not claim that it intersects GIS features. The filter is restricted to a short field-name/equality/inequality/LIKE grammar and is never executed as arbitrary SQL. GIS/basemap layers rely on external CDN and public-service availability; the Atlas-connected search uses the preview server's local `/api/search` endpoint. These are read-only research aids, not official county services or a production-hosted public service.
+
+Start the existing server with `python -m civic_atlas.server --port 8080`, then open the routes above on that server. When the `ai-record-pages` workflow deploys from `main`, the public URLs are `https://bartimoussmith-oss.github.io/therealwindycity/osint.html`, `https://bartimoussmith-oss.github.io/therealwindycity/osint-atlas.html`, and `https://bartimoussmith-oss.github.io/therealwindycity/osint-original.html`. GitHub Pages uses a generated, metadata-and-token-only lexical index (no full transcript text) for Atlas search; it is roughly 14 MB uncompressed and is generated during deployment, not committed. Arena's live preview is available while the server process is running. Public deployment is complete only after main-branch workflow verification succeeds.
+
 ## Verify
 
 ```sh

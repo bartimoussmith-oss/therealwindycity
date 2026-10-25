@@ -21,6 +21,12 @@ on:
       - "pipeline/corpus/**"
       - "drive-import/**"
       - "tools/ai_record_drive.py"
+      - "civic_atlas/osint.html"
+      - "civic_atlas/osint-atlas.html"
+      - "civic_atlas/osint-original.html"
+      - "civic_atlas/osint/**"
+      - "civic_atlas/build_osint_index.py"
+      - "civic_atlas/server.py"
       - "tools/build_arrest_page.py"
       - "tools/arrest_page_seal.mjs"
       - "data/arrests/**"
@@ -94,6 +100,12 @@ jobs:
         run: python3 -u tools/render_ai_record.py --src /tmp/ai-record --out _site --extra public/index.html=ledger.html
       - name: Verify rendered snapshot and key pages
         run: python3 tools/check_ai_record.py --site _site --revision "$GITHUB_SHA" --run "$GITHUB_RUN_ID"
+      - name: Publish standalone Laramie County OSINT workspaces
+        run: |
+          mkdir -p _site/osint
+          cp civic_atlas/osint.html civic_atlas/osint-atlas.html civic_atlas/osint-original.html _site/
+          cp civic_atlas/osint/app.js civic_atlas/osint/style.css _site/osint/
+          python3 -m civic_atlas.build_osint_index --out _site/osint/search-index.json
       # Password-gated arrest database -> https://<user>.github.io/therealwindycity/arrest/
       # Static hosting has no server, so the gate is real client-side crypto:
       # tools/build_arrest_page.py shapes the PUBLIC tier only (names and exact

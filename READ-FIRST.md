@@ -66,7 +66,6 @@ Coordination is not optional here.
 
 ## Active claims
 
-
 ### claim: miller-estoppel-white-paper-expansion — source expansion and Wyoming-law analysis for the Miller estoppel-effect white paper
 - worker: arena-agent
 - status: done
@@ -282,3 +281,15 @@ auto-redeploys from `main`).
 
 
 - result: Added native Streamlit agenda/search/paste page with interactive source graph, full source inspection, and lead exports; identical home-entry cards; opt-in lens beside existing video players (home previews, Origin/Tapes, media fallback, Miller playlist, Screening Room). Embedded lens is self-contained, with a downloadable standalone HTML fallback for Streamlit iframe screen-capture policy restrictions; no second backend, external assets, new requirements, or source-data edits. Tests: 13 Python server/artifact tests, 8 mocked JS DOM tests, 6 Streamlit AppTests (four video-page subcases), portable HTML DOM smoke (0 errors, 4 tiles), JS syntax and Python compile, twins identical and diff whitespace clean. Integrated Streamlit preview on 8501; standalone remains on 8080. Actual browser capture and public Cloud redeploy completion unverified. Publishing integration via this session branch/PR; no main branch checkout or direct push.
+
+
+### claim: osint-map-workspaces — standalone Laramie County map, Civic Atlas integration, and upgraded explorer
+- worker: arena-agent
+- status: done
+- stage: three standalone pages plus GitHub Pages build wiring/index export implemented; 14 Python tests, JavaScript syntax, Python compilation, generated static index (~14 MB), route smoke checks, and whitespace check pass; preparing push and deployment PR
+- scope: NEW `civic_atlas/osint/`; NEW `civic_atlas/build_osint_index.py`; `civic_atlas/server.py` (static routes only); `civic_atlas/test_server.py`; `civic_atlas/README.md`; `.github/workflows/ai-record-pages.yml` (static explorer publication); READ-FIRST.md (claim/work-log only). Existing Civic Atlas UI, pages, entrypoints, corpus, and records untouched.
+- started: 2026-10-25T14:00Z
+- updated: 2026-10-25T14:25Z
+- notes: `/osint-original.html` recreates the original-style workspace with fabricated graph examples removed; `/osint-atlas.html` connects GIS feature attributes to local Atlas lexical search; `/osint.html` is the upgraded standalone. All include the GIS layer catalog, constrained SQL-like filters, 500 ft Turf buffer and source-feature attribute graph. No inferred ownership, threat assessments, or fake relations. The preview is running; no production deployment or external GIS service/browser rendering was independently verified.
+
+- result: Added responsive and accessible route-backed workspaces, allowlisted static serving, and route tests. The existing Civic Atlas landing page and Streamlit experience remain unchanged. All pages answered HTTP 200 and `/api/search` returned records in local smoke checks. External Leaflet/Esri/Turf assets and county services require browser network access.

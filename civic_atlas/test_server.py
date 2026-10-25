@@ -54,6 +54,16 @@ class HTTPTests(unittest.TestCase):
         full=urlopen(self.base+'/app.js').read()
         r=urlopen(Request(self.base+'/app.js',headers={'Range':'bytes=0-19'}))
         self.assertEqual(r.status,206);self.assertEqual(r.read(),full[:20])
+    def test_osint_pages_and_assets_are_served(self):
+        for path, marker in [('/osint.html', b'Upgraded explorer'),
+                             ('/osint-atlas.html', b'CIVIC ATLAS TEXT SEARCH'),
+                             ('/osint-original.html', b'Gotham v2'),
+                             ('/osint/app.js', b'function parseFilter'),
+                             ('/osint/style.css', b'#map')]:
+            with self.subTest(path=path):
+                response=urlopen(self.base+path)
+                self.assertEqual(response.status,200)
+                self.assertIn(marker,response.read())
     def test_private_files_not_exposed(self):
         for p in ['/.git/config','/server.py','/media/%2e%2e%2fREADME.md','/api/record?id=missing']:
             with self.assertRaises(HTTPError) as e:urlopen(self.base+p)
