@@ -1801,31 +1801,8 @@ def render_index():
                     icon="🏗️")
 
     def read_raw_document(fname):
-        candidates = [ROOT / fname,
-                      ROOT / (fname + ".md"),
-                      ROOT / (fname + ".txt"),
-                      ROOT / "Video_Transcripts" / fname,
-                      ROOT / "Cheyenne_Extracted_Documents" / fname,
-                      ROOT / "city of cheyenne gov files" / fname]
-        target = next((p for p in candidates if p.exists()), None)
-        if not target:
-            return "Source file currently archived or unavailable."
-        ext = str(target).lower().split('.')[-1]
-        try:
-            if ext in ['htm', 'html']:
-                return BeautifulSoup(open(target, "r", encoding="utf-8",
-                                          errors="ignore").read(),
-                                     'html.parser').get_text(' ')
-            elif ext == 'pdf':
-                return "\n".join([p.extract_text() or ""
-                                  for p in PdfReader(str(target)).pages])
-            elif ext == 'txt':
-                return open(target, "r", encoding="utf-8", errors="ignore").read()
-            elif ext == 'md':
-                return open(target, "r", encoding="utf-8", errors="ignore").read()
-        except Exception:
-            return "Error extracting raw text."
-        return "Format unsupported."
+        from remediation_runtime import read_raw_document
+        return read_raw_document(fname, None)
 
     st.sidebar.markdown("### 🔍 Index Navigation")
     nav_mode = st.sidebar.radio("Select View:",

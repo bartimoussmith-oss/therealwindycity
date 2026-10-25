@@ -23,6 +23,11 @@ sys.path.insert(0, str(ROOT))
 st.set_page_config(page_title="The Real Windy City — Heroes of the Public Record",
                    page_icon="🌬️", layout="wide")
 
+# remediation: unified database bootstrap
+from remediation_runtime import initialize_databases
+initialize_databases()
+st.page_link('pages/24_Unified_Records.py', label='Unified Public Records: Vault + Entity Dossiers')
+
 import rwc_views as V  # noqa: E402
 
 FEATURES = json.loads((ROOT / "pages" / "_features.json").read_text())

@@ -48,3 +48,7 @@ __pycache__/
 *.db-journal
 /data/arrests/keyring.jsonl
 /data/arrests/access_ledger.json
+
+.sudo_as_admin_successful
+
+data/selftest/

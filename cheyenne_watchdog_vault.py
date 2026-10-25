@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import sqlite3
 
-DB_NAME = "cheyenne_watchdog.db"
+DB_NAME = str(__import__("pathlib").Path(__file__).resolve().parent / "cheyenne_watchdog.db")
 
 def init_db():
     conn = sqlite3.connect(DB_NAME)
@@ -82,13 +82,12 @@ def init_db():
     cur.executemany("INSERT OR REPLACE INTO veracity_contradictions VALUES (?,?,?,?,?,?,?,?,?,?)", contradictions)
 
     vouchers = [
-        ("V-01", "2026-05-01", "Far Out Productions", 40000.00, "Parks & Rec", "Thanks for the Memories Concert", "Concert spend during fiscal constraints", "CONFIRMED EXACT"),
-        ("V-01", "2026-05-01", "Far Out Productions", 40000.00, "Parks & Rec", "Thanks for the Memories Concert", "Concert spend during fiscal constraints", "CONFIRMED EXACT"),
-        ("V-02", "2026-05-01", "Lotus Engineering", 12292.50, "Planning", "Climate Action Plan Consulting", "Discretionary consulting expenditure", "CONFIRMED EXACT"),
-        ("V-03", "2026-05-01", "Rock Solid SST", 4448.00, "Police", "Firearm Suppressors", "Discretionary hardware expenditure", "CONFIRMED EXACT"),
-        ("V-04", "2026-05-01", "Amazon.com", 833.40, "Various", "Amazon Flags and Banners", "Discretionary administrative spend", "CONFIRMED EXACT"),
-        ("V-05", "2026-05-01", "PEAC Solutions", 979.20, "IT", "Copier Lease", "Recurring equipment lease", "CONFIRMED EXACT"),
-        ("V-06", "2026-05-01", "ALSCO", 627.03, "Sanitation", "Uniform Laundry & Cleaning", "Operational laundry fees", "CONFIRMED EXACT")
+        ('V-01', '2026-05-01', 'Far Out Productions', 40000.0, 'Parks & Rec', 'Thanks for the Memories Concert', 'Concert spend during fiscal constraints', 'CONFIRMED EXACT'),
+        ('V-02', '2026-05-01', 'Lotus Engineering', 12292.5, 'Planning', 'Climate Action Plan Consulting', 'Discretionary consulting expenditure', 'CONFIRMED EXACT'),
+        ('V-03', '2026-05-01', 'Rock Solid SST', 4448.0, 'Police', 'Firearm Suppressors', 'Discretionary hardware expenditure', 'CONFIRMED EXACT'),
+        ('V-04', '2026-05-01', 'Amazon.com', 833.4, 'Various', 'Amazon Flags and Banners', 'Discretionary administrative spend', 'CONFIRMED EXACT'),
+        ('V-05', '2026-05-01', 'PEAC Solutions', 979.2, 'IT', 'Copier Lease', 'Recurring equipment lease', 'CONFIRMED EXACT'),
+        ('V-06', '2026-05-01', 'ALSCO', 627.03, 'Sanitation', 'Uniform Laundry & Cleaning', 'Operational laundry fees', 'CONFIRMED EXACT'),
     ]
     cur.executemany("INSERT OR REPLACE INTO voucher_forensics VALUES (?,?,?,?,?,?,?,?)", vouchers)
 
