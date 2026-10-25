@@ -243,3 +243,42 @@ auto-redeploys from `main`).
 
 
 - result: DEPLOYMENT-REPAIR-HANDOFF.md documents external-repository fixes, diagnosis-only Streamlit work, publication of this repo’s pending changes, acceptance tests, and evidence requirements. No live deployment performed.
+
+
+### claim: civic-atlas-dais — agenda evidence map and synchronized video crop workspace
+- worker: arena-atlas
+- status: done
+- stage: delivered standalone app; 9 unit/integration tests and JS syntax pass; preview on port 8080; no production deployment
+- scope: NEW civic_atlas/; READ-FIRST.md (claim/log only). No existing app, data, or pipeline edits.
+- started: 2026-10-25T00:00Z
+- updated: 2026-10-25T00:00Z
+- notes: Local corpus discovery, lexical evidence links, manual video crops; no identification or emotion inference.
+
+
+- result: Added `civic_atlas/` with stdlib read-only API/server, agenda-item search, interactive source graph, excerpts and provenance, JSON export, pasted-text agendas, and synchronized manual video crops. Index covers 720 linked meeting entries, 345 Markdown documents, one archived HTML agenda; connections are explicitly lexical leads, not verified relationships. Dais Lens uses a single video clock, local or repository MP4s, manual labels and crops, and browser layout persistence; no identification, emotion inference, live-feed acquisition, or off-camera reconstruction. Nine tests passed, `node --check` and `git diff --check` passed. Browser rendering was not automatically tested. Existing twins, source records, and workflows untouched; no production deployment.
+
+
+### claim: universal-dais-lens — optional lens for any shared video tab/window
+- worker: arena-atlas
+- status: done
+- stage: implemented; 8 DOM interaction tests + 9 Python tests pass; JS syntax and whitespace checks pass; preview restarted
+- scope: civic_atlas/; READ-FIRST.md (claim/log only)
+- started: 2026-10-25T06:40Z
+- updated: 2026-10-25T06:40Z
+- notes: User explicitly requests the lens option for every video. Shared tab/window input avoids cross-origin player pixel restrictions; permission and protected-video limits remain.
+
+
+- result: Added global opt-in floating lens, separate pop-out window, and user-authorized tab/window capture for cross-site players. Reuses the single video clock and same tile DOM; switches release capture, browser stop clears frames, cancelled picker preserves source, blocked popup falls back. Documented HTTPS/desktop/iframe permissions, DRM/off-camera limits, no automatic injection into external players, and explicit stop-sharing behavior. Real browser sharing was not verified; 8 mocked DOM and 9 Python tests pass. Existing app entrypoints/data unchanged.
+
+
+### claim: atlas-streamlit-integration — integrate map and optional lens into deployed app entrypoints
+- worker: arena-atlas
+- status: done
+- stage: integrated and tested; preparing PR publication to configured deployed main; external Cloud completion not verified
+- scope: civic_atlas/; NEW pages/25_Civic_Atlas.py; twins streamlit_app.py + Transparency_Index_App.py (identical home card and preview video option); rwc_views.py (video launchers only); miller_theater.py (lens launcher + equivalent literal separator for Python 3.11 import compatibility); pages/16b_Screening_Room.py (lens launcher only); READ-FIRST.md (claim/log only)
+- started: 2026-10-25T07:00Z
+- updated: 2026-10-25T07:00Z
+- notes: Explicitly authorized live-app integration; preserve data and existing players. No production deployment claimed without verification.
+
+
+- result: Added native Streamlit agenda/search/paste page with interactive source graph, full source inspection, and lead exports; identical home-entry cards; opt-in lens beside existing video players (home previews, Origin/Tapes, media fallback, Miller playlist, Screening Room). Embedded lens is self-contained, with a downloadable standalone HTML fallback for Streamlit iframe screen-capture policy restrictions; no second backend, external assets, new requirements, or source-data edits. Tests: 13 Python server/artifact tests, 8 mocked JS DOM tests, 6 Streamlit AppTests (four video-page subcases), portable HTML DOM smoke (0 errors, 4 tiles), JS syntax and Python compile, twins identical and diff whitespace clean. Integrated Streamlit preview on 8501; standalone remains on 8080. Actual browser capture and public Cloud redeploy completion unverified. Publishing integration via this session branch/PR; no main branch checkout or direct push.

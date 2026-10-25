@@ -98,13 +98,15 @@ def _prev_guide():
                 "how deep, and how you like your evidence. Open the page to start the wizard.")
 
 
-def _prev_tapes(reel=False):
+def _prev_tapes(reel=False, lens_key="home_tapes"):
     manifest = ROOT / "pipeline" / "cityvideos.json"
     renders = sorted((ROOT / "pipeline" / "renders").glob("*.mp4")) if (ROOT / "pipeline" / "renders").exists() else []
     if renders:
         newest = max(renders, key=lambda p: p.stat().st_mtime)
         st.markdown(f"🎬 **Newest tape:** `{newest.name}`")
         st.video(str(newest))
+        from civic_atlas.streamlit_integration import render_lens_option
+        render_lens_option(lens_key, newest.name)
     elif manifest.exists():
         try:
             m = json.loads(manifest.read_text())
@@ -165,16 +167,23 @@ PREVIEW = {
     "🔎 Evidence Vault": _prev_evidence_vault,
     "🦸 Hero Roster": _prev_roster,
     "🧭 Choose Your Mission": _prev_guide,
-    "🔥 Origin Tapes": lambda: _prev_tapes(reel=True),
+    "🔥 Origin Tapes": lambda: _prev_tapes(reel=True, lens_key="home_origin"),
     "🎬 The Tapes": _prev_tapes,
     "✉️ Signals & Paperwork": _prev_signals,
     "🗃 Case Files": _prev_case_files,
     "✋ Join the Roster": _prev_join,
     "__INDEX__": _prev_index,
 }
-EXTRA = [  # the two pre-existing standalone pages
+def _prev_civic_atlas():
+    st.markdown("**Agenda → evidence map**: inspect lexical connections with source excerpts. "
+                "**Dais Lens**: optional synchronized seat crops for local videos or user-shared player tabs.")
+    st.caption("Lens options also appear alongside the existing video players. No face identification or emotion scoring.")
+
+
+EXTRA = [  # standalone pages
     dict(page="16a_Miller_Tapes", key="🎬 Miller Tapes", icon="🎬", blurb="Every intervention, on loop", prev=_prev_miller),
-    dict(page="16b_Screening_Room", key="🎞 Screening Room", icon="🎞", blurb="Montage theater", prev=_prev_tapes),
+    dict(page="16b_Screening_Room", key="🎞 Screening Room", icon="🎞", blurb="Montage theater", prev=lambda: _prev_tapes(lens_key="home_screening")),
+    dict(page="25_Civic_Atlas", key="▣ Civic Atlas + Dais Lens", icon="▣", blurb="Interactive agenda-to-record map · optional seat-by-seat video lens", prev=_prev_civic_atlas),
     dict(page="23_Estoppel_Effect", key="⚖️ Estoppel-Effect Review", icon="⚖️", blurb="Source-linked chronology and commitment-pattern leads", prev=_prev_estoppel_effect),
 ]
 

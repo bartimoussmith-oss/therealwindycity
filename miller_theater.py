@@ -218,6 +218,9 @@ margin:0;color:#fff;letter-spacing:.5px}
     pl_json = json.dumps(playlist, ensure_ascii=False).replace("</", "<\\/")
     components.html(JS.replace("%%PLAYLIST%%", pl_json), height=860, scrolling=False)
 
+    from civic_atlas.streamlit_integration import render_lens_option
+    render_lens_option("miller_theater", "Miller Tapes — share the running playlist tab")
+
     with st.expander(f"\U0001F4DC Queue ({len(pool)} clips) \u2014 every row links its exact tape moment"):
         rows = []
         for i, r in enumerate(pool[:400]):
@@ -225,7 +228,7 @@ margin:0;color:#fff;letter-spacing:.5px}
             url = f"https://www.youtube.com/watch?v={r['video']}&t={int(r['t0'])}s"
             fl = ",".join(f for f in FLAG_LABEL if r["flags"][f])
             rows.append(f"#{i+1} [{lab} \u2014 {r['date']} \u00b7 {_fmt(r['t0'])}\u2192{_fmt(r['t1'])}"
-                        f"{(' \u00b7 ' + fl) if fl else ''}]({url})")
+                        f"{(' · ' + fl) if fl else ''}]({url})")
         if len(pool) > 400:
             rows.append(f"*\u2026and {len(pool) - 400} more in the player above.*")
         st.markdown("\n\n".join(rows))
