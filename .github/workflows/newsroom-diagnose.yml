@@ -1,0 +1,40 @@
+name: newsroom-diagnose
+on:
+  push:
+    branches: ["feature/issue-newsroom"]
+    paths: [".github/workflows/newsroom-diagnose.yml"]
+permissions:
+  contents: read
+  actions: read
+  checks: read
+  pull-requests: write
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const owner = 'bartimoussmith-oss';
+            const repo = 'therealwindycity';
+            const run_id = 40267829284;
+            const expected = '1b37c97f1f813fa02f345ea3dae03c7553448df0';
+            const run = await github.rest.actions.getWorkflowRun({owner, repo, run_id});
+            if (run.data.head_sha !== expected || run.data.head_repository.full_name !== owner + '/' + repo) {
+              throw new Error('Diagnostic target mismatch');
+            }
+            const jobs = await github.paginate(github.rest.actions.listJobsForWorkflowRun, {owner, repo, run_id, per_page: 100});
+            const result = [];
+            for (const job of jobs.filter(j => j.conclusion === 'failure')) {
+              const item = {job: job.name, url: job.html_url, failed_steps: job.steps.filter(s => s.conclusion === 'failure').map(s => ({name: s.name, number: s.number})), annotations: []};
+              if (job.check_run_url) {
+                const check_run_id = Number(job.check_run_url.split('/').pop());
+                const annotations = await github.paginate(github.rest.checks.listAnnotations, {owner, repo, check_run_id, per_page: 100});
+                item.annotations = annotations.slice(0, 10).map(a => ({title: String(a.title || '').slice(0, 200), path: String(a.path || '').slice(0, 300), start_line: a.start_line, message: String(a.message || '').replace(/(?:github_pat_|ghp_)[A-Za-z0-9_]+/g, '[REDACTED]').slice(0, 2000)}));
+              }
+              result.push(item);
+            }
+            const nl = String.fromCharCode(10);
+            const report = ['## Newsroom build diagnostic', 'Run: ' + run_id, 'Revision: ' + expected, 'This lists failed steps and bounded check annotations, not raw logs or a verified root cause.', '```json', JSON.stringify(result, null, 2).slice(0, 20000), '```'].join(nl);
+            await github.rest.issues.createComment({owner, repo, issue_number: 19, body: report});
