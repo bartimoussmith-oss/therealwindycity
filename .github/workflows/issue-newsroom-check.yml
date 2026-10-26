@@ -1,0 +1,28 @@
+name: issue-newsroom-check
+on:
+  push:
+    branches: ["feature/issue-newsroom"]
+    paths:
+      - "tools/issue_newsroom.py"
+      - "tools/test_issue_newsroom.py"
+      - ".github/workflows/issue-newsroom-check.yml"
+  pull_request:
+    paths:
+      - "tools/issue_newsroom.py"
+      - "tools/test_issue_newsroom.py"
+      - ".github/workflows/issue-newsroom-check.yml"
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check Python syntax
+        run: python -m py_compile tools/issue_newsroom.py tools/test_issue_newsroom.py
+      - name: Test candidate dossiers, full text, exclusions and safety guards
+        run: python -m unittest discover -s tools -p 'test_issue_newsroom.py' -v
