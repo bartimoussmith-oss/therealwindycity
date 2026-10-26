@@ -1,14 +1,7 @@
 name: ai-record-pages
-# Builds the AI-readable mirror of the whole Cheyenne meetings record
-# (every archived document as plain text + transcripts + minutes + indexes)
-# and publishes it to GitHub Pages:
-#   https://bartimoussmith-oss.github.io/therealwindycity/
-# Nothing generated is committed except the small OCR cache (ai-record-ocr/).
-# See tools/README-ai-record.md.
-
 on:
   push:
-    branches: [main, "arena/**"]
+    branches: [main, "arena/**", "feature/media-drop-studio"]
     paths:
       - "tools/ai_record_status.py"
       - "tools/check_ai_record.py"
@@ -27,29 +20,49 @@ on:
       - "civic_atlas/osint/**"
       - "civic_atlas/build_osint_index.py"
       - "civic_atlas/server.py"
+      - "civic_atlas/media/**"
+      - "tools/publish_media_studio.py"
+      - "tools/test_media_studio.py"
       - "tools/build_arrest_page.py"
       - "tools/arrest_page_seal.mjs"
       - "data/arrests/**"
       - ".github/workflows/ai-record-pages.yml"
   schedule:
-    - cron: "41 8 * * *"          # daily: picks up new archive files and continues OCR
+    - cron: "41 8 * * *"
   workflow_dispatch:
     inputs:
       ocr_minutes:
         description: "Minutes to spend OCR-ing scanned pages this run (0 = skip)"
         default: "0"
-
 permissions:
-  contents: write                  # commit the OCR cache
+  contents: write
   pages: write
   id-token: write
-
 concurrency:
   group: ai-record-pages
   cancel-in-progress: false
-
 jobs:
+  validate-media:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Validate historical source links and isolated artifact copying
+        run: |
+          python3 tools/publish_media_studio.py --check-only
+          python3 -m unittest discover -s tools -p 'test_media_studio.py' -v
+          node --check civic_atlas/media/studio.js
   build:
+    needs: validate-media
+    if: ${{ github.ref != 'refs/heads/feature/media-drop-studio' }}
     runs-on: ubuntu-latest
     timeout-minutes: 330
     steps:
@@ -67,7 +80,7 @@ jobs:
           pip install opencv-python-headless
       - name: Test snapshot and deployment safeguards
         run: python3 -m unittest discover -s tools -p 'test_ai_record_status.py' -v
-      - name: Meeting index from Civic Cheyenne (same grouping as the site)
+      - name: Meeting index from Civic Cheyenne
         run: |
           git clone -q --depth 1 https://github.com/therealwindycity/TheReelWindyCity.git /tmp/fe
           (cd /tmp/fe && node scripts/build-data.mjs)
@@ -75,7 +88,7 @@ jobs:
         run: git clone -q --depth 1 https://github.com/therealwindycity/The-Real-Windy-City-.git /tmp/tr
       - name: Extract text from all six archive repos
         run: python3 -u tools/ai_record_extract.py --text /tmp/text --trees /tmp/trees
-      - name: OCR scanned pages (incremental, cached in ai-record-ocr/)
+      - name: OCR scanned pages
         if: ${{ github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.ocr_minutes != '0')) }}
         env:
           GH_TOKEN: ${{ github.token }}
@@ -106,16 +119,8 @@ jobs:
           cp civic_atlas/osint.html civic_atlas/osint-atlas.html civic_atlas/osint-original.html _site/
           cp civic_atlas/osint/app.js civic_atlas/osint/style.css _site/osint/
           python3 -m civic_atlas.build_osint_index --out _site/osint/search-index.json
-      # Password-gated arrest database -> https://<user>.github.io/therealwindycity/arrest/
-      # Static hosting has no server, so the gate is real client-side crypto:
-      # tools/build_arrest_page.py shapes the PUBLIC tier only (names and exact
-      # ages are already stripped and re-checked by a fail-closed structural
-      # gate), then tools/arrest_page_seal.mjs seals it with AES-256-GCM under a
-      # PBKDF2-HMAC-SHA256 key. The password comes from a repository secret and
-      # is never committed, never logged, and never present in the built site.
-      # If the secret is missing the step writes a notice page and publishes NO
-      # data rather than publishing an unprotected page; it exits 0 so a missing
-      # secret cannot break the rest of the mirror build.
+      - name: Add separate Media Studio without replacing existing pages
+        run: python3 tools/publish_media_studio.py --out _site
       - name: Arrest database page (sealed, AES-256-GCM)
         env:
           ARREST_PAGE_PASSWORD: ${{ secrets.ARREST_PAGE_PASSWORD }}
@@ -123,7 +128,6 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
-
   deploy:
     needs: build
     if: ${{ github.ref == 'refs/heads/main' }}
@@ -134,12 +138,33 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
-
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Verify the published build (not just deployment completion)
+      - name: Verify the published build
         env:
           PUBLISHED_URL: ${{ steps.deployment.outputs.page_url }}
         run: python3 tools/check_ai_record.py --url "$PUBLISHED_URL" --revision "$GITHUB_SHA" --run "$GITHUB_RUN_ID" --attempts 6
+      - name: Verify published Media Studio bytes against deployed checkout
+        env:
+          PUBLISHED_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          python3 - <<'PY'
+          import os, time, urllib.request
+          from pathlib import Path
+          base = os.environ['PUBLISHED_URL'].rstrip('/') + '/media/'
+          for name in ('index.html', 'builder.html', 'review.html', 'drops.json', 'studio.js', 'studio.css'):
+              expected = (Path('civic_atlas/media') / name).read_bytes()
+              for attempt in range(6):
+                  try:
+                      with urllib.request.urlopen(base + name + '?revision=' + os.environ['GITHUB_SHA'], timeout=30) as response:
+                          actual = response.read()
+                      if actual != expected:
+                          raise ValueError('Published bytes differ: ' + name)
+                      break
+                  except Exception:
+                      if attempt == 5:
+                          raise
+                      time.sleep(15)
+          PY

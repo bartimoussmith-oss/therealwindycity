@@ -1,15 +1,18 @@
 # Separate Media Drop Studio
 
-Routes after publication: /therealwindycity/media/, /therealwindycity/media/builder.html, /therealwindycity/media/review.html. These routes are planned, not verified live.
+Publication routes after an approved merge and successful deployment: /therealwindycity/media/, /therealwindycity/media/builder.html, /therealwindycity/media/review.html. These are not verified live merely because a branch commit exists.
 
-Three standalone pages share local CSS, JavaScript and six editorial drafts sourced from three repository-held proceedings across 2008, 2012 and 2026. No existing page is overwritten. Serve the repository over HTTP to preview; opening file:// does not support the JSON fetch reliably.
+Three separate pages share local CSS, JavaScript and six editorial drafts from three extracted proceedings across 2008, 2012 and 2026. No existing page is overwritten. Serve over HTTP; file:// JSON fetching is not supported.
 
-Features: historical library/filter, editable deterministic copy generation, Facebook post, teaser, video SCRIPT, carousel COPY, reporter brief, source sheet, browser-only saved draft, JSON/text downloads, explicit review checklist. No AI service, full-corpus ingestion, MP4 render, image render, publishing API, factual certification, multi-user review, or automatic upload is implemented. Draft edits can invalidate source support; the editor must recheck. Downloads and browser storage may contain unverified text. Public seed drafts are clearly labeled historical and unreviewed.
+Implemented: historical library/filter, editable template-based Facebook posts, teasers, video scripts, carousel copy, reporter briefs, source sheets, browser-local draft storage, text/JSON downloads and a personal editorial checklist. No LLM integration, full-corpus ingestion, video/image rendering, publishing API, independent certification or multi-user workflow. Changing a claim requires fresh evidence review.
 
-Source coverage: extracted proceedings for May 27, 2008; June 25, 2012 (filename/header discrepancy flagged); August 10, 2026. Not an exhaustive historical sweep. The short excerpts are text fragments, not verified audio quotations. Original viewer URLs are discovery links and were not opened during source selection. File blob SHAs identify the inspected extracted text; main-branch source URLs may change.
+Source coverage: May 27, 2008; June 25, 2012 (filename/header discrepancy flagged); August 10, 2026. Not an exhaustive historical sweep. Excerpts are text fragments, not verified audio quotations. Original viewer links and later developments require review. Blob hashes identify the inspected extracts; main-branch URLs may change.
 
-Build validation: python tools/publish_media_studio.py --check-only
-JavaScript syntax: node --check civic_atlas/media/studio.js
-Publication integration still required: add the media paths to the existing ai-record-pages push filters, run the validation and JS syntax checks before the existing build, then run python tools/publish_media_studio.py --out _site AFTER the normal renderer and BEFORE upload-pages-artifact. Verify /media/, /media/builder.html, /media/review.html and /media/drops.json after deployment. Do not create a separate deploy-pages workflow that replaces the existing site artifact.
+Checks:
+- python tools/publish_media_studio.py --check-only
+- python -m unittest discover -s tools -p 'test_media_studio.py' -v
+- node --check civic_atlas/media/studio.js
 
-This branch commit does not trigger the current Pages path filter and does not publish. Merge and deployment integration require separate approval. Browser rendering and end-to-end downloads have not been tested in this environment.
+The existing ai-record-pages workflow validates feature/media-drop-studio without building or deploying the full archive. On main, it preserves the normal renderer, GIS workspace copying, sealed arrest-page build and deployment safeguards, and copies the Media Studio into _site/media before uploading the same Pages artifact. A deployment step compares all six public asset files against the checkout.
+
+Tests check source blob hashes, supporting text fragments, unique drop IDs, asset references and preservation of existing pages during copying. They do not establish factual completeness, legal conclusions, original recording accuracy, browser rendering or end-to-end download behavior. No test success or deployment success is claimed until its actual run is inspected.
