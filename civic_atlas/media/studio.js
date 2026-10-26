@@ -1,0 +1,40 @@
+(()=>{'use strict';const $=id=>document.getElementById(id),root=$('app');const key='rwc-media-studio-v1';let corpus,current,assets;function el(tag,text,parent=root){const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(parent)parent.append(n);return n}function link(text,url,parent){const a=el('a',text,parent);a.href=url;return a}function field(label,value,multiline=false){const l=el('label',label);const n=el(multiline?'textarea':'input');n.value=value||'';n.id='field-'+label.toLowerCase().replace(/[^a-z]+/g,'-');l.htmlFor=n.id;return n}function notify(s){$('status').textContent=s}function download(name,text,type){const u=URL.createObjectURL(new Blob([text],{type}));const a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}function btn(text,fn,parent=root){const b=el('button',text,parent);b.type='button';b.addEventListener('click',fn);return b}function source(d){return corpus.sources.find(s=>s.id===d.source_id)}function loadLocal(){try{const s=JSON.parse(localStorage.getItem(key)||'null');return s&&s.schema==='media-story-v1'?s:null}catch{return null}}function packageFor(d){const s=source(d);const attribution=`Source: ${s.type}. ${s.url}
+Locator: ${d.locator}
+Source caveat: ${s.note}`;const base=`HISTORICAL REWIND | ${d.date}
+${d.title}
+
+${d.finding}
+
+Why it matters: ${d.significance}
+
+Question to follow: ${d.question}
+
+Limits: ${d.limits}
+
+${attribution}`;return {facebook:base,teaser:`ARCHIVE REWIND (${d.date}): ${d.title}
+${d.finding}
+Historical record, not a current-status claim. ${s.url}`,video_script:`DRAFT SCRIPT — NO VIDEO RENDERED
+Opening card: ARCHIVE REWIND / ${d.date}
+Narration: ${d.finding}
+Document shot: ${d.locator}
+Narration: ${d.significance}
+Closing question: ${d.question}
+On-screen qualification: ${d.limits}
+End card: ${s.url}
+Editor: verify original record and rights; locate usable media and timestamps before rendering.`,carousel:[`1. ARCHIVE REWIND: ${d.date} — ${d.title}`,`2. THE RECORDED ACTION: ${d.finding}`,`3. WHY REVISIT IT: ${d.significance}`,`4. THE FOLLOW-UP QUESTION: ${d.question}`,`5. WHAT THIS DOES NOT ESTABLISH: ${d.limits}`,`6. CHECK THE RECORD: ${s.url} — ${d.locator}`].join('
+
+'),source_sheet:`${attribution}
+Repository blob SHA: ${s.git_blob_sha}
+Supporting text fragment (not an audio quotation): ${d.excerpt}
+Original viewer (not verified): ${s.original_url}
+Review: DRAFT — original and later developments require review.
+Coverage: ${corpus.coverage}`,reporter_brief:`Historical lead, not breaking news
+${d.title}
+Event date: ${d.date}
+${d.finding}
+Reporting question: ${d.question}
+Qualification: ${d.limits}
+${attribution}`}}function showSources(d){const s=source(d),box=el('section');el('h2','Evidence and limitations',box);el('p',s.type,box);link('Open repository source',s.url,box);el('p',`Locator: ${d.locator}`,box);el('p',`Supporting text fragment: ${d.excerpt}`,box);el('p',s.note,box);el('p',d.limits,box)}function save(d){const story={schema:'media-story-v1',drop:d,assets:packageFor(d),status:'draft',saved_at:new Date().toISOString()};try{localStorage.setItem(key,JSON.stringify(story));notify('Draft saved only in this browser. No server upload.')}catch{notify('Browser storage unavailable; use the downloads below.')}return story}function library(){el('h2','Historical media drops');el('p',corpus.coverage);el('p','These are sourced editorial drafts, not newly reported events, verified recordings, rendered videos, or automatically published social posts.').className='notice';const search=field('Filter drops','');const grid=el('div');grid.className='grid';function draw(){grid.replaceChildren();const q=search.value.toLowerCase();for(const d of corpus.drops.filter(d=>JSON.stringify(d).toLowerCase().includes(q))){const c=el('article',undefined,grid);c.className='card';el('span',`${d.date} / DRAFT / ${d.format}`,c).className='badge';el('h2',d.title,c);el('p',d.finding,c);el('p',d.limits,c);link('Build this drop',`builder.html?id=${encodeURIComponent(d.id)}`,c);el('p','',c);link('Inspect source',source(d).url,c)}}search.addEventListener('input',draw);draw()}function builder(){el('p','Deterministic templates use reviewed inputs; no LLM, automatic fact verification, media rendering, or social publication is connected.').className='notice';const choose=el('select');choose.setAttribute('aria-label','Select a historical drop');corpus.drops.forEach(d=>{const o=el('option',`${d.date} — ${d.title}`,choose);o.value=d.id});choose.value=current.id;choose.addEventListener('change',()=>location.href='builder.html?id='+encodeURIComponent(choose.value));const fields={title:field('Headline',current.title),finding:field('Supported finding',current.finding,true),significance:field('Public significance',current.significance,true),question:field('Follow up question',current.question,true),limits:field('Limitations',current.limits,true)};btn('Generate draft package',()=>{const d={...current};Object.entries(fields).forEach(([k,v])=>d[k]=v.value.trim());if(Object.values(fields).some(v=>!v.value.trim())){notify('Complete every field before generation.');return}current=d;const p=save(d);renderAssets(p.assets);notify('Draft outputs generated. Edited claims need fresh source review.');});showSources(current);el('div',undefined).id='outputs';link('Open Review & Export','review.html',root)}function renderAssets(a){const box=$('outputs');box.replaceChildren();for(const [kind,text]of Object.entries(a)){const s=el('section',undefined,box);el('h2',kind.replaceAll('_',' '),s);const t=el('textarea',undefined,s);t.value=text;t.setAttribute('aria-label',kind+' draft preview');t.readOnly=true;btn('Download text',()=>download(kind+'.txt',text,'text/plain;charset=utf-8'),s)}}function review(){const p=loadLocal();if(!p){el('p','No saved draft. Choose a historical drop and generate a package in Drop Builder.');link('Open Drop Builder','builder.html',root);return}current=p.drop;el('h2',current.title);el('p',`Event date: ${current.date} / Status: DRAFT`).className='badge';showSources(current);el('p','Review checks are a personal checklist, not independent verification. Downloading never publishes content.').className='notice';const checks=['I checked each factual statement against its original source.','I checked historical dates, qualifications, and later developments.','I checked quotation context and have rights for any planned media.'].map(text=>{const l=el('label');const c=document.createElement('input');c.type='checkbox';l.append(c,document.createTextNode(text));return c});btn('Download draft JSON',()=>download('media-drop-draft.json',JSON.stringify(p,null,2),'application/json'));const reviewed=btn('Download reviewed package',()=>{if(!checks.every(c=>c.checked))return;const out={...p,status:'editor_checklist_completed_not_independently_verified',reviewed_at:new Date().toISOString()};download('media-drop-reviewed.json',JSON.stringify(out,null,2),'application/json')});reviewed.disabled=true;checks.forEach(c=>c.addEventListener('change',()=>reviewed.disabled=!checks.every(c=>c.checked)));btn('Download complete text bundle',()=>download('media-drop-package.txt',Object.entries(p.assets).map(([k,v])=>`=== ${k.toUpperCase()} ===
+${v}`).join('
+
+'),'text/plain;charset=utf-8'));btn('Clear browser draft',()=>{try{localStorage.removeItem(key);location.reload()}catch{notify('Could not clear browser storage.')}});el('div',undefined).id='outputs';renderAssets(p.assets);el('p','Video status: not rendered. Social publishing: not connected. Thumbnail and carousel images: not rendered.')}async function init(){const status=el('p');status.id='status';status.className='status';status.setAttribute('role','status');try{const r=await fetch('drops.json');if(!r.ok)throw Error('Historical drop data unavailable');corpus=await r.json();current=corpus.drops.find(d=>d.id===new URLSearchParams(location.search).get('id'))||corpus.drops[0];({library,builder,review}[document.body.dataset.view]||library)();notify('Browser-based draft studio. No data is automatically uploaded or published.')}catch(e){notify(e.message)}}init()})();
