@@ -138,6 +138,15 @@ Coordination is not optional here.
 - updated: 2026-10-28T10:35Z
 - notes: Owner directive 2026-10-28: "Complete all tasks that you said would take 3 months but do it right now." Measured facts driving this claim: 1,272,712,872 tracked bytes in the working tree (5,597 files), of which 596,009,578 are .mp4 — the repo's own miller-tapes claim states "videos stay out of git per repo rule", so that mass is a standing rule violation, not a design choice. `video/gaveled-down-miller-montage.mp4` and `videos/gaveled-down-miller-montage.mp4` are both tracked at 24,770,554 bytes each (duplicate). All six `therealwindycity/cheyenne-archives-*` repos are FULLY enumerable via the Git trees API with `truncated=false`: 5,140 blobs / 6,970,150,704 bytes total, which is larger than the 4.17 GB the repo `size` field reports. HARD LIMITS recorded up front rather than discovered later: (a) reducing already-tracked mass requires history rewrite or `git rm` + accept-no-shrink, both of which are owner decisions — this claim builds the tooling, manifests and export bundles and does NOT rewrite history; (b) cross-repository writes to civic-newsroom-intelligence-001 and TheReelWindyCity need explicit approval per AGENTS.md, so those two items ship as verified in-repo tooling plus exact commands, not as landed commits elsewhere; (c) OCR/text extraction of the 6.97 GB remote archive is compute- and network-bound and cannot complete in this sandbox — the pipeline ships tested against local PDFs plus a real bounded cross-repo sample, with the full run left as one command; (d) `LEGAL.md` forbids automated outbound communication, so the distribution layer drafts and publishes feeds only and never sends. A committed minilm-l6-onnx model (90,405,214 bytes, with tokenizer.json) is already tracked here, and onnxruntime 1.31.1 + tokenizers 0.23.3 + pypdf 6.21.3 install cleanly, so semantic retrieval is built offline against that model rather than duplicating rag/'s Chroma path.
 
+### claim: tune-along-app — TuneAlong / Play-Along musician app (chords, tuning, lyrics; learns a song once, recognizes it next time)
+- worker: arena-agent
+- status: done
+- stage: complete — v0.1 implemented and tested (49 Vitest tests + opt-in real-audio and headless-Chrome checks, all passing); NOT deployed, NOT verified on physical phones; assessment memo at `tune-along/docs/STRATEGY-MEMO.md`
+- scope: NEW `tune-along/**` only (self-contained Vite + TypeScript PWA with its own package.json, tests and .gitignore) + READ-FIRST.md (this claim + work-log entry only). Explicitly NOT touching: the twins, requirements.txt, data/, .github/, engine/, README.md, pipeline/, public/, tools/, any existing file. No deployment, no cross-repository writes, no outbound communication.
+- started: 2026-10-28T11:15Z
+- updated: 2026-10-28T12:10Z
+- notes: Owner forwarded a product request from a collaborator (Dennis): an app that listens to music, picks up chords/notes/words the first time, displays them the next time the same song plays, reports the guitar tuning at the intro, and prints chord sheets. Unrelated to the civic corpus; kept in its own directory so it can be lifted into a separate repository later without history surgery.
+
 ## Current repo state (updated 2026-09-10T11:05Z)
 
 **What this is:** a civic-transparency console for Cheyenne / Laramie County —
@@ -328,3 +337,31 @@ Blocked, not claimed complete:
 Not verified, stated plainly: no public URL, GitHub Pages HTTP response, Streamlit deployment or search-index state was reached from this environment. All deployment claims rest on Actions run conclusions and the repositories' own committed status files. Nothing here was exercised in a browser, and per `docs/ECOSYSTEM-AGENT-GUIDE.md`, implemented is not tested, tested is not deployed, deployed is not independently verified live.
 
 No history was rewritten, nothing was force-pushed, no tracked media was deleted, no other repository was written to, and no outbound communication was sent.
+
+### 2026-10-28T12:10Z — arena-agent — claim tune-along-app — TuneAlong v0.1 built and tested; not deployed
+
+- result: New self-contained web app/PWA in `tune-along/` (Vite 8 + React 19 + TypeScript 7; own package.json, .gitignore, tests). It responds to a collaborator's request (Dennis, forwarded by the owner): hear a song once, then show its chords, words and tuning the next time it plays, and print chords with the words.
+- Function: listens via microphone, browser-tab audio, an audio file or two original synthesized demo songs. The analysis runs in a Web Worker at a fixed 11,025 Hz, so a song learned on one device is recognised on another. It covers:
+  - chords — harmonic templates plus Viterbi, 10 chord types;
+  - key (Krumhansl);
+  - tempo;
+  - reference pitch — a circular mean of partial deviations that skips 5th/7th harmonics;
+  - the likely guitar tuning, with calibrated probabilities and capo / "standard + capo" advice.
+- Song memory and display:
+  - Landmark fingerprints in a radix-sorted index identify the song and its position. Matching is repeat-aware: a chorus may match chorus 1 or chorus 2, and the app keeps continuity. Each later listen merges in parts missed the first time.
+  - IndexedDB library with JSON export/import; synced lyrics via LRCLIB or pasted; optional experimental speech transcription.
+  - Chord-over-lyrics print sheet; tuner; Document Picture-in-Picture pop-out with video-PiP fallback; offline service worker; wake-lock.
+- Tests:
+  - 49 Vitest tests pass. The demo song end to end: 100% chords per bar at major/minor level, key Eb major, 103.7 vs 104 BPM, −15.8 vs −15¢, Eb Standard ranked first, recognised in 3.6 s through a simulated phone channel. A different song is not claimed; 48 kHz capture is still recognised; merges work.
+  - Opt-in real-recordings check (3 Creative-Commons tracks, not committed): 10/10 degraded excerpts recognised at the exact position, median 3.6 s, 0 wrong-song, 0/3 false positives.
+  - Opt-in headless Chrome 153 run (`scripts/browser-smoke.mjs`): 8/8 checks — demo learned then recognised 3.0 s into its second play; shapes mode; sheet/PDF; fake-microphone path recognised after 9.3 s; pop-out renders; 0 console errors.
+  - Production build: about 310 kB JS (100 kB gzip) plus a 31 kB worker.
+- Not done / not verified:
+  - Nothing was deployed. This repo's Pages slot is used by `ai-record-pages`, so TuneAlong needs its own repo or static host, which needs the owner's approval.
+  - Not tested on physical phones or real rooms.
+  - Chord accuracy on commercial recordings is unmeasured (no annotations).
+  - Melody/riff ("notes") transcription is not implemented.
+  - iOS forbids overlays and other-app audio; Android needs a native wrapper for overlay and playback capture.
+  - LRCLIB lyrics are community data and are not licensed for commercial display.
+- Scope kept: no existing file touched except this claim and this entry. No workflow triggers on `tune-along/**`. No history rewrite. No cross-repo writes. No outbound communication.
+
