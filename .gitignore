@@ -52,3 +52,17 @@ __pycache__/
 .sudo_as_admin_successful
 
 data/selftest/
+
+# Tier-4 derived artifacts (docs/ARCHITECTURE-TIERS.md). Every one of these is
+# reproducible by running the named tool; committing them makes a stale artifact
+# indistinguishable from a fresh one, which returns confident wrong answers.
+#   data/archive-index/       tools/archive_index.py      (catalog/extract/index)
+#   data/retrieval/           tools/semantic_retrieval.py (embed)
+#   data/partition/           tools/repo_partition.py     (measure)
+#   data/intelligence-budget/ tools/intelligence_budget.py (audit)
+#   data/distribution/        tools/distribution_publish.py (publish)
+/data/archive-index/
+/data/retrieval/
+/data/partition/
+/data/intelligence-budget/
+/data/distribution/
