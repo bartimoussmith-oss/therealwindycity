@@ -147,6 +147,15 @@ Coordination is not optional here.
 - updated: 2026-10-28T12:10Z
 - notes: Owner forwarded a product request from a collaborator (Dennis): an app that listens to music, picks up chords/notes/words the first time, displays them the next time the same song plays, reports the guitar tuning at the intro, and prints chord sheets. Unrelated to the civic corpus; kept in its own directory so it can be lifted into a separate repository later without history surgery.
 
+### claim: tune-along-https-guard — plain-language "needs https" notice when TuneAlong is opened from a plain-http network address
+- worker: arena-agent
+- status: done
+- stage: complete — notice + error text implemented and verified in headless Chrome on a non-localhost http origin and on localhost; 49 unit tests and 8/8 browser checks still pass; NOT deployed
+- scope: `tune-along/src/App.tsx`, `tune-along/src/audio/capture.ts`, `tune-along/src/ui/TunerView.tsx`, `tune-along/src/styles.css`, `tune-along/README.md` (run instructions) + READ-FIRST.md (this claim + work-log entry only). Explicitly NOT touching anything outside `tune-along/`. No deployment, no cross-repository writes, no outbound communication.
+- started: 2026-10-28T12:20Z
+- updated: 2026-10-28T12:25Z
+- notes: Found while verifying run instructions for the owner. Opened from `http://<LAN-IP>:<port>` (the "Network:" address `npm run dev` prints, i.e. what a phone on the same Wi-Fi would use), the browser withholds AudioWorklet, the microphone and service workers (headless Chrome 153: isSecureContext=false). The demo then failed with "Could not start: Cannot read properties of undefined (reading 'addModule')", which does not tell the user what to do.
+
 ## Current repo state (updated 2026-09-10T11:05Z)
 
 **What this is:** a civic-transparency console for Cheyenne / Laramie County —
@@ -365,3 +374,10 @@ No history was rewritten, nothing was force-pushed, no tracked media was deleted
   - LRCLIB lyrics are community data and are not licensed for commercial display.
 - Scope kept: no existing file touched except this claim and this entry. No workflow triggers on `tune-along/**`. No history rewrite. No cross-repo writes. No outbound communication.
 
+### 2026-10-28T12:25Z — arena-agent — claim tune-along-https-guard — clear "needs https" notice; verified; not deployed
+
+- result: Opening TuneAlong from a plain-http, non-localhost address (for example the `Network:` URL that `npm run dev` prints, which is what a phone on the same Wi-Fi would use) now shows a red notice at the top of every page. It names the address and says what to do: open `http://localhost:<port>` on the computer running it, or use an https:// link on a phone. Pressing a demo song, Listen or Start tuner in that state shows the same sentence (Tab audio is disabled there) instead of "Could not start: Cannot read properties of undefined (reading 'addModule')". The tuner also says "No microphone was found." instead of a raw `NotFoundError`.
+- Cause: browsers expose AudioWorklet, the microphone and service workers only in secure contexts (https:// or localhost). Verified in headless Chrome 153 on `http://169.254.0.21:4173` (isSecureContext=false; audioWorklet, mediaDevices and serviceWorker all absent) versus `http://localhost:4173` (all present; demo starts; no notice).
+- Checks: 49 Vitest tests pass (2 opt-in skipped); `tsc --noEmit` clean; production build OK; `scripts/browser-smoke.mjs` 8/8 against the new build. Also confirmed from a fresh `git clone` of the branch: `npm ci`, `npm run build` (byte-identical asset hashes), the dev server, and the test suite all work.
+- `tune-along/README.md`: run instructions now state the Node.js requirement (22.12+ for tests; the dev server alone runs on 20.19+) and that phones need an https:// address.
+- Scope kept: only files inside `tune-along/` plus this claim and this entry. No deployment. No cross-repo writes. No history rewrite. No outbound communication.

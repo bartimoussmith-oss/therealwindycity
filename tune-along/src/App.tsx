@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { isInsecureContext, needsSecureContextMessage } from './audio/capture';
 import { useRoute, navigate } from './app/router';
 import { dismissNotice, initSession, live } from './app/session';
 import { useStore } from './lib/store';
@@ -63,7 +64,10 @@ export default function App() {
           ))}
         </nav>
       </header>
-      <main>{view}</main>
+      <main>
+        {isInsecureContext() && <p className="banner insecure no-print" role="alert">{needsSecureContextMessage()}</p>}
+        {view}
+      </main>
       <nav className="tabbar no-print" aria-label="Main">
         {TABS.map((t) => (
           <a key={t.path} href={`#/${t.path}`} className={activeTab === t.path ? 'on' : ''}>

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { audioContext } from '../audio/capture';
+import { audioContext, isInsecureContext, needsSecureContextMessage } from '../audio/capture';
 import { centsOff, freqToMidi, midiName, midiToFreq } from '../dsp/notes';
 import { decimate, detectPitch } from '../dsp/pitch';
 import { TUNINGS, getTuning } from '../dsp/tuning';
@@ -25,6 +25,7 @@ export function TunerView() {
 
   const start = async () => {
     setError(null);
+    if (isInsecureContext()) { setError(needsSecureContextMessage()); return; }
     try {
       const ctx = audioContext();
       if (ctx.state === 'suspended') await ctx.resume();
@@ -54,7 +55,8 @@ export function TunerView() {
       };
       setRunning(true);
     } catch (err) {
-      setError((err as DOMException)?.name === 'NotAllowedError' ? 'Microphone permission was denied.' : `Could not start the tuner: ${String(err)}`);
+      const name = (err as DOMException)?.name;
+      setError(name === 'NotAllowedError' ? 'Microphone permission was denied.' : name === 'NotFoundError' ? 'No microphone was found.' : `Could not start the tuner: ${String(err)}`);
     }
   };
 

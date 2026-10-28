@@ -50,11 +50,18 @@ Measured results (reproduce them with the commands below):
 
 ## Try it
 
+Needs Node.js 22.12 or newer (the test runner requires it; the dev server alone runs on 20.19+).
+
 ```bash
 cd tune-along
 npm install
 npm run dev          # http://localhost:5173  (or: npm run build && npm run preview → :4173)
 ```
+
+**Phones need an https:// address.** `npm run dev` also prints a `Network:` address such as
+`http://192.168.1.20:5173`. A phone on the same Wi-Fi can open it, but it is plain http, so the browser blocks
+the audio engine and the microphone there. TuneAlong shows a red notice saying so. Open the app on a phone from an
+https:// host instead (see [Deploying](#deploying)). On the computer itself, `http://localhost` counts as secure and works.
 
 1. Press **Windy City Shuffle** under *Try the demo*. TuneAlong hears it for the first time.
    - The tuning card reads *Eb Standard, A ≈ 436 Hz* within seconds.

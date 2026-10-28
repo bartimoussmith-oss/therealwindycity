@@ -134,6 +134,7 @@ label.inline { display: inline-flex; align-items: center; gap: .5rem; }
 .banner.learn { background: #1a2238; border: 1px solid #2c3b63; color: #cdd9ff; }
 .banner.known { background: #10261f; border: 1px solid #1f5446; color: #b6f5e4; justify-content: flex-start; }
 .banner.demo { background: #2a2111; border: 1px solid #5a4415; color: #ffe3b0; }
+.banner.insecure { background: #2a1214; border: 1px solid #6b2a30; color: #ffd6da; }
 .live-grid { display: grid; gap: 1rem; grid-template-columns: 1fr; }
 @media (min-width: 900px) { .live-grid { grid-template-columns: 1.35fr 1fr; } }
 .live-grid > .card { margin-bottom: 0; }

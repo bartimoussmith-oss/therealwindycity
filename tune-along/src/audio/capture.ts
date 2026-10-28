@@ -30,7 +30,23 @@ export function audioContext(): AudioContext {
   return ctx;
 }
 
+/** True when the page came from plain http:// on a non-localhost address (e.g. a phone opening the dev server's
+ *  "Network:" URL). Browsers then withhold AudioWorklet, the microphone and service workers. */
+export function isInsecureContext(): boolean {
+  return typeof window !== 'undefined' && window.isSecureContext === false;
+}
+
+/** Plain-language explanation of the http:// problem and what to do instead. */
+export function needsSecureContextMessage(): string {
+  const port = location.port ? `:${location.port}` : '';
+  return `This page was opened from a plain http:// address (${location.host}), so the browser blocks audio and the microphone here. ` +
+    `On the computer that runs TuneAlong, open http://localhost${port} instead. On a phone, use an https:// link.`;
+}
+
 async function ensureWorklet(c: AudioContext): Promise<void> {
+  if (!c.audioWorklet) {
+    throw new CaptureError(isInsecureContext() ? needsSecureContextMessage() : 'This browser cannot run TuneAlong’s audio engine (no AudioWorklet). Use a current Chrome, Edge, Firefox or Safari.');
+  }
   if (!workletReady) workletReady = c.audioWorklet.addModule(new URL('capture-worklet.js', document.baseURI).href);
   return workletReady;
 }
@@ -38,7 +54,7 @@ async function ensureWorklet(c: AudioContext): Promise<void> {
 export class CaptureError extends Error {}
 
 async function openMic(): Promise<MediaStream> {
-  if (!navigator.mediaDevices?.getUserMedia) throw new CaptureError('This browser cannot use the microphone (it needs HTTPS and a modern browser).');
+  if (!navigator.mediaDevices?.getUserMedia) throw new CaptureError(isInsecureContext() ? needsSecureContextMessage() : 'This browser cannot use the microphone (it needs HTTPS and a modern browser).');
   try {
     return await navigator.mediaDevices.getUserMedia({
       audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false, channelCount: 1 },
@@ -54,7 +70,7 @@ async function openMic(): Promise<MediaStream> {
 
 async function openTab(): Promise<MediaStream> {
   const md = navigator.mediaDevices as MediaDevices & { getDisplayMedia?: MediaDevices['getDisplayMedia'] };
-  if (!md?.getDisplayMedia) throw new CaptureError('Capturing another tab’s audio needs desktop Chrome or Edge. Use the microphone instead.');
+  if (!md?.getDisplayMedia) throw new CaptureError(isInsecureContext() ? needsSecureContextMessage() : 'Capturing another tab’s audio needs desktop Chrome or Edge. Use the microphone instead.');
   let stream: MediaStream;
   try {
     stream = await md.getDisplayMedia({
