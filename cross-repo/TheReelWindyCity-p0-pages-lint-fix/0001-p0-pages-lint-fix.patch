@@ -1,0 +1,130 @@
+From db26d4809368a5ef23c4aad3bbc0d474230b9774 Mon Sep 17 00:00:00 2001
+From: bartimoussmith-oss
+ <236240326+bartimoussmith-oss@users.noreply.github.com>
+Date: Wed, 28 Oct 2026 10:43:12 +0000
+Subject: [PATCH] Fix react/no-unescaped-entities violations and gate
+ deployment on lint
+
+Restores GitHub Pages, which has served a stale build since
+2026-10-22T00:51:54Z (head ab8570bf). 45 consecutive Pages runs failed at
+"Build static site" with the deploy step skipped, so the public site stayed up
+but six days behind.
+
+Escape five apostrophes in JSX text. This is the complete set, confirmed from CI
+annotations rather than assumed:
+
+  src/components/site-help.tsx:44              page's      (introduced by 678193d3)
+  src/app/page.tsx:6                           What's
+  src/app/page.tsx:7                           What's
+  src/app/page.tsx:7                           publisher's
+  src/app/explore/public-safety/page.tsx:7     homepage's
+
+Rendered output is unchanged: JSX decodes &apos; back to an apostrophe, so
+markup, the SEO surface and reader-visible text are all identical.
+
+src/app/mynewspace/page.tsx:68 also contains an apostrophe and is deliberately
+left alone. It is a JavaScript template literal inside `export const metadata`,
+where an apostrophe is correct; escaping it would corrupt the page title.
+
+Why the workflow change is part of the fix rather than a separate concern:
+next.config.ts sets no eslint.eslintDirs, so `next build` lints only Next's
+default dirs (app, pages, components). Violations under src/app/ therefore did
+NOT fail the Pages build. CI lint went red on src/app/page.tsx and
+src/app/explore/public-safety/page.tsx from 2026-10-22T00:48Z onward while Pages
+kept deploying successfully; Pages only broke once the same class of violation
+landed in src/components/. A red gate that does not gate the artifact being
+published is not a gate.
+
+deploy-pages.yml now runs the whole-repo eslint pass between `npm ci` and the
+data-sync steps, so a lint violation fails the build before anything is uploaded
+or deployed. This matters more than it looks: the workflow runs hourly on cron as
+well as on every push to main, so an unlinted commit was being republished every
+hour with nobody watching.
+
+Verified before committing: YAML parses; build step order is checkout,
+setup-node, npm ci, lint gate, cache, data syncs, configure-pages, build, upload
+artifact; deploy retains needs: build and the `github.ref == 'refs/heads/main'`
+guard; and removing the inserted block reproduces the original workflow byte for
+byte. The five escape sites were each asserted to occur exactly once, and the
+edits were verified to change nothing except those apostrophes.
+
+Not verified: no build or lint run was executed, because npm ci for this project
+cannot complete in the authoring sandbox. The authoritative check is the Pages
+workflow itself turning green on main.
+---
+ .github/workflows/deploy-pages.yml     | 17 +++++++++++++++++
+ src/app/explore/public-safety/page.tsx |  2 +-
+ src/app/page.tsx                       |  4 ++--
+ src/components/site-help.tsx           |  2 +-
+ 4 files changed, 21 insertions(+), 4 deletions(-)
+
+diff --git a/.github/workflows/deploy-pages.yml b/.github/workflows/deploy-pages.yml
+index 293d6be..16dfb0e 100644
+--- a/.github/workflows/deploy-pages.yml
++++ b/.github/workflows/deploy-pages.yml
+@@ -28,6 +28,23 @@ jobs:
+           node-version: 22
+           cache: npm
+       - run: npm ci
++      # Fail fast on lint before anything is published.
++      #
++      # `next build` only lints Next's default eslint dirs (app, pages,
++      # components). With no `eslint.eslintDirs` override in next.config.ts, a
++      # react/no-unescaped-entities violation under src/app/ does NOT fail the
++      # build, so Pages publishes it and only the separate CI workflow goes red.
++      # That is exactly what happened: CI lint failed on src/app/page.tsx and
++      # src/app/explore/public-safety/page.tsx from 2026-10-22T00:48Z onward
++      # while Pages kept deploying, and Pages itself only broke once the same
++      # class of violation landed in src/components/site-help.tsx (678193d3).
++      #
++      # This workflow runs hourly on cron and on every push to main, so an
++      # unlinted commit would otherwise be republished every hour with nobody
++      # watching. The eslint invocation below is `eslint .`, covering the whole
++      # repository rather than only the directories Next happens to lint.
++      - name: Lint gate (whole repo, not just Next's build-time lint dirs)
++        run: npm run lint
+       - name: Restore scanner-archive linkage cache
+         uses: actions/cache@v4
+         with:
+diff --git a/src/app/explore/public-safety/page.tsx b/src/app/explore/public-safety/page.tsx
+index 462ca1e..01f63cf 100644
+--- a/src/app/explore/public-safety/page.tsx
++++ b/src/app/explore/public-safety/page.tsx
+@@ -4,5 +4,5 @@ import { siteUrl } from '@/lib/site-config';
+ import styles from '@/components/public-shell.module.css';
+ export const metadata: Metadata = { title: 'Public safety & scanner | The Real Windy City', alternates: { canonical: siteUrl('explore/public-safety/') } };
+ export default function PublicSafetyPage() {
+-  return <main className={styles.page}><Link href="/explore/">← Explore collections</Link><section className={styles.hero}><p className={styles.kicker}>Explore · Public safety</p><h1>Scanner workspace</h1><p>Scanner access is separate from the homepage's local-information overview.</p></section><section className={styles.card}><h2>Scanner access & automated transcripts</h2><p>Open the separate workspace to review available Broadcastify-feed transcriptions and capture status. Select Scanner Live in its sidebar.</p><a className={styles.button} href="https://therealwindycity.streamlit.app" target="_blank" rel="noopener noreferrer">Open scanner workspace ↗</a><p>Opens a separate site. Availability and coverage can vary.</p></section><section className={styles.note}><h2>Coverage and verification</h2><p>Automated transcripts can contain errors, and capture can have gaps. Radio speech is not a verified incident report or an official finding. Check original sources before drawing conclusions.</p><p>This is not an emergency service. Incident-record correlation remains under development.</p></section></main>;
++  return <main className={styles.page}><Link href="/explore/">← Explore collections</Link><section className={styles.hero}><p className={styles.kicker}>Explore · Public safety</p><h1>Scanner workspace</h1><p>Scanner access is separate from the homepage&apos;s local-information overview.</p></section><section className={styles.card}><h2>Scanner access & automated transcripts</h2><p>Open the separate workspace to review available Broadcastify-feed transcriptions and capture status. Select Scanner Live in its sidebar.</p><a className={styles.button} href="https://therealwindycity.streamlit.app" target="_blank" rel="noopener noreferrer">Open scanner workspace ↗</a><p>Opens a separate site. Availability and coverage can vary.</p></section><section className={styles.note}><h2>Coverage and verification</h2><p>Automated transcripts can contain errors, and capture can have gaps. Radio speech is not a verified incident report or an official finding. Check original sources before drawing conclusions.</p><p>This is not an emergency service. Incident-record correlation remains under development.</p></section></main>;
+ }
+diff --git a/src/app/page.tsx b/src/app/page.tsx
+index 378e30f..c82c362 100644
+--- a/src/app/page.tsx
++++ b/src/app/page.tsx
+@@ -3,8 +3,8 @@ import SiteTour from '@/components/site-tour';
+ import styles from '@/components/public-shell.module.css';
+ export default function HomePage() {
+   return <main className={styles.page} style={{ fontSize: '20px', color: '#142b3d' }}>
+-    <section className={styles.hero} aria-labelledby="welcome-title"><p className={styles.kicker}>Cheyenne & Laramie County</p><h1 id="welcome-title">Your community. The information to draw your own conclusions.</h1><p>Explore Cheyenne and Laramie County public records, meetings, and local information—all brought together for quick, easy viewing. Get the overview or go deeper into the facts, and find out where you can make a difference in your community.</p><p>Check the sources, dates, and gaps. Choose the level of depth and involvement that works for you.</p><div className={styles.actions}><a className={styles.button} href="#start-here">What's happening?</a><a className={styles.secondary} href="#site-tour">Take the site tour</a></div></section>
+-    <section id="start-here" aria-labelledby="start-title" className={styles.note}><p className={styles.kicker}>Need a starting point?</p><h2 id="start-title">What's happening in your community</h2><p>Start with current events, public meetings, and the records behind local decisions. Check each publisher's date before treating an item as current.</p><div className={styles.grid}><article className={styles.card}><h3>Current events & updates</h3><p>Visit the existing signal desk for reporting, public alerts, and source links. Publisher availability and update times vary.</p><Link href="/hub/signals/">Explore current events →</Link></article><article className={styles.card}><h3>Public meetings</h3><p>Find posted meeting information and agendas. Confirm upcoming dates with the official calendar linked from the meeting desk.</p><Link href="/hub/meetings/">Find a public meeting →</Link></article><article className={styles.card}><h3>Get involved</h3><p>Ask questions, share sources, and flag missing information or corrections.</p><Link href="/community/">Join the conversation →</Link></article></div></section>
++    <section className={styles.hero} aria-labelledby="welcome-title"><p className={styles.kicker}>Cheyenne & Laramie County</p><h1 id="welcome-title">Your community. The information to draw your own conclusions.</h1><p>Explore Cheyenne and Laramie County public records, meetings, and local information—all brought together for quick, easy viewing. Get the overview or go deeper into the facts, and find out where you can make a difference in your community.</p><p>Check the sources, dates, and gaps. Choose the level of depth and involvement that works for you.</p><div className={styles.actions}><a className={styles.button} href="#start-here">What&apos;s happening?</a><a className={styles.secondary} href="#site-tour">Take the site tour</a></div></section>
++    <section id="start-here" aria-labelledby="start-title" className={styles.note}><p className={styles.kicker}>Need a starting point?</p><h2 id="start-title">What&apos;s happening in your community</h2><p>Start with current events, public meetings, and the records behind local decisions. Check each publisher&apos;s date before treating an item as current.</p><div className={styles.grid}><article className={styles.card}><h3>Current events & updates</h3><p>Visit the existing signal desk for reporting, public alerts, and source links. Publisher availability and update times vary.</p><Link href="/hub/signals/">Explore current events →</Link></article><article className={styles.card}><h3>Public meetings</h3><p>Find posted meeting information and agendas. Confirm upcoming dates with the official calendar linked from the meeting desk.</p><Link href="/hub/meetings/">Find a public meeting →</Link></article><article className={styles.card}><h3>Get involved</h3><p>Ask questions, share sources, and flag missing information or corrections.</p><Link href="/community/">Join the conversation →</Link></article></div></section>
+     <SiteTour />
+     <section><h2>Follow your interests. Choose your depth.</h2><p>Browse the available local-information collections, check original records and meeting transcripts, or use detailed research tools.</p><div className={styles.actions}><Link className={styles.button} href="/explore/">Explore collections</Link><Link className={styles.secondary} href="/transcripts/">Meeting transcripts</Link><Link className={styles.secondary} href="/workspace/">Research tools</Link></div></section>
+     <section><h2>Put the numbers in context</h2><ul><li>Check the source, reporting period, and geographic area.</li><li>Look for units and the population behind each percentage.</li><li>Compare consistent definitions and coverage.</li><li>Check for estimates, missing data, and outdated figures. Missing data is not zero.</li></ul><p>When context is absent, treat that as a limitation rather than filling in the gaps.</p></section>
+diff --git a/src/components/site-help.tsx b/src/components/site-help.tsx
+index 62baa19..eae49ff 100644
+--- a/src/components/site-help.tsx
++++ b/src/components/site-help.tsx
+@@ -41,7 +41,7 @@ export default function SiteHelp() {
+   }
+   return <aside className={styles.widget} aria-label="Site assistance">
+     {greeting && !open && <div className={styles.greeting}><p>Need help finding your way around?</p><button type="button" onClick={() => setOpen(true)}>Show me around</button><button type="button" aria-label="Dismiss greeting" onClick={() => setGreeting(false)}>No thanks</button></div>}
+-    {open && <div id="site-help-panel" role="dialog" aria-modal="false" aria-labelledby="site-help-title" className={styles.panel} onKeyDown={event => { if (event.key === 'Escape') close(); }}><header className={styles.header}><h2 id="site-help-title">Site guide</h2><button type="button" onClick={close} aria-label="Close site guide">Close</button></header><p className={styles.notice}>Preset navigation help, not live AI. Messages stay in this page's memory and are not sent to an AI service. Do not enter personal information.</p><div className={styles.log} ref={log} role="log" aria-live="polite" aria-relevant="additions">{messages.map((message, index) => <div className={message.role === 'visitor' ? styles.visitor : styles.reply} key={index}><span>{message.role === 'visitor' ? 'You' : 'Site guide'}</span><p>{message.text}</p>{message.href && <Link href={message.href} onClick={close}>{message.label} →</Link>}</div>)}</div><div className={styles.topics} aria-label="Suggested topics">{topics.map(topic => <button type="button" key={topic.label} onClick={() => ask(topic.label)}>{topic.label}</button>)}</div><form className={styles.form} onSubmit={event => { event.preventDefault(); ask(input); }}><label htmlFor="site-help-question">What are you looking for?</label><div><input id="site-help-question" ref={field} value={input} maxLength={500} autoComplete="off" onChange={event => setInput(event.target.value)} /><button type="submit" disabled={!input.trim()}>Send</button></div></form></div>}
++    {open && <div id="site-help-panel" role="dialog" aria-modal="false" aria-labelledby="site-help-title" className={styles.panel} onKeyDown={event => { if (event.key === 'Escape') close(); }}><header className={styles.header}><h2 id="site-help-title">Site guide</h2><button type="button" onClick={close} aria-label="Close site guide">Close</button></header><p className={styles.notice}>Preset navigation help, not live AI. Messages stay in this page&apos;s memory and are not sent to an AI service. Do not enter personal information.</p><div className={styles.log} ref={log} role="log" aria-live="polite" aria-relevant="additions">{messages.map((message, index) => <div className={message.role === 'visitor' ? styles.visitor : styles.reply} key={index}><span>{message.role === 'visitor' ? 'You' : 'Site guide'}</span><p>{message.text}</p>{message.href && <Link href={message.href} onClick={close}>{message.label} →</Link>}</div>)}</div><div className={styles.topics} aria-label="Suggested topics">{topics.map(topic => <button type="button" key={topic.label} onClick={() => ask(topic.label)}>{topic.label}</button>)}</div><form className={styles.form} onSubmit={event => { event.preventDefault(); ask(input); }}><label htmlFor="site-help-question">What are you looking for?</label><div><input id="site-help-question" ref={field} value={input} maxLength={500} autoComplete="off" onChange={event => setInput(event.target.value)} /><button type="submit" disabled={!input.trim()}>Send</button></div></form></div>}
+     <button type="button" className={styles.launcher} ref={launcher} aria-expanded={open} aria-controls={open ? 'site-help-panel' : undefined} onClick={() => { if (open) close(); else setOpen(true); }}>{open ? 'Close help' : 'Need help?'}</button>
+   </aside>;
+ }
+-- 
+2.39.5
+
