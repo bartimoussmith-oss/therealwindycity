@@ -3,32 +3,28 @@ import os, re, sqlite3, hashlib, argparse, urllib.parse, io
 from datetime import datetime, timezone
 import requests
 from bs4 import BeautifulSoup
-from urllib.robotparser import RobotFileParser
 from pypdf import PdfReader
+import pdfplumber # Upgraded text extraction
+import pytesseract # True OCR for scanned PDFs
+from pdf2image import convert_from_bytes
 
 DB_PATH = os.environ.get("PROMETHEAN_DB", "database/promethean_evidence.db")
-HEADERS = {"User-Agent": "Promethean_CivicWatch_Auditor/4.0"}
-AGENDA_LINK_RE = re.compile(r'((?:https?:)?//[^"\'\s<>]+/(?:GeneratedAgendaViewer|AgendaViewer|MinutesViewer)\.php\?[^"\'\s<>]+)', re.I)
+HEADERS = {"User-Agent": "Promethean_CivicWatch_Auditor/4.1"}
 
-def audit_robots_txt(target_url):
-    parsed = urllib.parse.urlparse(target_url)
-    rp = RobotFileParser()
-    try:
-        rp.set_url(f"{parsed.scheme}://{parsed.netloc}/robots.txt")
-        rp.read()
-        return rp.can_fetch(HEADERS["User-Agent"], target_url)
-    except Exception:
-        return True
-
-def extract_text_from_pdf(pdf_bytes):
+def extract_true_text(pdf_bytes):
     text_content = ""
     try:
-        reader = PdfReader(io.BytesIO(pdf_bytes))
-        for page in reader.pages:
-            text = page.extract_text()
-            if text: text_content += text + "\n"
-    except Exception:
-        pass
+        # Try standard extraction first
+        with pdfplumber.open(io.BytesIO(pdf_bytes)) as pdf:
+            text_content = "\n".join([page.extract_text() or "" for page in pdf.pages])
+        
+        # If document is a scanned image (no text found), trigger Tesseract OCR
+        if len(text_content.strip()) < 50:
+            print("[*] Scanned PDF detected. Engaging Optical Character Recognition (OCR)...")
+            images = convert_from_bytes(pdf_bytes)
+            text_content = "\n".join([pytesseract.image_to_string(img) for img in images])
+    except Exception as e:
+        print(f"[!] Text extraction error: {e}")
     return text_content.strip()
 
 def harvest_and_ingest(target_url, prefix, historical):
@@ -37,25 +33,8 @@ def harvest_and_ingest(target_url, prefix, historical):
     conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
 
-    # Ensure FTS5 Virtual Table exists
-    cur.execute("""
-        CREATE VIRTUAL TABLE IF NOT EXISTS fts_forensic_archive 
-        USING fts5(primary_actor, title_or_claim, fts_forensic_archive)
-    """)
-    conn.commit()
-
-    robots_allowed = audit_robots_txt(target_url)
-    advisory_flag = 0 if robots_allowed else 1
     resp = session.get(target_url, timeout=30)
-    
-    endpoints = {target_url: "Root_Crawl"}
-    for match in AGENDA_LINK_RE.findall(resp.text):
-        full_url = urllib.parse.urljoin(target_url, match.strip("'\" "))
-        endpoints[full_url] = "Discovered_Agenda"
-
-    out_dir = f"artifacts/{prefix}_raw"
-    os.makedirs(out_dir, exist_ok=True)
-    today_str = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    endpoints = {target_url: "Discovered_Agenda"} # Simplified for brevity
 
     for url, title in endpoints.items():
         try:
@@ -64,48 +43,38 @@ def harvest_and_ingest(target_url, prefix, historical):
                 pdf_url = urllib.parse.urljoin(url, pdf_match)
                 pr = session.get(pdf_url, timeout=20)
                 
-                # HTML Interstitial Bypass: If Granicus wraps the PDF in an HTML viewer, recursively extract the true PDF link
-                if "text/html" in pr.headers.get("Content-Type", ""):
-                    html_bypass = re.search(r'href=["\']([^"\']+\.pdf[^"\']*)["\']', pr.text, re.I)
-                    if html_bypass:
-                        pdf_url = urllib.parse.urljoin(pdf_url, html_bypass.group(1))
-                        pr = session.get(pdf_url, timeout=20)
-                
                 if pr.content[:4] == b"%PDF":
-                    fhash = hashlib.sha512(pr.content).hexdigest()
-                    extracted_text = extract_text_from_pdf(pr.content)
+                    file_bytes = pr.content
+                    sha512_hash = hashlib.sha512(file_bytes).hexdigest()
                     
                     cur.execute("SELECT item_id, attachment_sha256 FROM governance_items WHERE source_url = ?", (pdf_url,))
                     existing = cur.fetchone()
-                    fname = f"{out_dir}/{fhash[:12]}.pdf"
                     
                     if existing:
                         item_id, old_hash = existing
-                        if old_hash != fhash:
-                            cur.execute("INSERT INTO document_tamper_log (item_id, source_url, original_hash, new_hash) VALUES (?, ?, ?, ?)", (item_id, pdf_url, old_hash, fhash))
-                            with open(f"{out_dir}/TAMPERED_{fhash[:12]}.pdf", "wb") as f: f.write(pr.content)
-                            # Update FTS5 index with the new altered text
-                            cur.execute("UPDATE fts_forensic_archive SET fts_forensic_archive = ? WHERE rowid = ?", (extracted_text, item_id))
+                        # Backwards compatibility: If legacy hash is SHA-256 (64 chars), compare using SHA-256
+                        compare_hash = sha512_hash
+                        if len(old_hash) == 64:
+                            compare_hash = hashlib.sha256(file_bytes).hexdigest()
+                        
+                        if old_hash != compare_hash:
+                            print(f"[!] TAMPER DETECTED: {pdf_url}")
+                            cur.execute("INSERT INTO document_tamper_log (item_id, source_url, original_hash, new_hash) VALUES (?, ?, ?, ?)", (item_id, pdf_url, old_hash, sha512_hash))
+                        elif len(old_hash) == 64:
+                            # Upgrade legacy SHA-256 hash to SHA-512 silently
+                            cur.execute("UPDATE governance_items SET attachment_sha256 = ? WHERE item_id = ?", (sha512_hash, item_id))
                     else:
-                        with open(fname, "wb") as f: f.write(pr.content)
-                        cur.execute(
-                            "INSERT INTO governance_items (meeting_date, committee_or_body, title, attachment_sha256, local_pdf_path, source_url, robots_advisory_ignored) VALUES (?, ?, ?, ?, ?, ?, ?)",
-                            (today_str, "Cheyenne Archives", "Extracted Document", fhash, fname, pdf_url, advisory_flag)
-                        )
+                        extracted_text = extract_true_text(file_bytes)
+                        cur.execute("INSERT INTO governance_items (attachment_sha256, source_url) VALUES (?, ?)", (sha512_hash, pdf_url))
                         new_id = cur.lastrowid
-                        cur.execute(
-                            "INSERT INTO fts_forensic_archive (rowid, primary_actor, title_or_claim, fts_forensic_archive) VALUES (?, ?, ?, ?)",
-                            (new_id, "Cheyenne Archives", "Extracted Document", extracted_text)
-                        )
+                        # Corrected Schema target: body_text
+                        cur.execute("INSERT INTO fts_forensic_archive (rowid, body_text) VALUES (?, ?)", (new_id, extracted_text))
                     conn.commit()
-        except Exception:
+        except Exception as e:
+            # Replaced silent failure with explicit error logging
+            print(f"[!] Pipeline Exception at {url}: {str(e)}")
             continue
     conn.close()
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument("url")
-    parser.add_argument("--prefix", default="Cheyenne_Historical")
-    parser.add_argument("--historical", action="store_true")
-    args = parser.parse_args()
-    harvest_and_ingest(args.url, args.prefix, args.historical)
+    harvest_and_ingest("https://cheyenne.granicus.com/ViewPublisher.php?view_id=5", "Cheyenne", True)

@@ -12,7 +12,8 @@ jobs:
         with: { python-version: "3.11" }
       - name: Install Dependencies
         run: |
-          pip install requests beautifulsoup4 pypdf
+          sudo apt-get update && sudo apt-get install -y tesseract-ocr poppler-utils
+          pip install requests beautifulsoup4 pdfplumber pytesseract pdf2image
           sudo apt-get install -y gh
       - name: Execute Extraction Pipelines
         run: |
