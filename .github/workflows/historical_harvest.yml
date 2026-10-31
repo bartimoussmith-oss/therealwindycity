@@ -25,8 +25,10 @@ jobs:
           set -o pipefail
           echo "# Promethean Harvest Telemetry - $(date -u)" > SYSTEM_DIAGNOSTICS.md
           echo '```text' >> SYSTEM_DIAGNOSTICS.md
-          URL_5="[https://cheyenne.granicus.com/ViewPublisher.php?view_id=5](https://cheyenne.granicus.com/ViewPublisher.php?view_id=5)"
-          URL_2="[https://cheyenne.granicus.com/ViewPublisher.php?view_id=2](https://cheyenne.granicus.com/ViewPublisher.php?view_id=2)"
+          PROTO="https"
+          HOST="cheyenne.granicus.com"
+          URL_5="${PROTO}://${HOST}/ViewPublisher.php?view_id=5"
+          URL_2="${PROTO}://${HOST}/ViewPublisher.php?view_id=2"
           python3 scrapers/granicus_harvester.py "$URL_5" --historical 2>&1 | tee -a SYSTEM_DIAGNOSTICS.md
           python3 scrapers/granicus_harvester.py "$URL_2" --historical 2>&1 | tee -a SYSTEM_DIAGNOSTICS.md
           if [ -f "scrapers/connect_cheyenne_harvester.py" ]; then
