@@ -1,0 +1,49 @@
+name: Promethean Recurring Harvest
+
+on:
+  schedule:
+    # Runs at 08:00 UTC (2:00 AM MDT) every Sunday and Thursday
+    - cron: "0 8 * * 0,4"
+  workflow_dispatch:
+    inputs:
+      historical:
+        description: "Run Deep Historical Extraction"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Dependencies
+        run: pip install requests beautifulsoup4
+
+      - name: Execute Granicus Pipeline
+        run: |
+          if [ "${{ github.event.inputs.historical }}" = "true" ]; then
+            python3 scrapers/granicus_harvester.py "https://cheyenne.granicus.com/ViewPublisher.php?view_id=5" --historical
+            python3 scrapers/granicus_harvester.py "https://cheyenne.granicus.com/ViewPublisher.php?view_id=2" --historical
+          else
+            python3 scrapers/granicus_harvester.py "https://cheyenne.granicus.com/ViewPublisher.php?view_id=5"
+          fi
+
+      - name: Commit Extracted Evidence
+        run: |
+          git config user.name "Promethean-AutoHarvester"
+          git config user.email "cwdm82001@gmail.com"
+          git add artifacts/ database/ || true
+          if ! git diff --cached --quiet; then
+            git commit -m "Automated Forensic Harvest: Updated SQLite FTS5 & Artifact Archive"
+            git push origin HEAD:main
+          fi
