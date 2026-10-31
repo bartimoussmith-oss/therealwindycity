@@ -10,11 +10,12 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.11" }
-      - name: Install Dependencies
+      - name: Install System Dependencies
         run: |
-          sudo apt-get update && sudo apt-get install -y tesseract-ocr poppler-utils
-          pip install requests beautifulsoup4 pdfplumber pytesseract pdf2image
-          sudo apt-get install -y gh
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr poppler-utils gh
+      - name: Install Python Dependencies
+        run: pip install requests beautifulsoup4 pdfplumber pytesseract pdf2image pypdf
       - name: Execute Extraction Pipelines
         run: |
           python3 scrapers/granicus_harvester.py "https://cheyenne.granicus.com/ViewPublisher.php?view_id=5" --historical
@@ -24,9 +25,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.PROMETHEAN_ARCHIVE_TOKEN }}
         run: |
-          ./tools/storage_shard_manager.sh
-          
-          # Push code and manifest updates to primary repo
+          chmod +x tools/storage_shard_manager.sh
+          ./tools/storage_shard_manager.sh || true
           git config user.name "Promethean-AutoHarvester"
           git config user.email "cwdm82001@gmail.com"
           git add STORAGE_MANIFEST.md database/promethean_evidence.db || true
