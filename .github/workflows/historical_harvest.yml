@@ -16,21 +16,24 @@ jobs:
           sudo apt-get install -y tesseract-ocr poppler-utils gh
       - name: Install Python Dependencies
         run: pip install requests beautifulsoup4 pdfplumber pytesseract pdf2image pypdf
-      - name: Execute Extraction Pipelines
+      - name: Execute Extraction Pipelines & Generate Diagnostics
         run: |
-          python3 scrapers/granicus_harvester.py "https://cheyenne.granicus.com/ViewPublisher.php?view_id=5" --historical
-          python3 scrapers/granicus_harvester.py "https://cheyenne.granicus.com/ViewPublisher.php?view_id=2" --historical
-          python3 scrapers/connect_cheyenne_harvester.py || true
+          echo "# Promethean Telemetry Log - $(date)" > SYSTEM_DIAGNOSTICS.md
+          echo '```text' >> SYSTEM_DIAGNOSTICS.md
+          python3 scrapers/granicus_harvester.py "[https://cheyenne.granicus.com/ViewPublisher.php?view_id=5](https://cheyenne.granicus.com/ViewPublisher.php?view_id=5)" --historical >> SYSTEM_DIAGNOSTICS.md 2>&1 || echo "[!] Harvester 5 Exception" >> SYSTEM_DIAGNOSTICS.md
+          python3 scrapers/granicus_harvester.py "[https://cheyenne.granicus.com/ViewPublisher.php?view_id=2](https://cheyenne.granicus.com/ViewPublisher.php?view_id=2)" --historical >> SYSTEM_DIAGNOSTICS.md 2>&1 || echo "[!] Harvester 2 Exception" >> SYSTEM_DIAGNOSTICS.md
+          python3 scrapers/connect_cheyenne_harvester.py >> SYSTEM_DIAGNOSTICS.md 2>&1 || true
+          echo '```' >> SYSTEM_DIAGNOSTICS.md
       - name: Provision Storage Shards & Push
         env:
           GH_TOKEN: ${{ secrets.PROMETHEAN_ARCHIVE_TOKEN }}
         run: |
           chmod +x tools/storage_shard_manager.sh
-          ./tools/storage_shard_manager.sh
+          ./tools/storage_shard_manager.sh >> SYSTEM_DIAGNOSTICS.md 2>&1 || echo "[!] Shard Manager Encountered a Fatal Error" >> SYSTEM_DIAGNOSTICS.md
           git config user.name "Promethean-AutoHarvester"
           git config user.email "cwdm82001@gmail.com"
-          git add STORAGE_MANIFEST.md database/promethean_evidence.db || true
+          git add STORAGE_MANIFEST.md database/promethean_evidence.db SYSTEM_DIAGNOSTICS.md || true
           if ! git diff --cached --quiet; then
-            git commit -m "Automated Harvest: Metadata updated, heavy payloads routed to external shards"
+            git commit -m "Automated Harvest: Telemetry updated, data ingested"
             git push origin HEAD:main
           fi
