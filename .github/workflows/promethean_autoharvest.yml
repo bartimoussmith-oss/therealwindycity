@@ -1,0 +1,45 @@
+name: Promethean manual evidence review
+on:
+  workflow_dispatch:
+    inputs:
+      agenda_url:
+        description: Specific Cheyenne Granicus meeting agenda or PDF, not publisher listing
+        required: true
+        type: string
+      meeting_date:
+        description: Verified date YYYY-MM-DD
+        required: true
+        type: string
+      committee:
+        description: Verified committee or governing body
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r promethean/requirements.txt
+      - name: Harvest public records
+        env:
+          AGENDA_URL: ${{ inputs.agenda_url }}
+          MEETING_DATE: ${{ inputs.meeting_date }}
+          COMMITTEE: ${{ inputs.committee }}
+          PROMETHEAN_DB: ${{ runner.temp }}/promethean/evidence.db
+        run: >-
+          python omnibus_agent_sdk.py harvest-granicus
+          --url "$AGENDA_URL" --date "$MEETING_DATE" --committee "$COMMITTEE"
+          --output "$RUNNER_TEMP/promethean/harvest"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: promethean-review-only
+          path: ${{ runner.temp }}/promethean/
+          retention-days: 7
+          if-no-files-found: error

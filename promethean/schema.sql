@@ -1,0 +1,9 @@
+PRAGMA foreign_keys=ON;
+CREATE TABLE IF NOT EXISTS governance_items(item_id INTEGER PRIMARY KEY,meeting_date TEXT NOT NULL,committee_or_body TEXT NOT NULL,title TEXT NOT NULL,attachment_sha256 TEXT UNIQUE,local_pdf_path TEXT,source_url TEXT,extracted_text TEXT,created_at TEXT DEFAULT CURRENT_TIMESTAMP);
+CREATE TABLE IF NOT EXISTS source_captures(capture_id INTEGER PRIMARY KEY,item_id INTEGER REFERENCES governance_items(item_id),source_url TEXT NOT NULL,final_url TEXT NOT NULL,agenda_url TEXT NOT NULL,meeting_date TEXT NOT NULL,committee TEXT NOT NULL,captured_at TEXT NOT NULL,sha256 TEXT NOT NULL,UNIQUE(source_url,agenda_url,meeting_date,committee,sha256));
+CREATE TABLE IF NOT EXISTS claim_reviews(review_id INTEGER PRIMARY KEY,official TEXT NOT NULL,role TEXT NOT NULL,statement_date TEXT NOT NULL,claim TEXT NOT NULL,status TEXT NOT NULL CHECK(status IN ('insufficient_evidence','model_unavailable','candidate_unreviewed')),evidence_json TEXT NOT NULL,model_json TEXT,created_at TEXT DEFAULT CURRENT_TIMESTAMP);
+CREATE VIRTUAL TABLE IF NOT EXISTS promethean_fts USING fts5(title,body,item_id UNINDEXED,tokenize='porter unicode61');
+CREATE TRIGGER IF NOT EXISTS promethean_fts_insert AFTER INSERT ON governance_items BEGIN INSERT INTO promethean_fts(title,body,item_id) VALUES(NEW.title,NEW.extracted_text,NEW.item_id); END;
+CREATE TRIGGER IF NOT EXISTS promethean_fts_update AFTER UPDATE ON governance_items BEGIN DELETE FROM promethean_fts WHERE item_id=OLD.item_id; INSERT INTO promethean_fts(title,body,item_id) VALUES(NEW.title,NEW.extracted_text,NEW.item_id); END;
+CREATE TRIGGER IF NOT EXISTS promethean_fts_delete AFTER DELETE ON governance_items BEGIN DELETE FROM promethean_fts WHERE item_id=OLD.item_id; END;
+INSERT INTO promethean_fts(title,body,item_id) SELECT title,extracted_text,item_id FROM governance_items g WHERE NOT EXISTS(SELECT 1 FROM promethean_fts f WHERE f.item_id=g.item_id);
