@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+set -e # Terminate immediately on any pipeline failure
+
 SHARD_ID=$(date +%Y-%m-%d-%H%M)
 ORG_NAME="therealwindycity"
 REPO_NAME="Promethean-Archive-${SHARD_ID}"
@@ -7,7 +9,7 @@ STAGING_DIR="shard_staging_${SHARD_ID}"
 echo "[*] Auditing payload size for Shard Provisioning..."
 if [ -d "artifacts/" ] && [ $(du -sm artifacts/ | cut -f1) -gt 90 ]; then
     echo "[*] Provisioning Linked Shard: $ORG_NAME/$REPO_NAME"
-    gh repo create "$ORG_NAME/$REPO_NAME" --public -d "Promethean Storage Node" -y || true
+    gh repo create "$ORG_NAME/$REPO_NAME" --public -d "Promethean Storage Node" -y || echo "[*] Repo likely exists."
     
     mkdir -p "$STAGING_DIR"
     cp -r artifacts/* "$STAGING_DIR/" 2>/dev/null || true
@@ -34,13 +36,19 @@ INNER_EOF
     git add -A
     git commit -m "Promethean Storage Node: Authorized Data Ingestion"
     git remote add origin "https://github.com/$ORG_NAME/$REPO_NAME.git"
-    git push -u origin main
     
-    cd ..
-    rm -rf "$STAGING_DIR"
-    
-    echo "- [Data Shard $SHARD_ID](https://github.com/$ORG_NAME/$REPO_NAME)" >> STORAGE_MANIFEST.md
-    echo "[+] Shard provisioning complete."
+    # Enforce strict push validation. Manifest only updates if the push succeeds.
+    if git push -u origin main; then
+        cd ..
+        rm -rf "$STAGING_DIR"
+        echo "- [Data Shard $SHARD_ID](https://github.com/$ORG_NAME/$REPO_NAME)" >> STORAGE_MANIFEST.md
+        echo "[+] Shard provisioning verified and logged."
+    else
+        echo "[!] CRITICAL: Shard push failed. Aborting manifest update."
+        cd ..
+        rm -rf "$STAGING_DIR"
+        exit 1
+    fi
 else
     echo "[*] Payload within safe limits. No shard required."
 fi

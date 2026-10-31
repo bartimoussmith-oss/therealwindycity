@@ -9,7 +9,7 @@ from pdf2image import convert_from_bytes
 from urllib.robotparser import RobotFileParser
 
 DB_PATH = os.environ.get("PROMETHEAN_DB", "database/promethean_evidence.db")
-HEADERS = {"User-Agent": "Promethean_CivicWatch_Auditor/4.2"}
+HEADERS = {"User-Agent": "Promethean_CivicWatch_Auditor/4.3"}
 AGENDA_LINK_RE = re.compile(r'((?:https?:)?//[^"\'\s<>]+/(?:GeneratedAgendaViewer|AgendaViewer|MinutesViewer)\.php\?[^"\'\s<>]+)', re.I)
 
 def audit_robots_txt(target_url):
@@ -66,7 +66,6 @@ def harvest_and_ingest(target_url, prefix, historical):
                 pdf_url = urllib.parse.urljoin(url, pdf_match)
                 pr = session.get(pdf_url, timeout=20)
                 
-                # HTML Interstitial Bypass
                 if "text/html" in pr.headers.get("Content-Type", ""):
                     html_bypass = re.search(r'href=["\']([^"\']+\.pdf[^"\']*)["\']', pr.text, re.I)
                     if html_bypass:
@@ -94,13 +93,11 @@ def harvest_and_ingest(target_url, prefix, historical):
                     else:
                         extracted_text = extract_true_text(file_bytes)
                         with open(fname, "wb") as f: f.write(file_bytes)
-                        # Fix NOT NULL Schema Violation
+                        # Route body_text directly into the governance table. The schema trigger handles the FTS table.
                         cur.execute(
-                            "INSERT INTO governance_items (meeting_date, committee_or_body, title, attachment_sha256, local_pdf_path, source_url, robots_advisory_ignored) VALUES (?, ?, ?, ?, ?, ?, ?)",
-                            (today_str, "Cheyenne Records", "Extracted Document", sha512_hash, fname, pdf_url, advisory_flag)
+                            "INSERT INTO governance_items (meeting_date, committee_or_body, title, attachment_sha256, local_pdf_path, source_url, robots_advisory_ignored, body_text) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                            (today_str, "Cheyenne Records", "Extracted Document", sha512_hash, fname, pdf_url, advisory_flag, extracted_text)
                         )
-                        new_id = cur.lastrowid
-                        cur.execute("INSERT INTO fts_forensic_archive (rowid, body_text) VALUES (?, ?)", (new_id, extracted_text))
                     conn.commit()
         except Exception as e:
             print(f"[!] Pipeline Exception at {url}: {str(e)}")

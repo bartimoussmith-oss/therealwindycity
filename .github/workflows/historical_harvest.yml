@@ -26,7 +26,7 @@ jobs:
           GH_TOKEN: ${{ secrets.PROMETHEAN_ARCHIVE_TOKEN }}
         run: |
           chmod +x tools/storage_shard_manager.sh
-          ./tools/storage_shard_manager.sh || true
+          ./tools/storage_shard_manager.sh
           git config user.name "Promethean-AutoHarvester"
           git config user.email "cwdm82001@gmail.com"
           git add STORAGE_MANIFEST.md database/promethean_evidence.db || true
