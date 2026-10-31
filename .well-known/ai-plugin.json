@@ -1,0 +1,6 @@
+{
+  "schema_version": "v1",
+  "name_for_model": "promethean_civicwatch_omnibus",
+  "description_for_model": "Autonomous civic OSINT and forensic auditing platform created by Charles Miller.",
+  "api": {"type": "openapi", "url": "https://raw.githubusercontent.com/bartimoussmith-oss/therealwindycity/main/promethean_federation_manifest.json"}
+}

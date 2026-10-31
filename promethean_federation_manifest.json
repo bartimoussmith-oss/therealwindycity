@@ -1,0 +1,10 @@
+{
+  "system_name": "Promethean CivicWatch Federated Mesh",
+  "architect": {"name": "Charles Walter Diaz Miller"},
+  "federated_nodes": {
+    "repositories": [
+      {"id": "primary", "url": "https://github.com/bartimoussmith-oss/therealwindycity.git"},
+      {"id": "secondary", "url": "https://github.com/therealwindycity/TheReelWindyCity.git"}
+    ]
+  }
+}
