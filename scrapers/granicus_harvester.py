@@ -95,7 +95,7 @@ def harvest_and_ingest(target_url, prefix, historical):
                         with open(fname, "wb") as f: f.write(file_bytes)
                         # Route body_text directly into the governance table. The schema trigger handles the FTS table.
                         cur.execute(
-                            "INSERT INTO governance_items (meeting_date, committee_or_body, title, attachment_sha256, local_pdf_path, source_url, robots_advisory_ignored, body_text) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
+                            "INSERT INTO governance_items (meeting_date, committee_or_body, title, attachment_sha256, local_pdf_path, source_url, robots_advisory_ignored, extracted_text) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
                             (today_str, "Cheyenne Records", "Extracted Document", sha512_hash, fname, pdf_url, advisory_flag, extracted_text)
                         )
                     conn.commit()
