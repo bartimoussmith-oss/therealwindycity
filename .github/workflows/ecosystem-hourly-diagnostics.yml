@@ -1,0 +1,87 @@
+name: Hourly public ecosystem diagnostics
+on:
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ecosystem-diagnostics
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const accounts = ['bartimoussmith-oss', 'therealwindycity'];
+            const report = {schema: 1, started_at: new Date().toISOString(), scope: 'Public GitHub repository inventory, recent public workflow runs, public issues and pull requests, declared homepage HTTP availability', limitations: ['Not an exhaustive code, security, accessibility, factual-content or historical audit', 'Future changes are checked only after publication', 'Only 30 recent workflow runs per repository are examined', 'Restricted logs and unavailable endpoints are explicitly reported', 'HTTP success is not proof of functional correctness', 'Scheduled execution is best effort, not an exact hourly guarantee'], repositories: [], coverage_gaps: []};
+            const finding = (r, severity, code, evidence, next_step) => r.findings.push({severity, code, evidence, next_step, diagnosis: 'Evidence-based observation; repair requires verification against the referenced commit and logs'});
+            for (const owner of accounts) {
+              let repos;
+              try { repos = await github.paginate(github.rest.repos.listForUser, {username: owner, type: 'owner', per_page: 100}); }
+              catch (e) { report.coverage_gaps.push({scope: owner, status: e.status || null, error: String(e.message).slice(0,500)}); continue; }
+              for (const repo of repos.filter(x => !x.private)) {
+                const r = {repository: repo.full_name, url: repo.html_url, archived: repo.archived, fork: repo.fork, default_branch: repo.default_branch, pushed_at: repo.pushed_at, findings: [], gaps: []};
+                report.repositories.push(r);
+                const args = {owner, repo: repo.name};
+                try {
+                  const head = await github.rest.repos.getCommit({...args, ref: repo.default_branch});
+                  r.head = {sha: head.data.sha, url: head.data.html_url, date: head.data.commit.committer?.date};
+                } catch (e) { r.gaps.push({check:'head', status:e.status || null}); }
+                try {
+                  const runs = (await github.rest.actions.listWorkflowRunsForRepo({...args, per_page:30})).data.workflow_runs;
+                  const latest = new Map();
+                  for (const run of runs) { const key = `${run.workflow_id}:${run.head_branch}`; if (!latest.has(key)) latest.set(key, run); }
+                  r.runs = [...latest.values()].map(x => ({id:x.id, name:x.name, branch:x.head_branch, sha:x.head_sha, status:x.status, conclusion:x.conclusion, url:x.html_url, created_at:x.created_at}));
+                  for (const run of latest.values()) {
+                    if (!['failure','timed_out','action_required','startup_failure'].includes(run.conclusion)) continue;
+                    const evidence = {run:run.html_url, sha:run.head_sha, branch:run.head_branch, conclusion:run.conclusion, jobs:[]};
+                    try {
+                      const jobs = await github.paginate(github.rest.actions.listJobsForWorkflowRun, {...args, run_id:run.id, per_page:100});
+                      evidence.jobs = jobs.filter(j => j.conclusion === 'failure' || j.conclusion === 'timed_out').map(j => ({name:j.name, url:j.html_url, failed_steps:(j.steps || []).filter(s => ['failure','timed_out'].includes(s.conclusion)).map(s => ({name:s.name, number:s.number, conclusion:s.conclusion}))}));
+                    } catch(e) { r.gaps.push({check:'failed_jobs', run:run.id, status:e.status || null}); }
+                    finding(r, run.head_sha === r.head?.sha ? 'high' : 'review', 'WORKFLOW_FAILURE', evidence, `Open the failed job and obtain its first substantive exception, stack trace and surrounding lines. Reproduce on commit ${run.head_sha}. Repair the demonstrated cause without suppressing exit codes, then rerun the same check. A failure on an older SHA does not establish current HEAD failure.`);
+                  }
+                } catch(e) { r.gaps.push({check:'actions', status:e.status || null}); }
+                try {
+                  const entries = await github.paginate(github.rest.issues.listForRepo, {...args, state:'open', per_page:100});
+                  r.open_items = entries.map(x => ({number:x.number, kind:x.pull_request ? 'pull_request':'issue', title:x.title, url:x.html_url, updated_at:x.updated_at}));
+                } catch(e) { r.gaps.push({check:'open_items', status:e.status || null}); }
+                if (repo.homepage) {
+                  try {
+                    const u = new URL(repo.homepage);
+                    if (u.protocol !== 'https:') throw new Error('Only HTTPS homepages are probed');
+                    const host = u.hostname.toLowerCase();
+                    if (!host.endsWith('.github.io') && !host.endsWith('.streamlit.app')) throw new Error('Unapproved homepage host; add a reviewed explicit allowlist entry');
+                    const response = await fetch(u, {redirect:'manual', signal:AbortSignal.timeout(20000)});
+                    r.homepage = {url:u.href, status:response.status, checked_at:new Date().toISOString()};
+                    await response.body?.cancel();
+                    if (response.status >= 400) finding(r, 'high', 'HOMEPAGE_HTTP_ERROR', r.homepage, 'Check the deployment for the exact commit, Pages configuration, base path, and generated index. Recheck the URL after the specific correction; do not infer a cause from HTTP status alone.');
+                    if (response.status >= 300 && response.status < 400) r.gaps.push({check:'homepage_redirect', detail:'Redirect not followed; inspect target manually'});
+                  } catch(e) { r.gaps.push({check:'homepage', url:repo.homepage, error:String(e.message).slice(0,300)}); }
+                } else { r.gaps.push({check:'homepage', detail:'No homepage declared; public deployment URL not inferred'}); }
+              }
+            }
+            report.finished_at = new Date().toISOString();
+            report.summary = {repositories:report.repositories.length, findings:report.repositories.reduce((n,r)=>n+r.findings.length,0), coverage_gaps:report.coverage_gaps.length+report.repositories.reduce((n,r)=>n+r.gaps.length,0)};
+            const fs = require('fs');
+            fs.writeFileSync('ecosystem-diagnostics.json', JSON.stringify(report,null,2));
+            await core.summary.addHeading('Public ecosystem diagnostics').addRaw(JSON.stringify(report.summary)).addRaw(' Full evidence is in the ecosystem-diagnostics branch and run artifact. No application repairs were performed.').write();
+            const target = {...context.repo};
+            const branch = 'ecosystem-diagnostics';
+            try { await github.rest.git.getRef({...target, ref:`heads/${branch}`}); }
+            catch(e) { if(e.status !== 404) throw e; const head = await github.rest.repos.getCommit({...target,ref:context.payload.repository.default_branch}); await github.rest.git.createRef({...target,ref:`refs/heads/${branch}`,sha:head.data.sha}); }
+            const path = 'ecosystem-diagnostics/latest.json';
+            let sha;
+            try { const old = await github.rest.repos.getContent({...target,path,ref:branch}); sha = old.data.sha; } catch(e) { if(e.status !== 404) throw e; }
+            await github.rest.repos.createOrUpdateFileContents({...target,branch,path,sha,message:'diagnostics: hourly public ecosystem snapshot [skip ci]',content:Buffer.from(JSON.stringify(report,null,2)).toString('base64')});
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ecosystem-diagnostics-${{ github.run_id }}
+          path: ecosystem-diagnostics.json
+          retention-days: 30
+          if-no-files-found: warn
