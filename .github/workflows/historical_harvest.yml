@@ -3,37 +3,52 @@ on:
   schedule:
     - cron: "0 8,20 * * *"
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   harvest:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: { python-version: "3.11" }
+        with:
+          python-version: "3.11"
       - name: Install System Dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y tesseract-ocr poppler-utils gh
       - name: Install Python Dependencies
         run: pip install requests beautifulsoup4 pdfplumber pytesseract pdf2image pypdf
-      - name: Execute Extraction Pipelines & Generate Diagnostics
+      - name: Execute Extraction Pipelines
         run: |
-          echo "# Promethean Telemetry Log - $(date)" > SYSTEM_DIAGNOSTICS.md
+          set -e
+          set -o pipefail
+          echo "# Promethean Harvest Telemetry - $(date -u)" > SYSTEM_DIAGNOSTICS.md
           echo '```text' >> SYSTEM_DIAGNOSTICS.md
-          python3 scrapers/granicus_harvester.py "[https://cheyenne.granicus.com/ViewPublisher.php?view_id=5](https://cheyenne.granicus.com/ViewPublisher.php?view_id=5)" --historical >> SYSTEM_DIAGNOSTICS.md 2>&1 || echo "[!] Harvester 5 Exception" >> SYSTEM_DIAGNOSTICS.md
-          python3 scrapers/granicus_harvester.py "[https://cheyenne.granicus.com/ViewPublisher.php?view_id=2](https://cheyenne.granicus.com/ViewPublisher.php?view_id=2)" --historical >> SYSTEM_DIAGNOSTICS.md 2>&1 || echo "[!] Harvester 2 Exception" >> SYSTEM_DIAGNOSTICS.md
-          python3 scrapers/connect_cheyenne_harvester.py >> SYSTEM_DIAGNOSTICS.md 2>&1 || true
-          echo '```' >> SYSTEM_DIAGNOSTICS.md
-      - name: Provision Storage Shards & Push
+          URL_5="[https://cheyenne.granicus.com/ViewPublisher.php?view_id=5](https://cheyenne.granicus.com/ViewPublisher.php?view_id=5)"
+          URL_2="[https://cheyenne.granicus.com/ViewPublisher.php?view_id=2](https://cheyenne.granicus.com/ViewPublisher.php?view_id=2)"
+          python3 scrapers/granicus_harvester.py "$URL_5" --historical 2>&1 | tee -a SYSTEM_DIAGNOSTICS.md
+          python3 scrapers/granicus_harvester.py "$URL_2" --historical 2>&1 | tee -a SYSTEM_DIAGNOSTICS.md
+          if [ -f "scrapers/connect_cheyenne_harvester.py" ]; then
+            python3 scrapers/connect_cheyenne_harvester.py 2>&1 | tee -a SYSTEM_DIAGNOSTICS.md
+          fi
+      - name: Provision Storage Shards
         env:
           GH_TOKEN: ${{ secrets.PROMETHEAN_ARCHIVE_TOKEN }}
         run: |
+          set -e
+          set -o pipefail
           chmod +x tools/storage_shard_manager.sh
-          ./tools/storage_shard_manager.sh >> SYSTEM_DIAGNOSTICS.md 2>&1 || echo "[!] Shard Manager Encountered a Fatal Error" >> SYSTEM_DIAGNOSTICS.md
+          ./tools/storage_shard_manager.sh 2>&1 | tee -a SYSTEM_DIAGNOSTICS.md
+      - name: Publish Telemetry & Database Updates (Runs Even On Failure)
+        if: always()
+        run: |
+          echo '```' >> SYSTEM_DIAGNOSTICS.md
           git config user.name "Promethean-AutoHarvester"
           git config user.email "cwdm82001@gmail.com"
+          git pull --rebase origin main || true
           git add STORAGE_MANIFEST.md database/promethean_evidence.db SYSTEM_DIAGNOSTICS.md || true
           if ! git diff --cached --quiet; then
-            git commit -m "Automated Harvest: Telemetry updated, data ingested"
+            git commit -m "Automated Harvest Telemetry & Data Sync [skip ci]"
             git push origin HEAD:main
           fi
