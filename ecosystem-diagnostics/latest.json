@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "started_at": "2026-11-03T06:57:35.635Z",
+  "started_at": "2026-11-03T15:17:17.565Z",
   "scope": "Public GitHub repository inventory, recent public workflow runs, public issues and pull requests, declared homepage HTTP availability",
   "limitations": [
     "Not an exhaustive code, security, accessibility, factual-content or historical audit",
@@ -235,7 +235,7 @@
       "archived": false,
       "fork": false,
       "default_branch": "main",
-      "pushed_at": "2026-11-03T03:04:10Z",
+      "pushed_at": "2026-11-03T14:20:50Z",
       "findings": [],
       "gaps": [
         {
@@ -244,60 +244,80 @@
         }
       ],
       "head": {
-        "sha": "ff072d02b808533dca2f42e781f87c90039494e6",
-        "url": "https://github.com/bartimoussmith-oss/therealwindycity/commit/ff072d02b808533dca2f42e781f87c90039494e6",
-        "date": "2026-11-03T03:04:09Z"
+        "sha": "9000332a5809646f43b0ed66d02c71473e88d222",
+        "url": "https://github.com/bartimoussmith-oss/therealwindycity/commit/9000332a5809646f43b0ed66d02c71473e88d222",
+        "date": "2026-11-03T14:20:45Z"
       },
       "runs": [
         {
-          "id": 41593146148,
+          "id": 41662290796,
           "name": "Hourly public ecosystem diagnostics",
           "branch": "main",
-          "sha": "ff072d02b808533dca2f42e781f87c90039494e6",
+          "sha": "9000332a5809646f43b0ed66d02c71473e88d222",
           "status": "in_progress",
           "conclusion": null,
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41593146148",
-          "created_at": "2026-11-03T06:57:30Z"
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41662290796",
+          "created_at": "2026-11-03T15:17:12Z"
         },
         {
-          "id": 41569854656,
-          "name": "Scanner best-effort live and recovery",
+          "id": 41651814677,
+          "name": "civic-cycle",
           "branch": "main",
-          "sha": "31280fd15a3f29e7bb473c1fce62ec515e31ebfd",
+          "sha": "cf495ce8674f587802bb74895b7bfe2c9ab4d057",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41569854656",
-          "created_at": "2026-11-03T03:03:22Z"
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41651814677",
+          "created_at": "2026-11-03T14:14:59Z"
+        },
+        {
+          "id": 41642109812,
+          "name": "Scheduled Audit & Telemetry Sync",
+          "branch": "main",
+          "sha": "2dcba636cc0b11b0593d562f42622b57409dd36d",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41642109812",
+          "created_at": "2026-11-03T13:11:20Z"
+        },
+        {
+          "id": 41626361084,
+          "name": "Scanner best-effort live and recovery",
+          "branch": "main",
+          "sha": "51f94a4b9ca4f1d5fba7ae4b38dd60330a9a52ae",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41626361084",
+          "created_at": "2026-11-03T11:17:53Z"
+        },
+        {
+          "id": 41613298569,
+          "name": "Scanner historical backfill",
+          "branch": "main",
+          "sha": "51f94a4b9ca4f1d5fba7ae4b38dd60330a9a52ae",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41613298569",
+          "created_at": "2026-11-03T09:43:13Z"
+        },
+        {
+          "id": 41594533835,
+          "name": "meeting-watch",
+          "branch": "main",
+          "sha": "ff072d02b808533dca2f42e781f87c90039494e6",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41594533835",
+          "created_at": "2026-11-03T07:10:16Z"
         },
         {
           "id": 41562954449,
           "name": "Promethean Recurring Harvest",
           "branch": "main",
           "sha": "31280fd15a3f29e7bb473c1fce62ec515e31ebfd",
-          "status": "in_progress",
-          "conclusion": null,
+          "status": "completed",
+          "conclusion": "cancelled",
           "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41562954449",
           "created_at": "2026-11-03T01:56:26Z"
-        },
-        {
-          "id": 41561273956,
-          "name": "Scanner historical backfill",
-          "branch": "main",
-          "sha": "31280fd15a3f29e7bb473c1fce62ec515e31ebfd",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41561273956",
-          "created_at": "2026-11-03T01:40:32Z"
-        },
-        {
-          "id": 41556540932,
-          "name": "civic-cycle",
-          "branch": "main",
-          "sha": "0501b33f3b83967eb500d019a27832c3237ecdc1",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41556540932",
-          "created_at": "2026-11-03T00:58:00Z"
         },
         {
           "id": 41503884177,
@@ -308,16 +328,6 @@
           "conclusion": "success",
           "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41503884177",
           "created_at": "2026-11-02T18:47:29Z"
-        },
-        {
-          "id": 41458519443,
-          "name": "Scheduled Audit & Telemetry Sync",
-          "branch": "main",
-          "sha": "74edf0adbc9f4539f8af5fc5aaf51b33878c8955",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41458519443",
-          "created_at": "2026-11-02T14:04:35Z"
         }
       ],
       "open_items": [
@@ -660,20 +670,20 @@
       "archived": false,
       "fork": true,
       "default_branch": "main",
-      "pushed_at": "2026-11-03T01:00:17Z",
+      "pushed_at": "2026-11-03T14:20:17Z",
       "findings": [
         {
-          "severity": "high",
+          "severity": "review",
           "code": "WORKFLOW_FAILURE",
           "evidence": {
-            "run": "https://github.com/therealwindycity/therealwindycity/actions/runs/41566450675",
-            "sha": "16c59e5d92af0d8dc5e9e7db1c30bc275e732dfb",
+            "run": "https://github.com/therealwindycity/therealwindycity/actions/runs/41632995448",
+            "sha": "956f5bd9a6f8fdb318e125a838ff5b552f7c1275",
             "branch": "main",
             "conclusion": "failure",
             "jobs": [
               {
                 "name": "poll",
-                "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/41566450675/job/125689075051",
+                "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/41632995448/job/125907015760",
                 "failed_steps": [
                   {
                     "name": "Commit the feed if it changed",
@@ -684,7 +694,7 @@
               }
             ]
           },
-          "next_step": "Open the failed job and obtain its first substantive exception, stack trace and surrounding lines. Reproduce on commit 16c59e5d92af0d8dc5e9e7db1c30bc275e732dfb. Repair the demonstrated cause without suppressing exit codes, then rerun the same check. A failure on an older SHA does not establish current HEAD failure.",
+          "next_step": "Open the failed job and obtain its first substantive exception, stack trace and surrounding lines. Reproduce on commit 956f5bd9a6f8fdb318e125a838ff5b552f7c1275. Repair the demonstrated cause without suppressing exit codes, then rerun the same check. A failure on an older SHA does not establish current HEAD failure.",
           "diagnosis": "Evidence-based observation; repair requires verification against the referenced commit and logs"
         }
       ],
@@ -695,30 +705,40 @@
         }
       ],
       "head": {
-        "sha": "16c59e5d92af0d8dc5e9e7db1c30bc275e732dfb",
-        "url": "https://github.com/therealwindycity/therealwindycity/commit/16c59e5d92af0d8dc5e9e7db1c30bc275e732dfb",
-        "date": "2026-11-03T01:00:16Z"
+        "sha": "bbd872281aefd2d5cd1742760e0c546bc7d1bc60",
+        "url": "https://github.com/therealwindycity/therealwindycity/commit/bbd872281aefd2d5cd1742760e0c546bc7d1bc60",
+        "date": "2026-11-03T14:20:16Z"
       },
       "runs": [
         {
-          "id": 41566450675,
+          "id": 41652626854,
+          "name": "civic-cycle",
+          "branch": "main",
+          "sha": "956f5bd9a6f8fdb318e125a838ff5b552f7c1275",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/41652626854",
+          "created_at": "2026-11-03T14:19:56Z"
+        },
+        {
+          "id": 41632995448,
           "name": "workdesk-poll",
+          "branch": "main",
+          "sha": "956f5bd9a6f8fdb318e125a838ff5b552f7c1275",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/41632995448",
+          "created_at": "2026-11-03T12:06:56Z"
+        },
+        {
+          "id": 41594518929,
+          "name": "meeting-watch",
           "branch": "main",
           "sha": "16c59e5d92af0d8dc5e9e7db1c30bc275e732dfb",
           "status": "completed",
-          "conclusion": "failure",
-          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/41566450675",
-          "created_at": "2026-11-03T02:29:39Z"
-        },
-        {
-          "id": 41556748076,
-          "name": "civic-cycle",
-          "branch": "main",
-          "sha": "9986a23ec7329db66ab38898b59bd65070b32918",
-          "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/41556748076",
-          "created_at": "2026-11-03T00:59:57Z"
+          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/41594518929",
+          "created_at": "2026-11-03T07:10:08Z"
         }
       ],
       "open_items": []
@@ -729,33 +749,8 @@
       "archived": false,
       "fork": false,
       "default_branch": "main",
-      "pushed_at": "2026-11-03T01:44:51Z",
+      "pushed_at": "2026-11-03T09:47:19Z",
       "findings": [
-        {
-          "severity": "review",
-          "code": "WORKFLOW_FAILURE",
-          "evidence": {
-            "run": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/41561360784",
-            "sha": "53de1efb7c5b2d6a8464ab00ac5a935aa4c35667",
-            "branch": "main",
-            "conclusion": "failure",
-            "jobs": [
-              {
-                "name": "sync / sync_and_rebuild",
-                "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/41561360784/job/125672943294",
-                "failed_steps": [
-                  {
-                    "name": "Execute extraction (layout-aware, OM2#1 — columns, no silent empties)",
-                    "number": 6,
-                    "conclusion": "failure"
-                  }
-                ]
-              }
-            ]
-          },
-          "next_step": "Open the failed job and obtain its first substantive exception, stack trace and surrounding lines. Reproduce on commit 53de1efb7c5b2d6a8464ab00ac5a935aa4c35667. Repair the demonstrated cause without suppressing exit codes, then rerun the same check. A failure on an older SHA does not establish current HEAD failure.",
-          "diagnosis": "Evidence-based observation; repair requires verification against the referenced commit and logs"
-        },
         {
           "severity": "review",
           "code": "WORKFLOW_FAILURE",
@@ -814,40 +809,40 @@
         }
       ],
       "head": {
-        "sha": "722f2e7e7c1504a46475ea571f1b04e56e8f5901",
-        "url": "https://github.com/therealwindycity/TheReelWindyCity/commit/722f2e7e7c1504a46475ea571f1b04e56e8f5901",
-        "date": "2026-11-03T01:44:49Z"
+        "sha": "8d7b72e78da814cecc81d2975f219ae39113a545",
+        "url": "https://github.com/therealwindycity/TheReelWindyCity/commit/8d7b72e78da814cecc81d2975f219ae39113a545",
+        "date": "2026-11-03T09:47:17Z"
       },
       "runs": [
+        {
+          "id": 41613537307,
+          "name": "Live Municipal Watch",
+          "branch": "main",
+          "sha": "722f2e7e7c1504a46475ea571f1b04e56e8f5901",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/41613537307",
+          "created_at": "2026-11-03T09:44:59Z"
+        },
+        {
+          "id": 41611486938,
+          "name": "Deploy to GitHub Pages",
+          "branch": "main",
+          "sha": "722f2e7e7c1504a46475ea571f1b04e56e8f5901",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/41611486938",
+          "created_at": "2026-11-03T09:29:52Z"
+        },
         {
           "id": 41563990594,
           "name": "Promethean Recurring Harvest",
           "branch": "main",
           "sha": "722f2e7e7c1504a46475ea571f1b04e56e8f5901",
-          "status": "in_progress",
-          "conclusion": null,
+          "status": "completed",
+          "conclusion": "cancelled",
           "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/41563990594",
           "created_at": "2026-11-03T02:06:11Z"
-        },
-        {
-          "id": 41561360784,
-          "name": "Live Municipal Watch",
-          "branch": "main",
-          "sha": "53de1efb7c5b2d6a8464ab00ac5a935aa4c35667",
-          "status": "completed",
-          "conclusion": "failure",
-          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/41561360784",
-          "created_at": "2026-11-03T01:41:20Z"
-        },
-        {
-          "id": 41560570127,
-          "name": "Deploy to GitHub Pages",
-          "branch": "main",
-          "sha": "53de1efb7c5b2d6a8464ab00ac5a935aa4c35667",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/41560570127",
-          "created_at": "2026-11-03T01:34:09Z"
         },
         {
           "id": 41540857973,
@@ -928,16 +923,6 @@
           "conclusion": "success",
           "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/41445522261",
           "created_at": "2026-11-02T12:32:21Z"
-        },
-        {
-          "id": 41445521950,
-          "name": "Fleet procurement source capture",
-          "branch": "arena/a243c6bf-thereelwindycity",
-          "sha": "614f8635ab8f5b539601f0deec71ca6b7b862c47",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/41445521950",
-          "created_at": "2026-11-02T12:32:21Z"
         }
       ],
       "open_items": [
@@ -994,10 +979,10 @@
     }
   ],
   "coverage_gaps": [],
-  "finished_at": "2026-11-03T06:58:01.589Z",
+  "finished_at": "2026-11-03T15:17:44.363Z",
   "summary": {
     "repositories": 15,
-    "findings": 5,
+    "findings": 4,
     "coverage_gaps": 15
   }
 }
