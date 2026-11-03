@@ -66,6 +66,15 @@ Coordination is not optional here.
 
 ## Active claims
 
+### claim: debrief-2026-11-03-finance — debrief + fixed transcript of the 2026-11-03 Finance Committee Zoom-notes paste
+- worker: arena-agent
+- status: done
+- stage: done 2026-11-03 — DEBRIEF_2026-11-03.md (scoreboard, item explainers, honest assessment of both Miller comments, admissions list, verified arithmetic, two tightened Governing-Body scripts) + TRANSCRIPT_2026-11-03_CLEANED.md (speaker labels restored, ASR fixes bracketed, unverified names flagged) added under 2026-11-03-finance-committee/; git diff --check clean
+- scope: NEW `2026-11-03-finance-committee/DEBRIEF_2026-11-03.md`, NEW `2026-11-03-finance-committee/TRANSCRIPT_2026-11-03_CLEANED.md`, READ-FIRST.md (this claim + work-log entry only). Additive only; no existing transcript, data, or app file touched.
+- started: 2026-11-03T20:00Z
+- updated: 2026-11-03T20:00Z
+- notes: Meeting identified as Cheyenne Finance Committee, noon 2026-11-03, corroborated by Cap City News 2026-11-03 (same 3 items/dollars). Paste is truncated at both ends; packet PDFs not reviewed — packet page cites are Miller's on-mic assertions, arithmetic re-checked only.
+
 ### claim: miller-estoppel-white-paper-expansion — source expansion and Wyoming-law analysis for the Miller estoppel-effect white paper
 - worker: arena-agent
 - status: done
