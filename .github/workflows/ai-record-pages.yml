@@ -41,7 +41,8 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: ai-record-pages
+  # Keep the production deploy queue separate from non-deploying branch validation runs.
+  group: ai-record-pages-${{ github.ref }}
   cancel-in-progress: false
 jobs:
   validate-media:
@@ -64,7 +65,7 @@ jobs:
           node --check civic_atlas/media/studio.js
   build:
     needs: validate-media
-    if: ${{ github.ref != 'refs/heads/feature/media-drop-studio' }}
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     timeout-minutes: 330
     steps:
