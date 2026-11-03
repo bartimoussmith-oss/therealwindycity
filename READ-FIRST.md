@@ -66,6 +66,15 @@ Coordination is not optional here.
 
 ## Active claims
 
+### claim: packet-audit-2026-11-03-finance — verify the 3 user-supplied supporting-document packets against the Nov 3 testimony + cross-repo history sweep
+- worker: arena-agent
+- status: active
+- stage: extracting packet text and verifying every on-mic page citation; then historical sweep of both GitHub accounts + local corpus
+- scope: NEW `2026-11-03-finance-committee/PACKET-AUDIT_2026-11-03.md`, NEW `2026-11-03-finance-committee/packets/` (extracted text + provenance README only; raw PDFs stays out of git, SHA-256 recorded), pointer line in `2026-11-03-finance-committee/DEBRIEF_2026-11-03.md` (own file), READ-FIRST.md (this claim only). No other existing file touched; cross-repo work is read-only.
+- started: 2026-11-03T20:20Z
+- updated: 2026-11-03T20:20Z
+- notes: Packets supplied by owner via chat upload (Supporting_Document (54)/(55)/(56).pdf, SHA-256 in packets/README.md). Verbatim quotes + packet page for every finding, per repo integrity rule.
+
 ### claim: debrief-2026-11-03-finance — debrief + fixed transcript of the 2026-11-03 Finance Committee Zoom-notes paste
 - worker: arena-agent
 - status: done
