@@ -26,6 +26,8 @@ on:
       - "tools/build_arrest_page.py"
       - "tools/arrest_page_seal.mjs"
       - "data/arrests/**"
+      - "locked-resource/**"
+      - "tools/seal_resource.mjs"
       - ".github/workflows/ai-record-pages.yml"
   schedule:
     - cron: "41 8 * * *"
@@ -125,6 +127,10 @@ jobs:
         env:
           ARREST_PAGE_PASSWORD: ${{ secrets.ARREST_PAGE_PASSWORD }}
         run: python3 -u tools/build_arrest_page.py --out _site/arrest
+      - name: Publish sealed static resource (ciphertext only)
+        run: |
+          mkdir -p _site/secure-resource
+          cp locked-resource/index.html locked-resource/payload.json _site/secure-resource/
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
