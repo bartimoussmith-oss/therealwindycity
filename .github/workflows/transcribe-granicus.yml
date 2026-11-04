@@ -11,6 +11,12 @@ name: Transcribe the portal's meeting audio
 # hit "Run workflow" with `limit` set to however many clips you want this run.
 
 on:
+  # A push trigger on the workflow file itself: `workflow_dispatch` and `schedule` only
+  # work from the default branch, so before this is merged the only way to run it on a
+  # branch is to touch this file. Keep it — it is also how a config change gets smoke-tested.
+  push:
+    paths:
+      - ".github/workflows/transcribe-granicus.yml"
   workflow_dispatch:
     inputs:
       limit:
@@ -87,6 +93,19 @@ jobs:
 
       # `--max-minutes` is a wall-clock guard as much as a size guard: small.en on four
       # vCPUs runs around 6-10x realtime, so 300 minutes of audio is ~30-50 minutes of CPU.
+      - name: Reachability — can this runner see the portal's audio?
+        continue-on-error: true
+        run: |
+          set +e
+          for u in \
+            https://cheyenne.granicus.com/ViewPublisher.php?view_id=2 \
+            https://archive-video.granicus.com/cheyenne/cheyenne_dfb5f093-463f-4fb7-97a5-bef9c54ca023.mp3 \
+            https://huggingface.co/Systran/faster-whisper-small.en/resolve/main/model.bin
+          do
+            code=$(curl -s -o /dev/null -m 40 -w '%{http_code} %{size_download}' -r 0-1024 "$u")
+            echo "$code  $u"
+          done
+
       - name: Transcribe
         env:
           WHISPER_MODEL: ${{ inputs.model || 'small.en' }}
@@ -95,7 +114,7 @@ jobs:
           IN_MAX: ${{ inputs.max_minutes || '300' }}
           IN_YEAR: ${{ inputs.year }}
           IN_CLIP: ${{ inputs.clip_id }}
-          IN_DRY: ${{ inputs.dry_run }}
+          IN_DRY: ${{ github.event_name == 'push' && 'true' || inputs.dry_run }}
         run: |
           # --md-only: 792 hours of transcripts at ~1 KB/minute is tens of MB of markdown;
           # per-clip .json would triple that with no information the table does not carry.
