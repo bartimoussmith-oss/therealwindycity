@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Command Center — NotebookLM Integration | The Real Windy City</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <div class="topbar">
+      <span class="issue">COMMAND CENTER · NOTEBOOKLM INTEGRATION</span>
+      <div class="authed" id="authedBadge">● Logged in (client session)</div>
+      <a href="login.html" class="logout">🚪 Log out</a>
+    </div>
+    <h1>NotebookLM Command Center</h1>
+    <p class="kick">Cheyenne City meeting archive — 2008 → 2026 · 563 meetings · verbatim + minutes kept separate</p>
+    <div class="wind" id="statusLine">Loading notebook state…</div>
+  </header>
+
+  <nav class="tabs">
+    <a href="#" class="tab active" data-tab="overview">📊 Overview</a>
+    <a href="#" class="tab" data-tab="meetings">🗂️ Meetings</a>
+    <a href="#" class="tab" data-tab="google">🔗 Google Account</a>
+    <a href="#" class="tab" data-tab="actions">⚙️ Actions</a>
+  </nav>
+
+  <!-- Overview tab -->
+  <section id="tab-overview" class="tabpanel">
+    <div class="statrow">
+      <div class="stat"><b id="statTotal">—</b><span>meetings in archive</span></div>
+      <div class="stat"><b id="statVerbatim">—</b><span>with verbatim transcript (2026)</span></div>
+      <div class="stat"><b id="statMinutes">—</b><span>minutes-only (2008–2025)</span></div>
+      <div class="stat"><b id="statArtifacts">—</b><span>artifact files generated</span></div>
+      <div class="stat"><b id="statWatermarks">—</b><span>watermark hits (should be 0)</span></div>
+    </div>
+
+    <h2>Archive span</h2>
+    <div class="info-card">
+      <p><b>First meeting:</b> <span id="spanFirst">—</span> &nbsp;|&nbsp; <b>Latest archived:</b> <span id="spanLast">—</span></p>
+      <p><b>Today:</b> 2026-11-04 &nbsp;|&nbsp; <b>Data gap:</b> <span id="gapText">—</span> (late-Aug → Nov 2026 not yet pulled — network required)</p>
+      <div class="warn" id="gapNotice" style="display:none">
+        <b>Manifest is not current.</b> Run <code>manifest_refresh.py</code> when network is available to bring the manifest to today.
+      </div>
+    </div>
+
+    <h2>Recent runs</h2>
+    <div id="runsList" class="empty">Loading runs…</div>
+  </section>
+
+  <!-- Meetings tab -->
+  <section id="tab-meetings" class="tabpanel" style="display:none">
+    <div class="toolbar">
+      <input type="text" id="meetingFilter" placeholder="Filter by date, body, or title…">
+      <label><input type="checkbox" id="showVerbatimOnly"> Verbatim transcript only (2026)</label>
+      <label><input type="checkbox" id="showMinutesOnly"> Minutes-only (pre-2026)</label>
+    </div>
+    <div id="meetingCount" class="muted"></div>
+    <table class="meetings-table">
+      <thead>
+        <tr>
+          <th>Date</th><th>Body</th><th>Title</th><th>Source type</th><th>Artifacts</th><th>Watermarks</th><th>Studio package</th>
+        </tr>
+      </thead>
+      <tbody id="meetingsBody"></tbody>
+    </table>
+  </section>
+
+  <!-- Google tab -->
+  <section id="tab-google" class="tabpanel" style="display:none">
+    <h2>Google Account / NotebookLM connection</h2>
+    <div class="info-card">
+      <p><b>Status:</b> <span id="googleStatus">Not connected</span></p>
+      <p><b>Mode:</b> <span id="googleMode">Simulation (NOTEBOOKLM_LIVE=0)</span></p>
+    </div>
+
+    <div class="warn">
+      <b>GitHub Pages cannot do Google OAuth.</b> NotebookLM has no official public API — the live driver
+      (<code>notebooklm-py</code>) reverse-engineers Google's internal endpoints and requires:
+      <ol style="margin:8px 0 0;padding-left:18px">
+        <li>A Google account signed into NotebookLM</li>
+        <li><code>pip install "notebooklm-py[browser]"</code> + <code>notebooklm login</code> (interactive browser sign-in)</li>
+        <li>A machine that can reach google.com (this sandbox cannot)</li>
+        <li><code>NOTEBOOKLM_LIVE=1</code> to enable live mode</li>
+      </ol>
+    </div>
+
+    <h3>Manual connection steps</h3>
+    <ol class="steps">
+      <li>On a machine with network access: <code>pip install "notebooklm-py[browser]"</code></li>
+      <li>Run <code>notebooklm login</code> — this opens a browser to sign into your Google account</li>
+      <li>Store credentials <b>only</b> on that machine — never in this repo, never in GitHub secrets for client-side use</li>
+      <li>Run: <code>NOTEBOOKLM_LIVE=1 python3 notebooklm_controller/controller.py run</code></li>
+      <li>Return here to see run results and artifact status</li>
+    </ol>
+
+    <h3>Current live-mode gate</h3>
+    <div class="codeblock">
+NOTEBOKLM_LIVE=0  (default) — simulation mode: writes notebook specs only<br>
+NOTEBOOKLM_LIVE=1 — live mode: creates notebooks in NotebookLM via notebooklm-py
+    </div>
+  </section>
+
+  <!-- Actions tab -->
+  <section id="tab-actions" class="tabpanel" style="display:none">
+    <h2>Controller actions</h2>
+
+    <div class="info-card">
+      <p>The NotebookLM controller runs on a schedule (daily 04:00 UTC) and on every push to this branch.</p>
+      <p>You can also trigger a run manually via GitHub Actions <code>workflow_dispatch</code>.</p>
+    </div>
+
+    <div class="warn" id="patNotice">
+      <b>Triggering runs requires a GitHub PAT.</b> Static GitHub Pages cannot store secrets.
+      Set <code>GH_PAT</code> as a repository secret (Settings → Secrets and variables → Actions) and it will be available to workflows.
+    </div>
+
+    <button id="triggerRun" class="btn-primary">▶️ Trigger NotebookLM Controller run</button>
+    <div id="triggerResult" class="muted" style="margin-top:12px"></div>
+
+    <h3>Manual commands (run on your machine)</h3>
+    <div class="codeblock">
+# Rebuild the meeting inventory (offline-safe)
+python3 notebooklm_controller/controller.py refresh
+
+# Process full archive (simulation mode)
+python3 notebooklm_controller/controller.py run
+
+# Process limited batch for testing
+python3 notebooklm_controller/controller.py run --limit 10
+
+# Live mode (requires network + notebooklm-py + Google login)
+NOTEBOOKLM_LIVE=1 python3 notebooklm_controller/controller.py run
+    </div>
+
+    <h3>Manifest refresh (bring current to 2026-11-04)</h3>
+    <p>When network is available, run:</p>
+    <div class="codeblock">
+python3 notebooklm_controller/manifest_refresh.py
+    </div>
+    <p class="muted">Fails gracefully offline. The manifest currently ends 2026-08-24; today is 2026-11-04.</p>
+  </section>
+
+  <footer class="foot">
+    <p>The Real Windy City · NotebookLM Controller · Static command center · Client-side session only</p>
+  </footer>
+</div>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
