@@ -661,7 +661,7 @@ def chapter_card(img: Image.Image, accent, index: int, total: int, title: str, l
 
     # right-hand chain: public page → document → this repo
     cx = W - 520
-    cy = 300
+    cy = 560
     steps = [("public page", accent), ("document", mix(accent, (255, 255, 255, 255)[:3], 0.35)), ("this repo", hexc("#e9eff8"))]
     for i, (label, colour) in enumerate(steps):
         by = cy + i * 96

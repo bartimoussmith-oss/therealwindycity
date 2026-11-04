@@ -324,7 +324,7 @@ def _chapter(key: str, fam: Family, index: int, root: Path) -> Chapter:
             ],
             stats=[
                 ("meeting days listed", human_int(_meeting_count(root))),
-                ("pages captured", human_int(fam.units)),
+                ("pages captured", human_int(fam.files)),
                 ("bodies", "6"),
             ],
             captions=[
