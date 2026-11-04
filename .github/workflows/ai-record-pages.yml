@@ -122,6 +122,7 @@ jobs:
         run: |
           if [ -d provenance ]; then
             python3 -u -m provenance ledger
+            python3 -u -m provenance guide
           else
             echo "  provenance package not in this checkout — the site will render without cues"
           fi

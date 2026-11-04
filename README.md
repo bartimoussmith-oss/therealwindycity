@@ -185,6 +185,18 @@ Both live surfaces print the same thing under the numbers they state:
 Both read `data/out/provenance-ledger.json`. Rebuild it after the inventory changes:
 `python3 -m provenance ledger --clips --showcase`.
 
+### The guide — start here
+
+`data/out/PROVENANCE-GUIDE.md` (site: `/provenance/master.html`, app: **🧭 Provenance Guide**)
+is one page for everything: what the archive holds, what each film is and how to watch it,
+the chapter map with real timestamps, how to read a ledger row, and how to check any figure
+yourself. It is generated — every number is read from the artefacts when you build it, and
+anything missing is reported as missing:
+
+```bash
+python3 -m provenance guide
+```
+
 ### Proving it, rather than saying it
 
 ```bash

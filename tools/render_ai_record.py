@@ -37,7 +37,7 @@ TEMPLATE = """<!doctype html>
 <meta property="og:title" content="{title}"><meta property="og:description" content="{desc}"><meta property="og:type" content="article"><meta property="og:url" content="{canonical}">
 <script type="application/ld+json">{jsonld}</script>
 <style>{css}{prov_css}</style></head>
-<body><header class="site"><a href="{root}index.html"><b>{name}</b></a><a href="{root}indexes/keywords.html">Keyword index</a><a href="{root}topics/corrections.html">Corrections</a><a href="{root}llms.txt">llms.txt</a><a href="{md_rel}">View as Markdown</a></header>
+<body><header class="site"><a href="{root}index.html"><b>{name}</b></a><a href="{root}provenance/master.html">Guide &amp; films</a><a href="{root}indexes/keywords.html">Keyword index</a><a href="{root}topics/corrections.html">Corrections</a><a href="{root}llms.txt">llms.txt</a><a href="{md_rel}">View as Markdown</a></header>
 <main>
 {body}
 {prov}
@@ -218,6 +218,34 @@ def write_provenance_site(a, ledger, prov_site, urls, page_rel_of):
         fh.write(html_page)
     urls.append(canonical)
 
+    # the master guide: what everything is, the films, and how to check a number
+    try:
+        from provenance import guide as prov_guide
+        facts = prov_guide.facts(Path(a.provenance_root))
+        guide_body = prov_guide.html(ledger, root_rel, facts)
+    except Exception as exc:  # the site must still build without the guide
+        print(f"  provenance: guide skipped ({exc})", file=sys.stderr)
+        guide_body = ""
+    if guide_body:
+        gcanon = SITE + "provenance/master.html"
+        gjson = {"@context": "https://schema.org", "@type": "WebPage",
+                 "name": "The provenance guide — everything in this archive, and how it was collected",
+                 "description": "One page for the whole record: the films, the films' chapters, "
+                                "the ledger, and how to check any number yourself.",
+                 "url": gcanon, "inLanguage": "en", "isAccessibleForFree": True,
+                 "isPartOf": {"@type": "WebSite", "name": NAME, "url": SITE}}
+        gpage = TEMPLATE.format(title="The provenance guide", name=NAME,
+                                desc="Everything in this archive, the films that show how it was "
+                                     "collected, and how to check any number yourself.",
+                                canonical=gcanon, md_url=SITE + "provenance/guide.md",
+                                md_rel="guide.md", md_name="provenance/guide.md",
+                                jsonld=json.dumps(gjson).replace("</", "<\\/"),
+                                css=CSS, root=root_rel, body=guide_body,
+                                prov="", prov_css=prov_site.CSS + prov_guide.GUIDE_CSS)
+        with open(os.path.join(pdir, "master.html"), "w", encoding="utf-8") as fh:
+            fh.write(gpage)
+        urls.append(gcanon)
+
     copied = 0
     src_root = Path(a.provenance_root)
 
@@ -250,6 +278,9 @@ def write_provenance_site(a, ledger, prov_site, urls, page_rel_of):
     tag = ("<!-- provenance: cue sheet generated from the repository. "
            "Every figure on this site carries an origin link and a film cue. -->\n")
     head = "<!-- provenance: every figure below carries an origin link and a film cue -->\n"
+    src_guide = src_root / "data" / "out" / "PROVENANCE-GUIDE.md"
+    if src_guide.exists():
+        shutil.copy2(src_guide, os.path.join(pdir, "guide.md"))
     src_md = src_root / "data" / "out" / "PROVENANCE-LEDGER.md"
     if src_md.exists():
         shutil.copy2(src_md, os.path.join(pdir, "ledger.md"))

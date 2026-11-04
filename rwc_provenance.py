@@ -190,3 +190,83 @@ def film_block(expanded: bool = False) -> None:
             sched = led["film"]["schedule"]
             st.caption("Chapter cues — " + " · ".join(
                 f"{_tc(start)} {key.replace('_', ' ')}" for key, start, dur in sched["chapters"]))
+
+
+# --------------------------------------------------------------------------
+# the master guide, inside the app
+# --------------------------------------------------------------------------
+
+def guide(out=None) -> Path | None:
+    """Write data/out/PROVENANCE-GUIDE.md from what is in the checkout right now."""
+    try:
+        from provenance import guide as guide_mod
+
+        return guide_mod.write(ROOT)
+    except Exception as exc:
+        st.caption(f"(guide could not be generated: {exc})")
+        return None
+
+
+def show_guide() -> None:
+    """The master page: what everything is, the films, and how to check a number."""
+    led = ledger()
+    path = ROOT / "data" / "out" / "PROVENANCE-GUIDE.md"
+    if not path.exists():
+        path = guide()
+    if path is None or not path.exists():
+        st.warning("The guide has not been generated yet — run `python3 -m provenance guide`.")
+        return
+
+    st.subheader("🧭 The provenance guide")
+    st.caption(
+        "Everything in this archive, the films that show how each part was collected, and how to "
+        "check any number in it yourself. Generated from the checkout, not typed by hand."
+    )
+
+    if led:
+        sched = led["film"]["schedule"]
+        c1, c2, c3, c4 = st.columns(4)
+        c1.metric("Datums with a source", f"{led['totals']['with_link']:,}")
+        c2.metric("With a film cue", f"{led['totals']['with_cue']:,}")
+        c3.metric("Chapters", len(sched["chapters"]))
+        c4.metric("Showcase length", f"{int(sched['timelapse'] + sched['timelapse_seconds']) // 60}:"
+                                     f"{int(sched['timelapse'] + sched['timelapse_seconds']) % 60:02d}")
+
+    film_block(expanded=True)
+
+    tabs = st.tabs(["📄 The guide", "💾 Rebuild it", "🚦 How to check a number"])
+    with tabs[0]:
+        st.markdown(path.read_text(encoding="utf-8"))
+        st.download_button("Download the guide (Markdown)", path.read_text(encoding="utf-8"),
+                           file_name="PROVENANCE-GUIDE.md", mime="text/markdown")
+    with tabs[1]:
+        st.markdown(
+            "Every artefact on this page is generated from the checkout. In order:\n\n"
+            "```bash\n"
+            "python3 -m provenance detect                    # classify every file, write the inventory\n"
+            "python3 -m provenance timelapse                 # the 20-second time-lapse\n"
+            "python3 -m provenance video                     # the chapter film (~8 min)\n"
+            "python3 -m provenance ledger --clips --showcase # cues, per-chapter clips, showcase\n"
+            "python3 -m provenance guide                     # this page\n"
+            "python3 tools/render_ai_record.py --src ai-record --out _site\n"
+            "python3 tools/check_provenance.py --site _site\n"
+            "```"
+        )
+        if st.button("Rebuild the guide now from this checkout", key="prov_guide_build"):
+            p = guide()
+            if p:
+                st.success(f"Wrote {p.relative_to(ROOT)}")
+    with tabs[2]:
+        st.markdown(
+            "1. **Pick a number on any page.** Every page with a figure has a 🔗 Provenance "
+            "expander underneath it, on this app and on the public site.\n"
+            "2. **Open the origin link.** It should be the page that number actually came from — "
+            "the city's minutes page, Granicus, the news feed.\n"
+            "3. **Play the clip.** It shows a person doing that fetch: the URL typed, the row "
+            "clicked, the download. Each row names the beat, so you can skip to the moment.\n"
+            "4. **Do it yourself once.** Follow the printed click-path and download one file. If it "
+            "matches, the number is checkable; if it does not, that is a bug worth filing.\n"
+            "5. **Or run the checks.** `python3 tools/check_provenance.py --site _site` fails if any "
+            "figure lost its link or cue; `python3 tools/provenance_site_audit.py` rebuilds the whole "
+            "record and crawls every page."
+        )

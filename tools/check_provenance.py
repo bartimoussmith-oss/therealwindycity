@@ -68,10 +68,23 @@ def main(argv: list[str] | None = None) -> int:
         pages = [p for p in site.rglob("*.html")]
         if not pages:
             problems.append(f"no HTML pages under {site}")
-        skip = {"404.html", "provenance/index.html"}
+        skip = {"404.html", "provenance/index.html", "provenance/master.html"}
         no_prov = [p.relative_to(site).as_posix() for p in pages
                    if p.relative_to(site).as_posix() not in skip
                    and 'class="prov"' not in p.read_text(encoding="utf-8", errors="ignore")]
+        guide = site / "provenance" / "master.html"
+        if not guide.exists():
+            problems.append("no /provenance/master.html guide in the rendered site")
+        else:
+            home = site / "index.html"
+            index = home.read_text(encoding="utf-8", errors="ignore") if home.exists() else ""
+            if "provenance/master.html" not in index:
+                problems.append("the guide is not linked from the site header")
+            gtext = guide.read_text(encoding="utf-8", errors="ignore")
+            for must in ("provenance-showcase.mp4", "provenance-timelapse.mp4",
+                         "provenance-manual-run.mp4"):
+                if must not in gtext:
+                    problems.append(f"the guide does not mention {must}")
         cue_sheet = site / "provenance" / "index.html"
         if not cue_sheet.exists():
             problems.append("no /provenance/ cue sheet in the rendered site")

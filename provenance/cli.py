@@ -6,6 +6,7 @@
     python3 -m provenance all        # all three
     python3 -m provenance timelapse  # every file, at speed
     python3 -m provenance ledger     # one row per datum: origin link + film cue
+    python3 -m provenance guide      # the master page: what everything is, and how to use it
 
 Nothing here touches the network: the film is derived from files already in the
 checkout.
@@ -21,6 +22,7 @@ import sys
 from pathlib import Path
 
 from . import inventory as inventory_mod
+from . import guide as guide_mod
 from . import ledger as ledger_mod
 from . import story as story_mod
 from .util import human_bytes, human_duration, human_int
@@ -326,6 +328,9 @@ def main(argv: list[str] | None = None) -> int:
     tl.add_argument("--preview", default="", help="comma-separated timestamps: write PNGs instead of video")
     tl.add_argument("--preview-dir", default="data/out/preview")
 
+    gd = sub.add_parser("guide", help="write the master guide (data/out/PROVENANCE-GUIDE.md)")
+    gd.add_argument("--out", default="data/out")
+
     lg = sub.add_parser("ledger", help="write the per-datum ledger and cut the film cues")
     lg.add_argument("--out", default="data/out")
     lg.add_argument("--clips", action="store_true", help="cut each chapter out of the master film")
@@ -387,6 +392,15 @@ def main(argv: list[str] | None = None) -> int:
     print(f"  wrote {plan_path.relative_to(root)}", file=sys.stderr)
 
     if args.cmd == "plan":
+        return 0
+
+    if args.cmd == "guide":
+        path = guide_mod.write(root)
+        f = guide_mod.facts(root)
+        print(f"  guide: {f['datums']:,} datums · {len(f['clips'])} clips · "
+              f"{sum(1 for x in f['films'].values() if x['exists'])}/3 films present",
+              file=sys.stderr)
+        print(f"  wrote {path.relative_to(root)} · {human_bytes(path.stat().st_size)}", file=sys.stderr)
         return 0
 
     if args.cmd == "ledger":
