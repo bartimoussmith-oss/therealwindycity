@@ -83,6 +83,30 @@ class Datum:
         }
 
 
+# The chapter runs on a fixed 14.6 s choreography (provenance/scenes.py). These are the
+# beats inside it, so a datum can point at the moment *it* is on screen rather than at
+# the chapter as a whole.
+BEATS = {
+    "type": (3.35, 1.6),    # the origin URL being typed into the address bar
+    "load": (5.05, 1.2),    # the real page loading
+    "pick": (6.5, 1.2),     # the meeting/document row being clicked
+    "item": (6.62, 1.8),    # the item page, with its download control
+    "download": (7.75, 1.6),  # the download click
+    "collect": (9.9, 1.9),  # the second row, second file
+    "save": (11.95, 1.4),   # the file landing in the archive folder
+    "panel": (12.3, 2.2),   # the collection panel: count, destination, manual cost
+}
+
+# which beat each kind of datum belongs to
+BEAT_OF = {
+    "files": "save",
+    "units": "panel",
+    "bytes": "save",
+    "host": "pick",
+    "url": "type",
+}
+
+
 def _slug(s: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 
@@ -326,6 +350,8 @@ def build(root: Path, inv=None, story=None, generated_at: str | None = None) -> 
         if d.ledger in by_key:
             start, dur = by_key[d.ledger]
             clip = _chapter_file(story, d.ledger)
+            beat = BEAT_OF.get(d.id.split(".")[-1].split("-")[0], "panel")
+            b_start, b_dur = BEATS.get(beat, BEATS["panel"])
             d.cue = {
                 "chapter": d.ledger,
                 # where this footage sits in the chapter film…
@@ -335,8 +361,13 @@ def build(root: Path, inv=None, story=None, generated_at: str | None = None) -> 
                 "showcase": {"src": CLIP_SHOWCASE, "start": schedule["timelapse"],
                              "end": round(schedule["timelapse"] + _timelapse_total(), 2)},
                 "src": f"{CLIP_DIR}/{clip}",
+                # the whole chapter…
                 "start": round(start, 2),
                 "end": round(start + dur, 2),
+                # …and the moment inside it where this datum is on screen
+                "beat": beat,
+                "beat_start": round(start + b_start, 2),
+                "beat_end": round(start + b_start + b_dur, 2),
             }
         else:
             d.cue = {
@@ -571,15 +602,20 @@ def write(root: Path, ledger: dict) -> tuple[Path, Path]:
                                ("endcard", ledger["film"]["schedule"]["endcard"])):
         L.append(f"| {name} | {_tc(start)} | {dur:.0f}s | |")
     L += ["", "## The ledger", "",
-          "| datum | page | value | origin | film cue |", "|---|---|---|---|---|"]
+          "| datum | page | value | origin | film cue | beat |", "|---|---|---|---|---|---|"]
     for d in ledger["data"]:
         cue = d["cue"]
         cuetxt = f"[{_tc(cue['start'])}]({cue['src']})" if cue else "—"
         val = d["value"]
         if isinstance(val, int) and not isinstance(val, bool):
             val = f"{val:,}"
+        beat = ""
+        if cue and cue.get("beat"):
+            b0 = cue.get("beat_start") or 0
+            beat = f"{cue['beat']} @ {_tc(b0)}"
         L.append(
-            f"| `{d['id']}` | {d['page']} | {val} | [{d['origin']['host']}]({d['origin']['url']}) | {cuetxt} |"
+            f"| `{d['id']}` | {d['page']} | {val} | [{d['origin']['host']}]({d['origin']['url']}) | "
+            f"{cuetxt} | {beat} |"
         )
     L += ["", "---", "",
           "Film cues are cut from the master film at `video/provenance-manual-run.mp4`;",

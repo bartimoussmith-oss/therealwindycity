@@ -129,6 +129,7 @@ def _clip_html(d: dict, root_rel: str) -> str:
                 "the file land")
     cap = (
         f'<div class="cue">{html.escape(str(src).rsplit("/", 1)[-1])} · {html.escape(what)} · '
+        f'each row below opens the exact beat · '
         f'<a href="{root_rel}provenance/index.html">all cues</a></div>'
     )
     return (
@@ -145,15 +146,29 @@ def _tc(sec: float) -> str:
 EMBED_MAX = 3  # clips on a content page; every row still carries its own cue link
 
 
+def _beat_window(cue: dict) -> tuple[float, float]:
+    """Where this datum sits inside its clip, as an offset from the clip's start."""
+    start = cue.get("start") or 0.0
+    b0 = cue.get("beat_start")
+    b1 = cue.get("beat_end")
+    if b0 is None or b1 is None:
+        return 0.0, max(1.0, (cue.get("end") or start) - start)
+    return max(0.0, b0 - start), max(0.0, b1 - start)
+
+
 def _cue_link(d: dict, root_rel: str) -> str:
     cue = d.get("cue") or {}
     src = cue.get("src")
     if not src:
         return "—"
-    dur = max(1.0, (cue.get("end") or 0) - (cue.get("start") or 0))
+    a, b = _beat_window(cue)
+    label = _tc(a)
+    beat = cue.get("beat")
+    tip = (f"watch this datum being collected ({beat} beat, {_tc(a)} into the clip)"
+           if beat else "watch the cue")
     return (
-        f'<a href="{root_rel}{html.escape(src)}#t=0.5,{max(1.0, dur - 0.3):.1f}" '
-        f'title="watch the cue: {html.escape(src.rsplit("/", 1)[-1])}">{_tc(cue.get("start") or 0)}</a>'
+        f'<a href="{root_rel}{html.escape(src)}#t={a:.1f},{max(a + 0.8, b - 0.1):.1f}" '
+        f'title="{html.escape(tip)}">{label}</a>'
     )
 
 
@@ -282,8 +297,8 @@ def page(ledger: dict, root_rel: str, ctx: dict | None = None) -> str:
         "<h2>The cue sheet</h2>",
         "<p>Every datum, in the order it appears in the film. Open a cue and you are watching that number "
         "being collected. The page column links to the pages of this record that print it.</p>",
-        "<table><thead><tr><th>cue</th><th>datum</th><th>value</th><th>origin</th>"
-        "<th>on these pages</th></tr></thead><tbody>",
+        "<table><thead><tr><th>chapter cue</th><th>beat</th><th>datum</th><th>value</th>"
+        "<th>origin</th><th>on these pages</th></tr></thead><tbody>",
     ]
     rows = [d for d in ledger.get("data", []) if d.get("cue")]
     rows.sort(key=lambda d: (d["cue"].get("start") or 0, d["id"]))
@@ -291,12 +306,13 @@ def page(ledger: dict, root_rel: str, ctx: dict | None = None) -> str:
         cue = d["cue"]
         val = d.get("value")
         val = f"{val:,}" if isinstance(val, int) and not isinstance(val, bool) else html.escape(str(val))
-        dur = max(1.0, (cue.get("end") or 0) - (cue.get("start") or 0))
+        a, b = _beat_window(cue)
         pages = _pages_for(d, here, root_rel, siblings)
         out.append(
             f'<tr data-datum="{html.escape(d["id"])}">'
-            f'<td><a href="{root_rel}{html.escape(cue["src"])}#t=0.5,{max(1.0, dur - 0.3):.1f}" '
-            f'title="play the cue in {html.escape(cue["src"])}">{_tc(cue.get("start") or 0)}</a></td>'
+            f'<td><a href="{root_rel}{html.escape(cue["src"])}#t={a:.1f},{max(a + 0.8, b - 0.1):.1f}" '
+            f'title="{html.escape(cue.get("beat") or "cue")} beat">{_tc(cue.get("start") or 0)}</a></td>'
+            f'<td>{_tc(a)}<div class="note">{html.escape(cue.get("beat") or "")}</div></td>'
             f'<td>{html.escape(d.get("item", ""))}<div class="note">{html.escape(d.get("how", ""))}</div></td>'
             f"<td>{val}</td>"
             f'<td><a href="{html.escape(d["origin"]["url"])}" rel="nofollow noopener">'

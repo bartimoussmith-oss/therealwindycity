@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-04T14:01:01Z",
+ "generated_at": "2026-11-04T14:03:09Z",
  "note": "one row per datum on the live pages; key = datum id used by the page blocks",
  "film": {
   "master": "video/provenance-manual-run.mp4",
@@ -113,7 +113,10 @@
     },
     "src": "video/clips/01-meeting-calendar-meeting-days.mp4",
     "start": 25.0,
-    "end": 39.6
+    "end": 39.6,
+    "beat": "save",
+    "beat_start": 36.95,
+    "beat_end": 38.35
    },
    "pages": "Minutes & Tapes, Meeting Nights, Meeting index (years/*)"
   },
@@ -140,7 +143,10 @@
     },
     "src": "video/clips/01-meeting-calendar-meeting-days.mp4",
     "start": 25.0,
-    "end": 39.6
+    "end": 39.6,
+    "beat": "panel",
+    "beat_start": 37.3,
+    "beat_end": 39.5
    },
    "pages": "Minutes & Tapes, Meeting Nights, Meeting index (years/*)"
   },
@@ -167,7 +173,10 @@
     },
     "src": "video/clips/01-meeting-calendar-meeting-days.mp4",
     "start": 25.0,
-    "end": 39.6
+    "end": 39.6,
+    "beat": "save",
+    "beat_start": 36.95,
+    "beat_end": 38.35
    },
    "pages": "Minutes & Tapes, Meeting Nights, Meeting index (years/*)"
   },
@@ -194,7 +203,10 @@
     },
     "src": "video/clips/01-meeting-calendar-meeting-days.mp4",
     "start": 25.0,
-    "end": 39.6
+    "end": 39.6,
+    "beat": "pick",
+    "beat_start": 31.5,
+    "beat_end": 32.7
    },
    "pages": "Meeting index (years/*)"
   },
@@ -221,7 +233,10 @@
     },
     "src": "video/clips/03-supporting-documents.mp4",
     "start": 54.2,
-    "end": 68.8
+    "end": 68.8,
+    "beat": "save",
+    "beat_start": 66.15,
+    "beat_end": 67.55
    },
    "pages": "Minutes & Tapes, Meeting pages \u2014 Archived documents"
   },
@@ -248,7 +263,10 @@
     },
     "src": "video/clips/03-supporting-documents.mp4",
     "start": 54.2,
-    "end": 68.8
+    "end": 68.8,
+    "beat": "panel",
+    "beat_start": 66.5,
+    "beat_end": 68.7
    },
    "pages": "Minutes & Tapes, Meeting pages \u2014 Archived documents"
   },
@@ -275,7 +293,10 @@
     },
     "src": "video/clips/03-supporting-documents.mp4",
     "start": 54.2,
-    "end": 68.8
+    "end": 68.8,
+    "beat": "save",
+    "beat_start": 66.15,
+    "beat_end": 67.55
    },
    "pages": "Minutes & Tapes, Meeting pages \u2014 Archived documents"
   },
@@ -302,7 +323,10 @@
     },
     "src": "video/clips/02-agenda-packets.mp4",
     "start": 39.6,
-    "end": 54.2
+    "end": 54.2,
+    "beat": "save",
+    "beat_start": 51.55,
+    "beat_end": 52.95
    },
    "pages": "Minutes & Tapes, Meeting pages \u2014 Archived documents"
   },
@@ -329,7 +353,10 @@
     },
     "src": "video/clips/02-agenda-packets.mp4",
     "start": 39.6,
-    "end": 54.2
+    "end": 54.2,
+    "beat": "panel",
+    "beat_start": 51.9,
+    "beat_end": 54.1
    },
    "pages": "Minutes & Tapes, Meeting pages \u2014 Archived documents"
   },
@@ -356,7 +383,10 @@
     },
     "src": "video/clips/02-agenda-packets.mp4",
     "start": 39.6,
-    "end": 54.2
+    "end": 54.2,
+    "beat": "save",
+    "beat_start": 51.55,
+    "beat_end": 52.95
    },
    "pages": "Minutes & Tapes, Meeting pages \u2014 Archived documents"
   },
@@ -383,7 +413,10 @@
     },
     "src": "video/clips/04-minutes-meeting-notes.mp4",
     "start": 68.8,
-    "end": 83.4
+    "end": 83.4,
+    "beat": "save",
+    "beat_start": 80.75,
+    "beat_end": 82.15
    },
    "pages": "Minutes & Tapes, Meeting pages \u2014 Record of Proceedings"
   },
@@ -410,7 +443,10 @@
     },
     "src": "video/clips/04-minutes-meeting-notes.mp4",
     "start": 68.8,
-    "end": 83.4
+    "end": 83.4,
+    "beat": "panel",
+    "beat_start": 81.1,
+    "beat_end": 83.3
    },
    "pages": "Minutes & Tapes, Meeting pages \u2014 Record of Proceedings"
   },
@@ -437,7 +473,10 @@
     },
     "src": "video/clips/04-minutes-meeting-notes.mp4",
     "start": 68.8,
-    "end": 83.4
+    "end": 83.4,
+    "beat": "save",
+    "beat_start": 80.75,
+    "beat_end": 82.15
    },
    "pages": "Minutes & Tapes, Meeting pages \u2014 Record of Proceedings"
   },
@@ -464,7 +503,10 @@
     },
     "src": "video/clips/04-minutes-meeting-notes.mp4",
     "start": 68.8,
-    "end": 83.4
+    "end": 83.4,
+    "beat": "pick",
+    "beat_start": 75.3,
+    "beat_end": 76.5
    },
    "pages": "Meeting pages \u2014 Record of Proceedings"
   },
@@ -599,7 +641,10 @@
     },
     "src": "video/clips/06-meeting-tape.mp4",
     "start": 98.0,
-    "end": 112.6
+    "end": 112.6,
+    "beat": "save",
+    "beat_start": 109.95,
+    "beat_end": 111.35
    },
    "pages": "Montage Theater, Meeting pages \u2014 official video"
   },
@@ -626,7 +671,10 @@
     },
     "src": "video/clips/06-meeting-tape.mp4",
     "start": 98.0,
-    "end": 112.6
+    "end": 112.6,
+    "beat": "panel",
+    "beat_start": 110.3,
+    "beat_end": 112.5
    },
    "pages": "Montage Theater, Meeting pages \u2014 official video"
   },
@@ -653,7 +701,10 @@
     },
     "src": "video/clips/06-meeting-tape.mp4",
     "start": 98.0,
-    "end": 112.6
+    "end": 112.6,
+    "beat": "save",
+    "beat_start": 109.95,
+    "beat_end": 111.35
    },
    "pages": "Montage Theater, Meeting pages \u2014 official video"
   },
@@ -680,7 +731,10 @@
     },
     "src": "video/clips/05-transcripts-caption-tracks.mp4",
     "start": 83.4,
-    "end": 98.0
+    "end": 98.0,
+    "beat": "save",
+    "beat_start": 95.35,
+    "beat_end": 96.75
    },
    "pages": "Minutes & Tapes, Montage Theater, Transcript pages"
   },
@@ -707,7 +761,10 @@
     },
     "src": "video/clips/05-transcripts-caption-tracks.mp4",
     "start": 83.4,
-    "end": 98.0
+    "end": 98.0,
+    "beat": "panel",
+    "beat_start": 95.7,
+    "beat_end": 97.9
    },
    "pages": "Minutes & Tapes, Montage Theater, Transcript pages"
   },
@@ -734,7 +791,10 @@
     },
     "src": "video/clips/05-transcripts-caption-tracks.mp4",
     "start": 83.4,
-    "end": 98.0
+    "end": 98.0,
+    "beat": "save",
+    "beat_start": 95.35,
+    "beat_end": 96.75
    },
    "pages": "Minutes & Tapes, Montage Theater, Transcript pages"
   },
@@ -869,7 +929,10 @@
     },
     "src": "video/clips/07-processed-meetings-database.mp4",
     "start": 112.6,
-    "end": 127.2
+    "end": 127.2,
+    "beat": "save",
+    "beat_start": 124.55,
+    "beat_end": 125.95
    },
    "pages": "Minutes & Tapes, Caption transcript pages"
   },
@@ -896,7 +959,10 @@
     },
     "src": "video/clips/07-processed-meetings-database.mp4",
     "start": 112.6,
-    "end": 127.2
+    "end": 127.2,
+    "beat": "panel",
+    "beat_start": 124.9,
+    "beat_end": 127.1
    },
    "pages": "Minutes & Tapes, Caption transcript pages"
   },
@@ -923,7 +989,10 @@
     },
     "src": "video/clips/07-processed-meetings-database.mp4",
     "start": 112.6,
-    "end": 127.2
+    "end": 127.2,
+    "beat": "save",
+    "beat_start": 124.55,
+    "beat_end": 125.95
    },
    "pages": "Minutes & Tapes, Caption transcript pages"
   },
@@ -950,7 +1019,10 @@
     },
     "src": "video/clips/08-news-coverage.mp4",
     "start": 127.2,
-    "end": 141.8
+    "end": 141.8,
+    "beat": "save",
+    "beat_start": 139.15,
+    "beat_end": 140.55
    },
    "pages": "The Daily Ledger, Front Page, News index"
   },
@@ -977,7 +1049,10 @@
     },
     "src": "video/clips/08-news-coverage.mp4",
     "start": 127.2,
-    "end": 141.8
+    "end": 141.8,
+    "beat": "panel",
+    "beat_start": 139.5,
+    "beat_end": 141.7
    },
    "pages": "The Daily Ledger, Front Page, News index"
   },
@@ -1004,7 +1079,10 @@
     },
     "src": "video/clips/08-news-coverage.mp4",
     "start": 127.2,
-    "end": 141.8
+    "end": 141.8,
+    "beat": "save",
+    "beat_start": 139.15,
+    "beat_end": 140.55
    },
    "pages": "The Daily Ledger, Front Page, News index"
   },
@@ -1031,7 +1109,10 @@
     },
     "src": "video/clips/08-news-coverage.mp4",
     "start": 127.2,
-    "end": 141.8
+    "end": 141.8,
+    "beat": "pick",
+    "beat_start": 133.7,
+    "beat_end": 134.9
    },
    "pages": "News index"
   },
@@ -1058,7 +1139,10 @@
     },
     "src": "video/clips/09-arrest-reports-de-identified.mp4",
     "start": 141.8,
-    "end": 156.4
+    "end": 156.4,
+    "beat": "save",
+    "beat_start": 153.75,
+    "beat_end": 155.15
    },
    "pages": "Arrest Reports, Arrest reports"
   },
@@ -1085,7 +1169,10 @@
     },
     "src": "video/clips/09-arrest-reports-de-identified.mp4",
     "start": 141.8,
-    "end": 156.4
+    "end": 156.4,
+    "beat": "panel",
+    "beat_start": 154.1,
+    "beat_end": 156.3
    },
    "pages": "Arrest Reports, Arrest reports"
   },
@@ -1112,7 +1199,10 @@
     },
     "src": "video/clips/09-arrest-reports-de-identified.mp4",
     "start": 141.8,
-    "end": 156.4
+    "end": 156.4,
+    "beat": "save",
+    "beat_start": 153.75,
+    "beat_end": 155.15
    },
    "pages": "Arrest Reports, Arrest reports"
   },
@@ -1139,7 +1229,10 @@
     },
     "src": "video/clips/09-arrest-reports-de-identified.mp4",
     "start": 141.8,
-    "end": 156.4
+    "end": 156.4,
+    "beat": "pick",
+    "beat_start": 148.3,
+    "beat_end": 149.5
    },
    "pages": "Arrest reports"
   },
@@ -1166,7 +1259,10 @@
     },
     "src": "video/clips/10-scanner-audio-transcripts.mp4",
     "start": 156.4,
-    "end": 171.0
+    "end": 171.0,
+    "beat": "save",
+    "beat_start": 168.35,
+    "beat_end": 169.75
    },
    "pages": "Scanner Archive, Scanner index"
   },
@@ -1193,7 +1289,10 @@
     },
     "src": "video/clips/10-scanner-audio-transcripts.mp4",
     "start": 156.4,
-    "end": 171.0
+    "end": 171.0,
+    "beat": "panel",
+    "beat_start": 168.7,
+    "beat_end": 170.9
    },
    "pages": "Scanner Archive, Scanner index"
   },
@@ -1220,7 +1319,10 @@
     },
     "src": "video/clips/10-scanner-audio-transcripts.mp4",
     "start": 156.4,
-    "end": 171.0
+    "end": 171.0,
+    "beat": "save",
+    "beat_start": 168.35,
+    "beat_end": 169.75
    },
    "pages": "Scanner Archive, Scanner index"
   },
@@ -1247,7 +1349,10 @@
     },
     "src": "video/clips/10-scanner-audio-transcripts.mp4",
     "start": 156.4,
-    "end": 171.0
+    "end": 171.0,
+    "beat": "pick",
+    "beat_start": 162.9,
+    "beat_end": 164.1
    },
    "pages": "Scanner index"
   },
@@ -1274,7 +1379,10 @@
     },
     "src": "video/clips/11-open-data-records-probes.mp4",
     "start": 171.0,
-    "end": 185.6
+    "end": 185.6,
+    "beat": "save",
+    "beat_start": 182.95,
+    "beat_end": 184.35
    },
    "pages": "Open Data, Open-data probes"
   },
@@ -1301,7 +1409,10 @@
     },
     "src": "video/clips/11-open-data-records-probes.mp4",
     "start": 171.0,
-    "end": 185.6
+    "end": 185.6,
+    "beat": "panel",
+    "beat_start": 183.3,
+    "beat_end": 185.5
    },
    "pages": "Open Data, Open-data probes"
   },
@@ -1328,7 +1439,10 @@
     },
     "src": "video/clips/11-open-data-records-probes.mp4",
     "start": 171.0,
-    "end": 185.6
+    "end": 185.6,
+    "beat": "save",
+    "beat_start": 182.95,
+    "beat_end": 184.35
    },
    "pages": "Open Data, Open-data probes"
   },
@@ -1355,7 +1469,10 @@
     },
     "src": "video/clips/11-open-data-records-probes.mp4",
     "start": 171.0,
-    "end": 185.6
+    "end": 185.6,
+    "beat": "pick",
+    "beat_start": 177.5,
+    "beat_end": 178.7
    },
    "pages": "Open-data probes"
   },
@@ -2522,8 +2639,8 @@
   },
   "totals.files": {
    "ledger": "inventory",
-   "item": "7,466 files classified",
-   "value": 7466,
+   "item": "7,468 files classified",
+   "value": 7468,
    "origin": {
     "url": "https://github.com/bartimoussmith-oss/therealwindycity",
     "host": "github.com"

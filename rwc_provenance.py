@@ -77,14 +77,17 @@ def _clip(d: dict) -> None:
     if not clip.exists():
         st.caption(f"Film cue (not on this checkout): `{src}`")
         return
-    offset = max(0.0, (cue.get("start") or 0) - ((cue.get("master") or {}).get("start") or 0))
+    start = cue.get("start") or 0.0
+    b0 = cue.get("beat_start")
+    beat_at = max(0.0, (b0 - start)) if b0 is not None else 0.0
+    beat = cue.get("beat")
     st.caption(
         f"🎞 The fetch, on film — {Path(src).name}, cut from "
-        f"{_tc(cue.get('start') or 0)}–{_tc(cue.get('end') or 0)} of "
-        "`video/provenance-manual-run.mp4`."
+        f"{_tc(start)}–{_tc(cue.get('end') or 0)} of `video/provenance-manual-run.mp4`"
+        + (f"; the {'“' + beat + '”'} beat at {_tc(beat_at)} is this datum." if beat else ".")
     )
     try:
-        st.video(str(clip), start_time=int(offset))
+        st.video(str(clip), start_time=int(beat_at))
     except TypeError:  # very old streamlit: no start_time
         st.video(str(clip))
     except Exception as exc:  # never let provenance break a view
@@ -157,9 +160,9 @@ def source_link(datum_id: str, label: str | None = None) -> str:
     cue = d.get("cue") or {}
     parts = [f"[{label or origin.get('host', 'source')}]({origin.get('url', '')})"]
     if cue.get("src"):
-        parts.append(
-            f"on film {_tc(cue.get('start') or 0)}–{_tc(cue.get('end') or 0)}"
-        )
+        start = cue.get("start") or 0
+        b0 = cue.get("beat_start") or start
+        parts.append(f"on film {_tc(b0)} ({cue.get('beat') or 'cue'} beat)")
     return " · ".join(parts)
 
 
