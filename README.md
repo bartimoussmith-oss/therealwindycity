@@ -197,6 +197,28 @@ anything missing is reported as missing:
 python3 -m provenance guide
 ```
 
+## Transcribing the portal's own audio
+
+The city's portal serves an MP3 for almost every council meeting — 474 clips, 47,553
+minutes (792.5 hours) back to 2008. `tools/transcribe_granicus.py` runs Whisper over them
+and commits the text here, one clip at a time and resumably:
+
+```bash
+python3 tools/transcribe_granicus.py --status                 # what is done, what is left
+python3 tools/transcribe_granicus.py --self-test               # prove the parser, no network
+python3 tools/transcribe_granicus.py --refresh-catalog --refresh-only   # pick up new postings
+gh workflow run transcribe-granicus.yml -f limit=6 -f max_minutes=300
+```
+
+Output lands in `transcripts/granicus/`: a markdown transcript per meeting whose every
+timestamp is deep-linked into the official MP3 (`#t=3725`), a plain `.txt`, a
+`manifest.json` that makes reruns resume, and an `INDEX.md`. Each file says on its face
+that it is a machine transcription that can be wrong and is not an official transcript.
+
+The workflow runs on `ubuntu-latest` because that is where the portal and the model
+weights are reachable. Budget: ~6–10× realtime for `small.en` int8, so ~80–130 hours of
+compute for the whole catalog — about 20 runs at the 5-hour job cap.
+
 ## How this differs from the city's own portal
 
 `data/out/GRANICUS-VS-THIS-ARCHIVE.md` (site: `/provenance/granicus.html`, app: the
