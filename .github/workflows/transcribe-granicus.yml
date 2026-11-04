@@ -75,6 +75,20 @@ jobs:
           path: ~/.cache/huggingface
           key: whisper-${{ inputs.model || 'small.en' }}-v1
 
+      - name: Reachability — can this runner see the portal's audio?
+        continue-on-error: true
+        run: |
+          set +e
+          for u in \
+            https://cheyenne.granicus.com/ViewPublisher.php?view_id=2 \
+            https://archive-video.granicus.com/cheyenne/cheyenne_dfb5f093-463f-4fb7-97a5-bef9c54ca023.mp3 \
+            https://huggingface.co/Systran/faster-whisper-small.en/resolve/main/model.bin
+          do
+            code=$(curl -s -o /dev/null -m 40 -w '%{http_code}' -r 0-1024 "$u")
+            echo "::notice title=reach::$code $u"
+            echo "$code  $u"
+          done
+
       - name: Check the parser before spending an hour of CPU
         run: python3 tools/transcribe_granicus.py --self-test
 
@@ -82,13 +96,14 @@ jobs:
         run: python3 tools/transcribe_granicus.py --status
 
       - name: Pick up clips posted since the last crawl
+        continue-on-error: true
         env:
           IN_DRY: ${{ inputs.dry_run }}
         run: |
           if [ "$IN_DRY" = "true" ]; then
-            python3 tools/transcribe_granicus.py --refresh-catalog --dry-run
+            python3 tools/transcribe_granicus.py --refresh-catalog --refresh-only --dry-run
           else
-            python3 tools/transcribe_granicus.py --refresh-catalog
+            python3 tools/transcribe_granicus.py --refresh-catalog --refresh-only
           fi
 
       # `--max-minutes` is a wall-clock guard as much as a size guard: small.en on four
@@ -145,4 +160,6 @@ jobs:
             echo "### Transcription run"
             echo
             python3 tools/transcribe_granicus.py --status 2>&1
+            echo
+            echo "Transcripts written by this run: $(git status --porcelain transcripts/granicus | wc -l)"
           } >> "$GITHUB_STEP_SUMMARY"

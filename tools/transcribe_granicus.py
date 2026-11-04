@@ -247,7 +247,11 @@ def parse_view(html: str) -> list[dict]:
 
 
 def refresh_catalog(a) -> int:
-    """Merge anything new on the portal into the catalog. Returns how many were added."""
+    """Merge anything new on the portal into the catalog. Returns how many were added.
+
+    Called on its own (`--refresh-catalog --refresh-only`) it never falls through into
+    transcription: a catalog refresh that silently starts an hour of CPU is a bug.
+    """
     try:
         cat = load_catalog()
     except Exception:
@@ -518,6 +522,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--dry-run", action="store_true", help="list what would run, fetch nothing")
     ap.add_argument("--status", action="store_true", help="print progress and exit")
     ap.add_argument("--keep-audio", action="store_true", help="keep the downloaded audio")
+    ap.add_argument("--refresh-only", action="store_true",
+                    help="with --refresh-catalog: refresh the catalog and stop")
     ap.add_argument("--refresh-catalog", action="store_true",
                     help="re-read the portal's publisher pages and add clips posted since the crawl")
     ap.add_argument("--self-test", action="store_true",
@@ -528,7 +534,10 @@ def main(argv: list[str] | None = None) -> int:
         return self_test()
 
     if a.refresh_catalog:
-        refresh_catalog(a)
+        added = refresh_catalog(a)
+        if a.refresh_only:
+            return 0
+        print(f"  catalog: {added} new clip(s)", file=sys.stderr)
 
     rows = load_catalog()
     with_audio = [r for r in rows if audio_url(r) or r.get("mp4_url")]
