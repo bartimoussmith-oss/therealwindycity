@@ -1,0 +1,41 @@
+# TRANSCRIPT NOTES — verbatim record
+
+Meeting: public-services-committee | 2026-05-04
+YouTube id: gJq4LbGUFfA
+
+## Verbatim quotes (timestamps from the YouTube video)
+
+> [00:00:43] All right. Good afternoon. It is noon, so I am going to call the May 4th public
+
+> [00:00:52] Jennifer, first item on the agenda, please. >> Number six, ordinance, third reading, amending section 13.20.05.
+
+> [00:01:09] treatment and disposal of the code of the city of Cheyenne, Wyoming to revise local discharge limits and related
+
+> [00:01:30] Mr. Chair, through you Matt Bulo, Cheyenne, board of public utilities, water recognition division manager. I would respectfully ask for another postponement until June 8th. The the
+
+> [00:01:37] local limits are currently out for public commenting period. They should lapse on the 30th of May. Um but I feel
+
+> [00:01:43] that June 8th would give us enough time to EPA comments and then go back through the city council. Be happy to answer any questions.
+
+> [00:01:55] >> Um any questions? Councilwoman Alders, you have a question? >> No. >> No. Councilwoman Emmens or Councilman
+
+> [00:02:02] Labbourne, do either of you have a questions for Mr. Bulo? >> I do not.
+
+> [00:02:08] >> Okay. >> I do not either, Mr. Chairman. >> Thank you. Um
+
+> [00:02:16] I think you're going to get a postponement if we stay with our practices. You'll get a postponement till May 14th or May 18th, pardon me. I can't do math,
+
+> [00:02:29] straight to >> um there is an amendment correct?
+
+> [00:02:38] >> You mean to postpone? We have to take public comment first. Okay. Is there any So
+
+> [00:02:47] third reading, there's been a request from the staff to postpone. Is there any public comment on the item?
+
+> [00:02:59] hearing. None. Then may I have a motion? >> I would move to uh
+
+## Decision-dense passages
+- [00:04:47] hearing none. May I have a motion? >> I would move to approve on third and final reading. >> Motion B made by Dr. Aldrich. Is there a
+- [00:05:00] Discussion hearing? None. All those in favor signify by saying I. >> I. I. >> I. >> Recommendation will be to approve on third. Thank you. Next item >> number 10. Ordinance third reading pursuant to section 2.2.2 plan
+- [00:16:31] is there. I'd like to hear what he has to say. >> All right, >> Director Bloom. >> Chair, members of committee, Charles Bloom, planning and development director. Just want to clarify the comprehensive plan amendment fee is $750. So that is the price price there. Um it was adopted by resolution. Any …
+- [00:16:49] would also have to um be approved by resolution as well. >> Okay. Thank you.
+

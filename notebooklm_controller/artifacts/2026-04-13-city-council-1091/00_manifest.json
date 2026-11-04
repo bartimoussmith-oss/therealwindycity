@@ -1,0 +1,139 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20260413-1091",
+  "title": "City of Cheyenne \u2014 City Council \u2014 2026-04-13",
+  "description": "NotebookLM controller notebook for the City Council \u2014 2026-04-13 meeting (2026-04-13). Sources: verbatim_transcript, minutes. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:47+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-04-13",
+  "body": "city-council",
+  "title": "City Council \u2014 2026-04-13",
+  "youtube_video_id": "mPv73_3Clls",
+  "youtube_url": "https://www.youtube.com/watch?v=mPv73_3Clls",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-04-13-city-council.txt",
+  "transcript_sha256": "7ade1f4f051a8b5d",
+  "paragraphs": 967,
+  "source_type": "verbatim_transcript"
+ },
+ "sources": {
+  "youtube_video": {
+   "type": "youtube_video",
+   "video_id": "mPv73_3Clls",
+   "url": "https://www.youtube.com/watch?v=mPv73_3Clls",
+   "title": "City Council \u2014 2026-04-13"
+  },
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-04-13-city-council.txt",
+   "source": "corpus_yt (machine mirror of YouTube captions)"
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "1091",
+    "name": "City Council",
+    "date_display": "Apr 13, 2026",
+    "duration": "02h 06m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1091",
+    "minutes_url": "",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_70e51848-551f-4877-a951-af3ba281ef8a.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/1091?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ]
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "2498f413f60057ac",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "1ab06ec4c3a5efae",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "c01ebaf3429559b4",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "b93bc3900d20524e",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "98afa1bf46ce7345",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "1649e6b72e0cfc7f",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-05-27",
+   "2008-06-09",
+   "2008-06-23",
+   "2008-07-14",
+   "2008-07-28",
+   "2008-08-11"
+  ],
+  "shared_entities_sample": [
+   "Laramie County",
+   "Laramie County",
+   "Public Services Committee",
+   "Public Utilities",
+   "Laramie County",
+   "Public Services Committee",
+   "Laramie County",
+   "Public Services Committee",
+   "Public Services Committee",
+   "Gay Woodhouse",
+   "Laramie County",
+   "Public Services Committee"
+  ]
+ }
+}

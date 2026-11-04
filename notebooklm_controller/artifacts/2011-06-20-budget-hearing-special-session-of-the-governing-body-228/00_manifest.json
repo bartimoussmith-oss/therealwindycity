@@ -1,0 +1,134 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20110620-228",
+  "title": "City of Cheyenne \u2014 Budget Hearing/Special Session of the Governing Body \u2014 2011-06-20",
+  "description": "NotebookLM controller notebook for the Budget Hearing/Special Session of the Governing Body \u2014 2011-06-20 meeting (2011-06-20). Sources: minutes. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:26:50+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2011-06-20",
+  "body": "budget-hearing-special-session-of-the-governing-body",
+  "title": "Budget Hearing/Special Session of the Governing Body \u2014 2011-06-20",
+  "youtube_video_id": null,
+  "youtube_url": null,
+  "minutes_file": "/home/user/therealwindycity/pipeline/notebooklm/cheyenne_minutes_2011.md",
+  "paragraphs": 2,
+  "source_type": "minutes_only",
+  "note": "No verbatim transcript available for this meeting; artifacts built from Granicus summarized minutes only."
+ },
+ "sources": {
+  "summarized_minutes": {
+   "type": "minutes",
+   "path": "/home/user/therealwindycity/pipeline/notebooklm/cheyenne_minutes_2011.md",
+   "source": "granicus_minutes",
+   "note": "Summarized official minutes \u2014 not verbatim, no timestamps."
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "228",
+    "name": "Budget Hearing/Special Session of the Governing Body",
+    "date_display": "Jun 20, 2011",
+    "duration": "02h 39m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=228",
+    "minutes_url": "https://cheyenne.granicus.com/MinutesViewer.php?view_id=2&clip_id=228",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_f4042693-8bdc-465b-b92d-8bc4d8bd9b3a.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/228?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ]
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "00d57e484cb865f7",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "e2db9e2c0508b7a9",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "94a2153166a5c410",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "20fe63ae996fb3ce",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "cf8948b72170ceec",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "4f7628f7719fe7b6",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-05-27",
+   "2008-06-09",
+   "2008-06-23",
+   "2008-07-14",
+   "2008-07-28",
+   "2008-08-11"
+  ],
+  "shared_entities_sample": [
+   "Governing Body",
+   "Carol Intlekofer",
+   "City Clerk",
+   "Barb Dorr",
+   "Finance Committee",
+   "$5,000",
+   "City Clerk\nJune",
+   "The Governing Body",
+   "Carol Intlekofer",
+   "City Clerk",
+   "Barb Dorr",
+   "Finance Committee"
+  ]
+ }
+}

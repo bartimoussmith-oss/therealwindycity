@@ -1,0 +1,123 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20221021-869",
+  "title": "City of Cheyenne — Special Meeting — 2022-10-21",
+  "description": "NotebookLM controller notebook for the Special Meeting — 2022-10-21 meeting (2022-10-21). Sources: none. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:27:45+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2022-10-21",
+  "body": "special-meeting",
+  "title": "Special Meeting — 2022-10-21",
+  "youtube_video_id": "K0gU5Ekoiu4",
+  "youtube_url": "https://www.youtube.com/watch?v=K0gU5Ekoiu4",
+  "minutes_file": null,
+  "paragraphs": 3054,
+  "source_type": "verbatim_transcript_and_minutes",
+  "note": "No verbatim transcript available for this meeting; artifacts built from Granicus summarized minutes only.",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2022-10-21-special-meeting-K0gU5Ekoiu4.txt",
+  "transcript_source": "corpus_yt",
+  "transcript_sha256": "d4145a7afc2a6eef"
+ },
+ "sources": {
+  "summarized_minutes": {
+   "type": "minutes",
+   "path": null,
+   "source": "granicus_minutes",
+   "note": "Summarized official minutes — not verbatim, no timestamps."
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "869",
+    "name": "Special Meeting",
+    "date_display": "Oct 21, 2022",
+    "duration": "01h 30m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=869",
+    "minutes_url": "",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_51864821-b8ff-4d67-a029-434b1eb52c4d.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/869?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ],
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2022-10-21-special-meeting-K0gU5Ekoiu4.txt",
+   "source": "corpus_yt",
+   "note": "Verbatim YouTube captions via Google Drive (bartimoussmith-oss)"
+  }
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "89a0a448747c617c",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "9090878145037480",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "94a2153166a5c410",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "b219f211e7f7bb3d",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "0b7c6fe4b2475ea1",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "2d904e7984b763c9",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [],
+  "shared_entities_sample": []
+ }
+}

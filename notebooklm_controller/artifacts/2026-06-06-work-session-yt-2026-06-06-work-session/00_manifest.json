@@ -1,0 +1,128 @@
+{
+ "notebook": {
+  "notebook_id": "nb-2026-yt-2026-06-06-work-session",
+  "title": "City of Cheyenne — YouTube transcript — 2026",
+  "description": "NotebookLM controller notebook for the YouTube transcript — 2026 meeting (2026). Sources: verbatim_transcript. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:31+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-06-06",
+  "body": "work-session",
+  "title": "YouTube transcript — 2026",
+  "youtube_video_id": "Hq26nwpjs2k",
+  "youtube_url": "https://www.youtube.com/watch?v=Hq26nwpjs2k",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-06-06-data-center-panel.txt",
+  "transcript_sha256": "3a945a91ed8b4e72",
+  "paragraphs": 1123,
+  "source_type": "verbatim_transcript",
+  "transcript_source": "corpus_yt"
+ },
+ "sources": {
+  "youtube_video": {
+   "type": "youtube_video",
+   "video_id": "Hq26nwpjs2k",
+   "url": "https://www.youtube.com/watch?v=Hq26nwpjs2k",
+   "title": "YouTube transcript — 2026"
+  },
+  "supporting_documents": [],
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-06-06-data-center-panel.txt",
+   "source": "corpus_yt",
+   "note": "Verbatim YouTube captions via Google Drive (bartimoussmith-oss)"
+  }
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "c2b94781a6a66c1e",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "90f342a6404c9101",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "8565a8393d6370e8",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "390738d6156e5af8",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "1bd02c68a777aafe",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "8f6125a3f6e9aaf9",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-05-27",
+   "2008-06-09",
+   "2008-06-23",
+   "2008-07-14",
+   "2008-07-28",
+   "2008-08-11"
+  ],
+  "shared_entities_sample": [
+   "Cheyenne City Council",
+   "Laramie County",
+   "Cheyenne City Council",
+   "Laramie County",
+   "Cheyenne City Council",
+   "Public Utilities",
+   "Laramie County",
+   "Cheyenne City Council",
+   "Laramie County",
+   "Cheyenne City Council",
+   "Cheyenne City Council",
+   "Laramie County"
+  ]
+ }
+}

@@ -1,0 +1,134 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20090105-64",
+  "title": "City of Cheyenne \u2014 First Regular Meeting \u2014 2009-01-05",
+  "description": "NotebookLM controller notebook for the First Regular Meeting \u2014 2009-01-05 meeting (2009-01-05). Sources: minutes. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:26:45+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2009-01-05",
+  "body": "first-regular-meeting",
+  "title": "First Regular Meeting \u2014 2009-01-05",
+  "youtube_video_id": null,
+  "youtube_url": null,
+  "minutes_file": "/home/user/therealwindycity/pipeline/notebooklm/cheyenne_minutes_2009.md",
+  "paragraphs": 2,
+  "source_type": "minutes_only",
+  "note": "No verbatim transcript available for this meeting; artifacts built from Granicus summarized minutes only."
+ },
+ "sources": {
+  "summarized_minutes": {
+   "type": "minutes",
+   "path": "/home/user/therealwindycity/pipeline/notebooklm/cheyenne_minutes_2009.md",
+   "source": "granicus_minutes",
+   "note": "Summarized official minutes \u2014 not verbatim, no timestamps."
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "64",
+    "name": "First Regular Meeting",
+    "date_display": "Jan  5, 2009",
+    "duration": "00h 43m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=64",
+    "minutes_url": "https://cheyenne.granicus.com/MinutesViewer.php?view_id=2&clip_id=64",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_aa341e0f-4b32-4b06-88d8-30b5fe93387d.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/64?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ]
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "8f1ef0fb1c684439",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "08819f6b90bd80df",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "94a2153166a5c410",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "01bbdf1048a74319",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "b03031ca9815c51f",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "a9dcac48564a3841",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-05-27",
+   "2008-06-09",
+   "2008-06-23",
+   "2008-07-14",
+   "2008-07-28",
+   "2008-08-11"
+  ],
+  "shared_entities_sample": [
+   "City Clerk",
+   "Rescue Department",
+   "City Treasurer",
+   "City Attorney",
+   "Carol Intlekofer",
+   "The Governing Body",
+   "City Clerk",
+   "City Treasurer",
+   "City Attorney",
+   "Carol Intlekofer",
+   "The Governing Body",
+   "City Clerk"
+  ]
+ }
+}

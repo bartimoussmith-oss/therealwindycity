@@ -1,0 +1,123 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20171211-631",
+  "title": "City of Cheyenne — City Council Meeting — 2017-12-11",
+  "description": "NotebookLM controller notebook for the City Council Meeting — 2017-12-11 meeting (2017-12-11). Sources: none. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:27:14+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2017-12-11",
+  "body": "city-council",
+  "title": "City Council Meeting — 2017-12-11",
+  "youtube_video_id": "",
+  "youtube_url": null,
+  "minutes_file": null,
+  "paragraphs": 72,
+  "source_type": "verbatim_transcript_and_minutes",
+  "note": "No verbatim transcript available for this meeting; artifacts built from Granicus summarized minutes only.",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2017-12-11-city-council-no-ytid.txt",
+  "transcript_source": "corpus_yt",
+  "transcript_sha256": "28f8c6ce2c2ce45e"
+ },
+ "sources": {
+  "summarized_minutes": {
+   "type": "minutes",
+   "path": null,
+   "source": "granicus_minutes",
+   "note": "Summarized official minutes — not verbatim, no timestamps."
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "631",
+    "name": "City Council Meeting",
+    "date_display": "Dec 11, 2017",
+    "duration": "00h 26m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=631",
+    "minutes_url": "https://cheyenne.granicus.com/MinutesViewer.php?view_id=2&clip_id=631",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_38ff6691-4db1-4f59-9900-5899c86ef4dd.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/631?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ],
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2017-12-11-city-council-no-ytid.txt",
+   "source": "corpus_yt",
+   "note": "Verbatim YouTube captions via Google Drive (bartimoussmith-oss)"
+  }
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "43fa95aac59ce600",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "9090878145037480",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "94a2153166a5c410",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "b219f211e7f7bb3d",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "a07d5b6f1f2ba1c6",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "2d0fb5c6c0f21672",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [],
+  "shared_entities_sample": []
+ }
+}

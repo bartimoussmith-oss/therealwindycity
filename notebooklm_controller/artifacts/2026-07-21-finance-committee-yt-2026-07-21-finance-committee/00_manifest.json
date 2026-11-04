@@ -1,0 +1,128 @@
+{
+ "notebook": {
+  "notebook_id": "nb-2026-yt-2026-07-21-finance-committee",
+  "title": "City of Cheyenne — YouTube transcript — 2026",
+  "description": "NotebookLM controller notebook for the YouTube transcript — 2026 meeting (2026). Sources: verbatim_transcript. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:36+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-07-21",
+  "body": "finance-committee",
+  "title": "YouTube transcript — 2026",
+  "youtube_video_id": "Q3CI--6YUDY",
+  "youtube_url": "https://www.youtube.com/watch?v=Q3CI--6YUDY",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-07-21-finance-committee.txt",
+  "transcript_sha256": "33bc97cf713c94a2",
+  "paragraphs": 514,
+  "source_type": "verbatim_transcript",
+  "transcript_source": "corpus_yt"
+ },
+ "sources": {
+  "youtube_video": {
+   "type": "youtube_video",
+   "video_id": "Q3CI--6YUDY",
+   "url": "https://www.youtube.com/watch?v=Q3CI--6YUDY",
+   "title": "YouTube transcript — 2026"
+  },
+  "supporting_documents": [],
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-07-21-finance-committee.txt",
+   "source": "corpus_yt",
+   "note": "Verbatim YouTube captions via Google Drive (bartimoussmith-oss)"
+  }
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "2822de7c769663d7",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "bc2cef19d20dc35b",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "a22edbff4470c757",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "aa85885a1c2a8d3d",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "19b984b543344094",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "269fc944cc53bad3",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-05-27",
+   "2008-06-09",
+   "2008-06-23",
+   "2008-07-14",
+   "2008-07-28",
+   "2008-08-11"
+  ],
+  "shared_entities_sample": [
+   "Cheyenne City Council",
+   "Laramie County",
+   "Cheyenne Regional Medical",
+   "Cheyenne City Council",
+   "Laramie County",
+   "Cheyenne City Council",
+   "Laramie County",
+   "Cheyenne Animal Shelter",
+   "Cheyenne City Council",
+   "Laramie County",
+   "Youth Alternatives",
+   "Knife River"
+  ]
+ }
+}

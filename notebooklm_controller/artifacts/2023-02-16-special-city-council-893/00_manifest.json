@@ -1,0 +1,134 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20230216-893",
+  "title": "City of Cheyenne \u2014 Special City Council Meeting \u2014 2023-02-16",
+  "description": "NotebookLM controller notebook for the Special City Council Meeting \u2014 2023-02-16 meeting (2023-02-16). Sources: minutes. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:27:48+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2023-02-16",
+  "body": "special-city-council",
+  "title": "Special City Council Meeting \u2014 2023-02-16",
+  "youtube_video_id": null,
+  "youtube_url": null,
+  "minutes_file": "/home/user/therealwindycity/pipeline/notebooklm/cheyenne_minutes_2023.md",
+  "paragraphs": 2,
+  "source_type": "minutes_only",
+  "note": "No verbatim transcript available for this meeting; artifacts built from Granicus summarized minutes only."
+ },
+ "sources": {
+  "summarized_minutes": {
+   "type": "minutes",
+   "path": "/home/user/therealwindycity/pipeline/notebooklm/cheyenne_minutes_2023.md",
+   "source": "granicus_minutes",
+   "note": "Summarized official minutes \u2014 not verbatim, no timestamps."
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "893",
+    "name": "Special City Council Meeting",
+    "date_display": "Feb 16, 2023",
+    "duration": "00h 00m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=893",
+    "minutes_url": "https://cheyenne.granicus.com/MinutesViewer.php?view_id=2&clip_id=893",
+    "mp4_url": "",
+    "player_url": "https://cheyenne.granicus.com/player/clip/893?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ]
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "75b2c33cbf3ded8a",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "df90f9e6e2c34906",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "94a2153166a5c410",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "08dbb536c50a5631",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "2ef04298f9e0177d",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "d37dfea46572bab6",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-05-27",
+   "2008-06-09",
+   "2008-06-23",
+   "2008-07-14",
+   "2008-07-28",
+   "2008-08-11"
+  ],
+  "shared_entities_sample": [
+   "City Clerk",
+   "City Attorney",
+   "City Treasurer",
+   "The Governing Body",
+   "City Clerk",
+   "City Attorney",
+   "City Treasurer",
+   "The Governing Body",
+   "City Clerk",
+   "City Attorney",
+   "City Treasurer",
+   "The Governing Body"
+  ]
+ }
+}

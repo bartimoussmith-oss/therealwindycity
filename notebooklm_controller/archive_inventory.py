@@ -151,7 +151,7 @@ def _build_corpus_index() -> dict[str, dict]:
                     mdate = part.split(":", 1)[1].strip()
                 elif part.startswith("YT_ID:"):
                     yt_id = part.split(":", 1)[1].strip()
-        if mdate and mbody and yt_id:
+        if mdate and mbody:
             slug = _body_slug(mbody)
             index[f"{mdate}-{slug}"] = {
                 "transcript_path": str(path),
@@ -313,8 +313,9 @@ def build_queue(live: bool = False) -> list[dict]:
 
     # Backfill: corpus_yt meetings not in meetings.json (shouldn't happen, but safe)
     for key, yt in corpus_index.items():
-        date = key.split("-", 1)[0]
-        body = key.split("-", 1)[1]
+        # key format: "YYYY-MM-DD-body-slug" — date is first 10 chars, body is the rest
+        date = key[:10]
+        body = key[11:]  # skip the date + hyphen
         k = f"{date}|{body}"
         if k not in entries:
             try:

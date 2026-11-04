@@ -1,0 +1,114 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20181003-678",
+  "title": "City of Cheyenne \u2014 Committee of the Whole \u2014 2018-10-03",
+  "description": "NotebookLM controller notebook for the Committee of the Whole \u2014 2018-10-03 meeting (2018-10-03). Sources: none. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:27:18+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2018-10-03",
+  "body": "committee-of-the-whole",
+  "title": "Committee of the Whole \u2014 2018-10-03",
+  "youtube_video_id": null,
+  "youtube_url": null,
+  "minutes_file": null,
+  "paragraphs": 0,
+  "source_type": "minutes_only",
+  "note": "No verbatim transcript available for this meeting; artifacts built from Granicus summarized minutes only."
+ },
+ "sources": {
+  "summarized_minutes": {
+   "type": "minutes",
+   "path": null,
+   "source": "granicus_minutes",
+   "note": "Summarized official minutes \u2014 not verbatim, no timestamps."
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "678",
+    "name": "Committee of the Whole",
+    "date_display": "Oct  3, 2018",
+    "duration": "02h 23m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=678",
+    "minutes_url": "",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_8f9d4d47-3f96-4c87-ba84-b909a2973424.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/678?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ]
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "cdfa91884e1fd5bc",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "9090878145037480",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "94a2153166a5c410",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "b219f211e7f7bb3d",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "5f124571293302ce",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "ffb5e3a363e07efa",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [],
+  "shared_entities_sample": []
+ }
+}

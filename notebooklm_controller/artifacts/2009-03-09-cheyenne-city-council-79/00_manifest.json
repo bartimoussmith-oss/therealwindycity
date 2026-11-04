@@ -1,0 +1,134 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20090309-79",
+  "title": "City of Cheyenne \u2014 Cheyenne City Council \u2014 2009-03-09",
+  "description": "NotebookLM controller notebook for the Cheyenne City Council \u2014 2009-03-09 meeting (2009-03-09). Sources: minutes. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:26:45+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2009-03-09",
+  "body": "cheyenne-city-council",
+  "title": "Cheyenne City Council \u2014 2009-03-09",
+  "youtube_video_id": null,
+  "youtube_url": null,
+  "minutes_file": "/home/user/therealwindycity/pipeline/notebooklm/cheyenne_minutes_2009.md",
+  "paragraphs": 2,
+  "source_type": "minutes_only",
+  "note": "No verbatim transcript available for this meeting; artifacts built from Granicus summarized minutes only."
+ },
+ "sources": {
+  "summarized_minutes": {
+   "type": "minutes",
+   "path": "/home/user/therealwindycity/pipeline/notebooklm/cheyenne_minutes_2009.md",
+   "source": "granicus_minutes",
+   "note": "Summarized official minutes \u2014 not verbatim, no timestamps."
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "79",
+    "name": "Cheyenne City Council",
+    "date_display": "Mar  9, 2009",
+    "duration": "02h 28m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=79",
+    "minutes_url": "https://cheyenne.granicus.com/MinutesViewer.php?view_id=2&clip_id=79",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_d27c0886-c954-4388-9f17-1b44dbe0d717.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/79?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ]
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "ab319be06adcd34d",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "83038e2088266092",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "94a2153166a5c410",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "b27c9618c7b6818c",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "687cf22814d2bcc6",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "e37708b8f0c51c67",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-05-27",
+   "2008-06-09",
+   "2008-06-23",
+   "2008-07-14",
+   "2008-07-28",
+   "2008-08-11"
+  ],
+  "shared_entities_sample": [
+   "Cheyenne City Council",
+   "Carol Intlekofer",
+   "City Clerk",
+   "Barb Dorr",
+   "City Treasurer",
+   "Finance Committee",
+   "City Attorney",
+   "County Preliminary Plat",
+   "Professional Services Agreement",
+   "Cheyenne City Council",
+   "The Governing Body",
+   "Carol Intlekofer"
+  ]
+ }
+}

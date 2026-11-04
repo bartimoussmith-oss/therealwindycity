@@ -1,0 +1,136 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20260526-1097",
+  "title": "City of Cheyenne \u2014 City Council Meeting \u2014 2026-05-26",
+  "description": "NotebookLM controller notebook for the City Council Meeting \u2014 2026-05-26 meeting (2026-05-26). Sources: verbatim_transcript, minutes. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:49+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-05-26",
+  "body": "city-council",
+  "title": "City Council Meeting \u2014 2026-05-26",
+  "youtube_video_id": "bGt1XMfaTTw",
+  "youtube_url": "https://www.youtube.com/watch?v=bGt1XMfaTTw",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-05-26-city-council.txt",
+  "transcript_sha256": "cec9e734918a1ab9",
+  "paragraphs": 3499,
+  "source_type": "verbatim_transcript"
+ },
+ "sources": {
+  "youtube_video": {
+   "type": "youtube_video",
+   "video_id": "bGt1XMfaTTw",
+   "url": "https://www.youtube.com/watch?v=bGt1XMfaTTw",
+   "title": "City Council Meeting \u2014 2026-05-26"
+  },
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-05-26-city-council.txt",
+   "source": "corpus_yt (machine mirror of YouTube captions)"
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "1097",
+    "name": "City Council Meeting",
+    "date_display": "May 26, 2026",
+    "duration": "06h 39m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1097",
+    "minutes_url": "",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_cd1d772e-6046-40f0-ba52-164b7e9cc954.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/1097?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ]
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "6474f54ddbdf262f",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "0e496e7992523c43",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "e09c7a0315e8877c",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "606a79dbff88bd39",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "9bec1f1b510a8300",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "11538e95188de136",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-05-27",
+   "2009-05-26",
+   "2009-06-08",
+   "2009-08-10",
+   "2009-08-24",
+   "2009-12-28"
+  ],
+  "shared_entities_sample": [
+   "Youth Council",
+   "Memorial Day",
+   "Youth Council",
+   "Memorial Day",
+   "$300,000",
+   "$300,000",
+   "$45,000",
+   "$300,000",
+   "Development Department"
+  ]
+ }
+}

@@ -1,0 +1,134 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20150713-490",
+  "title": "City of Cheyenne \u2014 City Council Meeting \u2014 2015-07-13",
+  "description": "NotebookLM controller notebook for the City Council Meeting \u2014 2015-07-13 meeting (2015-07-13). Sources: minutes. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:27:03+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2015-07-13",
+  "body": "city-council",
+  "title": "City Council Meeting \u2014 2015-07-13",
+  "youtube_video_id": null,
+  "youtube_url": null,
+  "minutes_file": "/home/user/therealwindycity/pipeline/notebooklm/cheyenne_minutes_2015.md",
+  "paragraphs": 2,
+  "source_type": "minutes_only",
+  "note": "No verbatim transcript available for this meeting; artifacts built from Granicus summarized minutes only."
+ },
+ "sources": {
+  "summarized_minutes": {
+   "type": "minutes",
+   "path": "/home/user/therealwindycity/pipeline/notebooklm/cheyenne_minutes_2015.md",
+   "source": "granicus_minutes",
+   "note": "Summarized official minutes \u2014 not verbatim, no timestamps."
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "490",
+    "name": "City Council Meeting",
+    "date_display": "Jul 13, 2015",
+    "duration": "01h 13m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=490",
+    "minutes_url": "https://cheyenne.granicus.com/MinutesViewer.php?view_id=2&clip_id=490",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_2cfd0099-416d-4970-8971-6caefc76b0d3.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/490?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ]
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "05b4369df9fcdf54",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "c1cd97f854245046",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "94a2153166a5c410",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "c0683a028be4ed2d",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "613ca31b16f96305",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "e50beaa5e689548a",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-05-27",
+   "2008-06-09",
+   "2008-06-23",
+   "2008-07-14",
+   "2008-07-28",
+   "2008-08-11"
+  ],
+  "shared_entities_sample": [
+   "Carol Intlekofer",
+   "City Clerk",
+   "Council Chambers",
+   "Finance Committee",
+   "Laramie County",
+   "Public Services\nCommittee",
+   "Governing Body",
+   "$20,000.00",
+   "The Governing Body",
+   "Carol Intlekofer",
+   "City Clerk",
+   "Council Chambers"
+  ]
+ }
+}

@@ -1,0 +1,120 @@
+{
+ "notebook": {
+  "notebook_id": "nb-2026-yt-2026-02-23-city-council",
+  "title": "City of Cheyenne — YouTube transcript — 2026",
+  "description": "NotebookLM controller notebook for the YouTube transcript — 2026 meeting (2026). Sources: verbatim_transcript. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:19+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-02-23",
+  "body": "city-council",
+  "title": "YouTube transcript — 2026",
+  "youtube_video_id": "rgnKyKmx3JU",
+  "youtube_url": "https://www.youtube.com/watch?v=rgnKyKmx3JU",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-02-23-city-council.txt",
+  "transcript_sha256": "dfe099f5ea81fd06",
+  "paragraphs": 1510,
+  "source_type": "verbatim_transcript"
+ },
+ "sources": {
+  "youtube_video": {
+   "type": "youtube_video",
+   "video_id": "rgnKyKmx3JU",
+   "url": "https://www.youtube.com/watch?v=rgnKyKmx3JU",
+   "title": "YouTube transcript — 2026"
+  },
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-02-23-city-council.txt",
+   "source": "corpus_yt (machine mirror of YouTube captions)"
+  },
+  "supporting_documents": []
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "f3e8886c49eeba14",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "901b4e2f68819b58",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "9d11fd1fef749054",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "18f4315f660b0d99",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "02d1083bc5cd7048",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "f9fb75692fef4280",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-06-23",
+   "2008-07-28",
+   "2008-10-13",
+   "2009-02-23",
+   "2009-03-23",
+   "2009-04-13"
+  ],
+  "shared_entities_sample": [
+   "$300",
+   "Wyoming Department",
+   "Wyoming Department",
+   "Missile Drive",
+   "$750",
+   "College Drive"
+  ]
+ }
+}

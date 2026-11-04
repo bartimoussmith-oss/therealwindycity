@@ -1,0 +1,123 @@
+{
+ "notebook": {
+  "notebook_id": "nb-2026-yt-2026-01-14-work-session",
+  "title": "City of Cheyenne — YouTube transcript — 2026",
+  "description": "NotebookLM controller notebook for the YouTube transcript — 2026 meeting (2026). Sources: verbatim_transcript. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:14+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-01-14",
+  "body": "work-session",
+  "title": "YouTube transcript — 2026",
+  "youtube_video_id": "tUTtHJp87Iw",
+  "youtube_url": "https://www.youtube.com/watch?v=tUTtHJp87Iw",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-01-14-committee-of-the-whole.txt",
+  "transcript_sha256": "4ac34ea391502f2d",
+  "paragraphs": 1335,
+  "source_type": "verbatim_transcript",
+  "transcript_source": "corpus_yt"
+ },
+ "sources": {
+  "youtube_video": {
+   "type": "youtube_video",
+   "video_id": "tUTtHJp87Iw",
+   "url": "https://www.youtube.com/watch?v=tUTtHJp87Iw",
+   "title": "YouTube transcript — 2026"
+  },
+  "supporting_documents": [],
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-01-14-committee-of-the-whole.txt",
+   "source": "corpus_yt",
+   "note": "Verbatim YouTube captions via Google Drive (bartimoussmith-oss)"
+  }
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "9ee183c52dd0a71d",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "42eb9847d7cc0e30",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "2a3b80183c567712",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "b1bcdb064a81cccf",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "606af3bd521f7a78",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "b64a180cbe5cbb55",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-08-25",
+   "2009-02-23",
+   "2009-03-09",
+   "2009-04-13",
+   "2010-02-08",
+   "2010-02-22"
+  ],
+  "shared_entities_sample": [
+   "Dell Range",
+   "Missile Drive",
+   "Fox Farm Road",
+   "Police Chief",
+   "College Drive",
+   "Police Chief",
+   "Police Chief"
+  ]
+ }
+}

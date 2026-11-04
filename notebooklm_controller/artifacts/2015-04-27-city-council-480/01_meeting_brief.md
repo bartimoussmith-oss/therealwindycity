@@ -1,0 +1,25 @@
+# MEETING BRIEF — City Council Meeting — 2015-04-27
+
+**Date:** 2015-04-27   **Body:** city-council
+**YouTube video:** none available
+
+**Source:** Granicus summarized minutes (NOT verbatim transcript, no timestamps).
+
+## Proceedings at a glance
+
+## Key moments (from summarized minutes — no timestamps)
+- RECORD OF PROCEEDINGS FOR THE GOVERNING BODY
+OF THE CITY OF CHEYENNE
+Office of City Clerk
+April 27, 2015
+The Governing Body of the City of Cheyenne met in regular session on this date beginning
+at 6 :00 p .m. i n C ouncil C hambers.  P resent w ere: M AYOR -  …
+
+## Supporting documents on the record
+- City Council Meeting (Apr 27, 2015) — agenda: https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=480 | minutes: https://cheyenne.granicus.com/MinutesViewer.php?view_id=2&clip_id=480 | video: https://archive-video.granicus.com/cheyenne/cheyenne_9a29d9f3-12b8-4a90-ae76-10cae87bd347.mp4
+
+## Outcomes
+- See 02_transcript_notes.md for minutes summary.
+- See 04_historical_context.md for how this meeting relates to prior ones.
+
+> NOTE: This brief is built from Granicus summarized minutes, not a > verbatim transcript. No timestamps or word-for-word quotations are > available for this meeting.

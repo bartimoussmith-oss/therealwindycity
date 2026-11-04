@@ -1,0 +1,137 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20170207-582",
+  "title": "City of Cheyenne — Special City Council Meeting — 2017-02-07",
+  "description": "NotebookLM controller notebook for the Special City Council Meeting — 2017-02-07 meeting (2017-02-07). Sources: minutes. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:27:10+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2017-02-07",
+  "body": "special-city-council",
+  "title": "Special City Council Meeting — 2017-02-07",
+  "youtube_video_id": "",
+  "youtube_url": null,
+  "minutes_file": "/home/user/therealwindycity/pipeline/notebooklm/cheyenne_minutes_2017.md",
+  "paragraphs": 3622,
+  "source_type": "verbatim_transcript_and_minutes",
+  "note": "No verbatim transcript available for this meeting; artifacts built from Granicus summarized minutes only.",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2017-02-07-special-city-council-no-ytid.txt",
+  "transcript_source": "corpus_yt",
+  "transcript_sha256": "1ef0141c8c564f2b"
+ },
+ "sources": {
+  "summarized_minutes": {
+   "type": "minutes",
+   "path": "/home/user/therealwindycity/pipeline/notebooklm/cheyenne_minutes_2017.md",
+   "source": "granicus_minutes",
+   "note": "Summarized official minutes — not verbatim, no timestamps."
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "582",
+    "name": "Special City Council Meeting",
+    "date_display": "Feb  7, 2017",
+    "duration": "00h 51m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=582",
+    "minutes_url": "https://cheyenne.granicus.com/MinutesViewer.php?view_id=2&clip_id=582",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_834aa662-154e-4d03-858f-7f7ca8849909.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/582?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ],
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2017-02-07-special-city-council-no-ytid.txt",
+   "source": "corpus_yt",
+   "note": "Verbatim YouTube captions via Google Drive (bartimoussmith-oss)"
+  }
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "554685a48f625061",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "9b3744d3ed848d48",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "94a2153166a5c410",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "b0e3a7ca972e5b2b",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "02f8cc0e775946f9",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "49667bf186045e80",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-05-27",
+   "2008-06-09",
+   "2008-06-23",
+   "2008-07-14",
+   "2008-08-11",
+   "2008-08-25"
+  ],
+  "shared_entities_sample": [
+   "Laramie County",
+   "Laramie County",
+   "Laramie County",
+   "Laramie County",
+   "Laramie County",
+   "Laramie County"
+  ]
+ }
+}

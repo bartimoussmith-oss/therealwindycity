@@ -1,0 +1,135 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20260727-1122",
+  "title": "City of Cheyenne \u2014 City Council Meeting \u2014 2026-07-27",
+  "description": "NotebookLM controller notebook for the City Council Meeting \u2014 2026-07-27 meeting (2026-07-27). Sources: verbatim_transcript, minutes. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:50+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-07-27",
+  "body": "city-council",
+  "title": "City Council Meeting \u2014 2026-07-27",
+  "youtube_video_id": "S49bb5GfUro",
+  "youtube_url": "https://www.youtube.com/watch?v=S49bb5GfUro",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-07-27-city-council.txt",
+  "transcript_sha256": "047c5ceff78408e3",
+  "paragraphs": 608,
+  "source_type": "verbatim_transcript"
+ },
+ "sources": {
+  "youtube_video": {
+   "type": "youtube_video",
+   "video_id": "S49bb5GfUro",
+   "url": "https://www.youtube.com/watch?v=S49bb5GfUro",
+   "title": "City Council Meeting \u2014 2026-07-27"
+  },
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-07-27-city-council.txt",
+   "source": "corpus_yt (machine mirror of YouTube captions)"
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "1122",
+    "name": "City Council Meeting",
+    "date_display": "Jul 27, 2026",
+    "duration": "01h 15m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1122",
+    "minutes_url": "",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_526429bc-8a88-11f1-bb61-005056a89546.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/1122?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ]
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "d1c798da85167429",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "78706f62d68b23af",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "17160170575baa28",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "31a2f30130d5ec6f",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "a0593b88d6173f93",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "8d1f09fdaac1895c",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-05-27",
+   "2008-06-09",
+   "2008-06-23",
+   "2008-07-14",
+   "2008-08-11",
+   "2008-08-25"
+  ],
+  "shared_entities_sample": [
+   "Laramie County",
+   "Laramie County",
+   "Belvoir Ranch",
+   "Laramie County",
+   "Laramie County",
+   "Laramie County",
+   "$30,000",
+   "Laramie County"
+  ]
+ }
+}

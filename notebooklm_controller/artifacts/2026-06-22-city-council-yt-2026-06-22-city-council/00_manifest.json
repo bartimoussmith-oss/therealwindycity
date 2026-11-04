@@ -1,0 +1,124 @@
+{
+ "notebook": {
+  "notebook_id": "nb-2026-yt-2026-06-22-city-council",
+  "title": "City of Cheyenne — YouTube transcript — 2026",
+  "description": "NotebookLM controller notebook for the YouTube transcript — 2026 meeting (2026). Sources: verbatim_transcript. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:33+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-06-22",
+  "body": "city-council",
+  "title": "YouTube transcript — 2026",
+  "youtube_video_id": "RjSGlhh4q9s",
+  "youtube_url": "https://www.youtube.com/watch?v=RjSGlhh4q9s",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-06-22-city-council.txt",
+  "transcript_sha256": "a07858bbc749c529",
+  "paragraphs": 3118,
+  "source_type": "verbatim_transcript",
+  "transcript_source": "corpus_yt"
+ },
+ "sources": {
+  "youtube_video": {
+   "type": "youtube_video",
+   "video_id": "RjSGlhh4q9s",
+   "url": "https://www.youtube.com/watch?v=RjSGlhh4q9s",
+   "title": "YouTube transcript — 2026"
+  },
+  "supporting_documents": [],
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-06-22-city-council.txt",
+   "source": "corpus_yt",
+   "note": "Verbatim YouTube captions via Google Drive (bartimoussmith-oss)"
+  }
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "a77d910fee67f181",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "d72ea81b3fc9083a",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "418701f413bd6a8f",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "889c29efaa66c000",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "2691a1d5c6498346",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "da35b9d756ec4219",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-05-27",
+   "2008-06-09",
+   "2008-06-23",
+   "2008-07-14",
+   "2008-08-11",
+   "2008-08-25"
+  ],
+  "shared_entities_sample": [
+   "Laramie County",
+   "Clear Creek",
+   "Laramie County",
+   "Laramie County",
+   "Laramie County",
+   "Laramie County",
+   "$75,000",
+   "Laramie County"
+  ]
+ }
+}

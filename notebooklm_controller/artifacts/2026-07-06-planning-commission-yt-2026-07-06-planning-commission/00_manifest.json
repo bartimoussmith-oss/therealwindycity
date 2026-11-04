@@ -1,0 +1,122 @@
+{
+ "notebook": {
+  "notebook_id": "nb-2026-yt-2026-07-06-planning-commission",
+  "title": "City of Cheyenne — YouTube transcript — 2026",
+  "description": "NotebookLM controller notebook for the YouTube transcript — 2026 meeting (2026). Sources: verbatim_transcript. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:33+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-07-06",
+  "body": "planning-commission",
+  "title": "YouTube transcript — 2026",
+  "youtube_video_id": "encf6QzJoVM",
+  "youtube_url": "https://www.youtube.com/watch?v=encf6QzJoVM",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-07-06-planning-commission.txt",
+  "transcript_sha256": "a2c3ff5a6fd599f5",
+  "paragraphs": 642,
+  "source_type": "verbatim_transcript",
+  "transcript_source": "corpus_yt"
+ },
+ "sources": {
+  "youtube_video": {
+   "type": "youtube_video",
+   "video_id": "encf6QzJoVM",
+   "url": "https://www.youtube.com/watch?v=encf6QzJoVM",
+   "title": "YouTube transcript — 2026"
+  },
+  "supporting_documents": [],
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-07-06-planning-commission.txt",
+   "source": "corpus_yt",
+   "note": "Verbatim YouTube captions via Google Drive (bartimoussmith-oss)"
+  }
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "caea28a3ec025e81",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "84152c511b234a22",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "8565a8393d6370e8",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "6003b5a8ad9037f0",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "e142655d2d5e2057",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "f04eac78776a5d59",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2012-04-09",
+   "2014-08-25",
+   "2014-09-08",
+   "2015-11-23",
+   "2019-01-28",
+   "2019-06-24"
+  ],
+  "shared_entities_sample": [
+   "Business Park",
+   "North Range Business",
+   "North Range Business",
+   "South Cheyenne",
+   "Charles Bloom",
+   "Charles Bloom"
+  ]
+ }
+}

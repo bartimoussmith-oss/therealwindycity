@@ -1,0 +1,123 @@
+{
+ "notebook": {
+  "notebook_id": "nb-2026-yt-2026-03-02-planning-commission",
+  "title": "City of Cheyenne — YouTube transcript — 2026",
+  "description": "NotebookLM controller notebook for the YouTube transcript — 2026 meeting (2026). Sources: verbatim_transcript. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:20+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-03-02",
+  "body": "planning-commission",
+  "title": "YouTube transcript — 2026",
+  "youtube_video_id": "8QhiMDr6aoY",
+  "youtube_url": "https://www.youtube.com/watch?v=8QhiMDr6aoY",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-03-02-planning-commission-b.txt",
+  "transcript_sha256": "6d2ce082c2b6c046",
+  "paragraphs": 1197,
+  "source_type": "verbatim_transcript",
+  "transcript_source": "corpus_yt"
+ },
+ "sources": {
+  "youtube_video": {
+   "type": "youtube_video",
+   "video_id": "8QhiMDr6aoY",
+   "url": "https://www.youtube.com/watch?v=8QhiMDr6aoY",
+   "title": "YouTube transcript — 2026"
+  },
+  "supporting_documents": [],
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-03-02-planning-commission-b.txt",
+   "source": "corpus_yt",
+   "note": "Verbatim YouTube captions via Google Drive (bartimoussmith-oss)"
+  }
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "6a082d500b19aa92",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "8c7ae8c7e316b5a6",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "8565a8393d6370e8",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "f2ec849ec3cac119",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "e90f3a7f6d63aa7c",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "cfbfd49441266730",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-09-08",
+   "2008-11-24",
+   "2008-12-08",
+   "2009-12-28",
+   "2010-05-24",
+   "2010-08-09"
+  ],
+  "shared_entities_sample": [
+   "Planning Commission",
+   "Planning Commission",
+   "Bob Ma",
+   "Planning Commission",
+   "Development Department",
+   "High School",
+   "Harmony Meadows"
+  ]
+ }
+}

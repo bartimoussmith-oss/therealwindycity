@@ -1,0 +1,25 @@
+# MEETING BRIEF — City Council Meeting — 2017-08-14
+
+**Date:** 2017-08-14   **Body:** city-council
+**YouTube video:** none available
+
+**Source:** Granicus summarized minutes (NOT verbatim transcript, no timestamps).
+
+## Proceedings at a glance
+
+## Key moments (from summarized minutes — no timestamps)
+- RECORD OF PROCEEDINGS FOR THE GOVERNING BODY
+OF THE CITY OF CHEYENNE
+Office of City Clerk
+August 14, 2017
+The Go verning B ody of  the  City  of  Che yenne me t in  re gular s ession on  thi s d ate
+beginning a t 6:00 p.m. in C ouncil Chambers.  Present we re:…
+
+## Supporting documents on the record
+- City Council Meeting (Aug 14, 2017) — agenda: https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=613 | minutes: https://cheyenne.granicus.com/MinutesViewer.php?view_id=2&clip_id=613 | video: https://archive-video.granicus.com/cheyenne/cheyenne_dd963950-b932-4c57-9ac1-6ec7e758a2d3.mp4
+
+## Outcomes
+- See 02_transcript_notes.md for minutes summary.
+- See 04_historical_context.md for how this meeting relates to prior ones.
+
+> NOTE: This brief is built from Granicus summarized minutes, not a > verbatim transcript. No timestamps or word-for-word quotations are > available for this meeting.

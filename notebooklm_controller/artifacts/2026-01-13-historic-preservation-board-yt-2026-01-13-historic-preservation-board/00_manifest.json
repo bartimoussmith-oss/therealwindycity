@@ -1,0 +1,122 @@
+{
+ "notebook": {
+  "notebook_id": "nb-2026-yt-2026-01-13-historic-preservation-board",
+  "title": "City of Cheyenne — YouTube transcript — 2026",
+  "description": "NotebookLM controller notebook for the YouTube transcript — 2026 meeting (2026). Sources: verbatim_transcript. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:14+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-01-13",
+  "body": "historic-preservation-board",
+  "title": "YouTube transcript — 2026",
+  "youtube_video_id": "1QYWOV-WVCI",
+  "youtube_url": "https://www.youtube.com/watch?v=1QYWOV-WVCI",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-01-13-historic-preservation-board.txt",
+  "transcript_sha256": "14bcac3466a34a9f",
+  "paragraphs": 1236,
+  "source_type": "verbatim_transcript",
+  "transcript_source": "corpus_yt"
+ },
+ "sources": {
+  "youtube_video": {
+   "type": "youtube_video",
+   "video_id": "1QYWOV-WVCI",
+   "url": "https://www.youtube.com/watch?v=1QYWOV-WVCI",
+   "title": "YouTube transcript — 2026"
+  },
+  "supporting_documents": [],
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-01-13-historic-preservation-board.txt",
+   "source": "corpus_yt",
+   "note": "Verbatim YouTube captions via Google Drive (bartimoussmith-oss)"
+  }
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "6d261ac1ba853b71",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "4d4c85bf1c5bfed8",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "8565a8393d6370e8",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "5c4a1355a800258f",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "3abd63feed0238de",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "90892dc4fd0dab83",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-09-22",
+   "2009-05-11",
+   "2009-06-08",
+   "2011-01-10",
+   "2011-06-20",
+   "2012-08-13"
+  ],
+  "shared_entities_sample": [
+   "Chapter 2.64",
+   "Westland Road",
+   "Westland Road",
+   "Commerce City",
+   "$15,000",
+   "$15,000"
+  ]
+ }
+}

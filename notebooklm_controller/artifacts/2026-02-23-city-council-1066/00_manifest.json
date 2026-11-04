@@ -1,0 +1,145 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20260223-1066",
+  "title": "City of Cheyenne \u2014 City Council Meeting \u2014 2026-02-23",
+  "description": "NotebookLM controller notebook for the City Council Meeting \u2014 2026-02-23 meeting (2026-02-23). Sources: verbatim_transcript, minutes. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:44+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-02-23",
+  "body": "city-council",
+  "title": "City Council Meeting \u2014 2026-02-23",
+  "youtube_video_id": "rgnKyKmx3JU",
+  "youtube_url": "https://www.youtube.com/watch?v=rgnKyKmx3JU",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-02-23-city-council.txt",
+  "transcript_sha256": "dfe099f5ea81fd06",
+  "paragraphs": 1510,
+  "source_type": "verbatim_transcript"
+ },
+ "sources": {
+  "youtube_video": {
+   "type": "youtube_video",
+   "video_id": "rgnKyKmx3JU",
+   "url": "https://www.youtube.com/watch?v=rgnKyKmx3JU",
+   "title": "City Council Meeting \u2014 2026-02-23"
+  },
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-02-23-city-council.txt",
+   "source": "corpus_yt (machine mirror of YouTube captions)"
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "1063",
+    "name": "Special City Council Meeting",
+    "date_display": "Feb 23, 2026",
+    "duration": "00h 03m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1063",
+    "minutes_url": "https://cheyenne.granicus.com/MinutesViewer.php?view_id=2&clip_id=1063",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_a3f24875-1719-11f1-bb28-005056a89546.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/1063?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   },
+   {
+    "type": "granicus_catalog",
+    "clip_id": "1066",
+    "name": "City Council Meeting",
+    "date_display": "Feb 23, 2026",
+    "duration": "02h 47m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1066",
+    "minutes_url": "",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_443994e8-08e0-4d61-8dce-7841c9ce20fc.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/1066?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ]
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "d65c5f4ae22717dc",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "901b4e2f68819b58",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "b1799488aaab7e9d",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "18f4315f660b0d99",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "a6a6fa3f9a94ed00",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "eed91f6de6e4c05c",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-06-23",
+   "2008-07-28",
+   "2008-10-13",
+   "2009-02-23",
+   "2009-03-23",
+   "2009-04-13"
+  ],
+  "shared_entities_sample": [
+   "$300",
+   "Wyoming Department",
+   "Wyoming Department",
+   "Missile Drive",
+   "$750",
+   "College Drive"
+  ]
+ }
+}

@@ -1,0 +1,134 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20260112-1050",
+  "title": "City of Cheyenne \u2014 City Council Meeting \u2014 2026-01-12",
+  "description": "NotebookLM controller notebook for the City Council Meeting \u2014 2026-01-12 meeting (2026-01-12). Sources: verbatim_transcript, minutes. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:42+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-01-12",
+  "body": "city-council",
+  "title": "City Council Meeting \u2014 2026-01-12",
+  "youtube_video_id": "Dfqmg--DVPE",
+  "youtube_url": "https://www.youtube.com/watch?v=Dfqmg--DVPE",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-01-12-city-council.txt",
+  "transcript_sha256": "b2b632ab6149ff51",
+  "paragraphs": 1239,
+  "source_type": "verbatim_transcript"
+ },
+ "sources": {
+  "youtube_video": {
+   "type": "youtube_video",
+   "video_id": "Dfqmg--DVPE",
+   "url": "https://www.youtube.com/watch?v=Dfqmg--DVPE",
+   "title": "City Council Meeting \u2014 2026-01-12"
+  },
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-01-12-city-council.txt",
+   "source": "corpus_yt (machine mirror of YouTube captions)"
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "1050",
+    "name": "City Council Meeting",
+    "date_display": "Jan 12, 2026",
+    "duration": "02h 25m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1050",
+    "minutes_url": "",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_fc57ddc3-d766-412e-9940-66459ea16b52.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/1050?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ]
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "71d8c6510c73b032",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "c99aebd0595de51b",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "49de57428c70700f",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "7380d8d71cc7bb26",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "f7b8ab28021efe39",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "9cc8675ec422f47a",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-10-13",
+   "2009-01-05",
+   "2009-01-12",
+   "2009-08-10",
+   "2009-08-24",
+   "2009-12-28"
+  ],
+  "shared_entities_sample": [
+   "Cheyenne Police Department",
+   "Wyoming Supreme Court",
+   "Patrick Collins",
+   "Fort Collins",
+   "Cheyenne Police Department",
+   "Cheyenne Police Department",
+   "Development Department"
+  ]
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20260406-yt-2026-04-06-unknown",
+  "title": "City of Cheyenne — Unknown — 2026-04-06",
+  "description": "NotebookLM controller notebook for the unknown meeting (2026-04-06). Sources: verbatim_transcript. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T00:00:00+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-04-06",
+  "body": "unknown",
+  "title": "Unknown — 2026-04-06",
+  "youtube_video_id": "",
+  "youtube_url": null,
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-04-06-unknown-no-ytid.txt",
+  "transcript_sha256": "ec97ed5e00cecc6d",
+  "paragraphs": 3074,
+  "source_type": "verbatim_transcript",
+  "note": "Verbatim transcript available from YouTube captions via Google Drive (bartimoussmith-oss). Discovered via Drive VTT harvest; not in original meetings.json."
+ },
+ "sources": {
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-04-06-unknown-no-ytid.txt",
+   "source": "corpus_yt",
+   "note": "Verbatim YouTube captions via Google Drive (bartimoussmith-oss)"
+  },
+  "supporting_documents": []
+ },
+ "artifacts": {},
+ "historical_context": {
+  "prior_meetings_referenced": [],
+  "shared_entities_sample": []
+ }
+}

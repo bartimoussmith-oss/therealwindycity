@@ -1,0 +1,133 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20260810-1124",
+  "title": "City of Cheyenne \u2014 City Council Meeting \u2014 2026-08-10",
+  "description": "NotebookLM controller notebook for the City Council Meeting \u2014 2026-08-10 meeting (2026-08-10). Sources: verbatim_transcript, minutes. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:51+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-08-10",
+  "body": "city-council",
+  "title": "City Council Meeting \u2014 2026-08-10",
+  "youtube_video_id": "7tVKl_N80dE",
+  "youtube_url": "https://www.youtube.com/watch?v=7tVKl_N80dE",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-08-10-city-council.txt",
+  "transcript_sha256": "15625d8c329a7b7d",
+  "paragraphs": 344,
+  "source_type": "verbatim_transcript"
+ },
+ "sources": {
+  "youtube_video": {
+   "type": "youtube_video",
+   "video_id": "7tVKl_N80dE",
+   "url": "https://www.youtube.com/watch?v=7tVKl_N80dE",
+   "title": "City Council Meeting \u2014 2026-08-10"
+  },
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-08-10-city-council.txt",
+   "source": "corpus_yt (machine mirror of YouTube captions)"
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "1124",
+    "name": "City Council Meeting",
+    "date_display": "Aug 10, 2026",
+    "duration": "01h 23m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1124",
+    "minutes_url": "",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_a6f9f4cb-9596-11f1-bb61-005056a89546.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/1124?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ]
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "e1fc2e7ee9dcc176",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "981d6004d3ae8152",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "63129bade8690f17",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "5b1410c83ed02d3d",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "f3d49ef6a8be4585",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "ba7824ddc9a7fd0f",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-06-23",
+   "2008-09-08",
+   "2008-09-22",
+   "2008-11-24",
+   "2009-06-08",
+   "2009-06-22"
+  ],
+  "shared_entities_sample": [
+   "Public Utilities",
+   "Public Utilities",
+   "Public Utilities",
+   "Unified Development Code",
+   "Public Utilities",
+   "Unified Development Code"
+  ]
+ }
+}

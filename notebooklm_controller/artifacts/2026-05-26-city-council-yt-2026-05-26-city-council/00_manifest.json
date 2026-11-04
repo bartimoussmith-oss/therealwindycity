@@ -1,0 +1,123 @@
+{
+ "notebook": {
+  "notebook_id": "nb-2026-yt-2026-05-26-city-council",
+  "title": "City of Cheyenne — YouTube transcript — 2026",
+  "description": "NotebookLM controller notebook for the YouTube transcript — 2026 meeting (2026). Sources: verbatim_transcript. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:29+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-05-26",
+  "body": "city-council",
+  "title": "YouTube transcript — 2026",
+  "youtube_video_id": "bGt1XMfaTTw",
+  "youtube_url": "https://www.youtube.com/watch?v=bGt1XMfaTTw",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-05-26-city-council.txt",
+  "transcript_sha256": "cec9e734918a1ab9",
+  "paragraphs": 3499,
+  "source_type": "verbatim_transcript"
+ },
+ "sources": {
+  "youtube_video": {
+   "type": "youtube_video",
+   "video_id": "bGt1XMfaTTw",
+   "url": "https://www.youtube.com/watch?v=bGt1XMfaTTw",
+   "title": "YouTube transcript — 2026"
+  },
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-05-26-city-council.txt",
+   "source": "corpus_yt (machine mirror of YouTube captions)"
+  },
+  "supporting_documents": []
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "bab969638069d141",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "0e496e7992523c43",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "9399e5f63efb3f96",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "606a79dbff88bd39",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "91e1972a5645eda2",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "019c2c433e060318",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-05-27",
+   "2009-05-26",
+   "2009-06-08",
+   "2009-08-10",
+   "2009-08-24",
+   "2009-12-28"
+  ],
+  "shared_entities_sample": [
+   "Youth Council",
+   "Memorial Day",
+   "Youth Council",
+   "Memorial Day",
+   "$300,000",
+   "$300,000",
+   "$45,000",
+   "$300,000",
+   "Development Department"
+  ]
+ }
+}

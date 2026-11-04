@@ -1,0 +1,143 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20230424-903",
+  "title": "City of Cheyenne — City Council Meeting — 2023-04-24",
+  "description": "NotebookLM controller notebook for the City Council Meeting — 2023-04-24 meeting (2023-04-24). Sources: minutes. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:27:50+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2023-04-24",
+  "body": "city-council",
+  "title": "City Council Meeting — 2023-04-24",
+  "youtube_video_id": "",
+  "youtube_url": null,
+  "minutes_file": "/home/user/therealwindycity/pipeline/notebooklm/cheyenne_minutes_2023.md",
+  "paragraphs": 3296,
+  "source_type": "verbatim_transcript_and_minutes",
+  "note": "No verbatim transcript available for this meeting; artifacts built from Granicus summarized minutes only.",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2023-04-24-city-council-no-ytid.txt",
+  "transcript_source": "corpus_yt",
+  "transcript_sha256": "df1b3f19c31caa86"
+ },
+ "sources": {
+  "summarized_minutes": {
+   "type": "minutes",
+   "path": "/home/user/therealwindycity/pipeline/notebooklm/cheyenne_minutes_2023.md",
+   "source": "granicus_minutes",
+   "note": "Summarized official minutes — not verbatim, no timestamps."
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "903",
+    "name": "City Council Meeting",
+    "date_display": "Apr 24, 2023",
+    "duration": "01h 06m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=903",
+    "minutes_url": "",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_f934cfd1-e39e-11ed-95dd-0050569183fa.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/903?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ],
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2023-04-24-city-council-no-ytid.txt",
+   "source": "corpus_yt",
+   "note": "Verbatim YouTube captions via Google Drive (bartimoussmith-oss)"
+  }
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "fc566e64cc56df6e",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "529bef23061d5f3d",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "94a2153166a5c410",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "69e51c955774172a",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "12c7d8be8aff62c4",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "29b45a52001421bf",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-05-27",
+   "2008-06-09",
+   "2008-06-23",
+   "2008-07-14",
+   "2008-07-28",
+   "2008-08-11"
+  ],
+  "shared_entities_sample": [
+   "Council Chambers",
+   "City Clerk",
+   "Governing Body",
+   "Finance Committee",
+   "The Governing Body",
+   "Council Chambers",
+   "City Clerk",
+   "Finance Committee",
+   "Chapter 2.04",
+   "The Governing Body",
+   "Council Chambers",
+   "City Clerk"
+  ]
+ }
+}

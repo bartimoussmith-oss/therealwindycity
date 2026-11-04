@@ -1,0 +1,123 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20260123-1052",
+  "title": "City of Cheyenne — Special City Council Meeting — 2026-01-23",
+  "description": "NotebookLM controller notebook for the Special City Council Meeting — 2026-01-23 meeting (2026-01-23). Sources: none. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:42+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-01-23",
+  "body": "special-city-council",
+  "title": "Special City Council Meeting — 2026-01-23",
+  "youtube_video_id": "",
+  "youtube_url": null,
+  "minutes_file": null,
+  "paragraphs": 2366,
+  "source_type": "verbatim_transcript_and_minutes",
+  "note": "No verbatim transcript available for this meeting; artifacts built from Granicus summarized minutes only.",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-01-23-special-city-council-no-ytid.txt",
+  "transcript_source": "corpus_yt",
+  "transcript_sha256": "c12dfebb2f97ca81"
+ },
+ "sources": {
+  "summarized_minutes": {
+   "type": "minutes",
+   "path": null,
+   "source": "granicus_minutes",
+   "note": "Summarized official minutes — not verbatim, no timestamps."
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "1052",
+    "name": "Special City Council Meeting",
+    "date_display": "Jan 23, 2026",
+    "duration": "00h 05m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1052",
+    "minutes_url": "",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_6b88ce0e-fd61-11f0-bb28-005056a89546.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/1052?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ],
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-01-23-special-city-council-no-ytid.txt",
+   "source": "corpus_yt",
+   "note": "Verbatim YouTube captions via Google Drive (bartimoussmith-oss)"
+  }
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "6fc5a457998d8fa9",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "9090878145037480",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "94a2153166a5c410",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "b219f211e7f7bb3d",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "0621d6dcb1f73485",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "786aed737d53bfbd",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [],
+  "shared_entities_sample": []
+ }
+}

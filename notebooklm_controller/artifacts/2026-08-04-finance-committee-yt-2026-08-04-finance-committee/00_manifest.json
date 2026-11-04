@@ -1,0 +1,123 @@
+{
+ "notebook": {
+  "notebook_id": "nb-2026-yt-2026-08-04-finance-committee",
+  "title": "City of Cheyenne — YouTube transcript — 2026",
+  "description": "NotebookLM controller notebook for the YouTube transcript — 2026 meeting (2026). Sources: verbatim_transcript. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:37+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-08-04",
+  "body": "finance-committee",
+  "title": "YouTube transcript — 2026",
+  "youtube_video_id": "NiKtP__UiSw",
+  "youtube_url": "https://www.youtube.com/watch?v=NiKtP__UiSw",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-08-04-finance-committee.txt",
+  "transcript_sha256": "7556d12480bbc290",
+  "paragraphs": 215,
+  "source_type": "verbatim_transcript",
+  "transcript_source": "corpus_yt"
+ },
+ "sources": {
+  "youtube_video": {
+   "type": "youtube_video",
+   "video_id": "NiKtP__UiSw",
+   "url": "https://www.youtube.com/watch?v=NiKtP__UiSw",
+   "title": "YouTube transcript — 2026"
+  },
+  "supporting_documents": [],
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-08-04-finance-committee.txt",
+   "source": "corpus_yt",
+   "note": "Verbatim YouTube captions via Google Drive (bartimoussmith-oss)"
+  }
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "00dc6230a3a874b9",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "23781dd1611173da",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "a5f528769dfed133",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "6a90f2cbfcb37489",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "6eaaf5f1c9362b93",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "ec21a94f0b6bfa6f",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-08-25",
+   "2010-05-10",
+   "2010-09-27",
+   "2010-10-25",
+   "2010-11-22",
+   "2011-05-09"
+  ],
+  "shared_entities_sample": [
+   "Dell Range",
+   "Union Pacific Railroad",
+   "Christensen Road",
+   "Christensen Road",
+   "Dell Range",
+   "Christensen Road",
+   "Christensen Road"
+  ]
+ }
+}

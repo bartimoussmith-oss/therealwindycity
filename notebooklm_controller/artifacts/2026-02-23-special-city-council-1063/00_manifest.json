@@ -1,0 +1,146 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20260223-1063",
+  "title": "City of Cheyenne \u2014 Special City Council Meeting \u2014 2026-02-23",
+  "description": "NotebookLM controller notebook for the Special City Council Meeting \u2014 2026-02-23 meeting (2026-02-23). Sources: minutes. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:44+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-02-23",
+  "body": "special-city-council",
+  "title": "Special City Council Meeting \u2014 2026-02-23",
+  "youtube_video_id": null,
+  "youtube_url": null,
+  "minutes_file": "/home/user/therealwindycity/pipeline/notebooklm/cheyenne_minutes_2026.md",
+  "paragraphs": 2,
+  "source_type": "minutes_only",
+  "note": "No verbatim transcript available for this meeting; artifacts built from Granicus summarized minutes only."
+ },
+ "sources": {
+  "summarized_minutes": {
+   "type": "minutes",
+   "path": "/home/user/therealwindycity/pipeline/notebooklm/cheyenne_minutes_2026.md",
+   "source": "granicus_minutes",
+   "note": "Summarized official minutes \u2014 not verbatim, no timestamps."
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "1063",
+    "name": "Special City Council Meeting",
+    "date_display": "Feb 23, 2026",
+    "duration": "00h 03m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1063",
+    "minutes_url": "https://cheyenne.granicus.com/MinutesViewer.php?view_id=2&clip_id=1063",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_a3f24875-1719-11f1-bb28-005056a89546.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/1063?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   },
+   {
+    "type": "granicus_catalog",
+    "clip_id": "1066",
+    "name": "City Council Meeting",
+    "date_display": "Feb 23, 2026",
+    "duration": "02h 47m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1066",
+    "minutes_url": "",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_443994e8-08e0-4d61-8dce-7841c9ce20fc.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/1066?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ]
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "593bcd10b85ef87e",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "e8cbfa5c098bb482",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "8ac8249e05888992",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "fe28d7d8378c90aa",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "82deef0ad5299aa6",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "a0764493c34537d8",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-05-27",
+   "2008-06-09",
+   "2008-06-23",
+   "2008-07-14",
+   "2008-07-28",
+   "2008-08-11"
+  ],
+  "shared_entities_sample": [
+   "Council Chambers",
+   "City Clerk",
+   "City Attorney",
+   "The Governing Body",
+   "Council Chambers",
+   "City Clerk",
+   "City Attorney",
+   "The Governing Body",
+   "Council Chambers",
+   "City Clerk",
+   "City Attorney",
+   "The Governing Body"
+  ]
+ }
+}

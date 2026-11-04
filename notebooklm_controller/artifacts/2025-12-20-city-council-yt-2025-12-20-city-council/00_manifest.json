@@ -1,0 +1,30 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20251220-yt-2025-12-20-city-council",
+  "title": "City of Cheyenne — City Council — 2025-12-20",
+  "description": "NotebookLM controller notebook for the city council meeting (2025-12-20). Sources: verbatim_transcript. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T00:00:00+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2025-12-20",
+  "body": "city-council",
+  "title": "City Council — 2025-12-20",
+  "youtube_video_id": "",
+  "youtube_url": null,
+  "transcript_file": null,
+  "transcript_sha256": null,
+  "paragraphs": 1120,
+  "source_type": "none",
+  "note": "Verbatim transcript available from YouTube captions via Google Drive (bartimoussmith-oss). Discovered via Drive VTT harvest; not in original meetings.json.",
+  "transcript_source": null
+ },
+ "sources": {
+  "supporting_documents": []
+ },
+ "artifacts": {},
+ "historical_context": {
+  "prior_meetings_referenced": [],
+  "shared_entities_sample": []
+ }
+}

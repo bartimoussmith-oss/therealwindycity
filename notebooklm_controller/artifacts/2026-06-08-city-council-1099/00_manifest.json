@@ -1,0 +1,134 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20260608-1099",
+  "title": "City of Cheyenne \u2014 City Council Meeting \u2014 2026-06-08",
+  "description": "NotebookLM controller notebook for the City Council Meeting \u2014 2026-06-08 meeting (2026-06-08). Sources: verbatim_transcript, minutes. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:49+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-06-08",
+  "body": "city-council",
+  "title": "City Council Meeting \u2014 2026-06-08",
+  "youtube_video_id": "69FQxIr9sJA",
+  "youtube_url": "https://www.youtube.com/watch?v=69FQxIr9sJA",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-06-08-city-council.txt",
+  "transcript_sha256": "f98b9c8325acc169",
+  "paragraphs": 1852,
+  "source_type": "verbatim_transcript"
+ },
+ "sources": {
+  "youtube_video": {
+   "type": "youtube_video",
+   "video_id": "69FQxIr9sJA",
+   "url": "https://www.youtube.com/watch?v=69FQxIr9sJA",
+   "title": "City Council Meeting \u2014 2026-06-08"
+  },
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-06-08-city-council.txt",
+   "source": "corpus_yt (machine mirror of YouTube captions)"
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "1099",
+    "name": "City Council Meeting",
+    "date_display": "Jun  8, 2026",
+    "duration": "03h 37m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1099",
+    "minutes_url": "",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_19b59235-f7f4-4274-9aca-c19a21c54031.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/1099?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ]
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "ae0a296ee54c1c25",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "e5e072c215645779",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "3b0abc2afb23c2e3",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "380e10ad21caa41c",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "761e7a89afc20af2",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "81937019ca1564fd",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-06-23",
+   "2008-09-08",
+   "2008-09-22",
+   "2008-10-27",
+   "2009-03-09",
+   "2009-03-23"
+  ],
+  "shared_entities_sample": [
+   "Public Utilities",
+   "Public Utilities",
+   "Public Utilities",
+   "$250,000",
+   "Girls Club",
+   "Girls Club",
+   "Cheyenne Business Parkway"
+  ]
+ }
+}

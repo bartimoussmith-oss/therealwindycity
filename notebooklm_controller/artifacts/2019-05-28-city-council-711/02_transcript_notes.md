@@ -1,0 +1,34 @@
+# TRANSCRIPT NOTES — summarized minutes (NOT verbatim)
+
+Meeting: City Council Meeting | 2019-05-28
+
+## Source note
+
+Granicus summarized minutes are an official record summary. They are NOT a verbatim transcript, contain no timestamps, and do not preserve word-for-word quotations. No timestamps are available for this meeting.
+
+## Minutes summary (key passages)
+
+- RECORD OF PROCEEDINGS FOR THE GOVERNING BODY 
+OF THE CITY OF CHEYENNE 
+Office of City Clerk 
+ 
+May 28, 2019 
+ 
+ Due to the Memorial Day holiday, t he Governing Body of the City of Cheyenne  instead 
+met in regular session on this date beginning at 6:00 p.m. in Council Chambers.  Present were:  
+MAYOR – Marian J. Orr; C OUNCIL MEMBERS – Rocky Case, Bryan Cook (arriving at 6:10 
+p.m.), Pete Laybourn…
+
+- ---
+
+## Decision-dense passages (from minutes)
+- RECORD OF PROCEEDINGS FOR THE GOVERNING BODY 
+OF THE CITY OF CHEYENNE 
+Office of City Clerk 
+ 
+May 28, 2019 
+ 
+ Due to the Memorial Day holiday, t he Governing Body of the City of Cheyenne  instead 
+met in regular session on this date beginning at 6:00 p.m. in Council Chambers.  Present were:  
+MAYO…
+

@@ -1,0 +1,143 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20260317-1081",
+  "title": "City of Cheyenne — Special City Council Meeting — 2026-03-17",
+  "description": "NotebookLM controller notebook for the Special City Council Meeting — 2026-03-17 meeting (2026-03-17). Sources: verbatrim_transcript. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:46+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-03-17",
+  "body": "special-city-council",
+  "title": "Special City Council Meeting — 2026-03-17",
+  "youtube_video_id": "",
+  "youtube_url": null,
+  "minutes_file": "/home/user/therealwindycity/pipeline/notebooklm/cheyenne_minutes_2026.md",
+  "paragraphs": 1268,
+  "source_type": "verbatim_transcript_and_minutes",
+  "note": "Verbatim transcript available from YouTube captions via Google Drive.",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-03-17-special-city-council-no-ytid.txt",
+  "transcript_source": "corpus_yt",
+  "transcript_sha256": "c1245f3374047254"
+ },
+ "sources": {
+  "summarized_minutes": {
+   "type": "minutes",
+   "path": "/home/user/therealwindycity/pipeline/notebooklm/cheyenne_minutes_2026.md",
+   "source": "granicus_minutes",
+   "note": "Summarized official minutes — not verbatim, no timestamps."
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "1081",
+    "name": "Special City Council Meeting",
+    "date_display": "Mar 17, 2026",
+    "duration": "00h 50m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1081",
+    "minutes_url": "https://cheyenne.granicus.com/MinutesViewer.php?view_id=2&clip_id=1081",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_574126e6-f220-44cd-87a4-b59f13413666.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/1081?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ],
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-03-17-special-city-council-no-ytid.txt",
+   "source": "corpus_yt",
+   "note": "Verbatim YouTube captions via Google Drive (bartimoussmith-oss)"
+  }
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "b2277460254c891a",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "f99d34dc032468d6",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "94a2153166a5c410",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "46b0f8c68838947b",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "2cac41b3c665933b",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "78e26da979c8bc55",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-05-27",
+   "2008-06-09",
+   "2008-06-23",
+   "2008-07-14",
+   "2008-07-28",
+   "2008-08-11"
+  ],
+  "shared_entities_sample": [
+   "City Clerk",
+   "City Attorney",
+   "City Treasurer",
+   "The Governing Body",
+   "City Clerk",
+   "City Attorney",
+   "City Treasurer",
+   "The Governing Body",
+   "City Clerk",
+   "City Attorney",
+   "City Treasurer",
+   "The Governing Body"
+  ]
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "notebook_id": "nb-20080527-24",
+ "title": "City of Cheyenne \u2014 Cheyenne City Council \u2014 2008-05-27",
+ "date": "2008-05-27",
+ "body": "cheyenne-city-council",
+ "clip_id": "24",
+ "instructions": "You are analyzing a City of Cheyenne public meeting. Sources: the YouTube video, its verbatim transcript, and the agenda/supporting documents. Answer using ONLY the uploaded sources. Give verbatim quotes with timestamps, never invent meetings or quotes, and mark anything not in the sources as 'not on the record'.",
+ "sources": [
+  {
+   "kind": "file",
+   "path": "/home/user/therealwindycity/pipeline/notebooklm/cheyenne_minutes_2008.md",
+   "title": "Summarized minutes \u2014 Cheyenne City Council \u2014 2008-05-27",
+   "note": "Granicus summarized minutes \u2014 NOT verbatim, no timestamps. Official record summary only.",
+   "source_type": "summarized_minutes"
+  },
+  {
+   "kind": "url",
+   "url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=24",
+   "title": "Agenda \u2014 Cheyenne City Council \u2014 2008-05-27",
+   "note": "Granicus agenda viewer page."
+  },
+  {
+   "kind": "url",
+   "url": "https://cheyenne.granicus.com/MinutesViewer.php?view_id=2&clip_id=24",
+   "title": "Minutes viewer \u2014 Cheyenne City Council \u2014 2008-05-27",
+   "note": "Granicus minutes viewer page."
+  }
+ ],
+ "generate": [
+  "01_meeting_brief.md",
+  "02_transcript_notes.md",
+  "03_agenda_trace.md",
+  "04_historical_context.md",
+  "05_audio_overview.txt",
+  "06_studio_package.md"
+ ],
+ "created_at": "2026-11-04T11:26:45+00:00",
+ "controller": "notebooklm_controller / notebooklm-py (unofficial client)"
+}

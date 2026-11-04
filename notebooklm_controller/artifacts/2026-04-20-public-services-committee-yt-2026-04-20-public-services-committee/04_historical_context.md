@@ -1,0 +1,24 @@
+# HISTORICAL CONTEXT — preceding meetings
+
+Earlier Cheyenne meetings that touch the same ordinances, projects, or officials. Context is woven automatically from the entity index so each artifact builds on everything that came before it:
+
+- **2008-06-23 — cheyenne-city-council** (shared: Cheyenne Animal Shelter, Public Utilities)
+  > "- RECORD OF PROCEEDINGS FOR THE GOVERNING BODY"
+  Artifact: `artifacts/2008-06-23-cheyenne-city-council-31/06_studio_package.md`
+- **2008-08-11 — cheyenne-city-council** (shared: Southwest Drive)
+  > "- RECORD OF PROCEEDINGS FOR THE GOVERNING BODY"
+  Artifact: `artifacts/2008-08-11-cheyenne-city-council-39/06_studio_package.md`
+- **2008-08-25 — cheyenne-city-council** (shared: Dell Range)
+  > "- RECORD OF PROCEEDINGS FOR THE GOVERNING BODY"
+  Artifact: `artifacts/2008-08-25-cheyenne-city-council-41/06_studio_package.md`
+- **2008-09-08 — cheyenne-city-council** (shared: Public Utilities)
+  > "- RECORD OF PROCEEDINGS FOR THE GOVERNING BODY"
+  Artifact: `artifacts/2008-09-08-cheyenne-city-council-43/06_studio_package.md`
+- **2008-09-22 — cheyenne-city-council** (shared: Public Utilities)
+  > "- RECORD OF PROCEEDINGS FOR THE GOVERNING BODY"
+  Artifact: `artifacts/2008-09-22-cheyenne-city-council-45/06_studio_package.md`
+- **2009-02-23 — cheyenne-city-council** (shared: Metropolitan Planning Organization)
+  > "- RECORD OF PROCEEDINGS FOR THE GOVERNING BODY"
+  Artifact: `artifacts/2009-02-23-cheyenne-city-council-77/06_studio_package.md`
+
+Reading order: start with the oldest referenced meeting and work forward; by the time you reach this meeting, the full archival thread is visible.

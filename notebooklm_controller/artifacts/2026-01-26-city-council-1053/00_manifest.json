@@ -1,0 +1,133 @@
+{
+ "notebook": {
+  "notebook_id": "nb-20260126-1053",
+  "title": "City of Cheyenne \u2014 City Council Meeting \u2014 2026-01-26",
+  "description": "NotebookLM controller notebook for the City Council Meeting \u2014 2026-01-26 meeting (2026-01-26). Sources: verbatim_transcript, minutes. One notebook per meeting; historical context woven from prior notebooks.",
+  "created_at": "2026-11-04T11:28:43+00:00",
+  "controller": "notebooklm_controller (third-party, browser-drive adapter; simulation mode unless --live)"
+ },
+ "meeting": {
+  "date": "2026-01-26",
+  "body": "city-council",
+  "title": "City Council Meeting \u2014 2026-01-26",
+  "youtube_video_id": "x6Veeticz3Q",
+  "youtube_url": "https://www.youtube.com/watch?v=x6Veeticz3Q",
+  "transcript_file": "/home/user/therealwindycity/pipeline/corpus_yt/2026-01-26-city-council.txt",
+  "transcript_sha256": "2c95cba2300b8e11",
+  "paragraphs": 882,
+  "source_type": "verbatim_transcript"
+ },
+ "sources": {
+  "youtube_video": {
+   "type": "youtube_video",
+   "video_id": "x6Veeticz3Q",
+   "url": "https://www.youtube.com/watch?v=x6Veeticz3Q",
+   "title": "City Council Meeting \u2014 2026-01-26"
+  },
+  "verbatim_transcript": {
+   "type": "transcript",
+   "path": "/home/user/therealwindycity/pipeline/corpus_yt/2026-01-26-city-council.txt",
+   "source": "corpus_yt (machine mirror of YouTube captions)"
+  },
+  "supporting_documents": [
+   {
+    "type": "granicus_catalog",
+    "clip_id": "1053",
+    "name": "City Council Meeting",
+    "date_display": "Jan 26, 2026",
+    "duration": "01h 48m",
+    "agenda_url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1053",
+    "minutes_url": "",
+    "mp4_url": "https://archive-video.granicus.com/cheyenne/cheyenne_d5d0cd14-5d48-4a1d-a7f0-4a26b4d3dc0a.mp4",
+    "player_url": "https://cheyenne.granicus.com/player/clip/1053?view_id=2&redirect=true",
+    "note": "Local mirror of cheyenne.granicus.com catalog; live fetch attempted by the controller when network allows."
+   }
+  ]
+ },
+ "artifacts": {
+  "01_meeting_brief.md": {
+   "sha256": "833c484557f86465",
+   "watermark_scan": {
+    "file": "01_meeting_brief.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "02_transcript_notes.md": {
+   "sha256": "ea640b11600e10bc",
+   "watermark_scan": {
+    "file": "02_transcript_notes.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "03_agenda_trace.md": {
+   "sha256": "e1fcca38f65fb444",
+   "watermark_scan": {
+    "file": "03_agenda_trace.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "04_historical_context.md": {
+   "sha256": "b0e3a7ca972e5b2b",
+   "watermark_scan": {
+    "file": "04_historical_context.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "05_audio_overview.txt": {
+   "sha256": "cbdf1bf485d250aa",
+   "watermark_scan": {
+    "file": "05_audio_overview.txt",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  },
+  "06_studio_package.md": {
+   "sha256": "b153e2e4e47a2c09",
+   "watermark_scan": {
+    "file": "06_studio_package.md",
+    "scan": {
+     "found": false,
+     "matches": [],
+     "lines": []
+    }
+   }
+  }
+ },
+ "historical_context": {
+  "prior_meetings_referenced": [
+   "2008-05-27",
+   "2008-06-09",
+   "2008-06-23",
+   "2008-07-14",
+   "2008-08-11",
+   "2008-08-25"
+  ],
+  "shared_entities_sample": [
+   "Laramie County",
+   "Laramie County",
+   "Laramie County",
+   "Laramie County",
+   "Laramie County",
+   "Laramie County"
+  ]
+ }
+}
