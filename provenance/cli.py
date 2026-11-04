@@ -7,6 +7,7 @@
     python3 -m provenance timelapse  # every file, at speed
     python3 -m provenance ledger     # one row per datum: origin link + film cue
     python3 -m provenance guide      # the master page: what everything is, and how to use it
+    python3 -m provenance compare    # the city's Granicus portal vs this archive
 
 Nothing here touches the network: the film is derived from files already in the
 checkout.
@@ -22,6 +23,7 @@ import sys
 from pathlib import Path
 
 from . import inventory as inventory_mod
+from . import compare as compare_mod
 from . import guide as guide_mod
 from . import ledger as ledger_mod
 from . import story as story_mod
@@ -331,6 +333,9 @@ def main(argv: list[str] | None = None) -> int:
     gd = sub.add_parser("guide", help="write the master guide (data/out/PROVENANCE-GUIDE.md)")
     gd.add_argument("--out", default="data/out")
 
+    sub.add_parser("compare", help="write the portal-vs-this-archive comparison "
+                                  "(data/out/GRANICUS-VS-THIS-ARCHIVE.md)")
+
     lg = sub.add_parser("ledger", help="write the per-datum ledger and cut the film cues")
     lg.add_argument("--out", default="data/out")
     lg.add_argument("--clips", action="store_true", help="cut each chapter out of the master film")
@@ -399,6 +404,15 @@ def main(argv: list[str] | None = None) -> int:
         f = guide_mod.facts(root)
         print(f"  guide: {f['datums']:,} datums · {len(f['clips'])} clips · "
               f"{sum(1 for x in f['films'].values() if x['exists'])}/3 films present",
+              file=sys.stderr)
+        print(f"  wrote {path.relative_to(root)} · {human_bytes(path.stat().st_size)}", file=sys.stderr)
+        return 0
+
+    if args.cmd == "compare":
+        path = compare_mod.write(root)
+        f = compare_mod.facts(root)
+        print(f"  compare: portal {f['clips']:,} clips · here {f['meetings']:,} meetings · "
+              f"{f['datums']:,} datums · portal newest {f.get('portal_newest') or '?'}",
               file=sys.stderr)
         print(f"  wrote {path.relative_to(root)} · {human_bytes(path.stat().st_size)}", file=sys.stderr)
         return 0

@@ -68,7 +68,8 @@ def main(argv: list[str] | None = None) -> int:
         pages = [p for p in site.rglob("*.html")]
         if not pages:
             problems.append(f"no HTML pages under {site}")
-        skip = {"404.html", "provenance/index.html", "provenance/master.html"}
+        skip = {"404.html", "provenance/index.html", "provenance/master.html",
+                "provenance/granicus.html"}
         no_prov = [p.relative_to(site).as_posix() for p in pages
                    if p.relative_to(site).as_posix() not in skip
                    and 'class="prov"' not in p.read_text(encoding="utf-8", errors="ignore")]
@@ -76,6 +77,10 @@ def main(argv: list[str] | None = None) -> int:
         if not guide.exists():
             problems.append("no /provenance/master.html guide in the rendered site")
         else:
+            gtext = guide.read_text(encoding="utf-8", errors="ignore")
+            for needle in ("provenance/index.html", "provenance/granicus.html"):
+                if needle not in gtext:
+                    problems.append(f"the guide does not link to {needle}")
             home = site / "index.html"
             index = home.read_text(encoding="utf-8", errors="ignore") if home.exists() else ""
             if "provenance/master.html" not in index:

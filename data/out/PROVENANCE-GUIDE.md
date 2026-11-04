@@ -218,6 +218,13 @@ The beats are the same choreography in every chapter:
 
 If those three line up, the rest of this page is detail.
 
+## How this differs from the city's own portal
+
+The City of Cheyenne publishes the same council meetings on its own Granicus portal, and that portal is the record of authority. This archive is a reader for it. The two differ in both directions — the portal has the footage and the official viewers; this archive has the other eight bodies, the document text, the transcripts and the provenance. The full comparison, figure by figure, is a generated page:
+
+- on the site: `/provenance/granicus.html`
+- in the repo: `data/out/GRANICUS-VS-THIS-ARCHIVE.md` (`python3 -m provenance compare`)
+
 ## Rebuild everything, in order
 
 ```bash
@@ -226,6 +233,7 @@ python3 -m provenance timelapse                 # render the 20-second time-laps
 python3 -m provenance video                     # render the chapter film (~8 min)
 python3 -m provenance ledger --clips --showcase # cues, per-chapter clips, showcase
 python3 -m provenance guide                     # this page
+python3 -m provenance compare                   # portal vs this archive
 python3 tools/render_ai_record.py --src ai-record --out _site   # the site, with provenance
 python3 tools/check_provenance.py --site _site  # prove every datum still carries its source
 ```

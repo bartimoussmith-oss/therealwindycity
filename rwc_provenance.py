@@ -207,6 +207,24 @@ def guide(out=None) -> Path | None:
         return None
 
 
+def compare_mod_facts() -> dict:
+    """The comparison's numbers, read from the checkout."""
+    from provenance import compare as compare_mod
+
+    return compare_mod.facts(ROOT)
+
+
+def comparison(out=None) -> Path | None:
+    """Write data/out/GRANICUS-VS-THIS-ARCHIVE.md from what is in the checkout right now."""
+    try:
+        from provenance import compare as compare_mod
+
+        return compare_mod.write(ROOT)
+    except Exception as exc:
+        st.caption(f"(comparison could not be generated: {exc})")
+        return None
+
+
 def show_guide() -> None:
     """The master page: what everything is, the films, and how to check a number."""
     led = ledger()
@@ -234,12 +252,45 @@ def show_guide() -> None:
 
     film_block(expanded=True)
 
-    tabs = st.tabs(["📄 The guide", "💾 Rebuild it", "🚦 How to check a number"])
+    tabs = st.tabs(["📄 The guide", "⚖️ City archive vs this", "💾 Rebuild it",
+                    "🚦 How to check a number"])
     with tabs[0]:
         st.markdown(path.read_text(encoding="utf-8"))
         st.download_button("Download the guide (Markdown)", path.read_text(encoding="utf-8"),
                            file_name="PROVENANCE-GUIDE.md", mime="text/markdown")
     with tabs[1]:
+        cmp_path = ROOT / "data" / "out" / "GRANICUS-VS-THIS-ARCHIVE.md"
+        if not cmp_path.exists():
+            cmp_path = comparison()
+        if cmp_path is None or not cmp_path.exists():
+            st.warning("The comparison has not been generated yet — "
+                       "run `python3 -m provenance compare`.")
+        else:
+            try:
+                cf = compare_mod_facts()
+            except Exception:
+                cf = {}
+            if cf:
+                k1, k2, k3 = st.columns(3)
+                k1.metric("Meetings on the city's portal", f"{cf['council_clips']:,}",
+                          help="Council and governing-body clips in the crawled clip list. "
+                               "The portal lists no committee, board or county meeting.")
+                k2.metric("Meetings in this archive", f"{cf['live'].get('meetings', 0):,}",
+                          help=f"Across {cf['live'].get('body_slugs', 0)} bodies, "
+                               f"{cf['meeting_first']} → {cf['meeting_last']}.")
+                k3.metric("Portal rows newer than this catalog", "yes" if cf["catalog_lag"] else "no",
+                          help=f"Portal newest: {cf.get('portal_newest') or '—'}; "
+                               f"clip catalog ends {cf['clip_last']}.")
+            st.markdown(cmp_path.read_text(encoding="utf-8"))
+            st.download_button("Download the comparison (Markdown)",
+                               cmp_path.read_text(encoding="utf-8"),
+                               file_name="GRANICUS-VS-THIS-ARCHIVE.md", mime="text/markdown")
+            if st.button("Rebuild the comparison now from this checkout",
+                         key="prov_compare_build"):
+                p = comparison()
+                if p:
+                    st.success(f"Wrote {p.relative_to(ROOT)}")
+    with tabs[2]:
         st.markdown(
             "Every artefact on this page is generated from the checkout. In order:\n\n"
             "```bash\n"
@@ -248,6 +299,7 @@ def show_guide() -> None:
             "python3 -m provenance video                     # the chapter film (~8 min)\n"
             "python3 -m provenance ledger --clips --showcase # cues, per-chapter clips, showcase\n"
             "python3 -m provenance guide                     # this page\n"
+            "python3 -m provenance compare                   # portal vs this archive\n"
             "python3 tools/render_ai_record.py --src ai-record --out _site\n"
             "python3 tools/check_provenance.py --site _site\n"
             "```"
@@ -256,7 +308,7 @@ def show_guide() -> None:
             p = guide()
             if p:
                 st.success(f"Wrote {p.relative_to(ROOT)}")
-    with tabs[2]:
+    with tabs[3]:
         st.markdown(
             "1. **Pick a number on any page.** Every page with a figure has a 🔗 Provenance "
             "expander underneath it, on this app and on the public site.\n"

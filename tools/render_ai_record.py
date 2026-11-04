@@ -37,7 +37,7 @@ TEMPLATE = """<!doctype html>
 <meta property="og:title" content="{title}"><meta property="og:description" content="{desc}"><meta property="og:type" content="article"><meta property="og:url" content="{canonical}">
 <script type="application/ld+json">{jsonld}</script>
 <style>{css}{prov_css}</style></head>
-<body><header class="site"><a href="{root}index.html"><b>{name}</b></a><a href="{root}provenance/master.html">Guide &amp; films</a><a href="{root}indexes/keywords.html">Keyword index</a><a href="{root}topics/corrections.html">Corrections</a><a href="{root}llms.txt">llms.txt</a><a href="{md_rel}">View as Markdown</a></header>
+<body><header class="site"><a href="{root}index.html"><b>{name}</b></a><a href="{root}provenance/master.html">Guide &amp; films</a><a href="{root}provenance/granicus.html">City archive vs this</a><a href="{root}indexes/keywords.html">Keyword index</a><a href="{root}topics/corrections.html">Corrections</a><a href="{root}llms.txt">llms.txt</a><a href="{md_rel}">View as Markdown</a></header>
 <main>
 {body}
 {prov}
@@ -246,6 +246,37 @@ def write_provenance_site(a, ledger, prov_site, urls, page_rel_of):
             fh.write(gpage)
         urls.append(gcanon)
 
+    # the comparison: the city's own Granicus portal against this archive
+    try:
+        from provenance import compare as prov_compare
+        cfacts = prov_compare.facts(Path(a.provenance_root))
+        cfacts["datums"] = (ledger.get("totals") or {}).get("data", 0)
+        cbody = prov_compare.html(root_rel, cfacts)
+    except Exception as exc:  # the site must still build without the comparison
+        print(f"  provenance: comparison skipped ({exc})", file=sys.stderr)
+        cbody = ""
+    if cbody:
+        ccanon = SITE + "provenance/granicus.html"
+        cjson = {"@context": "https://schema.org", "@type": "WebPage",
+                 "name": "The city's own archive, and this one — what differs",
+                 "description": "The City of Cheyenne's Granicus portal compared with this "
+                                "archive: what each holds, what only the portal has, what only "
+                                "this archive has, and where this archive is behind.",
+                 "url": ccanon, "inLanguage": "en", "isAccessibleForFree": True,
+                 "isPartOf": {"@type": "WebSite", "name": NAME, "url": SITE}}
+        cpage = TEMPLATE.format(title="The city's archive, and this one",
+                                name=NAME,
+                                desc="The City of Cheyenne's own Granicus portal compared with "
+                                     "this archive, figure by figure.",
+                                canonical=ccanon, md_url=SITE + "provenance/granicus.md",
+                                md_rel="granicus.md", md_name="provenance/granicus.md",
+                                jsonld=json.dumps(cjson).replace("</", "<\\/"),
+                                css=CSS, root=root_rel, body=cbody,
+                                prov="", prov_css=prov_site.CSS + prov_compare.COMPARE_CSS)
+        with open(os.path.join(pdir, "granicus.html"), "w", encoding="utf-8") as fh:
+            fh.write(cpage)
+        urls.append(ccanon)
+
     copied = 0
     src_root = Path(a.provenance_root)
 
@@ -281,6 +312,9 @@ def write_provenance_site(a, ledger, prov_site, urls, page_rel_of):
     src_guide = src_root / "data" / "out" / "PROVENANCE-GUIDE.md"
     if src_guide.exists():
         shutil.copy2(src_guide, os.path.join(pdir, "guide.md"))
+    src_cmp = src_root / "data" / "out" / "GRANICUS-VS-THIS-ARCHIVE.md"
+    if src_cmp.exists():
+        shutil.copy2(src_cmp, os.path.join(pdir, "granicus.md"))
     src_md = src_root / "data" / "out" / "PROVENANCE-LEDGER.md"
     if src_md.exists():
         shutil.copy2(src_md, os.path.join(pdir, "ledger.md"))

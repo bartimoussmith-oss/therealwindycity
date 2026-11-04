@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-04T15:00:42Z",
+ "generated_at": "2026-11-04T15:19:25Z",
  "totals": {
   "years": [
    "2004",
    "2026"
   ],
-  "files": 7469,
-  "bytes": 1653394095,
+  "files": 7474,
+  "bytes": 1653472698,
   "scraped_files": 4636,
   "scraped_bytes": 877361736,
   "families": 24,
@@ -772,9 +772,9 @@
   {
    "key": "derived_analysis",
    "title": "Analysis & dossiers written from the record",
-   "units": 140,
+   "units": 141,
    "unit": "document",
-   "files": 140,
+   "files": 141,
    "size": "10.8 MB",
    "dest": "repo root",
    "class": "derived"
@@ -832,9 +832,9 @@
   {
    "key": "provenance_film",
    "title": "Provenance report & this film",
-   "units": 30,
+   "units": 31,
    "unit": "artifact",
-   "files": 30,
+   "files": 31,
    "size": "1.9 MB",
    "dest": "data/out/ \u00b7 video/",
    "class": "generated"
@@ -917,7 +917,7 @@
   ],
   [
    "derived_analysis",
-   "  140  files      140  documents     10.8 MB   repo root"
+   "  141  files      141  documents     10.8 MB   repo root"
   ],
   [
    "silent_edits",
@@ -941,7 +941,7 @@
   ],
   [
    "repo_meta",
-   "   24  files       24  files     29.1 MB   repo root"
+   "   27  files       27  files     29.1 MB   repo root"
   ],
   [
    "montage_reels",
@@ -949,7 +949,7 @@
   ],
   [
    "provenance_film",
-   "   30  files       30  artifacts      1.9 MB   data/out/ \u00b7 video/"
+   "   31  files       31  artifacts      1.9 MB   data/out/ \u00b7 video/"
   ],
   [
    "published_site",

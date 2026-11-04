@@ -197,6 +197,22 @@ anything missing is reported as missing:
 python3 -m provenance guide
 ```
 
+## How this differs from the city's own portal
+
+`data/out/GRANICUS-VS-THIS-ARCHIVE.md` (site: `/provenance/granicus.html`, app: the
+**⚖️ City archive vs this** tab) compares this archive with
+[the City of Cheyenne's Granicus archive](https://cheyenne.granicus.com/ViewPublisher.php?view_id=2)
+and states the difference in both directions: the portal has the footage, the official
+agenda/minutes viewers, the RSS feeds and the authority; this archive has the eight other
+bodies the portal never lists, the document text, the transcripts, the indexes and the
+provenance. It also says plainly where this archive is behind — the portal was publishing
+through 2026-10-26 while the local clip catalog ends 2026-08-24, captions are machine-made,
+and OCR is incomplete on some scanned packets. Generated, not asserted:
+
+```bash
+python3 -m provenance compare     # reads the portal snapshot, the clip catalog, the index
+```
+
 ### Proving it, rather than saying it
 
 ```bash

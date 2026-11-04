@@ -92,7 +92,8 @@ def crawl(site: Path, ledger_path: Path) -> int:
                 continue
             if not target.exists():
                 broken_links.append((rel, href))
-        if rel not in ("404.html", "provenance/index.html", "provenance/master.html") \
+        if rel not in ("404.html", "provenance/index.html", "provenance/master.html",
+                       "provenance/granicus.html") \
                 and not rel.startswith(SKIP_PAGE_PREFIXES):
             if 'class="prov"' not in text:
                 no_block.append(rel)

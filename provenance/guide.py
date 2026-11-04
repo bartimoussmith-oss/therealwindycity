@@ -463,6 +463,18 @@ def markdown(root: Path, f: dict | None = None) -> str:
     A("If those three line up, the rest of this page is detail.")
     A("")
 
+    A("## How this differs from the city's own portal")
+    A("")
+    A("The City of Cheyenne publishes the same council meetings on its own Granicus portal, "
+      "and that portal is the record of authority. This archive is a reader for it. The two "
+      "differ in both directions — the portal has the footage and the official viewers; this "
+      "archive has the other eight bodies, the document text, the transcripts and the "
+      "provenance. The full comparison, figure by figure, is a generated page:")
+    A("")
+    A("- on the site: `/provenance/granicus.html`")
+    A("- in the repo: `data/out/GRANICUS-VS-THIS-ARCHIVE.md` (`python3 -m provenance compare`)")
+    A("")
+
     A("## Rebuild everything, in order")
     A("")
     A("```bash")
@@ -471,6 +483,7 @@ def markdown(root: Path, f: dict | None = None) -> str:
     A("python3 -m provenance video                     # render the chapter film (~8 min)")
     A("python3 -m provenance ledger --clips --showcase # cues, per-chapter clips, showcase")
     A("python3 -m provenance guide                     # this page")
+    A("python3 -m provenance compare                   # portal vs this archive")
     A("python3 tools/render_ai_record.py --src ai-record --out _site   # the site, with provenance")
     A("python3 tools/check_provenance.py --site _site  # prove every datum still carries its source")
     A("```")
@@ -599,6 +612,15 @@ def html(ledger: dict, root_rel: str, facts_: dict | None = None) -> str:
         "being typed), <code>load</code>, <code>pick</code> (the row being clicked), "
         "<code>item</code>, <code>download</code>, <code>collect</code>, <code>save</code> (the file "
         "landing), <code>panel</code> (the count, destination and cost).</p>",
+        "<h2>How this differs from the city's own portal</h2>",
+        "<p>The City of Cheyenne publishes the same council meetings on its own Granicus portal, "
+        "and that portal is the record of authority. This archive is a reader for it. The two "
+        "differ in both directions: the portal has the footage and the official viewers; this "
+        "archive has the other eight bodies, the document text, the transcripts and the "
+        "provenance.</p>",
+        f'<p><a href="{esc(root_rel)}provenance/granicus.html"><b>The full comparison, figure by '
+        "figure →</b></a> — what each holds, what only the portal has, what only this archive "
+        "has, and where this archive is behind.</p>",
         "<h2>Check it yourself</h2>",
         '<pre class="row">python3 tools/check_provenance.py --site _site\n'
         "python3 tools/provenance_site_audit.py</pre>",
