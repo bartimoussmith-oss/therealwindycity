@@ -335,3 +335,10 @@ st.caption(
     "Research aid only · no legal conclusions · source inputs are read-only · "
     "refreshing is local to this app's cached report."
 )
+
+# provenance: every number on this page carries an origin link and a film cue
+try:
+    from rwc_provenance import show as _prov_show
+    _prov_show('Estoppel-Effect Review', families=['minutes_and_notes', 'transcripts'])
+except Exception:
+    pass

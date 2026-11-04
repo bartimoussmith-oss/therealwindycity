@@ -67,5 +67,7 @@ data/selftest/
 /data/intelligence-budget/
 /data/distribution/
 
-# Provenance film: preview stills are scratch, the MP4 is the deliverable.
+# Provenance film: preview stills and the ffmpeg concat list are scratch.
+# The films, the per-chapter cues and the poster frames are deliverables.
 data/out/preview/
+data/out/showcase.concat.txt

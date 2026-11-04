@@ -149,6 +149,57 @@ URL, real filenames or rows pulled from this repo, the folder the data now lives
 and the screen a person would actually be looking at. Captions only, no narration.
 Storyboard: `data/out/provenance-storyboard.json`.
 
+### Everything at once, then one thing at a time
+
+```bash
+python3 -m provenance timelapse                  # video/provenance-timelapse.mp4 (20 s)
+python3 -m provenance ledger --clips --showcase  # the cue sheet + the per-chapter clips
+```
+
+The **time-lapse** is the whole collection in one pass: every file this repo holds, in
+capture order, about 560 a second. It is not a diagram of the archive, it is the archive.
+
+The **chapter film** is the how-to, chapter by chapter. `provenance ledger` then cuts each
+chapter out of it into `video/clips/` and writes a row for every figure this project
+publishes — **121 datums, every one with a public origin link and a film cue**. Each row
+carries the origin URL, the literal clicks a person would make, and the second of film
+that shows that fetch happening:
+
+- [`data/out/PROVENANCE-LEDGER.md`](data/out/PROVENANCE-LEDGER.md) — the cue sheet, as a table
+- `data/out/provenance-ledger.json` — the same, machine-readable
+- `video/provenance-showcase.mp4` — time-lapse, then every chapter, in one 4-minute file
+
+### On the pages themselves
+
+Both live surfaces print the same thing under the numbers they state:
+
+- **The static record** (`tools/render_ai_record.py`) gets a
+  “Where the numbers on this page come from” section on every page — origin link, the
+  cue clip inline (`<video>` with a `#t=` fragment, no JavaScript), and the click-path in
+  words. Plus a standalone `/provenance/` page: both films, then all 121 cues with the
+  pages that print each one. Disable it with `--no-provenance`.
+- **The Streamlit views** (`rwc_views.py` → `rwc_provenance.py`) get the same block in a
+  collapsed “🔗 Provenance” expander on every view that prints a number, and the two films
+  in the footer.
+
+Both read `data/out/provenance-ledger.json`. Rebuild it after the inventory changes:
+`python3 -m provenance ledger --clips --showcase`.
+
+### Proving it, rather than saying it
+
+```bash
+python3 -m provenance ledger --clips --showcase   # rebuild the cues + showcase
+python3 tools/check_provenance.py --site _site    # every datum linked, cued, and present
+python3 tools/provenance_site_audit.py            # build the real record, render, crawl every page
+```
+
+The audit builds the Markdown record from this checkout (the same inputs the Pages
+workflow uses), renders all ~7,000 pages, and then crawls them: every internal link must
+resolve, every `<video>` src must exist, every content page must carry a provenance
+block, and every datum must appear on the cue sheet. The Pages workflow runs
+`check_provenance.py` on every build, so a number that loses its citation fails the
+deploy instead of shipping.
+
 ## AI-readable record (for ChatGPT, Perplexity, Google AI Mode, Claude, etc.)
 
 The whole archive — **1,000+ Cheyenne meetings, 2008–2026: every agenda, packet, supporting

@@ -43,3 +43,10 @@ for record in arrests:
         <strong>DISPOSITION:</strong> <span style='color:#66FCF1;'>{record['status']}</span>
     </div>
     """, unsafe_allow_html=True)
+
+# provenance: every number on this page carries an origin link and a film cue
+try:
+    from rwc_provenance import show as _prov_show
+    _prov_show('Arrest Records', families=['arrests', 'news'])
+except Exception:
+    pass

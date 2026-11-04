@@ -193,6 +193,13 @@ EXTRA = [  # standalone pages
 ]
 
 # --------------------------------------------------------------------- render
+# provenance first: the two films and every cue, above the chapter cards
+try:
+    import rwc_provenance
+    rwc_provenance.film_block(expanded=False)
+except Exception as _prov_exc:  # never let provenance take the home page down
+    st.caption(f"(provenance film block unavailable: {_prov_exc})")
+
 V.render_ledger_header()
 st.markdown("### 📖 Chapters — live previews. Click through for the full page.")
 

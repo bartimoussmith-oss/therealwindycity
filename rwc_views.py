@@ -55,6 +55,11 @@ import streamlit.components.v1 as components
 
 from civic_atlas.streamlit_integration import render_lens_option
 
+try:
+    import rwc_provenance
+except Exception:  # provenance is optional; views must still render
+    rwc_provenance = None
+
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
@@ -77,6 +82,16 @@ CORPUS_DIR = ROOT / "pipeline" / "corpus"
 # =========================================================================
 # data plumbing (shared)
 # =========================================================================
+
+
+def _prov(title, **kw):
+    """Where the numbers on this view come from — link, clip, and click-path."""
+    if rwc_provenance is None:
+        return
+    try:
+        rwc_provenance.show(title, **kw)
+    except Exception as exc:  # never break a view over provenance
+        st.caption(f"(provenance unavailable: {exc})")
 
 
 def _engine_q(query, args=()):
@@ -494,6 +509,7 @@ def _view_home():
         components.html(page.read_text(), height=3200, scrolling=True)
     else:
         st.info("public/index.html not built yet — civic-cycle builds it.")
+    _prov("Front Page", families=["news", "inventory"])
 def _view_alerts():
     st.subheader("🚩 Action Alerts — tripwires with verbatim quotes + linked records")
     rows = _engine_q("SELECT a.created_at, a.term, a.snippet, d.url, d.title "
@@ -505,6 +521,7 @@ def _view_alerts():
         with st.expander(f"{r['created_at']} · {r['term']} · {r['title']}"):
             st.markdown(f"> {r['snippet']}")
             st.markdown(f"[source record]({r['url']})")
+    _prov("Action Alerts", families=["engine"])
 def _view_edits():
     st.subheader("⚠️ Shape-Shifters Caught — silent edits fingerprinted by SHA-256 drift")
     rows = _engine_q("SELECT v.captured_at, v.seq, v.change_summary, d.url, d.title "
@@ -516,6 +533,7 @@ def _view_edits():
                        f"{r['change_summary']} · [source]({r['url']})")
     else:
         st.success("None yet. A quiet ledger is a true report.")
+    _prov("Shape-Shifters", families=["engine"])
 def _view_search():
     if db is None or not ENGINE_DB.exists():
         st.info("Engine not present.")
@@ -558,6 +576,7 @@ def _view_digest():
     st.dataframe(_engine_q("SELECT title, source, last_checked, size_bytes "
                            "FROM documents ORDER BY last_checked DESC LIMIT 15"),
                  use_container_width=True, hide_index=True)
+    _prov("The Daily Ledger", families=["engine", "news"])
     for cand in ("public/digest.md", "public/digest.html"):
         fp = ROOT / cand
         if fp.exists():
@@ -585,6 +604,9 @@ def _view_battles():
     if outcomes:
         st.caption("Outcomes")
         st.bar_chart(outcomes)
+    _prov("Battle Records", families=["engine"])
+
+
 def _view_veracity():
     ver = _vault_ver()
     st.warning(VAULT_BANNER)
@@ -608,6 +630,9 @@ def _view_veracity():
                 st.caption(f"Seed significance: {r['significance']} · "
                            f"not yet matched in the transcript corpus — a lead, "
                            f"not a fact.")
+    _prov("The Lie Detector", families=["engine"])
+
+
 def _view_vouchers():
     ver = _vault_ver()
     st.warning(VAULT_BANNER)
@@ -630,6 +655,9 @@ def _view_vouchers():
     if by_dept:
         st.caption("Spend by department ($)")
         st.bar_chart(by_dept)
+    _prov("The Money Trail", families=["engine"])
+
+
 def _view_environment():
     ver = _vault_ver()
     st.warning(VAULT_BANNER)
@@ -639,8 +667,11 @@ def _view_environment():
         v = _verdict(ver, "environmental_zones", i)
         r["record_evidence"] = ("✅ " + v["hits"][0]["file"]) if v else "—"
     st.dataframe(rows, use_container_width=True, hide_index=True)
+    _prov("The Toxic Files", families=["engine"])
 
 # ---------- minutes archive -------------------------------------------
+
+
 def _view_minutes():
     st.subheader("📜 17 Years of Tapes — search the whole minutes archive")
     if not CORPUS_DIR.is_dir():
@@ -663,6 +694,7 @@ def _view_minutes():
             for h in hits:
                 with st.expander(f"{h['date'] or 'undated'} · {h['file']}"):
                     st.markdown(f"> …{h['snippet']}…")
+    _prov("Minutes & Tapes", families=["minutes_and_notes", "transcripts", "drive_corpus"])
 
 # ---------- tips ------------------------------------------------------
 def _view_tips():
@@ -711,11 +743,20 @@ def _view_canon():
                 st.markdown(d["body"][:15000])
             else:
                 st.markdown(d["body"])
+    _prov("The Longboxes", families=["minutes_and_notes", "transcripts"])
+
+
 def _view_video():
     st.subheader("🎬 Montage Theater — the record on tape")
     st.caption("Produced segments and evidence clips cut from the City of "
                "Cheyenne's official meeting video (public record), plus "
-               "every indexed city meeting on the city's YouTube channel.")
+               "every indexed city meeting on the city's YouTube channel. "
+               "Every cut traces back to a public tape — see Provenance below.")
+    if rwc_provenance is not None:
+        try:
+            rwc_provenance.film_block()
+        except Exception:
+            pass
     REN = ROOT / "pipeline" / "renders"
     VID = ROOT / "pipeline" / "videos"
     try:
@@ -1575,6 +1616,9 @@ def _vtt_cues(rel: str):
     return cues
 
 
+    _prov("Origin Tapes", families=["meeting_video", "transcripts"])
+
+
 def _view_media():
     st.subheader("📼 Every Tape, Every Line — recordings & captions for every indexed meeting")
     manifest = _media_manifest().get("meetings", {})
@@ -1621,6 +1665,9 @@ def _view_media():
                    "per meeting.")
 
 
+    _prov("Every Tape, Every Line", families=["meeting_video", "transcripts", "drive_corpus"])
+
+
 def _view_miller():
     if _render_miller_theater is None:
         st.info("The Miller Tapes aren't cued in this checkout yet — run "
@@ -1628,6 +1675,7 @@ def _view_miller():
                 "tracks; see its docstring).")
         return
     _render_miller_theater(embed=True)
+    _prov("The Miller Tapes", families=["transcripts", "meeting_video"])
 
 
 SECTIONS = {
@@ -1858,6 +1906,11 @@ def render_index():
 
 
 def footer():
+    if rwc_provenance is not None:
+        try:
+            rwc_provenance.film_block()
+        except Exception:
+            pass
     st.caption("Engine v0.1 + recovered vault (auto-verified against the transcript "
                "corpus every cycle) + entity index face · public documents only · "
                "robots.txt honored · no affiliation with any individual, candidate, "

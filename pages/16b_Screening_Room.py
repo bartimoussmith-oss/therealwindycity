@@ -177,3 +177,10 @@ with tabs[2]:
 st.caption("Every cut microphone is an exhibit. Every bypassed hand is an exhibit. "
            "· Rendered from public meeting video · no affiliation with any individual, "
            "candidate, or committee")
+
+# provenance: every number on this page carries an origin link and a film cue
+try:
+    from rwc_provenance import show as _prov_show
+    _prov_show('Screening Room', families=['meeting_video', 'transcripts'])
+except Exception:
+    pass

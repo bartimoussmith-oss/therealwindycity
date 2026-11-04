@@ -1,12 +1,12 @@
 {
- "generated_at": "2026-11-04T08:49:52Z",
+ "generated_at": "2026-11-04T14:01:01Z",
  "totals": {
   "years": [
    "2004",
    "2026"
   ],
-  "files": 7431,
-  "bytes": 1602359566,
+  "files": 7466,
+  "bytes": 1653332293,
   "scraped_files": 4636,
   "scraped_bytes": 877361736,
   "families": 24,
@@ -772,9 +772,9 @@
   {
    "key": "derived_analysis",
    "title": "Analysis & dossiers written from the record",
-   "units": 138,
+   "units": 139,
    "unit": "document",
-   "files": 138,
+   "files": 139,
    "size": "10.8 MB",
    "dest": "repo root",
    "class": "derived"
@@ -822,20 +822,20 @@
   {
    "key": "montage_reels",
    "title": "Edited reels cut from the tapes",
-   "units": 38,
+   "units": 51,
    "unit": "film cut",
-   "files": 38,
-   "size": "528.4 MB",
+   "files": 51,
+   "size": "574.2 MB",
    "dest": "video/ \u00b7 videos/",
    "class": "derived"
   },
   {
    "key": "provenance_film",
    "title": "Provenance report & this film",
-   "units": 10,
+   "units": 29,
    "unit": "artifact",
-   "files": 10,
-   "size": "153 KB",
+   "files": 29,
+   "size": "1.9 MB",
    "dest": "data/out/ \u00b7 video/",
    "class": "generated"
   },
@@ -845,7 +845,7 @@
    "units": 22,
    "unit": "page",
    "files": 22,
-   "size": "883 KB",
+   "size": "885 KB",
    "dest": "pages/ \u00b7 public/",
    "class": "generated"
   }
@@ -917,7 +917,7 @@
   ],
   [
    "derived_analysis",
-   "  138  files      138  documents     10.8 MB   repo root"
+   "  139  files      139  documents     10.8 MB   repo root"
   ],
   [
    "silent_edits",
@@ -941,23 +941,23 @@
   ],
   [
    "repo_meta",
-   "   23  files       23  files     28.0 MB   repo root"
+   "   24  files       24  files     29.1 MB   repo root"
   ],
   [
    "montage_reels",
-   "   38  files       38  film cuts    528.4 MB   video/ \u00b7 videos/"
+   "   51  files       51  film cuts    574.2 MB   video/ \u00b7 videos/"
   ],
   [
    "provenance_film",
-   "   10  files       10  artifacts      153 KB   data/out/ \u00b7 video/"
+   "   29  files       29  artifacts      1.9 MB   data/out/ \u00b7 video/"
   ],
   [
    "published_site",
-   "   22  files       22  pages      883 KB   pages/ \u00b7 public/"
+   "   22  files       22  pages      885 KB   pages/ \u00b7 public/"
   ],
   [
    "code",
-   "  137  files      137  source files      1.2 MB   engine/ \u00b7 tools/ \u00b7 scripts/"
+   "  138  files      138  source files      1.2 MB   engine/ \u00b7 tools/ \u00b7 scripts/"
   ]
  ],
  "source_hosts": [

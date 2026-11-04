@@ -63,3 +63,10 @@ with lens_tab:
     st.subheader('One video. Every visible seat.')
     st.write('Use the Lens option alongside existing video players, or open the universal workspace here. For YouTube and other embedded players, share the player’s tab/window with explicit browser permission.')
     render_lens_option('universal_page','Any meeting video')
+
+# provenance: every number on this page carries an origin link and a film cue
+try:
+    from rwc_provenance import show as _prov_show
+    _prov_show('Civic Atlas', families=['civic_atlas', 'meeting_calendar'])
+except Exception:
+    pass

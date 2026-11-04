@@ -1,11 +1,11 @@
 # Provenance inventory — what this archive consists of, and where it came from
 
-Generated **2026-11-04T08:19:54Z** by `python3 -m provenance detect` from `/home/user/therealwindycity`.
+Generated **2026-11-04T13:57:00Z** by `python3 -m provenance detect` from `/home/user/therealwindycity`.
 Read-only: the scanner walks the checkout once and writes only this file and its JSON twin.
 
 ## Totals
 
-- **7,430** files classified — **0** unaccounted for
+- **7,466** files classified — **0** unaccounted for
 - **1.5 GB** across the working tree
 - **836.7 MB** of that is scraped or captured data
 - **24** data families
@@ -34,16 +34,16 @@ Manual figures are estimates, not measurements: each family carries a stated `se
 | 14 | **OCR of scanned documents** | derived | 1,081 | 1,081 scanned documents | 14.3 MB | [Six sibling archive repos (scanned planning documents)](https://github.com/therealwindycity) | `ai-record-ocr/` | 3 days 18 h |
 | 15 | **Search / RAG index** | derived | 9 | 1,687 embedded chunks | 27.5 MB | — | `rag/` | — |
 | 16 | **Civicwatch mirror** | scraped | 1,581 | 1,581 civic records | 167.8 MB | [YouTube auto-captions (City of Cheyenne channel)](https://www.youtube.com/@CityofCheyenne) | `2026-09-14-council/civicwatch/` | 1 day 2 h |
-| 17 | **Analysis & dossiers written from the record** | derived | 138 | 138 documents | 10.8 MB | — | `repo root` | — |
+| 17 | **Analysis & dossiers written from the record** | derived | 139 | 139 documents | 10.8 MB | — | `repo root` | — |
 | 18 | **Silent-edit diffs** | derived | 1,217 | 1,217 version diffs | 78.0 MB | — | `data/out/` | — |
 | 19 | **Meeting structure & cut lists** | derived | 13 | 13 derived records | 1.8 MB | — | `pipeline/` | — |
 | 20 | **Entity database** | derived | 63 | 63 document profiles | 27 KB | — | `Entity_Database/` | — |
 | 21 | **Civic atlas (experimental site)** | generated | 24 | 24 page / assets | 117 KB | — | `civic_atlas/` | — |
 | 22 | **Field agent tooling** | code | 20 | 20 files | 241 KB | — | `agent/` | — |
-| 23 | **Repo metadata & local databases** | code | 23 | 23 files | 28.0 MB | — | `repo root` | — |
-| 24 | **Edited reels cut from the tapes** | derived | 37 | 37 film cuts | 528.2 MB | — | `video/ · videos/` | — |
-| 25 | **Provenance report & this film** | generated | 10 | 10 artifacts | 153 KB | — | `data/out/ · video/` | — |
-| 26 | **Published site & feeds** | generated | 22 | 22 pages | 883 KB | — | `pages/ · public/` | — |
+| 23 | **Repo metadata & local databases** | code | 25 | 25 files | 29.0 MB | — | `repo root` | — |
+| 24 | **Edited reels cut from the tapes** | derived | 51 | 51 film cuts | 574.0 MB | — | `video/ · videos/` | — |
+| 25 | **Provenance report & this film** | generated | 29 | 29 artifacts | 1.9 MB | — | `data/out/ · video/` | — |
+| 26 | **Published site & feeds** | generated | 22 | 22 pages | 885 KB | — | `pages/ · public/` | — |
 | 27 | **Pipelines, scrapers & console code** | code | 137 | 137 source files | 1.2 MB | — | `engine/ · tools/ · scripts/` | — |
 
 ## Where each family came from

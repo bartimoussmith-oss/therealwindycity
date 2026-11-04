@@ -4,6 +4,8 @@
     python3 -m provenance plan       # write the storyboard JSON
     python3 -m provenance video      # render the film
     python3 -m provenance all        # all three
+    python3 -m provenance timelapse  # every file, at speed
+    python3 -m provenance ledger     # one row per datum: origin link + film cue
 
 Nothing here touches the network: the film is derived from files already in the
 checkout.
@@ -19,6 +21,7 @@ import sys
 from pathlib import Path
 
 from . import inventory as inventory_mod
+from . import ledger as ledger_mod
 from . import story as story_mod
 from .util import human_bytes, human_duration, human_int
 from .video import encode_frames
@@ -230,6 +233,51 @@ def render_video(story, out_path: Path, fps: int = 30, scale: float = 1.0, prese
     return encode_frames(gen(), out_path, 1920, 1080, fps, total, scale=scale, crf=crf, preset=preset)
 
 
+def write_timelapse_frames(root: Path, inv, out_dir: Path) -> Path:
+    """The file-by-file manifest the time-lapse is drawn from."""
+    from .timelapse import snapshot
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+    path = out_dir / "provenance-timelapse-frames.json"
+    rows = snapshot(root, inv)
+    path.write_text(
+        json.dumps(
+            {
+                "generated_at": _now(),
+                "files": len(rows),
+                "note": "one row per file, in walk order; the time-lapse draws these in capture order",
+                "order": "merged by family progress, see provenance/timelapse.py",
+                "entries": rows,
+            },
+            indent=0,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    return path
+
+
+def render_timelapse(root: Path, out_path: Path, fps: int = 30, scale: float = 1.0,
+                     preset: str = "medium", crf: int = 20, generated_at: str | None = None) -> Path:
+    from .timelapse import Timelapse, collect
+
+    inv = inventory_mod.scan(root, generated_at=generated_at)
+    entries = collect(root, inv)
+    film = Timelapse(inv, entries)
+    total = int(round(film.total * fps))
+    print(
+        f"  time-lapse: {film.total:.1f}s · {total:,} frames · {len(entries):,} files at "
+        f"{film.rate:,.0f}/s",
+        file=sys.stderr,
+    )
+
+    def gen():
+        for i in range(total):
+            yield film.frame(i / fps)
+
+    return encode_frames(gen(), out_path, 1920, 1080, fps, total, scale=scale, crf=crf, preset=preset)
+
+
 def preview(story, times: list[float], out_dir: Path) -> list[Path]:
     from .scenes import Film
 
@@ -269,6 +317,22 @@ def main(argv: list[str] | None = None) -> int:
     v.add_argument("--preview", default="", help="comma-separated timestamps: write PNGs instead of video")
     v.add_argument("--preview-dir", default="data/out/preview")
 
+    tl = sub.add_parser("timelapse", help="render the every-file time-lapse")
+    tl.add_argument("--out", default="video/provenance-timelapse.mp4")
+    tl.add_argument("--fps", type=int, default=30)
+    tl.add_argument("--scale", type=float, default=1.0)
+    tl.add_argument("--preset", default="medium")
+    tl.add_argument("--crf", type=int, default=20)
+    tl.add_argument("--preview", default="", help="comma-separated timestamps: write PNGs instead of video")
+    tl.add_argument("--preview-dir", default="data/out/preview")
+
+    lg = sub.add_parser("ledger", help="write the per-datum ledger and cut the film cues")
+    lg.add_argument("--out", default="data/out")
+    lg.add_argument("--clips", action="store_true", help="cut each chapter out of the master film")
+    lg.add_argument("--showcase", action="store_true",
+                    help="build video/provenance-showcase.mp4 (time-lapse, then every chapter)")
+    lg.add_argument("--force", action="store_true", help="re-cut clips that already exist")
+
     a = sub.add_parser("all", help="detect + plan + video")
     a.add_argument("--fps", type=int, default=30)
     a.add_argument("--scale", type=float, default=1.0)
@@ -294,12 +358,58 @@ def main(argv: list[str] | None = None) -> int:
         if args.cmd == "detect":
             return 0
 
+    if args.cmd == "timelapse":
+        out = root / args.out
+        frames = write_timelapse_frames(root, inventory_mod.scan(root, generated_at=stamp),
+                                        root / "data" / "out")
+        print(f"  wrote {frames.relative_to(root)} · {frames.stat().st_size / 1e6:.1f} MB", file=sys.stderr)
+        if args.preview:
+            from .timelapse import Timelapse, collect
+
+            inv = inventory_mod.scan(root, generated_at=stamp)
+            film = Timelapse(inv, collect(root, inv))
+            pdir = root / args.preview_dir
+            pdir.mkdir(parents=True, exist_ok=True)
+            for t in [float(x) for x in args.preview.split(",") if x.strip()]:
+                p = pdir / f"timelapse-{t:07.2f}.png"
+                film.frame(t).save(p)
+                print(f"  {p.relative_to(root)}", file=sys.stderr)
+            return 0
+        print(f"rendering → {out.relative_to(root)}", file=sys.stderr)
+        render_timelapse(root, out, fps=args.fps, scale=args.scale, preset=args.preset, crf=args.crf,
+                         generated_at=stamp)
+        print(f"  done: {out.relative_to(root)} · {human_bytes(out.stat().st_size)}", file=sys.stderr)
+        return 0
+
     print("building storyboard …", file=sys.stderr)
     story = story_mod.build(root, generated_at=stamp)
     plan_path = write_plan(story, root / "data" / "out")
     print(f"  wrote {plan_path.relative_to(root)}", file=sys.stderr)
 
     if args.cmd == "plan":
+        return 0
+
+    if args.cmd == "ledger":
+        inv = inventory_mod.scan(root, generated_at=stamp)
+        data = ledger_mod.build(root, inv=inv, story=story, generated_at=stamp)
+        js, md = ledger_mod.write(root, data)
+        print(
+            f"  {data['totals']['data']:,} datums · {data['totals']['with_link']:,} with a public link · "
+            f"{data['totals']['with_cue']:,} with a film cue",
+            file=sys.stderr,
+        )
+        print(f"  wrote {js.relative_to(root)}", file=sys.stderr)
+        print(f"  wrote {md.relative_to(root)}", file=sys.stderr)
+        if args.clips:
+            made = ledger_mod.cut_clips(root, data, force=args.force)
+            for m in made:
+                if not m.get("skipped"):
+                    print(f"  cut {m['clip']} · {human_bytes(m['bytes'])}", file=sys.stderr)
+            print(f"  chapter cues written under {ledger_mod.CLIP_DIR}", file=sys.stderr)
+        if args.showcase:
+            out = ledger_mod.build_showcase(root, data, force=args.force)
+            print(f"  showcase → {out.relative_to(root)} · {human_bytes(out.stat().st_size)}",
+                  file=sys.stderr)
         return 0
 
     if args.cmd == "video" and args.preview:
