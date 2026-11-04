@@ -81,8 +81,11 @@ def audio_url(row: dict) -> str:
     """The portal's MP3 for this clip. The catalog's stream_url is an HLS playlist, not the file."""
     if row.get("mp3_url"):
         return row["mp3_url"]
-    mp4 = row.get("mp4_url") or ""
-    return mp4[:-4] + ".mp3" if mp4.lower().endswith(".mp4") else ""
+    for key in ("mp4_url", "stream_url"):
+        url = row.get(key) or ""
+        if url.lower().endswith(".mp4"):
+            return url[:-4] + ".mp3"
+    return ""
 
 
 def download_source(row: dict, dest: Path) -> tuple[Path, str]:
@@ -204,7 +207,14 @@ _MONTHS = {m: i for i, m in enumerate(
 
 
 def _cell_text(cell: str) -> str:
-    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", cell)).strip()
+    import html as _h
+
+    text = _h.unescape(re.sub(r"<[^>]+>", " ", cell))
+    return re.sub(r"\s+", " ", text.replace("\xa0", " ")).strip()
+
+
+SCHEMA = ("clip_id", "name", "date_display", "date_iso", "timestamp", "duration",
+          "mp4_url", "stream_url", "mp3_url", "player_url", "agenda_url", "minutes_url")
 
 
 def parse_view(html: str) -> list[dict]:
@@ -243,7 +253,7 @@ def parse_view(html: str) -> list[dict]:
             "agenda_url": f"https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id={clip.group(1)}",
             "minutes_url": "",
         })
-    return out
+    return [{k: row.get(k, "") for k in SCHEMA} for row in out]
 
 
 def refresh_catalog(a) -> int:
@@ -268,8 +278,7 @@ def refresh_catalog(a) -> int:
             print(f"    unreachable: {type(exc).__name__}: {exc}", file=sys.stderr)
             continue
         for row in parse_view(html):
-            row["mp3_url"] = row.get("mp3_url") or (row["mp4_url"][:-4] + ".mp3"
-                                                    if row["mp4_url"] else "")
+            row["mp3_url"] = row.get("mp3_url") or audio_url(row)
             fresh[row["clip_id"]] = {**fresh.get(row["clip_id"], {}),
                                      **{k: v for k, v in row.items() if v}}
     added = [r for cid, r in fresh.items() if cid not in known]

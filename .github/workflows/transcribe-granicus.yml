@@ -108,6 +108,7 @@ jobs:
 
       # `--max-minutes` is a wall-clock guard as much as a size guard: small.en on four
       # vCPUs runs around 6-10x realtime, so 300 minutes of audio is ~30-50 minutes of CPU.
+      # Push runs (i.e. changes to this file) do one short clip end to end as a smoke test.
       - name: Reachability — can this runner see the portal's audio?
         continue-on-error: true
         run: |
@@ -125,11 +126,11 @@ jobs:
         env:
           WHISPER_MODEL: ${{ inputs.model || 'small.en' }}
           WHISPER_COMPUTE: int8
-          IN_LIMIT: ${{ inputs.limit || '6' }}
-          IN_MAX: ${{ inputs.max_minutes || '300' }}
+          IN_LIMIT: ${{ inputs.limit || (github.event_name == 'push' && '1' || '6') }}
+          IN_MAX: ${{ inputs.max_minutes || (github.event_name == 'push' && '12' || '300') }}
           IN_YEAR: ${{ inputs.year }}
           IN_CLIP: ${{ inputs.clip_id }}
-          IN_DRY: ${{ github.event_name == 'push' && 'true' || inputs.dry_run }}
+          IN_DRY: ${{ inputs.dry_run }}
         run: |
           # --md-only: 792 hours of transcripts at ~1 KB/minute is tens of MB of markdown;
           # per-clip .json would triple that with no information the table does not carry.
