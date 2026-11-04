@@ -1,0 +1,129 @@
+name: Transcribe the portal's meeting audio
+
+# Whisper over the City of Cheyenne's own MP3s, one clip at a time, committed as text.
+#
+# The audio is 792.5 hours across 474 clips, so this is a queue that drains across many
+# runs, not a single job: each run takes the oldest un-transcribed clips that fit inside
+# the job's time budget, writes them, and commits. Re-run it (or let the schedule run it)
+# and it picks up exactly where the last one stopped.
+#
+# Schedule is off by default. Turn it on by uncommenting the `schedule:` block, or just
+# hit "Run workflow" with `limit` set to however many clips you want this run.
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "How many clips this run (0 = fill the time budget)"
+        default: "6"
+        required: false
+      max_minutes:
+        description: "Stop before this much stated meeting time (default 300)"
+        default: "300"
+        required: false
+      year:
+        description: "Only clips from this year, e.g. 2026 (blank = any)"
+        default: ""
+        required: false
+      clip_id:
+        description: "One clip by id (overrides year/limit)"
+        default: ""
+        required: false
+      model:
+        description: "faster-whisper model (tiny.en / base.en / small.en / medium.en)"
+        default: "small.en"
+        required: false
+      dry_run:
+        description: "List what would be transcribed; fetch nothing"
+        type: boolean
+        default: false
+  # schedule:
+  #   - cron: "17 */6 * * *"      # every 6 hours, one budget's worth of clips
+
+permissions:
+  contents: write
+
+concurrency:
+  group: transcribe-granicus
+  cancel-in-progress: false
+
+jobs:
+  transcribe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install faster-whisper
+        run: python -m pip install --upgrade pip 'faster-whisper==1.2.1' 'av==18.1.0'
+
+      - name: Cache the model weights
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: whisper-${{ inputs.model || 'small.en' }}-v1
+
+      - name: Check the parser before spending an hour of CPU
+        run: python3 tools/transcribe_granicus.py --self-test
+
+      - name: What is left
+        run: python3 tools/transcribe_granicus.py --status
+
+      - name: Pick up clips posted since the last crawl
+        env:
+          IN_DRY: ${{ inputs.dry_run }}
+        run: |
+          if [ "$IN_DRY" = "true" ]; then
+            python3 tools/transcribe_granicus.py --refresh-catalog --dry-run
+          else
+            python3 tools/transcribe_granicus.py --refresh-catalog
+          fi
+
+      # `--max-minutes` is a wall-clock guard as much as a size guard: small.en on four
+      # vCPUs runs around 6-10x realtime, so 300 minutes of audio is ~30-50 minutes of CPU.
+      - name: Transcribe
+        env:
+          WHISPER_MODEL: ${{ inputs.model || 'small.en' }}
+          WHISPER_COMPUTE: int8
+          IN_LIMIT: ${{ inputs.limit || '6' }}
+          IN_MAX: ${{ inputs.max_minutes || '300' }}
+          IN_YEAR: ${{ inputs.year }}
+          IN_CLIP: ${{ inputs.clip_id }}
+          IN_DRY: ${{ inputs.dry_run }}
+        run: |
+          # --md-only: 792 hours of transcripts at ~1 KB/minute is tens of MB of markdown;
+          # per-clip .json would triple that with no information the table does not carry.
+          args=(--limit "$IN_LIMIT" --max-minutes "$IN_MAX" --also-txt --md-only)
+          [ -n "$IN_YEAR" ] && args+=(--year "$IN_YEAR")
+          [ -n "$IN_CLIP" ] && args+=(--clip-id "$IN_CLIP")
+          [ "$IN_DRY" = "true" ] && args+=(--dry-run)
+          python3 tools/transcribe_granicus.py "${args[@]}"
+
+      - name: Commit whatever was finished
+        if: ${{ inputs.dry_run != true }}
+        run: |
+          git config user.name  "windycity-transcriber"
+          git config user.email "transcriber@users.noreply.github.com"
+          git add transcripts/granicus youtube-archive/catalog_granicus.json
+          if git diff --cached --quiet; then
+            echo "nothing new to commit"
+            exit 0
+          fi
+          COUNT=$(git diff --cached --name-only | grep -c 'transcripts/granicus/.*\.md$' || true)
+          git commit -m "transcripts: ${COUNT} more of the portal's meetings, via faster-whisper"
+          git push
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### Transcription run"
+            echo
+            python3 tools/transcribe_granicus.py --status 2>&1
+          } >> "$GITHUB_STEP_SUMMARY"
