@@ -124,6 +124,31 @@ engine/
 dashboard/app.py     Module 5 — Streamlit dashboard (optional)
 ```
 
+## Provenance: what was collected, and what it took
+
+`provenance/` answers two questions about this repo: **what data does it actually
+hold**, and **where did each piece come from in the public record** — because none of
+it arrived by itself.
+
+```bash
+python3 -m provenance detect     # walk the checkout, classify every file, find its origin site
+python3 -m provenance plan       # write the storyboard the film is rendered from
+python3 -m provenance video      # render video/provenance-manual-run.mp4 (~3.7 min, silent)
+python3 scripts/make_provenance_video.py          # all three, with --preview / --fps / --scale
+```
+
+`detect` writes [`data/out/PROVENANCE-INVENTORY.md`](data/out/PROVENANCE-INVENTORY.md)
+(human-readable) and `data/out/provenance-inventory.json` (machine-readable): every
+file assigned to a data family, the origin host it was scraped from, unit counts, and a
+conservative manual-effort estimate for doing the same work by hand.
+
+The film is 11 chapters, one per data type — meeting calendar, agenda packets,
+supporting documents, minutes, transcripts, the tape, the joined database, news,
+arrest reports, scanner audio, open-data probes. Each chapter shows the real origin
+URL, real filenames or rows pulled from this repo, the folder the data now lives in,
+and the screen a person would actually be looking at. Captions only, no narration.
+Storyboard: `data/out/provenance-storyboard.json`.
+
 ## AI-readable record (for ChatGPT, Perplexity, Google AI Mode, Claude, etc.)
 
 The whole archive — **1,000+ Cheyenne meetings, 2008–2026: every agenda, packet, supporting
@@ -135,3 +160,9 @@ plain-HTML/Markdown site that AI assistants and search engines can read directly
 
 Rebuilt automatically by `.github/workflows/ai-record-pages.yml`; how it works:
 [`tools/README-ai-record.md`](tools/README-ai-record.md).
+
+> **Rebuild the provenance film:** `python3 scripts/make_provenance_video.py`
+> writes `video/provenance-manual-run.mp4` (1920×1080, 30 fps, 3 m 41 s, silent)
+> plus `data/out/PROVENANCE-INVENTORY.md`, its JSON twin, and
+> `data/out/provenance-storyboard.json`. Every number and filename in the film is
+> read out of this checkout at render time.
