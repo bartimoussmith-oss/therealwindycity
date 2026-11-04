@@ -1,0 +1,96 @@
+name: notebooklm-controller
+
+# Run the Cheyenne meeting-archive NotebookLM controller on a schedule and on
+# demand. Processes the meeting queue oldest -> newest, one notebook per
+# meeting, with supporting-document harvest, historical-context chaining, and
+# watermark scrubbing. Generated artifacts + notebook specs are committed back
+# to this branch.
+
+on:
+  schedule:
+    - cron: "0 4 * * *"   # daily, 04:00 UTC
+  workflow_dispatch:      # manual run from the Actions tab
+  push:
+    branches: [arena/015895c5-therealwindycity]
+    paths:
+      - "notebooklm_controller/**"
+      - "pipeline/meetings.json"
+      - "pipeline/corpus_yt/**"
+      - "pipeline/notebooklm/**"
+      - "youtube-archive/catalog_granicus.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: notebooklm-controller
+  cancel-in-progress: false
+
+jobs:
+  controller:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          # notebooklm-py[browser] is only required for live NotebookLM drive
+          # (NOTEBOOKLM_LIVE=1). Simulation mode needs nothing extra.
+          python -m pip install "notebooklm-py[browser]" || true
+
+      - name: Refresh manifest from public sources (current to today)
+        run: |
+          python3 -u notebooklm_controller/controller.py refresh
+        env:
+          # GitHub Actions runners have outbound internet, so refresh can reach
+          # github.com and cheyenne.granicus.com. Set NOTEBOOKLM_LIVE=1 only if
+          # you have also configured NOTEBOOKLM credentials (see README).
+          NOTEBOOKLM_LIVE: "0"
+
+      - name: Run the controller (oldest -> newest, resume-safe)
+        run: |
+          python3 -u notebooklm_controller/controller.py run
+        env:
+          NOTEBOOKLM_LIVE: "0"
+
+      - name: Commit generated artifacts and state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add notebooklm_controller/artifacts notebooklm_controller/state \
+                    notebooklm_controller/runs notebooklm_controller/logs
+          if git diff --staged --quiet; then
+            echo "No generated changes."
+          else
+            git commit -m "chore(notebooklm): automated controller run $(date -u +%Y-%m-%dT%H:%MZ) [skip ci]"
+            git pull --rebase origin "${{ github.ref_name }}"
+            git push origin HEAD:"${{ github.ref_name }}"
+            echo "CONTROLLER_COMMITTED=true" >> "$GITHUB_ENV"
+          fi
+
+      - name: Optional phone notification
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${CONTROLLER_COMMITTED:-false}" = true ] && [ -n "${NTFY_TOPIC:-}" ]; then
+            REPORT=$(python3 -c "import json; r=json.load(open('notebooklm_controller/state/last_report.json')); print(r['processed'], 'meetings,', r['failures'], 'failures')") || true
+            curl -fsS -H "Title: Windy City notebooklm controller" \
+              -d "committed — ${REPORT:-unknown}" \
+              "https://ntfy.sh/${NTFY_TOPIC}" || true
+          fi
