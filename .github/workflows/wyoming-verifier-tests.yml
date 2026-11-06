@@ -1,17 +1,15 @@
 name: Wyoming verifier safety tests
 on:
   push:
-    paths:
+    paths: &paths
       - 'tools/wyoming_verify.py'
       - 'tools/wyoming_instantiate.py'
       - 'tools/test_wyoming_verify.py'
+      - 'tools/test_wyoming_runner.py'
+      - 'wyoming/run-instance.sh'
       - '.github/workflows/wyoming-verifier-tests.yml'
   pull_request:
-    paths:
-      - 'tools/wyoming_verify.py'
-      - 'tools/wyoming_instantiate.py'
-      - 'tools/test_wyoming_verify.py'
-      - '.github/workflows/wyoming-verifier-tests.yml'
+    paths: *paths
 permissions:
   contents: read
 jobs:
@@ -24,3 +22,5 @@ jobs:
         with:
           python-version: '3.11'
       - run: python3 tools/test_wyoming_verify.py
+      - run: bash -n wyoming/run-instance.sh
+      - run: python3 tools/test_wyoming_runner.py
