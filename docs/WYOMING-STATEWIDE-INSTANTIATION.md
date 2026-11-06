@@ -160,3 +160,47 @@ LEGAL.md applies to every instance: public documents only; robots.txt honored; �
 The verifier is one polite fetch per candidate plus agenda-path probes on a host that
 already answered — never a crawl. Wyo. Stat. §§ 16-4-201 to 16-4-205 (Wyoming Public Records
 Act) is the correct citation statewide; FOIA is federal and the root build says so, in writing.
+
+## Operating the sweep — dispatch, permissions, and the 403 case
+
+The workflow is `wyoming-verify` (`.github/workflows/wyoming-verify.yml`). It runs
+automatically **every Monday 11:23 UTC** on the default branch — no button required.
+It only ever runs from the default branch (schedule never fires on PRs/feature branches).
+
+Manual triggers:
+
+```bash
+# one jurisdiction first (recommended)
+gh workflow run wyoming-verify.yml -f slug=casper -f apply=true
+
+# full sweep
+gh workflow run wyoming-verify.yml -f apply=true
+
+# report-only, enables nothing
+gh workflow run wyoming-verify.yml -f apply=false
+
+# watch it
+gh run list --workflow wyoming-verify.yml --limit 3
+gh run watch <run-id>
+```
+
+**Known failure: `Resource not accessible by integration` (HTTP 403).** If your
+automation token (CI/agent) cannot call the dispatches endpoint, the token lacks Actions
+write access. This is a permissions problem, not a workflow problem: the workflow is
+registered and `active`. Workarounds, in order of preference:
+
+1. Run it from the **Actions tab** in a browser: `Actions → wyoming-verify → Run workflow`.
+2. Run it from a machine with your own credentials: `gh workflow run wyoming-verify.yml -f slug=casper -f apply=true`.
+3. Grant the automation token the `actions: write` permission on this repository.
+4. Do nothing — the weekly schedule runs it for you.
+
+A 200 with agenda/minutes keywords enables a source; anything else stays disabled.
+Read a jurisdiction's result with:
+
+```bash
+git pull
+cat wyoming/instances/<slug>/verification.json
+```
+
+Note: the sweep's auto-commit excludes `env.sh` by design (custodian placeholders are
+always human-confirmed), and commits carry `[skip ci]`.
