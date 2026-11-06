@@ -163,6 +163,17 @@ Act) is the correct citation statewide; FOIA is federal and the root build says 
 
 ## Operating the sweep — dispatch, permissions, and the 403 case
 
+> **Repair gate in flight (2026-11-06):** PR #28 (`repair/statewide-activation-safety-2026-11-06`,
+> author: repo owner) hardens the sweep — offline integrity tests required before live sweeps,
+> reports-only dispatches never commit, only `verification.json` + `config/sources.json` are
+> staged, applies push only from `main` and reject on concurrent-update conflicts rather than
+> auto-rebasing, and the synthetic arrest literals in `pages/21_Arrest_Records.py` are labeled
+> as fictional demos. **Merge PR #28 before your first manual dispatch.** Its own known-gaps
+> list (verifier official-site authentication, robots.txt failure behavior, durable per-instance
+> overrides, contact placeholders, custodians, local facts) remains open — nothing about
+> statewide operation is verified live until the first sweep completes.
+
+
 The workflow is `wyoming-verify` (`.github/workflows/wyoming-verify.yml`). It runs
 automatically **every Monday 11:23 UTC** on the default branch — no button required.
 It only ever runs from the default branch (schedule never fires on PRs/feature branches).
