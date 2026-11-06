@@ -1,48 +1,33 @@
-# Statewide Wyoming instantiation: offline integrity tests on every relevant
-# change, and a weekly live verification sweep that probes every jurisdiction's
-# candidate official URLs (robots.txt honored, identifying UA, per-host delay),
-# commits what it verified, and never enables anything that did not answer.
-#
-# Nothing here is on the critical path of the Cheyenne build. Scheduled runs
-# only execute on the default branch.
 name: wyoming-verify
 
 on:
   push:
-    paths:
-      - "wyoming/**"
-      - "tools/wyoming_*.py"
-      - "tools/test_wyoming_instantiate.py"
-      - "engine/db.py"
-      - "engine/publish.py"
-      - "engine/records.py"
-      - ".github/workflows/wyoming-verify.yml"
+    paths: &paths
+      - 'wyoming/**'
+      - 'tools/wyoming_*.py'
+      - 'tools/test_wyoming_instantiate.py'
+      - 'engine/db.py'
+      - 'engine/publish.py'
+      - 'engine/records.py'
+      - '.github/workflows/wyoming-verify.yml'
   pull_request:
-    paths:
-      - "wyoming/**"
-      - "tools/wyoming_*.py"
-      - "tools/test_wyoming_instantiate.py"
-      - "engine/db.py"
-      - "engine/publish.py"
-      - "engine/records.py"
-      - ".github/workflows/wyoming-verify.yml"
+    paths: *paths
   schedule:
-    # Mondays 11:23 UTC — off the hour on purpose; one polite sweep per week.
-    - cron: "23 11 * * 1"
+    - cron: '23 11 * * 1'
   workflow_dispatch:
     inputs:
       slug:
-        description: "Verify only this instance slug (blank = all)"
+        description: 'One jurisdiction slug; blank means all'
         required: false
-        default: ""
+        default: ''
       apply:
-        description: "Enable sources that live-verified (writes verification.json + re-renders sources.json)"
+        description: 'Apply and commit verification results on main'
         required: false
         type: boolean
         default: true
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: wyoming-verify
@@ -53,69 +38,76 @@ jobs:
     name: Offline integrity tests
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    permissions:
-      contents: read
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-      - name: Registry + generator integrity (no network)
+          python-version: '3.11'
+      - name: Registry and generator integrity
         run: python3 tools/test_wyoming_instantiate.py
-      - name: Engine selftest (offline fixtures)
+      - name: Engine selftest with isolated data
+        env:
+          ENGINE_DATA_DIR: ${{ runner.temp }}/wyoming-selftest
         run: python3 run.py selftest
-      - name: Instances match generator output
+      - name: Check generated instances
         run: python3 tools/wyoming_instantiate.py --check
 
   verify:
     name: Live verification sweep
+    needs: test
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     timeout-minutes: 240
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-      - name: Probe jurisdictions (robots.txt honored, 3s per host)
-        id: probe
+          python-version: '3.11'
+      - name: Probe jurisdictions
         shell: bash
+        env:
+          SLUG_INPUT: ${{ inputs.slug }}
+          APPLY_INPUT: ${{ inputs.apply }}
+          EVENT_NAME: ${{ github.event_name }}
         run: |
           set -euo pipefail
-          # Scheduled runs sweep everything and apply; manual runs honor the inputs.
-          SLUG_INPUT="${{ github.event.inputs.slug }}"
-          APPLY_INPUT="${{ github.event.inputs.apply }}"
-          if [ "${{ github.event_name }}" = "schedule" ]; then SLUG_INPUT=""; APPLY_INPUT="true"; fi
+          if [ "$EVENT_NAME" = schedule ]; then SLUG_INPUT=''; APPLY_INPUT=true; fi
           ARGS=(--json)
-          if [ -n "$SLUG_INPUT" ]; then ARGS+=(--slug "$SLUG_INPUT"); else ARGS+=(--all); fi
-          if [ "$APPLY_INPUT" = "true" ]; then ARGS+=(--apply); fi
-          python3 tools/wyoming_verify.py "${ARGS[@]}" | tee /tmp/verify-summary.json
+          if [ -n "$SLUG_INPUT" ]; then
+            [[ "$SLUG_INPUT" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ ]] || { echo 'Invalid slug'; exit 1; }
+            test -f "wyoming/instances/$SLUG_INPUT/ecosystem.json" || { echo 'Unknown jurisdiction'; exit 1; }
+            ARGS+=(--slug "$SLUG_INPUT")
+          else
+            ARGS+=(--all)
+          fi
+          if [ "$APPLY_INPUT" = true ]; then ARGS+=(--apply); fi
+          python3 tools/wyoming_verify.py "${ARGS[@]}" | tee "$RUNNER_TEMP/verify-summary.json"
           {
-            echo "### Wyoming statewide verification sweep"
-            echo ""
+            echo '### Wyoming verification sweep'
             echo '```json'
-            cat /tmp/verify-summary.json
+            cat "$RUNNER_TEMP/verify-summary.json"
             echo '```'
-            echo ""
-            echo "Unverified jurisdictions are NOT a failure of government web presence — the probe may be blocked, rate-limited, or sandboxed. Open the candidates in a browser before enabling by hand."
+            echo 'HTTP reachability is not official-site confirmation. Unreachable does not mean nonexistent.'
           } >> "$GITHUB_STEP_SUMMARY"
-      - name: Commit verification results
+          python3 -c 'import json,os; s=json.load(open(os.environ["RUNNER_TEMP"]+"/verify-summary.json")); assert s["total"] > 0 and s["errors"] == 0, s'
+      - name: Validate generated output before committing
+        if: github.event_name == 'schedule' || inputs.apply == true
+        run: |
+          python3 tools/test_wyoming_instantiate.py
+          python3 tools/wyoming_instantiate.py --check
+      - name: Commit applied results on main only
+        if: github.ref == 'refs/heads/main' && (github.event_name == 'schedule' || inputs.apply == true)
         shell: bash
         run: |
           set -euo pipefail
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -- wyoming/instances ':(exclude)wyoming/instances/*/env.sh'
-          if git diff --staged --quiet; then
-            echo "No verification changes."
-          else
-            git commit -m "chore(wyoming): weekly statewide verification sweep [skip ci]"
-            if [ "${{ github.ref }}" = "refs/heads/main" ]; then
-              git pull --rebase origin main
-              git push origin HEAD:main
-            else
-              echo "Not on main; leaving commit on ${{ github.ref }} for review."
-            fi
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -- ':(glob)wyoming/instances/*/verification.json' ':(glob)wyoming/instances/*/config/sources.json'
+          if ! git diff --staged --quiet; then
+            git commit -m 'chore(wyoming): applied verification sweep [skip ci]'
+            git push origin HEAD:main
           fi
