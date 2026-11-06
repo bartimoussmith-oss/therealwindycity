@@ -1,0 +1,30 @@
+{
+  "slug": "moorcroft",
+  "name": "Moorcroft",
+  "type": "town",
+  "county": "Crook",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 946,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.moorcroftwy.gov",
+    "https://moorcroftwy.gov",
+    "https://www.moorcroft.gov",
+    "https://www.cityofmoorcroft.gov",
+    "https://www.cityofmoorcroft.org",
+    "https://www.cityofmoorcroft.com",
+    "https://www.townofmoorcroft.gov",
+    "https://www.townofmoorcroft.org",
+    "https://www.townofmoorcroft.com",
+    "https://www.ci.moorcroft.wy.us",
+    "https://www.moorcroftwy.org",
+    "https://moorcroftwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

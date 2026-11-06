@@ -1,0 +1,27 @@
+{
+  "slug": "sweetwater-county",
+  "name": "Sweetwater County",
+  "type": "county",
+  "county": "Sweetwater",
+  "county_seat": true,
+  "county_seat_name": "Green River",
+  "state_capital": false,
+  "population_2020": null,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.sweetwatercountywy.gov",
+    "https://sweetwatercountywy.gov",
+    "https://www.sweetwatercountywy.com",
+    "https://www.sweetwatercounty.net",
+    "https://www.sweetwatercountywy.us",
+    "https://www.sweetwatercounty.com",
+    "https://sweetwatercounty.net"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "Board of County Commissioners; seat: Green River."
+  ]
+}

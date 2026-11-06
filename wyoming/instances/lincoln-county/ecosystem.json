@@ -1,0 +1,27 @@
+{
+  "slug": "lincoln-county",
+  "name": "Lincoln County",
+  "type": "county",
+  "county": "Lincoln",
+  "county_seat": true,
+  "county_seat_name": "Kemmerer",
+  "state_capital": false,
+  "population_2020": null,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.lincolncountywy.gov",
+    "https://lincolncountywy.gov",
+    "https://www.lincolncountywy.com",
+    "https://www.lincolncounty.net",
+    "https://www.lincolncountywy.us",
+    "https://www.lincolncounty.com",
+    "https://lincolncounty.net"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "Board of County Commissioners; seat: Kemmerer."
+  ]
+}

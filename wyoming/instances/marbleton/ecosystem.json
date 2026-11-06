@@ -1,0 +1,30 @@
+{
+  "slug": "marbleton",
+  "name": "Marbleton",
+  "type": "town",
+  "county": "Sublette",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 861,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.marbletonwy.gov",
+    "https://marbletonwy.gov",
+    "https://www.marbleton.gov",
+    "https://www.cityofmarbleton.gov",
+    "https://www.cityofmarbleton.org",
+    "https://www.cityofmarbleton.com",
+    "https://www.townofmarbleton.gov",
+    "https://www.townofmarbleton.org",
+    "https://www.townofmarbleton.com",
+    "https://www.ci.marbleton.wy.us",
+    "https://www.marbletonwy.org",
+    "https://marbletonwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

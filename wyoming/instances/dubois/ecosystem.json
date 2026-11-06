@@ -1,0 +1,30 @@
+{
+  "slug": "dubois",
+  "name": "Dubois",
+  "type": "town",
+  "county": "Fremont",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 911,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.duboiswy.gov",
+    "https://duboiswy.gov",
+    "https://www.dubois.gov",
+    "https://www.cityofdubois.gov",
+    "https://www.cityofdubois.org",
+    "https://www.cityofdubois.com",
+    "https://www.townofdubois.gov",
+    "https://www.townofdubois.org",
+    "https://www.townofdubois.com",
+    "https://www.ci.dubois.wy.us",
+    "https://www.duboiswy.org",
+    "https://duboiswy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

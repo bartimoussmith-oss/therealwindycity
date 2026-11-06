@@ -1,0 +1,30 @@
+{
+  "slug": "bar-nunn",
+  "name": "Bar Nunn",
+  "type": "town",
+  "county": "Natrona",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 2981,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.barnunnwy.gov",
+    "https://barnunnwy.gov",
+    "https://www.barnunn.gov",
+    "https://www.cityofbarnunn.gov",
+    "https://www.cityofbarnunn.org",
+    "https://www.cityofbarnunn.com",
+    "https://www.townofbarnunn.gov",
+    "https://www.townofbarnunn.org",
+    "https://www.townofbarnunn.com",
+    "https://www.ci.barnunn.wy.us",
+    "https://www.barnunnwy.org",
+    "https://barnunnwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

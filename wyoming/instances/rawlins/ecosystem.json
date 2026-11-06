@@ -1,0 +1,32 @@
+{
+  "slug": "rawlins",
+  "name": "Rawlins",
+  "type": "city",
+  "county": "Carbon",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 8221,
+  "known_url": "https://www.rawlinswy.gov",
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.rawlinswy.gov",
+    "https://rawlinswy.gov",
+    "https://www.rawlins.gov",
+    "https://www.cityofrawlins.gov",
+    "https://www.cityofrawlins.org",
+    "https://www.cityofrawlins.com",
+    "https://www.townofrawlins.gov",
+    "https://www.townofrawlins.org",
+    "https://www.townofrawlins.com",
+    "https://www.ci.rawlins.wy.us",
+    "https://www.rawlinswy.org",
+    "https://rawlinswy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Carbon County."
+  ]
+}

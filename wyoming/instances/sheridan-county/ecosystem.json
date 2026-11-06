@@ -1,0 +1,27 @@
+{
+  "slug": "sheridan-county",
+  "name": "Sheridan County",
+  "type": "county",
+  "county": "Sheridan",
+  "county_seat": true,
+  "county_seat_name": "Sheridan",
+  "state_capital": false,
+  "population_2020": null,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.sheridancountywy.gov",
+    "https://sheridancountywy.gov",
+    "https://www.sheridancountywy.com",
+    "https://www.sheridancounty.net",
+    "https://www.sheridancountywy.us",
+    "https://www.sheridancounty.com",
+    "https://sheridancounty.net"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "Board of County Commissioners; seat: Sheridan."
+  ]
+}

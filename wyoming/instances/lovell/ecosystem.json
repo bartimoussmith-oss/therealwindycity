@@ -1,0 +1,30 @@
+{
+  "slug": "lovell",
+  "name": "Lovell",
+  "type": "town",
+  "county": "Big Horn",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 2243,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.lovellwy.gov",
+    "https://lovellwy.gov",
+    "https://www.lovell.gov",
+    "https://www.cityoflovell.gov",
+    "https://www.cityoflovell.org",
+    "https://www.cityoflovell.com",
+    "https://www.townoflovell.gov",
+    "https://www.townoflovell.org",
+    "https://www.townoflovell.com",
+    "https://www.ci.lovell.wy.us",
+    "https://www.lovellwy.org",
+    "https://lovellwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

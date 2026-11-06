@@ -5,6 +5,8 @@ FOIA only covers federal agencies.
 """
 from __future__ import annotations
 
+import os
+
 from . import db
 
 PRA_BODY = """\
@@ -77,8 +79,10 @@ Respectfully,
 
 
 def generate_pra(conn, records_description: str, date_range: str,
-                 custodian_office: str = "City Clerk's Office, City of Cheyenne",
-                 custodian_address: str = "2101 O'Neil Ave., Cheyenne, WY 82001",
+                 custodian_office: str = os.environ.get("ENGINE_CUSTODIAN_OFFICE",
+                                                        "City Clerk's Office, City of Cheyenne"),
+                 custodian_address: str = os.environ.get("ENGINE_CUSTODIAN_ADDRESS",
+                                                         "2101 O'Neil Ave., Cheyenne, WY 82001"),
                  requester_name: str = "[YOUR NAME]",
                  requester_contact: str = "[YOUR ADDRESS / EMAIL / PHONE]",
                  fee_limit: str = "$25") -> str:
@@ -102,7 +106,7 @@ def generate_pra(conn, records_description: str, date_range: str,
 def generate_public_comment(conn, body_name: str, agenda_item: str,
                             meeting_date: str, position: str, ask: str,
                             fact_bullets: str,
-                            ward_or_area: str = "Cheyenne",
+                            ward_or_area: str = os.environ.get("ENGINE_WARD_OR_AREA", "Cheyenne"),
                             requester_name: str = "[YOUR NAME]",
                             requester_contact: str = "[YOUR CONTACT]") -> str:
     body = COMMENT_BODY.format(

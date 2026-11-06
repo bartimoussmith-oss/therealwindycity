@@ -1,0 +1,30 @@
+{
+  "slug": "greybull",
+  "name": "Greybull",
+  "type": "town",
+  "county": "Big Horn",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 1651,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.greybullwy.gov",
+    "https://greybullwy.gov",
+    "https://www.greybull.gov",
+    "https://www.cityofgreybull.gov",
+    "https://www.cityofgreybull.org",
+    "https://www.cityofgreybull.com",
+    "https://www.townofgreybull.gov",
+    "https://www.townofgreybull.org",
+    "https://www.townofgreybull.com",
+    "https://www.ci.greybull.wy.us",
+    "https://www.greybullwy.org",
+    "https://greybullwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

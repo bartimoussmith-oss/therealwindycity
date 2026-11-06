@@ -1,0 +1,3255 @@
+{
+  "registry_version": 1,
+  "as_of": "2026-11-06",
+  "subject": "Every incorporated municipality, all 23 county governments, and principal state-level bodies of Wyoming",
+  "municipality_source": "2020 U.S. Census incorporation list (99 incorporated municipalities: 19 first-class cities, 80 towns; towns < 4,000 per Wyo. Stat. Title 15) cross-checked 2026-11-06 against the Wikipedia 'List of municipalities in Wyoming' (2020 Census populations). Verify against the Wyoming Secretary of State's municipal incorporation roster before relying on counts.",
+  "county_source": "Wyoming Constitution Article 13 / state statutes: 23 counties; county seats per standard references.",
+  "legal_note": "This registry creates watchdog configurations only. It asserts nothing about any government's conduct. All URLs are unverified candidates: nothing is enabled for crawling until tools/wyoming_verify.py live-fetches it (robots.txt honored, 3s politeness) or a human enables it.",
+  "special_districts_note": "Wyoming also has dozens of school districts, conservation districts, hospital districts, rural water/sewer districts and improvement districts. They are not enumerated here (addresses/URLs cannot be verified offline). The generator supports them: add one row per district to `jurisdictions` with type 'special-district' (or 'school-district') and rerun tools/wyoming_instantiate.py --write. See docs/WYOMING-STATEWIDE-INSTANTIATION.md.",
+  "state_bodies": [
+    {
+      "slug": "wyoming-legislature",
+      "name": "Wyoming Legislature",
+      "type": "state-legislature",
+      "county": null,
+      "known_url": "https://wyoleg.gov",
+      "verification": "unverified",
+      "notes": [
+        "Senate (30) + House (60); acts and bills at wyoleg.gov. General sessions begin in odd years; budget sessions even years."
+      ],
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": null
+    },
+    {
+      "slug": "wyoming-governor",
+      "name": "Office of the Governor of Wyoming",
+      "type": "state-executive",
+      "county": null,
+      "known_url": "https://governor.wyo.gov",
+      "verification": "unverified",
+      "notes": [
+        "Executive orders, appointments, press releases."
+      ],
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": null
+    },
+    {
+      "slug": "wyoming-secretary-of-state",
+      "name": "Wyoming Secretary of State",
+      "type": "state-executive",
+      "county": null,
+      "known_url": "https://sos.wyo.gov",
+      "verification": "unverified",
+      "notes": [
+        "Elections, initiatives/referenda, notary, business filings, UCC."
+      ],
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": null
+    },
+    {
+      "slug": "wyoming-attorney-general",
+      "name": "Wyoming Attorney General",
+      "type": "state-executive",
+      "county": null,
+      "known_url": "https://ag.wyo.gov",
+      "verification": "unverified",
+      "notes": [
+        "Official opinions, consumer protection, open meetings/records enforcement posture."
+      ],
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": null
+    }
+  ],
+  "counties": [
+    {
+      "slug": "albany-county",
+      "name": "Albany County",
+      "type": "county",
+      "county": "Albany",
+      "county_seat": true,
+      "county_seat_name": "Laramie",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Laramie."
+      ]
+    },
+    {
+      "slug": "big-horn-county",
+      "name": "Big Horn County",
+      "type": "county",
+      "county": "Big Horn",
+      "county_seat": true,
+      "county_seat_name": "Basin",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Basin."
+      ]
+    },
+    {
+      "slug": "campbell-county",
+      "name": "Campbell County",
+      "type": "county",
+      "county": "Campbell",
+      "county_seat": true,
+      "county_seat_name": "Gillette",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Gillette."
+      ]
+    },
+    {
+      "slug": "carbon-county",
+      "name": "Carbon County",
+      "type": "county",
+      "county": "Carbon",
+      "county_seat": true,
+      "county_seat_name": "Rawlins",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Rawlins."
+      ]
+    },
+    {
+      "slug": "converse-county",
+      "name": "Converse County",
+      "type": "county",
+      "county": "Converse",
+      "county_seat": true,
+      "county_seat_name": "Douglas",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Douglas."
+      ]
+    },
+    {
+      "slug": "crook-county",
+      "name": "Crook County",
+      "type": "county",
+      "county": "Crook",
+      "county_seat": true,
+      "county_seat_name": "Sundance",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Sundance."
+      ]
+    },
+    {
+      "slug": "fremont-county",
+      "name": "Fremont County",
+      "type": "county",
+      "county": "Fremont",
+      "county_seat": true,
+      "county_seat_name": "Lander",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Lander."
+      ]
+    },
+    {
+      "slug": "goshen-county",
+      "name": "Goshen County",
+      "type": "county",
+      "county": "Goshen",
+      "county_seat": true,
+      "county_seat_name": "Torrington",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Torrington."
+      ]
+    },
+    {
+      "slug": "hot-springs-county",
+      "name": "Hot Springs County",
+      "type": "county",
+      "county": "Hot Springs",
+      "county_seat": true,
+      "county_seat_name": "Thermopolis",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Thermopolis."
+      ]
+    },
+    {
+      "slug": "johnson-county",
+      "name": "Johnson County",
+      "type": "county",
+      "county": "Johnson",
+      "county_seat": true,
+      "county_seat_name": "Buffalo",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Buffalo."
+      ]
+    },
+    {
+      "slug": "laramie-county",
+      "name": "Laramie County",
+      "type": "county",
+      "county": "Laramie",
+      "county_seat": true,
+      "county_seat_name": "Cheyenne",
+      "population_2020": null,
+      "known_url": "https://www.laramiecountywy.gov",
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Cheyenne."
+      ]
+    },
+    {
+      "slug": "lincoln-county",
+      "name": "Lincoln County",
+      "type": "county",
+      "county": "Lincoln",
+      "county_seat": true,
+      "county_seat_name": "Kemmerer",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Kemmerer."
+      ]
+    },
+    {
+      "slug": "natrona-county",
+      "name": "Natrona County",
+      "type": "county",
+      "county": "Natrona",
+      "county_seat": true,
+      "county_seat_name": "Casper",
+      "population_2020": null,
+      "known_url": "https://natrona.net",
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Casper."
+      ]
+    },
+    {
+      "slug": "niobrara-county",
+      "name": "Niobrara County",
+      "type": "county",
+      "county": "Niobrara",
+      "county_seat": true,
+      "county_seat_name": "Lusk",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Lusk."
+      ]
+    },
+    {
+      "slug": "park-county",
+      "name": "Park County",
+      "type": "county",
+      "county": "Park",
+      "county_seat": true,
+      "county_seat_name": "Cody",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Cody."
+      ]
+    },
+    {
+      "slug": "platte-county",
+      "name": "Platte County",
+      "type": "county",
+      "county": "Platte",
+      "county_seat": true,
+      "county_seat_name": "Wheatland",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Wheatland."
+      ]
+    },
+    {
+      "slug": "sheridan-county",
+      "name": "Sheridan County",
+      "type": "county",
+      "county": "Sheridan",
+      "county_seat": true,
+      "county_seat_name": "Sheridan",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Sheridan."
+      ]
+    },
+    {
+      "slug": "sublette-county",
+      "name": "Sublette County",
+      "type": "county",
+      "county": "Sublette",
+      "county_seat": true,
+      "county_seat_name": "Pinedale",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Pinedale."
+      ]
+    },
+    {
+      "slug": "sweetwater-county",
+      "name": "Sweetwater County",
+      "type": "county",
+      "county": "Sweetwater",
+      "county_seat": true,
+      "county_seat_name": "Green River",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Green River."
+      ]
+    },
+    {
+      "slug": "teton-county",
+      "name": "Teton County",
+      "type": "county",
+      "county": "Teton",
+      "county_seat": true,
+      "county_seat_name": "Jackson",
+      "population_2020": null,
+      "known_url": "https://www.tetoncountywy.gov",
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Jackson."
+      ]
+    },
+    {
+      "slug": "uinta-county",
+      "name": "Uinta County",
+      "type": "county",
+      "county": "Uinta",
+      "county_seat": true,
+      "county_seat_name": "Evanston",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Evanston."
+      ]
+    },
+    {
+      "slug": "washakie-county",
+      "name": "Washakie County",
+      "type": "county",
+      "county": "Washakie",
+      "county_seat": true,
+      "county_seat_name": "Worland",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Worland."
+      ]
+    },
+    {
+      "slug": "weston-county",
+      "name": "Weston County",
+      "type": "county",
+      "county": "Weston",
+      "county_seat": true,
+      "county_seat_name": "Newcastle",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Newcastle."
+      ]
+    }
+  ],
+  "municipalities": [
+    {
+      "slug": "afton",
+      "name": "Afton",
+      "type": "town",
+      "county": "Lincoln",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 2172,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "albin",
+      "name": "Albin",
+      "type": "town",
+      "county": "Laramie",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 169,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "alpine",
+      "name": "Alpine",
+      "type": "town",
+      "county": "Lincoln",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 1220,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "baggs",
+      "name": "Baggs",
+      "type": "town",
+      "county": "Carbon",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 411,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "bairoil",
+      "name": "Bairoil",
+      "type": "town",
+      "county": "Sweetwater",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 68,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "bar-nunn",
+      "name": "Bar Nunn",
+      "type": "town",
+      "county": "Natrona",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 2981,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "basin",
+      "name": "Basin",
+      "type": "town",
+      "county": "Big Horn",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 1288,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Big Horn County."
+      ]
+    },
+    {
+      "slug": "bear-river",
+      "name": "Bear River",
+      "type": "town",
+      "county": "Uinta",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 522,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "big-piney",
+      "name": "Big Piney",
+      "type": "town",
+      "county": "Sublette",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 395,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "buffalo",
+      "name": "Buffalo",
+      "type": "city",
+      "county": "Johnson",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 4415,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Johnson County."
+      ]
+    },
+    {
+      "slug": "burlington",
+      "name": "Burlington",
+      "type": "town",
+      "county": "Big Horn",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 314,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "burns",
+      "name": "Burns",
+      "type": "town",
+      "county": "Laramie",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 356,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "byron",
+      "name": "Byron",
+      "type": "town",
+      "county": "Big Horn",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 562,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "casper",
+      "name": "Casper",
+      "type": "city",
+      "county": "Natrona",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 59038,
+      "known_url": "https://www.casperwy.gov",
+      "verification": "unverified",
+      "notes": [
+        "County seat of Natrona County."
+      ]
+    },
+    {
+      "slug": "cheyenne",
+      "name": "Cheyenne",
+      "type": "city",
+      "county": "Laramie",
+      "county_seat": true,
+      "state_capital": true,
+      "population_2020": 65132,
+      "known_url": "https://www.cheyennecity.org",
+      "verification": "unverified",
+      "notes": [
+        "FLAGSHIP: canonical, hand-tuned config lives at repo root (config/). This instance is generated for completeness; prefer the root for production runs.",
+        "County seat of Laramie County.",
+        "State capital."
+      ]
+    },
+    {
+      "slug": "chugwater",
+      "name": "Chugwater",
+      "type": "town",
+      "county": "Platte",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 175,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "clearmont",
+      "name": "Clearmont",
+      "type": "town",
+      "county": "Sheridan",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 116,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "cody",
+      "name": "Cody",
+      "type": "city",
+      "county": "Park",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 10028,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Park County."
+      ]
+    },
+    {
+      "slug": "cokeville",
+      "name": "Cokeville",
+      "type": "town",
+      "county": "Lincoln",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 502,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "cowley",
+      "name": "Cowley",
+      "type": "town",
+      "county": "Big Horn",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 762,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "dayton",
+      "name": "Dayton",
+      "type": "town",
+      "county": "Sheridan",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 822,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "deaver",
+      "name": "Deaver",
+      "type": "town",
+      "county": "Big Horn",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 154,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "diamondville",
+      "name": "Diamondville",
+      "type": "town",
+      "county": "Lincoln",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 520,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "dixon",
+      "name": "Dixon",
+      "type": "town",
+      "county": "Carbon",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 74,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "douglas",
+      "name": "Douglas",
+      "type": "city",
+      "county": "Converse",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 6386,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Converse County."
+      ]
+    },
+    {
+      "slug": "dubois",
+      "name": "Dubois",
+      "type": "town",
+      "county": "Fremont",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 911,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "east-thermopolis",
+      "name": "East Thermopolis",
+      "type": "town",
+      "county": "Hot Springs",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 229,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "edgerton",
+      "name": "Edgerton",
+      "type": "town",
+      "county": "Natrona",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 153,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "elk-mountain",
+      "name": "Elk Mountain",
+      "type": "town",
+      "county": "Carbon",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 150,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "encampment",
+      "name": "Encampment",
+      "type": "town",
+      "county": "Carbon",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 452,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "evanston",
+      "name": "Evanston",
+      "type": "city",
+      "county": "Uinta",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 11747,
+      "known_url": "https://www.evanstonwy.org",
+      "verification": "unverified",
+      "notes": [
+        "County seat of Uinta County."
+      ]
+    },
+    {
+      "slug": "evansville",
+      "name": "Evansville",
+      "type": "town",
+      "county": "Natrona",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 2746,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "fort-laramie",
+      "name": "Fort Laramie",
+      "type": "town",
+      "county": "Goshen",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 206,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "frannie",
+      "name": "Frannie",
+      "type": "town",
+      "county": "Big Horn",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 145,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Straddles Big Horn and Park counties (2020 Census: Big Horn)."
+      ]
+    },
+    {
+      "slug": "gillette",
+      "name": "Gillette",
+      "type": "city",
+      "county": "Campbell",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 33403,
+      "known_url": "https://www.gillettewy.gov",
+      "verification": "unverified",
+      "notes": [
+        "County seat of Campbell County."
+      ]
+    },
+    {
+      "slug": "glendo",
+      "name": "Glendo",
+      "type": "town",
+      "county": "Platte",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 237,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "glenrock",
+      "name": "Glenrock",
+      "type": "town",
+      "county": "Converse",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 2420,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "granger",
+      "name": "Granger",
+      "type": "town",
+      "county": "Sweetwater",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 98,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "green-river",
+      "name": "Green River",
+      "type": "city",
+      "county": "Sweetwater",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 11825,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Sweetwater County."
+      ]
+    },
+    {
+      "slug": "greybull",
+      "name": "Greybull",
+      "type": "town",
+      "county": "Big Horn",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 1651,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "guernsey",
+      "name": "Guernsey",
+      "type": "town",
+      "county": "Platte",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 1130,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "hanna",
+      "name": "Hanna",
+      "type": "town",
+      "county": "Carbon",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 683,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "hartville",
+      "name": "Hartville",
+      "type": "town",
+      "county": "Platte",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 64,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "hudson",
+      "name": "Hudson",
+      "type": "town",
+      "county": "Fremont",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 431,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "hulett",
+      "name": "Hulett",
+      "type": "town",
+      "county": "Crook",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 309,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "jackson",
+      "name": "Jackson",
+      "type": "town",
+      "county": "Teton",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 10760,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Teton County."
+      ]
+    },
+    {
+      "slug": "kaycee",
+      "name": "Kaycee",
+      "type": "town",
+      "county": "Johnson",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 247,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "kemmerer",
+      "name": "Kemmerer",
+      "type": "city",
+      "county": "Lincoln",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 2415,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Lincoln County."
+      ]
+    },
+    {
+      "slug": "kirby",
+      "name": "Kirby",
+      "type": "town",
+      "county": "Hot Springs",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 76,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "la-barge",
+      "name": "La Barge",
+      "type": "town",
+      "county": "Lincoln",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 394,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "la-grange",
+      "name": "La Grange",
+      "type": "town",
+      "county": "Goshen",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 372,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "lander",
+      "name": "Lander",
+      "type": "city",
+      "county": "Fremont",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 7546,
+      "known_url": "https://www.landerwy.org",
+      "verification": "unverified",
+      "notes": [
+        "County seat of Fremont County."
+      ]
+    },
+    {
+      "slug": "laramie",
+      "name": "Laramie",
+      "type": "city",
+      "county": "Albany",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 31407,
+      "known_url": "https://www.laramie.org",
+      "verification": "unverified",
+      "notes": [
+        "County seat of Albany County."
+      ]
+    },
+    {
+      "slug": "lingle",
+      "name": "Lingle",
+      "type": "town",
+      "county": "Goshen",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 403,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "lost-springs",
+      "name": "Lost Springs",
+      "type": "town",
+      "county": "Converse",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 6,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "lovell",
+      "name": "Lovell",
+      "type": "town",
+      "county": "Big Horn",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 2243,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "lusk",
+      "name": "Lusk",
+      "type": "town",
+      "county": "Niobrara",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 1541,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Niobrara County."
+      ]
+    },
+    {
+      "slug": "lyman",
+      "name": "Lyman",
+      "type": "town",
+      "county": "Uinta",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 2135,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "manderson",
+      "name": "Manderson",
+      "type": "town",
+      "county": "Big Horn",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 88,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "manville",
+      "name": "Manville",
+      "type": "town",
+      "county": "Niobrara",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 92,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "marbleton",
+      "name": "Marbleton",
+      "type": "town",
+      "county": "Sublette",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 861,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "medicine-bow",
+      "name": "Medicine Bow",
+      "type": "town",
+      "county": "Carbon",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 245,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "meeteetse",
+      "name": "Meeteetse",
+      "type": "town",
+      "county": "Park",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 309,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "midwest",
+      "name": "Midwest",
+      "type": "town",
+      "county": "Natrona",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 285,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "mills",
+      "name": "Mills",
+      "type": "town",
+      "county": "Natrona",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 4034,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "moorcroft",
+      "name": "Moorcroft",
+      "type": "town",
+      "county": "Crook",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 946,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "mountain-view",
+      "name": "Mountain View",
+      "type": "town",
+      "county": "Uinta",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 1278,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "newcastle",
+      "name": "Newcastle",
+      "type": "city",
+      "county": "Weston",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 3374,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Weston County."
+      ]
+    },
+    {
+      "slug": "opal",
+      "name": "Opal",
+      "type": "town",
+      "county": "Lincoln",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 64,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "pavillion",
+      "name": "Pavillion",
+      "type": "town",
+      "county": "Fremont",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 230,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "pine-bluffs",
+      "name": "Pine Bluffs",
+      "type": "town",
+      "county": "Laramie",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 1172,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "pine-haven",
+      "name": "Pine Haven",
+      "type": "town",
+      "county": "Crook",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 493,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "pinedale",
+      "name": "Pinedale",
+      "type": "town",
+      "county": "Sublette",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 2005,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Sublette County."
+      ]
+    },
+    {
+      "slug": "powell",
+      "name": "Powell",
+      "type": "city",
+      "county": "Park",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 6419,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "ranchester",
+      "name": "Ranchester",
+      "type": "town",
+      "county": "Sheridan",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 1064,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "rawlins",
+      "name": "Rawlins",
+      "type": "city",
+      "county": "Carbon",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 8221,
+      "known_url": "https://www.rawlinswy.gov",
+      "verification": "unverified",
+      "notes": [
+        "County seat of Carbon County."
+      ]
+    },
+    {
+      "slug": "riverside",
+      "name": "Riverside",
+      "type": "town",
+      "county": "Carbon",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 66,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "riverton",
+      "name": "Riverton",
+      "type": "city",
+      "county": "Fremont",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 10682,
+      "known_url": "https://www.rivertonwy.gov",
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "rock-river",
+      "name": "Rock River",
+      "type": "town",
+      "county": "Albany",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 211,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "rock-springs",
+      "name": "Rock Springs",
+      "type": "city",
+      "county": "Sweetwater",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 23526,
+      "known_url": "https://www.rockspringswy.gov",
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "rolling-hills",
+      "name": "Rolling Hills",
+      "type": "town",
+      "county": "Converse",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 427,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "saratoga",
+      "name": "Saratoga",
+      "type": "town",
+      "county": "Carbon",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 1702,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "sheridan",
+      "name": "Sheridan",
+      "type": "city",
+      "county": "Sheridan",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 18737,
+      "known_url": "https://www.sheridanwy.gov",
+      "verification": "unverified",
+      "notes": [
+        "County seat of Sheridan County."
+      ]
+    },
+    {
+      "slug": "shoshoni",
+      "name": "Shoshoni",
+      "type": "town",
+      "county": "Fremont",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 471,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "sinclair",
+      "name": "Sinclair",
+      "type": "town",
+      "county": "Carbon",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 374,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "star-valley-ranch",
+      "name": "Star Valley Ranch",
+      "type": "town",
+      "county": "Lincoln",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 1866,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "sundance",
+      "name": "Sundance",
+      "type": "town",
+      "county": "Crook",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 1032,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Crook County."
+      ]
+    },
+    {
+      "slug": "superior",
+      "name": "Superior",
+      "type": "town",
+      "county": "Sweetwater",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 184,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "ten-sleep",
+      "name": "Ten Sleep",
+      "type": "town",
+      "county": "Washakie",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 246,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "thayne",
+      "name": "Thayne",
+      "type": "town",
+      "county": "Lincoln",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 380,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "thermopolis",
+      "name": "Thermopolis",
+      "type": "town",
+      "county": "Hot Springs",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 2725,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Hot Springs County."
+      ]
+    },
+    {
+      "slug": "torrington",
+      "name": "Torrington",
+      "type": "city",
+      "county": "Goshen",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 6119,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Goshen County."
+      ]
+    },
+    {
+      "slug": "upton",
+      "name": "Upton",
+      "type": "town",
+      "county": "Weston",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 898,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "van-tassell",
+      "name": "Van Tassell",
+      "type": "town",
+      "county": "Niobrara",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 22,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "wamsutter",
+      "name": "Wamsutter",
+      "type": "town",
+      "county": "Sweetwater",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 203,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "wheatland",
+      "name": "Wheatland",
+      "type": "town",
+      "county": "Platte",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 3588,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Platte County."
+      ]
+    },
+    {
+      "slug": "worland",
+      "name": "Worland",
+      "type": "city",
+      "county": "Washakie",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 4773,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Washakie County."
+      ]
+    },
+    {
+      "slug": "wright",
+      "name": "Wright",
+      "type": "town",
+      "county": "Campbell",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 1644,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "yoder",
+      "name": "Yoder",
+      "type": "town",
+      "county": "Goshen",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 131,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    }
+  ],
+  "jurisdictions": [
+    {
+      "slug": "wyoming-legislature",
+      "name": "Wyoming Legislature",
+      "type": "state-legislature",
+      "county": null,
+      "known_url": "https://wyoleg.gov",
+      "verification": "unverified",
+      "notes": [
+        "Senate (30) + House (60); acts and bills at wyoleg.gov. General sessions begin in odd years; budget sessions even years."
+      ],
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": null
+    },
+    {
+      "slug": "wyoming-governor",
+      "name": "Office of the Governor of Wyoming",
+      "type": "state-executive",
+      "county": null,
+      "known_url": "https://governor.wyo.gov",
+      "verification": "unverified",
+      "notes": [
+        "Executive orders, appointments, press releases."
+      ],
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": null
+    },
+    {
+      "slug": "wyoming-secretary-of-state",
+      "name": "Wyoming Secretary of State",
+      "type": "state-executive",
+      "county": null,
+      "known_url": "https://sos.wyo.gov",
+      "verification": "unverified",
+      "notes": [
+        "Elections, initiatives/referenda, notary, business filings, UCC."
+      ],
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": null
+    },
+    {
+      "slug": "wyoming-attorney-general",
+      "name": "Wyoming Attorney General",
+      "type": "state-executive",
+      "county": null,
+      "known_url": "https://ag.wyo.gov",
+      "verification": "unverified",
+      "notes": [
+        "Official opinions, consumer protection, open meetings/records enforcement posture."
+      ],
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": null
+    },
+    {
+      "slug": "albany-county",
+      "name": "Albany County",
+      "type": "county",
+      "county": "Albany",
+      "county_seat": true,
+      "county_seat_name": "Laramie",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Laramie."
+      ]
+    },
+    {
+      "slug": "big-horn-county",
+      "name": "Big Horn County",
+      "type": "county",
+      "county": "Big Horn",
+      "county_seat": true,
+      "county_seat_name": "Basin",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Basin."
+      ]
+    },
+    {
+      "slug": "campbell-county",
+      "name": "Campbell County",
+      "type": "county",
+      "county": "Campbell",
+      "county_seat": true,
+      "county_seat_name": "Gillette",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Gillette."
+      ]
+    },
+    {
+      "slug": "carbon-county",
+      "name": "Carbon County",
+      "type": "county",
+      "county": "Carbon",
+      "county_seat": true,
+      "county_seat_name": "Rawlins",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Rawlins."
+      ]
+    },
+    {
+      "slug": "converse-county",
+      "name": "Converse County",
+      "type": "county",
+      "county": "Converse",
+      "county_seat": true,
+      "county_seat_name": "Douglas",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Douglas."
+      ]
+    },
+    {
+      "slug": "crook-county",
+      "name": "Crook County",
+      "type": "county",
+      "county": "Crook",
+      "county_seat": true,
+      "county_seat_name": "Sundance",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Sundance."
+      ]
+    },
+    {
+      "slug": "fremont-county",
+      "name": "Fremont County",
+      "type": "county",
+      "county": "Fremont",
+      "county_seat": true,
+      "county_seat_name": "Lander",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Lander."
+      ]
+    },
+    {
+      "slug": "goshen-county",
+      "name": "Goshen County",
+      "type": "county",
+      "county": "Goshen",
+      "county_seat": true,
+      "county_seat_name": "Torrington",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Torrington."
+      ]
+    },
+    {
+      "slug": "hot-springs-county",
+      "name": "Hot Springs County",
+      "type": "county",
+      "county": "Hot Springs",
+      "county_seat": true,
+      "county_seat_name": "Thermopolis",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Thermopolis."
+      ]
+    },
+    {
+      "slug": "johnson-county",
+      "name": "Johnson County",
+      "type": "county",
+      "county": "Johnson",
+      "county_seat": true,
+      "county_seat_name": "Buffalo",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Buffalo."
+      ]
+    },
+    {
+      "slug": "laramie-county",
+      "name": "Laramie County",
+      "type": "county",
+      "county": "Laramie",
+      "county_seat": true,
+      "county_seat_name": "Cheyenne",
+      "population_2020": null,
+      "known_url": "https://www.laramiecountywy.gov",
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Cheyenne."
+      ]
+    },
+    {
+      "slug": "lincoln-county",
+      "name": "Lincoln County",
+      "type": "county",
+      "county": "Lincoln",
+      "county_seat": true,
+      "county_seat_name": "Kemmerer",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Kemmerer."
+      ]
+    },
+    {
+      "slug": "natrona-county",
+      "name": "Natrona County",
+      "type": "county",
+      "county": "Natrona",
+      "county_seat": true,
+      "county_seat_name": "Casper",
+      "population_2020": null,
+      "known_url": "https://natrona.net",
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Casper."
+      ]
+    },
+    {
+      "slug": "niobrara-county",
+      "name": "Niobrara County",
+      "type": "county",
+      "county": "Niobrara",
+      "county_seat": true,
+      "county_seat_name": "Lusk",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Lusk."
+      ]
+    },
+    {
+      "slug": "park-county",
+      "name": "Park County",
+      "type": "county",
+      "county": "Park",
+      "county_seat": true,
+      "county_seat_name": "Cody",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Cody."
+      ]
+    },
+    {
+      "slug": "platte-county",
+      "name": "Platte County",
+      "type": "county",
+      "county": "Platte",
+      "county_seat": true,
+      "county_seat_name": "Wheatland",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Wheatland."
+      ]
+    },
+    {
+      "slug": "sheridan-county",
+      "name": "Sheridan County",
+      "type": "county",
+      "county": "Sheridan",
+      "county_seat": true,
+      "county_seat_name": "Sheridan",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Sheridan."
+      ]
+    },
+    {
+      "slug": "sublette-county",
+      "name": "Sublette County",
+      "type": "county",
+      "county": "Sublette",
+      "county_seat": true,
+      "county_seat_name": "Pinedale",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Pinedale."
+      ]
+    },
+    {
+      "slug": "sweetwater-county",
+      "name": "Sweetwater County",
+      "type": "county",
+      "county": "Sweetwater",
+      "county_seat": true,
+      "county_seat_name": "Green River",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Green River."
+      ]
+    },
+    {
+      "slug": "teton-county",
+      "name": "Teton County",
+      "type": "county",
+      "county": "Teton",
+      "county_seat": true,
+      "county_seat_name": "Jackson",
+      "population_2020": null,
+      "known_url": "https://www.tetoncountywy.gov",
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Jackson."
+      ]
+    },
+    {
+      "slug": "uinta-county",
+      "name": "Uinta County",
+      "type": "county",
+      "county": "Uinta",
+      "county_seat": true,
+      "county_seat_name": "Evanston",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Evanston."
+      ]
+    },
+    {
+      "slug": "washakie-county",
+      "name": "Washakie County",
+      "type": "county",
+      "county": "Washakie",
+      "county_seat": true,
+      "county_seat_name": "Worland",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Worland."
+      ]
+    },
+    {
+      "slug": "weston-county",
+      "name": "Weston County",
+      "type": "county",
+      "county": "Weston",
+      "county_seat": true,
+      "county_seat_name": "Newcastle",
+      "population_2020": null,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Board of County Commissioners; seat: Newcastle."
+      ]
+    },
+    {
+      "slug": "afton",
+      "name": "Afton",
+      "type": "town",
+      "county": "Lincoln",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 2172,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "albin",
+      "name": "Albin",
+      "type": "town",
+      "county": "Laramie",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 169,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "alpine",
+      "name": "Alpine",
+      "type": "town",
+      "county": "Lincoln",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 1220,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "baggs",
+      "name": "Baggs",
+      "type": "town",
+      "county": "Carbon",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 411,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "bairoil",
+      "name": "Bairoil",
+      "type": "town",
+      "county": "Sweetwater",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 68,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "bar-nunn",
+      "name": "Bar Nunn",
+      "type": "town",
+      "county": "Natrona",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 2981,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "basin",
+      "name": "Basin",
+      "type": "town",
+      "county": "Big Horn",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 1288,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Big Horn County."
+      ]
+    },
+    {
+      "slug": "bear-river",
+      "name": "Bear River",
+      "type": "town",
+      "county": "Uinta",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 522,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "big-piney",
+      "name": "Big Piney",
+      "type": "town",
+      "county": "Sublette",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 395,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "buffalo",
+      "name": "Buffalo",
+      "type": "city",
+      "county": "Johnson",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 4415,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Johnson County."
+      ]
+    },
+    {
+      "slug": "burlington",
+      "name": "Burlington",
+      "type": "town",
+      "county": "Big Horn",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 314,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "burns",
+      "name": "Burns",
+      "type": "town",
+      "county": "Laramie",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 356,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "byron",
+      "name": "Byron",
+      "type": "town",
+      "county": "Big Horn",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 562,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "casper",
+      "name": "Casper",
+      "type": "city",
+      "county": "Natrona",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 59038,
+      "known_url": "https://www.casperwy.gov",
+      "verification": "unverified",
+      "notes": [
+        "County seat of Natrona County."
+      ]
+    },
+    {
+      "slug": "cheyenne",
+      "name": "Cheyenne",
+      "type": "city",
+      "county": "Laramie",
+      "county_seat": true,
+      "state_capital": true,
+      "population_2020": 65132,
+      "known_url": "https://www.cheyennecity.org",
+      "verification": "unverified",
+      "notes": [
+        "FLAGSHIP: canonical, hand-tuned config lives at repo root (config/). This instance is generated for completeness; prefer the root for production runs.",
+        "County seat of Laramie County.",
+        "State capital."
+      ]
+    },
+    {
+      "slug": "chugwater",
+      "name": "Chugwater",
+      "type": "town",
+      "county": "Platte",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 175,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "clearmont",
+      "name": "Clearmont",
+      "type": "town",
+      "county": "Sheridan",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 116,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "cody",
+      "name": "Cody",
+      "type": "city",
+      "county": "Park",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 10028,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Park County."
+      ]
+    },
+    {
+      "slug": "cokeville",
+      "name": "Cokeville",
+      "type": "town",
+      "county": "Lincoln",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 502,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "cowley",
+      "name": "Cowley",
+      "type": "town",
+      "county": "Big Horn",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 762,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "dayton",
+      "name": "Dayton",
+      "type": "town",
+      "county": "Sheridan",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 822,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "deaver",
+      "name": "Deaver",
+      "type": "town",
+      "county": "Big Horn",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 154,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "diamondville",
+      "name": "Diamondville",
+      "type": "town",
+      "county": "Lincoln",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 520,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "dixon",
+      "name": "Dixon",
+      "type": "town",
+      "county": "Carbon",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 74,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "douglas",
+      "name": "Douglas",
+      "type": "city",
+      "county": "Converse",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 6386,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Converse County."
+      ]
+    },
+    {
+      "slug": "dubois",
+      "name": "Dubois",
+      "type": "town",
+      "county": "Fremont",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 911,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "east-thermopolis",
+      "name": "East Thermopolis",
+      "type": "town",
+      "county": "Hot Springs",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 229,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "edgerton",
+      "name": "Edgerton",
+      "type": "town",
+      "county": "Natrona",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 153,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "elk-mountain",
+      "name": "Elk Mountain",
+      "type": "town",
+      "county": "Carbon",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 150,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "encampment",
+      "name": "Encampment",
+      "type": "town",
+      "county": "Carbon",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 452,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "evanston",
+      "name": "Evanston",
+      "type": "city",
+      "county": "Uinta",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 11747,
+      "known_url": "https://www.evanstonwy.org",
+      "verification": "unverified",
+      "notes": [
+        "County seat of Uinta County."
+      ]
+    },
+    {
+      "slug": "evansville",
+      "name": "Evansville",
+      "type": "town",
+      "county": "Natrona",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 2746,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "fort-laramie",
+      "name": "Fort Laramie",
+      "type": "town",
+      "county": "Goshen",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 206,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "frannie",
+      "name": "Frannie",
+      "type": "town",
+      "county": "Big Horn",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 145,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "Straddles Big Horn and Park counties (2020 Census: Big Horn)."
+      ]
+    },
+    {
+      "slug": "gillette",
+      "name": "Gillette",
+      "type": "city",
+      "county": "Campbell",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 33403,
+      "known_url": "https://www.gillettewy.gov",
+      "verification": "unverified",
+      "notes": [
+        "County seat of Campbell County."
+      ]
+    },
+    {
+      "slug": "glendo",
+      "name": "Glendo",
+      "type": "town",
+      "county": "Platte",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 237,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "glenrock",
+      "name": "Glenrock",
+      "type": "town",
+      "county": "Converse",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 2420,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "granger",
+      "name": "Granger",
+      "type": "town",
+      "county": "Sweetwater",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 98,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "green-river",
+      "name": "Green River",
+      "type": "city",
+      "county": "Sweetwater",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 11825,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Sweetwater County."
+      ]
+    },
+    {
+      "slug": "greybull",
+      "name": "Greybull",
+      "type": "town",
+      "county": "Big Horn",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 1651,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "guernsey",
+      "name": "Guernsey",
+      "type": "town",
+      "county": "Platte",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 1130,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "hanna",
+      "name": "Hanna",
+      "type": "town",
+      "county": "Carbon",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 683,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "hartville",
+      "name": "Hartville",
+      "type": "town",
+      "county": "Platte",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 64,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "hudson",
+      "name": "Hudson",
+      "type": "town",
+      "county": "Fremont",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 431,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "hulett",
+      "name": "Hulett",
+      "type": "town",
+      "county": "Crook",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 309,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "jackson",
+      "name": "Jackson",
+      "type": "town",
+      "county": "Teton",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 10760,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Teton County."
+      ]
+    },
+    {
+      "slug": "kaycee",
+      "name": "Kaycee",
+      "type": "town",
+      "county": "Johnson",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 247,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "kemmerer",
+      "name": "Kemmerer",
+      "type": "city",
+      "county": "Lincoln",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 2415,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Lincoln County."
+      ]
+    },
+    {
+      "slug": "kirby",
+      "name": "Kirby",
+      "type": "town",
+      "county": "Hot Springs",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 76,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "la-barge",
+      "name": "La Barge",
+      "type": "town",
+      "county": "Lincoln",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 394,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "la-grange",
+      "name": "La Grange",
+      "type": "town",
+      "county": "Goshen",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 372,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "lander",
+      "name": "Lander",
+      "type": "city",
+      "county": "Fremont",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 7546,
+      "known_url": "https://www.landerwy.org",
+      "verification": "unverified",
+      "notes": [
+        "County seat of Fremont County."
+      ]
+    },
+    {
+      "slug": "laramie",
+      "name": "Laramie",
+      "type": "city",
+      "county": "Albany",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 31407,
+      "known_url": "https://www.laramie.org",
+      "verification": "unverified",
+      "notes": [
+        "County seat of Albany County."
+      ]
+    },
+    {
+      "slug": "lingle",
+      "name": "Lingle",
+      "type": "town",
+      "county": "Goshen",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 403,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "lost-springs",
+      "name": "Lost Springs",
+      "type": "town",
+      "county": "Converse",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 6,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "lovell",
+      "name": "Lovell",
+      "type": "town",
+      "county": "Big Horn",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 2243,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "lusk",
+      "name": "Lusk",
+      "type": "town",
+      "county": "Niobrara",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 1541,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Niobrara County."
+      ]
+    },
+    {
+      "slug": "lyman",
+      "name": "Lyman",
+      "type": "town",
+      "county": "Uinta",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 2135,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "manderson",
+      "name": "Manderson",
+      "type": "town",
+      "county": "Big Horn",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 88,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "manville",
+      "name": "Manville",
+      "type": "town",
+      "county": "Niobrara",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 92,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "marbleton",
+      "name": "Marbleton",
+      "type": "town",
+      "county": "Sublette",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 861,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "medicine-bow",
+      "name": "Medicine Bow",
+      "type": "town",
+      "county": "Carbon",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 245,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "meeteetse",
+      "name": "Meeteetse",
+      "type": "town",
+      "county": "Park",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 309,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "midwest",
+      "name": "Midwest",
+      "type": "town",
+      "county": "Natrona",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 285,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "mills",
+      "name": "Mills",
+      "type": "town",
+      "county": "Natrona",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 4034,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "moorcroft",
+      "name": "Moorcroft",
+      "type": "town",
+      "county": "Crook",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 946,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "mountain-view",
+      "name": "Mountain View",
+      "type": "town",
+      "county": "Uinta",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 1278,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "newcastle",
+      "name": "Newcastle",
+      "type": "city",
+      "county": "Weston",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 3374,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Weston County."
+      ]
+    },
+    {
+      "slug": "opal",
+      "name": "Opal",
+      "type": "town",
+      "county": "Lincoln",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 64,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "pavillion",
+      "name": "Pavillion",
+      "type": "town",
+      "county": "Fremont",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 230,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "pine-bluffs",
+      "name": "Pine Bluffs",
+      "type": "town",
+      "county": "Laramie",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 1172,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "pine-haven",
+      "name": "Pine Haven",
+      "type": "town",
+      "county": "Crook",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 493,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "pinedale",
+      "name": "Pinedale",
+      "type": "town",
+      "county": "Sublette",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 2005,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Sublette County."
+      ]
+    },
+    {
+      "slug": "powell",
+      "name": "Powell",
+      "type": "city",
+      "county": "Park",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 6419,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "ranchester",
+      "name": "Ranchester",
+      "type": "town",
+      "county": "Sheridan",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 1064,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "rawlins",
+      "name": "Rawlins",
+      "type": "city",
+      "county": "Carbon",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 8221,
+      "known_url": "https://www.rawlinswy.gov",
+      "verification": "unverified",
+      "notes": [
+        "County seat of Carbon County."
+      ]
+    },
+    {
+      "slug": "riverside",
+      "name": "Riverside",
+      "type": "town",
+      "county": "Carbon",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 66,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "riverton",
+      "name": "Riverton",
+      "type": "city",
+      "county": "Fremont",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 10682,
+      "known_url": "https://www.rivertonwy.gov",
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "rock-river",
+      "name": "Rock River",
+      "type": "town",
+      "county": "Albany",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 211,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "rock-springs",
+      "name": "Rock Springs",
+      "type": "city",
+      "county": "Sweetwater",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 23526,
+      "known_url": "https://www.rockspringswy.gov",
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "rolling-hills",
+      "name": "Rolling Hills",
+      "type": "town",
+      "county": "Converse",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 427,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "saratoga",
+      "name": "Saratoga",
+      "type": "town",
+      "county": "Carbon",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 1702,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "sheridan",
+      "name": "Sheridan",
+      "type": "city",
+      "county": "Sheridan",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 18737,
+      "known_url": "https://www.sheridanwy.gov",
+      "verification": "unverified",
+      "notes": [
+        "County seat of Sheridan County."
+      ]
+    },
+    {
+      "slug": "shoshoni",
+      "name": "Shoshoni",
+      "type": "town",
+      "county": "Fremont",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 471,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "sinclair",
+      "name": "Sinclair",
+      "type": "town",
+      "county": "Carbon",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 374,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "star-valley-ranch",
+      "name": "Star Valley Ranch",
+      "type": "town",
+      "county": "Lincoln",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 1866,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "sundance",
+      "name": "Sundance",
+      "type": "town",
+      "county": "Crook",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 1032,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Crook County."
+      ]
+    },
+    {
+      "slug": "superior",
+      "name": "Superior",
+      "type": "town",
+      "county": "Sweetwater",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 184,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "ten-sleep",
+      "name": "Ten Sleep",
+      "type": "town",
+      "county": "Washakie",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 246,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "thayne",
+      "name": "Thayne",
+      "type": "town",
+      "county": "Lincoln",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 380,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "thermopolis",
+      "name": "Thermopolis",
+      "type": "town",
+      "county": "Hot Springs",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 2725,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Hot Springs County."
+      ]
+    },
+    {
+      "slug": "torrington",
+      "name": "Torrington",
+      "type": "city",
+      "county": "Goshen",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 6119,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Goshen County."
+      ]
+    },
+    {
+      "slug": "upton",
+      "name": "Upton",
+      "type": "town",
+      "county": "Weston",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 898,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "van-tassell",
+      "name": "Van Tassell",
+      "type": "town",
+      "county": "Niobrara",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 22,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "wamsutter",
+      "name": "Wamsutter",
+      "type": "town",
+      "county": "Sweetwater",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 203,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "wheatland",
+      "name": "Wheatland",
+      "type": "town",
+      "county": "Platte",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 3588,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Platte County."
+      ]
+    },
+    {
+      "slug": "worland",
+      "name": "Worland",
+      "type": "city",
+      "county": "Washakie",
+      "county_seat": true,
+      "state_capital": false,
+      "population_2020": 4773,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": [
+        "County seat of Washakie County."
+      ]
+    },
+    {
+      "slug": "wright",
+      "name": "Wright",
+      "type": "town",
+      "county": "Campbell",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 1644,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    },
+    {
+      "slug": "yoder",
+      "name": "Yoder",
+      "type": "town",
+      "county": "Goshen",
+      "county_seat": false,
+      "state_capital": false,
+      "population_2020": 131,
+      "known_url": null,
+      "verification": "unverified",
+      "notes": []
+    }
+  ],
+  "counts": {
+    "state_bodies": 4,
+    "counties": 23,
+    "municipalities": 99,
+    "total_instances": 126
+  }
+}

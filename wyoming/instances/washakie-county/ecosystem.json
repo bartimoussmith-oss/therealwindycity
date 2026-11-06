@@ -1,0 +1,27 @@
+{
+  "slug": "washakie-county",
+  "name": "Washakie County",
+  "type": "county",
+  "county": "Washakie",
+  "county_seat": true,
+  "county_seat_name": "Worland",
+  "state_capital": false,
+  "population_2020": null,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.washakiecountywy.gov",
+    "https://washakiecountywy.gov",
+    "https://www.washakiecountywy.com",
+    "https://www.washakiecounty.net",
+    "https://www.washakiecountywy.us",
+    "https://www.washakiecounty.com",
+    "https://washakiecounty.net"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "Board of County Commissioners; seat: Worland."
+  ]
+}

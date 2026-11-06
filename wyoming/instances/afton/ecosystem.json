@@ -1,0 +1,30 @@
+{
+  "slug": "afton",
+  "name": "Afton",
+  "type": "town",
+  "county": "Lincoln",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 2172,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.aftonwy.gov",
+    "https://aftonwy.gov",
+    "https://www.afton.gov",
+    "https://www.cityofafton.gov",
+    "https://www.cityofafton.org",
+    "https://www.cityofafton.com",
+    "https://www.townofafton.gov",
+    "https://www.townofafton.org",
+    "https://www.townofafton.com",
+    "https://www.ci.afton.wy.us",
+    "https://www.aftonwy.org",
+    "https://aftonwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

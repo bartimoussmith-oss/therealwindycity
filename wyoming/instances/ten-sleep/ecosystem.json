@@ -1,0 +1,30 @@
+{
+  "slug": "ten-sleep",
+  "name": "Ten Sleep",
+  "type": "town",
+  "county": "Washakie",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 246,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.tensleepwy.gov",
+    "https://tensleepwy.gov",
+    "https://www.tensleep.gov",
+    "https://www.cityoftensleep.gov",
+    "https://www.cityoftensleep.org",
+    "https://www.cityoftensleep.com",
+    "https://www.townoftensleep.gov",
+    "https://www.townoftensleep.org",
+    "https://www.townoftensleep.com",
+    "https://www.ci.tensleep.wy.us",
+    "https://www.tensleepwy.org",
+    "https://tensleepwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

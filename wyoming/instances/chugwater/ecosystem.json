@@ -1,0 +1,30 @@
+{
+  "slug": "chugwater",
+  "name": "Chugwater",
+  "type": "town",
+  "county": "Platte",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 175,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.chugwaterwy.gov",
+    "https://chugwaterwy.gov",
+    "https://www.chugwater.gov",
+    "https://www.cityofchugwater.gov",
+    "https://www.cityofchugwater.org",
+    "https://www.cityofchugwater.com",
+    "https://www.townofchugwater.gov",
+    "https://www.townofchugwater.org",
+    "https://www.townofchugwater.com",
+    "https://www.ci.chugwater.wy.us",
+    "https://www.chugwaterwy.org",
+    "https://chugwaterwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

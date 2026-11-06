@@ -1,0 +1,32 @@
+{
+  "slug": "thermopolis",
+  "name": "Thermopolis",
+  "type": "town",
+  "county": "Hot Springs",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 2725,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.thermopoliswy.gov",
+    "https://thermopoliswy.gov",
+    "https://www.thermopolis.gov",
+    "https://www.cityofthermopolis.gov",
+    "https://www.cityofthermopolis.org",
+    "https://www.cityofthermopolis.com",
+    "https://www.townofthermopolis.gov",
+    "https://www.townofthermopolis.org",
+    "https://www.townofthermopolis.com",
+    "https://www.ci.thermopolis.wy.us",
+    "https://www.thermopoliswy.org",
+    "https://thermopoliswy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Hot Springs County."
+  ]
+}

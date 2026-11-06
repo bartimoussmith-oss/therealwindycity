@@ -1,0 +1,30 @@
+{
+  "slug": "pine-haven",
+  "name": "Pine Haven",
+  "type": "town",
+  "county": "Crook",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 493,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.pinehavenwy.gov",
+    "https://pinehavenwy.gov",
+    "https://www.pinehaven.gov",
+    "https://www.cityofpinehaven.gov",
+    "https://www.cityofpinehaven.org",
+    "https://www.cityofpinehaven.com",
+    "https://www.townofpinehaven.gov",
+    "https://www.townofpinehaven.org",
+    "https://www.townofpinehaven.com",
+    "https://www.ci.pinehaven.wy.us",
+    "https://www.pinehavenwy.org",
+    "https://pinehavenwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

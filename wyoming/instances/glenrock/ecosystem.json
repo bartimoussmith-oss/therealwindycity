@@ -1,0 +1,30 @@
+{
+  "slug": "glenrock",
+  "name": "Glenrock",
+  "type": "town",
+  "county": "Converse",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 2420,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.glenrockwy.gov",
+    "https://glenrockwy.gov",
+    "https://www.glenrock.gov",
+    "https://www.cityofglenrock.gov",
+    "https://www.cityofglenrock.org",
+    "https://www.cityofglenrock.com",
+    "https://www.townofglenrock.gov",
+    "https://www.townofglenrock.org",
+    "https://www.townofglenrock.com",
+    "https://www.ci.glenrock.wy.us",
+    "https://www.glenrockwy.org",
+    "https://glenrockwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "torrington",
+  "name": "Torrington",
+  "type": "city",
+  "county": "Goshen",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 6119,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.torringtonwy.gov",
+    "https://torringtonwy.gov",
+    "https://www.torrington.gov",
+    "https://www.cityoftorrington.gov",
+    "https://www.cityoftorrington.org",
+    "https://www.cityoftorrington.com",
+    "https://www.townoftorrington.gov",
+    "https://www.townoftorrington.org",
+    "https://www.townoftorrington.com",
+    "https://www.ci.torrington.wy.us",
+    "https://www.torringtonwy.org",
+    "https://torringtonwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Goshen County."
+  ]
+}

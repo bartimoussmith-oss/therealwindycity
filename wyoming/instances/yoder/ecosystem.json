@@ -1,0 +1,30 @@
+{
+  "slug": "yoder",
+  "name": "Yoder",
+  "type": "town",
+  "county": "Goshen",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 131,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.yoderwy.gov",
+    "https://yoderwy.gov",
+    "https://www.yoder.gov",
+    "https://www.cityofyoder.gov",
+    "https://www.cityofyoder.org",
+    "https://www.cityofyoder.com",
+    "https://www.townofyoder.gov",
+    "https://www.townofyoder.org",
+    "https://www.townofyoder.com",
+    "https://www.ci.yoder.wy.us",
+    "https://www.yoderwy.org",
+    "https://yoderwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

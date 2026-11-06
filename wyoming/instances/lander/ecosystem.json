@@ -1,0 +1,32 @@
+{
+  "slug": "lander",
+  "name": "Lander",
+  "type": "city",
+  "county": "Fremont",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 7546,
+  "known_url": "https://www.landerwy.org",
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.landerwy.org",
+    "https://www.landerwy.gov",
+    "https://landerwy.gov",
+    "https://www.lander.gov",
+    "https://www.cityoflander.gov",
+    "https://www.cityoflander.org",
+    "https://www.cityoflander.com",
+    "https://www.townoflander.gov",
+    "https://www.townoflander.org",
+    "https://www.townoflander.com",
+    "https://www.ci.lander.wy.us",
+    "https://landerwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Fremont County."
+  ]
+}

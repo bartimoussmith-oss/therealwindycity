@@ -1,0 +1,30 @@
+{
+  "slug": "edgerton",
+  "name": "Edgerton",
+  "type": "town",
+  "county": "Natrona",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 153,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.edgertonwy.gov",
+    "https://edgertonwy.gov",
+    "https://www.edgerton.gov",
+    "https://www.cityofedgerton.gov",
+    "https://www.cityofedgerton.org",
+    "https://www.cityofedgerton.com",
+    "https://www.townofedgerton.gov",
+    "https://www.townofedgerton.org",
+    "https://www.townofedgerton.com",
+    "https://www.ci.edgerton.wy.us",
+    "https://www.edgertonwy.org",
+    "https://edgertonwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

@@ -135,3 +135,25 @@ plain-HTML/Markdown site that AI assistants and search engines can read directly
 
 Rebuilt automatically by `.github/workflows/ai-record-pages.yml`; how it works:
 [`tools/README-ai-record.md`](tools/README-ai-record.md).
+
+## Statewide Wyoming instantiation (every jurisdiction, same engine)
+
+As of 2026-11-06 the Cheyenne build is generalized to **all 126 Wyoming jurisdictions**: the
+principal state bodies (Legislature, Governor, Secretary of State, Attorney General), all 23
+county boards of commissioners, and all 99 incorporated municipalities (19 first-class
+cities, 80 towns; 2020 Census incorporation list). Instances are configuration, not forks —
+they share this repo's single engine and differ only by `ENGINE_CONFIG_DIR` /
+`ENGINE_DATA_DIR` / `ENGINE_PUBLIC_DIR`:
+
+```bash
+wyoming/run-instance.sh casper init      # Casper's private ledger
+wyoming/run-instance.sh laramie selftest # offline pipeline proof, no network
+wyoming/run-instance.sh weston-county digest
+```
+
+Every source is generated **disabled** and stays that way until
+`python3 tools/wyoming_verify.py` live-fetches it (robots.txt honored) and a human confirms
+it; instances ship zero fabricated local content. Registry:
+[`wyoming/registry.json`](wyoming/registry.json) · architecture, coverage, verification
+lifecycle and how to add school/special districts:
+[`docs/WYOMING-STATEWIDE-INSTANTIATION.md`](docs/WYOMING-STATEWIDE-INSTANTIATION.md).

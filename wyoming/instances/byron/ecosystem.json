@@ -1,0 +1,30 @@
+{
+  "slug": "byron",
+  "name": "Byron",
+  "type": "town",
+  "county": "Big Horn",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 562,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.byronwy.gov",
+    "https://byronwy.gov",
+    "https://www.byron.gov",
+    "https://www.cityofbyron.gov",
+    "https://www.cityofbyron.org",
+    "https://www.cityofbyron.com",
+    "https://www.townofbyron.gov",
+    "https://www.townofbyron.org",
+    "https://www.townofbyron.com",
+    "https://www.ci.byron.wy.us",
+    "https://www.byronwy.org",
+    "https://byronwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

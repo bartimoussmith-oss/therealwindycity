@@ -1,0 +1,30 @@
+{
+  "slug": "midwest",
+  "name": "Midwest",
+  "type": "town",
+  "county": "Natrona",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 285,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.midwestwy.gov",
+    "https://midwestwy.gov",
+    "https://www.midwest.gov",
+    "https://www.cityofmidwest.gov",
+    "https://www.cityofmidwest.org",
+    "https://www.cityofmidwest.com",
+    "https://www.townofmidwest.gov",
+    "https://www.townofmidwest.org",
+    "https://www.townofmidwest.com",
+    "https://www.ci.midwest.wy.us",
+    "https://www.midwestwy.org",
+    "https://midwestwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

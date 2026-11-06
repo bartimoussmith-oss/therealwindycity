@@ -1,0 +1,30 @@
+{
+  "slug": "medicine-bow",
+  "name": "Medicine Bow",
+  "type": "town",
+  "county": "Carbon",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 245,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.medicinebowwy.gov",
+    "https://medicinebowwy.gov",
+    "https://www.medicinebow.gov",
+    "https://www.cityofmedicinebow.gov",
+    "https://www.cityofmedicinebow.org",
+    "https://www.cityofmedicinebow.com",
+    "https://www.townofmedicinebow.gov",
+    "https://www.townofmedicinebow.org",
+    "https://www.townofmedicinebow.com",
+    "https://www.ci.medicinebow.wy.us",
+    "https://www.medicinebowwy.org",
+    "https://medicinebowwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

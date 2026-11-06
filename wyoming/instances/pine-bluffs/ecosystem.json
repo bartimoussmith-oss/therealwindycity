@@ -1,0 +1,30 @@
+{
+  "slug": "pine-bluffs",
+  "name": "Pine Bluffs",
+  "type": "town",
+  "county": "Laramie",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 1172,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.pinebluffswy.gov",
+    "https://pinebluffswy.gov",
+    "https://www.pinebluffs.gov",
+    "https://www.cityofpinebluffs.gov",
+    "https://www.cityofpinebluffs.org",
+    "https://www.cityofpinebluffs.com",
+    "https://www.townofpinebluffs.gov",
+    "https://www.townofpinebluffs.org",
+    "https://www.townofpinebluffs.com",
+    "https://www.ci.pinebluffs.wy.us",
+    "https://www.pinebluffswy.org",
+    "https://pinebluffswy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

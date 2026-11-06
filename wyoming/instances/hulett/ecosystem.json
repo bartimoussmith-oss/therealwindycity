@@ -1,0 +1,30 @@
+{
+  "slug": "hulett",
+  "name": "Hulett",
+  "type": "town",
+  "county": "Crook",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 309,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.hulettwy.gov",
+    "https://hulettwy.gov",
+    "https://www.hulett.gov",
+    "https://www.cityofhulett.gov",
+    "https://www.cityofhulett.org",
+    "https://www.cityofhulett.com",
+    "https://www.townofhulett.gov",
+    "https://www.townofhulett.org",
+    "https://www.townofhulett.com",
+    "https://www.ci.hulett.wy.us",
+    "https://www.hulettwy.org",
+    "https://hulettwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

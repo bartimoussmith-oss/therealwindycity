@@ -1,0 +1,33 @@
+{
+  "slug": "laramie",
+  "name": "Laramie",
+  "type": "city",
+  "county": "Albany",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 31407,
+  "known_url": "https://www.laramie.org",
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.laramie.org",
+    "https://www.laramiewy.gov",
+    "https://laramiewy.gov",
+    "https://www.laramie.gov",
+    "https://www.cityoflaramie.gov",
+    "https://www.cityoflaramie.org",
+    "https://www.cityoflaramie.com",
+    "https://www.townoflaramie.gov",
+    "https://www.townoflaramie.org",
+    "https://www.townoflaramie.com",
+    "https://www.ci.laramie.wy.us",
+    "https://www.laramiewy.org",
+    "https://laramiewy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Albany County."
+  ]
+}

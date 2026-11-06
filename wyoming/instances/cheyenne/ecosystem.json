@@ -1,0 +1,35 @@
+{
+  "slug": "cheyenne",
+  "name": "Cheyenne",
+  "type": "city",
+  "county": "Laramie",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": true,
+  "population_2020": 65132,
+  "known_url": "https://www.cheyennecity.org",
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.cheyennecity.org",
+    "https://www.cheyennewy.gov",
+    "https://cheyennewy.gov",
+    "https://www.cheyenne.gov",
+    "https://www.cityofcheyenne.gov",
+    "https://www.cityofcheyenne.org",
+    "https://www.cityofcheyenne.com",
+    "https://www.townofcheyenne.gov",
+    "https://www.townofcheyenne.org",
+    "https://www.townofcheyenne.com",
+    "https://www.ci.cheyenne.wy.us",
+    "https://www.cheyennewy.org",
+    "https://cheyennewy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": "root config/ is canonical for Cheyenne; this instance is generated for completeness",
+  "notes": [
+    "FLAGSHIP: canonical, hand-tuned config lives at repo root (config/). This instance is generated for completeness; prefer the root for production runs.",
+    "County seat of Laramie County.",
+    "State capital."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "clearmont",
+  "name": "Clearmont",
+  "type": "town",
+  "county": "Sheridan",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 116,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.clearmontwy.gov",
+    "https://clearmontwy.gov",
+    "https://www.clearmont.gov",
+    "https://www.cityofclearmont.gov",
+    "https://www.cityofclearmont.org",
+    "https://www.cityofclearmont.com",
+    "https://www.townofclearmont.gov",
+    "https://www.townofclearmont.org",
+    "https://www.townofclearmont.com",
+    "https://www.ci.clearmont.wy.us",
+    "https://www.clearmontwy.org",
+    "https://clearmontwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

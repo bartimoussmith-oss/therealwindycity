@@ -1,0 +1,30 @@
+{
+  "slug": "elk-mountain",
+  "name": "Elk Mountain",
+  "type": "town",
+  "county": "Carbon",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 150,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.elkmountainwy.gov",
+    "https://elkmountainwy.gov",
+    "https://www.elkmountain.gov",
+    "https://www.cityofelkmountain.gov",
+    "https://www.cityofelkmountain.org",
+    "https://www.cityofelkmountain.com",
+    "https://www.townofelkmountain.gov",
+    "https://www.townofelkmountain.org",
+    "https://www.townofelkmountain.com",
+    "https://www.ci.elkmountain.wy.us",
+    "https://www.elkmountainwy.org",
+    "https://elkmountainwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

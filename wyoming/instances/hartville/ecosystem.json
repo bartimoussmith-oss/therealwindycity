@@ -1,0 +1,30 @@
+{
+  "slug": "hartville",
+  "name": "Hartville",
+  "type": "town",
+  "county": "Platte",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 64,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.hartvillewy.gov",
+    "https://hartvillewy.gov",
+    "https://www.hartville.gov",
+    "https://www.cityofhartville.gov",
+    "https://www.cityofhartville.org",
+    "https://www.cityofhartville.com",
+    "https://www.townofhartville.gov",
+    "https://www.townofhartville.org",
+    "https://www.townofhartville.com",
+    "https://www.ci.hartville.wy.us",
+    "https://www.hartvillewy.org",
+    "https://hartvillewy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

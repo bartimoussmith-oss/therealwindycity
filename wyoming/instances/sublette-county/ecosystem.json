@@ -1,0 +1,27 @@
+{
+  "slug": "sublette-county",
+  "name": "Sublette County",
+  "type": "county",
+  "county": "Sublette",
+  "county_seat": true,
+  "county_seat_name": "Pinedale",
+  "state_capital": false,
+  "population_2020": null,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.sublettecountywy.gov",
+    "https://sublettecountywy.gov",
+    "https://www.sublettecountywy.com",
+    "https://www.sublettecounty.net",
+    "https://www.sublettecountywy.us",
+    "https://www.sublettecounty.com",
+    "https://sublettecounty.net"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "Board of County Commissioners; seat: Pinedale."
+  ]
+}

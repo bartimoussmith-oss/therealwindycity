@@ -1,0 +1,30 @@
+{
+  "slug": "pavillion",
+  "name": "Pavillion",
+  "type": "town",
+  "county": "Fremont",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 230,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.pavillionwy.gov",
+    "https://pavillionwy.gov",
+    "https://www.pavillion.gov",
+    "https://www.cityofpavillion.gov",
+    "https://www.cityofpavillion.org",
+    "https://www.cityofpavillion.com",
+    "https://www.townofpavillion.gov",
+    "https://www.townofpavillion.org",
+    "https://www.townofpavillion.com",
+    "https://www.ci.pavillion.wy.us",
+    "https://www.pavillionwy.org",
+    "https://pavillionwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

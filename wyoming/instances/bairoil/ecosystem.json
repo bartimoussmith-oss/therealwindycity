@@ -1,0 +1,30 @@
+{
+  "slug": "bairoil",
+  "name": "Bairoil",
+  "type": "town",
+  "county": "Sweetwater",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 68,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.bairoilwy.gov",
+    "https://bairoilwy.gov",
+    "https://www.bairoil.gov",
+    "https://www.cityofbairoil.gov",
+    "https://www.cityofbairoil.org",
+    "https://www.cityofbairoil.com",
+    "https://www.townofbairoil.gov",
+    "https://www.townofbairoil.org",
+    "https://www.townofbairoil.com",
+    "https://www.ci.bairoil.wy.us",
+    "https://www.bairoilwy.org",
+    "https://bairoilwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

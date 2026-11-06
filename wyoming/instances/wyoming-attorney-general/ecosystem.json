@@ -1,0 +1,21 @@
+{
+  "slug": "wyoming-attorney-general",
+  "name": "Wyoming Attorney General",
+  "type": "state-executive",
+  "county": null,
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": null,
+  "known_url": "https://ag.wyo.gov",
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://ag.wyo.gov"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "Official opinions, consumer protection, open meetings/records enforcement posture."
+  ]
+}

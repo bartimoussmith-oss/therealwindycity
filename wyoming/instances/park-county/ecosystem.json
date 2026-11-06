@@ -1,0 +1,27 @@
+{
+  "slug": "park-county",
+  "name": "Park County",
+  "type": "county",
+  "county": "Park",
+  "county_seat": true,
+  "county_seat_name": "Cody",
+  "state_capital": false,
+  "population_2020": null,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.parkcountywy.gov",
+    "https://parkcountywy.gov",
+    "https://www.parkcountywy.com",
+    "https://www.parkcounty.net",
+    "https://www.parkcountywy.us",
+    "https://www.parkcounty.com",
+    "https://parkcounty.net"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "Board of County Commissioners; seat: Cody."
+  ]
+}

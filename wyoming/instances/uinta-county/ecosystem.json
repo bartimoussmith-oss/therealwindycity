@@ -1,0 +1,27 @@
+{
+  "slug": "uinta-county",
+  "name": "Uinta County",
+  "type": "county",
+  "county": "Uinta",
+  "county_seat": true,
+  "county_seat_name": "Evanston",
+  "state_capital": false,
+  "population_2020": null,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.uintacountywy.gov",
+    "https://uintacountywy.gov",
+    "https://www.uintacountywy.com",
+    "https://www.uintacounty.net",
+    "https://www.uintacountywy.us",
+    "https://www.uintacounty.com",
+    "https://uintacounty.net"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "Board of County Commissioners; seat: Evanston."
+  ]
+}

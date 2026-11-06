@@ -1,0 +1,30 @@
+{
+  "slug": "dayton",
+  "name": "Dayton",
+  "type": "town",
+  "county": "Sheridan",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 822,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.daytonwy.gov",
+    "https://daytonwy.gov",
+    "https://www.dayton.gov",
+    "https://www.cityofdayton.gov",
+    "https://www.cityofdayton.org",
+    "https://www.cityofdayton.com",
+    "https://www.townofdayton.gov",
+    "https://www.townofdayton.org",
+    "https://www.townofdayton.com",
+    "https://www.ci.dayton.wy.us",
+    "https://www.daytonwy.org",
+    "https://daytonwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "converse-county",
+  "name": "Converse County",
+  "type": "county",
+  "county": "Converse",
+  "county_seat": true,
+  "county_seat_name": "Douglas",
+  "state_capital": false,
+  "population_2020": null,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.conversecountywy.gov",
+    "https://conversecountywy.gov",
+    "https://www.conversecountywy.com",
+    "https://www.conversecounty.net",
+    "https://www.conversecountywy.us",
+    "https://www.conversecounty.com",
+    "https://conversecounty.net"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "Board of County Commissioners; seat: Douglas."
+  ]
+}

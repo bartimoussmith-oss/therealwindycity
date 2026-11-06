@@ -1,0 +1,27 @@
+{
+  "slug": "campbell-county",
+  "name": "Campbell County",
+  "type": "county",
+  "county": "Campbell",
+  "county_seat": true,
+  "county_seat_name": "Gillette",
+  "state_capital": false,
+  "population_2020": null,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.campbellcountywy.gov",
+    "https://campbellcountywy.gov",
+    "https://www.campbellcountywy.com",
+    "https://www.campbellcounty.net",
+    "https://www.campbellcountywy.us",
+    "https://www.campbellcounty.com",
+    "https://campbellcounty.net"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "Board of County Commissioners; seat: Gillette."
+  ]
+}

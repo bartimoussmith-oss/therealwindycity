@@ -1,0 +1,30 @@
+{
+  "slug": "rock-river",
+  "name": "Rock River",
+  "type": "town",
+  "county": "Albany",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 211,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.rockriverwy.gov",
+    "https://rockriverwy.gov",
+    "https://www.rockriver.gov",
+    "https://www.cityofrockriver.gov",
+    "https://www.cityofrockriver.org",
+    "https://www.cityofrockriver.com",
+    "https://www.townofrockriver.gov",
+    "https://www.townofrockriver.org",
+    "https://www.townofrockriver.com",
+    "https://www.ci.rockriver.wy.us",
+    "https://www.rockriverwy.org",
+    "https://rockriverwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

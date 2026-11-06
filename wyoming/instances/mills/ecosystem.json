@@ -1,0 +1,30 @@
+{
+  "slug": "mills",
+  "name": "Mills",
+  "type": "town",
+  "county": "Natrona",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 4034,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.millswy.gov",
+    "https://millswy.gov",
+    "https://www.mills.gov",
+    "https://www.cityofmills.gov",
+    "https://www.cityofmills.org",
+    "https://www.cityofmills.com",
+    "https://www.townofmills.gov",
+    "https://www.townofmills.org",
+    "https://www.townofmills.com",
+    "https://www.ci.mills.wy.us",
+    "https://www.millswy.org",
+    "https://millswy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

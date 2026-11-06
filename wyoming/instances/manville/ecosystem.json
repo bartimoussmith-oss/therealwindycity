@@ -1,0 +1,30 @@
+{
+  "slug": "manville",
+  "name": "Manville",
+  "type": "town",
+  "county": "Niobrara",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 92,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.manvillewy.gov",
+    "https://manvillewy.gov",
+    "https://www.manville.gov",
+    "https://www.cityofmanville.gov",
+    "https://www.cityofmanville.org",
+    "https://www.cityofmanville.com",
+    "https://www.townofmanville.gov",
+    "https://www.townofmanville.org",
+    "https://www.townofmanville.com",
+    "https://www.ci.manville.wy.us",
+    "https://www.manvillewy.org",
+    "https://manvillewy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

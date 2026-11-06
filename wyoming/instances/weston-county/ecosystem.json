@@ -1,0 +1,27 @@
+{
+  "slug": "weston-county",
+  "name": "Weston County",
+  "type": "county",
+  "county": "Weston",
+  "county_seat": true,
+  "county_seat_name": "Newcastle",
+  "state_capital": false,
+  "population_2020": null,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.westoncountywy.gov",
+    "https://westoncountywy.gov",
+    "https://www.westoncountywy.com",
+    "https://www.westoncounty.net",
+    "https://www.westoncountywy.us",
+    "https://www.westoncounty.com",
+    "https://westoncounty.net"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "Board of County Commissioners; seat: Newcastle."
+  ]
+}

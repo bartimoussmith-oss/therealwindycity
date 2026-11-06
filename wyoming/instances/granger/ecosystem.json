@@ -1,0 +1,30 @@
+{
+  "slug": "granger",
+  "name": "Granger",
+  "type": "town",
+  "county": "Sweetwater",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 98,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.grangerwy.gov",
+    "https://grangerwy.gov",
+    "https://www.granger.gov",
+    "https://www.cityofgranger.gov",
+    "https://www.cityofgranger.org",
+    "https://www.cityofgranger.com",
+    "https://www.townofgranger.gov",
+    "https://www.townofgranger.org",
+    "https://www.townofgranger.com",
+    "https://www.ci.granger.wy.us",
+    "https://www.grangerwy.org",
+    "https://grangerwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

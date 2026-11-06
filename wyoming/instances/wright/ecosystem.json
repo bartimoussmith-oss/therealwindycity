@@ -1,0 +1,30 @@
+{
+  "slug": "wright",
+  "name": "Wright",
+  "type": "town",
+  "county": "Campbell",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 1644,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.wrightwy.gov",
+    "https://wrightwy.gov",
+    "https://www.wright.gov",
+    "https://www.cityofwright.gov",
+    "https://www.cityofwright.org",
+    "https://www.cityofwright.com",
+    "https://www.townofwright.gov",
+    "https://www.townofwright.org",
+    "https://www.townofwright.com",
+    "https://www.ci.wright.wy.us",
+    "https://www.wrightwy.org",
+    "https://wrightwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "lusk",
+  "name": "Lusk",
+  "type": "town",
+  "county": "Niobrara",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 1541,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.luskwy.gov",
+    "https://luskwy.gov",
+    "https://www.lusk.gov",
+    "https://www.cityoflusk.gov",
+    "https://www.cityoflusk.org",
+    "https://www.cityoflusk.com",
+    "https://www.townoflusk.gov",
+    "https://www.townoflusk.org",
+    "https://www.townoflusk.com",
+    "https://www.ci.lusk.wy.us",
+    "https://www.luskwy.org",
+    "https://luskwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Niobrara County."
+  ]
+}

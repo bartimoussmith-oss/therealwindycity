@@ -1,0 +1,30 @@
+{
+  "slug": "albin",
+  "name": "Albin",
+  "type": "town",
+  "county": "Laramie",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 169,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.albinwy.gov",
+    "https://albinwy.gov",
+    "https://www.albin.gov",
+    "https://www.cityofalbin.gov",
+    "https://www.cityofalbin.org",
+    "https://www.cityofalbin.com",
+    "https://www.townofalbin.gov",
+    "https://www.townofalbin.org",
+    "https://www.townofalbin.com",
+    "https://www.ci.albin.wy.us",
+    "https://www.albinwy.org",
+    "https://albinwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

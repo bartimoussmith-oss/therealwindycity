@@ -1,0 +1,30 @@
+{
+  "slug": "wamsutter",
+  "name": "Wamsutter",
+  "type": "town",
+  "county": "Sweetwater",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 203,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.wamsutterwy.gov",
+    "https://wamsutterwy.gov",
+    "https://www.wamsutter.gov",
+    "https://www.cityofwamsutter.gov",
+    "https://www.cityofwamsutter.org",
+    "https://www.cityofwamsutter.com",
+    "https://www.townofwamsutter.gov",
+    "https://www.townofwamsutter.org",
+    "https://www.townofwamsutter.com",
+    "https://www.ci.wamsutter.wy.us",
+    "https://www.wamsutterwy.org",
+    "https://wamsutterwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

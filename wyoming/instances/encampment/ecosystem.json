@@ -1,0 +1,30 @@
+{
+  "slug": "encampment",
+  "name": "Encampment",
+  "type": "town",
+  "county": "Carbon",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 452,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.encampmentwy.gov",
+    "https://encampmentwy.gov",
+    "https://www.encampment.gov",
+    "https://www.cityofencampment.gov",
+    "https://www.cityofencampment.org",
+    "https://www.cityofencampment.com",
+    "https://www.townofencampment.gov",
+    "https://www.townofencampment.org",
+    "https://www.townofencampment.com",
+    "https://www.ci.encampment.wy.us",
+    "https://www.encampmentwy.org",
+    "https://encampmentwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

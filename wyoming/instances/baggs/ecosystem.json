@@ -1,0 +1,30 @@
+{
+  "slug": "baggs",
+  "name": "Baggs",
+  "type": "town",
+  "county": "Carbon",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 411,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.baggswy.gov",
+    "https://baggswy.gov",
+    "https://www.baggs.gov",
+    "https://www.cityofbaggs.gov",
+    "https://www.cityofbaggs.org",
+    "https://www.cityofbaggs.com",
+    "https://www.townofbaggs.gov",
+    "https://www.townofbaggs.org",
+    "https://www.townofbaggs.com",
+    "https://www.ci.baggs.wy.us",
+    "https://www.baggswy.org",
+    "https://baggswy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

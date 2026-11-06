@@ -1,0 +1,32 @@
+{
+  "slug": "green-river",
+  "name": "Green River",
+  "type": "city",
+  "county": "Sweetwater",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 11825,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.greenriverwy.gov",
+    "https://greenriverwy.gov",
+    "https://www.greenriver.gov",
+    "https://www.cityofgreenriver.gov",
+    "https://www.cityofgreenriver.org",
+    "https://www.cityofgreenriver.com",
+    "https://www.townofgreenriver.gov",
+    "https://www.townofgreenriver.org",
+    "https://www.townofgreenriver.com",
+    "https://www.ci.greenriver.wy.us",
+    "https://www.greenriverwy.org",
+    "https://greenriverwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Sweetwater County."
+  ]
+}

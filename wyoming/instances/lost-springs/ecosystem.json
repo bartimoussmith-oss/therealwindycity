@@ -1,0 +1,30 @@
+{
+  "slug": "lost-springs",
+  "name": "Lost Springs",
+  "type": "town",
+  "county": "Converse",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 6,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.lostspringswy.gov",
+    "https://lostspringswy.gov",
+    "https://www.lostsprings.gov",
+    "https://www.cityoflostsprings.gov",
+    "https://www.cityoflostsprings.org",
+    "https://www.cityoflostsprings.com",
+    "https://www.townoflostsprings.gov",
+    "https://www.townoflostsprings.org",
+    "https://www.townoflostsprings.com",
+    "https://www.ci.lostsprings.wy.us",
+    "https://www.lostspringswy.org",
+    "https://lostspringswy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

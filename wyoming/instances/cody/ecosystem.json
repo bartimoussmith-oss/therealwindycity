@@ -1,0 +1,32 @@
+{
+  "slug": "cody",
+  "name": "Cody",
+  "type": "city",
+  "county": "Park",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 10028,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.codywy.gov",
+    "https://codywy.gov",
+    "https://www.cody.gov",
+    "https://www.cityofcody.gov",
+    "https://www.cityofcody.org",
+    "https://www.cityofcody.com",
+    "https://www.townofcody.gov",
+    "https://www.townofcody.org",
+    "https://www.townofcody.com",
+    "https://www.ci.cody.wy.us",
+    "https://www.codywy.org",
+    "https://codywy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Park County."
+  ]
+}
