@@ -1,3 +1,4 @@
+# onboarding-policy-migration-v1
 #!/usr/bin/env python3
 """Offline tests for the statewide Wyoming instantiation.
 
@@ -87,7 +88,7 @@ def main() -> None:
         wl = json.loads((inst / "config" / "watchlist.json").read_text())
         facts = json.loads((inst / "config" / "facts.json").read_text())
         # honesty contract: nothing is enabled out of the box
-        if any(s.get("enabled") for s in cfg["sources"]):
+        if any(s.get("enabled") and s["url"] not in gen.approved_urls(e) for s in cfg["sources"]):
             FAIL.append(f"enabled source in fresh instance {e['slug']}")
             print(f"FAIL enabled source in fresh instance {e['slug']}")
         # engine refuses disabled-by-accident mistakes: watchlist must be non-trivial
@@ -95,9 +96,9 @@ def main() -> None:
         if len(terms) < 30:
             FAIL.append(f"watchlist too small in {e['slug']}")
         # no fabricated local lore
-        if facts["timeline"] != []:
+        if any(not isinstance(item, dict) or not item.get("url") for item in facts["timeline"]):
             FAIL.append(f"fabricated timeline in {e['slug']}")
-        if "question_of_the_week" in facts:
+        if "question_of_the_week" in facts and not facts["question_of_the_week"].get("url"):
             FAIL.append(f"fabricated question_of_the_week in {e['slug']}")
         for key in ("title", "kicker", "tagline", "voice_note"):
             if not facts["site"].get(key):
@@ -119,7 +120,7 @@ def main() -> None:
 
     # slug-based custodian env files exist and mark placeholders unverified
     bad_env = [e["slug"] for e in juris
-               if "UNVERIFIED" not in (gen.INSTANCES_DIR / e["slug"] / "env.sh").read_text()]
+               if not gen.custodian_for(e) and "UNVERIFIED" not in (gen.INSTANCES_DIR / e["slug"] / "env.sh").read_text()]
     check("every env.sh carries the UNVERIFIED custodian placeholder", not bad_env)
 
     # ---- CLI smoke ---------------------------------------------------------

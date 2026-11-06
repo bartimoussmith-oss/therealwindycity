@@ -1,7 +1,7 @@
 {
   "identity": {
-    "user_agent": "WyomingCivicTransparencyEngine/0.1 (public-records research; contact: you@example.org)",
-    "contact": "you@example.org  <-- PUT YOUR REAL CONTACT HERE; honest UAs get blocked less",
+    "user_agent": "WyomingCivicTransparencyEngine/0.2 (public-records research; contact: https://github.com/bartimoussmith-oss/therealwindycity/issues)",
+    "contact": "https://github.com/bartimoussmith-oss/therealwindycity/issues",
     "delay_seconds_per_host": 3,
     "max_docs_per_source_per_run": 40
   },
@@ -11,7 +11,7 @@
       "type": "html",
       "url": "https://www.vantassellwy.gov",
       "enabled": false,
-      "notes": "UNVERIFIED candidate \u2014 generated from wyoming/registry.json. DO NOT ENABLE BY HAND. Run: python3 tools/wyoming_verify.py --slug van-tassell --apply. The verifier honors robots.txt, fingerprints the platform (Granicus/CivicPlus/WordPress/Municode/unknown), and enables this source only if it live-fetches successfully. If no candidate URL resolves, this jurisdiction may need manual onboarding \u2014 see docs/WYOMING-STATEWIDE-INSTANTIATION.md ('Non-web jurisdictions')."
+      "notes": "Candidate URL: enable only after reviewed-source approval and a successful robots-compliant live probe."
     },
     {
       "name": "van-tassell_wyomingnews_search",

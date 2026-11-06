@@ -1,7 +1,7 @@
 {
   "identity": {
-    "user_agent": "CheyenneCivicTransparencyEngine/0.1 (public-records research; contact: you@example.org)",
-    "contact": "you@example.org  <-- PUT YOUR REAL CONTACT HERE; honest UAs get blocked less",
+    "user_agent": "CheyenneCivicTransparencyEngine/0.1 (public-records research; contact: https://github.com/bartimoussmith-oss/therealwindycity/issues)",
+    "contact": "https://github.com/bartimoussmith-oss/therealwindycity/issues",
     "delay_seconds_per_host": 3,
     "max_docs_per_source_per_run": 40
   },
@@ -11,7 +11,7 @@
       "type": "html",
       "url": "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas",
       "enabled": true,
-      "notes": "CONFIRMED 2026-09-05. Covers Council/Finance/Public Services/COW/Work Sessions. LIVE-RUN FINDING: the actual agenda packets/minutes are served from cheyenne.granicus.com, whose robots.txt disallows automated access — the engine refused them by design (see LEGAL.md). Get those PDFs by browser, by bulk-access request to the City Clerk, or by PRA request."
+      "notes": "CONFIRMED 2026-09-05. Covers Council/Finance/Public Services/COW/Work Sessions. LIVE-RUN FINDING: the actual agenda packets/minutes are served from cheyenne.granicus.com, whose robots.txt disallows automated access \u2014 the engine refused them by design (see LEGAL.md). Get those PDFs by browser, by bulk-access request to the City Clerk, or by PRA request."
     },
     {
       "name": "city_news_articles",
@@ -50,8 +50,19 @@
     }
   ],
   "document_link_patterns": [
-    "agenda", "minutes", "packet", "ordinance", "resolution",
-    "staff.?report", "application", "zone.?change", "annexation",
-    "\\.pdf($|\\?)", "\\.docx?($|\\?)", "\\.xlsx?($|\\?)", "\\.csv($|\\?)", "\\.txt($|\\?)"
+    "agenda",
+    "minutes",
+    "packet",
+    "ordinance",
+    "resolution",
+    "staff.?report",
+    "application",
+    "zone.?change",
+    "annexation",
+    "\\.pdf($|\\?)",
+    "\\.docx?($|\\?)",
+    "\\.xlsx?($|\\?)",
+    "\\.csv($|\\?)",
+    "\\.txt($|\\?)"
   ]
 }
