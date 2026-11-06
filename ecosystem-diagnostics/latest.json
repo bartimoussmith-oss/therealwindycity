@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "started_at": "2026-11-05T22:41:51.411Z",
+  "started_at": "2026-11-06T03:28:07.251Z",
   "scope": "Public GitHub repository inventory, recent public workflow runs, public issues and pull requests, declared homepage HTTP availability",
   "limitations": [
     "Not an exhaustive code, security, accessibility, factual-content or historical audit",
@@ -235,7 +235,7 @@
       "archived": false,
       "fork": false,
       "default_branch": "main",
-      "pushed_at": "2026-11-05T22:15:44Z",
+      "pushed_at": "2026-11-06T02:48:37Z",
       "findings": [
         {
           "severity": "review",
@@ -270,30 +270,50 @@
         }
       ],
       "head": {
-        "sha": "af38485ba47fa9824ecdf98319586b75959c149a",
-        "url": "https://github.com/bartimoussmith-oss/therealwindycity/commit/af38485ba47fa9824ecdf98319586b75959c149a",
-        "date": "2026-11-05T22:15:43Z"
+        "sha": "8b56e83d70b56eea88d73e6ecb986efd42334511",
+        "url": "https://github.com/bartimoussmith-oss/therealwindycity/commit/8b56e83d70b56eea88d73e6ecb986efd42334511",
+        "date": "2026-11-06T02:48:36Z"
       },
       "runs": [
         {
-          "id": 42123652743,
+          "id": 42156721905,
           "name": "Hourly public ecosystem diagnostics",
+          "branch": "main",
+          "sha": "8b56e83d70b56eea88d73e6ecb986efd42334511",
+          "status": "in_progress",
+          "conclusion": null,
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42156721905",
+          "created_at": "2026-11-06T03:28:02Z"
+        },
+        {
+          "id": 42152580009,
+          "name": "Scanner best-effort live and recovery",
+          "branch": "main",
+          "sha": "af38485ba47fa9824ecdf98319586b75959c149a",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42152580009",
+          "created_at": "2026-11-06T02:47:49Z"
+        },
+        {
+          "id": 42138402353,
+          "name": "Promethean Recurring Harvest",
           "branch": "main",
           "sha": "af38485ba47fa9824ecdf98319586b75959c149a",
           "status": "in_progress",
           "conclusion": null,
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42123652743",
-          "created_at": "2026-11-05T22:41:47Z"
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42138402353",
+          "created_at": "2026-11-06T00:39:22Z"
         },
         {
-          "id": 42119861699,
-          "name": "Scanner best-effort live and recovery",
+          "id": 42136668408,
+          "name": "Scanner historical backfill",
           "branch": "main",
-          "sha": "d04c8786963410b4b5ebb4c5c0092a11c1031de4",
+          "sha": "af38485ba47fa9824ecdf98319586b75959c149a",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42119861699",
-          "created_at": "2026-11-05T22:15:00Z"
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42136668408",
+          "created_at": "2026-11-06T00:25:08Z"
         },
         {
           "id": 42098753152,
@@ -306,16 +326,6 @@
           "created_at": "2026-11-05T19:57:07Z"
         },
         {
-          "id": 42088136149,
-          "name": "Scanner historical backfill",
-          "branch": "main",
-          "sha": "4ae01e7062a90d9fed8e7022b4a097f49cd8e25b",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42088136149",
-          "created_at": "2026-11-05T18:50:36Z"
-        },
-        {
           "id": 42067675046,
           "name": "ai-record-pages",
           "branch": "main",
@@ -324,16 +334,6 @@
           "conclusion": "success",
           "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42067675046",
           "created_at": "2026-11-05T16:45:14Z"
-        },
-        {
-          "id": 42060406757,
-          "name": "Promethean Recurring Harvest",
-          "branch": "main",
-          "sha": "4ae01e7062a90d9fed8e7022b4a097f49cd8e25b",
-          "status": "completed",
-          "conclusion": "cancelled",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42060406757",
-          "created_at": "2026-11-05T15:58:40Z"
         },
         {
           "id": 42037806412,
@@ -354,16 +354,6 @@
           "conclusion": "failure",
           "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41862499695",
           "created_at": "2026-11-04T15:54:34Z"
-        },
-        {
-          "id": 41856949294,
-          "name": "ai-record-pages",
-          "branch": "arena/74a6689f-therealwindycity",
-          "sha": "cc14aa2bd4dce8e1c3cda111689193d9eaada485",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41856949294",
-          "created_at": "2026-11-04T15:21:55Z"
         }
       ],
       "open_items": [
@@ -782,7 +772,7 @@
       "archived": false,
       "fork": false,
       "default_branch": "main",
-      "pushed_at": "2026-11-05T21:15:38Z",
+      "pushed_at": "2026-11-06T00:28:00Z",
       "findings": [
         {
           "severity": "review",
@@ -817,11 +807,41 @@
         }
       ],
       "head": {
-        "sha": "985bb71e3101cb412878fb45ab4d34b38a388410",
-        "url": "https://github.com/therealwindycity/TheReelWindyCity/commit/985bb71e3101cb412878fb45ab4d34b38a388410",
-        "date": "2026-11-05T21:15:36Z"
+        "sha": "b1b0141e318256ad5de563f10add15b6bc13617b",
+        "url": "https://github.com/therealwindycity/TheReelWindyCity/commit/b1b0141e318256ad5de563f10add15b6bc13617b",
+        "date": "2026-11-06T00:27:59Z"
       },
       "runs": [
+        {
+          "id": 42140133912,
+          "name": "Promethean Recurring Harvest",
+          "branch": "main",
+          "sha": "b1b0141e318256ad5de563f10add15b6bc13617b",
+          "status": "in_progress",
+          "conclusion": null,
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42140133912",
+          "created_at": "2026-11-06T00:54:04Z"
+        },
+        {
+          "id": 42136832625,
+          "name": "Live Municipal Watch",
+          "branch": "main",
+          "sha": "985bb71e3101cb412878fb45ab4d34b38a388410",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42136832625",
+          "created_at": "2026-11-06T00:26:31Z"
+        },
+        {
+          "id": 42135291307,
+          "name": "Deploy to GitHub Pages",
+          "branch": "main",
+          "sha": "985bb71e3101cb412878fb45ab4d34b38a388410",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42135291307",
+          "created_at": "2026-11-06T00:13:49Z"
+        },
         {
           "id": 42110495638,
           "name": "Live Place Archives",
@@ -843,16 +863,6 @@
           "created_at": "2026-11-05T20:38:22Z"
         },
         {
-          "id": 42088319473,
-          "name": "Live Municipal Watch",
-          "branch": "main",
-          "sha": "d93c037a928a663f8c215722847941fde39db16f",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42088319473",
-          "created_at": "2026-11-05T18:51:46Z"
-        },
-        {
           "id": 42087206913,
           "name": "Citizen Connect Incident Sync",
           "branch": "main",
@@ -861,26 +871,6 @@
           "conclusion": "success",
           "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42087206913",
           "created_at": "2026-11-05T18:44:54Z"
-        },
-        {
-          "id": 42087002182,
-          "name": "Deploy to GitHub Pages",
-          "branch": "main",
-          "sha": "a5dcbd73e94c3d6540b5d19158a670f3eb489792",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42087002182",
-          "created_at": "2026-11-05T18:43:38Z"
-        },
-        {
-          "id": 42063075626,
-          "name": "Promethean Recurring Harvest",
-          "branch": "main",
-          "sha": "a5dcbd73e94c3d6540b5d19158a670f3eb489792",
-          "status": "completed",
-          "conclusion": "cancelled",
-          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42063075626",
-          "created_at": "2026-11-05T16:18:40Z"
         }
       ],
       "open_items": [
@@ -937,7 +927,7 @@
     }
   ],
   "coverage_gaps": [],
-  "finished_at": "2026-11-05T22:42:16.380Z",
+  "finished_at": "2026-11-06T03:28:29.513Z",
   "summary": {
     "repositories": 15,
     "findings": 4,
