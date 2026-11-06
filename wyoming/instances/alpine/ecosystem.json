@@ -1,0 +1,30 @@
+{
+  "slug": "alpine",
+  "name": "Alpine",
+  "type": "town",
+  "county": "Lincoln",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 1220,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.alpinewy.gov",
+    "https://alpinewy.gov",
+    "https://www.alpine.gov",
+    "https://www.cityofalpine.gov",
+    "https://www.cityofalpine.org",
+    "https://www.cityofalpine.com",
+    "https://www.townofalpine.gov",
+    "https://www.townofalpine.org",
+    "https://www.townofalpine.com",
+    "https://www.ci.alpine.wy.us",
+    "https://www.alpinewy.org",
+    "https://alpinewy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

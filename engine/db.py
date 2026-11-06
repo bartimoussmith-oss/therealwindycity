@@ -11,6 +11,7 @@ One SQLite file serves three jobs:
 from __future__ import annotations
 
 import json
+import os
 import sqlite3
 import time
 from pathlib import Path
@@ -18,7 +19,12 @@ from pathlib import Path
 from . import redact
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "data"
+# Per-jurisdiction portability (additive, 2026-11-06): set ENGINE_CONFIG_DIR to a
+# directory containing sources.json/watchlist.json/facts.json and ENGINE_DATA_DIR
+# to a separate data root to run one instance of this engine per Wyoming
+# jurisdiction without copying code. Defaults are byte-identical to before.
+CONFIG_DIR = Path(os.environ.get("ENGINE_CONFIG_DIR") or (ROOT / "config"))
+DATA = Path(os.environ.get("ENGINE_DATA_DIR") or (ROOT / "data"))
 SNAP_DIR = DATA / "snapshots"
 TEXT_DIR = DATA / "text"
 OUT_DIR = DATA / "out"
@@ -118,12 +124,12 @@ def init_db() -> dict:
 
 
 def load_config() -> dict:
-    cfg_path = ROOT / "config" / "sources.json"
+    cfg_path = CONFIG_DIR / "sources.json"
     return json.loads(cfg_path.read_text())
 
 
 def load_watchlist() -> list[tuple[str, str]]:
-    wl_path = ROOT / "config" / "watchlist.json"
+    wl_path = CONFIG_DIR / "watchlist.json"
     raw = json.loads(wl_path.read_text())
     pairs = []
     for topic, terms in raw.get("topics", {}).items():

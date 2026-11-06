@@ -1,0 +1,30 @@
+{
+  "slug": "la-barge",
+  "name": "La Barge",
+  "type": "town",
+  "county": "Lincoln",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 394,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.labargewy.gov",
+    "https://labargewy.gov",
+    "https://www.labarge.gov",
+    "https://www.cityoflabarge.gov",
+    "https://www.cityoflabarge.org",
+    "https://www.cityoflabarge.com",
+    "https://www.townoflabarge.gov",
+    "https://www.townoflabarge.org",
+    "https://www.townoflabarge.com",
+    "https://www.ci.labarge.wy.us",
+    "https://www.labargewy.org",
+    "https://labargewy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

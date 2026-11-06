@@ -1,0 +1,30 @@
+{
+  "slug": "superior",
+  "name": "Superior",
+  "type": "town",
+  "county": "Sweetwater",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 184,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.superiorwy.gov",
+    "https://superiorwy.gov",
+    "https://www.superior.gov",
+    "https://www.cityofsuperior.gov",
+    "https://www.cityofsuperior.org",
+    "https://www.cityofsuperior.com",
+    "https://www.townofsuperior.gov",
+    "https://www.townofsuperior.org",
+    "https://www.townofsuperior.com",
+    "https://www.ci.superior.wy.us",
+    "https://www.superiorwy.org",
+    "https://superiorwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

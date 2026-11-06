@@ -1,0 +1,30 @@
+{
+  "slug": "big-piney",
+  "name": "Big Piney",
+  "type": "town",
+  "county": "Sublette",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 395,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.bigpineywy.gov",
+    "https://bigpineywy.gov",
+    "https://www.bigpiney.gov",
+    "https://www.cityofbigpiney.gov",
+    "https://www.cityofbigpiney.org",
+    "https://www.cityofbigpiney.com",
+    "https://www.townofbigpiney.gov",
+    "https://www.townofbigpiney.org",
+    "https://www.townofbigpiney.com",
+    "https://www.ci.bigpiney.wy.us",
+    "https://www.bigpineywy.org",
+    "https://bigpineywy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "johnson-county",
+  "name": "Johnson County",
+  "type": "county",
+  "county": "Johnson",
+  "county_seat": true,
+  "county_seat_name": "Buffalo",
+  "state_capital": false,
+  "population_2020": null,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.johnsoncountywy.gov",
+    "https://johnsoncountywy.gov",
+    "https://www.johnsoncountywy.com",
+    "https://www.johnsoncounty.net",
+    "https://www.johnsoncountywy.us",
+    "https://www.johnsoncounty.com",
+    "https://johnsoncounty.net"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "Board of County Commissioners; seat: Buffalo."
+  ]
+}

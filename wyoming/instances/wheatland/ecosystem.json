@@ -1,0 +1,32 @@
+{
+  "slug": "wheatland",
+  "name": "Wheatland",
+  "type": "town",
+  "county": "Platte",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 3588,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.wheatlandwy.gov",
+    "https://wheatlandwy.gov",
+    "https://www.wheatland.gov",
+    "https://www.cityofwheatland.gov",
+    "https://www.cityofwheatland.org",
+    "https://www.cityofwheatland.com",
+    "https://www.townofwheatland.gov",
+    "https://www.townofwheatland.org",
+    "https://www.townofwheatland.com",
+    "https://www.ci.wheatland.wy.us",
+    "https://www.wheatlandwy.org",
+    "https://wheatlandwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Platte County."
+  ]
+}

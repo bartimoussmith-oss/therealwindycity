@@ -1,0 +1,32 @@
+{
+  "slug": "jackson",
+  "name": "Jackson",
+  "type": "town",
+  "county": "Teton",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 10760,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.jacksonwy.gov",
+    "https://jacksonwy.gov",
+    "https://www.jackson.gov",
+    "https://www.cityofjackson.gov",
+    "https://www.cityofjackson.org",
+    "https://www.cityofjackson.com",
+    "https://www.townofjackson.gov",
+    "https://www.townofjackson.org",
+    "https://www.townofjackson.com",
+    "https://www.ci.jackson.wy.us",
+    "https://www.jacksonwy.org",
+    "https://jacksonwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Teton County."
+  ]
+}

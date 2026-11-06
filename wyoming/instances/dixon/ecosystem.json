@@ -1,0 +1,30 @@
+{
+  "slug": "dixon",
+  "name": "Dixon",
+  "type": "town",
+  "county": "Carbon",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 74,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.dixonwy.gov",
+    "https://dixonwy.gov",
+    "https://www.dixon.gov",
+    "https://www.cityofdixon.gov",
+    "https://www.cityofdixon.org",
+    "https://www.cityofdixon.com",
+    "https://www.townofdixon.gov",
+    "https://www.townofdixon.org",
+    "https://www.townofdixon.com",
+    "https://www.ci.dixon.wy.us",
+    "https://www.dixonwy.org",
+    "https://dixonwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

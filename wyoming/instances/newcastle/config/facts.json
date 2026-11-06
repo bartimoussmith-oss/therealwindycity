@@ -1,0 +1,21 @@
+{
+  "site": {
+    "title": "THE REAL NEWCASTLE LEDGER",
+    "kicker": "Newcastle, Wyoming \u2014 public documents in, verifiable evidence out.",
+    "tagline": "Public documents in. Verifiable evidence out.",
+    "voice_note": "Not produced by, endorsed by, or affiliated with any individual \u2014 named or otherwise \u2014 or any candidate, campaign, or political committee.",
+    "county": "Weston"
+  },
+  "timeline": [],
+  "owner_todo": [
+    "Run: python3 tools/wyoming_verify.py --slug newcastle --apply  (live-fetches and enables only what actually answers; honors robots.txt).",
+    "Confirm the clerk/custodian office and mailing address in env.sh before any Wyoming Public Records Act request is sent.",
+    "Add this jurisdiction's local record to facts.json: timeline entries (each with a linked source) and a question_of_the_week. Nothing local is asserted until you do \u2014 that is deliberate.",
+    "If this municipality has no usable web presence, the engine still works: digest + silent-edit detection are only as good as the sources you enable, and `run.py request pra` drafts PRAs from first principles.",
+    "Optional: set election_day (ISO date) and election_stat_label in facts.json for the countdown stat. Wyoming's uniform municipal general election is the Tuesday after the first Monday in November of odd-numbered years \u2014 verify your jurisdiction's calendar with the County Clerk or the Secretary of State."
+  ],
+  "notes": [
+    "Generated instance \u2014 NO local facts, events, quotes, or attribution are present yet. Empty by design; the owner adds the local record.",
+    "Jurisdiction type: city. County: Weston. Population (2020 Census): 3374."
+  ]
+}

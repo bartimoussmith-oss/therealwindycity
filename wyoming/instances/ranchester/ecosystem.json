@@ -1,0 +1,30 @@
+{
+  "slug": "ranchester",
+  "name": "Ranchester",
+  "type": "town",
+  "county": "Sheridan",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 1064,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.ranchesterwy.gov",
+    "https://ranchesterwy.gov",
+    "https://www.ranchester.gov",
+    "https://www.cityofranchester.gov",
+    "https://www.cityofranchester.org",
+    "https://www.cityofranchester.com",
+    "https://www.townofranchester.gov",
+    "https://www.townofranchester.org",
+    "https://www.townofranchester.com",
+    "https://www.ci.ranchester.wy.us",
+    "https://www.ranchesterwy.org",
+    "https://ranchesterwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

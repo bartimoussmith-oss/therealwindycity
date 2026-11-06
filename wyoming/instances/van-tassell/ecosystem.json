@@ -1,0 +1,30 @@
+{
+  "slug": "van-tassell",
+  "name": "Van Tassell",
+  "type": "town",
+  "county": "Niobrara",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 22,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.vantassellwy.gov",
+    "https://vantassellwy.gov",
+    "https://www.vantassell.gov",
+    "https://www.cityofvantassell.gov",
+    "https://www.cityofvantassell.org",
+    "https://www.cityofvantassell.com",
+    "https://www.townofvantassell.gov",
+    "https://www.townofvantassell.org",
+    "https://www.townofvantassell.com",
+    "https://www.ci.vantassell.wy.us",
+    "https://www.vantassellwy.org",
+    "https://vantassellwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

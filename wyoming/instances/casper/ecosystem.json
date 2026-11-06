@@ -1,0 +1,32 @@
+{
+  "slug": "casper",
+  "name": "Casper",
+  "type": "city",
+  "county": "Natrona",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 59038,
+  "known_url": "https://www.casperwy.gov",
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.casperwy.gov",
+    "https://casperwy.gov",
+    "https://www.casper.gov",
+    "https://www.cityofcasper.gov",
+    "https://www.cityofcasper.org",
+    "https://www.cityofcasper.com",
+    "https://www.townofcasper.gov",
+    "https://www.townofcasper.org",
+    "https://www.townofcasper.com",
+    "https://www.ci.casper.wy.us",
+    "https://www.casperwy.org",
+    "https://casperwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Natrona County."
+  ]
+}

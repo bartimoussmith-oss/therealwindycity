@@ -1,0 +1,30 @@
+{
+  "slug": "diamondville",
+  "name": "Diamondville",
+  "type": "town",
+  "county": "Lincoln",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 520,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.diamondvillewy.gov",
+    "https://diamondvillewy.gov",
+    "https://www.diamondville.gov",
+    "https://www.cityofdiamondville.gov",
+    "https://www.cityofdiamondville.org",
+    "https://www.cityofdiamondville.com",
+    "https://www.townofdiamondville.gov",
+    "https://www.townofdiamondville.org",
+    "https://www.townofdiamondville.com",
+    "https://www.ci.diamondville.wy.us",
+    "https://www.diamondvillewy.org",
+    "https://diamondvillewy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

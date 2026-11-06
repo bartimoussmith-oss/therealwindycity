@@ -1,0 +1,32 @@
+{
+  "slug": "sundance",
+  "name": "Sundance",
+  "type": "town",
+  "county": "Crook",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 1032,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.sundancewy.gov",
+    "https://sundancewy.gov",
+    "https://www.sundance.gov",
+    "https://www.cityofsundance.gov",
+    "https://www.cityofsundance.org",
+    "https://www.cityofsundance.com",
+    "https://www.townofsundance.gov",
+    "https://www.townofsundance.org",
+    "https://www.townofsundance.com",
+    "https://www.ci.sundance.wy.us",
+    "https://www.sundancewy.org",
+    "https://sundancewy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Crook County."
+  ]
+}

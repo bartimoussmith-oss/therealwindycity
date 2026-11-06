@@ -1,0 +1,30 @@
+{
+  "slug": "bear-river",
+  "name": "Bear River",
+  "type": "town",
+  "county": "Uinta",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 522,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.bearriverwy.gov",
+    "https://bearriverwy.gov",
+    "https://www.bearriver.gov",
+    "https://www.cityofbearriver.gov",
+    "https://www.cityofbearriver.org",
+    "https://www.cityofbearriver.com",
+    "https://www.townofbearriver.gov",
+    "https://www.townofbearriver.org",
+    "https://www.townofbearriver.com",
+    "https://www.ci.bearriver.wy.us",
+    "https://www.bearriverwy.org",
+    "https://bearriverwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

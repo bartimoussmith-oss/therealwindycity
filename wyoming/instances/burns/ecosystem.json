@@ -1,0 +1,30 @@
+{
+  "slug": "burns",
+  "name": "Burns",
+  "type": "town",
+  "county": "Laramie",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 356,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.burnswy.gov",
+    "https://burnswy.gov",
+    "https://www.burns.gov",
+    "https://www.cityofburns.gov",
+    "https://www.cityofburns.org",
+    "https://www.cityofburns.com",
+    "https://www.townofburns.gov",
+    "https://www.townofburns.org",
+    "https://www.townofburns.com",
+    "https://www.ci.burns.wy.us",
+    "https://www.burnswy.org",
+    "https://burnswy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

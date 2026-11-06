@@ -1,0 +1,30 @@
+{
+  "slug": "kaycee",
+  "name": "Kaycee",
+  "type": "town",
+  "county": "Johnson",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 247,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.kayceewy.gov",
+    "https://kayceewy.gov",
+    "https://www.kaycee.gov",
+    "https://www.cityofkaycee.gov",
+    "https://www.cityofkaycee.org",
+    "https://www.cityofkaycee.com",
+    "https://www.townofkaycee.gov",
+    "https://www.townofkaycee.org",
+    "https://www.townofkaycee.com",
+    "https://www.ci.kaycee.wy.us",
+    "https://www.kayceewy.org",
+    "https://kayceewy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

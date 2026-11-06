@@ -1,0 +1,32 @@
+{
+  "slug": "douglas",
+  "name": "Douglas",
+  "type": "city",
+  "county": "Converse",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 6386,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.douglaswy.gov",
+    "https://douglaswy.gov",
+    "https://www.douglas.gov",
+    "https://www.cityofdouglas.gov",
+    "https://www.cityofdouglas.org",
+    "https://www.cityofdouglas.com",
+    "https://www.townofdouglas.gov",
+    "https://www.townofdouglas.org",
+    "https://www.townofdouglas.com",
+    "https://www.ci.douglas.wy.us",
+    "https://www.douglaswy.org",
+    "https://douglaswy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Converse County."
+  ]
+}

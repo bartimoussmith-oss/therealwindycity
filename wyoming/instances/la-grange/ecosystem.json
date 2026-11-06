@@ -1,0 +1,30 @@
+{
+  "slug": "la-grange",
+  "name": "La Grange",
+  "type": "town",
+  "county": "Goshen",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 372,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.lagrangewy.gov",
+    "https://lagrangewy.gov",
+    "https://www.lagrange.gov",
+    "https://www.cityoflagrange.gov",
+    "https://www.cityoflagrange.org",
+    "https://www.cityoflagrange.com",
+    "https://www.townoflagrange.gov",
+    "https://www.townoflagrange.org",
+    "https://www.townoflagrange.com",
+    "https://www.ci.lagrange.wy.us",
+    "https://www.lagrangewy.org",
+    "https://lagrangewy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

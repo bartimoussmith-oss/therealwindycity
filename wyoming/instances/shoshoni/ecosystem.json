@@ -1,0 +1,30 @@
+{
+  "slug": "shoshoni",
+  "name": "Shoshoni",
+  "type": "town",
+  "county": "Fremont",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 471,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.shoshoniwy.gov",
+    "https://shoshoniwy.gov",
+    "https://www.shoshoni.gov",
+    "https://www.cityofshoshoni.gov",
+    "https://www.cityofshoshoni.org",
+    "https://www.cityofshoshoni.com",
+    "https://www.townofshoshoni.gov",
+    "https://www.townofshoshoni.org",
+    "https://www.townofshoshoni.com",
+    "https://www.ci.shoshoni.wy.us",
+    "https://www.shoshoniwy.org",
+    "https://shoshoniwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

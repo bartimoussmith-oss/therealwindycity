@@ -1,0 +1,30 @@
+{
+  "slug": "evansville",
+  "name": "Evansville",
+  "type": "town",
+  "county": "Natrona",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 2746,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.evansvillewy.gov",
+    "https://evansvillewy.gov",
+    "https://www.evansville.gov",
+    "https://www.cityofevansville.gov",
+    "https://www.cityofevansville.org",
+    "https://www.cityofevansville.com",
+    "https://www.townofevansville.gov",
+    "https://www.townofevansville.org",
+    "https://www.townofevansville.com",
+    "https://www.ci.evansville.wy.us",
+    "https://www.evansvillewy.org",
+    "https://evansvillewy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

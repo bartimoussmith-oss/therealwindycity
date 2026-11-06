@@ -1,0 +1,30 @@
+{
+  "slug": "sinclair",
+  "name": "Sinclair",
+  "type": "town",
+  "county": "Carbon",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 374,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.sinclairwy.gov",
+    "https://sinclairwy.gov",
+    "https://www.sinclair.gov",
+    "https://www.cityofsinclair.gov",
+    "https://www.cityofsinclair.org",
+    "https://www.cityofsinclair.com",
+    "https://www.townofsinclair.gov",
+    "https://www.townofsinclair.org",
+    "https://www.townofsinclair.com",
+    "https://www.ci.sinclair.wy.us",
+    "https://www.sinclairwy.org",
+    "https://sinclairwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "fort-laramie",
+  "name": "Fort Laramie",
+  "type": "town",
+  "county": "Goshen",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 206,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.fortlaramiewy.gov",
+    "https://fortlaramiewy.gov",
+    "https://www.fortlaramie.gov",
+    "https://www.cityoffortlaramie.gov",
+    "https://www.cityoffortlaramie.org",
+    "https://www.cityoffortlaramie.com",
+    "https://www.townoffortlaramie.gov",
+    "https://www.townoffortlaramie.org",
+    "https://www.townoffortlaramie.com",
+    "https://www.ci.fortlaramie.wy.us",
+    "https://www.fortlaramiewy.org",
+    "https://fortlaramiewy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

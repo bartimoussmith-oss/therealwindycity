@@ -1,0 +1,30 @@
+{
+  "slug": "lingle",
+  "name": "Lingle",
+  "type": "town",
+  "county": "Goshen",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 403,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.linglewy.gov",
+    "https://linglewy.gov",
+    "https://www.lingle.gov",
+    "https://www.cityoflingle.gov",
+    "https://www.cityoflingle.org",
+    "https://www.cityoflingle.com",
+    "https://www.townoflingle.gov",
+    "https://www.townoflingle.org",
+    "https://www.townoflingle.com",
+    "https://www.ci.lingle.wy.us",
+    "https://www.linglewy.org",
+    "https://linglewy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

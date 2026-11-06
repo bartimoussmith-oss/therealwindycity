@@ -1,0 +1,30 @@
+{
+  "slug": "manderson",
+  "name": "Manderson",
+  "type": "town",
+  "county": "Big Horn",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 88,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.mandersonwy.gov",
+    "https://mandersonwy.gov",
+    "https://www.manderson.gov",
+    "https://www.cityofmanderson.gov",
+    "https://www.cityofmanderson.org",
+    "https://www.cityofmanderson.com",
+    "https://www.townofmanderson.gov",
+    "https://www.townofmanderson.org",
+    "https://www.townofmanderson.com",
+    "https://www.ci.manderson.wy.us",
+    "https://www.mandersonwy.org",
+    "https://mandersonwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "laramie-county",
+  "name": "Laramie County",
+  "type": "county",
+  "county": "Laramie",
+  "county_seat": true,
+  "county_seat_name": "Cheyenne",
+  "state_capital": false,
+  "population_2020": null,
+  "known_url": "https://www.laramiecountywy.gov",
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.laramiecountywy.gov",
+    "https://laramiecountywy.gov",
+    "https://www.laramiecountywy.com",
+    "https://www.laramiecounty.net",
+    "https://www.laramiecountywy.us",
+    "https://www.laramiecounty.com",
+    "https://laramiecounty.net"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "Board of County Commissioners; seat: Cheyenne."
+  ]
+}

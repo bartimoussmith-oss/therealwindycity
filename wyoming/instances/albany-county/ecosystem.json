@@ -1,0 +1,27 @@
+{
+  "slug": "albany-county",
+  "name": "Albany County",
+  "type": "county",
+  "county": "Albany",
+  "county_seat": true,
+  "county_seat_name": "Laramie",
+  "state_capital": false,
+  "population_2020": null,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.albanycountywy.gov",
+    "https://albanycountywy.gov",
+    "https://www.albanycountywy.com",
+    "https://www.albanycounty.net",
+    "https://www.albanycountywy.us",
+    "https://www.albanycounty.com",
+    "https://albanycounty.net"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "Board of County Commissioners; seat: Laramie."
+  ]
+}

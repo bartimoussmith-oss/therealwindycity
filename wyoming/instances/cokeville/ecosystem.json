@@ -1,0 +1,30 @@
+{
+  "slug": "cokeville",
+  "name": "Cokeville",
+  "type": "town",
+  "county": "Lincoln",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 502,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.cokevillewy.gov",
+    "https://cokevillewy.gov",
+    "https://www.cokeville.gov",
+    "https://www.cityofcokeville.gov",
+    "https://www.cityofcokeville.org",
+    "https://www.cityofcokeville.com",
+    "https://www.townofcokeville.gov",
+    "https://www.townofcokeville.org",
+    "https://www.townofcokeville.com",
+    "https://www.ci.cokeville.wy.us",
+    "https://www.cokevillewy.org",
+    "https://cokevillewy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

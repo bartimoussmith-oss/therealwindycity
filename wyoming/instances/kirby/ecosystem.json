@@ -1,0 +1,30 @@
+{
+  "slug": "kirby",
+  "name": "Kirby",
+  "type": "town",
+  "county": "Hot Springs",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 76,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.kirbywy.gov",
+    "https://kirbywy.gov",
+    "https://www.kirby.gov",
+    "https://www.cityofkirby.gov",
+    "https://www.cityofkirby.org",
+    "https://www.cityofkirby.com",
+    "https://www.townofkirby.gov",
+    "https://www.townofkirby.org",
+    "https://www.townofkirby.com",
+    "https://www.ci.kirby.wy.us",
+    "https://www.kirbywy.org",
+    "https://kirbywy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

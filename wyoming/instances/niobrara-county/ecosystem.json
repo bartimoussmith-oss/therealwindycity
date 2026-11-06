@@ -1,0 +1,27 @@
+{
+  "slug": "niobrara-county",
+  "name": "Niobrara County",
+  "type": "county",
+  "county": "Niobrara",
+  "county_seat": true,
+  "county_seat_name": "Lusk",
+  "state_capital": false,
+  "population_2020": null,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.niobraracountywy.gov",
+    "https://niobraracountywy.gov",
+    "https://www.niobraracountywy.com",
+    "https://www.niobraracounty.net",
+    "https://www.niobraracountywy.us",
+    "https://www.niobraracounty.com",
+    "https://niobraracounty.net"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "Board of County Commissioners; seat: Lusk."
+  ]
+}

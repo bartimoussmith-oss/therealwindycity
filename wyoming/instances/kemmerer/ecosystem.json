@@ -1,0 +1,32 @@
+{
+  "slug": "kemmerer",
+  "name": "Kemmerer",
+  "type": "city",
+  "county": "Lincoln",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 2415,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.kemmererwy.gov",
+    "https://kemmererwy.gov",
+    "https://www.kemmerer.gov",
+    "https://www.cityofkemmerer.gov",
+    "https://www.cityofkemmerer.org",
+    "https://www.cityofkemmerer.com",
+    "https://www.townofkemmerer.gov",
+    "https://www.townofkemmerer.org",
+    "https://www.townofkemmerer.com",
+    "https://www.ci.kemmerer.wy.us",
+    "https://www.kemmererwy.org",
+    "https://kemmererwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Lincoln County."
+  ]
+}

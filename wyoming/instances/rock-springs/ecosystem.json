@@ -1,0 +1,30 @@
+{
+  "slug": "rock-springs",
+  "name": "Rock Springs",
+  "type": "city",
+  "county": "Sweetwater",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 23526,
+  "known_url": "https://www.rockspringswy.gov",
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.rockspringswy.gov",
+    "https://rockspringswy.gov",
+    "https://www.rocksprings.gov",
+    "https://www.cityofrocksprings.gov",
+    "https://www.cityofrocksprings.org",
+    "https://www.cityofrocksprings.com",
+    "https://www.townofrocksprings.gov",
+    "https://www.townofrocksprings.org",
+    "https://www.townofrocksprings.com",
+    "https://www.ci.rocksprings.wy.us",
+    "https://www.rockspringswy.org",
+    "https://rockspringswy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

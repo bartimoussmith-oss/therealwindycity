@@ -1,0 +1,30 @@
+{
+  "slug": "guernsey",
+  "name": "Guernsey",
+  "type": "town",
+  "county": "Platte",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 1130,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.guernseywy.gov",
+    "https://guernseywy.gov",
+    "https://www.guernsey.gov",
+    "https://www.cityofguernsey.gov",
+    "https://www.cityofguernsey.org",
+    "https://www.cityofguernsey.com",
+    "https://www.townofguernsey.gov",
+    "https://www.townofguernsey.org",
+    "https://www.townofguernsey.com",
+    "https://www.ci.guernsey.wy.us",
+    "https://www.guernseywy.org",
+    "https://guernseywy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

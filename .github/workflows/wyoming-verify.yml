@@ -1,0 +1,121 @@
+# Statewide Wyoming instantiation: offline integrity tests on every relevant
+# change, and a weekly live verification sweep that probes every jurisdiction's
+# candidate official URLs (robots.txt honored, identifying UA, per-host delay),
+# commits what it verified, and never enables anything that did not answer.
+#
+# Nothing here is on the critical path of the Cheyenne build. Scheduled runs
+# only execute on the default branch.
+name: wyoming-verify
+
+on:
+  push:
+    paths:
+      - "wyoming/**"
+      - "tools/wyoming_*.py"
+      - "tools/test_wyoming_instantiate.py"
+      - "engine/db.py"
+      - "engine/publish.py"
+      - "engine/records.py"
+      - ".github/workflows/wyoming-verify.yml"
+  pull_request:
+    paths:
+      - "wyoming/**"
+      - "tools/wyoming_*.py"
+      - "tools/test_wyoming_instantiate.py"
+      - "engine/db.py"
+      - "engine/publish.py"
+      - "engine/records.py"
+      - ".github/workflows/wyoming-verify.yml"
+  schedule:
+    # Mondays 11:23 UTC — off the hour on purpose; one polite sweep per week.
+    - cron: "23 11 * * 1"
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Verify only this instance slug (blank = all)"
+        required: false
+        default: ""
+      apply:
+        description: "Enable sources that live-verified (writes verification.json + re-renders sources.json)"
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: wyoming-verify
+  cancel-in-progress: false
+
+jobs:
+  test:
+    name: Offline integrity tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Registry + generator integrity (no network)
+        run: python3 tools/test_wyoming_instantiate.py
+      - name: Engine selftest (offline fixtures)
+        run: python3 run.py selftest
+      - name: Instances match generator output
+        run: python3 tools/wyoming_instantiate.py --check
+
+  verify:
+    name: Live verification sweep
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Probe jurisdictions (robots.txt honored, 3s per host)
+        id: probe
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Scheduled runs sweep everything and apply; manual runs honor the inputs.
+          SLUG_INPUT="${{ github.event.inputs.slug }}"
+          APPLY_INPUT="${{ github.event.inputs.apply }}"
+          if [ "${{ github.event_name }}" = "schedule" ]; then SLUG_INPUT=""; APPLY_INPUT="true"; fi
+          ARGS=(--json)
+          if [ -n "$SLUG_INPUT" ]; then ARGS+=(--slug "$SLUG_INPUT"); else ARGS+=(--all); fi
+          if [ "$APPLY_INPUT" = "true" ]; then ARGS+=(--apply); fi
+          python3 tools/wyoming_verify.py "${ARGS[@]}" | tee /tmp/verify-summary.json
+          {
+            echo "### Wyoming statewide verification sweep"
+            echo ""
+            echo '```json'
+            cat /tmp/verify-summary.json
+            echo '```'
+            echo ""
+            echo "Unverified jurisdictions are NOT a failure of government web presence — the probe may be blocked, rate-limited, or sandboxed. Open the candidates in a browser before enabling by hand."
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Commit verification results
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -- wyoming/instances ':(exclude)wyoming/instances/*/env.sh'
+          if git diff --staged --quiet; then
+            echo "No verification changes."
+          else
+            git commit -m "chore(wyoming): weekly statewide verification sweep [skip ci]"
+            if [ "${{ github.ref }}" = "refs/heads/main" ]; then
+              git pull --rebase origin main
+              git push origin HEAD:main
+            else
+              echo "Not on main; leaving commit on ${{ github.ref }} for review."
+            fi
+          fi

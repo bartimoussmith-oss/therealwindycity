@@ -1,0 +1,30 @@
+{
+  "slug": "meeteetse",
+  "name": "Meeteetse",
+  "type": "town",
+  "county": "Park",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 309,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.meeteetsewy.gov",
+    "https://meeteetsewy.gov",
+    "https://www.meeteetse.gov",
+    "https://www.cityofmeeteetse.gov",
+    "https://www.cityofmeeteetse.org",
+    "https://www.cityofmeeteetse.com",
+    "https://www.townofmeeteetse.gov",
+    "https://www.townofmeeteetse.org",
+    "https://www.townofmeeteetse.com",
+    "https://www.ci.meeteetse.wy.us",
+    "https://www.meeteetsewy.org",
+    "https://meeteetsewy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

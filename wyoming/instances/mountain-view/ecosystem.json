@@ -1,0 +1,30 @@
+{
+  "slug": "mountain-view",
+  "name": "Mountain View",
+  "type": "town",
+  "county": "Uinta",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 1278,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.mountainviewwy.gov",
+    "https://mountainviewwy.gov",
+    "https://www.mountainview.gov",
+    "https://www.cityofmountainview.gov",
+    "https://www.cityofmountainview.org",
+    "https://www.cityofmountainview.com",
+    "https://www.townofmountainview.gov",
+    "https://www.townofmountainview.org",
+    "https://www.townofmountainview.com",
+    "https://www.ci.mountainview.wy.us",
+    "https://www.mountainviewwy.org",
+    "https://mountainviewwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

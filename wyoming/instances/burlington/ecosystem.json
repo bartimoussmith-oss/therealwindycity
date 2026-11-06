@@ -1,0 +1,30 @@
+{
+  "slug": "burlington",
+  "name": "Burlington",
+  "type": "town",
+  "county": "Big Horn",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 314,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.burlingtonwy.gov",
+    "https://burlingtonwy.gov",
+    "https://www.burlington.gov",
+    "https://www.cityofburlington.gov",
+    "https://www.cityofburlington.org",
+    "https://www.cityofburlington.com",
+    "https://www.townofburlington.gov",
+    "https://www.townofburlington.org",
+    "https://www.townofburlington.com",
+    "https://www.ci.burlington.wy.us",
+    "https://www.burlingtonwy.org",
+    "https://burlingtonwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

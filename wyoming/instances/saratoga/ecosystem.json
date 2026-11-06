@@ -1,0 +1,30 @@
+{
+  "slug": "saratoga",
+  "name": "Saratoga",
+  "type": "town",
+  "county": "Carbon",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 1702,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.saratogawy.gov",
+    "https://saratogawy.gov",
+    "https://www.saratoga.gov",
+    "https://www.cityofsaratoga.gov",
+    "https://www.cityofsaratoga.org",
+    "https://www.cityofsaratoga.com",
+    "https://www.townofsaratoga.gov",
+    "https://www.townofsaratoga.org",
+    "https://www.townofsaratoga.com",
+    "https://www.ci.saratoga.wy.us",
+    "https://www.saratogawy.org",
+    "https://saratogawy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

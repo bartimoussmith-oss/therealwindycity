@@ -1,0 +1,32 @@
+{
+  "slug": "basin",
+  "name": "Basin",
+  "type": "town",
+  "county": "Big Horn",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 1288,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.basinwy.gov",
+    "https://basinwy.gov",
+    "https://www.basin.gov",
+    "https://www.cityofbasin.gov",
+    "https://www.cityofbasin.org",
+    "https://www.cityofbasin.com",
+    "https://www.townofbasin.gov",
+    "https://www.townofbasin.org",
+    "https://www.townofbasin.com",
+    "https://www.ci.basin.wy.us",
+    "https://www.basinwy.org",
+    "https://basinwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Big Horn County."
+  ]
+}

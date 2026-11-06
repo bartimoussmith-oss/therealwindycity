@@ -1,0 +1,30 @@
+{
+  "slug": "rolling-hills",
+  "name": "Rolling Hills",
+  "type": "town",
+  "county": "Converse",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 427,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.rollinghillswy.gov",
+    "https://rollinghillswy.gov",
+    "https://www.rollinghills.gov",
+    "https://www.cityofrollinghills.gov",
+    "https://www.cityofrollinghills.org",
+    "https://www.cityofrollinghills.com",
+    "https://www.townofrollinghills.gov",
+    "https://www.townofrollinghills.org",
+    "https://www.townofrollinghills.com",
+    "https://www.ci.rollinghills.wy.us",
+    "https://www.rollinghillswy.org",
+    "https://rollinghillswy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

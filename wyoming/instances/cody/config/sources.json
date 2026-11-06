@@ -1,0 +1,61 @@
+{
+  "identity": {
+    "user_agent": "WyomingCivicTransparencyEngine/0.1 (public-records research; contact: you@example.org)",
+    "contact": "you@example.org  <-- PUT YOUR REAL CONTACT HERE; honest UAs get blocked less",
+    "delay_seconds_per_host": 3,
+    "max_docs_per_source_per_run": 40
+  },
+  "sources": [
+    {
+      "name": "cody_homepage",
+      "type": "html",
+      "url": "https://www.codywy.gov",
+      "enabled": false,
+      "notes": "UNVERIFIED candidate \u2014 generated from wyoming/registry.json. DO NOT ENABLE BY HAND. Run: python3 tools/wyoming_verify.py --slug cody --apply. The verifier honors robots.txt, fingerprints the platform (Granicus/CivicPlus/WordPress/Municode/unknown), and enables this source only if it live-fetches successfully. If no candidate URL resolves, this jurisdiction may need manual onboarding \u2014 see docs/WYOMING-STATEWIDE-INSTANTIATION.md ('Non-web jurisdictions')."
+    },
+    {
+      "name": "cody_wyomingnews_search",
+      "type": "rss",
+      "url": "http://www.wyomingnews.com/search/?f=rss&l=50&s=start_time&sd=desc&q=Cody",
+      "enabled": false,
+      "notes": "Wyoming Tribune Eagle TownNews search-RSS filtered to this jurisdiction's name. UNVERIFIED; the Cheyenne build of this endpoint returned HTTP 429 on first contact \u2014 run at most ~once/day or leave disabled and read in a browser."
+    },
+    {
+      "name": "wyofile_rss",
+      "type": "rss",
+      "url": "https://wyofile.com/feed",
+      "enabled": false,
+      "notes": "WyoFile (nonprofit statewide newsroom). UNVERIFIED feed path \u2014 confirm it resolves before enabling. Statewide accountability journalism; strong on energy, water, land, and government."
+    },
+    {
+      "name": "cowboy_state_daily_rss",
+      "type": "rss",
+      "url": "https://cowboystatedaily.com/feed",
+      "enabled": false,
+      "notes": "Cowboy State Daily. UNVERIFIED feed path. Statewide politics/energy/government; already cited throughout the Cheyenne record."
+    },
+    {
+      "name": "wte_statewide_rss",
+      "type": "rss",
+      "url": "http://www.wyomingnews.com/search/?f=rss&l=50&s=start_time&sd=desc",
+      "enabled": false,
+      "notes": "Wyoming Tribune Eagle TownNews search-RSS. FIRST-RUN FINDING (Cheyenne build): returned HTTP 429. Run at most ~once/day or leave disabled and read in a browser."
+    }
+  ],
+  "document_link_patterns": [
+    "agenda",
+    "minutes",
+    "packet",
+    "ordinance",
+    "resolution",
+    "staff.?report",
+    "application",
+    "zone.?change",
+    "annexation",
+    "\\.pdf($|\\?)",
+    "\\.docx?($|\\?)",
+    "\\.xlsx?($|\\?)",
+    "\\.csv($|\\?)",
+    "\\.txt($|\\?)"
+  ]
+}

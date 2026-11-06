@@ -1,0 +1,30 @@
+{
+  "slug": "east-thermopolis",
+  "name": "East Thermopolis",
+  "type": "town",
+  "county": "Hot Springs",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 229,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.eastthermopoliswy.gov",
+    "https://eastthermopoliswy.gov",
+    "https://www.eastthermopolis.gov",
+    "https://www.cityofeastthermopolis.gov",
+    "https://www.cityofeastthermopolis.org",
+    "https://www.cityofeastthermopolis.com",
+    "https://www.townofeastthermopolis.gov",
+    "https://www.townofeastthermopolis.org",
+    "https://www.townofeastthermopolis.com",
+    "https://www.ci.eastthermopolis.wy.us",
+    "https://www.eastthermopoliswy.org",
+    "https://eastthermopoliswy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

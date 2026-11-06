@@ -1,0 +1,30 @@
+{
+  "slug": "upton",
+  "name": "Upton",
+  "type": "town",
+  "county": "Weston",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 898,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.uptonwy.gov",
+    "https://uptonwy.gov",
+    "https://www.upton.gov",
+    "https://www.cityofupton.gov",
+    "https://www.cityofupton.org",
+    "https://www.cityofupton.com",
+    "https://www.townofupton.gov",
+    "https://www.townofupton.org",
+    "https://www.townofupton.com",
+    "https://www.ci.upton.wy.us",
+    "https://www.uptonwy.org",
+    "https://uptonwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

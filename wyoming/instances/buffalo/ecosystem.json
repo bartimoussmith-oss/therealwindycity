@@ -1,0 +1,32 @@
+{
+  "slug": "buffalo",
+  "name": "Buffalo",
+  "type": "city",
+  "county": "Johnson",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 4415,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.buffalowy.gov",
+    "https://buffalowy.gov",
+    "https://www.buffalo.gov",
+    "https://www.cityofbuffalo.gov",
+    "https://www.cityofbuffalo.org",
+    "https://www.cityofbuffalo.com",
+    "https://www.townofbuffalo.gov",
+    "https://www.townofbuffalo.org",
+    "https://www.townofbuffalo.com",
+    "https://www.ci.buffalo.wy.us",
+    "https://www.buffalowy.org",
+    "https://buffalowy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Johnson County."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "slug": "glendo",
+  "name": "Glendo",
+  "type": "town",
+  "county": "Platte",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 237,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.glendowy.gov",
+    "https://glendowy.gov",
+    "https://www.glendo.gov",
+    "https://www.cityofglendo.gov",
+    "https://www.cityofglendo.org",
+    "https://www.cityofglendo.com",
+    "https://www.townofglendo.gov",
+    "https://www.townofglendo.org",
+    "https://www.townofglendo.com",
+    "https://www.ci.glendo.wy.us",
+    "https://www.glendowy.org",
+    "https://glendowy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

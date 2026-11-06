@@ -1,0 +1,30 @@
+{
+  "slug": "hanna",
+  "name": "Hanna",
+  "type": "town",
+  "county": "Carbon",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 683,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.hannawy.gov",
+    "https://hannawy.gov",
+    "https://www.hanna.gov",
+    "https://www.cityofhanna.gov",
+    "https://www.cityofhanna.org",
+    "https://www.cityofhanna.com",
+    "https://www.townofhanna.gov",
+    "https://www.townofhanna.org",
+    "https://www.townofhanna.com",
+    "https://www.ci.hanna.wy.us",
+    "https://www.hannawy.org",
+    "https://hannawy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

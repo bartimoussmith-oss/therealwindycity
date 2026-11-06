@@ -1,0 +1,30 @@
+{
+  "slug": "opal",
+  "name": "Opal",
+  "type": "town",
+  "county": "Lincoln",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 64,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.opalwy.gov",
+    "https://opalwy.gov",
+    "https://www.opal.gov",
+    "https://www.cityofopal.gov",
+    "https://www.cityofopal.org",
+    "https://www.cityofopal.com",
+    "https://www.townofopal.gov",
+    "https://www.townofopal.org",
+    "https://www.townofopal.com",
+    "https://www.ci.opal.wy.us",
+    "https://www.opalwy.org",
+    "https://opalwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

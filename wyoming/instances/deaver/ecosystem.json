@@ -1,0 +1,30 @@
+{
+  "slug": "deaver",
+  "name": "Deaver",
+  "type": "town",
+  "county": "Big Horn",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 154,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.deaverwy.gov",
+    "https://deaverwy.gov",
+    "https://www.deaver.gov",
+    "https://www.cityofdeaver.gov",
+    "https://www.cityofdeaver.org",
+    "https://www.cityofdeaver.com",
+    "https://www.townofdeaver.gov",
+    "https://www.townofdeaver.org",
+    "https://www.townofdeaver.com",
+    "https://www.ci.deaver.wy.us",
+    "https://www.deaverwy.org",
+    "https://deaverwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

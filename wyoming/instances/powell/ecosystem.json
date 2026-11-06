@@ -1,0 +1,30 @@
+{
+  "slug": "powell",
+  "name": "Powell",
+  "type": "city",
+  "county": "Park",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 6419,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.powellwy.gov",
+    "https://powellwy.gov",
+    "https://www.powell.gov",
+    "https://www.cityofpowell.gov",
+    "https://www.cityofpowell.org",
+    "https://www.cityofpowell.com",
+    "https://www.townofpowell.gov",
+    "https://www.townofpowell.org",
+    "https://www.townofpowell.com",
+    "https://www.ci.powell.wy.us",
+    "https://www.powellwy.org",
+    "https://powellwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

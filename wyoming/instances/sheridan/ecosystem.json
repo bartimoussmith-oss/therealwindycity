@@ -1,0 +1,32 @@
+{
+  "slug": "sheridan",
+  "name": "Sheridan",
+  "type": "city",
+  "county": "Sheridan",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 18737,
+  "known_url": "https://www.sheridanwy.gov",
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.sheridanwy.gov",
+    "https://sheridanwy.gov",
+    "https://www.sheridan.gov",
+    "https://www.cityofsheridan.gov",
+    "https://www.cityofsheridan.org",
+    "https://www.cityofsheridan.com",
+    "https://www.townofsheridan.gov",
+    "https://www.townofsheridan.org",
+    "https://www.townofsheridan.com",
+    "https://www.ci.sheridan.wy.us",
+    "https://www.sheridanwy.org",
+    "https://sheridanwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Sheridan County."
+  ]
+}

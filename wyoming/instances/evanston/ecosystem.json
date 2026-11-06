@@ -1,0 +1,32 @@
+{
+  "slug": "evanston",
+  "name": "Evanston",
+  "type": "city",
+  "county": "Uinta",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 11747,
+  "known_url": "https://www.evanstonwy.org",
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.evanstonwy.org",
+    "https://www.evanstonwy.gov",
+    "https://evanstonwy.gov",
+    "https://www.evanston.gov",
+    "https://www.cityofevanston.gov",
+    "https://www.cityofevanston.org",
+    "https://www.cityofevanston.com",
+    "https://www.townofevanston.gov",
+    "https://www.townofevanston.org",
+    "https://www.townofevanston.com",
+    "https://www.ci.evanston.wy.us",
+    "https://evanstonwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Uinta County."
+  ]
+}

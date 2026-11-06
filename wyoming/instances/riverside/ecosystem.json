@@ -1,0 +1,30 @@
+{
+  "slug": "riverside",
+  "name": "Riverside",
+  "type": "town",
+  "county": "Carbon",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 66,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.riversidewy.gov",
+    "https://riversidewy.gov",
+    "https://www.riverside.gov",
+    "https://www.cityofriverside.gov",
+    "https://www.cityofriverside.org",
+    "https://www.cityofriverside.com",
+    "https://www.townofriverside.gov",
+    "https://www.townofriverside.org",
+    "https://www.townofriverside.com",
+    "https://www.ci.riverside.wy.us",
+    "https://www.riversidewy.org",
+    "https://riversidewy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

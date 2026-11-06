@@ -1,0 +1,30 @@
+{
+  "slug": "lyman",
+  "name": "Lyman",
+  "type": "town",
+  "county": "Uinta",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 2135,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.lymanwy.gov",
+    "https://lymanwy.gov",
+    "https://www.lyman.gov",
+    "https://www.cityoflyman.gov",
+    "https://www.cityoflyman.org",
+    "https://www.cityoflyman.com",
+    "https://www.townoflyman.gov",
+    "https://www.townoflyman.org",
+    "https://www.townoflyman.com",
+    "https://www.ci.lyman.wy.us",
+    "https://www.lymanwy.org",
+    "https://lymanwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

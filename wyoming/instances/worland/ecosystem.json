@@ -1,0 +1,32 @@
+{
+  "slug": "worland",
+  "name": "Worland",
+  "type": "city",
+  "county": "Washakie",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 4773,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.worlandwy.gov",
+    "https://worlandwy.gov",
+    "https://www.worland.gov",
+    "https://www.cityofworland.gov",
+    "https://www.cityofworland.org",
+    "https://www.cityofworland.com",
+    "https://www.townofworland.gov",
+    "https://www.townofworland.org",
+    "https://www.townofworland.com",
+    "https://www.ci.worland.wy.us",
+    "https://www.worlandwy.org",
+    "https://worlandwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Washakie County."
+  ]
+}

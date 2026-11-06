@@ -1,0 +1,22 @@
+{
+  "slug": "wyoming-legislature",
+  "name": "Wyoming Legislature",
+  "type": "state-legislature",
+  "county": null,
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": null,
+  "known_url": "https://wyoleg.gov",
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://wyoleg.gov",
+    "https://www.wyoleg.gov"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "Senate (30) + House (60); acts and bills at wyoleg.gov. General sessions begin in odd years; budget sessions even years."
+  ]
+}

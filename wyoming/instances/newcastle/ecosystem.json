@@ -1,0 +1,32 @@
+{
+  "slug": "newcastle",
+  "name": "Newcastle",
+  "type": "city",
+  "county": "Weston",
+  "county_seat": true,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 3374,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.newcastlewy.gov",
+    "https://newcastlewy.gov",
+    "https://www.newcastle.gov",
+    "https://www.cityofnewcastle.gov",
+    "https://www.cityofnewcastle.org",
+    "https://www.cityofnewcastle.com",
+    "https://www.townofnewcastle.gov",
+    "https://www.townofnewcastle.org",
+    "https://www.townofnewcastle.com",
+    "https://www.ci.newcastle.wy.us",
+    "https://www.newcastlewy.org",
+    "https://newcastlewy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "County seat of Weston County."
+  ]
+}

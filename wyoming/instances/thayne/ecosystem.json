@@ -1,0 +1,30 @@
+{
+  "slug": "thayne",
+  "name": "Thayne",
+  "type": "town",
+  "county": "Lincoln",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 380,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.thaynewy.gov",
+    "https://thaynewy.gov",
+    "https://www.thayne.gov",
+    "https://www.cityofthayne.gov",
+    "https://www.cityofthayne.org",
+    "https://www.cityofthayne.com",
+    "https://www.townofthayne.gov",
+    "https://www.townofthayne.org",
+    "https://www.townofthayne.com",
+    "https://www.ci.thayne.wy.us",
+    "https://www.thaynewy.org",
+    "https://thaynewy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

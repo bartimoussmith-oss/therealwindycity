@@ -1,0 +1,30 @@
+{
+  "slug": "riverton",
+  "name": "Riverton",
+  "type": "city",
+  "county": "Fremont",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 10682,
+  "known_url": "https://www.rivertonwy.gov",
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.rivertonwy.gov",
+    "https://rivertonwy.gov",
+    "https://www.riverton.gov",
+    "https://www.cityofriverton.gov",
+    "https://www.cityofriverton.org",
+    "https://www.cityofriverton.com",
+    "https://www.townofriverton.gov",
+    "https://www.townofriverton.org",
+    "https://www.townofriverton.com",
+    "https://www.ci.riverton.wy.us",
+    "https://www.rivertonwy.org",
+    "https://rivertonwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

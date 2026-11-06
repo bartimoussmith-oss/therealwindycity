@@ -1,0 +1,30 @@
+{
+  "slug": "star-valley-ranch",
+  "name": "Star Valley Ranch",
+  "type": "town",
+  "county": "Lincoln",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 1866,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.starvalleyranchwy.gov",
+    "https://starvalleyranchwy.gov",
+    "https://www.starvalleyranch.gov",
+    "https://www.cityofstarvalleyranch.gov",
+    "https://www.cityofstarvalleyranch.org",
+    "https://www.cityofstarvalleyranch.com",
+    "https://www.townofstarvalleyranch.gov",
+    "https://www.townofstarvalleyranch.org",
+    "https://www.townofstarvalleyranch.com",
+    "https://www.ci.starvalleyranch.wy.us",
+    "https://www.starvalleyranchwy.org",
+    "https://starvalleyranchwy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}

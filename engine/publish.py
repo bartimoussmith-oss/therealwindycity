@@ -10,13 +10,15 @@ from __future__ import annotations
 import datetime as _dt
 import html
 import json
+import os
 import shutil
 from pathlib import Path
 
 from . import db
 
 ROOT = Path(__file__).resolve().parent.parent
-PUBLIC = ROOT / "public"
+PUBLIC = Path(os.environ.get("ENGINE_PUBLIC_DIR") or (ROOT / "public"))
+CONFIG_DIR = Path(os.environ.get("ENGINE_CONFIG_DIR") or (ROOT / "config"))
 
 _CSS = """
 :root{--ink:#141414;--paper:#f4ecd8;--rust:#b4432f;--gold:#ffd93b;--sage:#5c7a4f;
@@ -98,7 +100,7 @@ def _esc(s: str) -> str:
 
 
 def build() -> str:
-    facts = json.loads((ROOT / "config" / "facts.json").read_text())
+    facts = json.loads((CONFIG_DIR / "facts.json").read_text())
     site = facts["site"]
     conn = db.connect()
     st = {
@@ -129,18 +131,31 @@ def build() -> str:
             f"<span class='t'>filed {_esc(r['created_at'])} · a human reads and sends it. the machine does not mail letters.</span></div>")
 
     today = _dt.date.today()
-    elec = _dt.date.fromisoformat(site["election_day"])
-    pet = _dt.date.fromisoformat(site["petition_file_date"])
-    days_to_elec = max(0, (elec - today).days)
-    days_since_pet = max(0, (today - pet).days)
+    # Optional per-jurisdiction facts (additive, 2026-11-06): instances generated
+    # for other Wyoming jurisdictions ship no local lore until the owner adds it.
+    election_day = site.get("election_day")
+    petition_file_date = site.get("petition_file_date")
+    elec = _dt.date.fromisoformat(election_day) if election_day else None
+    pet = _dt.date.fromisoformat(petition_file_date) if petition_file_date else None
+    days_to_elec = max(0, (elec - today).days) if elec else None
+    days_since_pet = max(0, (today - pet).days) if pet else None
 
-    stats_html = "".join([
+    stats_items = [
         f"<div class='stat'><b>{st['docs']}</b><span>documents fingerprinted</span></div>",
         f"<div class='stat'><b>{st['alerts']}</b><span>watchlist hits, quoted</span></div>",
         f"<div class='stat'><b>{st['edits']}</b><span>silent edits caught</span></div>",
         f"<div class='stat'><b>{st['drafts']}</b><span>drafts awaiting a human</span></div>",
-        f"<div class='stat'><b>{days_to_elec}</b><span>days to the Nov. 3 election</span></div>",
-    ])
+    ]
+    if days_to_elec is not None:
+        stats_items.append(
+            f"<div class='stat'><b>{days_to_elec}</b><span>"
+            f"{_esc(site.get('election_stat_label', 'days to the Nov. 3 election'))}"
+            f"</span></div>")
+    stats_html = "".join(stats_items)
+    # NOTE: the leading " ·\n  " keeps the root (Cheyenne) rendering
+    # byte-identical to the pre-portability template.
+    wind_suffix = (f" ·\n  day {days_since_pet} since the petition was filed · clerk certification: pending"
+                   if days_since_pet is not None else "")
 
     edits_html = "".join(
         f"<tr><td class='t'>{_esc(r['captured_at'][:10])}</td><td><a href='{_esc(r['url'])}'>"
@@ -163,9 +178,17 @@ def build() -> str:
         f"<li><time>{_esc(e['date'])}</time><span>{_esc(e['label'])}"
         + (f" <a href='{_esc(e['url'])}'>[record]</a>" if e.get("url") else "")
         + "</span></li>"
-        for e in facts["timeline"])
+        for e in facts.get("timeline", []))
 
-    q = facts["question_of_the_week"]
+    q = facts.get("question_of_the_week")
+    if q:
+        qotw_block = (f'<div class="qotw"><h3>{_esc(q["headline"])}</h3><p>{_esc(q["body"])}</p>\n'
+                      f'<p class="watch">WATCH FOR: {_esc(q["watch_for"])}</p></div>')
+    else:
+        qotw_block = ('<div class="qotw"><h3>Local cover story not configured yet.</h3>'
+                      '<p>This jurisdiction’s ledger is being gathered. The owner adds the '
+                      'local question of the week here — every entry must carry a linked record.</p>\n'
+                      '<p class="watch">WATCH FOR: the first verified documents in this ledger.</p></div>')
     generated = db.utcnow()
 
     page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
@@ -176,16 +199,14 @@ def build() -> str:
   <p class="kick">{_esc(site['kicker'])}</p>
   <span class="tag">{_esc(site['tagline'])}</span>
   <div class="issue">HEROES OF THE PUBLIC RECORD · ISSUE #001 · NEW HEROES WANTED</div>
-  <div class="wind">{_EMBLEM}<span>ledger generated {_esc(generated)} UTC · every entry links its record ·
-  day {days_since_pet} since the petition was filed · clerk certification: pending</span></div>
+  <div class="wind">{_EMBLEM}<span>ledger generated {_esc(generated)} UTC · every entry links its record{wind_suffix}</span></div>
 </header>
 
 <div class="strip">{stats_html}</div>
 
 <h2>This week's cover story</h2>
 <p class="rule">One page. One fight. Read it and you're ahead of half the room.</p>
-<div class="qotw"><h3>{_esc(q['headline'])}</h3><p>{_esc(q['body'])}</p>
-<p class="watch">WATCH FOR: {_esc(q['watch_for'])}</p></div>
+{qotw_block}
 
 <h2>Shape-shifter wire</h2>
 <p class="rule">SHA-256 fingerprints of every published page, re-checked on schedule. Same words, same hash. New words, new hash — and a public diff.</p>

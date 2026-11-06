@@ -1,0 +1,32 @@
+{
+  "slug": "frannie",
+  "name": "Frannie",
+  "type": "town",
+  "county": "Big Horn",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 145,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.franniewy.gov",
+    "https://franniewy.gov",
+    "https://www.frannie.gov",
+    "https://www.cityoffrannie.gov",
+    "https://www.cityoffrannie.org",
+    "https://www.cityoffrannie.com",
+    "https://www.townoffrannie.gov",
+    "https://www.townoffrannie.org",
+    "https://www.townoffrannie.com",
+    "https://www.ci.frannie.wy.us",
+    "https://www.franniewy.org",
+    "https://franniewy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": [
+    "Straddles Big Horn and Park counties (2020 Census: Big Horn)."
+  ]
+}

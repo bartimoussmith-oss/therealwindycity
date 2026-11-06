@@ -1,0 +1,30 @@
+{
+  "slug": "cowley",
+  "name": "Cowley",
+  "type": "town",
+  "county": "Big Horn",
+  "county_seat": false,
+  "county_seat_name": null,
+  "state_capital": false,
+  "population_2020": 762,
+  "known_url": null,
+  "verification": "unverified",
+  "candidate_domains": [
+    "https://www.cowleywy.gov",
+    "https://cowleywy.gov",
+    "https://www.cowley.gov",
+    "https://www.cityofcowley.gov",
+    "https://www.cityofcowley.org",
+    "https://www.cityofcowley.com",
+    "https://www.townofcowley.gov",
+    "https://www.townofcowley.org",
+    "https://www.townofcowley.com",
+    "https://www.ci.cowley.wy.us",
+    "https://www.cowleywy.org",
+    "https://cowleywy.org"
+  ],
+  "generated_by": "tools/wyoming_instantiate.py",
+  "shared_engine": "engine/ (this repository) \u2014 instances are configuration, not forks",
+  "canonical_cheyenne": null,
+  "notes": []
+}
