@@ -1,0 +1,1069 @@
+{
+ "generated_at": "2026-11-04T15:19:25Z",
+ "totals": {
+  "years": [
+   "2004",
+   "2026"
+  ],
+  "files": 7474,
+  "bytes": 1653472698,
+  "scraped_files": 4636,
+  "scraped_bytes": 877361736,
+  "families": 24,
+  "hosts": 13,
+  "manual_seconds": 830120.0,
+  "manual_actions": 44084.0,
+  "manual_seconds_scraped": 505820.0,
+  "manual_actions_scraped": 37598,
+  "chapters": 11,
+  "montage": 13,
+  "unassigned": 0
+ },
+ "chapters": [
+  {
+   "index": 1,
+   "key": "meeting_calendar",
+   "title": "Meeting calendar & meeting days",
+   "site": "City of Cheyenne",
+   "url": "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas",
+   "page": "list",
+   "destination": "data/snapshots/ \u00b7 2026-09-14-council/meetings/",
+   "units": 479,
+   "unit": "meeting day",
+   "manual_estimate": "\u2248 5 h 19 m of hand-work",
+   "captions": [
+    "There is no \u201cdownload all meetings.\u201d There is a page, and a list of dates.",
+    "Pick the body, pick the year, find the night: Council, Finance, Public Services, Committee of the Whole.",
+    "479 meeting nights listed \u2014 and every one of them had to be opened."
+   ],
+   "on_screen_rows": [
+    {
+     "date": "Aug 24, 2026",
+     "body": "City Council",
+     "meta": "clip 1126 \u00b7 00h 58m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    },
+    {
+     "date": "Aug 10, 2026",
+     "body": "City Council",
+     "meta": "clip 1124 \u00b7 01h 23m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    },
+    {
+     "date": "Jul 27, 2026",
+     "body": "City Council",
+     "meta": "clip 1122 \u00b7 01h 15m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    },
+    {
+     "date": "Jul 13, 2026",
+     "body": "City Council",
+     "meta": "clip 1120 \u00b7 07h 43m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    }
+   ],
+   "attachments": [],
+   "duration_seconds": 14.5
+  },
+  {
+   "index": 2,
+   "key": "agenda_documents",
+   "title": "Agenda packets",
+   "site": "Granicus \u2014 Agenda Viewer",
+   "url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1126",
+   "page": "doc",
+   "destination": "artifacts/Cheyenne_Audit_raw/",
+   "units": 720,
+   "unit": "agenda file",
+   "manual_estimate": "\u2248 9 h of hand-work",
+   "captions": [
+    "Open the meeting, follow the link out to the agenda viewer, and the packet opens as a PDF.",
+    "Download it, rename it to the clerk's MetaID, and file it under the meeting date.",
+    "720 meetings carry an agenda. Every one is a click, a save, a rename."
+   ],
+   "on_screen_rows": [
+    {
+     "date": "Aug 24, 2026",
+     "body": "City Council",
+     "meta": "clip 1126 \u00b7 00h 58m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    },
+    {
+     "date": "Aug 10, 2026",
+     "body": "City Council",
+     "meta": "clip 1124 \u00b7 01h 23m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    },
+    {
+     "date": "Jul 27, 2026",
+     "body": "City Council",
+     "meta": "clip 1122 \u00b7 01h 15m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    },
+    {
+     "date": "Jul 13, 2026",
+     "body": "City Council",
+     "meta": "clip 1120 \u00b7 07h 43m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    }
+   ],
+   "attachments": [
+    {
+     "name": "13_Agenda_MetaID_151646_Attachment_8437bd0ef4.html",
+     "meta": "6 KB \u00b7 Granicus attachment"
+    }
+   ],
+   "duration_seconds": 14.5
+  },
+  {
+   "index": 3,
+   "key": "supporting_documents",
+   "title": "Supporting documents",
+   "site": "Granicus \u2014 Attachments",
+   "url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1126",
+   "page": "doc",
+   "destination": "artifacts/Cheyenne_Audit_raw/",
+   "units": 720,
+   "unit": "attachment",
+   "manual_estimate": "\u2248 12 h of hand-work",
+   "captions": [
+    "Under every agenda item sit the attachments: staff reports, plats, ordinances, letters.",
+    "Each one is its own link, its own download, its own filename. Nothing bundles them.",
+    "720 meetings \u00d7 the documents behind every item \u2014 this is where the hours go."
+   ],
+   "on_screen_rows": [
+    {
+     "date": "Aug 24, 2026",
+     "body": "City Council",
+     "meta": "clip 1126 \u00b7 00h 58m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    },
+    {
+     "date": "Aug 10, 2026",
+     "body": "City Council",
+     "meta": "clip 1124 \u00b7 01h 23m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    },
+    {
+     "date": "Jul 27, 2026",
+     "body": "City Council",
+     "meta": "clip 1122 \u00b7 01h 15m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    },
+    {
+     "date": "Jul 13, 2026",
+     "body": "City Council",
+     "meta": "clip 1120 \u00b7 07h 43m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    }
+   ],
+   "attachments": [
+    {
+     "name": "01_Agenda_Supporting_Document_f333175a4b.pdf",
+     "meta": "3.8 MB \u00b7 Granicus attachment"
+    },
+    {
+     "name": "02_Agenda_Supporting_Documents_42ad5a83e5.pdf",
+     "meta": "1.9 MB \u00b7 Granicus attachment"
+    },
+    {
+     "name": "03_Agenda_Supporting_Document_a0bbae99c2.pdf",
+     "meta": "2.8 MB \u00b7 Granicus attachment"
+    },
+    {
+     "name": "04_Agenda_Supporting_Document_7135c27b3a.pdf",
+     "meta": "1.8 MB \u00b7 Granicus attachment"
+    }
+   ],
+   "duration_seconds": 14.5
+  },
+  {
+   "index": 4,
+   "key": "minutes_and_notes",
+   "title": "Minutes & meeting notes",
+   "site": "City of Cheyenne \u2014 Minutes",
+   "url": "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas",
+   "page": "list",
+   "destination": "uploads/",
+   "units": 720,
+   "unit": "meeting document",
+   "manual_estimate": "\u2248 10 h of hand-work",
+   "captions": [
+    "Minutes are a separate document, published later, often after the next meeting.",
+    "So you go back, find the date again, and save the clerk's version next to your notes.",
+    "720 minutes referenced here; 230 saved as text the search index can read."
+   ],
+   "on_screen_rows": [
+    {
+     "date": "Aug 24, 2026",
+     "body": "City Council",
+     "meta": "clip 1126 \u00b7 00h 58m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    },
+    {
+     "date": "Aug 10, 2026",
+     "body": "City Council",
+     "meta": "clip 1124 \u00b7 01h 23m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    },
+    {
+     "date": "Jul 27, 2026",
+     "body": "City Council",
+     "meta": "clip 1122 \u00b7 01h 15m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    },
+    {
+     "date": "Jul 13, 2026",
+     "body": "City Council",
+     "meta": "clip 1120 \u00b7 07h 43m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    }
+   ],
+   "attachments": [],
+   "duration_seconds": 14.5
+  },
+  {
+   "index": 5,
+   "key": "transcripts",
+   "title": "Transcripts & caption tracks",
+   "site": "YouTube \u2014 City of Cheyenne",
+   "url": "https://www.youtube.com/watch?v=-zBOAUpDE3E",
+   "page": "video",
+   "destination": "pipeline/corpus_yt/",
+   "units": 607,
+   "unit": "transcript",
+   "manual_estimate": "\u2248 15 h 10 m of hand-work",
+   "captions": [
+    "The tape has captions. Downloading them is the only way to search what was said.",
+    "Auto-captions arrive as VTT \u2014 cue numbers, timestamps, fragments \u2014 and get rebuilt into text.",
+    "607 transcript files, 106,487 lines, every line still carrying its timestamp."
+   ],
+   "on_screen_rows": [
+    {
+     "date": "Aug 24, 2026",
+     "body": "City Council",
+     "meta": "clip 1126 \u00b7 00h 58m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    },
+    {
+     "date": "Aug 10, 2026",
+     "body": "City Council",
+     "meta": "clip 1124 \u00b7 01h 23m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    },
+    {
+     "date": "Jul 27, 2026",
+     "body": "City Council",
+     "meta": "clip 1122 \u00b7 01h 15m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    },
+    {
+     "date": "Jul 13, 2026",
+     "body": "City Council",
+     "meta": "clip 1120 \u00b7 07h 43m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    }
+   ],
+   "attachments": [],
+   "duration_seconds": 14.5
+  },
+  {
+   "index": 6,
+   "key": "meeting_video",
+   "title": "Meeting tape",
+   "site": "Granicus \u2014 Video Archive",
+   "url": "https://archive-video.granicus.com/cheyenne/",
+   "page": "video",
+   "destination": "pipeline/videos/",
+   "units": 9,
+   "unit": "meeting recording",
+   "manual_estimate": "\u2248 27 min of hand-work",
+   "captions": [
+    "To quote someone you need the tape itself, not a summary of it.",
+    "Pull the MP4 from the Granicus archive, keep the clip ID and the timestamp beside it.",
+    "9 tapes on disk, 40.3 MB \u2014 the record is the recording."
+   ],
+   "on_screen_rows": [
+    {
+     "date": "Aug 24, 2026",
+     "body": "City Council",
+     "meta": "clip 1126 \u00b7 00h 58m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    },
+    {
+     "date": "Aug 10, 2026",
+     "body": "City Council",
+     "meta": "clip 1124 \u00b7 01h 23m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    },
+    {
+     "date": "Jul 27, 2026",
+     "body": "City Council",
+     "meta": "clip 1122 \u00b7 01h 15m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    },
+    {
+     "date": "Jul 13, 2026",
+     "body": "City Council",
+     "meta": "clip 1120 \u00b7 07h 43m",
+     "docs": [
+      {
+       "label": "Agenda",
+       "primary": true
+      },
+      {
+       "label": "Packet"
+      },
+      {
+       "label": "Minutes"
+      }
+     ]
+    }
+   ],
+   "attachments": [],
+   "duration_seconds": 14.5
+  },
+  {
+   "index": 7,
+   "key": "drive_corpus",
+   "title": "Processed meetings database",
+   "site": "Google Drive \u2014 WindyCityMeetings",
+   "url": "https://docs.google.com/drive/folders/WindyCityMeetings/processed_database",
+   "page": "files",
+   "destination": "drive-import/",
+   "units": 720,
+   "unit": "meeting record",
+   "manual_estimate": "\u2248 1 day of hand-work",
+   "captions": [
+    "Then it all has to be joined: which minutes, which agenda, which caption track \u2014 which meeting.",
+    "The linked database matches 720 records \u2014 agendas, minutes, attachments and speech \u2014 by date and body.",
+    "39.9 million characters of what was actually said, one record per meeting."
+   ],
+   "on_screen_rows": [],
+   "attachments": [],
+   "duration_seconds": 14.5
+  },
+  {
+   "index": 8,
+   "key": "news",
+   "title": "News coverage",
+   "site": "Cap City News \u00b7 WTE",
+   "url": "https://capcity.news/feed",
+   "page": "list",
+   "destination": "data/out/",
+   "units": 513,
+   "unit": "article / digest item",
+   "manual_estimate": "\u2248 4 h 16 m of hand-work",
+   "captions": [
+    "Context comes from the beat: Cap City News and the Tribune Eagle, pulled by RSS.",
+    "Every item is kept with its URL and the time it was fetched, so a changed story is visible.",
+    "513 indexed documents, quoted verbatim, never paraphrased."
+   ],
+   "on_screen_rows": [
+    {
+     "date": "watchlist",
+     "body": "Laramie County early voting eclipses 2022 midterms, clerk says",
+     "meta": "capcity.news \u00b7 RSS \u00b7 verbatim",
+     "docs": [
+      {
+       "label": "Open"
+      }
+     ]
+    },
+    {
+     "date": "watchlist",
+     "body": "PODER Academy charters renewed by LCSD1",
+     "meta": "capcity.news \u00b7 RSS \u00b7 verbatim",
+     "docs": [
+      {
+       "label": "Open"
+      }
+     ]
+    },
+    {
+     "date": "watchlist",
+     "body": "Morning showers clear out of Cheyenne as breezy, dry weather settles in",
+     "meta": "capcity.news \u00b7 RSS \u00b7 verbatim",
+     "docs": [
+      {
+       "label": "Open"
+      }
+     ]
+    },
+    {
+     "date": "watchlist",
+     "body": "Albany County sheriff questions his GOP challenger\u2019s presence at meeting with FBI Director Kash Patel",
+     "meta": "capcity.news \u00b7 RSS \u00b7 verbatim",
+     "docs": [
+      {
+       "label": "Open"
+      }
+     ]
+    }
+   ],
+   "attachments": [],
+   "duration_seconds": 14.5
+  },
+  {
+   "index": 9,
+   "key": "arrests",
+   "title": "Arrest reports (de-identified)",
+   "site": "Cap City News \u2014 Arrest Reports",
+   "url": "https://capcity.news/",
+   "page": "table",
+   "destination": "data/arrests/",
+   "units": 65,
+   "unit": "record",
+   "manual_estimate": "\u2248 2 h 10 m of hand-work",
+   "captions": [
+    "The county's weekly arrest report arrives as a news post, not a dataset.",
+    "Charges are copied verbatim; names are stripped before anything is published.",
+    "65 records, de-identified \u2014 names only through a reviewed request."
+   ],
+   "on_screen_rows": [],
+   "attachments": [],
+   "duration_seconds": 14.5
+  },
+  {
+   "index": 10,
+   "key": "scanner",
+   "title": "Scanner audio transcripts",
+   "site": "Broadcastify \u2014 feed 47003",
+   "url": "https://www.broadcastify.com/archives/feed/47003/",
+   "page": "audio",
+   "destination": "scanner-results/runs/",
+   "units": 601,
+   "unit": "radio segment",
+   "manual_estimate": "\u2248 1 day 1 h of hand-work",
+   "captions": [
+    "Public-safety radio is live, then gone. Broadcastify archives the segments.",
+    "Download each MP3, transcribe it locally, keep the source URL and the doubt on the label.",
+    "601 segments transcribed and flagged unverified, because a machine heard them."
+   ],
+   "on_screen_rows": [],
+   "attachments": [],
+   "duration_seconds": 14.5
+  },
+  {
+   "index": 11,
+   "key": "open_data",
+   "title": "Open-data & records probes",
+   "site": "Laramie County \u2014 Socrata",
+   "url": "https://laramiecountywy-sheriff.data.socrata.com/",
+   "page": "table",
+   "destination": "scanner-results/socrata/",
+   "units": 2,
+   "unit": "dataset probe",
+   "manual_estimate": "\u2248 8 min of hand-work",
+   "captions": [
+    "Some of it should have been an API: Socrata datasets, a LETMSP dashboard, permit records.",
+    "The sheriff's dataset answered 403. The dashboard wanted a login. The probe says exactly that.",
+    "Two datasets probed, zero rows invented \u2014 a refusal is a finding too."
+   ],
+   "on_screen_rows": [],
+   "attachments": [],
+   "duration_seconds": 14.5
+  }
+ ],
+ "montage": [
+  {
+   "key": "extracted_text",
+   "title": "Extracted document text",
+   "units": 372,
+   "unit": "text extract",
+   "files": 372,
+   "size": "3.2 MB",
+   "dest": "data/text/",
+   "class": "scraped"
+  },
+  {
+   "key": "video_catalog",
+   "title": "Meeting video catalogue",
+   "units": 481,
+   "unit": "catalogued meeting",
+   "files": 9,
+   "size": "4.5 MB",
+   "dest": "youtube-archive/",
+   "class": "scraped"
+  },
+  {
+   "key": "ocr",
+   "title": "OCR of scanned documents",
+   "units": 1081,
+   "unit": "scanned document",
+   "files": 1081,
+   "size": "14.3 MB",
+   "dest": "ai-record-ocr/",
+   "class": "derived"
+  },
+  {
+   "key": "rag_index",
+   "title": "Search / RAG index",
+   "units": 1687,
+   "unit": "embedded chunk",
+   "files": 9,
+   "size": "27.5 MB",
+   "dest": "rag/",
+   "class": "derived"
+  },
+  {
+   "key": "civicwatch",
+   "title": "Civicwatch mirror",
+   "units": 1581,
+   "unit": "civic record",
+   "files": 1581,
+   "size": "167.8 MB",
+   "dest": "2026-09-14-council/civicwatch/",
+   "class": "scraped"
+  },
+  {
+   "key": "derived_analysis",
+   "title": "Analysis & dossiers written from the record",
+   "units": 141,
+   "unit": "document",
+   "files": 141,
+   "size": "10.8 MB",
+   "dest": "repo root",
+   "class": "derived"
+  },
+  {
+   "key": "silent_edits",
+   "title": "Silent-edit diffs",
+   "units": 1217,
+   "unit": "version diff",
+   "files": 1217,
+   "size": "78.0 MB",
+   "dest": "data/out/",
+   "class": "derived"
+  },
+  {
+   "key": "meeting_derivatives",
+   "title": "Meeting structure & cut lists",
+   "units": 13,
+   "unit": "derived record",
+   "files": 13,
+   "size": "1.8 MB",
+   "dest": "pipeline/",
+   "class": "derived"
+  },
+  {
+   "key": "entities",
+   "title": "Entity database",
+   "units": 63,
+   "unit": "document profile",
+   "files": 63,
+   "size": "27 KB",
+   "dest": "Entity_Database/",
+   "class": "derived"
+  },
+  {
+   "key": "civic_atlas",
+   "title": "Civic atlas (experimental site)",
+   "units": 24,
+   "unit": "page / asset",
+   "files": 24,
+   "size": "117 KB",
+   "dest": "civic_atlas/",
+   "class": "generated"
+  },
+  {
+   "key": "montage_reels",
+   "title": "Edited reels cut from the tapes",
+   "units": 51,
+   "unit": "film cut",
+   "files": 51,
+   "size": "574.2 MB",
+   "dest": "video/ \u00b7 videos/",
+   "class": "derived"
+  },
+  {
+   "key": "provenance_film",
+   "title": "Provenance report & this film",
+   "units": 31,
+   "unit": "artifact",
+   "files": 31,
+   "size": "1.9 MB",
+   "dest": "data/out/ \u00b7 video/",
+   "class": "generated"
+  },
+  {
+   "key": "published_site",
+   "title": "Published site & feeds",
+   "units": 23,
+   "unit": "page",
+   "files": 23,
+   "size": "886 KB",
+   "dest": "pages/ \u00b7 public/",
+   "class": "generated"
+  }
+ ],
+ "detect_lines": [
+  [
+   "meeting_calendar",
+   "    7  files      479  meeting days      8.5 MB   data/snapshots/ \u00b7 2026-09-14-council/meetings/"
+  ],
+  [
+   "supporting_documents",
+   "   14  files      720  attachments     45.4 MB   artifacts/Cheyenne_Audit_raw/"
+  ],
+  [
+   "agenda_documents",
+   "   40  files      720  agenda files     99.3 MB   artifacts/Cheyenne_Audit_raw/"
+  ],
+  [
+   "minutes_and_notes",
+   "  230  files      720  meeting documents     78.4 MB   uploads/"
+  ],
+  [
+   "extracted_text",
+   "  372  files      372  text extracts      3.2 MB   data/text/"
+  ],
+  [
+   "meeting_video",
+   "    9  files        9  meeting recordings     40.3 MB   pipeline/videos/"
+  ],
+  [
+   "transcripts",
+   "  607  files      607  transcripts     26.8 MB   pipeline/corpus_yt/"
+  ],
+  [
+   "video_catalog",
+   "    9  files      481  catalogued meetings      4.5 MB   youtube-archive/"
+  ],
+  [
+   "drive_corpus",
+   "    5  files      720  meeting records     62.1 MB   drive-import/"
+  ],
+  [
+   "news",
+   " 1153  files      513  article / digest items    290.7 MB   data/out/"
+  ],
+  [
+   "arrests",
+   "    5  files       65  records      4.1 MB   data/arrests/"
+  ],
+  [
+   "scanner",
+   "  601  files      601  radio segments      5.5 MB   scanner-results/runs/"
+  ],
+  [
+   "open_data",
+   "    3  files        2  dataset probes       33 KB   scanner-results/socrata/"
+  ],
+  [
+   "ocr",
+   " 1081  files     1081  scanned documents     14.3 MB   ai-record-ocr/"
+  ],
+  [
+   "rag_index",
+   "    9  files     1687  embedded chunks     27.5 MB   rag/"
+  ],
+  [
+   "civicwatch",
+   " 1581  files     1581  civic records    167.8 MB   2026-09-14-council/civicwatch/"
+  ],
+  [
+   "derived_analysis",
+   "  141  files      141  documents     10.8 MB   repo root"
+  ],
+  [
+   "silent_edits",
+   " 1217  files     1217  version diffs     78.0 MB   data/out/"
+  ],
+  [
+   "meeting_derivatives",
+   "   13  files       13  derived records      1.8 MB   pipeline/"
+  ],
+  [
+   "entities",
+   "   63  files       63  document profiles       27 KB   Entity_Database/"
+  ],
+  [
+   "civic_atlas",
+   "   24  files       24  page / assets      117 KB   civic_atlas/"
+  ],
+  [
+   "agent",
+   "   20  files       20  files      241 KB   agent/"
+  ],
+  [
+   "repo_meta",
+   "   27  files       27  files     29.1 MB   repo root"
+  ],
+  [
+   "montage_reels",
+   "   51  files       51  film cuts    574.2 MB   video/ \u00b7 videos/"
+  ],
+  [
+   "provenance_film",
+   "   31  files       31  artifacts      1.9 MB   data/out/ \u00b7 video/"
+  ],
+  [
+   "published_site",
+   "   23  files       23  pages      886 KB   pages/ \u00b7 public/"
+  ],
+  [
+   "code",
+   "  138  files      138  source files      1.3 MB   engine/ \u00b7 tools/ \u00b7 scripts/"
+  ]
+ ],
+ "source_hosts": [
+  {
+   "host": "capcity.news",
+   "name": "Cap City News",
+   "kind": "local news",
+   "count": 12184
+  },
+  {
+   "host": "cheyenne.granicus.com",
+   "name": "Granicus \u2014 Cheyenne",
+   "kind": "meeting portal",
+   "count": 7915
+  },
+  {
+   "host": "www.wyomingnews.com",
+   "name": "Wyoming Tribune Eagle",
+   "kind": "local news",
+   "count": 5452
+  },
+  {
+   "host": "archive.org",
+   "name": "Internet Archive",
+   "kind": "public archive",
+   "count": 2608
+  },
+  {
+   "host": "archive-video.granicus.com",
+   "name": "Granicus video archive",
+   "kind": "media origin",
+   "count": 1420
+  },
+  {
+   "host": "archive-stream.granicus.com",
+   "name": "Granicus stream archive",
+   "kind": "media origin",
+   "count": 948
+  },
+  {
+   "host": "docs.google.com",
+   "name": "Google Drive",
+   "kind": "working corpus",
+   "count": 673
+  },
+  {
+   "host": "www.broadcastify.com",
+   "name": "Broadcastify",
+   "kind": "scanner audio",
+   "count": 298
+  },
+  {
+   "host": "cheyennewy.workflow.opengov.com",
+   "name": "OpenGov \u2014 Cheyenne",
+   "kind": "permitting / records",
+   "count": 165
+  },
+  {
+   "host": "wyobiz.wyo.gov",
+   "name": "WyoBiz",
+   "kind": "state records",
+   "count": 19
+  },
+  {
+   "host": "www.cheyennecity.org",
+   "name": "City of Cheyenne",
+   "kind": "OpenCities CMS",
+   "count": 14
+  },
+  {
+   "host": "www.plancheyenne.org",
+   "name": "PlanCheyenne",
+   "kind": "planning",
+   "count": 13
+  },
+  {
+   "host": "laramiecountywy-sheriff.data.socrata.com",
+   "name": "Laramie County Sheriff \u2014 Socrata",
+   "kind": "open data portal",
+   "count": 1
+  }
+ ],
+ "upstream_repos": [
+  {
+   "repo": "The-Real-Windy-City-",
+   "mentions": 7
+  },
+  {
+   "repo": "TheReelWindyCity",
+   "mentions": 7
+  },
+  {
+   "repo": "cheyenne-archives-2025-2026",
+   "mentions": 3
+  },
+  {
+   "repo": "cheyenne-archives-",
+   "mentions": 2
+  },
+  {
+   "repo": "cheyenne-archives-2008-2013",
+   "mentions": 2
+  },
+  {
+   "repo": "cheyenne-archives-2022",
+   "mentions": 2
+  }
+ ]
+}

@@ -161,12 +161,31 @@ def _prev_index():
             pass
 
 
+def _prev_provenance_guide():
+    led = None
+    try:
+        import rwc_provenance
+        led = rwc_provenance.ledger()
+    except Exception:
+        pass
+    if led:
+        t = led["totals"]
+        st.markdown(
+            f"**{t['data']:,} figures** in this record, each with a public origin link and a film "
+            f"cue · **{t['with_cue']:,}** cued to the second · "
+            f"{len(led['film']['schedule']['chapters'])} chapters of hand-fetching on film."
+        )
+    st.caption("Everything in the archive, the films of how it was collected, and how to check any "
+               "number yourself. Generated from the checkout.")
+
+
 def _prev_estoppel_effect():
     st.markdown("⚖️ Source-linked phrase-pattern leads for human review: commitments, record-building, issue chronology, and related cues.")
     st.caption("The full page runs and caches the research aid automatically; it does not decide speaker attribution or legal effect.")
 
 
 PREVIEW = {
+    "🧭 Provenance Guide": _prev_provenance_guide,
     "◈ Ledger HQ": _prev_front_page,
     "📡 Mission Board": _prev_mission_board,
     "🔎 Evidence Vault": _prev_evidence_vault,
@@ -193,6 +212,13 @@ EXTRA = [  # standalone pages
 ]
 
 # --------------------------------------------------------------------- render
+# provenance first: the two films and every cue, above the chapter cards
+try:
+    import rwc_provenance
+    rwc_provenance.film_block(expanded=False)
+except Exception as _prov_exc:  # never let provenance take the home page down
+    st.caption(f"(provenance film block unavailable: {_prov_exc})")
+
 V.render_ledger_header()
 st.markdown("### 📖 Chapters — live previews. Click through for the full page.")
 

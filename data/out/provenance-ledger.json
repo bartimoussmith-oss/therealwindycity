@@ -1,0 +1,4591 @@
+{
+ "generated_at": "2026-11-04T14:03:09Z",
+ "film": {
+  "master": "video/provenance-manual-run.mp4",
+  "showcase": "video/provenance-showcase.mp4",
+  "timelapse": "video/provenance-timelapse.mp4",
+  "clips": "video/clips",
+  "schedule": {
+   "timelapse": 222.0,
+   "timelapse_seconds": 20.0,
+   "intro": [
+    0.0,
+    10.0
+   ],
+   "detect": [
+    10.0,
+    25.0
+   ],
+   "chapters": [
+    [
+     "meeting_calendar",
+     25.0,
+     14.6
+    ],
+    [
+     "agenda_documents",
+     39.6,
+     14.6
+    ],
+    [
+     "supporting_documents",
+     54.2,
+     14.6
+    ],
+    [
+     "minutes_and_notes",
+     68.8,
+     14.6
+    ],
+    [
+     "transcripts",
+     83.39999999999999,
+     14.6
+    ],
+    [
+     "meeting_video",
+     97.99999999999999,
+     14.6
+    ],
+    [
+     "drive_corpus",
+     112.59999999999998,
+     14.6
+    ],
+    [
+     "news",
+     127.19999999999997,
+     14.6
+    ],
+    [
+     "arrests",
+     141.79999999999998,
+     14.6
+    ],
+    [
+     "scanner",
+     156.39999999999998,
+     14.6
+    ],
+    [
+     "open_data",
+     170.99999999999997,
+     14.6
+    ]
+   ],
+   "montage": [
+    185.59999999999997,
+    9.0
+   ],
+   "finale": [
+    194.59999999999997,
+    19.0
+   ],
+   "endcard": [
+    213.59999999999997,
+    8.0
+   ],
+   "total": 221.6
+  }
+ },
+ "totals": {
+  "data": 121,
+  "families": 30,
+  "with_link": 121,
+  "with_cue": 121,
+  "manifest": "data/out/provenance-manifest.json"
+ },
+ "data": [
+  {
+   "id": "meeting_calendar.files",
+   "surface": "both",
+   "page": "Minutes & Tapes, Meeting Nights, Meeting index (years/*)",
+   "item": "files stored",
+   "value": 7,
+   "ledger": "meeting_calendar",
+   "origin": {
+    "url": "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas",
+    "host": "www.cheyennecity.org"
+   },
+   "how": "cheyennecity.org \u2192 Your Government \u2192 City Council \u2192 Minutes and Agendas \u2192 pick the body \u2192 pick the year \u2192 click a meeting date",
+   "evidence": [
+    "pipeline/docs/1124/2026-08-10_agenda.html",
+    "pipeline/docs/1124/2026-08-10_meta_01.html",
+    "pipeline/docs/1124/2026-08-10_meta_02.html",
+    "pipeline/docs/1124/2026-08-10_meta_03.html",
+    "pipeline/docs/1124/2026-08-10_meta_04.html",
+    "pipeline/docs/1124/2026-08-10_minutes.html"
+   ],
+   "note": "What this repo holds for meeting calendar & meeting days, in data/snapshots/ \u00b7 2026-09-14-council/meetings/.",
+   "cue": {
+    "chapter": "meeting_calendar",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 25.0,
+     "end": 39.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/01-meeting-calendar-meeting-days.mp4",
+    "start": 25.0,
+    "end": 39.6,
+    "beat": "save",
+    "beat_start": 36.95,
+    "beat_end": 38.35
+   }
+  },
+  {
+   "id": "meeting_calendar.units",
+   "surface": "both",
+   "page": "Minutes & Tapes, Meeting Nights, Meeting index (years/*)",
+   "item": "meeting days counted",
+   "value": 479,
+   "ledger": "meeting_calendar",
+   "origin": {
+    "url": "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas",
+    "host": "www.cheyennecity.org"
+   },
+   "how": "cheyennecity.org \u2192 Your Government \u2192 City Council \u2192 Minutes and Agendas \u2192 pick the body \u2192 pick the year \u2192 click a meeting date",
+   "evidence": [
+    "pipeline/docs/1124/2026-08-10_agenda.html",
+    "pipeline/docs/1124/2026-08-10_meta_01.html",
+    "pipeline/docs/1124/2026-08-10_meta_02.html",
+    "pipeline/docs/1124/2026-08-10_meta_03.html",
+    "pipeline/docs/1124/2026-08-10_meta_04.html",
+    "pipeline/docs/1124/2026-08-10_minutes.html"
+   ],
+   "note": "479 meeting nights indexed \u00b7 7 city pages captured",
+   "cue": {
+    "chapter": "meeting_calendar",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 25.0,
+     "end": 39.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/01-meeting-calendar-meeting-days.mp4",
+    "start": 25.0,
+    "end": 39.6,
+    "beat": "panel",
+    "beat_start": 37.3,
+    "beat_end": 39.5
+   }
+  },
+  {
+   "id": "meeting_calendar.bytes",
+   "surface": "both",
+   "page": "Minutes & Tapes, Meeting Nights, Meeting index (years/*)",
+   "item": "size on disk",
+   "value": "8.5 MB",
+   "ledger": "meeting_calendar",
+   "origin": {
+    "url": "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas",
+    "host": "www.cheyennecity.org"
+   },
+   "how": "cheyennecity.org \u2192 Your Government \u2192 City Council \u2192 Minutes and Agendas \u2192 pick the body \u2192 pick the year \u2192 click a meeting date",
+   "evidence": [
+    "pipeline/docs/1124/2026-08-10_agenda.html",
+    "pipeline/docs/1124/2026-08-10_meta_01.html",
+    "pipeline/docs/1124/2026-08-10_meta_02.html",
+    "pipeline/docs/1124/2026-08-10_meta_03.html",
+    "pipeline/docs/1124/2026-08-10_meta_04.html",
+    "pipeline/docs/1124/2026-08-10_minutes.html"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "meeting_calendar",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 25.0,
+     "end": 39.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/01-meeting-calendar-meeting-days.mp4",
+    "start": 25.0,
+    "end": 39.6,
+    "beat": "save",
+    "beat_start": 36.95,
+    "beat_end": 38.35
+   }
+  },
+  {
+   "id": "meeting_calendar.host-cheyenne-granicus-com",
+   "surface": "both",
+   "page": "Meeting index (years/*)",
+   "item": "links found to cheyenne.granicus.com",
+   "value": 977,
+   "ledger": "meeting_calendar",
+   "origin": {
+    "url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1126",
+    "host": "cheyenne.granicus.com"
+   },
+   "how": "follow the cheyenne.granicus.com links in this repo's own files back to the page each one points at",
+   "evidence": [
+    "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1126",
+    "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1124",
+    "https://cheyenne.granicus.com/MinutesViewer.php?view_id=5&clip_id=1124&doc_id=8391317d-9696-11f1-bb61-005056a89546"
+   ],
+   "note": "Counted by scanning the repo for absolute URLs.",
+   "cue": {
+    "chapter": "meeting_calendar",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 25.0,
+     "end": 39.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/01-meeting-calendar-meeting-days.mp4",
+    "start": 25.0,
+    "end": 39.6,
+    "beat": "pick",
+    "beat_start": 31.5,
+    "beat_end": 32.7
+   }
+  },
+  {
+   "id": "supporting_documents.files",
+   "surface": "both",
+   "page": "Minutes & Tapes, Meeting pages \u2014 Archived documents",
+   "item": "files stored",
+   "value": 14,
+   "ledger": "supporting_documents",
+   "origin": {
+    "url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1126",
+    "host": "cheyenne.granicus.com"
+   },
+   "how": "same AgendaViewer page \u2192 scroll to the item \u2192 open each Linked Attachment / Supporting Document",
+   "evidence": [
+    "artifacts/Cheyenne_Audit_raw/01_Agenda_Supporting_Document_f333175a4b.pdf",
+    "artifacts/Cheyenne_Audit_raw/02_Agenda_Supporting_Documents_42ad5a83e5.pdf",
+    "artifacts/Cheyenne_Audit_raw/03_Agenda_Supporting_Document_a0bbae99c2.pdf",
+    "artifacts/Cheyenne_Audit_raw/04_Agenda_Supporting_Document_7135c27b3a.pdf",
+    "artifacts/Cheyenne_Audit_raw/05_Agenda_Supporting_Document_d1c69e0f9a.pdf",
+    "artifacts/Cheyenne_Audit_raw/06_Agenda_Supporting_Document_f6da2e47e6.pdf"
+   ],
+   "note": "What this repo holds for supporting documents, in artifacts/Cheyenne_Audit_raw/.",
+   "cue": {
+    "chapter": "supporting_documents",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 54.2,
+     "end": 68.8
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/03-supporting-documents.mp4",
+    "start": 54.2,
+    "end": 68.8,
+    "beat": "save",
+    "beat_start": 66.15,
+    "beat_end": 67.55
+   }
+  },
+  {
+   "id": "supporting_documents.units",
+   "surface": "both",
+   "page": "Minutes & Tapes, Meeting pages \u2014 Archived documents",
+   "item": "attachments counted",
+   "value": 720,
+   "ledger": "supporting_documents",
+   "origin": {
+    "url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1126",
+    "host": "cheyenne.granicus.com"
+   },
+   "how": "same AgendaViewer page \u2192 scroll to the item \u2192 open each Linked Attachment / Supporting Document",
+   "evidence": [
+    "artifacts/Cheyenne_Audit_raw/01_Agenda_Supporting_Document_f333175a4b.pdf",
+    "artifacts/Cheyenne_Audit_raw/02_Agenda_Supporting_Documents_42ad5a83e5.pdf",
+    "artifacts/Cheyenne_Audit_raw/03_Agenda_Supporting_Document_a0bbae99c2.pdf",
+    "artifacts/Cheyenne_Audit_raw/04_Agenda_Supporting_Document_7135c27b3a.pdf",
+    "artifacts/Cheyenne_Audit_raw/05_Agenda_Supporting_Document_d1c69e0f9a.pdf",
+    "artifacts/Cheyenne_Audit_raw/06_Agenda_Supporting_Document_f6da2e47e6.pdf"
+   ],
+   "note": "720 meetings carry attachments \u00b7 14 committed here",
+   "cue": {
+    "chapter": "supporting_documents",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 54.2,
+     "end": 68.8
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/03-supporting-documents.mp4",
+    "start": 54.2,
+    "end": 68.8,
+    "beat": "panel",
+    "beat_start": 66.5,
+    "beat_end": 68.7
+   }
+  },
+  {
+   "id": "supporting_documents.bytes",
+   "surface": "both",
+   "page": "Minutes & Tapes, Meeting pages \u2014 Archived documents",
+   "item": "size on disk",
+   "value": "45.4 MB",
+   "ledger": "supporting_documents",
+   "origin": {
+    "url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1126",
+    "host": "cheyenne.granicus.com"
+   },
+   "how": "same AgendaViewer page \u2192 scroll to the item \u2192 open each Linked Attachment / Supporting Document",
+   "evidence": [
+    "artifacts/Cheyenne_Audit_raw/01_Agenda_Supporting_Document_f333175a4b.pdf",
+    "artifacts/Cheyenne_Audit_raw/02_Agenda_Supporting_Documents_42ad5a83e5.pdf",
+    "artifacts/Cheyenne_Audit_raw/03_Agenda_Supporting_Document_a0bbae99c2.pdf",
+    "artifacts/Cheyenne_Audit_raw/04_Agenda_Supporting_Document_7135c27b3a.pdf",
+    "artifacts/Cheyenne_Audit_raw/05_Agenda_Supporting_Document_d1c69e0f9a.pdf",
+    "artifacts/Cheyenne_Audit_raw/06_Agenda_Supporting_Document_f6da2e47e6.pdf"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "supporting_documents",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 54.2,
+     "end": 68.8
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/03-supporting-documents.mp4",
+    "start": 54.2,
+    "end": 68.8,
+    "beat": "save",
+    "beat_start": 66.15,
+    "beat_end": 67.55
+   }
+  },
+  {
+   "id": "agenda_documents.files",
+   "surface": "both",
+   "page": "Minutes & Tapes, Meeting pages \u2014 Archived documents",
+   "item": "files stored",
+   "value": 40,
+   "ledger": "agenda_documents",
+   "origin": {
+    "url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1126",
+    "host": "cheyenne.granicus.com"
+   },
+   "how": "open the minutes-and-agendas date \u2192 the Agenda link opens Granicus AgendaViewer \u2192 Download the packet PDF",
+   "evidence": [
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150411.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150413.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150419.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150421.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150423.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150425.pdf"
+   ],
+   "note": "What this repo holds for agenda packets, in artifacts/Cheyenne_Audit_raw/.",
+   "cue": {
+    "chapter": "agenda_documents",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 39.6,
+     "end": 54.2
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/02-agenda-packets.mp4",
+    "start": 39.6,
+    "end": 54.2,
+    "beat": "save",
+    "beat_start": 51.55,
+    "beat_end": 52.95
+   }
+  },
+  {
+   "id": "agenda_documents.units",
+   "surface": "both",
+   "page": "Minutes & Tapes, Meeting pages \u2014 Archived documents",
+   "item": "agenda files counted",
+   "value": 720,
+   "ledger": "agenda_documents",
+   "origin": {
+    "url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1126",
+    "host": "cheyenne.granicus.com"
+   },
+   "how": "open the minutes-and-agendas date \u2192 the Agenda link opens Granicus AgendaViewer \u2192 Download the packet PDF",
+   "evidence": [
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150411.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150413.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150419.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150421.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150423.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150425.pdf"
+   ],
+   "note": "720 agendas linked \u00b7 40 packet files committed here",
+   "cue": {
+    "chapter": "agenda_documents",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 39.6,
+     "end": 54.2
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/02-agenda-packets.mp4",
+    "start": 39.6,
+    "end": 54.2,
+    "beat": "panel",
+    "beat_start": 51.9,
+    "beat_end": 54.1
+   }
+  },
+  {
+   "id": "agenda_documents.bytes",
+   "surface": "both",
+   "page": "Minutes & Tapes, Meeting pages \u2014 Archived documents",
+   "item": "size on disk",
+   "value": "99.3 MB",
+   "ledger": "agenda_documents",
+   "origin": {
+    "url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1126",
+    "host": "cheyenne.granicus.com"
+   },
+   "how": "open the minutes-and-agendas date \u2192 the Agenda link opens Granicus AgendaViewer \u2192 Download the packet PDF",
+   "evidence": [
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150411.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150413.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150419.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150421.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150423.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150425.pdf"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "agenda_documents",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 39.6,
+     "end": 54.2
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/02-agenda-packets.mp4",
+    "start": 39.6,
+    "end": 54.2,
+    "beat": "save",
+    "beat_start": 51.55,
+    "beat_end": 52.95
+   }
+  },
+  {
+   "id": "minutes_and_notes.files",
+   "surface": "both",
+   "page": "Minutes & Tapes, Meeting pages \u2014 Record of Proceedings",
+   "item": "files stored",
+   "value": 230,
+   "ledger": "minutes_and_notes",
+   "origin": {
+    "url": "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas",
+    "host": "www.cheyennecity.org"
+   },
+   "how": "same date on the city site \u2192 the Minutes column \u2192 Download (or MinutesViewer on Granicus for the record of proceedings)",
+   "evidence": [
+    "2026-09-14-council/meetings/minutes/apr13.txt",
+    "2026-09-14-council/meetings/minutes/apr27.txt",
+    "2026-09-14-council/meetings/minutes/jul13.txt",
+    "2026-09-14-council/meetings/minutes/jun08.txt",
+    "2026-09-14-council/meetings/minutes/mar09.txt",
+    "2026-09-14-council/meetings/minutes/may11.txt"
+   ],
+   "note": "What this repo holds for minutes & meeting notes, in uploads/.",
+   "cue": {
+    "chapter": "minutes_and_notes",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 68.8,
+     "end": 83.4
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/04-minutes-meeting-notes.mp4",
+    "start": 68.8,
+    "end": 83.4,
+    "beat": "save",
+    "beat_start": 80.75,
+    "beat_end": 82.15
+   }
+  },
+  {
+   "id": "minutes_and_notes.units",
+   "surface": "both",
+   "page": "Minutes & Tapes, Meeting pages \u2014 Record of Proceedings",
+   "item": "meeting documents counted",
+   "value": 720,
+   "ledger": "minutes_and_notes",
+   "origin": {
+    "url": "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas",
+    "host": "www.cheyennecity.org"
+   },
+   "how": "same date on the city site \u2192 the Minutes column \u2192 Download (or MinutesViewer on Granicus for the record of proceedings)",
+   "evidence": [
+    "2026-09-14-council/meetings/minutes/apr13.txt",
+    "2026-09-14-council/meetings/minutes/apr27.txt",
+    "2026-09-14-council/meetings/minutes/jul13.txt",
+    "2026-09-14-council/meetings/minutes/jun08.txt",
+    "2026-09-14-council/meetings/minutes/mar09.txt",
+    "2026-09-14-council/meetings/minutes/may11.txt"
+   ],
+   "note": "720 minutes referenced \u00b7 230 saved as text here",
+   "cue": {
+    "chapter": "minutes_and_notes",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 68.8,
+     "end": 83.4
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/04-minutes-meeting-notes.mp4",
+    "start": 68.8,
+    "end": 83.4,
+    "beat": "panel",
+    "beat_start": 81.1,
+    "beat_end": 83.3
+   }
+  },
+  {
+   "id": "minutes_and_notes.bytes",
+   "surface": "both",
+   "page": "Minutes & Tapes, Meeting pages \u2014 Record of Proceedings",
+   "item": "size on disk",
+   "value": "78.4 MB",
+   "ledger": "minutes_and_notes",
+   "origin": {
+    "url": "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas",
+    "host": "www.cheyennecity.org"
+   },
+   "how": "same date on the city site \u2192 the Minutes column \u2192 Download (or MinutesViewer on Granicus for the record of proceedings)",
+   "evidence": [
+    "2026-09-14-council/meetings/minutes/apr13.txt",
+    "2026-09-14-council/meetings/minutes/apr27.txt",
+    "2026-09-14-council/meetings/minutes/jul13.txt",
+    "2026-09-14-council/meetings/minutes/jun08.txt",
+    "2026-09-14-council/meetings/minutes/mar09.txt",
+    "2026-09-14-council/meetings/minutes/may11.txt"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "minutes_and_notes",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 68.8,
+     "end": 83.4
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/04-minutes-meeting-notes.mp4",
+    "start": 68.8,
+    "end": 83.4,
+    "beat": "save",
+    "beat_start": 80.75,
+    "beat_end": 82.15
+   }
+  },
+  {
+   "id": "minutes_and_notes.host-cheyennewy-workflow-opengov-com",
+   "surface": "both",
+   "page": "Meeting pages \u2014 Record of Proceedings",
+   "item": "links found to cheyennewy.workflow.opengov.com",
+   "value": 149,
+   "ledger": "minutes_and_notes",
+   "origin": {
+    "url": "https://cheyennewy.workflow.opengov.com/#/explore/records/280017/799201",
+    "host": "cheyennewy.workflow.opengov.com"
+   },
+   "how": "follow the cheyennewy.workflow.opengov.com links in this repo's own files back to the page each one points at",
+   "evidence": [
+    "https://cheyennewy.workflow.opengov.com/#/explore/records/280017/799201",
+    "https://cheyennewy.workflow.opengov.com/#/explore/records/280815/803072",
+    "https://cheyennewy.workflow.opengov.com/#/explore/records/10580/60531"
+   ],
+   "note": "Counted by scanning the repo for absolute URLs.",
+   "cue": {
+    "chapter": "minutes_and_notes",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 68.8,
+     "end": 83.4
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/04-minutes-meeting-notes.mp4",
+    "start": 68.8,
+    "end": 83.4,
+    "beat": "pick",
+    "beat_start": 75.3,
+    "beat_end": 76.5
+   }
+  },
+  {
+   "id": "extracted_text.files",
+   "surface": "both",
+   "page": "",
+   "item": "files stored",
+   "value": 372,
+   "ledger": "extracted_text",
+   "origin": {
+    "url": "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas",
+    "host": "www.cheyennecity.org"
+   },
+   "how": "open https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas and take it off the page",
+   "evidence": [
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150411.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150413.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150419.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150421.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150423.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150425.txt"
+   ],
+   "note": "What this repo holds for extracted document text, in data/text/.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "extracted_text.units",
+   "surface": "both",
+   "page": "",
+   "item": "text extracts counted",
+   "value": 372,
+   "ledger": "extracted_text",
+   "origin": {
+    "url": "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas",
+    "host": "www.cheyennecity.org"
+   },
+   "how": "open https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas and take it off the page",
+   "evidence": [
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150411.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150413.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150419.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150421.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150423.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150425.txt"
+   ],
+   "note": "Counted from the files themselves, not an estimate.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "extracted_text.bytes",
+   "surface": "both",
+   "page": "",
+   "item": "size on disk",
+   "value": "3.2 MB",
+   "ledger": "extracted_text",
+   "origin": {
+    "url": "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas",
+    "host": "www.cheyennecity.org"
+   },
+   "how": "open https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas and take it off the page",
+   "evidence": [
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150411.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150413.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150419.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150421.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150423.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150425.txt"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "extracted_text.host-www-epa-gov",
+   "surface": "both",
+   "page": "Extracted document text",
+   "item": "links found to www.epa.gov",
+   "value": 19,
+   "ledger": "extracted_text",
+   "origin": {
+    "url": "https://www.epa.gov/ghgemissions/overview-greenhouse-gases",
+    "host": "www.epa.gov"
+   },
+   "how": "follow the www.epa.gov links in this repo's own files back to the page each one points at",
+   "evidence": [
+    "https://www.epa.gov/ghgemissions/overview-greenhouse-gases",
+    "https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator#results",
+    "https://www.epa.gov/system/files/documents/2023-03/ghg_emission_factors_hub.pdf"
+   ],
+   "note": "Counted by scanning the repo for absolute URLs.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "meeting_video.files",
+   "surface": "both",
+   "page": "Montage Theater, Meeting pages \u2014 official video",
+   "item": "files stored",
+   "value": 9,
+   "ledger": "meeting_video",
+   "origin": {
+    "url": "https://archive-video.granicus.com/cheyenne/",
+    "host": "archive-video.granicus.com"
+   },
+   "how": "Granicus video archive \u2192 pick the clip \u2192 Download MP4 (or pull the mp4_url the player is streaming)",
+   "evidence": [
+    "pipeline/videos/apr27_1301.mp4",
+    "pipeline/videos/apr27_first.mp4",
+    "pipeline/videos/apr27_hand.mp4",
+    "pipeline/videos/apr27_nine.mp4",
+    "pipeline/videos/apr27_pileon.mp4",
+    "pipeline/videos/mar9_cut.mp4"
+   ],
+   "note": "What this repo holds for meeting tape, in pipeline/videos/.",
+   "cue": {
+    "chapter": "meeting_video",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 98.0,
+     "end": 112.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/06-meeting-tape.mp4",
+    "start": 98.0,
+    "end": 112.6,
+    "beat": "save",
+    "beat_start": 109.95,
+    "beat_end": 111.35
+   }
+  },
+  {
+   "id": "meeting_video.units",
+   "surface": "both",
+   "page": "Montage Theater, Meeting pages \u2014 official video",
+   "item": "meeting recordings counted",
+   "value": 9,
+   "ledger": "meeting_video",
+   "origin": {
+    "url": "https://archive-video.granicus.com/cheyenne/",
+    "host": "archive-video.granicus.com"
+   },
+   "how": "Granicus video archive \u2192 pick the clip \u2192 Download MP4 (or pull the mp4_url the player is streaming)",
+   "evidence": [
+    "pipeline/videos/apr27_1301.mp4",
+    "pipeline/videos/apr27_first.mp4",
+    "pipeline/videos/apr27_hand.mp4",
+    "pipeline/videos/apr27_nine.mp4",
+    "pipeline/videos/apr27_pileon.mp4",
+    "pipeline/videos/mar9_cut.mp4"
+   ],
+   "note": "Counted from the files themselves, not an estimate.",
+   "cue": {
+    "chapter": "meeting_video",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 98.0,
+     "end": 112.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/06-meeting-tape.mp4",
+    "start": 98.0,
+    "end": 112.6,
+    "beat": "panel",
+    "beat_start": 110.3,
+    "beat_end": 112.5
+   }
+  },
+  {
+   "id": "meeting_video.bytes",
+   "surface": "both",
+   "page": "Montage Theater, Meeting pages \u2014 official video",
+   "item": "size on disk",
+   "value": "40.3 MB",
+   "ledger": "meeting_video",
+   "origin": {
+    "url": "https://archive-video.granicus.com/cheyenne/",
+    "host": "archive-video.granicus.com"
+   },
+   "how": "Granicus video archive \u2192 pick the clip \u2192 Download MP4 (or pull the mp4_url the player is streaming)",
+   "evidence": [
+    "pipeline/videos/apr27_1301.mp4",
+    "pipeline/videos/apr27_first.mp4",
+    "pipeline/videos/apr27_hand.mp4",
+    "pipeline/videos/apr27_nine.mp4",
+    "pipeline/videos/apr27_pileon.mp4",
+    "pipeline/videos/mar9_cut.mp4"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "meeting_video",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 98.0,
+     "end": 112.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/06-meeting-tape.mp4",
+    "start": 98.0,
+    "end": 112.6,
+    "beat": "save",
+    "beat_start": 109.95,
+    "beat_end": 111.35
+   }
+  },
+  {
+   "id": "transcripts.files",
+   "surface": "both",
+   "page": "Minutes & Tapes, Montage Theater, Transcript pages",
+   "item": "files stored",
+   "value": 607,
+   "ledger": "transcripts",
+   "origin": {
+    "url": "https://www.youtube.com/@CityofCheyenne",
+    "host": "www.youtube.com"
+   },
+   "how": "open the meeting's official video on the City of Cheyenne YouTube channel \u2192 \u22ef \u2192 Show transcript \u2192 select all \u2192 paste",
+   "evidence": [
+    "pipeline/corpus/1000_2025-02-10.txt",
+    "pipeline/corpus/1002_2025-02-24.txt",
+    "pipeline/corpus/1005_2025-02-25.txt",
+    "pipeline/corpus/1008_2025-03-11.txt",
+    "pipeline/corpus/100_2009-07-13.txt",
+    "pipeline/corpus/1010_2025-03-24.txt"
+   ],
+   "note": "What this repo holds for transcripts & caption tracks, in pipeline/corpus_yt/.",
+   "cue": {
+    "chapter": "transcripts",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 83.4,
+     "end": 98.0
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/05-transcripts-caption-tracks.mp4",
+    "start": 83.4,
+    "end": 98.0,
+    "beat": "save",
+    "beat_start": 95.35,
+    "beat_end": 96.75
+   }
+  },
+  {
+   "id": "transcripts.units",
+   "surface": "both",
+   "page": "Minutes & Tapes, Montage Theater, Transcript pages",
+   "item": "transcripts counted",
+   "value": 607,
+   "ledger": "transcripts",
+   "origin": {
+    "url": "https://www.youtube.com/@CityofCheyenne",
+    "host": "www.youtube.com"
+   },
+   "how": "open the meeting's official video on the City of Cheyenne YouTube channel \u2192 \u22ef \u2192 Show transcript \u2192 select all \u2192 paste",
+   "evidence": [
+    "pipeline/corpus/1000_2025-02-10.txt",
+    "pipeline/corpus/1002_2025-02-24.txt",
+    "pipeline/corpus/1005_2025-02-25.txt",
+    "pipeline/corpus/1008_2025-03-11.txt",
+    "pipeline/corpus/100_2009-07-13.txt",
+    "pipeline/corpus/1010_2025-03-24.txt"
+   ],
+   "note": "607 files \u00b7 106,487 lines",
+   "cue": {
+    "chapter": "transcripts",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 83.4,
+     "end": 98.0
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/05-transcripts-caption-tracks.mp4",
+    "start": 83.4,
+    "end": 98.0,
+    "beat": "panel",
+    "beat_start": 95.7,
+    "beat_end": 97.9
+   }
+  },
+  {
+   "id": "transcripts.bytes",
+   "surface": "both",
+   "page": "Minutes & Tapes, Montage Theater, Transcript pages",
+   "item": "size on disk",
+   "value": "26.8 MB",
+   "ledger": "transcripts",
+   "origin": {
+    "url": "https://www.youtube.com/@CityofCheyenne",
+    "host": "www.youtube.com"
+   },
+   "how": "open the meeting's official video on the City of Cheyenne YouTube channel \u2192 \u22ef \u2192 Show transcript \u2192 select all \u2192 paste",
+   "evidence": [
+    "pipeline/corpus/1000_2025-02-10.txt",
+    "pipeline/corpus/1002_2025-02-24.txt",
+    "pipeline/corpus/1005_2025-02-25.txt",
+    "pipeline/corpus/1008_2025-03-11.txt",
+    "pipeline/corpus/100_2009-07-13.txt",
+    "pipeline/corpus/1010_2025-03-24.txt"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "transcripts",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 83.4,
+     "end": 98.0
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/05-transcripts-caption-tracks.mp4",
+    "start": 83.4,
+    "end": 98.0,
+    "beat": "save",
+    "beat_start": 95.35,
+    "beat_end": 96.75
+   }
+  },
+  {
+   "id": "video_catalog.files",
+   "surface": "both",
+   "page": "",
+   "item": "files stored",
+   "value": 9,
+   "ledger": "video_catalog",
+   "origin": {
+    "url": "https://archive-video.granicus.com/cheyenne/",
+    "host": "archive-video.granicus.com"
+   },
+   "how": "open https://archive-video.granicus.com/cheyenne/ and take it off the page",
+   "evidence": [
+    "pipeline/cityvideos.json",
+    "youtube-archive/catalog_archiveorg.csv",
+    "youtube-archive/catalog_archiveorg.json",
+    "youtube-archive/catalog_granicus.csv",
+    "youtube-archive/catalog_granicus.json",
+    "youtube-archive/docs_audit.json"
+   ],
+   "note": "What this repo holds for meeting video catalogue, in youtube-archive/.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "video_catalog.units",
+   "surface": "both",
+   "page": "",
+   "item": "catalogued meetings counted",
+   "value": 481,
+   "ledger": "video_catalog",
+   "origin": {
+    "url": "https://archive-video.granicus.com/cheyenne/",
+    "host": "archive-video.granicus.com"
+   },
+   "how": "open https://archive-video.granicus.com/cheyenne/ and take it off the page",
+   "evidence": [
+    "pipeline/cityvideos.json",
+    "youtube-archive/catalog_archiveorg.csv",
+    "youtube-archive/catalog_archiveorg.json",
+    "youtube-archive/catalog_granicus.csv",
+    "youtube-archive/catalog_granicus.json",
+    "youtube-archive/docs_audit.json"
+   ],
+   "note": "481 meetings catalogued",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "video_catalog.bytes",
+   "surface": "both",
+   "page": "",
+   "item": "size on disk",
+   "value": "4.5 MB",
+   "ledger": "video_catalog",
+   "origin": {
+    "url": "https://archive-video.granicus.com/cheyenne/",
+    "host": "archive-video.granicus.com"
+   },
+   "how": "open https://archive-video.granicus.com/cheyenne/ and take it off the page",
+   "evidence": [
+    "pipeline/cityvideos.json",
+    "youtube-archive/catalog_archiveorg.csv",
+    "youtube-archive/catalog_archiveorg.json",
+    "youtube-archive/catalog_granicus.csv",
+    "youtube-archive/catalog_granicus.json",
+    "youtube-archive/docs_audit.json"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "video_catalog.host-cheyenne-granicus-com",
+   "surface": "both",
+   "page": "Meeting video catalogue",
+   "item": "links found to cheyenne.granicus.com",
+   "value": 6938,
+   "ledger": "video_catalog",
+   "origin": {
+    "url": "https://cheyenne.granicus.com/player/clip/1126?view_id=2&redirect=true",
+    "host": "cheyenne.granicus.com"
+   },
+   "how": "follow the cheyenne.granicus.com links in this repo's own files back to the page each one points at",
+   "evidence": [
+    "https://cheyenne.granicus.com/player/clip/1126?view_id=2&redirect=true",
+    "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1126",
+    "https://cheyenne.granicus.com/player/clip/1124?view_id=2&redirect=true"
+   ],
+   "note": "Counted by scanning the repo for absolute URLs.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "drive_corpus.files",
+   "surface": "both",
+   "page": "Minutes & Tapes, Caption transcript pages",
+   "item": "files stored",
+   "value": 5,
+   "ledger": "drive_corpus",
+   "origin": {
+    "url": "https://drive.google.com/drive/folders/WindyCityMeetings",
+    "host": "docs.google.com"
+   },
+   "how": "docs.google.com \u2192 WindyCityMeetings shared folder \u2192 processed_database \u2192 download the master JSON and read each record",
+   "evidence": [
+    "drive-import/README.md",
+    "drive-import/manifest.json",
+    "drive-import/master_meetings_database.json.gz",
+    "drive-import/master_meetings_database_linked.json.gz",
+    "public/master_meetings_database_linked.json"
+   ],
+   "note": "What this repo holds for processed meetings database, in drive-import/.",
+   "cue": {
+    "chapter": "drive_corpus",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 112.6,
+     "end": 127.2
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/07-processed-meetings-database.mp4",
+    "start": 112.6,
+    "end": 127.2,
+    "beat": "save",
+    "beat_start": 124.55,
+    "beat_end": 125.95
+   }
+  },
+  {
+   "id": "drive_corpus.units",
+   "surface": "both",
+   "page": "Minutes & Tapes, Caption transcript pages",
+   "item": "meeting records counted",
+   "value": 720,
+   "ledger": "drive_corpus",
+   "origin": {
+    "url": "https://drive.google.com/drive/folders/WindyCityMeetings",
+    "host": "docs.google.com"
+   },
+   "how": "docs.google.com \u2192 WindyCityMeetings shared folder \u2192 processed_database \u2192 download the master JSON and read each record",
+   "evidence": [
+    "drive-import/README.md",
+    "drive-import/manifest.json",
+    "drive-import/master_meetings_database.json.gz",
+    "drive-import/master_meetings_database_linked.json.gz",
+    "public/master_meetings_database_linked.json"
+   ],
+   "note": "720 meeting records \u00b7 39,881,789 chars of speech",
+   "cue": {
+    "chapter": "drive_corpus",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 112.6,
+     "end": 127.2
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/07-processed-meetings-database.mp4",
+    "start": 112.6,
+    "end": 127.2,
+    "beat": "panel",
+    "beat_start": 124.9,
+    "beat_end": 127.1
+   }
+  },
+  {
+   "id": "drive_corpus.bytes",
+   "surface": "both",
+   "page": "Minutes & Tapes, Caption transcript pages",
+   "item": "size on disk",
+   "value": "62.1 MB",
+   "ledger": "drive_corpus",
+   "origin": {
+    "url": "https://drive.google.com/drive/folders/WindyCityMeetings",
+    "host": "docs.google.com"
+   },
+   "how": "docs.google.com \u2192 WindyCityMeetings shared folder \u2192 processed_database \u2192 download the master JSON and read each record",
+   "evidence": [
+    "drive-import/README.md",
+    "drive-import/manifest.json",
+    "drive-import/master_meetings_database.json.gz",
+    "drive-import/master_meetings_database_linked.json.gz",
+    "public/master_meetings_database_linked.json"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "drive_corpus",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 112.6,
+     "end": 127.2
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/07-processed-meetings-database.mp4",
+    "start": 112.6,
+    "end": 127.2,
+    "beat": "save",
+    "beat_start": 124.55,
+    "beat_end": 125.95
+   }
+  },
+  {
+   "id": "news.files",
+   "surface": "both",
+   "page": "The Daily Ledger, Front Page, News index",
+   "item": "files stored",
+   "value": 1153,
+   "ledger": "news",
+   "origin": {
+    "url": "https://capcity.news/feed",
+    "host": "capcity.news"
+   },
+   "how": "capcity.news/feed (or the Tribune Eagle search feed) \u2192 open the item \u2192 copy url, published date and body",
+   "evidence": [
+    "data/out/digest-2026-10-26.md",
+    "data/out/digest-2026-10-27.md",
+    "data/out/digest-2026-10-28.md",
+    "data/out/digest-2026-10-29.md",
+    "data/out/digest-2026-10-30.md",
+    "data/out/digest-2026-10-31.md"
+   ],
+   "note": "What this repo holds for news coverage, in data/out/.",
+   "cue": {
+    "chapter": "news",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 127.2,
+     "end": 141.8
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/08-news-coverage.mp4",
+    "start": 127.2,
+    "end": 141.8,
+    "beat": "save",
+    "beat_start": 139.15,
+    "beat_end": 140.55
+   }
+  },
+  {
+   "id": "news.units",
+   "surface": "both",
+   "page": "The Daily Ledger, Front Page, News index",
+   "item": "article / digest items counted",
+   "value": 513,
+   "ledger": "news",
+   "origin": {
+    "url": "https://capcity.news/feed",
+    "host": "capcity.news"
+   },
+   "how": "capcity.news/feed (or the Tribune Eagle search feed) \u2192 open the item \u2192 copy url, published date and body",
+   "evidence": [
+    "data/out/digest-2026-10-26.md",
+    "data/out/digest-2026-10-27.md",
+    "data/out/digest-2026-10-28.md",
+    "data/out/digest-2026-10-29.md",
+    "data/out/digest-2026-10-30.md",
+    "data/out/digest-2026-10-31.md"
+   ],
+   "note": "513 indexed documents",
+   "cue": {
+    "chapter": "news",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 127.2,
+     "end": 141.8
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/08-news-coverage.mp4",
+    "start": 127.2,
+    "end": 141.8,
+    "beat": "panel",
+    "beat_start": 139.5,
+    "beat_end": 141.7
+   }
+  },
+  {
+   "id": "news.bytes",
+   "surface": "both",
+   "page": "The Daily Ledger, Front Page, News index",
+   "item": "size on disk",
+   "value": "290.7 MB",
+   "ledger": "news",
+   "origin": {
+    "url": "https://capcity.news/feed",
+    "host": "capcity.news"
+   },
+   "how": "capcity.news/feed (or the Tribune Eagle search feed) \u2192 open the item \u2192 copy url, published date and body",
+   "evidence": [
+    "data/out/digest-2026-10-26.md",
+    "data/out/digest-2026-10-27.md",
+    "data/out/digest-2026-10-28.md",
+    "data/out/digest-2026-10-29.md",
+    "data/out/digest-2026-10-30.md",
+    "data/out/digest-2026-10-31.md"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "news",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 127.2,
+     "end": 141.8
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/08-news-coverage.mp4",
+    "start": 127.2,
+    "end": 141.8,
+    "beat": "save",
+    "beat_start": 139.15,
+    "beat_end": 140.55
+   }
+  },
+  {
+   "id": "news.host-capcity-news",
+   "surface": "both",
+   "page": "News index",
+   "item": "links found to capcity.news",
+   "value": 7452,
+   "ledger": "news",
+   "origin": {
+    "url": "https://capcity.news/legislature-community/2026/10/25/lawmakers-propose-11m-fix-to-restore-school-sports-and-activities-funding/",
+    "host": "capcity.news"
+   },
+   "how": "follow the capcity.news links in this repo's own files back to the page each one points at",
+   "evidence": [
+    "https://capcity.news/legislature-community/2026/10/25/lawmakers-propose-11m-fix-to-restore-school-sports-and-activities-funding/",
+    "https://capcity.news/community/elections/2026/10/21/elections-data-centers-and-court-battles-three-secretary-of-state-debate-takeaways/",
+    "https://capcity.news/crime/2026/10/21/laramie-county-recent-arrests-10-20-26-10-21-26/"
+   ],
+   "note": "Counted by scanning the repo for absolute URLs.",
+   "cue": {
+    "chapter": "news",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 127.2,
+     "end": 141.8
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/08-news-coverage.mp4",
+    "start": 127.2,
+    "end": 141.8,
+    "beat": "pick",
+    "beat_start": 133.7,
+    "beat_end": 134.9
+   }
+  },
+  {
+   "id": "arrests.files",
+   "surface": "both",
+   "page": "Arrest Reports, Arrest reports",
+   "item": "files stored",
+   "value": 5,
+   "ledger": "arrests",
+   "origin": {
+    "url": "https://capcity.news/",
+    "host": "capcity.news"
+   },
+   "how": "capcity.news \u2192 the weekly arrest report post \u2192 read the de-identified list \u2192 keep the source URL and the body hash",
+   "evidence": [
+    "data/arrests/README.md",
+    "data/arrests/master_records.csv",
+    "data/arrests/master_records.json",
+    "data/arrests/records.csv",
+    "data/arrests/records.json"
+   ],
+   "note": "What this repo holds for arrest reports (de-identified), in data/arrests/.",
+   "cue": {
+    "chapter": "arrests",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 141.8,
+     "end": 156.4
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/09-arrest-reports-de-identified.mp4",
+    "start": 141.8,
+    "end": 156.4,
+    "beat": "save",
+    "beat_start": 153.75,
+    "beat_end": 155.15
+   }
+  },
+  {
+   "id": "arrests.units",
+   "surface": "both",
+   "page": "Arrest Reports, Arrest reports",
+   "item": "records counted",
+   "value": 65,
+   "ledger": "arrests",
+   "origin": {
+    "url": "https://capcity.news/",
+    "host": "capcity.news"
+   },
+   "how": "capcity.news \u2192 the weekly arrest report post \u2192 read the de-identified list \u2192 keep the source URL and the body hash",
+   "evidence": [
+    "data/arrests/README.md",
+    "data/arrests/master_records.csv",
+    "data/arrests/master_records.json",
+    "data/arrests/records.csv",
+    "data/arrests/records.json"
+   ],
+   "note": "65 de-identified records",
+   "cue": {
+    "chapter": "arrests",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 141.8,
+     "end": 156.4
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/09-arrest-reports-de-identified.mp4",
+    "start": 141.8,
+    "end": 156.4,
+    "beat": "panel",
+    "beat_start": 154.1,
+    "beat_end": 156.3
+   }
+  },
+  {
+   "id": "arrests.bytes",
+   "surface": "both",
+   "page": "Arrest Reports, Arrest reports",
+   "item": "size on disk",
+   "value": "4.1 MB",
+   "ledger": "arrests",
+   "origin": {
+    "url": "https://capcity.news/",
+    "host": "capcity.news"
+   },
+   "how": "capcity.news \u2192 the weekly arrest report post \u2192 read the de-identified list \u2192 keep the source URL and the body hash",
+   "evidence": [
+    "data/arrests/README.md",
+    "data/arrests/master_records.csv",
+    "data/arrests/master_records.json",
+    "data/arrests/records.csv",
+    "data/arrests/records.json"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "arrests",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 141.8,
+     "end": 156.4
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/09-arrest-reports-de-identified.mp4",
+    "start": 141.8,
+    "end": 156.4,
+    "beat": "save",
+    "beat_start": 153.75,
+    "beat_end": 155.15
+   }
+  },
+  {
+   "id": "arrests.host-capcity-news",
+   "surface": "both",
+   "page": "Arrest reports",
+   "item": "links found to capcity.news",
+   "value": 4732,
+   "ledger": "arrests",
+   "origin": {
+    "url": "https://capcity.news/crime/2025/09/27/laramie-county-weekly-arrest-report-9-19-25-9-26-25/",
+    "host": "capcity.news"
+   },
+   "how": "follow the capcity.news links in this repo's own files back to the page each one points at",
+   "evidence": [
+    "https://capcity.news/crime/2025/09/27/laramie-county-weekly-arrest-report-9-19-25-9-26-25/",
+    "https://capcity.news/crime/2025/09/20/laramie-county-weekly-arrest-report-9-12-25-9-17-25/",
+    "https://capcity.news/crime/2025/09/13/laramie-county-weekly-arrest-report-9-5-25-9-12-25/"
+   ],
+   "note": "Counted by scanning the repo for absolute URLs.",
+   "cue": {
+    "chapter": "arrests",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 141.8,
+     "end": 156.4
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/09-arrest-reports-de-identified.mp4",
+    "start": 141.8,
+    "end": 156.4,
+    "beat": "pick",
+    "beat_start": 148.3,
+    "beat_end": 149.5
+   }
+  },
+  {
+   "id": "scanner.files",
+   "surface": "both",
+   "page": "Scanner Archive, Scanner index",
+   "item": "files stored",
+   "value": 601,
+   "ledger": "scanner",
+   "origin": {
+    "url": "https://www.broadcastify.com/archives/feed/47003/",
+    "host": "www.broadcastify.com"
+   },
+   "how": "broadcastify.com/archives/feed/47003/ \u2192 pick the hour \u2192 download the segment \u2192 transcribe locally",
+   "evidence": [
+    "scanner-results/history/quality-sample/47003-1792597004/transcript.json",
+    "scanner-results/history/quality-sample/47003-1792597004/transcript.txt",
+    "scanner-results/history/recordings/47003-1776102602/transcript.json",
+    "scanner-results/history/recordings/47003-1776102602/transcript.txt",
+    "scanner-results/history/recordings/47003-1776104392/transcript.json",
+    "scanner-results/history/recordings/47003-1776104392/transcript.txt"
+   ],
+   "note": "What this repo holds for scanner audio transcripts, in scanner-results/runs/.",
+   "cue": {
+    "chapter": "scanner",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 156.4,
+     "end": 171.0
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/10-scanner-audio-transcripts.mp4",
+    "start": 156.4,
+    "end": 171.0,
+    "beat": "save",
+    "beat_start": 168.35,
+    "beat_end": 169.75
+   }
+  },
+  {
+   "id": "scanner.units",
+   "surface": "both",
+   "page": "Scanner Archive, Scanner index",
+   "item": "radio segments counted",
+   "value": 601,
+   "ledger": "scanner",
+   "origin": {
+    "url": "https://www.broadcastify.com/archives/feed/47003/",
+    "host": "www.broadcastify.com"
+   },
+   "how": "broadcastify.com/archives/feed/47003/ \u2192 pick the hour \u2192 download the segment \u2192 transcribe locally",
+   "evidence": [
+    "scanner-results/history/quality-sample/47003-1792597004/transcript.json",
+    "scanner-results/history/quality-sample/47003-1792597004/transcript.txt",
+    "scanner-results/history/recordings/47003-1776102602/transcript.json",
+    "scanner-results/history/recordings/47003-1776102602/transcript.txt",
+    "scanner-results/history/recordings/47003-1776104392/transcript.json",
+    "scanner-results/history/recordings/47003-1776104392/transcript.txt"
+   ],
+   "note": "Counted from the files themselves, not an estimate.",
+   "cue": {
+    "chapter": "scanner",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 156.4,
+     "end": 171.0
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/10-scanner-audio-transcripts.mp4",
+    "start": 156.4,
+    "end": 171.0,
+    "beat": "panel",
+    "beat_start": 168.7,
+    "beat_end": 170.9
+   }
+  },
+  {
+   "id": "scanner.bytes",
+   "surface": "both",
+   "page": "Scanner Archive, Scanner index",
+   "item": "size on disk",
+   "value": "5.5 MB",
+   "ledger": "scanner",
+   "origin": {
+    "url": "https://www.broadcastify.com/archives/feed/47003/",
+    "host": "www.broadcastify.com"
+   },
+   "how": "broadcastify.com/archives/feed/47003/ \u2192 pick the hour \u2192 download the segment \u2192 transcribe locally",
+   "evidence": [
+    "scanner-results/history/quality-sample/47003-1792597004/transcript.json",
+    "scanner-results/history/quality-sample/47003-1792597004/transcript.txt",
+    "scanner-results/history/recordings/47003-1776102602/transcript.json",
+    "scanner-results/history/recordings/47003-1776102602/transcript.txt",
+    "scanner-results/history/recordings/47003-1776104392/transcript.json",
+    "scanner-results/history/recordings/47003-1776104392/transcript.txt"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "scanner",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 156.4,
+     "end": 171.0
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/10-scanner-audio-transcripts.mp4",
+    "start": 156.4,
+    "end": 171.0,
+    "beat": "save",
+    "beat_start": 168.35,
+    "beat_end": 169.75
+   }
+  },
+  {
+   "id": "scanner.host-www-broadcastify-com",
+   "surface": "both",
+   "page": "Scanner index",
+   "item": "links found to www.broadcastify.com",
+   "value": 298,
+   "ledger": "scanner",
+   "origin": {
+    "url": "https://www.broadcastify.com/archives/feed/47003/47003-1792597004",
+    "host": "www.broadcastify.com"
+   },
+   "how": "follow the www.broadcastify.com links in this repo's own files back to the page each one points at",
+   "evidence": [
+    "https://www.broadcastify.com/archives/feed/47003/47003-1792597004",
+    "https://www.broadcastify.com/archives/feed/47003/47003-1776102602",
+    "https://www.broadcastify.com/archives/feed/47003/47003-1776104392"
+   ],
+   "note": "Counted by scanning the repo for absolute URLs.",
+   "cue": {
+    "chapter": "scanner",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 156.4,
+     "end": 171.0
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/10-scanner-audio-transcripts.mp4",
+    "start": 156.4,
+    "end": 171.0,
+    "beat": "pick",
+    "beat_start": 162.9,
+    "beat_end": 164.1
+   }
+  },
+  {
+   "id": "open_data.files",
+   "surface": "both",
+   "page": "Open Data, Open-data probes",
+   "item": "files stored",
+   "value": 3,
+   "ledger": "open_data",
+   "origin": {
+    "url": "https://laramiecountywy-sheriff.data.socrata.com/",
+    "host": "laramiecountywy-sheriff.data.socrata.com"
+   },
+   "how": "the county Socrata portal \u2192 Catalog \u2192 the dataset \u2192 Export as JSON/CSV",
+   "evidence": [
+    "scanner-results/socrata/connection.json",
+    "scanner-results/socrata/datasets.json",
+    "scanner-results/socrata/network.json"
+   ],
+   "note": "What this repo holds for open-data & records probes, in scanner-results/socrata/.",
+   "cue": {
+    "chapter": "open_data",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 171.0,
+     "end": 185.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/11-open-data-records-probes.mp4",
+    "start": 171.0,
+    "end": 185.6,
+    "beat": "save",
+    "beat_start": 182.95,
+    "beat_end": 184.35
+   }
+  },
+  {
+   "id": "open_data.units",
+   "surface": "both",
+   "page": "Open Data, Open-data probes",
+   "item": "dataset probes counted",
+   "value": 2,
+   "ledger": "open_data",
+   "origin": {
+    "url": "https://laramiecountywy-sheriff.data.socrata.com/",
+    "host": "laramiecountywy-sheriff.data.socrata.com"
+   },
+   "how": "the county Socrata portal \u2192 Catalog \u2192 the dataset \u2192 Export as JSON/CSV",
+   "evidence": [
+    "scanner-results/socrata/connection.json",
+    "scanner-results/socrata/datasets.json",
+    "scanner-results/socrata/network.json"
+   ],
+   "note": "2 datasets probed",
+   "cue": {
+    "chapter": "open_data",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 171.0,
+     "end": 185.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/11-open-data-records-probes.mp4",
+    "start": 171.0,
+    "end": 185.6,
+    "beat": "panel",
+    "beat_start": 183.3,
+    "beat_end": 185.5
+   }
+  },
+  {
+   "id": "open_data.bytes",
+   "surface": "both",
+   "page": "Open Data, Open-data probes",
+   "item": "size on disk",
+   "value": "33 KB",
+   "ledger": "open_data",
+   "origin": {
+    "url": "https://laramiecountywy-sheriff.data.socrata.com/",
+    "host": "laramiecountywy-sheriff.data.socrata.com"
+   },
+   "how": "the county Socrata portal \u2192 Catalog \u2192 the dataset \u2192 Export as JSON/CSV",
+   "evidence": [
+    "scanner-results/socrata/connection.json",
+    "scanner-results/socrata/datasets.json",
+    "scanner-results/socrata/network.json"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "open_data",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 171.0,
+     "end": 185.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/11-open-data-records-probes.mp4",
+    "start": 171.0,
+    "end": 185.6,
+    "beat": "save",
+    "beat_start": 182.95,
+    "beat_end": 184.35
+   }
+  },
+  {
+   "id": "open_data.host-laramiecountywy-sheriff-data-socrata-com",
+   "surface": "both",
+   "page": "Open-data probes",
+   "item": "links found to laramiecountywy-sheriff.data.socrata.com",
+   "value": 1,
+   "ledger": "open_data",
+   "origin": {
+    "url": "https://laramiecountywy-sheriff.data.socrata.com",
+    "host": "laramiecountywy-sheriff.data.socrata.com"
+   },
+   "how": "follow the laramiecountywy-sheriff.data.socrata.com links in this repo's own files back to the page each one points at",
+   "evidence": [
+    "https://laramiecountywy-sheriff.data.socrata.com"
+   ],
+   "note": "Counted by scanning the repo for absolute URLs.",
+   "cue": {
+    "chapter": "open_data",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 171.0,
+     "end": 185.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/clips/11-open-data-records-probes.mp4",
+    "start": 171.0,
+    "end": 185.6,
+    "beat": "pick",
+    "beat_start": 177.5,
+    "beat_end": 178.7
+   }
+  },
+  {
+   "id": "ocr.files",
+   "surface": "both",
+   "page": "",
+   "item": "files stored",
+   "value": 1081,
+   "ledger": "ocr",
+   "origin": {
+    "url": "https://github.com/therealwindycity",
+    "host": "github.com/therealwindycity"
+   },
+   "how": "the scanned PDF already in artifacts/ \u2192 run OCR \u2192 store the text beside it",
+   "evidence": [
+    "ai-record-ocr/002d0e1ea250b4b93bc50695a5ce9c63469cad46.json",
+    "ai-record-ocr/00705c30294d9fd89a7bb706b66d7fd40305855c.json",
+    "ai-record-ocr/0098d81e1833b29346f46a797a955ed99c40e4e3.json",
+    "ai-record-ocr/0133b729da72378f744ad505f7e68736acd3cb44.json",
+    "ai-record-ocr/0136aecc312db8b8b20ae7f24702e1d172a61761.json",
+    "ai-record-ocr/013d18ffd11383012ff493e6ef8b0e45b09c136d.json"
+   ],
+   "note": "What this repo holds for ocr of scanned documents, in ai-record-ocr/.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "ocr.units",
+   "surface": "both",
+   "page": "",
+   "item": "scanned documents counted",
+   "value": 1081,
+   "ledger": "ocr",
+   "origin": {
+    "url": "https://github.com/therealwindycity",
+    "host": "github.com/therealwindycity"
+   },
+   "how": "the scanned PDF already in artifacts/ \u2192 run OCR \u2192 store the text beside it",
+   "evidence": [
+    "ai-record-ocr/002d0e1ea250b4b93bc50695a5ce9c63469cad46.json",
+    "ai-record-ocr/00705c30294d9fd89a7bb706b66d7fd40305855c.json",
+    "ai-record-ocr/0098d81e1833b29346f46a797a955ed99c40e4e3.json",
+    "ai-record-ocr/0133b729da72378f744ad505f7e68736acd3cb44.json",
+    "ai-record-ocr/0136aecc312db8b8b20ae7f24702e1d172a61761.json",
+    "ai-record-ocr/013d18ffd11383012ff493e6ef8b0e45b09c136d.json"
+   ],
+   "note": "1,081 scanned documents OCR'd",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "ocr.bytes",
+   "surface": "both",
+   "page": "",
+   "item": "size on disk",
+   "value": "14.3 MB",
+   "ledger": "ocr",
+   "origin": {
+    "url": "https://github.com/therealwindycity",
+    "host": "github.com/therealwindycity"
+   },
+   "how": "the scanned PDF already in artifacts/ \u2192 run OCR \u2192 store the text beside it",
+   "evidence": [
+    "ai-record-ocr/002d0e1ea250b4b93bc50695a5ce9c63469cad46.json",
+    "ai-record-ocr/00705c30294d9fd89a7bb706b66d7fd40305855c.json",
+    "ai-record-ocr/0098d81e1833b29346f46a797a955ed99c40e4e3.json",
+    "ai-record-ocr/0133b729da72378f744ad505f7e68736acd3cb44.json",
+    "ai-record-ocr/0136aecc312db8b8b20ae7f24702e1d172a61761.json",
+    "ai-record-ocr/013d18ffd11383012ff493e6ef8b0e45b09c136d.json"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "rag_index.files",
+   "surface": "both",
+   "page": "",
+   "item": "files stored",
+   "value": 9,
+   "ledger": "rag_index",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/rag/glossary.json",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "rag/glossary.json",
+    "rag/glossary_manual.json",
+    "rag/vectordb_sample/47971f7d-6028-4ce2-9b6a-84016bf4fb04/data_level0.bin",
+    "rag/vectordb_sample/47971f7d-6028-4ce2-9b6a-84016bf4fb04/header.bin",
+    "rag/vectordb_sample/47971f7d-6028-4ce2-9b6a-84016bf4fb04/index_metadata.pickle",
+    "rag/vectordb_sample/47971f7d-6028-4ce2-9b6a-84016bf4fb04/length.bin"
+   ],
+   "note": "What this repo holds for search / rag index, in rag/.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "rag_index.units",
+   "surface": "both",
+   "page": "",
+   "item": "embedded chunks counted",
+   "value": 1687,
+   "ledger": "rag_index",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/rag/glossary.json",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "rag/glossary.json",
+    "rag/glossary_manual.json",
+    "rag/vectordb_sample/47971f7d-6028-4ce2-9b6a-84016bf4fb04/data_level0.bin",
+    "rag/vectordb_sample/47971f7d-6028-4ce2-9b6a-84016bf4fb04/header.bin",
+    "rag/vectordb_sample/47971f7d-6028-4ce2-9b6a-84016bf4fb04/index_metadata.pickle",
+    "rag/vectordb_sample/47971f7d-6028-4ce2-9b6a-84016bf4fb04/length.bin"
+   ],
+   "note": "1,687 embedded chunks",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "rag_index.bytes",
+   "surface": "both",
+   "page": "",
+   "item": "size on disk",
+   "value": "27.5 MB",
+   "ledger": "rag_index",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/rag/glossary.json",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "rag/glossary.json",
+    "rag/glossary_manual.json",
+    "rag/vectordb_sample/47971f7d-6028-4ce2-9b6a-84016bf4fb04/data_level0.bin",
+    "rag/vectordb_sample/47971f7d-6028-4ce2-9b6a-84016bf4fb04/header.bin",
+    "rag/vectordb_sample/47971f7d-6028-4ce2-9b6a-84016bf4fb04/index_metadata.pickle",
+    "rag/vectordb_sample/47971f7d-6028-4ce2-9b6a-84016bf4fb04/length.bin"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "civicwatch.files",
+   "surface": "both",
+   "page": "",
+   "item": "files stored",
+   "value": 1581,
+   "ledger": "civicwatch",
+   "origin": {
+    "url": "https://www.youtube.com/@CityofCheyenne",
+    "host": "www.youtube.com"
+   },
+   "how": "open https://www.youtube.com/@CityofCheyenne and take it off the page",
+   "evidence": [
+    "2026-09-14-council/civicwatch/civicwatch.py",
+    "2026-09-14-council/civicwatch/colab_finish.ipynb",
+    "2026-09-14-council/civicwatch/data/civic.db",
+    "2026-09-14-council/civicwatch/data/master.log",
+    "2026-09-14-council/civicwatch/data/raw/README.md",
+    "2026-09-14-council/civicwatch/data/recrawl.log"
+   ],
+   "note": "What this repo holds for civicwatch mirror, in 2026-09-14-council/civicwatch/.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "civicwatch.units",
+   "surface": "both",
+   "page": "",
+   "item": "civic records counted",
+   "value": 1581,
+   "ledger": "civicwatch",
+   "origin": {
+    "url": "https://www.youtube.com/@CityofCheyenne",
+    "host": "www.youtube.com"
+   },
+   "how": "open https://www.youtube.com/@CityofCheyenne and take it off the page",
+   "evidence": [
+    "2026-09-14-council/civicwatch/civicwatch.py",
+    "2026-09-14-council/civicwatch/colab_finish.ipynb",
+    "2026-09-14-council/civicwatch/data/civic.db",
+    "2026-09-14-council/civicwatch/data/master.log",
+    "2026-09-14-council/civicwatch/data/raw/README.md",
+    "2026-09-14-council/civicwatch/data/recrawl.log"
+   ],
+   "note": "Counted from the files themselves, not an estimate.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "civicwatch.bytes",
+   "surface": "both",
+   "page": "",
+   "item": "size on disk",
+   "value": "167.8 MB",
+   "ledger": "civicwatch",
+   "origin": {
+    "url": "https://www.youtube.com/@CityofCheyenne",
+    "host": "www.youtube.com"
+   },
+   "how": "open https://www.youtube.com/@CityofCheyenne and take it off the page",
+   "evidence": [
+    "2026-09-14-council/civicwatch/civicwatch.py",
+    "2026-09-14-council/civicwatch/colab_finish.ipynb",
+    "2026-09-14-council/civicwatch/data/civic.db",
+    "2026-09-14-council/civicwatch/data/master.log",
+    "2026-09-14-council/civicwatch/data/raw/README.md",
+    "2026-09-14-council/civicwatch/data/recrawl.log"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "civicwatch.host-www-dhs-gov",
+   "surface": "both",
+   "page": "Civicwatch mirror",
+   "item": "links found to www.dhs.gov",
+   "value": 4,
+   "ledger": "civicwatch",
+   "origin": {
+    "url": "https://www.dhs.gov/publication/dhs-",
+    "host": "www.dhs.gov"
+   },
+   "how": "follow the www.dhs.gov links in this repo's own files back to the page each one points at",
+   "evidence": [
+    "https://www.dhs.gov/publication/dhs-",
+    "https://www.dhs.gov/guidance-"
+   ],
+   "note": "Counted by scanning the repo for absolute URLs.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "derived_analysis.files",
+   "surface": "both",
+   "page": "",
+   "item": "files stored",
+   "value": 139,
+   "ledger": "derived_analysis",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/.github/ISSUE_TEMPLATE/arrest-name-request.md",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    ".github/ISSUE_TEMPLATE/arrest-name-request.md",
+    ".github/ISSUE_TEMPLATE/tip.md",
+    "2026-09-14-council/COX_HISTORY_COMPARISON.md",
+    "2026-09-14-council/DEBRIEF_2026-09-14.md",
+    "2026-09-14-council/README.md",
+    "2026-09-14-council/RED_TEAM_and_SPEECHES_2026-09-14.md"
+   ],
+   "note": "What this repo holds for analysis & dossiers written from the record, in repo root.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "derived_analysis.units",
+   "surface": "both",
+   "page": "",
+   "item": "documents counted",
+   "value": 139,
+   "ledger": "derived_analysis",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/.github/ISSUE_TEMPLATE/arrest-name-request.md",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    ".github/ISSUE_TEMPLATE/arrest-name-request.md",
+    ".github/ISSUE_TEMPLATE/tip.md",
+    "2026-09-14-council/COX_HISTORY_COMPARISON.md",
+    "2026-09-14-council/DEBRIEF_2026-09-14.md",
+    "2026-09-14-council/README.md",
+    "2026-09-14-council/RED_TEAM_and_SPEECHES_2026-09-14.md"
+   ],
+   "note": "Counted from the files themselves, not an estimate.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "derived_analysis.bytes",
+   "surface": "both",
+   "page": "",
+   "item": "size on disk",
+   "value": "10.8 MB",
+   "ledger": "derived_analysis",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/.github/ISSUE_TEMPLATE/arrest-name-request.md",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    ".github/ISSUE_TEMPLATE/arrest-name-request.md",
+    ".github/ISSUE_TEMPLATE/tip.md",
+    "2026-09-14-council/COX_HISTORY_COMPARISON.md",
+    "2026-09-14-council/DEBRIEF_2026-09-14.md",
+    "2026-09-14-council/README.md",
+    "2026-09-14-council/RED_TEAM_and_SPEECHES_2026-09-14.md"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "silent_edits.files",
+   "surface": "both",
+   "page": "",
+   "item": "files stored",
+   "value": 1217,
+   "ledger": "silent_edits",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/data/out/silent-edit-doc1-seq2.diff.txt",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "data/out/silent-edit-doc1-seq2.diff.txt",
+    "data/out/silent-edit-doc1-seq3.diff.txt",
+    "data/out/silent-edit-doc1-seq4.diff.txt",
+    "data/out/silent-edit-doc1-seq5.diff.txt",
+    "data/out/silent-edit-doc1-seq6.diff.txt",
+    "data/out/silent-edit-doc1-seq7.diff.txt"
+   ],
+   "note": "What this repo holds for silent-edit diffs, in data/out/.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "silent_edits.units",
+   "surface": "both",
+   "page": "",
+   "item": "version diffs counted",
+   "value": 1217,
+   "ledger": "silent_edits",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/data/out/silent-edit-doc1-seq2.diff.txt",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "data/out/silent-edit-doc1-seq2.diff.txt",
+    "data/out/silent-edit-doc1-seq3.diff.txt",
+    "data/out/silent-edit-doc1-seq4.diff.txt",
+    "data/out/silent-edit-doc1-seq5.diff.txt",
+    "data/out/silent-edit-doc1-seq6.diff.txt",
+    "data/out/silent-edit-doc1-seq7.diff.txt"
+   ],
+   "note": "Counted from the files themselves, not an estimate.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "silent_edits.bytes",
+   "surface": "both",
+   "page": "",
+   "item": "size on disk",
+   "value": "78.0 MB",
+   "ledger": "silent_edits",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/data/out/silent-edit-doc1-seq2.diff.txt",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "data/out/silent-edit-doc1-seq2.diff.txt",
+    "data/out/silent-edit-doc1-seq3.diff.txt",
+    "data/out/silent-edit-doc1-seq4.diff.txt",
+    "data/out/silent-edit-doc1-seq5.diff.txt",
+    "data/out/silent-edit-doc1-seq6.diff.txt",
+    "data/out/silent-edit-doc1-seq7.diff.txt"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "meeting_derivatives.files",
+   "surface": "both",
+   "page": "",
+   "item": "files stored",
+   "value": 13,
+   "ledger": "meeting_derivatives",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/pipeline/asks/ask_001.json",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "pipeline/asks/ask_001.json",
+    "pipeline/asks/ask_002.json",
+    "pipeline/media_manifest.json",
+    "pipeline/miller_interventions.json",
+    "pipeline/montage_with_footage.json",
+    "pipeline/notebooklm/PROMPT.txt"
+   ],
+   "note": "What this repo holds for meeting structure &amp; cut lists, in pipeline/.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "meeting_derivatives.units",
+   "surface": "both",
+   "page": "",
+   "item": "derived records counted",
+   "value": 13,
+   "ledger": "meeting_derivatives",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/pipeline/asks/ask_001.json",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "pipeline/asks/ask_001.json",
+    "pipeline/asks/ask_002.json",
+    "pipeline/media_manifest.json",
+    "pipeline/miller_interventions.json",
+    "pipeline/montage_with_footage.json",
+    "pipeline/notebooklm/PROMPT.txt"
+   ],
+   "note": "Counted from the files themselves, not an estimate.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "meeting_derivatives.bytes",
+   "surface": "both",
+   "page": "",
+   "item": "size on disk",
+   "value": "1.8 MB",
+   "ledger": "meeting_derivatives",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/pipeline/asks/ask_001.json",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "pipeline/asks/ask_001.json",
+    "pipeline/asks/ask_002.json",
+    "pipeline/media_manifest.json",
+    "pipeline/miller_interventions.json",
+    "pipeline/montage_with_footage.json",
+    "pipeline/notebooklm/PROMPT.txt"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "entities.files",
+   "surface": "both",
+   "page": "",
+   "item": "files stored",
+   "value": 63,
+   "ledger": "entities",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/Entity_Database/ACCESS-TEST-2026-10-16.json",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "Entity_Database/ACCESS-TEST-2026-10-16.json",
+    "Entity_Database/AGENTS.json",
+    "Entity_Database/CA-pull-kit-2026-08-24.json",
+    "Entity_Database/DEPLOYMENT-REPAIR-HANDOFF.json",
+    "Entity_Database/ECOSYSTEM-INVENTORY-AND-UPGRADE-MEMO-2026-10-28.json",
+    "Entity_Database/FB-REPLY-2026-08-27-MLK-thread.json"
+   ],
+   "note": "What this repo holds for entity database, in Entity_Database/.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "entities.units",
+   "surface": "both",
+   "page": "",
+   "item": "document profiles counted",
+   "value": 63,
+   "ledger": "entities",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/Entity_Database/ACCESS-TEST-2026-10-16.json",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "Entity_Database/ACCESS-TEST-2026-10-16.json",
+    "Entity_Database/AGENTS.json",
+    "Entity_Database/CA-pull-kit-2026-08-24.json",
+    "Entity_Database/DEPLOYMENT-REPAIR-HANDOFF.json",
+    "Entity_Database/ECOSYSTEM-INVENTORY-AND-UPGRADE-MEMO-2026-10-28.json",
+    "Entity_Database/FB-REPLY-2026-08-27-MLK-thread.json"
+   ],
+   "note": "Counted from the files themselves, not an estimate.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "entities.bytes",
+   "surface": "both",
+   "page": "",
+   "item": "size on disk",
+   "value": "27 KB",
+   "ledger": "entities",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/Entity_Database/ACCESS-TEST-2026-10-16.json",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "Entity_Database/ACCESS-TEST-2026-10-16.json",
+    "Entity_Database/AGENTS.json",
+    "Entity_Database/CA-pull-kit-2026-08-24.json",
+    "Entity_Database/DEPLOYMENT-REPAIR-HANDOFF.json",
+    "Entity_Database/ECOSYSTEM-INVENTORY-AND-UPGRADE-MEMO-2026-10-28.json",
+    "Entity_Database/FB-REPLY-2026-08-27-MLK-thread.json"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "civic_atlas.files",
+   "surface": "both",
+   "page": "",
+   "item": "files stored",
+   "value": 24,
+   "ledger": "civic_atlas",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/civic_atlas/app.js",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "civic_atlas/app.js",
+    "civic_atlas/build_osint_index.py",
+    "civic_atlas/index.html",
+    "civic_atlas/lens.js",
+    "civic_atlas/media/builder.html",
+    "civic_atlas/media/drops.json"
+   ],
+   "note": "What this repo holds for civic atlas (experimental site), in civic_atlas/.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "civic_atlas.units",
+   "surface": "both",
+   "page": "",
+   "item": "page / assets counted",
+   "value": 24,
+   "ledger": "civic_atlas",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/civic_atlas/app.js",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "civic_atlas/app.js",
+    "civic_atlas/build_osint_index.py",
+    "civic_atlas/index.html",
+    "civic_atlas/lens.js",
+    "civic_atlas/media/builder.html",
+    "civic_atlas/media/drops.json"
+   ],
+   "note": "Counted from the files themselves, not an estimate.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "civic_atlas.bytes",
+   "surface": "both",
+   "page": "",
+   "item": "size on disk",
+   "value": "117 KB",
+   "ledger": "civic_atlas",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/civic_atlas/app.js",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "civic_atlas/app.js",
+    "civic_atlas/build_osint_index.py",
+    "civic_atlas/index.html",
+    "civic_atlas/lens.js",
+    "civic_atlas/media/builder.html",
+    "civic_atlas/media/drops.json"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "agent.files",
+   "surface": "both",
+   "page": "",
+   "item": "files stored",
+   "value": 20,
+   "ledger": "agent",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/agent/__init__.py",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "agent/__init__.py",
+    "agent/__main__.py",
+    "agent/cli.py",
+    "agent/config.py",
+    "agent/install/linux.sh",
+    "agent/install/macos.sh"
+   ],
+   "note": "What this repo holds for field agent tooling, in agent/.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "agent.units",
+   "surface": "both",
+   "page": "",
+   "item": "files counted",
+   "value": 20,
+   "ledger": "agent",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/agent/__init__.py",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "agent/__init__.py",
+    "agent/__main__.py",
+    "agent/cli.py",
+    "agent/config.py",
+    "agent/install/linux.sh",
+    "agent/install/macos.sh"
+   ],
+   "note": "Counted from the files themselves, not an estimate.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "agent.bytes",
+   "surface": "both",
+   "page": "",
+   "item": "size on disk",
+   "value": "241 KB",
+   "ledger": "agent",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/agent/__init__.py",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "agent/__init__.py",
+    "agent/__main__.py",
+    "agent/cli.py",
+    "agent/config.py",
+    "agent/install/linux.sh",
+    "agent/install/macos.sh"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "repo_meta.files",
+   "surface": "both",
+   "page": "",
+   "item": "files stored",
+   "value": 26,
+   "ledger": "repo_meta",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/.cursorrules",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    ".cursorrules",
+    ".gitignore",
+    ".well-known/ai-plugin.json",
+    "cheyenne_watchdog.db",
+    "config/facts.json",
+    "config/sources.json"
+   ],
+   "note": "What this repo holds for repo metadata &amp; local databases, in repo root.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "repo_meta.units",
+   "surface": "both",
+   "page": "",
+   "item": "files counted",
+   "value": 26,
+   "ledger": "repo_meta",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/.cursorrules",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    ".cursorrules",
+    ".gitignore",
+    ".well-known/ai-plugin.json",
+    "cheyenne_watchdog.db",
+    "config/facts.json",
+    "config/sources.json"
+   ],
+   "note": "Counted from the files themselves, not an estimate.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "repo_meta.bytes",
+   "surface": "both",
+   "page": "",
+   "item": "size on disk",
+   "value": "29.1 MB",
+   "ledger": "repo_meta",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/.cursorrules",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    ".cursorrules",
+    ".gitignore",
+    ".well-known/ai-plugin.json",
+    "cheyenne_watchdog.db",
+    "config/facts.json",
+    "config/sources.json"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "montage_reels.files",
+   "surface": "both",
+   "page": "",
+   "item": "files stored",
+   "value": 51,
+   "ledger": "montage_reels",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/pipeline/build_reel.py",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "pipeline/build_reel.py",
+    "pipeline/build_reel_v2.py",
+    "pipeline/renders/CONTENTION_REEL.mp4",
+    "pipeline/renders/S1_48_HOURS.mp4",
+    "pipeline/renders/S2_THE_74M_LIST.mp4",
+    "pipeline/renders/S3_THE_TWO_TIES.mp4"
+   ],
+   "note": "What this repo holds for edited reels cut from the tapes, in video/ \u00b7 videos/.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "montage_reels.units",
+   "surface": "both",
+   "page": "",
+   "item": "film cuts counted",
+   "value": 51,
+   "ledger": "montage_reels",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/pipeline/build_reel.py",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "pipeline/build_reel.py",
+    "pipeline/build_reel_v2.py",
+    "pipeline/renders/CONTENTION_REEL.mp4",
+    "pipeline/renders/S1_48_HOURS.mp4",
+    "pipeline/renders/S2_THE_74M_LIST.mp4",
+    "pipeline/renders/S3_THE_TWO_TIES.mp4"
+   ],
+   "note": "Counted from the files themselves, not an estimate.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "montage_reels.bytes",
+   "surface": "both",
+   "page": "",
+   "item": "size on disk",
+   "value": "574.2 MB",
+   "ledger": "montage_reels",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/pipeline/build_reel.py",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "pipeline/build_reel.py",
+    "pipeline/build_reel_v2.py",
+    "pipeline/renders/CONTENTION_REEL.mp4",
+    "pipeline/renders/S1_48_HOURS.mp4",
+    "pipeline/renders/S2_THE_74M_LIST.mp4",
+    "pipeline/renders/S3_THE_TWO_TIES.mp4"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "provenance_film.files",
+   "surface": "both",
+   "page": "",
+   "item": "files stored",
+   "value": 29,
+   "ledger": "provenance_film",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/provenance/__init__.py",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "provenance/__init__.py",
+    "provenance/__main__.py",
+    "provenance/art.py",
+    "provenance/cli.py",
+    "provenance/inventory.py",
+    "provenance/ledger.py"
+   ],
+   "note": "What this repo holds for provenance report &amp; this film, in data/out/ \u00b7 video/.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "provenance_film.units",
+   "surface": "both",
+   "page": "",
+   "item": "artifacts counted",
+   "value": 29,
+   "ledger": "provenance_film",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/provenance/__init__.py",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "provenance/__init__.py",
+    "provenance/__main__.py",
+    "provenance/art.py",
+    "provenance/cli.py",
+    "provenance/inventory.py",
+    "provenance/ledger.py"
+   ],
+   "note": "Counted from the files themselves, not an estimate.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "provenance_film.bytes",
+   "surface": "both",
+   "page": "",
+   "item": "size on disk",
+   "value": "1.9 MB",
+   "ledger": "provenance_film",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/provenance/__init__.py",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "provenance/__init__.py",
+    "provenance/__main__.py",
+    "provenance/art.py",
+    "provenance/cli.py",
+    "provenance/inventory.py",
+    "provenance/ledger.py"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "published_site.files",
+   "surface": "both",
+   "page": "",
+   "item": "files stored",
+   "value": 22,
+   "ledger": "published_site",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/locked-resource/index.html",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "locked-resource/index.html",
+    "pages/10_Front_Page.py",
+    "pages/11_Mission_Board.py",
+    "pages/12_Evidence_Vault.py",
+    "pages/13_Hero_Roster.py",
+    "pages/14_Choose_Your_Mission.py"
+   ],
+   "note": "What this repo holds for published site & feeds, in pages/ \u00b7 public/.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "published_site.units",
+   "surface": "both",
+   "page": "",
+   "item": "pages counted",
+   "value": 22,
+   "ledger": "published_site",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/locked-resource/index.html",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "locked-resource/index.html",
+    "pages/10_Front_Page.py",
+    "pages/11_Mission_Board.py",
+    "pages/12_Evidence_Vault.py",
+    "pages/13_Hero_Roster.py",
+    "pages/14_Choose_Your_Mission.py"
+   ],
+   "note": "Counted from the files themselves, not an estimate.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "published_site.bytes",
+   "surface": "both",
+   "page": "",
+   "item": "size on disk",
+   "value": "885 KB",
+   "ledger": "published_site",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/locked-resource/index.html",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    "locked-resource/index.html",
+    "pages/10_Front_Page.py",
+    "pages/11_Mission_Board.py",
+    "pages/12_Evidence_Vault.py",
+    "pages/13_Hero_Roster.py",
+    "pages/14_Choose_Your_Mission.py"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "code.files",
+   "surface": "both",
+   "page": "",
+   "item": "files stored",
+   "value": 138,
+   "ledger": "code",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/.github/workflows/ai-record-pages.yml",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    ".github/workflows/ai-record-pages.yml",
+    ".github/workflows/apply-remediation.yml",
+    ".github/workflows/civic-cycle.yml",
+    ".github/workflows/daily_audit.yml",
+    ".github/workflows/ecosystem-hourly-diagnostics.yml",
+    ".github/workflows/historical_harvest.yml"
+   ],
+   "note": "What this repo holds for pipelines, scrapers & console code, in engine/ \u00b7 tools/ \u00b7 scripts/.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "code.units",
+   "surface": "both",
+   "page": "",
+   "item": "source files counted",
+   "value": 138,
+   "ledger": "code",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/.github/workflows/ai-record-pages.yml",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    ".github/workflows/ai-record-pages.yml",
+    ".github/workflows/apply-remediation.yml",
+    ".github/workflows/civic-cycle.yml",
+    ".github/workflows/daily_audit.yml",
+    ".github/workflows/ecosystem-hourly-diagnostics.yml",
+    ".github/workflows/historical_harvest.yml"
+   ],
+   "note": "Counted from the files themselves, not an estimate.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "code.bytes",
+   "surface": "both",
+   "page": "",
+   "item": "size on disk",
+   "value": "1.2 MB",
+   "ledger": "code",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/.github/workflows/ai-record-pages.yml",
+    "host": "github.com (this repo)"
+   },
+   "how": "see the evidence files in this repo",
+   "evidence": [
+    ".github/workflows/ai-record-pages.yml",
+    ".github/workflows/apply-remediation.yml",
+    ".github/workflows/civic-cycle.yml",
+    ".github/workflows/daily_audit.yml",
+    ".github/workflows/ecosystem-hourly-diagnostics.yml",
+    ".github/workflows/historical_harvest.yml"
+   ],
+   "note": "Sum of the file sizes on disk.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "totals.files",
+   "surface": "both",
+   "page": "Front Page \u00b7 About",
+   "item": "7,468 files classified",
+   "value": 7468,
+   "ledger": "inventory",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity",
+    "host": "github.com"
+   },
+   "how": "python3 -m provenance detect \u2014 walks the checkout once, read-only",
+   "evidence": [
+    "data/out/provenance-inventory.json"
+   ],
+   "note": "Includes 0 unaccounted-for files.",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "totals.scraped",
+   "surface": "both",
+   "page": "Front Page \u00b7 About",
+   "item": "4,636 scraped files",
+   "value": 4636,
+   "ledger": "inventory",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity",
+    "host": "github.com"
+   },
+   "how": "the sum of every family whose class is 'scraped'",
+   "evidence": [
+    "data/out/PROVENANCE-INVENTORY.md"
+   ],
+   "note": "",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "totals.hosts",
+   "surface": "both",
+   "page": "Front Page \u00b7 About",
+   "item": "13 source sites",
+   "value": 13,
+   "ledger": "inventory",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity",
+    "host": "github.com"
+   },
+   "how": "hosts that appear in this repo's files AND are in the curated catalogue",
+   "evidence": [
+    "provenance/origins.py"
+   ],
+   "note": "",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "totals.manual",
+   "surface": "both",
+   "page": "Front Page \u00b7 About",
+   "item": "\u2248 9 days 14 h of hand-work",
+   "value": 830120,
+   "ledger": "inventory",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity",
+    "host": "github.com"
+   },
+   "how": "units \u00d7 a stated per-document rate in inventory.py \u2014 an estimate, labelled as one",
+   "evidence": [
+    "provenance/inventory.py"
+   ],
+   "note": "",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "hosts.capcity-news",
+   "surface": "both",
+   "page": "Source sites",
+   "item": "Cap City News \u2014 12,184",
+   "value": 12184,
+   "ledger": "inventory",
+   "origin": {
+    "url": "https://capcity.news/",
+    "host": "capcity.news"
+   },
+   "how": "search this repo for capcity.news and open what each hit points at",
+   "evidence": [],
+   "note": "local news",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "hosts.cheyenne-granicus-com",
+   "surface": "both",
+   "page": "Source sites",
+   "item": "Granicus \u2014 Cheyenne \u2014 7,915",
+   "value": 7915,
+   "ledger": "inventory",
+   "origin": {
+    "url": "https://cheyenne.granicus.com/",
+    "host": "cheyenne.granicus.com"
+   },
+   "how": "search this repo for cheyenne.granicus.com and open what each hit points at",
+   "evidence": [],
+   "note": "meeting portal",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "hosts.www-wyomingnews-com",
+   "surface": "both",
+   "page": "Source sites",
+   "item": "Wyoming Tribune Eagle \u2014 5,452",
+   "value": 5452,
+   "ledger": "inventory",
+   "origin": {
+    "url": "https://www.wyomingnews.com/",
+    "host": "www.wyomingnews.com"
+   },
+   "how": "search this repo for www.wyomingnews.com and open what each hit points at",
+   "evidence": [],
+   "note": "local news",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "hosts.archive-org",
+   "surface": "both",
+   "page": "Source sites",
+   "item": "Internet Archive \u2014 2,608",
+   "value": 2608,
+   "ledger": "inventory",
+   "origin": {
+    "url": "https://archive.org/",
+    "host": "archive.org"
+   },
+   "how": "search this repo for archive.org and open what each hit points at",
+   "evidence": [],
+   "note": "public archive",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "hosts.archive-video-granicus-com",
+   "surface": "both",
+   "page": "Source sites",
+   "item": "Granicus video archive \u2014 1,420",
+   "value": 1420,
+   "ledger": "inventory",
+   "origin": {
+    "url": "https://archive-video.granicus.com/",
+    "host": "archive-video.granicus.com"
+   },
+   "how": "search this repo for archive-video.granicus.com and open what each hit points at",
+   "evidence": [],
+   "note": "media origin",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "hosts.archive-stream-granicus-com",
+   "surface": "both",
+   "page": "Source sites",
+   "item": "Granicus stream archive \u2014 948",
+   "value": 948,
+   "ledger": "inventory",
+   "origin": {
+    "url": "https://archive-stream.granicus.com/",
+    "host": "archive-stream.granicus.com"
+   },
+   "how": "search this repo for archive-stream.granicus.com and open what each hit points at",
+   "evidence": [],
+   "note": "media origin",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "hosts.docs-google-com",
+   "surface": "both",
+   "page": "Source sites",
+   "item": "Google Drive \u2014 673",
+   "value": 673,
+   "ledger": "inventory",
+   "origin": {
+    "url": "https://docs.google.com/",
+    "host": "docs.google.com"
+   },
+   "how": "search this repo for docs.google.com and open what each hit points at",
+   "evidence": [],
+   "note": "working corpus",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "hosts.www-broadcastify-com",
+   "surface": "both",
+   "page": "Source sites",
+   "item": "Broadcastify \u2014 298",
+   "value": 298,
+   "ledger": "inventory",
+   "origin": {
+    "url": "https://www.broadcastify.com/",
+    "host": "www.broadcastify.com"
+   },
+   "how": "search this repo for www.broadcastify.com and open what each hit points at",
+   "evidence": [],
+   "note": "scanner audio",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "hosts.cheyennewy-workflow-opengov-com",
+   "surface": "both",
+   "page": "Source sites",
+   "item": "OpenGov \u2014 Cheyenne \u2014 165",
+   "value": 165,
+   "ledger": "inventory",
+   "origin": {
+    "url": "https://cheyennewy.workflow.opengov.com/",
+    "host": "cheyennewy.workflow.opengov.com"
+   },
+   "how": "search this repo for cheyennewy.workflow.opengov.com and open what each hit points at",
+   "evidence": [],
+   "note": "permitting / records",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "hosts.wyobiz-wyo-gov",
+   "surface": "both",
+   "page": "Source sites",
+   "item": "WyoBiz \u2014 19",
+   "value": 19,
+   "ledger": "inventory",
+   "origin": {
+    "url": "https://wyobiz.wyo.gov/",
+    "host": "wyobiz.wyo.gov"
+   },
+   "how": "search this repo for wyobiz.wyo.gov and open what each hit points at",
+   "evidence": [],
+   "note": "state records",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "hosts.www-cheyennecity-org",
+   "surface": "both",
+   "page": "Source sites",
+   "item": "City of Cheyenne \u2014 14",
+   "value": 14,
+   "ledger": "inventory",
+   "origin": {
+    "url": "https://www.cheyennecity.org/",
+    "host": "www.cheyennecity.org"
+   },
+   "how": "search this repo for www.cheyennecity.org and open what each hit points at",
+   "evidence": [],
+   "note": "OpenCities CMS",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "hosts.www-plancheyenne-org",
+   "surface": "both",
+   "page": "Source sites",
+   "item": "PlanCheyenne \u2014 13",
+   "value": 13,
+   "ledger": "inventory",
+   "origin": {
+    "url": "https://www.plancheyenne.org/",
+    "host": "www.plancheyenne.org"
+   },
+   "how": "search this repo for www.plancheyenne.org and open what each hit points at",
+   "evidence": [],
+   "note": "planning",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "engine.documents",
+   "surface": "both",
+   "page": "The Daily Ledger",
+   "item": "documents fingerprinted",
+   "value": 332,
+   "ledger": "engine",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/data/engine.db",
+    "host": "github.com (this repo)"
+   },
+   "how": "sqlite3 data/engine.db 'select count(*) from documents'",
+   "evidence": [
+    "data/engine.db"
+   ],
+   "note": "",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "engine.versions",
+   "surface": "both",
+   "page": "Shape-Shifters",
+   "item": "captured versions",
+   "value": 1549,
+   "ledger": "engine",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/data/engine.db",
+    "host": "github.com (this repo)"
+   },
+   "how": "sqlite3 data/engine.db 'select count(*) from versions'",
+   "evidence": [
+    "data/engine.db"
+   ],
+   "note": "",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "engine.alerts",
+   "surface": "both",
+   "page": "Action Alerts",
+   "item": "watchlist hits",
+   "value": 1319,
+   "ledger": "engine",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/data/engine.db",
+    "host": "github.com (this repo)"
+   },
+   "how": "sqlite3 data/engine.db 'select count(*) from alerts'",
+   "evidence": [
+    "data/engine.db"
+   ],
+   "note": "",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "engine.source-cap-city-news-rss",
+   "surface": "both",
+   "page": "The Daily Ledger",
+   "item": "documents from cap_city_news_rss",
+   "value": 170,
+   "ledger": "engine",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/data/engine.db",
+    "host": "github.com (this repo)"
+   },
+   "how": "sqlite3 data/engine.db \"select url from documents where source='cap_city_news_rss'\" \u2014 each row carries its own origin URL",
+   "evidence": [
+    "data/engine.db"
+   ],
+   "note": "",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "engine.source-wte-local-rss",
+   "surface": "both",
+   "page": "The Daily Ledger",
+   "item": "documents from wte_local_rss",
+   "value": 120,
+   "ledger": "engine",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/data/engine.db",
+    "host": "github.com (this repo)"
+   },
+   "how": "sqlite3 data/engine.db \"select url from documents where source='wte_local_rss'\" \u2014 each row carries its own origin URL",
+   "evidence": [
+    "data/engine.db"
+   ],
+   "note": "",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "engine.source-city-council-minutes-agendas",
+   "surface": "both",
+   "page": "The Daily Ledger",
+   "item": "documents from city_council_minutes_agendas",
+   "value": 40,
+   "ledger": "engine",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/data/engine.db",
+    "host": "github.com (this repo)"
+   },
+   "how": "sqlite3 data/engine.db \"select url from documents where source='city_council_minutes_agendas'\" \u2014 each row carries its own origin URL",
+   "evidence": [
+    "data/engine.db"
+   ],
+   "note": "",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "engine.source-city-news-articles",
+   "surface": "both",
+   "page": "The Daily Ledger",
+   "item": "documents from city_news_articles",
+   "value": 2,
+   "ledger": "engine",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/data/engine.db",
+    "host": "github.com (this repo)"
+   },
+   "how": "sqlite3 data/engine.db \"select url from documents where source='city_news_articles'\" \u2014 each row carries its own origin URL",
+   "evidence": [
+    "data/engine.db"
+   ],
+   "note": "",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "engine.doc-e536e7004968",
+   "surface": "both",
+   "page": "The Daily Ledger",
+   "item": "https://capcity.news/general/2026/11/03/90th-missile-wing-announces-de",
+   "value": "https://capcity.news/general/2026/11/03/90th-missile-wing-announces-death-of-security-forces-airman/",
+   "ledger": "engine",
+   "origin": {
+    "url": "https://capcity.news/general/2026/11/03/90th-missile-wing-announces-death-of-security-forces-airman/",
+    "host": "capcity.news"
+   },
+   "how": "that exact URL was fetched and stored at e536e7004968_90th-missile-wing-announces-death-of-security-forces-airman",
+   "evidence": [
+    "/home/runner/work/therealwindycity/therealwindycity/data/snapshots/e536e7004968_90th-missile-wing-announces-death-of-security-forces-airman"
+   ],
+   "note": "sha256 e536e7004968c9dd\u2026",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "engine.doc-55e41964cf37",
+   "surface": "both",
+   "page": "The Daily Ledger",
+   "item": "https://capcity.news/community/elections/2026/11/03/2026-general-elect",
+   "value": "https://capcity.news/community/elections/2026/11/03/2026-general-election-results-live-wyoming-senate-house-of-representatives-races/",
+   "ledger": "engine",
+   "origin": {
+    "url": "https://capcity.news/community/elections/2026/11/03/2026-general-election-results-live-wyoming-senate-house-of-representatives-races/",
+    "host": "capcity.news"
+   },
+   "how": "that exact URL was fetched and stored at 55e41964cf37_2026-general-election-results-live-wyoming-senate-house-of-representatives-races",
+   "evidence": [
+    "/home/runner/work/therealwindycity/therealwindycity/data/snapshots/55e41964cf37_2026-general-election-results-live-wyoming-senate-house-of-representatives-races"
+   ],
+   "note": "sha256 55e41964cf371209\u2026",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "engine.doc-a11da1207379",
+   "surface": "both",
+   "page": "The Daily Ledger",
+   "item": "https://capcity.news/community/elections/2026/11/03/2026-wyoming-gener",
+   "value": "https://capcity.news/community/elections/2026/11/03/2026-wyoming-general-election-results-live-us-house-senate-and-statewide-races-propositions/",
+   "ledger": "engine",
+   "origin": {
+    "url": "https://capcity.news/community/elections/2026/11/03/2026-wyoming-general-election-results-live-us-house-senate-and-statewide-races-propositions/",
+    "host": "capcity.news"
+   },
+   "how": "that exact URL was fetched and stored at a11da1207379_g-general-election-results-live-us-house-senate-and-statewide-races-propositions",
+   "evidence": [
+    "/home/runner/work/therealwindycity/therealwindycity/data/snapshots/a11da1207379_g-general-election-results-live-us-house-senate-and-statewide-races-propositions"
+   ],
+   "note": "sha256 a11da1207379e2e5\u2026",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "engine.doc-054b298b8dca",
+   "surface": "both",
+   "page": "The Daily Ledger",
+   "item": "https://capcity.news/community/elections/2026/11/03/2026-general-elect",
+   "value": "https://capcity.news/community/elections/2026/11/03/2026-general-election-results-live-laramie-county-local-city-races/",
+   "ledger": "engine",
+   "origin": {
+    "url": "https://capcity.news/community/elections/2026/11/03/2026-general-election-results-live-laramie-county-local-city-races/",
+    "host": "capcity.news"
+   },
+   "how": "that exact URL was fetched and stored at 054b298b8dca_2026-general-election-results-live-laramie-county-local-city-races",
+   "evidence": [
+    "/home/runner/work/therealwindycity/therealwindycity/data/snapshots/054b298b8dca_2026-general-election-results-live-laramie-county-local-city-races"
+   ],
+   "note": "sha256 054b298b8dca933b\u2026",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "engine.doc-d0f128f92120",
+   "surface": "both",
+   "page": "The Daily Ledger",
+   "item": "https://capcity.news/latest-news/2026/11/03/election-2026-barlow-to-be",
+   "value": "https://capcity.news/latest-news/2026/11/03/election-2026-barlow-to-be-wyomings-next-governor/",
+   "ledger": "engine",
+   "origin": {
+    "url": "https://capcity.news/latest-news/2026/11/03/election-2026-barlow-to-be-wyomings-next-governor/",
+    "host": "capcity.news"
+   },
+   "how": "that exact URL was fetched and stored at d0f128f92120_election-2026-barlow-to-be-wyomings-next-governor",
+   "evidence": [
+    "/home/runner/work/therealwindycity/therealwindycity/data/snapshots/d0f128f92120_election-2026-barlow-to-be-wyomings-next-governor"
+   ],
+   "note": "sha256 d0f128f92120abd7\u2026",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "engine.doc-31eedb4615f2",
+   "surface": "both",
+   "page": "The Daily Ledger",
+   "item": "https://capcity.news/community/elections/2026/11/03/election-2026-hage",
+   "value": "https://capcity.news/community/elections/2026/11/03/election-2026-hageman-defeats-byrd-for-wyoming-u-s-senate-seat/",
+   "ledger": "engine",
+   "origin": {
+    "url": "https://capcity.news/community/elections/2026/11/03/election-2026-hageman-defeats-byrd-for-wyoming-u-s-senate-seat/",
+    "host": "capcity.news"
+   },
+   "how": "that exact URL was fetched and stored at 31eedb4615f2_election-2026-hageman-defeats-byrd-for-wyoming-u-s-senate-seat",
+   "evidence": [
+    "/home/runner/work/therealwindycity/therealwindycity/data/snapshots/31eedb4615f2_election-2026-hageman-defeats-byrd-for-wyoming-u-s-senate-seat"
+   ],
+   "note": "sha256 31eedb4615f24040\u2026",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "film.duration",
+   "surface": "both",
+   "page": "Provenance film",
+   "item": "the film's runtime, in seconds",
+   "value": 222,
+   "ledger": "film",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/video/provenance-showcase.mp4",
+    "host": "github.com (this repo)"
+   },
+   "how": "the film is generated from the checkout: python3 -m provenance video",
+   "evidence": [
+    "video/provenance-manual-run.mp4"
+   ],
+   "note": "",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  },
+  {
+   "id": "film.chapters",
+   "surface": "both",
+   "page": "Provenance film",
+   "item": "11 chapters",
+   "value": 11,
+   "ledger": "film",
+   "origin": {
+    "url": "https://github.com/bartimoussmith-oss/therealwindycity/blob/main/provenance/story.py",
+    "host": "github.com (this repo)"
+   },
+   "how": "one chapter per data family, in story.ORDER",
+   "evidence": [
+    "provenance/story.py"
+   ],
+   "note": "",
+   "cue": {
+    "chapter": "overview",
+    "master": {
+     "src": "video/provenance-manual-run.mp4",
+     "start": 0.0,
+     "end": 221.6
+    },
+    "showcase": {
+     "src": "video/provenance-showcase.mp4",
+     "start": 222.0,
+     "end": 242.0
+    },
+    "src": "video/provenance-showcase.mp4",
+    "start": 222.0,
+    "end": 242.0
+   }
+  }
+ ]
+}

@@ -1,0 +1,1501 @@
+{
+ "generated_at": "2026-11-04T13:57:00Z",
+ "repo": "/home/user/therealwindycity",
+ "totals": {
+  "files": 7466,
+  "bytes": 1652973004,
+  "families": 27,
+  "scraped_files": 4636,
+  "scraped_bytes": 877361736,
+  "estimated_manual_seconds": 830120,
+  "estimated_manual_actions": 44084
+ },
+ "engine_ledger": {
+  "documents": 332,
+  "note": "332 documents \u00b7 1,549 versions \u00b7 1,319 alerts",
+  "source": "data/engine.db (FTS5 full-text index + version history)"
+ },
+ "upstream_repos": [
+  {
+   "repo": "The-Real-Windy-City-",
+   "mentions": 7
+  },
+  {
+   "repo": "TheReelWindyCity",
+   "mentions": 7
+  },
+  {
+   "repo": "cheyenne-archives-2025-2026",
+   "mentions": 3
+  },
+  {
+   "repo": "cheyenne-archives-",
+   "mentions": 2
+  },
+  {
+   "repo": "cheyenne-archives-2008-2013",
+   "mentions": 2
+  },
+  {
+   "repo": "cheyenne-archives-2022",
+   "mentions": 2
+  }
+ ],
+ "source_hosts": [
+  {
+   "host": "capcity.news",
+   "name": "Cap City News",
+   "kind": "local news",
+   "count": 12184
+  },
+  {
+   "host": "cheyenne.granicus.com",
+   "name": "Granicus \u2014 Cheyenne",
+   "kind": "meeting portal",
+   "count": 7915
+  },
+  {
+   "host": "www.wyomingnews.com",
+   "name": "Wyoming Tribune Eagle",
+   "kind": "local news",
+   "count": 5452
+  },
+  {
+   "host": "archive.org",
+   "name": "Internet Archive",
+   "kind": "public archive",
+   "count": 2608
+  },
+  {
+   "host": "archive-video.granicus.com",
+   "name": "Granicus video archive",
+   "kind": "media origin",
+   "count": 1420
+  },
+  {
+   "host": "archive-stream.granicus.com",
+   "name": "Granicus stream archive",
+   "kind": "media origin",
+   "count": 948
+  },
+  {
+   "host": "docs.google.com",
+   "name": "Google Drive",
+   "kind": "working corpus",
+   "count": 673
+  },
+  {
+   "host": "www.broadcastify.com",
+   "name": "Broadcastify",
+   "kind": "scanner audio",
+   "count": 298
+  },
+  {
+   "host": "cheyennewy.workflow.opengov.com",
+   "name": "OpenGov \u2014 Cheyenne",
+   "kind": "permitting / records",
+   "count": 165
+  },
+  {
+   "host": "wyobiz.wyo.gov",
+   "name": "WyoBiz",
+   "kind": "state records",
+   "count": 19
+  },
+  {
+   "host": "www.cheyennecity.org",
+   "name": "City of Cheyenne",
+   "kind": "OpenCities CMS",
+   "count": 14
+  },
+  {
+   "host": "www.plancheyenne.org",
+   "name": "PlanCheyenne",
+   "kind": "planning",
+   "count": 13
+  },
+  {
+   "host": "laramiecountywy-sheriff.data.socrata.com",
+   "name": "Laramie County Sheriff \u2014 Socrata",
+   "kind": "open data portal",
+   "count": 1
+  }
+ ],
+ "unassigned": {
+  "files": 0,
+  "bytes": 0,
+  "by_extension": {}
+ },
+ "families": [
+  {
+   "key": "meeting_calendar",
+   "title": "Meeting calendar & meeting days",
+   "class": "scraped",
+   "unit": "meeting day",
+   "units": 479,
+   "unit_note": "479 meeting nights indexed \u00b7 7 city pages captured",
+   "files": 7,
+   "bytes": 8963074,
+   "destination": "data/snapshots/ \u00b7 2026-09-14-council/meetings/",
+   "origin": {
+    "site": "City of Cheyenne \u2014 Minutes and Agendas",
+    "url": "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas",
+    "portal": "www.cheyennecity.org",
+    "evidence": "config/sources.json \u2192 sources[0] (CONFIRMED live 2026-09-05)",
+    "note": "Council, Finance, Public Services, Committee of the Whole, Work Sessions."
+   },
+   "origin_hosts": [
+    {
+     "host": "cheyenne.granicus.com",
+     "name": "Granicus \u2014 Cheyenne",
+     "kind": "meeting portal",
+     "note": "Clip pages and AgendaViewer; the packets/minutes PDFs the city links to.",
+     "count": 977,
+     "examples": [
+      "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1126",
+      "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1124",
+      "https://cheyenne.granicus.com/MinutesViewer.php?view_id=5&clip_id=1124&doc_id=8391317d-9696-11f1-bb61-005056a89546"
+     ]
+    },
+    {
+     "host": "archive-video.granicus.com",
+     "name": "Granicus video archive",
+     "kind": "media origin",
+     "note": "The MP4 renditions of each meeting.",
+     "count": 472,
+     "examples": [
+      "https://archive-video.granicus.com/cheyenne/cheyenne_dfb5f093-463f-4fb7-97a5-bef9c54ca023.mp4",
+      "https://archive-video.granicus.com/cheyenne/cheyenne_a6f9f4cb-9596-11f1-bb61-005056a89546.mp4",
+      "https://archive-video.granicus.com/cheyenne/cheyenne_526429bc-8a88-11f1-bb61-005056a89546.mp4"
+     ]
+    },
+    {
+     "host": "ns.adobe.com",
+     "name": "ns.adobe.com",
+     "kind": "source site",
+     "note": "",
+     "count": 14,
+     "examples": [
+      "http://ns.adobe.com/xap/1.0/",
+      "http://ns.adobe.com/xap/1.0/mm/",
+      "http://ns.adobe.com/pdf/1.3/"
+     ]
+    },
+    {
+     "host": "purl.org",
+     "name": "purl.org",
+     "kind": "source site",
+     "note": "",
+     "count": 4,
+     "examples": [
+      "http://purl.org/dc/elements/1.1/"
+     ]
+    }
+   ],
+   "evidence_samples": [
+    "pipeline/docs/1124/2026-08-10_agenda.html",
+    "pipeline/docs/1124/2026-08-10_meta_01.html",
+    "pipeline/docs/1124/2026-08-10_meta_02.html",
+    "pipeline/docs/1124/2026-08-10_meta_03.html",
+    "pipeline/docs/1124/2026-08-10_meta_04.html",
+    "pipeline/docs/1124/2026-08-10_minutes.html",
+    "pipeline/meetings.json"
+   ],
+   "extensions": {
+    ".html": 6,
+    ".json": 1
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 40.0,
+    "actions_per_unit": 5,
+    "seconds_total": 19160,
+    "actions_total": 2395
+   }
+  },
+  {
+   "key": "supporting_documents",
+   "title": "Supporting documents",
+   "class": "scraped",
+   "unit": "attachment",
+   "units": 720,
+   "unit_note": "720 meetings carry attachments \u00b7 14 committed here",
+   "files": 14,
+   "bytes": 47606457,
+   "destination": "artifacts/Cheyenne_Audit_raw/",
+   "origin": {
+    "site": "Granicus \u2014 Agenda Supporting Documents",
+    "url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1126",
+    "portal": "cheyenne.granicus.com",
+    "evidence": "artifacts/Cheyenne_Audit_raw/*Agenda_Supporting_Document*.pdf (MetaID/Attachment IDs)",
+    "note": "Staff reports, plats, ordinances \u2014 the attachments behind each agenda item."
+   },
+   "origin_hosts": [],
+   "evidence_samples": [
+    "artifacts/Cheyenne_Audit_raw/01_Agenda_Supporting_Document_f333175a4b.pdf",
+    "artifacts/Cheyenne_Audit_raw/02_Agenda_Supporting_Documents_42ad5a83e5.pdf",
+    "artifacts/Cheyenne_Audit_raw/03_Agenda_Supporting_Document_a0bbae99c2.pdf",
+    "artifacts/Cheyenne_Audit_raw/04_Agenda_Supporting_Document_7135c27b3a.pdf",
+    "artifacts/Cheyenne_Audit_raw/05_Agenda_Supporting_Document_d1c69e0f9a.pdf",
+    "artifacts/Cheyenne_Audit_raw/06_Agenda_Supporting_Document_f6da2e47e6.pdf",
+    "artifacts/Cheyenne_Audit_raw/07_Agenda_Supporting_Document_2761fabc4b.pdf",
+    "artifacts/Cheyenne_Audit_raw/08_Agenda_Supporting_Document_0adc59ccf3.pdf"
+   ],
+   "extensions": {
+    ".pdf": 13,
+    ".html": 1
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 60.0,
+    "actions_per_unit": 7,
+    "seconds_total": 43200,
+    "actions_total": 5040
+   }
+  },
+  {
+   "key": "agenda_documents",
+   "title": "Agenda packets",
+   "class": "scraped",
+   "unit": "agenda file",
+   "units": 720,
+   "unit_note": "720 agendas linked \u00b7 40 packet files committed here",
+   "files": 40,
+   "bytes": 104150589,
+   "destination": "artifacts/Cheyenne_Audit_raw/",
+   "origin": {
+    "site": "Granicus \u2014 Cheyenne AgendaViewer",
+    "url": "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1126",
+    "portal": "cheyenne.granicus.com",
+    "evidence": "youtube-archive/catalog_granicus.csv \u2192 agenda_url column",
+    "note": "The city links each packet PDF out to Granicus; robots.txt refuses bots."
+   },
+   "origin_hosts": [],
+   "evidence_samples": [
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150411.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150413.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150419.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150421.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150423.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150425.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150427.pdf",
+    "2026-09-14-council/meetings/2026-09-14_council/pdf/150430.pdf"
+   ],
+   "extensions": {
+    ".pdf": 40
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 45.0,
+    "actions_per_unit": 6,
+    "seconds_total": 32400,
+    "actions_total": 4320
+   }
+  },
+  {
+   "key": "minutes_and_notes",
+   "title": "Minutes & meeting notes",
+   "class": "scraped",
+   "unit": "meeting document",
+   "units": 720,
+   "unit_note": "720 minutes referenced \u00b7 230 saved as text here",
+   "files": 230,
+   "bytes": 82247933,
+   "destination": "uploads/",
+   "origin": {
+    "site": "City of Cheyenne \u2014 Minutes and Agendas",
+    "url": "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas",
+    "portal": "www.cheyennecity.org",
+    "evidence": "config/sources.json \u2192 sources[0] (CONFIRMED live 2026-09-05)",
+    "note": "Council, Finance, Public Services, Committee of the Whole, Work Sessions."
+   },
+   "origin_hosts": [
+    {
+     "host": "cheyennewy.workflow.opengov.com",
+     "name": "OpenGov \u2014 Cheyenne",
+     "kind": "permitting / records",
+     "note": "Permit and case records for annexation and zoning filings.",
+     "count": 149,
+     "examples": [
+      "https://cheyennewy.workflow.opengov.com/#/explore/records/280017/799201",
+      "https://cheyennewy.workflow.opengov.com/#/explore/records/280815/803072",
+      "https://cheyennewy.workflow.opengov.com/#/explore/records/10580/60531"
+     ]
+    },
+    {
+     "host": "wyobiz.wyo.gov",
+     "name": "WyoBiz",
+     "kind": "state records",
+     "note": "Registered-agent / entity lookups.",
+     "count": 19,
+     "examples": [
+      "https://wyobiz.wyo.gov"
+     ]
+    },
+    {
+     "host": "www.cheyennecity.org",
+     "name": "City of Cheyenne",
+     "kind": "OpenCities CMS",
+     "note": "Agenda/minutes listings, news releases, clerk notices.",
+     "count": 14,
+     "examples": [
+      "https://www.cheyennecity.org/Your-",
+      "https://www.cheyennecity.org/files/sharedassets/public/departments/public-works/title-vi-",
+      "https://www.cheyennecity.org/Your-Government/Departments/Public-"
+     ]
+    },
+    {
+     "host": "www.plancheyenne.org",
+     "name": "PlanCheyenne",
+     "kind": "planning",
+     "note": "Comprehensive plan and zoning source documents.",
+     "count": 13,
+     "examples": [
+      "https://www.plancheyenne.org/wp-content/uploads/2025/10/Connect-2050_Draft-Final-",
+      "https://www.plancheyenne.org/wp-",
+      "https://www.plancheyenne.org/wp-content/uploads/2025/06/THE-TIP_26_29.pdf"
+     ]
+    },
+    {
+     "host": "www.astm.org",
+     "name": "www.astm.org",
+     "kind": "source site",
+     "note": "",
+     "count": 12,
+     "examples": [
+      "https://www.astm.org/prpolicy.html",
+      "https://www.astm.org/POLICY/privacy_policy.html"
+     ]
+    }
+   ],
+   "evidence_samples": [
+    "2026-09-14-council/meetings/minutes/apr13.txt",
+    "2026-09-14-council/meetings/minutes/apr27.txt",
+    "2026-09-14-council/meetings/minutes/jul13.txt",
+    "2026-09-14-council/meetings/minutes/jun08.txt",
+    "2026-09-14-council/meetings/minutes/mar09.txt",
+    "2026-09-14-council/meetings/minutes/may11.txt",
+    "2026-09-14-council/meetings/minutes/may26.txt",
+    "uploads/May_18,_2026,_Cheyenne_Planning_Commission_Meeting_1.md"
+   ],
+   "extensions": {
+    ".md": 219,
+    ".txt": 7,
+    ".png": 4
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 50.0,
+    "actions_per_unit": 5,
+    "seconds_total": 36000,
+    "actions_total": 3600
+   }
+  },
+  {
+   "key": "extracted_text",
+   "title": "Extracted document text",
+   "class": "scraped",
+   "unit": "text extract",
+   "units": 372,
+   "unit_note": "",
+   "files": 372,
+   "bytes": 3325563,
+   "destination": "data/text/",
+   "origin": {
+    "site": "City of Cheyenne \u2014 Minutes and Agendas",
+    "url": "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas",
+    "portal": "www.cheyennecity.org",
+    "evidence": "config/sources.json \u2192 sources[0] (CONFIRMED live 2026-09-05)",
+    "note": "Council, Finance, Public Services, Committee of the Whole, Work Sessions."
+   },
+   "origin_hosts": [
+    {
+     "host": "www.epa.gov",
+     "name": "www.epa.gov",
+     "kind": "source site",
+     "note": "",
+     "count": 19,
+     "examples": [
+      "https://www.epa.gov/ghgemissions/overview-greenhouse-gases",
+      "https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator#results",
+      "https://www.epa.gov/system/files/documents/2023-03/ghg_emission_factors_hub.pdf"
+     ]
+    },
+    {
+     "host": "cheyennewy.workflow.opengov.com",
+     "name": "OpenGov \u2014 Cheyenne",
+     "kind": "permitting / records",
+     "note": "Permit and case records for annexation and zoning filings.",
+     "count": 16,
+     "examples": [
+      "https://cheyennewy.workflow.opengov.com/#/explore/records/295361/form",
+      "https://cheyennewy.workflow.opengov.com/#/explore/records/299861/form",
+      "https://cheyennewy.workflow.opengov.com/#/explore/records/299922/1006563"
+     ]
+    },
+    {
+     "host": "maps.terragis.net",
+     "name": "maps.terragis.net",
+     "kind": "source site",
+     "note": "",
+     "count": 8,
+     "examples": [
+      "https://maps.terragis.net/laramie/map#zcr=5.481373411024976/739195.8266187945/218495.96250799502/0&lyrs=a2024",
+      "https://maps.terragis.net/laramie/map#zcr=5.220598864159518/737302.4577475158/222276.3434587747/0&lyrs=a2024",
+      "https://maps.terragis.net/laramie/map#zcr=5.773449322596112/737897.9623235909/219620.18190375032/0&lyrs=zoning"
+     ]
+    },
+    {
+     "host": "wyomingbusiness.org",
+     "name": "wyomingbusiness.org",
+     "kind": "source site",
+     "note": "",
+     "count": 6,
+     "examples": [
+      "https://wyomingbusiness.org/wp-content/up-",
+      "https://wyomingbusiness.org/wp-cont",
+      "https://wyomingbusiness.org/wp-content/uploads/2024/07/WY_Workforce_Note.pdf"
+     ]
+    },
+    {
+     "host": "www.eia.gov",
+     "name": "www.eia.gov",
+     "kind": "source site",
+     "note": "",
+     "count": 4,
+     "examples": [
+      "https://www.eia.gov/state/?sid=WY",
+      "https://www.eia.gov/electricity/state/wyoming/",
+      "https://www.eia.gov/dnav/ng/ng_cons_heat_a_epg0_vgth_btucf_a.htm"
+     ]
+    }
+   ],
+   "evidence_samples": [
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150411.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150413.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150419.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150421.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150423.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150425.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150427.txt",
+    "2026-09-14-council/meetings/2026-09-14_council/txt/150430.txt"
+   ],
+   "extensions": {
+    ".txt": 372
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 25.0,
+    "actions_per_unit": 3,
+    "seconds_total": 9300,
+    "actions_total": 1116
+   }
+  },
+  {
+   "key": "meeting_video",
+   "title": "Meeting tape",
+   "class": "scraped",
+   "unit": "meeting recording",
+   "units": 9,
+   "unit_note": "",
+   "files": 9,
+   "bytes": 42212565,
+   "destination": "pipeline/videos/",
+   "origin": {
+    "site": "Granicus video archive + City YouTube",
+    "url": "https://archive-video.granicus.com/cheyenne/",
+    "portal": "archive-video.granicus.com",
+    "evidence": "youtube-archive/catalog_granicus.csv \u2192 mp4_url / player_url",
+    "note": "Full tapes; clips are cut from these files, never re-enacted."
+   },
+   "origin_hosts": [],
+   "evidence_samples": [
+    "pipeline/videos/apr27_1301.mp4",
+    "pipeline/videos/apr27_first.mp4",
+    "pipeline/videos/apr27_hand.mp4",
+    "pipeline/videos/apr27_nine.mp4",
+    "pipeline/videos/apr27_pileon.mp4",
+    "pipeline/videos/mar9_cut.mp4",
+    "pipeline/videos/mar9_return.mp4",
+    "pipeline/videos/moody_swap.mp4"
+   ],
+   "extensions": {
+    ".mp4": 9
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 180.0,
+    "actions_per_unit": 9,
+    "seconds_total": 1620,
+    "actions_total": 81
+   }
+  },
+  {
+   "key": "transcripts",
+   "title": "Transcripts & caption tracks",
+   "class": "scraped",
+   "unit": "transcript",
+   "units": 607,
+   "unit_note": "607 files \u00b7 106,487 lines",
+   "files": 607,
+   "bytes": 28113568,
+   "destination": "pipeline/corpus_yt/",
+   "origin": {
+    "site": "YouTube auto-captions (City of Cheyenne channel)",
+    "url": "https://www.youtube.com/@CityofCheyenne",
+    "portal": "www.youtube.com",
+    "evidence": "pipeline/cityvideos.json + pipeline/corpus_yt/*.txt",
+    "note": "Caption tracks converted to timestamped text so moments are findable without video."
+   },
+   "origin_hosts": [],
+   "evidence_samples": [
+    "pipeline/corpus/1000_2025-02-10.txt",
+    "pipeline/corpus/1002_2025-02-24.txt",
+    "pipeline/corpus/1005_2025-02-25.txt",
+    "pipeline/corpus/1008_2025-03-11.txt",
+    "pipeline/corpus/100_2009-07-13.txt",
+    "pipeline/corpus/1010_2025-03-24.txt",
+    "pipeline/corpus/1012_2025-04-14.txt",
+    "pipeline/corpus/1014_2025-04-28.txt"
+   ],
+   "extensions": {
+    ".txt": 563,
+    ".vtt": 29,
+    ".srt": 8,
+    ".json": 5,
+    ".md": 2
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 90.0,
+    "actions_per_unit": 6,
+    "seconds_total": 54630,
+    "actions_total": 3642
+   }
+  },
+  {
+   "key": "video_catalog",
+   "title": "Meeting video catalogue",
+   "class": "scraped",
+   "unit": "catalogued meeting",
+   "units": 481,
+   "unit_note": "481 meetings catalogued",
+   "files": 9,
+   "bytes": 4717582,
+   "destination": "youtube-archive/",
+   "origin": {
+    "site": "Granicus video archive + City YouTube",
+    "url": "https://archive-video.granicus.com/cheyenne/",
+    "portal": "archive-video.granicus.com",
+    "evidence": "youtube-archive/catalog_granicus.csv \u2192 mp4_url / player_url",
+    "note": "Full tapes; clips are cut from these files, never re-enacted."
+   },
+   "origin_hosts": [
+    {
+     "host": "cheyenne.granicus.com",
+     "name": "Granicus \u2014 Cheyenne",
+     "kind": "meeting portal",
+     "note": "Clip pages and AgendaViewer; the packets/minutes PDFs the city links to.",
+     "count": 6938,
+     "examples": [
+      "https://cheyenne.granicus.com/player/clip/1126?view_id=2&redirect=true",
+      "https://cheyenne.granicus.com/AgendaViewer.php?view_id=2&clip_id=1126",
+      "https://cheyenne.granicus.com/player/clip/1124?view_id=2&redirect=true"
+     ]
+    },
+    {
+     "host": "archive.org",
+     "name": "Internet Archive",
+     "kind": "public archive",
+     "note": "cochwy-* city media items and metadata.",
+     "count": 2608,
+     "examples": [
+      "https://archive.org/details/cochwy-Solid_Waste_Director_Dennis_Pino_talks_about_curb-side_recycling",
+      "https://archive.org/metadata/cochwy-Solid_Waste_Director_Dennis_Pino_talks_about_curb-side_recycling",
+      "https://archive.org/details/cochwy-Cheyenne_Fire_Rescue_Offers_These_Halloween_Safety_Tips"
+     ]
+    },
+    {
+     "host": "archive-video.granicus.com",
+     "name": "Granicus video archive",
+     "kind": "media origin",
+     "note": "The MP4 renditions of each meeting.",
+     "count": 948,
+     "examples": [
+      "https://archive-video.granicus.com/cheyenne/cheyenne_dfb5f093-463f-4fb7-97a5-bef9c54ca023.mp4",
+      "https://archive-video.granicus.com/cheyenne/cheyenne_a6f9f4cb-9596-11f1-bb61-005056a89546.mp4",
+      "https://archive-video.granicus.com/cheyenne/cheyenne_526429bc-8a88-11f1-bb61-005056a89546.mp4"
+     ]
+    },
+    {
+     "host": "archive-stream.granicus.com",
+     "name": "Granicus stream archive",
+     "kind": "media origin",
+     "note": "HLS playlists for the same meetings.",
+     "count": 948,
+     "examples": [
+      "https://archive-stream.granicus.com/OnDemand/_definst_/mp4:archive/cheyenne/cheyenne_dfb5f093-463f-4fb7-97a5-bef9c54ca023.mp4/playlist.m3u8",
+      "https://archive-stream.granicus.com/OnDemand/_definst_/mp4:archive/cheyenne/cheyenne_a6f9f4cb-9596-11f1-bb61-005056a89546.mp4/playlist.m3u8",
+      "https://archive-stream.granicus.com/OnDemand/_definst_/mp4:archive/cheyenne/cheyenne_526429bc-8a88-11f1-bb61-005056a89546.mp4/playlist.m3u8"
+     ]
+    },
+    {
+     "host": "zoom.us",
+     "name": "zoom.us",
+     "kind": "source site",
+     "note": "",
+     "count": 3,
+     "examples": [
+      "https://zoom.us/j/97019701929?pwd=MnpHY1ptUjRKbUxjU2RyamxRNVJsUT09",
+      "https://zoom.us/j/95979390448?pwd=VzdJL3Ezd3ZnaklLQUpicFBmdjExZz09",
+      "https://zoom.us/j/97733551061?pwd=aEpLQkE0Ui9CdzJ5UFh4RGp3bm5ldz09"
+     ]
+    }
+   ],
+   "evidence_samples": [
+    "pipeline/cityvideos.json",
+    "youtube-archive/catalog_archiveorg.csv",
+    "youtube-archive/catalog_archiveorg.json",
+    "youtube-archive/catalog_granicus.csv",
+    "youtube-archive/catalog_granicus.json",
+    "youtube-archive/docs_audit.json",
+    "youtube-archive/size_audit.json",
+    "youtube-archive/upload_plan.csv"
+   ],
+   "extensions": {
+    ".json": 6,
+    ".csv": 3
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 30.0,
+    "actions_per_unit": 3,
+    "seconds_total": 14430,
+    "actions_total": 1443
+   }
+  },
+  {
+   "key": "drive_corpus",
+   "title": "Processed meetings database",
+   "class": "scraped",
+   "unit": "meeting record",
+   "units": 720,
+   "unit_note": "720 meeting records \u00b7 39,881,789 chars of speech",
+   "files": 5,
+   "bytes": 65097677,
+   "destination": "drive-import/",
+   "origin": {
+    "site": "Google Drive \u2014 WindyCityMeetings",
+    "url": "https://drive.google.com/drive/folders/WindyCityMeetings",
+    "portal": "docs.google.com",
+    "evidence": "drive-import/manifest.json \u2192 source_path /content/drive/MyDrive/WindyCityMeetings/",
+    "note": "720 normalised meeting records with 39.9M characters of caption text."
+   },
+   "origin_hosts": [],
+   "evidence_samples": [
+    "drive-import/README.md",
+    "drive-import/manifest.json",
+    "drive-import/master_meetings_database.json.gz",
+    "drive-import/master_meetings_database_linked.json.gz",
+    "public/master_meetings_database_linked.json"
+   ],
+   "extensions": {
+    ".json": 2,
+    ".gz": 2,
+    ".md": 1
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 120.0,
+    "actions_per_unit": 4,
+    "seconds_total": 86400,
+    "actions_total": 2880
+   }
+  },
+  {
+   "key": "news",
+   "title": "News coverage",
+   "class": "scraped",
+   "unit": "article / digest item",
+   "units": 513,
+   "unit_note": "513 indexed documents",
+   "files": 1153,
+   "bytes": 304825631,
+   "destination": "data/out/",
+   "origin": {
+    "site": "Cap City News + Wyoming Tribune Eagle",
+    "url": "https://capcity.news/feed",
+    "portal": "capcity.news",
+    "evidence": "config/sources.json \u2192 cap_city_news_rss, wte_local_rss",
+    "note": "WordPress /feed for Cap City; TownNews search-RSS for the Tribune Eagle."
+   },
+   "origin_hosts": [
+    {
+     "host": "capcity.news",
+     "name": "Cap City News",
+     "kind": "local news",
+     "note": "The beat reporter on warrants, moratorium, referendum, Latigo, arrests.",
+     "count": 7452,
+     "examples": [
+      "https://capcity.news/legislature-community/2026/10/25/lawmakers-propose-11m-fix-to-restore-school-sports-and-activities-funding/",
+      "https://capcity.news/community/elections/2026/10/21/elections-data-centers-and-court-battles-three-secretary-of-state-debate-takeaways/",
+      "https://capcity.news/crime/2026/10/21/laramie-county-recent-arrests-10-20-26-10-21-26/"
+     ]
+    },
+    {
+     "host": "www.wyomingnews.com",
+     "name": "Wyoming Tribune Eagle",
+     "kind": "local news",
+     "note": "TownNews search-RSS feed.",
+     "count": 5452,
+     "examples": [
+      "https://www.wyomingnews.com/wyosports/university_of_wyoming/football/wyomings-steven-perez-named-mountain-west-freshman-of-the-week/article_ec88d631-6088-4bc5-b0a0-26ac357b15b0.html",
+      "https://www.wyomingnews.com/news/national/trump-swaps-22-canada-tariffs-for-100-others-effective-friday/article_4edf3958-a84f-5005-b4a5-c7b9136a25e0.html",
+      "https://www.wyomingnews.com/news/national/todays-rare-sports-equinox-is-a-dream-come-true-for-fans/article_e1160c40-0d87-5b63-b1f9-1fbf7a180c3e.html"
+     ]
+    },
+    {
+     "host": "docs.google.com",
+     "name": "Google Drive",
+     "kind": "working corpus",
+     "note": "The WindyCityMeetings processed database (720 caption transcripts).",
+     "count": 673,
+     "examples": [
+      "https://docs.google.com/gview?url=https%3A%2F%2Fcheyenne.granicus.com%2FDocumentViewer.php%3Ffile%3Dcheyenne_f2cc801bba9161fe07a72e4574cc35af.pdf%26view%3D1&embedded=true",
+      "https://docs.google.com/gview?url=https%3A%2F%2Fcheyenne.granicus.com%2FDocumentViewer.php%3Ffile%3Dcheyenne_bd50f960a5326f60b79393d1c816f0ab.pdf%26view%3D1&embedded=true",
+      "https://docs.google.com/gview?url=https%3A%2F%2Fcheyenne.granicus.com%2FDocumentViewer.php%3Ffile%3Dcheyenne_5d3af8c9ba921809918187d715a67634.pdf%26view%3D1&embedded=true"
+     ]
+    },
+    {
+     "host": "wa.me",
+     "name": "wa.me",
+     "kind": "source site",
+     "note": "",
+     "count": 571,
+     "examples": [
+      "https://wa.me/?text=https://www.wyomingnews.com/dax-parvin/image_108fdefc-e4f3-4ce3-b468-de95af671e53.html",
+      "https://wa.me/?text=https://www.wyomingnews.com/news/local_news/gov-gordon-appoints-mark-klaassen-as-district-judge-for-wyoming-s-1st-judicial-district/article_745e6829-df86-44f7-90fa-e0184a583481.html",
+      "https://wa.me/?text=https://www.wyomingnews.com/news/national/vance-touts-gop-policies-courts-undecided-voters-ahead-of-nov-3/article_79831e4b-bddf-5715-bbcf-690fc7423a0e.html"
+     ]
+    },
+    {
+     "host": "www.mysubscribersavings.com",
+     "name": "www.mysubscribersavings.com",
+     "kind": "source site",
+     "note": "",
+     "count": 468,
+     "examples": [
+      "https://www.mysubscribersavings.com/"
+     ]
+    }
+   ],
+   "evidence_samples": [
+    "data/out/digest-2026-10-26.md",
+    "data/out/digest-2026-10-27.md",
+    "data/out/digest-2026-10-28.md",
+    "data/out/digest-2026-10-29.md",
+    "data/out/digest-2026-10-30.md",
+    "data/out/digest-2026-10-31.md",
+    "data/out/digest-2026-11-01.md",
+    "data/out/digest-2026-11-02.md"
+   ],
+   "extensions": {
+    "(none)": 1020,
+    ".html": 120,
+    ".md": 10,
+    ".json": 1,
+    ".pdf": 1,
+    ".xml": 1
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 30.0,
+    "actions_per_unit": 3,
+    "seconds_total": 15390,
+    "actions_total": 1539
+   }
+  },
+  {
+   "key": "arrests",
+   "title": "Arrest reports (de-identified)",
+   "class": "scraped",
+   "unit": "record",
+   "units": 65,
+   "unit_note": "65 de-identified records",
+   "files": 5,
+   "bytes": 4275617,
+   "destination": "data/arrests/",
+   "origin": {
+    "site": "Laramie County weekly arrest report (via Cap City News)",
+    "url": "https://capcity.news/",
+    "portal": "capcity.news",
+    "evidence": "data/arrests/records.json \u2192 record.source_url / source_sha256",
+    "note": "De-identified public tier; names sealed behind an issue request."
+   },
+   "origin_hosts": [
+    {
+     "host": "capcity.news",
+     "name": "Cap City News",
+     "kind": "local news",
+     "note": "The beat reporter on warrants, moratorium, referendum, Latigo, arrests.",
+     "count": 4732,
+     "examples": [
+      "https://capcity.news/crime/2025/09/27/laramie-county-weekly-arrest-report-9-19-25-9-26-25/",
+      "https://capcity.news/crime/2025/09/20/laramie-county-weekly-arrest-report-9-12-25-9-17-25/",
+      "https://capcity.news/crime/2025/09/13/laramie-county-weekly-arrest-report-9-5-25-9-12-25/"
+     ]
+    }
+   ],
+   "evidence_samples": [
+    "data/arrests/README.md",
+    "data/arrests/master_records.csv",
+    "data/arrests/master_records.json",
+    "data/arrests/records.csv",
+    "data/arrests/records.json"
+   ],
+   "extensions": {
+    ".csv": 2,
+    ".json": 2,
+    ".md": 1
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 120.0,
+    "actions_per_unit": 6,
+    "seconds_total": 7800,
+    "actions_total": 390
+   }
+  },
+  {
+   "key": "scanner",
+   "title": "Scanner audio transcripts",
+   "class": "scraped",
+   "unit": "radio segment",
+   "units": 601,
+   "unit_note": "",
+   "files": 601,
+   "bytes": 5790241,
+   "destination": "scanner-results/runs/",
+   "origin": {
+    "site": "Broadcastify \u2014 Laramie County feed 47003",
+    "url": "https://www.broadcastify.com/archives/feed/47003/",
+    "portal": "www.broadcastify.com",
+    "evidence": "scanner-results/runs/*/transcript.json \u2192 source segments",
+    "note": "Archived radio segments, transcribed locally with whisper; review required."
+   },
+   "origin_hosts": [
+    {
+     "host": "www.broadcastify.com",
+     "name": "Broadcastify",
+     "kind": "scanner audio",
+     "note": "Feed 47003 \u2014 Laramie County public-safety radio archive.",
+     "count": 298,
+     "examples": [
+      "https://www.broadcastify.com/archives/feed/47003/47003-1792597004",
+      "https://www.broadcastify.com/archives/feed/47003/47003-1776102602",
+      "https://www.broadcastify.com/archives/feed/47003/47003-1776104392"
+     ]
+    }
+   ],
+   "evidence_samples": [
+    "scanner-results/history/quality-sample/47003-1792597004/transcript.json",
+    "scanner-results/history/quality-sample/47003-1792597004/transcript.txt",
+    "scanner-results/history/recordings/47003-1776102602/transcript.json",
+    "scanner-results/history/recordings/47003-1776102602/transcript.txt",
+    "scanner-results/history/recordings/47003-1776104392/transcript.json",
+    "scanner-results/history/recordings/47003-1776104392/transcript.txt",
+    "scanner-results/history/recordings/47003-1776106182/transcript.json",
+    "scanner-results/history/recordings/47003-1776106182/transcript.txt"
+   ],
+   "extensions": {
+    ".json": 408,
+    ".txt": 193
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 150.0,
+    "actions_per_unit": 8,
+    "seconds_total": 90150,
+    "actions_total": 4808
+   }
+  },
+  {
+   "key": "open_data",
+   "title": "Open-data & records probes",
+   "class": "scraped",
+   "unit": "dataset probe",
+   "units": 2,
+   "unit_note": "2 datasets probed",
+   "files": 3,
+   "bytes": 33781,
+   "destination": "scanner-results/socrata/",
+   "origin": {
+    "site": "Laramie County Sheriff Socrata + LETMSP",
+    "url": "https://laramiecountywy-sheriff.data.socrata.com/",
+    "portal": "laramiecountywy-sheriff.data.socrata.com",
+    "evidence": "scanner-results/socrata/datasets.json + network.json",
+    "note": "Probed honestly: the API answered 403 and the dashboard needed a login."
+   },
+   "origin_hosts": [
+    {
+     "host": "laramiecountywy-sheriff.data.socrata.com",
+     "name": "Laramie County Sheriff \u2014 Socrata",
+     "kind": "open data portal",
+     "note": "Incidents and cases datasets; the API answered 403 to this project.",
+     "count": 1,
+     "examples": [
+      "https://laramiecountywy-sheriff.data.socrata.com"
+     ]
+    }
+   ],
+   "evidence_samples": [
+    "scanner-results/socrata/connection.json",
+    "scanner-results/socrata/datasets.json",
+    "scanner-results/socrata/network.json"
+   ],
+   "extensions": {
+    ".json": 3
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 240.0,
+    "actions_per_unit": 10,
+    "seconds_total": 480,
+    "actions_total": 20
+   }
+  },
+  {
+   "key": "ocr",
+   "title": "OCR of scanned documents",
+   "class": "derived",
+   "unit": "scanned document",
+   "units": 1081,
+   "unit_note": "1,081 scanned documents OCR'd",
+   "files": 1081,
+   "bytes": 14996899,
+   "destination": "ai-record-ocr/",
+   "origin": {
+    "site": "Six sibling archive repos (scanned planning documents)",
+    "url": "https://github.com/therealwindycity",
+    "portal": "github.com/therealwindycity",
+    "evidence": "ai-record-ocr/*.json keys are sha1 names from tools/ai_record_extract.py",
+    "note": "Scans with no text layer \u2014 OCR'd page by page and committed incrementally."
+   },
+   "origin_hosts": [],
+   "evidence_samples": [
+    "ai-record-ocr/002d0e1ea250b4b93bc50695a5ce9c63469cad46.json",
+    "ai-record-ocr/00705c30294d9fd89a7bb706b66d7fd40305855c.json",
+    "ai-record-ocr/0098d81e1833b29346f46a797a955ed99c40e4e3.json",
+    "ai-record-ocr/0133b729da72378f744ad505f7e68736acd3cb44.json",
+    "ai-record-ocr/0136aecc312db8b8b20ae7f24702e1d172a61761.json",
+    "ai-record-ocr/013d18ffd11383012ff493e6ef8b0e45b09c136d.json",
+    "ai-record-ocr/016545df652c0684fd5738aedb70579b0ac33fd2.json",
+    "ai-record-ocr/021a936e8e44d32626e65635a2b85e189e66a85b.json"
+   ],
+   "extensions": {
+    ".json": 1081
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 300.0,
+    "actions_per_unit": 6,
+    "seconds_total": 324300,
+    "actions_total": 6486
+   }
+  },
+  {
+   "key": "rag_index",
+   "title": "Search / RAG index",
+   "class": "derived",
+   "unit": "embedded chunk",
+   "units": 1687,
+   "unit_note": "1,687 embedded chunks",
+   "files": 9,
+   "bytes": 28864258,
+   "destination": "rag/",
+   "origin": null,
+   "origin_hosts": [],
+   "evidence_samples": [
+    "rag/glossary.json",
+    "rag/glossary_manual.json",
+    "rag/vectordb_sample/47971f7d-6028-4ce2-9b6a-84016bf4fb04/data_level0.bin",
+    "rag/vectordb_sample/47971f7d-6028-4ce2-9b6a-84016bf4fb04/header.bin",
+    "rag/vectordb_sample/47971f7d-6028-4ce2-9b6a-84016bf4fb04/index_metadata.pickle",
+    "rag/vectordb_sample/47971f7d-6028-4ce2-9b6a-84016bf4fb04/length.bin",
+    "rag/vectordb_sample/47971f7d-6028-4ce2-9b6a-84016bf4fb04/link_lists.bin",
+    "rag/vectordb_sample/chroma.sqlite3"
+   ],
+   "extensions": {
+    ".bin": 4,
+    ".json": 2,
+    ".sqlite3": 1,
+    ".jsonl": 1,
+    ".pickle": 1
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 0,
+    "actions_per_unit": 0,
+    "seconds_total": 0,
+    "actions_total": 0
+   }
+  },
+  {
+   "key": "civicwatch",
+   "title": "Civicwatch mirror",
+   "class": "scraped",
+   "unit": "civic record",
+   "units": 1581,
+   "unit_note": "",
+   "files": 1581,
+   "bytes": 176001458,
+   "destination": "2026-09-14-council/civicwatch/",
+   "origin": {
+    "site": "YouTube auto-captions (City of Cheyenne channel)",
+    "url": "https://www.youtube.com/@CityofCheyenne",
+    "portal": "www.youtube.com",
+    "evidence": "pipeline/cityvideos.json + pipeline/corpus_yt/*.txt",
+    "note": "Caption tracks converted to timestamped text so moments are findable without video."
+   },
+   "origin_hosts": [
+    {
+     "host": "www.dhs.gov",
+     "name": "www.dhs.gov",
+     "kind": "source site",
+     "note": "",
+     "count": 4,
+     "examples": [
+      "https://www.dhs.gov/publication/dhs-",
+      "https://www.dhs.gov/guidance-"
+     ]
+    },
+    {
+     "host": "www.google.com",
+     "name": "www.google.com",
+     "kind": "source site",
+     "note": "",
+     "count": 4,
+     "examples": [
+      "https://www.google.com/maps/d/viewer?mid=1LE8Qlma2-avpCeKz1C2L_hUCadpIew0&usp=sharing",
+      "https://www.google.com/maps/d/edit?mid=1vm4F2IQNnGb5JAmN0-wLVwzdIVz-srM&usp=sharing"
+     ]
+    },
+    {
+     "host": "x-access-token:$gh_token@github.com",
+     "name": "x-access-token:$gh_token@github.com",
+     "kind": "source site",
+     "note": "",
+     "count": 2,
+     "examples": [
+      "https://x-access-token:$GH_TOKEN@github.com/bartimoussmith-oss/therealwindycity.git"
+     ]
+    },
+    {
+     "host": "hdrinc-my.sharepoint.com",
+     "name": "hdrinc-my.sharepoint.com",
+     "kind": "source site",
+     "note": "",
+     "count": 2,
+     "examples": [
+      "https://hdrinc-my.sharepoint.com/personal/tomattso_hdrinc_com/Documents/01_PM"
+     ]
+    },
+    {
+     "host": "www.transportation.gov",
+     "name": "www.transportation.gov",
+     "kind": "source site",
+     "note": "",
+     "count": 2,
+     "examples": [
+      "https://www.transportation.gov/policy/aviation-"
+     ]
+    }
+   ],
+   "evidence_samples": [
+    "2026-09-14-council/civicwatch/civicwatch.py",
+    "2026-09-14-council/civicwatch/colab_finish.ipynb",
+    "2026-09-14-council/civicwatch/data/civic.db",
+    "2026-09-14-council/civicwatch/data/master.log",
+    "2026-09-14-council/civicwatch/data/raw/README.md",
+    "2026-09-14-council/civicwatch/data/recrawl.log",
+    "2026-09-14-council/civicwatch/data/text/1.txt",
+    "2026-09-14-council/civicwatch/data/text/10.txt"
+   ],
+   "extensions": {
+    ".txt": 1564,
+    ".json": 4,
+    ".py": 3,
+    ".sh": 3,
+    ".log": 2,
+    ".ipynb": 1
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 60.0,
+    "actions_per_unit": 4,
+    "seconds_total": 94860,
+    "actions_total": 6324
+   }
+  },
+  {
+   "key": "derived_analysis",
+   "title": "Analysis & dossiers written from the record",
+   "class": "derived",
+   "unit": "document",
+   "units": 139,
+   "unit_note": "",
+   "files": 139,
+   "bytes": 11318945,
+   "destination": "repo root",
+   "origin": null,
+   "origin_hosts": [],
+   "evidence_samples": [
+    ".github/ISSUE_TEMPLATE/arrest-name-request.md",
+    ".github/ISSUE_TEMPLATE/tip.md",
+    "2026-09-14-council/COX_HISTORY_COMPARISON.md",
+    "2026-09-14-council/DEBRIEF_2026-09-14.md",
+    "2026-09-14-council/README.md",
+    "2026-09-14-council/RED_TEAM_and_SPEECHES_2026-09-14.md",
+    "2026-09-14-council/civicwatch/CONTRACTOR_OPPORTUNITIES.md",
+    "2026-09-14-council/civicwatch/README.md"
+   ],
+   "extensions": {
+    ".md": 139
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 0.0,
+    "actions_per_unit": 0.0,
+    "seconds_total": 0,
+    "actions_total": 0
+   }
+  },
+  {
+   "key": "silent_edits",
+   "title": "Silent-edit diffs",
+   "class": "derived",
+   "unit": "version diff",
+   "units": 1217,
+   "unit_note": "",
+   "files": 1217,
+   "bytes": 81793519,
+   "destination": "data/out/",
+   "origin": null,
+   "origin_hosts": [],
+   "evidence_samples": [
+    "data/out/silent-edit-doc1-seq2.diff.txt",
+    "data/out/silent-edit-doc1-seq3.diff.txt",
+    "data/out/silent-edit-doc1-seq4.diff.txt",
+    "data/out/silent-edit-doc1-seq5.diff.txt",
+    "data/out/silent-edit-doc1-seq6.diff.txt",
+    "data/out/silent-edit-doc1-seq7.diff.txt",
+    "data/out/silent-edit-doc100-seq10.diff.txt",
+    "data/out/silent-edit-doc100-seq11.diff.txt"
+   ],
+   "extensions": {
+    ".txt": 1217
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 0.0,
+    "actions_per_unit": 0.0,
+    "seconds_total": 0,
+    "actions_total": 0
+   }
+  },
+  {
+   "key": "meeting_derivatives",
+   "title": "Meeting structure &amp; cut lists",
+   "class": "derived",
+   "unit": "derived record",
+   "units": 13,
+   "unit_note": "",
+   "files": 13,
+   "bytes": 1851825,
+   "destination": "pipeline/",
+   "origin": null,
+   "origin_hosts": [],
+   "evidence_samples": [
+    "pipeline/asks/ask_001.json",
+    "pipeline/asks/ask_002.json",
+    "pipeline/media_manifest.json",
+    "pipeline/miller_interventions.json",
+    "pipeline/montage_with_footage.json",
+    "pipeline/notebooklm/PROMPT.txt",
+    "pipeline/ordinance_history.json",
+    "pipeline/pull_list.txt"
+   ],
+   "extensions": {
+    ".json": 7,
+    ".txt": 5,
+    ".html": 1
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 0.0,
+    "actions_per_unit": 0.0,
+    "seconds_total": 0,
+    "actions_total": 0
+   }
+  },
+  {
+   "key": "entities",
+   "title": "Entity database",
+   "class": "derived",
+   "unit": "document profile",
+   "units": 63,
+   "unit_note": "",
+   "files": 63,
+   "bytes": 27367,
+   "destination": "Entity_Database/",
+   "origin": null,
+   "origin_hosts": [],
+   "evidence_samples": [
+    "Entity_Database/ACCESS-TEST-2026-10-16.json",
+    "Entity_Database/AGENTS.json",
+    "Entity_Database/CA-pull-kit-2026-08-24.json",
+    "Entity_Database/DEPLOYMENT-REPAIR-HANDOFF.json",
+    "Entity_Database/ECOSYSTEM-INVENTORY-AND-UPGRADE-MEMO-2026-10-28.json",
+    "Entity_Database/FB-REPLY-2026-08-27-MLK-thread.json",
+    "Entity_Database/MASTER-REDTEAM-PERSONA-DOSSIER-2026-09-14.json",
+    "Entity_Database/MILLER-COX-RANCH-PROCEDURAL-ASYMMETRY-FINAL-ANALYSIS-2026-09-14.json"
+   ],
+   "extensions": {
+    ".json": 63
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 0.0,
+    "actions_per_unit": 0.0,
+    "seconds_total": 0,
+    "actions_total": 0
+   }
+  },
+  {
+   "key": "civic_atlas",
+   "title": "Civic atlas (experimental site)",
+   "class": "generated",
+   "unit": "page / asset",
+   "units": 24,
+   "unit_note": "",
+   "files": 24,
+   "bytes": 119979,
+   "destination": "civic_atlas/",
+   "origin": null,
+   "origin_hosts": [],
+   "evidence_samples": [
+    "civic_atlas/app.js",
+    "civic_atlas/build_osint_index.py",
+    "civic_atlas/index.html",
+    "civic_atlas/lens.js",
+    "civic_atlas/media/builder.html",
+    "civic_atlas/media/drops.json",
+    "civic_atlas/media/index.html",
+    "civic_atlas/media/projects.html"
+   ],
+   "extensions": {
+    ".html": 8,
+    ".py": 6,
+    ".js": 4,
+    ".css": 3,
+    ".json": 2,
+    ".cjs": 1
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 0.0,
+    "actions_per_unit": 0.0,
+    "seconds_total": 0,
+    "actions_total": 0
+   }
+  },
+  {
+   "key": "agent",
+   "title": "Field agent tooling",
+   "class": "code",
+   "unit": "file",
+   "units": 20,
+   "unit_note": "",
+   "files": 20,
+   "bytes": 246383,
+   "destination": "agent/",
+   "origin": null,
+   "origin_hosts": [],
+   "evidence_samples": [
+    "agent/__init__.py",
+    "agent/__main__.py",
+    "agent/cli.py",
+    "agent/config.py",
+    "agent/install/linux.sh",
+    "agent/install/macos.sh",
+    "agent/install/termux.sh",
+    "agent/install/windows.ps1"
+   ],
+   "extensions": {
+    ".py": 14,
+    ".sh": 3,
+    ".txt": 1,
+    ".html": 1,
+    ".ps1": 1
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 0.0,
+    "actions_per_unit": 0.0,
+    "seconds_total": 0,
+    "actions_total": 0
+   }
+  },
+  {
+   "key": "repo_meta",
+   "title": "Repo metadata &amp; local databases",
+   "class": "code",
+   "unit": "file",
+   "units": 25,
+   "unit_note": "",
+   "files": 25,
+   "bytes": 30405349,
+   "destination": "repo root",
+   "origin": null,
+   "origin_hosts": [],
+   "evidence_samples": [
+    ".cursorrules",
+    ".gitignore",
+    ".well-known/ai-plugin.json",
+    "cheyenne_watchdog.db",
+    "config/facts.json",
+    "config/sources.json",
+    "config/watchlist.json",
+    "data/engine.db"
+   ],
+   "extensions": {
+    ".json": 12,
+    ".txt": 4,
+    "(none)": 3,
+    ".db": 3,
+    ".log": 1,
+    ".db-wal": 1
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 0.0,
+    "actions_per_unit": 0.0,
+    "seconds_total": 0,
+    "actions_total": 0
+   }
+  },
+  {
+   "key": "montage_reels",
+   "title": "Edited reels cut from the tapes",
+   "class": "derived",
+   "unit": "film cut",
+   "units": 51,
+   "unit_note": "",
+   "files": 51,
+   "bytes": 601834826,
+   "destination": "video/ \u00b7 videos/",
+   "origin": null,
+   "origin_hosts": [],
+   "evidence_samples": [
+    "pipeline/build_reel.py",
+    "pipeline/build_reel_v2.py",
+    "pipeline/renders/CONTENTION_REEL.mp4",
+    "pipeline/renders/S1_48_HOURS.mp4",
+    "pipeline/renders/S2_THE_74M_LIST.mp4",
+    "pipeline/renders/S3_THE_TWO_TIES.mp4",
+    "pipeline/renders/S4_THE_214.mp4",
+    "pipeline/renders/S5_ONE_NIGHT_IN_APRIL.mp4"
+   ],
+   "extensions": {
+    ".mp4": 49,
+    ".py": 2
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 0.0,
+    "actions_per_unit": 0.0,
+    "seconds_total": 0,
+    "actions_total": 0
+   }
+  },
+  {
+   "key": "provenance_film",
+   "title": "Provenance report &amp; this film",
+   "class": "generated",
+   "unit": "artifact",
+   "units": 29,
+   "unit_note": "",
+   "files": 29,
+   "bytes": 1943259,
+   "destination": "data/out/ \u00b7 video/",
+   "origin": null,
+   "origin_hosts": [],
+   "evidence_samples": [
+    "provenance/__init__.py",
+    "provenance/__main__.py",
+    "provenance/art.py",
+    "provenance/cli.py",
+    "provenance/inventory.py",
+    "provenance/ledger.py",
+    "provenance/origins.py",
+    "provenance/scenes.py"
+   ],
+   "extensions": {
+    ".py": 15,
+    ".jpg": 14
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 0.0,
+    "actions_per_unit": 0.0,
+    "seconds_total": 0,
+    "actions_total": 0
+   }
+  },
+  {
+   "key": "published_site",
+   "title": "Published site & feeds",
+   "class": "generated",
+   "unit": "page",
+   "units": 22,
+   "unit_note": "",
+   "files": 22,
+   "bytes": 906698,
+   "destination": "pages/ \u00b7 public/",
+   "origin": null,
+   "origin_hosts": [],
+   "evidence_samples": [
+    "locked-resource/index.html",
+    "pages/10_Front_Page.py",
+    "pages/11_Mission_Board.py",
+    "pages/12_Evidence_Vault.py",
+    "pages/13_Hero_Roster.py",
+    "pages/14_Choose_Your_Mission.py",
+    "pages/15_Origin_Tapes.py",
+    "pages/16_The_Tapes.py"
+   ],
+   "extensions": {
+    ".py": 20,
+    ".html": 2
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 0.0,
+    "actions_per_unit": 0.0,
+    "seconds_total": 0,
+    "actions_total": 0
+   }
+  },
+  {
+   "key": "code",
+   "title": "Pipelines, scrapers & console code",
+   "class": "code",
+   "unit": "source file",
+   "units": 137,
+   "unit_note": "",
+   "files": 137,
+   "bytes": 1301961,
+   "destination": "engine/ \u00b7 tools/ \u00b7 scripts/",
+   "origin": null,
+   "origin_hosts": [],
+   "evidence_samples": [
+    ".github/workflows/ai-record-pages.yml",
+    ".github/workflows/apply-remediation.yml",
+    ".github/workflows/civic-cycle.yml",
+    ".github/workflows/daily_audit.yml",
+    ".github/workflows/ecosystem-hourly-diagnostics.yml",
+    ".github/workflows/historical_harvest.yml",
+    ".github/workflows/laramie-archive-fresh-start.yml",
+    ".github/workflows/launch-laramie.yml"
+   ],
+   "extensions": {
+    ".py": 98,
+    ".yml": 17,
+    ".sh": 9,
+    ".service": 3,
+    ".sql": 2,
+    ".mjs": 2
+   },
+   "manual_estimate": {
+    "seconds_per_unit": 0.0,
+    "actions_per_unit": 0.0,
+    "seconds_total": 0,
+    "actions_total": 0
+   }
+  }
+ ]
+}

@@ -8,6 +8,11 @@ import streamlit.components.v1 as components
 
 st.set_page_config(page_title="God's Eye View | The Real Windy City", page_icon="🌐", layout="wide")
 st.title("God's Eye View")
+try:  # provenance first: where the mapped records come from
+    from rwc_provenance import show as _prov_show
+    _prov_show("God's Eye View", families=['meeting_calendar', 'civic_atlas'])
+except Exception:
+    pass
 st.caption("Independent full-application workspace. Existing civic pages and source records are unchanged.")
 
 
@@ -58,3 +63,4 @@ if load:
     st.caption("If the frame is blank or blocked, use the separate-tab button. The host must allow framing by this Streamlit deployment; this page does not bypass CSP, X-Frame-Options or authentication.")
 else:
     st.info("External application not loaded. Enable the checkbox when ready.")
+

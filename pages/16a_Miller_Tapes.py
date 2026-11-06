@@ -17,3 +17,10 @@ from miller_theater import render_theater
 
 st.set_page_config(page_title="Miller Tapes", page_icon="\U0001F3AC", layout="wide")
 render_theater(embed=False)
+
+# provenance: every number on this page carries an origin link and a film cue
+try:
+    from rwc_provenance import show as _prov_show
+    _prov_show('The Miller Tapes', families=['transcripts', 'meeting_video'])
+except Exception:
+    pass

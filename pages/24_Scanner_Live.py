@@ -132,3 +132,10 @@ if hasattr(st, 'fragment'):
 else:
     dashboard()
     st.caption('This Streamlit version requires the Refresh scanner data button for updates.')
+
+# provenance: every number on this page carries an origin link and a film cue
+try:
+    from rwc_provenance import show as _prov_show
+    _prov_show('Scanner Live', families=['scanner', 'open_data'])
+except Exception:
+    pass

@@ -124,6 +124,132 @@ engine/
 dashboard/app.py     Module 5 — Streamlit dashboard (optional)
 ```
 
+## Provenance: what was collected, and what it took
+
+`provenance/` answers two questions about this repo: **what data does it actually
+hold**, and **where did each piece come from in the public record** — because none of
+it arrived by itself.
+
+```bash
+python3 -m provenance detect     # walk the checkout, classify every file, find its origin site
+python3 -m provenance plan       # write the storyboard the film is rendered from
+python3 -m provenance video      # render video/provenance-manual-run.mp4 (~3.7 min, silent)
+python3 scripts/make_provenance_video.py          # all three, with --preview / --fps / --scale
+```
+
+`detect` writes [`data/out/PROVENANCE-INVENTORY.md`](data/out/PROVENANCE-INVENTORY.md)
+(human-readable) and `data/out/provenance-inventory.json` (machine-readable): every
+file assigned to a data family, the origin host it was scraped from, unit counts, and a
+conservative manual-effort estimate for doing the same work by hand.
+
+The film is 11 chapters, one per data type — meeting calendar, agenda packets,
+supporting documents, minutes, transcripts, the tape, the joined database, news,
+arrest reports, scanner audio, open-data probes. Each chapter shows the real origin
+URL, real filenames or rows pulled from this repo, the folder the data now lives in,
+and the screen a person would actually be looking at. Captions only, no narration.
+Storyboard: `data/out/provenance-storyboard.json`.
+
+### Everything at once, then one thing at a time
+
+```bash
+python3 -m provenance timelapse                  # video/provenance-timelapse.mp4 (20 s)
+python3 -m provenance ledger --clips --showcase  # the cue sheet + the per-chapter clips
+```
+
+The **time-lapse** is the whole collection in one pass: every file this repo holds, in
+capture order, about 560 a second. It is not a diagram of the archive, it is the archive.
+
+The **chapter film** is the how-to, chapter by chapter. `provenance ledger` then cuts each
+chapter out of it into `video/clips/` and writes a row for every figure this project
+publishes — **121 datums, every one with a public origin link and a film cue**. Each row
+carries the origin URL, the literal clicks a person would make, and the second of film
+that shows that fetch happening:
+
+- [`data/out/PROVENANCE-LEDGER.md`](data/out/PROVENANCE-LEDGER.md) — the cue sheet, as a table
+- `data/out/provenance-ledger.json` — the same, machine-readable
+- `video/provenance-showcase.mp4` — time-lapse, then every chapter, in one 4-minute file
+
+### On the pages themselves
+
+Both live surfaces print the same thing under the numbers they state:
+
+- **The static record** (`tools/render_ai_record.py`) gets a
+  “Where the numbers on this page come from” section on every page — origin link, the
+  cue clip inline (`<video>` with a `#t=` fragment, no JavaScript), and the click-path in
+  words. Plus a standalone `/provenance/` page: both films, then all 121 cues with the
+  pages that print each one. Disable it with `--no-provenance`.
+- **The Streamlit views** (`rwc_views.py` → `rwc_provenance.py`) get the same block in a
+  collapsed “🔗 Provenance” expander on every view that prints a number, and the two films
+  in the footer.
+
+Both read `data/out/provenance-ledger.json`. Rebuild it after the inventory changes:
+`python3 -m provenance ledger --clips --showcase`.
+
+### The guide — start here
+
+`data/out/PROVENANCE-GUIDE.md` (site: `/provenance/master.html`, app: **🧭 Provenance Guide**)
+is one page for everything: what the archive holds, what each film is and how to watch it,
+the chapter map with real timestamps, how to read a ledger row, and how to check any figure
+yourself. It is generated — every number is read from the artefacts when you build it, and
+anything missing is reported as missing:
+
+```bash
+python3 -m provenance guide
+```
+
+## Transcribing the portal's own audio
+
+The city's portal serves an MP3 for almost every council meeting — 474 clips, 47,553
+minutes (792.5 hours) back to 2008. `tools/transcribe_granicus.py` runs Whisper over them
+and commits the text here, one clip at a time and resumably:
+
+```bash
+python3 tools/transcribe_granicus.py --status                 # what is done, what is left
+python3 tools/transcribe_granicus.py --self-test               # prove the parser, no network
+python3 tools/transcribe_granicus.py --refresh-catalog --refresh-only   # pick up new postings
+gh workflow run transcribe-granicus.yml -f limit=6 -f max_minutes=300
+```
+
+Output lands in `transcripts/granicus/`: a markdown transcript per meeting whose every
+timestamp is deep-linked into the official MP3 (`#t=3725`), a plain `.txt`, a
+`manifest.json` that makes reruns resume, and an `INDEX.md`. Each file says on its face
+that it is a machine transcription that can be wrong and is not an official transcript.
+
+The workflow runs on `ubuntu-latest` because that is where the portal and the model
+weights are reachable. Budget: ~6–10× realtime for `small.en` int8, so ~80–130 hours of
+compute for the whole catalog — about 20 runs at the 5-hour job cap.
+
+## How this differs from the city's own portal
+
+`data/out/GRANICUS-VS-THIS-ARCHIVE.md` (site: `/provenance/granicus.html`, app: the
+**⚖️ City archive vs this** tab) compares this archive with
+[the City of Cheyenne's Granicus archive](https://cheyenne.granicus.com/ViewPublisher.php?view_id=2)
+and states the difference in both directions: the portal has the footage, the official
+agenda/minutes viewers, the RSS feeds and the authority; this archive has the eight other
+bodies the portal never lists, the document text, the transcripts, the indexes and the
+provenance. It also says plainly where this archive is behind — the portal was publishing
+through 2026-10-26 while the local clip catalog ends 2026-08-24, captions are machine-made,
+and OCR is incomplete on some scanned packets. Generated, not asserted:
+
+```bash
+python3 -m provenance compare     # reads the portal snapshot, the clip catalog, the index
+```
+
+### Proving it, rather than saying it
+
+```bash
+python3 -m provenance ledger --clips --showcase   # rebuild the cues + showcase
+python3 tools/check_provenance.py --site _site    # every datum linked, cued, and present
+python3 tools/provenance_site_audit.py            # build the real record, render, crawl every page
+```
+
+The audit builds the Markdown record from this checkout (the same inputs the Pages
+workflow uses), renders all ~7,000 pages, and then crawls them: every internal link must
+resolve, every `<video>` src must exist, every content page must carry a provenance
+block, and every datum must appear on the cue sheet. The Pages workflow runs
+`check_provenance.py` on every build, so a number that loses its citation fails the
+deploy instead of shipping.
+
 ## AI-readable record (for ChatGPT, Perplexity, Google AI Mode, Claude, etc.)
 
 The whole archive — **1,000+ Cheyenne meetings, 2008–2026: every agenda, packet, supporting
@@ -135,3 +261,9 @@ plain-HTML/Markdown site that AI assistants and search engines can read directly
 
 Rebuilt automatically by `.github/workflows/ai-record-pages.yml`; how it works:
 [`tools/README-ai-record.md`](tools/README-ai-record.md).
+
+> **Rebuild the provenance film:** `python3 scripts/make_provenance_video.py`
+> writes `video/provenance-manual-run.mp4` (1920×1080, 30 fps, 3 m 41 s, silent)
+> plus `data/out/PROVENANCE-INVENTORY.md`, its JSON twin, and
+> `data/out/provenance-storyboard.json`. Every number and filename in the film is
+> read out of this checkout at render time.

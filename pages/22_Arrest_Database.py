@@ -49,6 +49,11 @@ SEALED_FILES = ("keyring.jsonl", "name_key.json", "access_ledger.json")
 MAX_ATTEMPTS = 8
 
 st.set_page_config(page_title="Arrest Database — access gated", page_icon="🔒", layout="wide")
+try:  # provenance first: the page can say where the records come from without opening the gate
+    from rwc_provenance import show as _prov_show
+    _prov_show('Arrest Database', families=['arrests', 'news'])
+except Exception:
+    pass
 
 
 def configured_password() -> str | None:

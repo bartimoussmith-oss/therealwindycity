@@ -8,6 +8,12 @@ on:
       - "tools/test_ai_record_status.py"
       - "tools/build_ai_record.py"
       - "tools/render_ai_record.py"
+      - "tools/check_provenance.py"
+      - "provenance/**"
+      - "data/out/provenance-ledger.json"
+      - "video/clips/**"
+      - "video/provenance-*.mp4"
+      - "video/provenance-*.jpg"
       - "tools/ai_record_extract.py"
       - "tools/ai_record_ocr.py"
       - "tools/ai_record_static/**"
@@ -112,8 +118,24 @@ jobs:
         run: |
           python3 -u tools/build_ai_record.py --meetings /tmp/fe/src/data/meetings.json --text /tmp/text \
             --ocr ai-record-ocr --transcripts /tmp/tr --minutes pipeline/corpus --trees /tmp/trees --drive-db drive-import/master_meetings_database.json.gz --out /tmp/ai-record
+      - name: Provenance ledger — every datum, its origin link, and its film cue
+        run: |
+          if [ -d provenance ]; then
+            python3 -u -m provenance ledger
+            python3 -u -m provenance guide
+            python3 -u -m provenance compare
+          else
+            echo "  provenance package not in this checkout — the site will render without cues"
+          fi
       - name: Render static site
         run: python3 -u tools/render_ai_record.py --src /tmp/ai-record --out _site --extra public/index.html=ledger.html
+      - name: Verify every datum carries an origin link and a film cue
+        run: |
+          if [ -f data/out/provenance-ledger.json ]; then
+            python3 -u tools/check_provenance.py --site _site
+          else
+            echo "::warning::no provenance ledger — provenance blocks were skipped"
+          fi
       - name: Verify rendered snapshot and key pages
         run: python3 tools/check_ai_record.py --site _site --revision "$GITHUB_SHA" --run "$GITHUB_RUN_ID"
       - name: Publish standalone Laramie County OSINT workspaces
@@ -132,6 +154,12 @@ jobs:
         run: |
           mkdir -p _site/secure-resource
           cp locked-resource/index.html locked-resource/payload.json _site/secure-resource/
+      - name: Provenance cue sheet must ship with the site
+        run: |
+          test -d _site/provenance || echo "::warning::no /provenance/ page in this build"
+          test -f _site/public/provenance-ledger.json || test -f data/out/provenance-ledger.json || \
+            echo "::warning::no ledger JSON — provenance blocks were skipped"
+          du -sh _site _site/video 2>/dev/null || true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
