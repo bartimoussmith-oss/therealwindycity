@@ -1,0 +1,26 @@
+name: Wyoming verifier safety tests
+on:
+  push:
+    paths: &paths
+      - 'tools/wyoming_verify.py'
+      - 'tools/wyoming_instantiate.py'
+      - 'tools/test_wyoming_verify.py'
+      - 'tools/test_wyoming_runner.py'
+      - 'wyoming/run-instance.sh'
+      - '.github/workflows/wyoming-verifier-tests.yml'
+  pull_request:
+    paths: *paths
+permissions:
+  contents: read
+jobs:
+  regressions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python3 tools/test_wyoming_verify.py
+      - run: bash -n wyoming/run-instance.sh
+      - run: python3 tools/test_wyoming_runner.py

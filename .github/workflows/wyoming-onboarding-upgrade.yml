@@ -1,0 +1,48 @@
+name: Prepare Wyoming onboarding upgrade
+on:
+  push:
+    branches: ['repair/statewide-activation-safety-2026-11-06']
+    paths:
+      - 'tools/wyoming_policy.py'
+      - '.github/workflows/wyoming-onboarding-upgrade.yml'
+permissions:
+  contents: read
+concurrency:
+  group: wyoming-onboarding-upgrade
+  cancel-in-progress: false
+jobs:
+  prepare:
+    if: github.ref == 'refs/heads/repair/statewide-activation-safety-2026-11-06'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Prepare preimage-checked generator migration
+        run: python3 tools/wyoming_policy.py --migrate
+      - name: Validate migrated configuration and regressions
+        run: |
+          set -euo pipefail
+          python3 tools/wyoming_policy.py --selftest
+          python3 tools/test_wyoming_instantiate.py
+          python3 tools/wyoming_instantiate.py --check
+          python3 tools/test_wyoming_verify.py
+          python3 tools/test_wyoming_runner.py
+          bash -n wyoming/run-instance.sh
+          ENGINE_DATA_DIR="$RUNNER_TEMP/onboarding-engine-test" python3 run.py selftest
+      - name: Commit generated upgrade to repair branch only
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          git add -- tools/wyoming_instantiate.py tools/test_wyoming_instantiate.py wyoming/onboarding.json wyoming/instances config/sources.json
+          if ! git diff --staged --quiet; then
+            git commit -m 'fix(wyoming): apply reviewed onboarding policy and regenerate instances'
+            git push origin HEAD:repair/statewide-activation-safety-2026-11-06
+          fi

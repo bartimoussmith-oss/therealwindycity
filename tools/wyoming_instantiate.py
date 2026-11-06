@@ -550,5 +550,9 @@ def main() -> None:
     ap.print_help()
 
 
+# onboarding-policy-migration-v1
+from wyoming_policy import install as _install_onboarding
+_install_onboarding(globals())
+
 if __name__ == "__main__":
     main()
