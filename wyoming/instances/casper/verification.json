@@ -1,0 +1,37 @@
+{
+  "slug": "casper",
+  "name": "Casper",
+  "type": "city",
+  "checked_at": "2026-11-07T20:50:13.442808+00:00",
+  "candidates": [
+    {
+      "url": "https://www.casperwy.gov/",
+      "status": 200,
+      "reachable": true,
+      "approved": true,
+      "denied": false,
+      "robots": "robots.txt fetched",
+      "robots_allowed": true,
+      "error": null
+    }
+  ],
+  "verified_url": "https://www.casperwy.gov/",
+  "platform": "unknown",
+  "agenda_paths": [],
+  "verification": "live-verified",
+  "applied": true,
+  "notes": [
+    "Only exact reviewed URLs can enable sources; official identity is documented in source-reviews.json, not established by HTTP success. Reachability is not collection coverage."
+  ],
+  "official_source_confirmed": true,
+  "source_review": {
+    "reviewed_on": "2026-11-07",
+    "reviewer": "Perplexity Computer, government department and council page review",
+    "evidence": [
+      "https://www.casperwy.gov/"
+    ],
+    "urls": [
+      "https://www.casperwy.gov/"
+    ]
+  }
+}

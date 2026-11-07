@@ -1,0 +1,35 @@
+{
+  "slug": "natrona-county",
+  "name": "Natrona County",
+  "type": "county",
+  "checked_at": "2026-11-07T20:50:01.852252+00:00",
+  "candidates": [
+    {
+      "url": "https://www.natronacounty-wy.gov/",
+      "status": null,
+      "reachable": false,
+      "approved": true,
+      "denied": false,
+      "robots": "robots.txt unavailable or invalid; probe blocked",
+      "robots_allowed": false
+    }
+  ],
+  "verified_url": null,
+  "platform": "unknown",
+  "agenda_paths": [],
+  "verification": "unverified",
+  "applied": true,
+  "notes": [
+    "Only exact reviewed URLs can enable sources; official identity is documented in source-reviews.json, not established by HTTP success. Reachability is not collection coverage."
+  ],
+  "source_review": {
+    "reviewed_on": "2026-11-07",
+    "reviewer": "Perplexity Computer, official-site content review",
+    "evidence": [
+      "https://www.natronacounty-wy.gov/"
+    ],
+    "urls": [
+      "https://www.natronacounty-wy.gov/"
+    ]
+  }
+}

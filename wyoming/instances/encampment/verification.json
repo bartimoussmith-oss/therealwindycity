@@ -1,0 +1,17 @@
+{
+  "slug": "encampment",
+  "name": "Encampment",
+  "type": "town",
+  "checked_at": "2026-11-07T20:50:36.085141+00:00",
+  "candidates": [],
+  "verified_url": null,
+  "platform": "unknown",
+  "agenda_paths": [],
+  "verification": "unverified",
+  "applied": true,
+  "notes": [
+    "No reviewed official URL; no guessed domains probed or activated.",
+    "Only exact reviewed URLs can enable sources; official identity is documented in source-reviews.json, not established by HTTP success. Reachability is not collection coverage."
+  ],
+  "source_review": {}
+}

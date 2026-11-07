@@ -87,7 +87,7 @@ def main() -> None:
         wl = json.loads((inst / "config" / "watchlist.json").read_text())
         facts = json.loads((inst / "config" / "facts.json").read_text())
         # honesty contract: nothing is enabled out of the box
-        if any(s.get("enabled") for s in cfg["sources"]):
+        if any(s.get("enabled") and s["url"] not in e.get("approved_source_urls", []) for s in cfg["sources"]):
             FAIL.append(f"enabled source in fresh instance {e['slug']}")
             print(f"FAIL enabled source in fresh instance {e['slug']}")
         # engine refuses disabled-by-accident mistakes: watchlist must be non-trivial
@@ -104,7 +104,7 @@ def main() -> None:
                 FAIL.append(f"facts.site.{key} missing in {e['slug']}")
         if "name" not in cfg["sources"][0]["name"]:
             pass  # placeholder assertion-free guard; naming is covered by --check
-    check("every instance honors the honesty contract (nothing enabled, no fabricated lore)",
+    check("every instance honors the honesty contract (reviewed sources only, no fabricated lore)",
           not any(f.startswith(("enabled", "fabricated")) for f in FAIL))
 
     # candidate domains are well-formed and bounded

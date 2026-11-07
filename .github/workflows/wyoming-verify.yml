@@ -6,6 +6,9 @@ on:
       - 'wyoming/**'
       - 'tools/wyoming_*.py'
       - 'tools/test_wyoming_instantiate.py'
+      - 'tools/test_wyoming_verify.py'
+      - 'tools/test_wyoming_ingest_safety.py'
+      - 'engine/ingest.py'
       - 'engine/db.py'
       - 'engine/publish.py'
       - 'engine/records.py'
@@ -44,7 +47,10 @@ jobs:
         with:
           python-version: '3.11'
       - name: Registry and generator integrity
-        run: python3 tools/test_wyoming_instantiate.py
+        run: |
+          python3 tools/test_wyoming_instantiate.py
+          python3 -m unittest discover -s tools -p 'test_wyoming_verify.py' -v
+          python3 -m unittest discover -s tools -p 'test_wyoming_ingest_safety.py' -v
       - name: Engine selftest with isolated data
         env:
           ENGINE_DATA_DIR: ${{ runner.temp }}/wyoming-selftest

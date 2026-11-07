@@ -13,6 +13,7 @@ import time
 import urllib.parse
 import urllib.robotparser
 import urllib.request
+import urllib.error
 from html.parser import HTMLParser
 from pathlib import Path
 from xml.etree import ElementTree
@@ -22,6 +23,10 @@ from . import redact
 
 _LAST_HIT: dict[str, float] = {}
 _ROBOTS: dict[str, urllib.robotparser.RobotFileParser] = {}
+
+class _NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
 
 
 class _LinkParser(HTMLParser):
@@ -88,9 +93,21 @@ def _allowed(url: str, cfg: dict) -> bool:
         try:  # fetch robots ourselves: robotparser.read() has no timeout and can hang
             req = urllib.request.Request(
                 robots_url, headers={"User-Agent": cfg["identity"]["user_agent"]})
-            with urllib.request.urlopen(req, timeout=15) as resp:
-                rp.parse(resp.read().decode("utf-8", errors="replace").splitlines())
+            strict = cfg["identity"].get("strict_web")
+            opener = urllib.request.build_opener(_NoRedirect()) if strict else urllib.request.build_opener()
+            with opener.open(req, timeout=15) as resp:
+                text = resp.read(64001).decode("utf-8", errors="replace")
+                if strict and (len(text) > 64000 or "<html" in text.lower() or "<!doctype" in text.lower()):
+                    return False
+                rp.parse(text.splitlines())
+        except urllib.error.HTTPError as exc:
+            if cfg["identity"].get("strict_web") and exc.code != 404:
+                return False
+            rp = urllib.robotparser.RobotFileParser()
+            rp.parse(["User-agent: *", "Allow: /"] if exc.code == 404 else ["User-agent: *", "Disallow: /"])
         except Exception:
+            if cfg["identity"].get("strict_web"):
+                return False
             rp = urllib.robotparser.RobotFileParser()  # unreadable = permit, stay slow
         _ROBOTS[host] = rp
     ua = cfg["identity"]["user_agent"]
@@ -116,6 +133,10 @@ def _wait(url: str, cfg: dict):
 
 
 def fetch(url: str, cfg: dict) -> bytes | None:
+    strict = cfg["identity"].get("strict_web")
+    parsed = urllib.parse.urlsplit(url)
+    if strict and (parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password):
+        return None
     if not _allowed(url, cfg):
         print(f"    [robots] disallowed: {url}")
         return None
@@ -125,8 +146,12 @@ def fetch(url: str, cfg: dict) -> bytes | None:
         "Accept": "*/*",
     })
     try:
-        with urllib.request.urlopen(req, timeout=30) as resp:
-            return resp.read()
+        opener = urllib.request.build_opener(_NoRedirect()) if strict else urllib.request.build_opener()
+        with opener.open(req, timeout=30) as resp:
+            raw = resp.read(20_000_001) if strict else resp.read()
+            if strict and len(raw) > 20_000_000:
+                return None
+            return raw
     except Exception as e:
         print(f"    [fetch] {url}: {e}")
         return None

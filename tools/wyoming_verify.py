@@ -1,256 +1,148 @@
 #!/usr/bin/env python3
-"""Statewide Wyoming verifier — the automation engine behind instantiation.
-
-Live-fetches each generated instance's candidate official URLs, honors
-robots.txt, fingerprints the site platform, probes common agenda/minutes
-paths, and (with --apply) enables exactly what genuinely answered.
-
-This tool performs real network I/O. It is designed to run in GitHub Actions
-(.github/workflows/wyoming-verify.yml), where outbound network exists. In a
-network-restricted sandbox it reports UNREACHABLE for everything and enables
-nothing — which is the correct, honest failure mode.
-
-Politeness contract (LEGAL.md): identifying User-Agent, per-host delay
-(default 3s), small timeouts, public pages only, no logins, robots.txt wins.
-
-Usage:
-  python3 tools/wyoming_verify.py --all                     # probe every instance
-  python3 tools/wyoming_verify.py --slug casper             # probe one
-  python3 tools/wyoming_verify.py --slug casper --apply     # enable what verified, IN-PLACE
-  python3 tools/wyoming_verify.py --all --apply --json      # CI mode: summary JSON on stdout
-
-Outputs:
-  wyoming/instances/<slug>/verification.json   (always)
-  config/sources.json enabled-flags            (only with --apply, only for what verified)
+"""Conservative jurisdiction probing. HTTP success does not establish authority.
+Registry approved_source_urls must contain exact reviewed URLs to enable them.
+Registry denied_source_urls always wins. Non-apply runs print reports only.
+Redirects are deliberately not followed: approve and probe the destination explicitly.
 """
-from __future__ import annotations
-
 import argparse
 import json
+import re
 import sys
 import time
 import urllib.error
 import urllib.parse
-import urllib.robotparser
 import urllib.request
+import urllib.robotparser
 from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT))
+sys.path.insert(0, str(ROOT / 'tools'))
+import wyoming_instantiate as gen
 
-INSTANCES_DIR = ROOT / "wyoming" / "instances"
-UA = "WyomingCivicTransparencyEngine/0.1 (public-records research; polite probe; contact: you@example.org)"
+UA = 'WyomingCivicTransparencyEngine/0.2 (+https://github.com/bartimoussmith-oss/therealwindycity/issues)'
 
-AGENDA_PATH_PROBES = [
-    "/government/agendas", "/government/agendas-minutes", "/agendas", "/agenda-center",
-    "/AgendaCenter", "/Agenda-Center", "/civicplus/agenda-center",
-    "/meetings", "/meeting-calendar", "/calendar", "/minutes", "/meeting-minutes",
-    "/city-council/agendas", "/town-council/agendas", "/council/agendas",
-    "/government/meetings", "/government/minutes", "/your-government",
-]
+class NoRedirect(urllib.request.HTTPRedirectHandler):
+    def redirect_request(self, req, fp, code, msg, headers, newurl):
+        return None
 
-PLATFORM_FINGERPRINTS = [
-    ("granicus", ("granicus.com", "granicus egovernar", "viewpublisher.php")),
-    ("civicplus", ("civicplus.com", "/civicplus/", "civicplus-agenda")),
-    ("municode", ("municode.com", "codelibrary.municode", "library.municode")),
-    ("wordpress", ("wp-content", "wp-json", "wp-includes")),
-    ("granicus-agenda", ("agenda-detail.php", "AgendaOnline")),
-    ("iqm2", ("iqm2.com", "iqm2 agenda")),
-    ("legistar", ("legistar.com", "granicuslegistar")),
-    ("pagefront", ("pagefront",)),
-    ("drupal", ("drupal.settings", "sites/default/files")),
-    ("squarespace-or-wix", ("squarespace", "wix.com/website", "static.parastorage")),
-]
+class Fetcher:
+    def __init__(self, delay, timeout):
+        self.delay, self.timeout = delay, timeout
+        self.last, self.robots = {}, {}
+        self.opener = urllib.request.build_opener(NoRedirect())
 
-
-def now_iso() -> str:
-    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-
-
-class PoliteFetcher:
-    def __init__(self, delay_s: float = 3.0, timeout_s: float = 12.0):
-        self.delay = delay_s
-        self.timeout = timeout_s
-        self._last_hit: dict[str, float] = {}
-
-    def _wait(self, host: str) -> None:
-        last = self._last_hit.get(host, 0.0)
-        wait = self.delay - (time.monotonic() - last)
-        if wait > 0:
-            time.sleep(wait)
-
-    def get(self, url: str, max_bytes: int = 400_000) -> tuple[int | None, str, str | None]:
-        """Returns (status, text, error). status None => unreachable/blocked."""
-        host = urllib.parse.urlsplit(url).netloc
-        self._wait(host)
-        req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "text/html,application/xhtml+xml,application/rss+xml,*/*"})
+    def get(self, url):
+        p = urllib.parse.urlsplit(url)
+        if p.scheme != 'https' or not p.hostname or p.username or p.password:
+            return None, '', 'Only credential-free HTTPS URLs are permitted'
+        host = p.netloc
+        time.sleep(max(0, self.delay - (time.monotonic() - self.last.get(host, 0))))
         try:
-            with urllib.request.urlopen(req, timeout=self.timeout) as resp:
-                self._last_hit[host] = time.monotonic()
-                status = getattr(resp, "status", 200)
-                raw = resp.read(max_bytes)
-                ctype = resp.headers.get("content-type", "")
-                text = raw.decode("utf-8", errors="replace")
-                return status, text, None
-        except urllib.error.HTTPError as e:
-            self._last_hit[host] = time.monotonic()
-            return e.code, "", f"http-{e.code}"
-        except Exception as e:  # URLError, timeout, ssl, etc.
-            self._last_hit[host] = time.monotonic()
-            return None, "", f"{type(e).__name__}: {e}"
+            req = urllib.request.Request(url, headers={'User-Agent': UA})
+            with self.opener.open(req, timeout=self.timeout) as response:
+                raw = response.read(2000001)
+                if len(raw) > 2000000:
+                    return response.status, '', 'Response exceeds probe size limit'
+                return response.status, raw.decode('utf-8', errors='replace'), None
+        except urllib.error.HTTPError as exc:
+            return exc.code, '', 'HTTP ' + str(exc.code)
+        except Exception as exc:
+            return None, '', type(exc).__name__ + ': ' + str(exc)
+        finally:
+            self.last[host] = time.monotonic()
 
-    def robots_allows(self, url: str) -> tuple[bool, str]:
-        """Returns (allowed, detail). Fail-closed=False: an unreadable robots.txt is reported, not silently passed."""
-        parts = urllib.parse.urlsplit(url)
-        robots_url = f"{parts.scheme}://{parts.netloc}/robots.txt"
-        rp = urllib.robotparser.RobotFileParser()
-        status, text, err = self.get(robots_url, max_bytes=64_000)
-        if err or status != 200:
-            return True, f"robots.txt unreadable ({err or status}) — proceeding per LEGAL.md caution, human review required"
-        try:
-            rp.parse(text.splitlines())
-            allowed = rp.can_fetch(UA, url)
-            return allowed, ("robots.txt allows" if allowed else "robots.txt DISALLOWS")
-        except Exception as e:
-            return True, f"robots.txt parse error ({e}) — human review required"
+    def allowed(self, url):
+        p = urllib.parse.urlsplit(url)
+        origin = p.scheme + '://' + p.netloc
+        if origin not in self.robots:
+            status, text, error = self.get(origin + '/robots.txt')
+            if status == 404:
+                self.robots[origin] = (None, 'robots.txt absent (404)')
+            elif status == 200 and not error and '<html' not in text.lower():
+                parser = urllib.robotparser.RobotFileParser()
+                parser.parse(text.splitlines())
+                self.robots[origin] = (parser, 'robots.txt fetched')
+            else:
+                self.robots[origin] = (False, 'robots.txt unavailable or invalid; probe blocked')
+        parser, note = self.robots[origin]
+        allowed = parser is None or (parser is not False and parser.can_fetch(UA, url))
+        if allowed and parser is not None:
+            wait = parser.crawl_delay(UA) or parser.crawl_delay('*') or 0
+            self.delay = max(self.delay, wait)
+        return allowed, note
 
-
-def fingerprint(html: str) -> str:
-    low = html.lower()
-    for label, needles in PLATFORM_FINGERPRINTS:
-        if any(n in low for n in needles):
-            return label
-    return "unknown"
-
-
-def load_ecosystem(inst_dir: Path) -> dict:
-    return json.loads((inst_dir / "ecosystem.json").read_text())
-
-
-def verify_instance(slug: str, fetcher: PoliteFetcher, apply: bool) -> dict:
-    inst_dir = INSTANCES_DIR / slug
-    eco = load_ecosystem(inst_dir)
-    candidates: list[str] = eco.get("candidate_domains") or ([eco["known_url"]] if eco.get("known_url") else [])
-    result = {
-        "slug": slug,
-        "name": eco["name"],
-        "type": eco["type"],
-        "checked_at": now_iso(),
-        "candidates": [],
-        "verified_url": None,
-        "platform": None,
-        "agenda_paths": [],
-        "verification": "unverified",
-        "applied": False,
-        "notes": [],
-    }
-    verified = None
+def verify(entry, fetcher, apply):
+    slug = entry['slug']
+    approved = set(entry.get('approved_source_urls', []))
+    denied = set(entry.get('denied_source_urls', []))
+    result = dict(slug=slug, name=entry['name'], type=entry['type'],
+                  checked_at=datetime.now(timezone.utc).isoformat(), candidates=[],
+                  verified_url=None, platform='unknown', agenda_paths=[],
+                  verification='unverified', applied=False, notes=[])
+    candidates = sorted(approved)
     for url in candidates:
-        allowed, robot_note = fetcher.robots_allows(url)
-        entry = {"url": url, "robots": robot_note, "status": None, "reachable": False, "platform": None}
-        if not allowed:
-            entry["robots_allowed"] = False
-            result["candidates"].append(entry)
+        row = dict(url=url, status=None, reachable=False, approved=url in approved, denied=url in denied)
+        result['candidates'].append(row)
+        if url in denied:
             continue
-        status, text, err = fetcher.get(url)
-        entry["status"] = status
-        entry["error"] = err
-        entry["reachable"] = status == 200 and bool(text)
-        if entry["reachable"]:
-            entry["platform"] = fingerprint(text)
-        result["candidates"].append(entry)
-        if verified is None and entry["reachable"]:
-            verified = (url, entry["platform"], text)
-    if verified:
-        url, platform, text = verified
-        result["verified_url"] = url
-        result["platform"] = platform
-        result["verification"] = "live-verified"
-        # Probe agenda/minutes paths on the verified host only.
-        parts = urllib.parse.urlsplit(url)
-        base = f"{parts.scheme}://{parts.netloc}"
-        for path in AGENDA_PATH_PROBES:
-            allowed, robot_note = fetcher.robots_allows(base + path)
-            if not allowed:
-                continue
-            status, text2, err = fetcher.get(base + path, max_bytes=200_000)
-            if status == 200 and text2:
-                low = text2.lower()
-                hits = [kw for kw in ("agenda", "minutes", "packet", "meeting") if kw in low]
-                if hits:
-                    result["agenda_paths"].append({"url": base + path, "matched": hits})
-        result["notes"].append(
-            "Live-fetch succeeded; platform fingerprint is a heuristic, not a guarantee. "
-            "Open the URL in a browser and confirm this is the official government site before enabling.")
-    else:
-        result["notes"].append(
-            "No candidate URL answered with 200 from this network. This does NOT prove the jurisdiction "
-            "has no site — the probe may be blocked, rate-limited, or sandboxed. Verify manually.")
-
-    out_path = inst_dir / "verification.json"
-    out_path.write_text(json.dumps(result, indent=2) + "\n")
-
-    if apply and verified:
-        # Re-render the instance through the generator so sources.json stays
-        # deterministic w.r.t. the committed verification.json (keeps
-        # `wyoming_instantiate.py --check` green).
-        sys.path.insert(0, str(ROOT / "tools"))
-        import wyoming_instantiate as gen
-        reg = gen.load_registry()
-        entry = next((e for e in reg["jurisdictions"] if e["slug"] == slug), None)
-        if entry is None:
-            result["notes"].append("apply skipped: slug not present in wyoming/registry.json")
-        else:
-            gen.write_instance(entry)
-            result["applied"] = True
-            result["notes"].append("sources.json re-rendered from registry + verification.json; enabled flags reflect exactly what live-verified.")
-    out_path.write_text(json.dumps(result, indent=2) + "\n")
+        allowed, row['robots'] = fetcher.allowed(url)
+        row['robots_allowed'] = allowed
+        if not allowed:
+            continue
+        status, text, error = fetcher.get(url)
+        row.update(status=status, reachable=status == 200 and bool(text), error=error)
+        if row['reachable'] and not error and url in approved:
+            if result['verified_url'] is None:
+                result.update(verified_url=url, verification='live-verified', official_source_confirmed=True)
+            else:
+                result['agenda_paths'].append({'url': url, 'matched': ['reviewed official source']})
+    result['source_review'] = entry.get('source_review', {})
+    if not approved:
+        result['notes'].append('No reviewed official URL; no guessed domains probed or activated.')
+    result['notes'].append('Only exact reviewed URLs can enable sources; official identity is documented in source-reviews.json, not established by HTTP success. Reachability is not collection coverage.')
+    if apply:
+        directory = gen.INSTANCES_DIR / slug
+        path = directory / 'verification.json'
+        result['applied'] = True
+        path.write_text(json.dumps(result, indent=2) + '\n')
+        sources = gen.sources_for(entry)
+        (directory / 'config' / 'sources.json').write_text(json.dumps(sources, indent=2) + '\n')
     return result
 
-
-def main() -> None:
-    ap = argparse.ArgumentParser(description=__doc__,
-                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--slug", help="one instance slug")
-    ap.add_argument("--all", action="store_true", help="every instance")
-    ap.add_argument("--apply", action="store_true", help="enable what verified (in-place)")
-    ap.add_argument("--json", action="store_true", help="print summary JSON")
-    ap.add_argument("--delay", type=float, default=3.0, help="per-host politeness delay (seconds, default 3)")
-    ap.add_argument("--timeout", type=float, default=12.0, help="per-request timeout (seconds)")
-    args = ap.parse_args()
-
-    if not args.all and not args.slug:
-        ap.error("choose --all or --slug <slug>")
-    all_slugs = sorted(p.name for p in INSTANCES_DIR.iterdir() if p.is_dir()) if INSTANCES_DIR.exists() else []
-    slugs = [args.slug] if args.slug else all_slugs
-
-    fetcher = PoliteFetcher(delay_s=args.delay, timeout_s=args.timeout)
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument('--all', action='store_true')
+    group.add_argument('--slug')
+    parser.add_argument('--apply', action='store_true')
+    parser.add_argument('--json', action='store_true')
+    parser.add_argument('--delay', type=float, default=3)
+    parser.add_argument('--timeout', type=float, default=12)
+    args = parser.parse_args()
+    if args.delay < 3 or args.timeout <= 0:
+        parser.error('delay must be at least 3 seconds and timeout must be positive')
+    entries = gen.load_registry()['jurisdictions']
+    if args.slug:
+        if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', args.slug):
+            parser.error('invalid slug')
+        entries = [e for e in entries if e['slug'] == args.slug]
+    if not entries:
+        parser.error('no registered jurisdictions selected')
+    fetcher = Fetcher(args.delay, args.timeout)
     results = []
-    for slug in slugs:
-        inst = INSTANCES_DIR / slug
-        if not inst.exists():
-            print(f"[skip] {slug}: no instance directory", file=sys.stderr)
-            continue
+    for entry in entries:
         try:
-            results.append(verify_instance(slug, fetcher, args.apply))
-        except Exception as e:
-            print(f"[error] {slug}: {type(e).__name__}: {e}", file=sys.stderr)
-            results.append({"slug": slug, "verification": "error", "error": f"{type(e).__name__}: {e}"})
+            results.append(verify(entry, fetcher, args.apply))
+        except Exception as exc:
+            results.append(dict(slug=entry['slug'], verification='error', error=str(exc)))
+    summary = dict(total=len(results),
+                   live_verified=sum(r['verification'] == 'live-verified' for r in results),
+                   unverified=sum(r['verification'] == 'unverified' for r in results),
+                   errors=sum(r['verification'] == 'error' for r in results),
+                   applied=sum(bool(r.get('applied')) for r in results), results=results)
+    print(json.dumps(summary, indent=None if args.json else 2))
+    return 1 if summary['errors'] else 0
 
-    summary = {
-        "checked_at": now_iso(),
-        "total": len(results),
-        "live_verified": sum(1 for r in results if r.get("verification") == "live-verified"),
-        "unverified": sum(1 for r in results if r.get("verification") == "unverified"),
-        "errors": sum(1 for r in results if r.get("verification") == "error"),
-        "applied": sum(1 for r in results if r.get("applied")),
-    }
-    if args.json:
-        print(json.dumps(summary))
-    else:
-        print(json.dumps(summary, indent=2))
-
-
-if __name__ == "__main__":
-    main()
+if __name__ == '__main__':
+    raise SystemExit(main())

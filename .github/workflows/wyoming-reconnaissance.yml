@@ -28,22 +28,20 @@ jobs:
           sys.path.insert(0, str(Path('tools').resolve()))
           import wyoming_verify as v
           v.UA = 'WyomingCivicRecon/1.0 (+https://github.com/bartimoussmith-oss/therealwindycity; public-records source discovery)'
-          fetcher = v.PoliteFetcher(delay_s=3.0, timeout_s=8.0)
+          fetcher = v.Fetcher(delay=3.0, timeout=8.0)
           out = Path('reconnaissance-results')
           rows = []
-          for inst in sorted(v.INSTANCES_DIR.iterdir()):
-              if not inst.is_dir() or not (inst / 'ecosystem.json').exists():
-                  continue
-              print('Checking ' + inst.name, flush=True)
+          for entry in v.gen.load_registry()['jurisdictions']:
+              slug = entry['slug']
+              print('Checking ' + slug, flush=True)
               try:
-                  result = v.verify_instance(inst.name, fetcher, apply=False)
+                  result = v.verify(entry, fetcher, apply=False)
                   result['discovery_only'] = True
-                  result['official_source_confirmed'] = False
-                  result['warning'] = 'Reachability and keyword matches only; human review required. Sources were not activated.'
+                  result['warning'] = 'Reviewed-source reachability only; no source configurations were changed.'
               except Exception as exc:
-                  result = {'slug': inst.name, 'verification': 'error', 'error': str(exc)}
-              (out / (inst.name + '.json')).write_text(json.dumps(result, indent=2))
-              rows.append({'slug': inst.name, 'reachable': bool(result.get('verified_url')), 'possible_meeting_pages': len(result.get('agenda_paths', [])), 'error': result.get('error', '')})
+                  result = {'slug': slug, 'verification': 'error', 'error': str(exc)}
+              (out / (slug + '.json')).write_text(json.dumps(result, indent=2))
+              rows.append({'slug': slug, 'reachable': bool(result.get('verified_url')), 'possible_meeting_pages': len(result.get('agenda_paths', [])), 'error': result.get('error', '')})
               (out / 'summary.json').write_text(json.dumps({'checked': len(rows), 'discovery_only': True, 'jurisdictions': rows}, indent=2))
           lines = ['# Wyoming source reconnaissance', '', 'Discovery only: reachable does not mean official or ready to collect. No sources activated. Other workflows unchanged.', '', '| Place | Reachable candidate | Possible meeting pages | Error |', '|---|---|---:|---|']
           for row in rows:

@@ -1,0 +1,37 @@
+{
+  "slug": "laramie-county",
+  "name": "Laramie County",
+  "type": "county",
+  "checked_at": "2026-11-07T20:49:51.129702+00:00",
+  "candidates": [
+    {
+      "url": "https://www.laramiecountywy.gov/Home",
+      "status": 200,
+      "reachable": true,
+      "approved": true,
+      "denied": false,
+      "robots": "robots.txt fetched",
+      "robots_allowed": true,
+      "error": null
+    }
+  ],
+  "verified_url": "https://www.laramiecountywy.gov/Home",
+  "platform": "unknown",
+  "agenda_paths": [],
+  "verification": "live-verified",
+  "applied": true,
+  "notes": [
+    "Only exact reviewed URLs can enable sources; official identity is documented in source-reviews.json, not established by HTTP success. Reachability is not collection coverage."
+  ],
+  "official_source_confirmed": true,
+  "source_review": {
+    "reviewed_on": "2026-11-07",
+    "reviewer": "Perplexity Computer, official-site content and redirect destination review",
+    "evidence": [
+      "https://www.laramiecountywy.gov/Home"
+    ],
+    "urls": [
+      "https://www.laramiecountywy.gov/Home"
+    ]
+  }
+}

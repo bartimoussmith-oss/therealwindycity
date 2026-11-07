@@ -1,0 +1,35 @@
+{
+  "slug": "wyoming-governor",
+  "name": "Office of the Governor of Wyoming",
+  "type": "state-executive",
+  "checked_at": "2026-11-07T20:49:33.270880+00:00",
+  "candidates": [
+    {
+      "url": "https://governor.wyo.gov/",
+      "status": null,
+      "reachable": false,
+      "approved": true,
+      "denied": false,
+      "robots": "robots.txt unavailable or invalid; probe blocked",
+      "robots_allowed": false
+    }
+  ],
+  "verified_url": null,
+  "platform": "unknown",
+  "agenda_paths": [],
+  "verification": "unverified",
+  "applied": true,
+  "notes": [
+    "Only exact reviewed URLs can enable sources; official identity is documented in source-reviews.json, not established by HTTP success. Reachability is not collection coverage."
+  ],
+  "source_review": {
+    "reviewed_on": "2026-11-07",
+    "reviewer": "Perplexity Computer, official-site content review",
+    "evidence": [
+      "https://governor.wyo.gov/"
+    ],
+    "urls": [
+      "https://governor.wyo.gov/"
+    ]
+  }
+}
