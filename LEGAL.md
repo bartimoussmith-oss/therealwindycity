@@ -8,9 +8,12 @@ configuring would break one of these rules, the configuration is wrong.
 1. **Public documents only.** The harvester fetches public pages and files from
    confirmed .gov / news endpoints. No logins, no paywall circumvention, no
    session spoofing, no endpoint probing.
-2. **`robots.txt` compliance.** Uses `urllib.robotparser`; honors `Disallow:` and
-   `crawl-delay` when present. If a site's Terms of Service prohibit automated
-   collection, disable that source — do not work around it.
+2. **Explicit collection policy.** Owner-directed Wyoming collectors set
+   `identity.respect_robots: false`: they do not request or use `robots.txt` as a
+   collection or activation gate. Other engine configurations retain robots
+   checking by default. This configuration is not a claim of legal permission.
+   Public-only access, source review, identifying user agent, rate limits and
+   download limits remain in force; no authentication or access-control bypass.
 3. **Rate discipline.** Default ≥3 seconds between requests per host, one page of
    links per crawl, hard cap of 40 documents per source per run. This never runs
    hot enough to matter to a municipal server.

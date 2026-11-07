@@ -28,7 +28,7 @@ Data and the rendered site are written to `data/wyoming/ranchester/` and `public
 ## Onboard this jurisdiction
 
 1. Review official identity and record exact URLs with evidence in `wyoming/source-reviews.json`.
-2. `python3 tools/wyoming_verify.py --slug ranchester` prints a report without writing; add `--apply` to save results and enable successfully probed reviewed URLs (robots.txt honored).
+2. `python3 tools/wyoming_verify.py --slug ranchester` prints a report without writing; add `--apply` to save results and enable successfully probed reviewed URLs. robots.txt is not used as an activation or collection gate.
 3. Confirm the custodian office/address in `env.sh` (currently UNVERIFIED placeholders).
 4. Add the local record to `config/facts.json` (timeline + question_of_the_week), each entry linked to its source.
 5. Rerun `python3 tools/wyoming_instantiate.py --check` to confirm the instance is generator-clean.

@@ -17,7 +17,7 @@ Guarantees & limits (honesty contract):
   * No network access. Nothing here asserts that any URL works. Every source is
     generated disabled with verification="unverified"; the statewide verifier
     (tools/wyoming_verify.py, run by .github/workflows/wyoming-verify.yml)
-    probes only exact URLs documented in source-reviews.json, honors robots.txt,
+    probes only exact URLs documented in source-reviews.json,
     and enables reviewed URLs only after a successful live check. Guessed
     domains are never activated. Reachability is not collection coverage.
   * No local lore is fabricated. Non-Cheyenne instances ship an empty timeline
@@ -257,7 +257,7 @@ def sources_for(entry: dict) -> dict:
             "notes": ("UNVERIFIED candidate — generated from wyoming/registry.json. DO NOT ENABLE BY HAND. "
                       "Run: python3 tools/wyoming_verify.py --slug " + slug + " --apply. "
                       "First record official identity evidence and exact approved URLs in wyoming/source-reviews.json. "
-                      "The verifier honors robots.txt and enables reviewed URLs only after a successful live probe. "
+                      "The verifier enables reviewed URLs only after a successful live probe; robots.txt is not an activation gate. "
                       "If no candidate URL resolves, this jurisdiction may need manual onboarding — see "
                       "docs/WYOMING-STATEWIDE-INSTANTIATION.md ('Non-web jurisdictions')."),
         },
@@ -292,7 +292,7 @@ def sources_for(entry: dict) -> dict:
                 s_["enabled"] = True
                 s_["url"] = vurl
                 s_["notes"] = (f"Live-verified {checked} by tools/wyoming_verify.py "
-                               f"(robots.txt honored). Platform fingerprint: {platform}. "
+                               f"(robots.txt not used as a gate). Platform fingerprint: {platform}. "
                                "Official-source review is recorded in wyoming/source-reviews.json. Reachability is not complete coverage.")
         agenda_paths = [p for p in verification.get("agenda_paths", []) if p.get("url") in entry.get("approved_source_urls", [])]
         if agenda_paths:
@@ -304,7 +304,7 @@ def sources_for(entry: dict) -> dict:
                     "url": best["url"],
                     "enabled": True,
                     "notes": (f"Reviewed official URL, live-probed {checked} by tools/wyoming_verify.py. "
-                              "robots.txt honored. Review evidence is in wyoming/source-reviews.json. "
+                              "robots.txt is not used as a gate. Review evidence is in wyoming/source-reviews.json. "
                               "Reachability does not establish completeness or repeat collection."),
                 })
     return {
@@ -314,6 +314,7 @@ def sources_for(entry: dict) -> dict:
             "delay_seconds_per_host": 3,
             "max_docs_per_source_per_run": 10,
             "strict_web": True,
+            "respect_robots": False,
         },
         "sources": sources,
         "document_link_patterns": [
@@ -347,7 +348,7 @@ def facts_for(entry: dict) -> dict:
     voice_note = ("Not produced by, endorsed by, or affiliated with any individual — named or otherwise — "
                   "or any candidate, campaign, or political committee.")
     owner_todo = [
-        "Run: python3 tools/wyoming_verify.py --slug " + entry["slug"] + " --apply  (live-fetches and enables only what actually answers; honors robots.txt).",
+        "Run: python3 tools/wyoming_verify.py --slug " + entry["slug"] + " --apply  (live-fetches reviewed official URLs; robots.txt is not an activation gate).",
         "Confirm the clerk/custodian office and mailing address in env.sh before any Wyoming Public Records Act request is sent.",
         "Add this jurisdiction's local record to facts.json: timeline entries (each with a linked source) and a question_of_the_week. Nothing local is asserted until you do — that is deliberate.",
         "If this municipality has no usable web presence, the engine still works: digest + silent-edit detection are only as good as the sources you enable, and `run.py request pra` drafts PRAs from first principles.",
@@ -418,7 +419,7 @@ def readme_for(entry: dict) -> str:
         "## Onboard this jurisdiction",
         "",
         "1. Review official identity and record exact URLs with evidence in `wyoming/source-reviews.json`.",
-        "2. `python3 tools/wyoming_verify.py --slug " + slug + "` prints a report without writing; add `--apply` to save results and enable successfully probed reviewed URLs (robots.txt honored).",
+        "2. `python3 tools/wyoming_verify.py --slug " + slug + "` prints a report without writing; add `--apply` to save results and enable successfully probed reviewed URLs. robots.txt is not used as an activation or collection gate.",
         "3. Confirm the custodian office/address in `env.sh` (currently UNVERIFIED placeholders).",
         "4. Add the local record to `config/facts.json` (timeline + question_of_the_week), each entry linked to its source.",
         "5. Rerun `python3 tools/wyoming_instantiate.py --check` to confirm the instance is generator-clean.",

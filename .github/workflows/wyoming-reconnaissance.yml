@@ -28,7 +28,7 @@ jobs:
           sys.path.insert(0, str(Path('tools').resolve()))
           import wyoming_verify as v
           v.UA = 'WyomingCivicRecon/1.0 (+https://github.com/bartimoussmith-oss/therealwindycity; public-records source discovery)'
-          fetcher = v.Fetcher(delay=3.0, timeout=8.0)
+          fetcher = v.Fetcher(delay=3.0, timeout=8.0, respect_robots=False)
           out = Path('reconnaissance-results')
           rows = []
           for entry in v.gen.load_registry()['jurisdictions']:

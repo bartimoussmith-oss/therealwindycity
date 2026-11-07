@@ -84,6 +84,22 @@ class VerifierSafetyTests(unittest.TestCase):
         with patch.object(fetcher, 'get', return_value=(404, '', 'HTTP 404')):
             self.assertTrue(fetcher.allowed(URL)[0])
 
+    def test_owner_policy_does_not_fetch_robots(self):
+        fetcher = v.Fetcher(3, 1, respect_robots=False)
+        with patch.object(fetcher, 'get') as get:
+            allowed, note = fetcher.allowed(URL)
+            self.assertTrue(allowed)
+            self.assertIn('not checked', note)
+            get.assert_not_called()
+
+    def test_owner_policy_probes_reviewed_page_without_robots(self):
+        self.entry['approved_source_urls'] = [URL]
+        fetcher = v.Fetcher(3, 1, respect_robots=False)
+        with patch.object(fetcher, 'get', return_value=(200, 'public page', None)) as get:
+            result = v.verify(self.entry, fetcher, False)
+            self.assertEqual(result['verification'], 'live-verified')
+            get.assert_called_once_with(URL)
+
     def test_robots_503_fails_closed(self):
         fetcher = v.Fetcher(3, 1)
         with patch.object(fetcher, 'get', return_value=(503, '', 'HTTP 503')):

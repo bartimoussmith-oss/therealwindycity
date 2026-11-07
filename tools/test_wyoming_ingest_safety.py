@@ -40,6 +40,23 @@ class StrictFetchTests(unittest.TestCase):
                 self.assertIsNone(ingest.fetch(url, CFG))
             allowed.assert_not_called()
 
+    def test_owner_policy_skips_robots_but_keeps_rate_limit(self):
+        cfg = {'identity': dict(CFG['identity'], respect_robots=False)}
+        with patch.object(ingest, '_allowed', return_value=False) as allowed, patch.object(ingest, '_wait') as wait, patch('urllib.request.build_opener') as opener:
+            opener.return_value.open.return_value.__enter__.return_value.read.return_value = b'public document'
+            self.assertEqual(ingest.fetch(URL, cfg), b'public document')
+            allowed.assert_not_called()
+            wait.assert_called_once_with(URL, cfg)
+            self.assertEqual(opener.return_value.open.call_count, 1)
+            self.assertEqual(opener.return_value.open.call_args.args[0].full_url, URL)
+
+    def test_owner_policy_does_not_bypass_http_access_denial(self):
+        cfg = {'identity': dict(CFG['identity'], respect_robots=False)}
+        with patch.object(ingest, '_allowed') as allowed, patch.object(ingest, '_wait'), patch('urllib.request.build_opener') as opener:
+            opener.return_value.open.side_effect = urllib.error.HTTPError(URL, 403, 'Forbidden', {}, None)
+            self.assertIsNone(ingest.fetch(URL, cfg))
+            allowed.assert_not_called()
+
     def test_redirect_handler_refuses_follow(self):
         self.assertIsNone(ingest._NoRedirect().redirect_request(None, None, 302, '', {}, 'https://other.gov/'))
 

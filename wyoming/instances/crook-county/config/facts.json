@@ -8,7 +8,7 @@
   },
   "timeline": [],
   "owner_todo": [
-    "Run: python3 tools/wyoming_verify.py --slug crook-county --apply  (live-fetches and enables only what actually answers; honors robots.txt).",
+    "Run: python3 tools/wyoming_verify.py --slug crook-county --apply  (live-fetches reviewed official URLs; robots.txt is not an activation gate).",
     "Confirm the clerk/custodian office and mailing address in env.sh before any Wyoming Public Records Act request is sent.",
     "Add this jurisdiction's local record to facts.json: timeline entries (each with a linked source) and a question_of_the_week. Nothing local is asserted until you do \u2014 that is deliberate.",
     "If this municipality has no usable web presence, the engine still works: digest + silent-edit detection are only as good as the sources you enable, and `run.py request pra` drafts PRAs from first principles.",
