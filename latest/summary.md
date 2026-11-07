@@ -1,11 +1,12 @@
 # Engineering control center
 
-Updated 2026-11-07T13:33:03.831Z. Evidence policy: version 2.
+Updated 2026-11-07T20:57:18.113Z. Evidence policy: version 2.
 Public repositories: 15. Declared connections: 48.
-Current video proof lane: success. Not a deployment result.
+Current video proof lane: skipped. Not a deployment result.
 
 ## Repair priorities
 
+- P1 | therealwindycity/therealwindycity | Reliability engineer: Reproduce the recorded failed step and repair its demonstrated cause.
 - P2 | bartimoussmith-oss/civic-newsroom | Architect: Map producers, consumers, storage, deployment targets and owners.
 - P2 | bartimoussmith-oss/civic-newsroom | Build engineer: Prove installation from a clean checkout with stated tool versions.
 - P2 | bartimoussmith-oss/civic-newsroom | Data engineer: Validate schemas, stable IDs and compatibility between producers and consumers.
@@ -35,7 +36,6 @@ Current video proof lane: success. Not a deployment result.
 - P2 | bartimoussmith-oss/civic-newsroom-intelligence-001 | Architect: Map producers, consumers, storage, deployment targets and owners.
 - P2 | bartimoussmith-oss/civic-newsroom-intelligence-001 | Agent coordinator: Provide tested commands, current status, constraints and acceptance criteria.
 - P2 | bartimoussmith-oss/civic-newsroom-intelligence-001 | Build engineer: Prove installation from a clean checkout with stated tool versions.
-- P2 | bartimoussmith-oss/civic-newsroom-intelligence-001 | Data engineer: Validate schemas, stable IDs and compatibility between producers and consumers.
 
 ## Verification still required
 

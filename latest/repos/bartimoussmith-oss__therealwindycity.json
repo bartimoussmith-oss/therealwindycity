@@ -2,7 +2,7 @@
   "repository": "bartimoussmith-oss/therealwindycity",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-07T13:32:28.084Z",
+  "checked_at": "2026-11-07T20:56:36.030Z",
   "controls": [
     {
       "id": "architecture",
@@ -143,23 +143,103 @@
   "runs": [
     {
       "name": "Engineering control center",
-      "id": 42377269742,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42377269742",
-      "sha": "5e1ab11193c17fced444fd57511221d908d69bc5",
+      "id": 42413405703,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42413405703",
+      "sha": "e2a313c08679eb4070e472f9e01a6916e1bddd23",
+      "branch": "main",
+      "status": "pending",
+      "conclusion": null,
+      "created_at": "2026-11-07T20:56:00Z"
+    },
+    {
+      "name": "ai-record-pages",
+      "id": 42413237958,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42413237958",
+      "sha": "e2a313c08679eb4070e472f9e01a6916e1bddd23",
       "branch": "main",
       "status": "in_progress",
       "conclusion": null,
-      "created_at": "2026-11-07T13:30:31Z"
+      "created_at": "2026-11-07T20:53:51Z"
     },
     {
-      "name": "Hourly public ecosystem diagnostics",
-      "id": 42376092507,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42376092507",
-      "sha": "5e1ab11193c17fced444fd57511221d908d69bc5",
+      "name": "wyoming-verify",
+      "id": 42413237939,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42413237939",
+      "sha": "e2a313c08679eb4070e472f9e01a6916e1bddd23",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-07T13:15:06Z"
+      "created_at": "2026-11-07T20:53:51Z"
+    },
+    {
+      "name": "Wyoming source reconnaissance",
+      "id": 42413237934,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42413237934",
+      "sha": "e2a313c08679eb4070e472f9e01a6916e1bddd23",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T20:53:51Z"
+    },
+    {
+      "name": "Wyoming fast-track collection",
+      "id": 42413176989,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42413176989",
+      "sha": "f79675cdb10992dc800a1da729e6fd6aee3a7e6d",
+      "branch": "activate-reviewed-wyoming-sources",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T20:53:04Z"
+    },
+    {
+      "name": "wyoming-verify",
+      "id": 42413164008,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42413164008",
+      "sha": "f79675cdb10992dc800a1da729e6fd6aee3a7e6d",
+      "branch": "activate-reviewed-wyoming-sources",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T20:52:54Z"
+    },
+    {
+      "name": "Scanner best-effort live and recovery",
+      "id": 42411254659,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42411254659",
+      "sha": "305acacdaf3de74da97fb1bffbf54ff00fd0caea",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T20:28:58Z"
+    },
+    {
+      "name": "Scanner historical backfill",
+      "id": 42410531006,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42410531006",
+      "sha": "305acacdaf3de74da97fb1bffbf54ff00fd0caea",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T20:19:52Z"
+    },
+    {
+      "name": "Hourly public ecosystem diagnostics",
+      "id": 42399555211,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42399555211",
+      "sha": "a5ad4a4202a17d847ebb2e331ea07065d81414cc",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T18:05:55Z"
+    },
+    {
+      "name": "Promethean Recurring Harvest",
+      "id": 42382257966,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42382257966",
+      "sha": "5e1ab11193c17fced444fd57511221d908d69bc5",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "created_at": "2026-11-07T14:34:45Z"
     },
     {
       "name": "civic-cycle",
@@ -180,36 +260,6 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-11-07T12:02:02Z"
-    },
-    {
-      "name": "Scanner best-effort live and recovery",
-      "id": 42364890249,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42364890249",
-      "sha": "225b17c9c58a6eef067b619e9735e1b6120017ae",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-07T10:39:44Z"
-    },
-    {
-      "name": "Scanner historical backfill",
-      "id": 42357594253,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42357594253",
-      "sha": "225b17c9c58a6eef067b619e9735e1b6120017ae",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-07T08:56:42Z"
-    },
-    {
-      "name": "ai-record-pages",
-      "id": 42348128659,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42348128659",
-      "sha": "225b17c9c58a6eef067b619e9735e1b6120017ae",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-07T06:41:39Z"
     },
     {
       "name": "Fresh records videos",
@@ -287,16 +337,6 @@
       ]
     },
     {
-      "name": "Wyoming source reconnaissance",
-      "id": 42316761098,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42316761098",
-      "sha": "456ec35c32ed5c8716a949908de2d5a99c80905d",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-07T00:12:08Z"
-    },
-    {
       "name": "Wyoming fast-track collection",
       "id": 42315846316,
       "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42315846316",
@@ -321,26 +361,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "Promethean Recurring Harvest",
-      "id": 42314850566,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42314850566",
-      "sha": "40d191e37eee63f3f9cdb266c79442a5d6575b93",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "cancelled",
-      "created_at": "2026-11-06T23:53:57Z"
-    },
-    {
-      "name": "wyoming-verify",
-      "id": 42304424036,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42304424036",
-      "sha": "2f2b55e8716e7f6af8c09421cc0dcc099b71ec77",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-06T22:24:06Z"
     },
     {
       "name": "Wyoming verifier safety tests",
@@ -383,78 +403,6 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-11-06T18:12:10Z"
-    },
-    {
-      "name": "Transcribe the portal's meeting audio",
-      "id": 41862499695,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41862499695",
-      "sha": "800093c047bb02e3b7887d71b517311fa97cb5c2",
-      "branch": "arena/74a6689f-therealwindycity",
-      "status": "completed",
-      "conclusion": "failure",
-      "created_at": "2026-11-04T15:54:34Z",
-      "failed_jobs": [
-        {
-          "name": "transcribe",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41862499695/job/126687872311",
-          "steps": [
-            {
-              "name": "Transcribe",
-              "number": 11
-            }
-          ],
-          "log_status": "bounded_read",
-          "error_signals": [
-            "Nonzero command exit"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "ai-record-pages",
-      "id": 41856949294,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41856949294",
-      "sha": "cc14aa2bd4dce8e1c3cda111689193d9eaada485",
-      "branch": "arena/74a6689f-therealwindycity",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-04T15:21:55Z"
-    },
-    {
-      "name": "notebooklm-controller",
-      "id": 41842850237,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41842850237",
-      "sha": "4caf20e3d24c624a3f3ab35f8072efd673036318",
-      "branch": "arena/015895c5-therealwindycity",
-      "status": "completed",
-      "conclusion": "failure",
-      "created_at": "2026-11-04T13:57:28Z",
-      "failed_jobs": [
-        {
-          "name": "controller",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41842850237/job/126618672452",
-          "steps": [
-            {
-              "name": "Commit generated artifacts and state",
-              "number": 7
-            }
-          ],
-          "log_status": "bounded_read",
-          "error_signals": [
-            "Nonzero command exit"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "ai-record-pages",
-      "id": 41832044922,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41832044922",
-      "sha": "0e294182945190d941fc326e836fa0ae1297787a",
-      "branch": "arena/015895c5-therealwindycity",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-04T12:45:36Z"
     }
   ],
   "pull_requests": [
@@ -541,8 +489,8 @@
     }
   ],
   "gaps": [],
-  "head": "5e1ab11193c17fced444fd57511221d908d69bc5",
-  "files_seen": 8797,
+  "head": "e2a313c08679eb4070e472f9e01a6916e1bddd23",
+  "files_seen": 8995,
   "tree_complete": true,
   "sample_coverage": {
     "candidates": 170,

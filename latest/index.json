@@ -1,8 +1,8 @@
 {
   "schema": 2,
-  "started_at": "2026-11-07T13:32:20.249Z",
-  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42377269742",
-  "video_proof_result": "success",
+  "started_at": "2026-11-07T20:56:26.622Z",
+  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42413388796",
+  "video_proof_result": "skipped",
   "repositories": [
     {
       "repository": "bartimoussmith-oss/civic-newsroom",
@@ -98,14 +98,14 @@
       "from": "bartimoussmith-oss/therealwindycity",
       "to": "therealwindycity/TheReelWindyCity",
       "path": ".github/workflows/ai-record-pages.yml",
-      "sha": "5e1ab11193c17fced444fd57511221d908d69bc5",
+      "sha": "e2a313c08679eb4070e472f9e01a6916e1bddd23",
       "status": "declared_reference_only"
     },
     {
       "from": "bartimoussmith-oss/therealwindycity",
       "to": "therealwindycity/The-Real-Windy-City-",
       "path": ".github/workflows/ai-record-pages.yml",
-      "sha": "5e1ab11193c17fced444fd57511221d908d69bc5",
+      "sha": "e2a313c08679eb4070e472f9e01a6916e1bddd23",
       "status": "declared_reference_only"
     },
     {
@@ -433,11 +433,11 @@
       "task": "Check claims against source records and distinguish configured, executed, tested, deployed and verified."
     }
   ],
-  "finished_at": "2026-11-07T13:33:03.831Z",
+  "finished_at": "2026-11-07T20:57:18.113Z",
   "summary": {
     "repositories": 15,
     "declared_edges": 48,
-    "backlog": 138,
-    "logs_sampled": 12
+    "backlog": 135,
+    "logs_sampled": 10
   }
 }
