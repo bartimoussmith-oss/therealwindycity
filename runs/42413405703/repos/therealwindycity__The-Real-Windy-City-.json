@@ -1,0 +1,420 @@
+{
+  "repository": "therealwindycity/The-Real-Windy-City-",
+  "archived": false,
+  "fork": false,
+  "checked_at": "2026-11-07T20:58:32.262Z",
+  "controls": [
+    {
+      "id": "architecture",
+      "role": "Architect",
+      "state": "signal_observed",
+      "evidence": [
+        "audit/reports/ECOSYSTEM_TOPOLOGY_SUMMARY.json"
+      ],
+      "next": "Map producers, consumers, storage, deployment targets and owners.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "agent_handoff",
+      "role": "Agent coordinator",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Provide tested commands, current status, constraints and acceptance criteria.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "setup",
+      "role": "Build engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "audit/requirements.txt",
+        "deploy/docker/Dockerfile",
+        "services/scanner_transcriber/pyproject.toml",
+        "services/scanner_transcriber/requirements.lock.txt"
+      ],
+      "next": "Prove installation from a clean checkout with stated tool versions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "tests",
+      "role": "Test engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "audit/tests/test_analysis.py",
+        "audit/tests/test_audit_pipeline.py",
+        "services/scanner_transcriber/tests/test_scanner_service.py",
+        "tests/test_anycity_crawler.py",
+        "tests/test_city_mirror.py",
+        "tests/test_deploy_split.py"
+      ],
+      "next": "Add offline tests and a real producer-to-published-output test.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "data_contract",
+      "role": "Data engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "tools/validate_mirror_snapshot.py"
+      ],
+      "next": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "provenance",
+      "role": "Evidence reviewer",
+      "state": "signal_observed",
+      "evidence": [
+        "atlas/enc/manifest.json"
+      ],
+      "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "checkpoint",
+      "role": "Reliability engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "atlas/enc/manifest.json"
+      ],
+      "next": "Prove interrupted runs resume without lost records or duplicates.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "recovery",
+      "role": "Recovery engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Test isolated backup restoration and reversible releases.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "deployment",
+      "role": "Release engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Tie live output to its commit, smoke test and rollback instructions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "dependency_lock",
+      "role": "Supply-chain reviewer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "rights",
+      "role": "Rights reviewer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Separate code licensing from source-data and media reuse rights.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    }
+  ],
+  "runs": [
+    {
+      "name": "Deploy site",
+      "id": 42387453388,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/42387453388",
+      "sha": "6c5601c11943d70a521d791f62da7336d8a80e54",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T15:39:42Z"
+    },
+    {
+      "name": "Live Scanner Service CI",
+      "id": 39901401448,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/39901401448",
+      "sha": "6c5601c11943d70a521d791f62da7336d8a80e54",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-23T04:38:34Z"
+    },
+    {
+      "name": "Fetch meeting transcripts",
+      "id": 39901401421,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/39901401421",
+      "sha": "6c5601c11943d70a521d791f62da7336d8a80e54",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "skipped",
+      "created_at": "2026-10-23T04:38:34Z"
+    },
+    {
+      "name": "City mirror tests",
+      "id": 39901196508,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/39901196508",
+      "sha": "bfa3ee9a72b7e7a5656f079c70393ae41a41be84",
+      "branch": "arena/20fb57fb-the-real-windy-city",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-23T04:36:13Z"
+    },
+    {
+      "name": "Live Scanner Service CI",
+      "id": 39901196442,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/39901196442",
+      "sha": "bfa3ee9a72b7e7a5656f079c70393ae41a41be84",
+      "branch": "arena/20fb57fb-the-real-windy-city",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-23T04:36:12Z"
+    },
+    {
+      "name": "Fetch meeting transcripts",
+      "id": 39816918939,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/39816918939",
+      "sha": "bfa3ee9a72b7e7a5656f079c70393ae41a41be84",
+      "branch": "arena/20fb57fb-the-real-windy-city",
+      "status": "completed",
+      "conclusion": "skipped",
+      "created_at": "2026-10-22T16:47:20Z"
+    },
+    {
+      "name": "Live Scanner Service CI",
+      "id": 39718726737,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/39718726737",
+      "sha": "78c1ba9be8d11cd2425a179b74f30ddd1edcadbf",
+      "branch": "arena/f4f97b19-the-real-windy-city",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-22T03:46:55Z"
+    },
+    {
+      "name": "Fetch meeting transcripts",
+      "id": 39718726720,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/39718726720",
+      "sha": "78c1ba9be8d11cd2425a179b74f30ddd1edcadbf",
+      "branch": "arena/f4f97b19-the-real-windy-city",
+      "status": "completed",
+      "conclusion": "skipped",
+      "created_at": "2026-10-22T03:46:55Z"
+    },
+    {
+      "name": "City mirror tests",
+      "id": 39658980892,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/39658980892",
+      "sha": "0dc7a0ec7098f8acaedd5198e3dc7aca1273a1fb",
+      "branch": "arena/e3a03d4c-the-real-windy-city",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-21T19:08:22Z"
+    },
+    {
+      "name": "Fetch meeting transcripts",
+      "id": 39658973739,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/39658973739",
+      "sha": "0dc7a0ec7098f8acaedd5198e3dc7aca1273a1fb",
+      "branch": "arena/e3a03d4c-the-real-windy-city",
+      "status": "completed",
+      "conclusion": "skipped",
+      "created_at": "2026-10-21T19:08:19Z"
+    },
+    {
+      "name": "Live Scanner Service CI",
+      "id": 39655974896,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/39655974896",
+      "sha": "151a5a98492b5334ed9f71726d6eb3bb2ab2495a",
+      "branch": "arena/838de0f2-the-real-windy-city",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-21T18:48:04Z"
+    },
+    {
+      "name": "City mirror tests",
+      "id": 39655974733,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/39655974733",
+      "sha": "151a5a98492b5334ed9f71726d6eb3bb2ab2495a",
+      "branch": "arena/838de0f2-the-real-windy-city",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-21T18:48:04Z"
+    },
+    {
+      "name": "City mirror tests",
+      "id": 39650739090,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/39650739090",
+      "sha": "da384cea298fb84729349c5718d02e295b7e5cee",
+      "branch": "arena/c4250302-the-real-windy-city",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-21T18:13:14Z"
+    },
+    {
+      "name": "Fetch meeting transcripts",
+      "id": 39650617552,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/39650617552",
+      "sha": "da384cea298fb84729349c5718d02e295b7e5cee",
+      "branch": "arena/c4250302-the-real-windy-city",
+      "status": "completed",
+      "conclusion": "skipped",
+      "created_at": "2026-10-21T18:12:26Z"
+    },
+    {
+      "name": "City mirror tests",
+      "id": 39627130882,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/39627130882",
+      "sha": "8ee02932cd7ec5e021879ae56132532a4522171e",
+      "branch": "arena/673396e5-the-real-windy-city",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-21T15:35:58Z"
+    },
+    {
+      "name": "City mirror tests",
+      "id": 39608122531,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/39608122531",
+      "sha": "cf39305938bc00c74878dd233140a5ded3571628",
+      "branch": "arena/35a1fcf5-the-real-windy-city",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-21T13:27:14Z"
+    },
+    {
+      "name": "City mirror tests",
+      "id": 39597228391,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/39597228391",
+      "sha": "9557a4b5060b6a13de6e725dce13f1f5557f34c0",
+      "branch": "arena/ce42004b-the-real-windy-city",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-21T12:08:22Z"
+    },
+    {
+      "name": "City mirror tests",
+      "id": 39594595577,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/39594595577",
+      "sha": "f31b89951602ff39e2ce6ec814de390a83f03010",
+      "branch": "arena/142bedb5-the-real-windy-city",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-21T11:47:40Z"
+    },
+    {
+      "name": "Deploy site",
+      "id": 37696562749,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/37696562749",
+      "sha": "373ccff1eefac8c32db0ca8a4485358b0b237248",
+      "branch": "arena/850039e7-the-real-windy-city",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-07T22:30:01Z",
+      "failed_jobs": [
+        {
+          "name": "deploy",
+          "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/37696562749/job/113049734956",
+          "steps": [],
+          "log_status": "unavailable",
+          "error_signals": [],
+          "http": 404
+        }
+      ]
+    },
+    {
+      "name": "Sync new meeting transcripts",
+      "id": 36308690644,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/36308690644",
+      "sha": "a5813c13e87579293c2b3e65d8da9410d8b6b905",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-09-27T09:13:39Z",
+      "failed_jobs": [
+        {
+          "name": "sync",
+          "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/36308690644/job/108590271847",
+          "steps": [
+            {
+              "name": "Sync new meetings",
+              "number": 7
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "id": 36085408877,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/36085408877",
+      "sha": "130bcf49fbc4acead0d54dd5ca3a266480fa5c60",
+      "branch": "arena/01a0d566-the-real-windy-city",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-09-25T02:14:02Z"
+    },
+    {
+      "name": "civic-cycle",
+      "id": 36075481979,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/36075481979",
+      "sha": "7dc9814ede5df1b6db38424fe4051d9abb7e96a6",
+      "branch": "arena/01a0d566-the-real-windy-city",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-09-25T00:00:21Z"
+    }
+  ],
+  "pull_requests": [
+    {
+      "number": 5,
+      "title": "Add offline legal research red-team framework",
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/pull/5",
+      "head": "f18555e3e2ec698af9120f2b8d0c05b1f673878f",
+      "updated_at": "2026-10-08T02:59:15Z",
+      "draft": false,
+      "mergeability": "unverified"
+    }
+  ],
+  "gaps": [],
+  "head": "6c5601c11943d70a521d791f62da7336d8a80e54",
+  "files_seen": 551,
+  "tree_complete": true,
+  "sample_coverage": {
+    "candidates": 11,
+    "selected": 11
+  },
+  "workflow_signals": {
+    ".github/workflows/city-mirror-tests.yml": {
+      "timeout": false,
+      "concurrency": false,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/fetch-transcripts.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": true,
+      "explicit_permissions": true
+    },
+    ".github/workflows/pages.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/scanner-ci.yml": {
+      "timeout": true,
+      "concurrency": false,
+      "always_save": false,
+      "explicit_permissions": true
+    }
+  }
+}
