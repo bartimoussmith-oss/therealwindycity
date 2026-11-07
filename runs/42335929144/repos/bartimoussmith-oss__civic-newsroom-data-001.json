@@ -1,0 +1,144 @@
+{
+  "repository": "bartimoussmith-oss/civic-newsroom-data-001",
+  "archived": false,
+  "fork": false,
+  "checked_at": "2026-11-07T03:54:27.334Z",
+  "controls": [
+    {
+      "id": "architecture",
+      "role": "Architect",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Map producers, consumers, storage, deployment targets and responsible owners.",
+      "runtime_verified": false
+    },
+    {
+      "id": "agent_handoff",
+      "role": "Agent coordinator",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Provide tested commands, current status, constraints and acceptance criteria.",
+      "runtime_verified": false
+    },
+    {
+      "id": "setup",
+      "role": "Build engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Prove installation from a clean checkout with stated tool versions.",
+      "runtime_verified": false
+    },
+    {
+      "id": "tests",
+      "role": "Test engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Add offline tests and one real end-to-end producer-to-published-output test.",
+      "runtime_verified": false
+    },
+    {
+      "id": "data_contract",
+      "role": "Data engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Validate input/output schemas, stable identifiers and compatibility across repositories.",
+      "runtime_verified": false
+    },
+    {
+      "id": "provenance",
+      "role": "Evidence reviewer",
+      "state": "signal_observed",
+      "evidence": [
+        "PUBLIC-SOURCE-POLICY.md",
+        "datasets/build-40279333802/source-snapshots/frontend-revision.txt",
+        "datasets/build-40279333802/source-snapshots/transcript-revision.txt",
+        "datasets/build-40279333802/source-snapshots/tree_cheyenne-archives-2008-2013.json",
+        "datasets/build-40279333802/source-snapshots/tree_cheyenne-archives-2014-2017.json",
+        "datasets/build-40279333802/source-snapshots/tree_cheyenne-archives-2018-2021.json"
+      ],
+      "next": "Retain origin URLs, capture times, hashes, original records and limitations.",
+      "runtime_verified": false
+    },
+    {
+      "id": "checkpoint",
+      "role": "Reliability engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Test interruption recovery and persistence without duplication or data loss.",
+      "runtime_verified": false
+    },
+    {
+      "id": "recovery",
+      "role": "Recovery engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Prove a backup restoration and a reversible release before risky repairs.",
+      "runtime_verified": false
+    },
+    {
+      "id": "deployment",
+      "role": "Release engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Tie the live output to its commit, smoke test and rollback instructions.",
+      "runtime_verified": false
+    },
+    {
+      "id": "dependency_lock",
+      "role": "Supply-chain reviewer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Check lockfiles or equivalent version pinning; missing filenames alone do not prove dependencies are unpinned.",
+      "runtime_verified": false
+    },
+    {
+      "id": "rights",
+      "role": "Rights reviewer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Separate code licensing from source-data and media reuse rights; review manually.",
+      "runtime_verified": false
+    }
+  ],
+  "runs": [
+    {
+      "name": "export-ai",
+      "id": 40284162785,
+      "url": "https://github.com/bartimoussmith-oss/civic-newsroom-data-001/actions/runs/40284162785",
+      "sha": "b8fb82dcecfab3d2d9f0d34b1c70ef2c6c656a97",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-26T07:10:27Z"
+    },
+    {
+      "name": "publish-public-data",
+      "id": 40279333802,
+      "url": "https://github.com/bartimoussmith-oss/civic-newsroom-data-001/actions/runs/40279333802",
+      "sha": "a5956434a055b70391bdd83d7a4a0193d256fc27",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-26T06:21:23Z"
+    }
+  ],
+  "pull_requests": [],
+  "gaps": [],
+  "head": "f04597d58e416cd574e7f9f3cff38fd5d975ab2d",
+  "tree_complete": true,
+  "files_seen": 18312,
+  "workflow_signals": {
+    ".github/workflows/export-ai.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/publish-public-data.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    }
+  }
+}
