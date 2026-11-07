@@ -1,0 +1,229 @@
+{
+  "repository": "therealwindycity/therealwindycity",
+  "archived": false,
+  "fork": true,
+  "checked_at": "2026-11-07T22:17:48.850Z",
+  "controls": [
+    {
+      "id": "architecture",
+      "role": "Architect",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Map producers, consumers, storage, deployment targets and owners.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "agent_handoff",
+      "role": "Agent coordinator",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Provide tested commands, current status, constraints and acceptance criteria.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "setup",
+      "role": "Build engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "rag/requirements-rag.txt",
+        "requirements.txt",
+        "youtube-archive/requirements.txt"
+      ],
+      "next": "Prove installation from a clean checkout with stated tool versions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "tests",
+      "role": "Test engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "tests/test_publish_freshness.py",
+        "workdesk/tests/boot.test.mjs",
+        "workdesk/tests/core.test.mjs"
+      ],
+      "next": "Add offline tests and a real producer-to-published-output test.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "data_contract",
+      "role": "Data engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "provenance",
+      "role": "Evidence reviewer",
+      "state": "signal_observed",
+      "evidence": [
+        "config/sources.json",
+        "pipeline/media_manifest.json"
+      ],
+      "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "checkpoint",
+      "role": "Reliability engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "pipeline/media_manifest.json"
+      ],
+      "next": "Prove interrupted runs resume without lost records or duplicates.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "recovery",
+      "role": "Recovery engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Test isolated backup restoration and reversible releases.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "deployment",
+      "role": "Release engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "DEPLOY.md"
+      ],
+      "next": "Tie live output to its commit, smoke test and rollback instructions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "dependency_lock",
+      "role": "Supply-chain reviewer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "rights",
+      "role": "Rights reviewer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Separate code licensing from source-data and media reuse rights.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    }
+  ],
+  "runs": [
+    {
+      "name": "civic-cycle",
+      "id": 42418005877,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42418005877",
+      "sha": "aafc683781cd0d45efa7b0dff7d8911d7e41d9d8",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T21:53:37Z"
+    },
+    {
+      "name": "workdesk-poll",
+      "id": 42410614210,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42410614210",
+      "sha": "aafc683781cd0d45efa7b0dff7d8911d7e41d9d8",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-07T20:20:49Z",
+      "failed_jobs": [
+        {
+          "name": "poll",
+          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42410614210/job/128517731151",
+          "steps": [
+            {
+              "name": "Commit the feed if it changed",
+              "number": 7
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "meeting-watch",
+      "id": 41788674893,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/41788674893",
+      "sha": "7878f330ce32e36f96f7f4329ea425ed0ea6ea60",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-04T06:54:56Z"
+    },
+    {
+      "name": "workdesk-pages",
+      "id": 40718237904,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/40718237904",
+      "sha": "081b78526c17f80d26e25c6e7feb758ca1b8a8ea",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-28T15:39:53Z",
+      "failed_jobs": [
+        {
+          "name": "deploy",
+          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/40718237904/job/122921911477",
+          "steps": [
+            {
+              "name": "Deploy to GitHub Pages",
+              "number": 2
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": []
+        }
+      ]
+    }
+  ],
+  "pull_requests": [],
+  "gaps": [],
+  "head": "1ffb9fdd49fdb0f1dd8c2d62b1b6976625ba9256",
+  "files_seen": 2724,
+  "tree_complete": true,
+  "sample_coverage": {
+    "candidates": 13,
+    "selected": 12
+  },
+  "workflow_signals": {
+    ".github/workflows/civic-cycle.yml": {
+      "timeout": false,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/meeting-watch.yml": {
+      "timeout": false,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/workdesk-pages.yml": {
+      "timeout": false,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/workdesk-poll.yml": {
+      "timeout": false,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    }
+  }
+}
