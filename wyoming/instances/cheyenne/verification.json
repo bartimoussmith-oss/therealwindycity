@@ -1,0 +1,37 @@
+{
+  "slug": "cheyenne",
+  "name": "Cheyenne",
+  "type": "city",
+  "checked_at": "2026-11-07T20:50:24.009487+00:00",
+  "candidates": [
+    {
+      "url": "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas",
+      "status": 200,
+      "reachable": true,
+      "approved": true,
+      "denied": false,
+      "robots": "robots.txt fetched",
+      "robots_allowed": true,
+      "error": null
+    }
+  ],
+  "verified_url": "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas",
+  "platform": "unknown",
+  "agenda_paths": [],
+  "verification": "live-verified",
+  "applied": true,
+  "notes": [
+    "Only exact reviewed URLs can enable sources; official identity is documented in source-reviews.json, not established by HTTP success. Reachability is not collection coverage."
+  ],
+  "official_source_confirmed": true,
+  "source_review": {
+    "reviewed_on": "2026-11-07",
+    "reviewer": "Perplexity Computer, official-site navigation review",
+    "evidence": [
+      "https://www.cheyennecity.org/Home"
+    ],
+    "urls": [
+      "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas"
+    ]
+  }
+}

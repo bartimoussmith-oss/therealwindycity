@@ -38,6 +38,7 @@ def record(row):
     with GUARD:
         ROWS.append(row)
         save()
+        print(json.dumps(row), flush=True)
 
 def run_instance(inst):
     slug = inst.name
@@ -86,6 +87,10 @@ def run_instance(inst):
             raise RuntimeError('Expected engine.db missing; document count cannot be verified')
         with sqlite3.connect(database) as conn:
             row['documents'] = conn.execute('SELECT COUNT(*) FROM documents').fetchone()[0]
+            row['sample_records'] = [
+                dict(zip(('title', 'url', 'sha256', 'last_checked'), item))
+                for item in conn.execute('SELECT title, url, sha256, last_checked FROM documents ORDER BY id LIMIT 3')
+            ]
         row['page'] = slug + '/index.html'
         if not (OUT / row['page']).is_file():
             raise RuntimeError('Generated page missing')

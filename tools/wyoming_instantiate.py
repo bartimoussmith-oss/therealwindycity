@@ -17,9 +17,9 @@ Guarantees & limits (honesty contract):
   * No network access. Nothing here asserts that any URL works. Every source is
     generated disabled with verification="unverified"; the statewide verifier
     (tools/wyoming_verify.py, run by .github/workflows/wyoming-verify.yml)
-    live-fetches candidates, honors robots.txt, fingerprints the platform
-    (Granicus / CivicPlus / WordPress / Municode / unknown), and only then
-    enables what actually answered.
+    probes only exact URLs documented in source-reviews.json, honors robots.txt,
+    and enables reviewed URLs only after a successful live check. Guessed
+    domains are never activated. Reachability is not collection coverage.
   * No local lore is fabricated. Non-Cheyenne instances ship an empty timeline
     and no question-of-the-week until a human adds the local record.
   * Deterministic: the same registry always renders byte-identical instances.
@@ -31,6 +31,8 @@ import argparse
 import json
 import re
 import sys
+from datetime import date
+from urllib.parse import urlsplit
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -166,6 +168,23 @@ def load_registry() -> dict:
         raise ValueError(f"duplicate slugs in registry: {sorted(dupes)}")
     if reg["counts"]["total_instances"] != len(reg["jurisdictions"]):
         raise ValueError("registry counts.total_instances does not match jurisdictions[]")
+    review_path = ROOT / "wyoming/source-reviews.json"
+    reviews = json.loads(review_path.read_text()) if review_path.exists() else {}
+    if set(reviews) - set(slugs):
+        raise ValueError("Unknown jurisdiction in source reviews")
+    for entry in reg["jurisdictions"]:
+        review = reviews.get(entry["slug"], {})
+        urls = review.get("urls", [])
+        if urls:
+            date.fromisoformat(review["reviewed_on"])
+            if not review.get("reviewer") or not review.get("evidence"):
+                raise ValueError("Source approval requires attributed evidence")
+        for url in urls + review.get("evidence", []):
+            parsed = urlsplit(url)
+            if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password:
+                raise ValueError("Reviewed sources must be credential-free HTTPS")
+        entry["approved_source_urls"] = urls
+        entry["source_review"] = review
     return reg
 
 
@@ -180,7 +199,7 @@ def load_verification(slug: str) -> dict | None:
         v = json.loads(path.read_text())
     except json.JSONDecodeError:
         return None
-    return v if v.get("verification") == "live-verified" else None
+    return v if v.get("verification") == "live-verified" and v.get("official_source_confirmed") else None
 
 
 def watchlist_for(entry: dict) -> dict:
@@ -237,8 +256,8 @@ def sources_for(entry: dict) -> dict:
             "enabled": False,
             "notes": ("UNVERIFIED candidate — generated from wyoming/registry.json. DO NOT ENABLE BY HAND. "
                       "Run: python3 tools/wyoming_verify.py --slug " + slug + " --apply. "
-                      "The verifier honors robots.txt, fingerprints the platform (Granicus/CivicPlus/WordPress/"
-                      "Municode/unknown), and enables this source only if it live-fetches successfully. "
+                      "First record official identity evidence and exact approved URLs in wyoming/source-reviews.json. "
+                      "The verifier honors robots.txt and enables reviewed URLs only after a successful live probe. "
                       "If no candidate URL resolves, this jurisdiction may need manual onboarding — see "
                       "docs/WYOMING-STATEWIDE-INSTANTIATION.md ('Non-web jurisdictions')."),
         },
@@ -269,13 +288,13 @@ def sources_for(entry: dict) -> dict:
         platform = verification.get("platform") or "unknown"
         checked = verification.get("checked_at", "unknown-time")
         for s_ in sources:
-            if s_["name"] == f"{slug}_homepage" and vurl:
+            if s_["name"] == f"{slug}_homepage" and vurl in entry.get("approved_source_urls", []):
                 s_["enabled"] = True
                 s_["url"] = vurl
                 s_["notes"] = (f"Live-verified {checked} by tools/wyoming_verify.py "
                                f"(robots.txt honored). Platform fingerprint: {platform}. "
-                               "Confirm this is the official site before relying on it.")
-        agenda_paths = verification.get("agenda_paths") or []
+                               "Official-source review is recorded in wyoming/source-reviews.json. Reachability is not complete coverage.")
+        agenda_paths = [p for p in verification.get("agenda_paths", []) if p.get("url") in entry.get("approved_source_urls", [])]
         if agenda_paths:
             best = agenda_paths[0]
             if not any(s_["name"] == f"{slug}_agendas" for s_ in sources):
@@ -284,16 +303,17 @@ def sources_for(entry: dict) -> dict:
                     "type": "html",
                     "url": best["url"],
                     "enabled": True,
-                    "notes": (f"Auto-detected {checked} by tools/wyoming_verify.py: fetched 200 and contained "
-                              f"agenda/minutes keywords {best.get('matched')}. robots.txt was honored during the "
-                              "probe. Verify in a browser; disable if this is not the official portal."),
+                    "notes": (f"Reviewed official URL, live-probed {checked} by tools/wyoming_verify.py. "
+                              "robots.txt honored. Review evidence is in wyoming/source-reviews.json. "
+                              "Reachability does not establish completeness or repeat collection."),
                 })
     return {
         "identity": {
-            "user_agent": "WyomingCivicTransparencyEngine/0.1 (public-records research; contact: you@example.org)",
-            "contact": "you@example.org  <-- PUT YOUR REAL CONTACT HERE; honest UAs get blocked less",
+            "user_agent": "WyomingCivicTransparencyEngine/0.2 (+https://github.com/bartimoussmith-oss/therealwindycity/issues)",
+            "contact": "https://github.com/bartimoussmith-oss/therealwindycity/issues",
             "delay_seconds_per_host": 3,
-            "max_docs_per_source_per_run": 40,
+            "max_docs_per_source_per_run": 10,
+            "strict_web": True,
         },
         "sources": sources,
         "document_link_patterns": [
@@ -365,10 +385,10 @@ def readme_for(entry: dict) -> str:
         "Generated by `tools/wyoming_instantiate.py` from `wyoming/registry.json`.",
         "Part of the statewide Wyoming instantiation — see `docs/WYOMING-STATEWIDE-INSTANTIATION.md`.",
         "",
-        "## Status: GENERATED, UNVERIFIED",
+        "## Status: configuration and collection are separate",
         "",
-        "No source in this instance has been fetched. Every source is `enabled: false`.",
-        "Nothing about this government is asserted anywhere in this directory.",
+        "Consult `config/sources.json` for enabled sources and `verification.json`, when present, for probe results.",
+        "Official-source review evidence is in `wyoming/source-reviews.json`. A successful probe is not proof of collected records or complete coverage.",
         "",
         f"- Type: `{typ}`" + (f" · County: `{county} County`" if county else ""),
     ]
@@ -397,19 +417,19 @@ def readme_for(entry: dict) -> str:
         "",
         "## Onboard this jurisdiction",
         "",
-        "1. `python3 tools/wyoming_verify.py --slug " + slug + "` — probe candidate official URLs; writes `verification.json` here.",
-        "2. `python3 tools/wyoming_verify.py --slug " + slug + " --apply` — enable what genuinely answered (robots.txt honored).",
+        "1. Review official identity and record exact URLs with evidence in `wyoming/source-reviews.json`.",
+        "2. `python3 tools/wyoming_verify.py --slug " + slug + "` prints a report without writing; add `--apply` to save results and enable successfully probed reviewed URLs (robots.txt honored).",
         "3. Confirm the custodian office/address in `env.sh` (currently UNVERIFIED placeholders).",
         "4. Add the local record to `config/facts.json` (timeline + question_of_the_week), each entry linked to its source.",
         "5. Rerun `python3 tools/wyoming_instantiate.py --check` to confirm the instance is generator-clean.",
         "",
         "If no candidate URL resolves: many Wyoming towns have minimal web presences. The Wyoming Public Records",
-        "Act request path (`run.py request pra`) and the digest pipeline still work; add manual source URLs to",
-        "`config/sources.json` only after you have opened them in a browser and confirmed they are public.",
+        "Act request path (`run.py request pra`) and the digest pipeline still work; add reviewed URLs to",
+        "`wyoming/source-reviews.json`, then run the verifier. Do not activate guessed domains.",
         "",
         "## Honesty contract",
         "",
-        "- Empty timeline, no question_of_the_week, zero enabled sources: this instance asserts nothing yet.",
+        "- Empty local timeline and no question_of_the_week until source-backed local facts are supplied.",
         "- After verification, every alert carries a verbatim quote + source URL + fetch timestamp (LEGAL.md).",
         "- This instance says nothing about any official's conduct until documents back it.",
         "",
