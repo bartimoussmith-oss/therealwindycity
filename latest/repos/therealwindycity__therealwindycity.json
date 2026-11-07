@@ -2,15 +2,16 @@
   "repository": "therealwindycity/therealwindycity",
   "archived": false,
   "fork": true,
-  "checked_at": "2026-11-07T03:55:15.484Z",
+  "checked_at": "2026-11-07T04:03:13.791Z",
   "controls": [
     {
       "id": "architecture",
       "role": "Architect",
       "state": "not_observed",
       "evidence": [],
-      "next": "Map producers, consumers, storage, deployment targets and responsible owners.",
-      "runtime_verified": false
+      "next": "Map producers, consumers, storage, deployment targets and owners.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "agent_handoff",
@@ -18,7 +19,8 @@
       "state": "not_observed",
       "evidence": [],
       "next": "Provide tested commands, current status, constraints and acceptance criteria.",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "setup",
@@ -30,7 +32,8 @@
         "youtube-archive/requirements.txt"
       ],
       "next": "Prove installation from a clean checkout with stated tool versions.",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "tests",
@@ -38,22 +41,21 @@
       "state": "signal_observed",
       "evidence": [
         "tests/test_publish_freshness.py",
-        "uploads/TEST_11-10-25.md",
         "workdesk/tests/boot.test.mjs",
         "workdesk/tests/core.test.mjs"
       ],
-      "next": "Add offline tests and one real end-to-end producer-to-published-output test.",
-      "runtime_verified": false
+      "next": "Add offline tests and a real producer-to-published-output test.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "data_contract",
       "role": "Data engineer",
-      "state": "signal_observed",
-      "evidence": [
-        "2026-09-14-council/civicwatch/CONTRACTOR_OPPORTUNITIES.md"
-      ],
-      "next": "Validate input/output schemas, stable identifiers and compatibility across repositories.",
-      "runtime_verified": false
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "provenance",
@@ -63,27 +65,29 @@
         "config/sources.json",
         "pipeline/media_manifest.json"
       ],
-      "next": "Retain origin URLs, capture times, hashes, original records and limitations.",
-      "runtime_verified": false
+      "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "checkpoint",
       "role": "Reliability engineer",
       "state": "signal_observed",
       "evidence": [
-        "data/snapshots/3c0c9878cf26_dlife-staff-tumbles-by-a-quarter-in-director-brian-nesviks-home-state-of-wyoming",
         "pipeline/media_manifest.json"
       ],
-      "next": "Test interruption recovery and persistence without duplication or data loss.",
-      "runtime_verified": false
+      "next": "Prove interrupted runs resume without lost records or duplicates.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "recovery",
       "role": "Recovery engineer",
       "state": "not_observed",
       "evidence": [],
-      "next": "Prove a backup restoration and a reversible release before risky repairs.",
-      "runtime_verified": false
+      "next": "Test isolated backup restoration and reversible releases.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "deployment",
@@ -92,24 +96,27 @@
       "evidence": [
         "DEPLOY.md"
       ],
-      "next": "Tie the live output to its commit, smoke test and rollback instructions.",
-      "runtime_verified": false
+      "next": "Tie live output to its commit, smoke test and rollback instructions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "dependency_lock",
       "role": "Supply-chain reviewer",
       "state": "not_observed",
       "evidence": [],
-      "next": "Check lockfiles or equivalent version pinning; missing filenames alone do not prove dependencies are unpinned.",
-      "runtime_verified": false
+      "next": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "rights",
       "role": "Rights reviewer",
       "state": "not_observed",
       "evidence": [],
-      "next": "Separate code licensing from source-data and media reuse rights; review manually.",
-      "runtime_verified": false
+      "next": "Separate code licensing from source-data and media reuse rights.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     }
   ],
   "runs": [
@@ -187,8 +194,12 @@
   "pull_requests": [],
   "gaps": [],
   "head": "a58b67f9e758dc86ed0fe6d12f23eaedd90a11a4",
-  "tree_complete": true,
   "files_seen": 2724,
+  "tree_complete": true,
+  "sample_coverage": {
+    "candidates": 13,
+    "selected": 12
+  },
   "workflow_signals": {
     ".github/workflows/civic-cycle.yml": {
       "timeout": false,

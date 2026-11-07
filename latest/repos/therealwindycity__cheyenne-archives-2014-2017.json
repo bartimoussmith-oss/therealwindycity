@@ -2,15 +2,16 @@
   "repository": "therealwindycity/cheyenne-archives-2014-2017",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-07T03:54:52.300Z",
+  "checked_at": "2026-11-07T04:03:01.730Z",
   "controls": [
     {
       "id": "architecture",
       "role": "Architect",
       "state": "not_observed",
       "evidence": [],
-      "next": "Map producers, consumers, storage, deployment targets and responsible owners.",
-      "runtime_verified": false
+      "next": "Map producers, consumers, storage, deployment targets and owners.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "agent_handoff",
@@ -18,7 +19,8 @@
       "state": "not_observed",
       "evidence": [],
       "next": "Provide tested commands, current status, constraints and acceptance criteria.",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "setup",
@@ -26,77 +28,71 @@
       "state": "not_applicable_to_detected_role",
       "evidence": [],
       "next": "Prove installation from a clean checkout with stated tool versions.",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "tests",
       "role": "Test engineer",
       "state": "not_applicable_to_detected_role",
       "evidence": [],
-      "next": "Add offline tests and one real end-to-end producer-to-published-output test.",
-      "runtime_verified": false
+      "next": "Add offline tests and a real producer-to-published-output test.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "data_contract",
       "role": "Data engineer",
       "state": "not_applicable_to_detected_role",
-      "evidence": [
-        "1406530800Jul 28, 2014 - City Council Meeting/Supporting_Documents/1406530800Jul 28, 2014 - City Council Meeting - Bid #M-1-15 Contract - Bid #M-1-15 Contract.pdf",
-        "1406530800Jul 28, 2014 - City Council Meeting/Supporting_Documents/1406530800Jul 28, 2014 - City Council Meeting - Bid #M-2-15 Contract - Bid #M-2-15 Contract.pdf",
-        "1406530800Jul 28, 2014 - City Council Meeting/Supporting_Documents/1406530800Jul 28, 2014 - City Council Meeting - Bid #M-27-14 Contract - Bid #M-27-14 Contract.pdf",
-        "1406530800Jul 28, 2014 - City Council Meeting/Supporting_Documents/1406530800Jul 28, 2014 - City Council Meeting - Bid #M-30-14 Contract - Bid #M-30-14 Contract.pdf",
-        "1406530800Jul 28, 2014 - City Council Meeting/Supporting_Documents/1406530800Jul 28, 2014 - City Council Meeting - Contract - Contract.pdf",
-        "1406530800Jul 28, 2014 - City Council Meeting/Supporting_Documents/1406530800Jul 28, 2014 - City Council Meeting - Contract Cheyenne Housing Authority services - Contract Cheyenne Housing Authority services.pdf"
-      ],
-      "next": "Validate input/output schemas, stable identifiers and compatibility across repositories.",
-      "runtime_verified": false
+      "evidence": [],
+      "next": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "provenance",
       "role": "Evidence reviewer",
       "state": "not_observed",
       "evidence": [],
-      "next": "Retain origin URLs, capture times, hashes, original records and limitations.",
-      "runtime_verified": false
+      "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "checkpoint",
       "role": "Reliability engineer",
       "state": "not_applicable_to_detected_role",
       "evidence": [],
-      "next": "Test interruption recovery and persistence without duplication or data loss.",
-      "runtime_verified": false
+      "next": "Prove interrupted runs resume without lost records or duplicates.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "recovery",
       "role": "Recovery engineer",
       "state": "not_applicable_to_detected_role",
-      "evidence": [
-        "1373266800Jul  8, 2013 - City Council Meeting/Supporting_Documents/1373266800Jul  8, 2013 - City Council Meeting - Reappropriation Backup FY2014 - Reappropriation Backup FY2014.pdf",
-        "1393228800Feb 24, 2014 - City Council Meeting/Supporting_Documents/1393228800Feb 24, 2014 - City Council Meeting - Backup PlanCheyenne Community Plan for City of Che - Backup PlanCheyenne Community Plan for City of Cheyenne (Large Document).pdf",
-        "1393228800Feb 24, 2014 - City Council Meeting/Supporting_Documents/1393228800Feb 24, 2014 - City Council Meeting - Backup PlanCheyenne Comprehensive Plan (Large Docu - Backup PlanCheyenne Comprehensive Plan (Large Document).pdf",
-        "1394434800Mar 10, 2014 - City Council Meeting/Supporting_Documents/1394434800Mar 10, 2014 - City Council Meeting - Backup PlanCheyenne Community Plan for City of Che - Backup PlanCheyenne Community Plan for City of Cheyenne (Large Document).pdf",
-        "1394434800Mar 10, 2014 - City Council Meeting/Supporting_Documents/1394434800Mar 10, 2014 - City Council Meeting - Backup PlanCheyenne Comprehensive Plan (Large Docu - Backup PlanCheyenne Comprehensive Plan (Large Document).pdf",
-        "1398668400Apr 28, 2014 - City Council Meeting/Supporting_Documents/1398668400Apr 28, 2014 - City Council Meeting - Freedom’s Edge Backup Documentation - Freedom’s Edge Backup Documentation.pdf"
-      ],
-      "next": "Prove a backup restoration and a reversible release before risky repairs.",
-      "runtime_verified": false
+      "evidence": [],
+      "next": "Test isolated backup restoration and reversible releases.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "deployment",
       "role": "Release engineer",
       "state": "not_applicable_to_detected_role",
       "evidence": [],
-      "next": "Tie the live output to its commit, smoke test and rollback instructions.",
-      "runtime_verified": false
+      "next": "Tie live output to its commit, smoke test and rollback instructions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "dependency_lock",
       "role": "Supply-chain reviewer",
       "state": "not_applicable_to_detected_role",
       "evidence": [],
-      "next": "Check lockfiles or equivalent version pinning; missing filenames alone do not prove dependencies are unpinned.",
-      "runtime_verified": false
+      "next": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "rights",
@@ -105,15 +101,20 @@
       "evidence": [
         "NOTICE.md"
       ],
-      "next": "Separate code licensing from source-data and media reuse rights; review manually.",
-      "runtime_verified": false
+      "next": "Separate code licensing from source-data and media reuse rights.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     }
   ],
   "runs": [],
   "pull_requests": [],
   "gaps": [],
   "head": "e23950b20292b2cccfa9fa5453c7f6bcfe5a14b2",
-  "tree_complete": true,
   "files_seen": 548,
+  "tree_complete": true,
+  "sample_coverage": {
+    "candidates": 1,
+    "selected": 1
+  },
   "workflow_signals": {}
 }

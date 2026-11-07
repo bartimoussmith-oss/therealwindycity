@@ -2,15 +2,16 @@
   "repository": "bartimoussmith-oss/V-MAX-Colab-Protocol",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-07T03:54:46.725Z",
+  "checked_at": "2026-11-07T04:02:58.157Z",
   "controls": [
     {
       "id": "architecture",
       "role": "Architect",
       "state": "not_observed",
       "evidence": [],
-      "next": "Map producers, consumers, storage, deployment targets and responsible owners.",
-      "runtime_verified": false
+      "next": "Map producers, consumers, storage, deployment targets and owners.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "agent_handoff",
@@ -18,7 +19,8 @@
       "state": "not_observed",
       "evidence": [],
       "next": "Provide tested commands, current status, constraints and acceptance criteria.",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "setup",
@@ -26,102 +28,65 @@
       "state": "signal_observed",
       "evidence": [
         "Dockerfile",
-        "node_modules/@alloc/quick-lru/package.json",
-        "node_modules/@babel/code-frame/package.json",
-        "node_modules/@babel/compat-data/package.json",
-        "node_modules/@babel/core/package.json",
-        "node_modules/@babel/generator/package.json"
+        "package.json"
       ],
       "next": "Prove installation from a clean checkout with stated tool versions.",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "tests",
       "role": "Test engineer",
-      "state": "signal_observed",
-      "evidence": [
-        "node_modules/autoprefixer/lib/hacks/flex-spec.js",
-        "node_modules/fastq/test/example.ts",
-        "node_modules/fastq/test/promise.js",
-        "node_modules/fastq/test/test.js",
-        "node_modules/fastq/test/tsconfig.json",
-        "node_modules/fraction.js/tests/fraction.test.js"
-      ],
-      "next": "Add offline tests and one real end-to-end producer-to-published-output test.",
-      "runtime_verified": false
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Add offline tests and a real producer-to-published-output test.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "data_contract",
       "role": "Data engineer",
-      "state": "signal_observed",
-      "evidence": [
-        "node_modules/@babel/core/lib/config/validation/option-assertions.js",
-        "node_modules/@babel/core/lib/config/validation/option-assertions.js.map",
-        "node_modules/@babel/core/lib/config/validation/options.js",
-        "node_modules/@babel/core/lib/config/validation/options.js.map",
-        "node_modules/@babel/core/lib/config/validation/plugins.js",
-        "node_modules/@babel/core/lib/config/validation/plugins.js.map"
-      ],
-      "next": "Validate input/output schemas, stable identifiers and compatibility across repositories.",
-      "runtime_verified": false
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "provenance",
       "role": "Evidence reviewer",
-      "state": "signal_observed",
-      "evidence": [
-        "node_modules/@babel/generator/lib/source-map.js",
-        "node_modules/@babel/generator/lib/source-map.js.map",
-        "node_modules/@jridgewell/remapping/src/build-source-map-tree.ts",
-        "node_modules/@jridgewell/remapping/src/source-map-tree.ts",
-        "node_modules/@jridgewell/remapping/src/source-map.ts",
-        "node_modules/@jridgewell/remapping/types/build-source-map-tree.d.cts"
-      ],
-      "next": "Retain origin URLs, capture times, hashes, original records and limitations.",
-      "runtime_verified": false
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "checkpoint",
       "role": "Reliability engineer",
-      "state": "signal_observed",
-      "evidence": [
-        "node_modules/@babel/generator/lib/generators/statements.js",
-        "node_modules/@babel/generator/lib/generators/statements.js.map",
-        "node_modules/@babel/types/lib/converters/toStatement.js",
-        "node_modules/@babel/types/lib/converters/toStatement.js.map",
-        "node_modules/caniuse-lite/data/features/keyboardevent-getmodifierstate.js",
-        "node_modules/caniuse-lite/data/features/web-app-manifest.js"
-      ],
-      "next": "Test interruption recovery and persistence without duplication or data loss.",
-      "runtime_verified": false
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Prove interrupted runs resume without lost records or duplicates.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "recovery",
       "role": "Recovery engineer",
-      "state": "signal_observed",
-      "evidence": [
-        "node_modules/lucide-react/dist/esm/icons/archive-restore.js",
-        "node_modules/lucide-react/dist/esm/icons/archive-restore.js.map",
-        "node_modules/lucide-react/dist/esm/icons/database-backup.js",
-        "node_modules/lucide-react/dist/esm/icons/database-backup.js.map"
-      ],
-      "next": "Prove a backup restoration and a reversible release before risky repairs.",
-      "runtime_verified": false
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Test isolated backup restoration and reversible releases.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "deployment",
       "role": "Release engineer",
-      "state": "signal_observed",
-      "evidence": [
-        "node_modules/@babel/parser/CHANGELOG.md",
-        "node_modules/chokidar/node_modules/glob-parent/CHANGELOG.md",
-        "node_modules/commander/CHANGELOG.md",
-        "node_modules/fast-glob/node_modules/glob-parent/CHANGELOG.md",
-        "node_modules/fraction.js/CHANGELOG.md",
-        "node_modules/function-bind/CHANGELOG.md"
-      ],
-      "next": "Tie the live output to its commit, smoke test and rollback instructions.",
-      "runtime_verified": false
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Tie live output to its commit, smoke test and rollback instructions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "dependency_lock",
@@ -130,30 +95,29 @@
       "evidence": [
         "package-lock.json"
       ],
-      "next": "Check lockfiles or equivalent version pinning; missing filenames alone do not prove dependencies are unpinned.",
-      "runtime_verified": false
+      "next": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "rights",
       "role": "Rights reviewer",
-      "state": "signal_observed",
-      "evidence": [
-        "node_modules/@alloc/quick-lru/license",
-        "node_modules/@babel/code-frame/LICENSE",
-        "node_modules/@babel/compat-data/LICENSE",
-        "node_modules/@babel/core/LICENSE",
-        "node_modules/@babel/generator/LICENSE",
-        "node_modules/@babel/helper-compilation-targets/LICENSE"
-      ],
-      "next": "Separate code licensing from source-data and media reuse rights; review manually.",
-      "runtime_verified": false
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Separate code licensing from source-data and media reuse rights.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     }
   ],
   "runs": [],
   "pull_requests": [],
   "gaps": [],
   "head": "7f134e0e0c0b3dc0e62d8a6ee5324f222a5cb1f7",
-  "tree_complete": true,
   "files_seen": 6666,
+  "tree_complete": true,
+  "sample_coverage": {
+    "candidates": 0,
+    "selected": 0
+  },
   "workflow_signals": {}
 }

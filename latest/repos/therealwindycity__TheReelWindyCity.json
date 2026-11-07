@@ -2,7 +2,7 @@
   "repository": "therealwindycity/TheReelWindyCity",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-07T03:55:22.665Z",
+  "checked_at": "2026-11-07T04:03:18.241Z",
   "controls": [
     {
       "id": "architecture",
@@ -12,12 +12,11 @@
         "ECOSYSTEM-INVENTORY-AND-UPGRADE-MEMO-2026-10-28.md",
         "Entity_Database/ECOSYSTEM-INVENTORY-AND-UPGRADE-MEMO-2026-10-28.json",
         "docs/ARCHITECTURE-TIERS.md",
-        "docs/ECOSYSTEM-AGENT-GUIDE.md",
-        "src/app/hub/wyoming/architecture/page.tsx",
-        "src/components/ecosystem-detail.tsx"
+        "docs/ECOSYSTEM-AGENT-GUIDE.md"
       ],
-      "next": "Map producers, consumers, storage, deployment targets and responsible owners.",
-      "runtime_verified": false
+      "next": "Map producers, consumers, storage, deployment targets and owners.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "agent_handoff",
@@ -27,7 +26,8 @@
         "AGENTS.md"
       ],
       "next": "Provide tested commands, current status, constraints and acceptance criteria.",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "setup",
@@ -42,7 +42,8 @@
         "youtube-archive/requirements.txt"
       ],
       "next": "Prove installation from a clean checkout with stated tool versions.",
-      "runtime_verified": false
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "tests",
@@ -52,27 +53,24 @@
         "agent/tests/__init__.py",
         "agent/tests/test_agent.py",
         "civic_atlas/test_integration.py",
-        "civic_atlas/test_lens.cjs",
         "civic_atlas/test_server.py",
-        "civic_atlas/test_streamlit.py"
+        "civic_atlas/test_streamlit.py",
+        "tests/civic-calendar.test.mjs"
       ],
-      "next": "Add offline tests and one real end-to-end producer-to-published-output test.",
-      "runtime_verified": false
+      "next": "Add offline tests and a real producer-to-published-output test.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "data_contract",
       "role": "Data engineer",
       "state": "signal_observed",
       "evidence": [
-        "2026-09-14-council/civicwatch/CONTRACTOR_OPPORTUNITIES.md",
-        "data/snapshots/49c72b7b1a31_onths-after-arson-cheyenne-approves-emergency-contract-for-pumphouse-roof-repair",
-        "data/snapshots/63f04089ff13_onths-after-arson-cheyenne-approves-emergency-contract-for-pumphouse-roof-repair",
-        "data/snapshots/6c039ddbe56c_onths-after-arson-cheyenne-approves-emergency-contract-for-pumphouse-roof-repair",
-        "data/snapshots/6f4c046334e0_onths-after-arson-cheyenne-approves-emergency-contract-for-pumphouse-roof-repair",
-        "data/snapshots/7065d317dc0b_onths-after-arson-cheyenne-approves-emergency-contract-for-pumphouse-roof-repair"
+        "scripts/lib/validate.mjs"
       ],
-      "next": "Validate input/output schemas, stable identifiers and compatibility across repositories.",
-      "runtime_verified": false
+      "next": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "provenance",
@@ -81,43 +79,38 @@
       "evidence": [
         "config/sources.json",
         "drive-import/manifest.json",
-        "pipeline/corpus_yt/_manifest.json",
         "pipeline/media_manifest.json",
         "promethean_federation_manifest.json",
         "public/promethean_federation_manifest.json"
       ],
-      "next": "Retain origin URLs, capture times, hashes, original records and limitations.",
-      "runtime_verified": false
+      "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "checkpoint",
       "role": "Reliability engineer",
       "state": "signal_observed",
       "evidence": [
-        "data/snapshots/16492ceacdb0_nty-and-prometheus-hyperscale-consider-bypassing-state-review-for-new-ai-complex",
-        "data/snapshots/3c0c9878cf26_dlife-staff-tumbles-by-a-quarter-in-director-brian-nesviks-home-state-of-wyoming",
-        "data/snapshots/6bdd8cafb12b_nty-and-prometheus-hyperscale-consider-bypassing-state-review-for-new-ai-complex",
-        "data/snapshots/80ebf811894b_nities-of-cheyennes-new-prca-home-transformational-for-state-tourism-experts-say",
-        "data/snapshots/91899692ab59_nty-and-prometheus-hyperscale-consider-bypassing-state-review-for-new-ai-complex",
-        "data/snapshots/a39068808ac5_nities-of-cheyennes-new-prca-home-transformational-for-state-tourism-experts-say"
+        "data/sync-state.json",
+        "data/wyoming-sync-state.json",
+        "drive-import/manifest.json",
+        "pipeline/media_manifest.json",
+        "promethean_federation_manifest.json",
+        "public/promethean_federation_manifest.json"
       ],
-      "next": "Test interruption recovery and persistence without duplication or data loss.",
-      "runtime_verified": false
+      "next": "Prove interrupted runs resume without lost records or duplicates.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "recovery",
       "role": "Recovery engineer",
-      "state": "signal_observed",
-      "evidence": [
-        "data/snapshots/05eb691ce041_lawmakers-propose-11m-fix-to-restore-school-sports-and-activities-funding",
-        "data/snapshots/08cea3b63ceb_lawmakers-propose-11m-fix-to-restore-school-sports-and-activities-funding",
-        "data/snapshots/0963bb7056a4_lawmakers-propose-11m-fix-to-restore-school-sports-and-activities-funding",
-        "data/snapshots/57337a264578_lawmakers-propose-11m-fix-to-restore-school-sports-and-activities-funding",
-        "data/snapshots/649e6e2cf70f_lawmakers-propose-11m-fix-to-restore-school-sports-and-activities-funding",
-        "data/snapshots/6e0d4e887eb9_lawmakers-propose-11m-fix-to-restore-school-sports-and-activities-funding"
-      ],
-      "next": "Prove a backup restoration and a reversible release before risky repairs.",
-      "runtime_verified": false
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Test isolated backup restoration and reversible releases.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "deployment",
@@ -126,13 +119,11 @@
       "evidence": [
         ".github/workflows/deploy-pages.yml",
         "DEPLOY.md",
-        "DEPLOYMENT-REPAIR-HANDOFF.md",
-        "Entity_Database/DEPLOYMENT-REPAIR-HANDOFF.json",
-        "deploy/oracle/README.md",
-        "deploy/oracle/bootstrap.sh"
+        "DEPLOYMENT-REPAIR-HANDOFF.md"
       ],
-      "next": "Tie the live output to its commit, smoke test and rollback instructions.",
-      "runtime_verified": false
+      "next": "Tie live output to its commit, smoke test and rollback instructions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "dependency_lock",
@@ -141,8 +132,9 @@
       "evidence": [
         "package-lock.json"
       ],
-      "next": "Check lockfiles or equivalent version pinning; missing filenames alone do not prove dependencies are unpinned.",
-      "runtime_verified": false
+      "next": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     },
     {
       "id": "rights",
@@ -151,8 +143,9 @@
       "evidence": [
         "public/maps/LICENSE-maplibre.txt"
       ],
-      "next": "Separate code licensing from source-data and media reuse rights; review manually.",
-      "runtime_verified": false
+      "next": "Separate code licensing from source-data and media reuse rights.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     }
   ],
   "runs": [
@@ -383,8 +376,12 @@
   ],
   "gaps": [],
   "head": "734ba8ad37bba5c2ed146bf24b07405abab89c21",
-  "tree_complete": true,
   "files_seen": 5999,
+  "tree_complete": true,
+  "sample_coverage": {
+    "candidates": 33,
+    "selected": 12
+  },
   "workflow_signals": {
     ".github/workflows/broadcastify-archive-fetch.yml": {
       "timeout": true,
