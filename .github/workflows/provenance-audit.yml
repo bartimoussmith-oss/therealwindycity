@@ -1,0 +1,86 @@
+name: Provenance video audit
+on:
+  push:
+    paths: ['.github/workflows/provenance-audit.yml', 'provenance/**', 'video/provenance-*', 'video/clips/**', 'rwc_provenance.py', 'tools/check_provenance.py', 'tools/render_ai_record.py']
+  workflow_dispatch: {}
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install pillow markdown
+      - name: Check Python syntax
+        run: python -m compileall -q provenance rwc_provenance.py tools/check_provenance.py tools/render_ai_record.py
+      - name: Decode every provenance film and chapter
+        run: |
+          set -euo pipefail
+          for file in video/provenance-timelapse.mp4 video/provenance-manual-run.mp4 video/provenance-showcase.mp4 video/clips/*.mp4; do
+            echo "Checking $file"
+            ffmpeg -v error -xerror -i "$file" -f null -
+          done
+      - name: Check ledger assets
+        run: python tools/check_provenance.py
+      - name: Render and check a small test site
+        run: |
+          mkdir -p /tmp/provenance-smoke/meetings /tmp/provenance-smoke/topics /tmp/provenance-smoke/indexes
+          printf '# Test home\n\nTest fixture, not public records.\n' > /tmp/provenance-smoke/index.md
+          printf '# Test meeting\n\nTest fixture, not public records.\n' > /tmp/provenance-smoke/meetings/test.md
+          printf '# Corrections\n' > /tmp/provenance-smoke/topics/corrections.md
+          printf '# Keywords\n' > /tmp/provenance-smoke/indexes/keywords.md
+          python tools/render_ai_record.py --src /tmp/provenance-smoke --out /tmp/provenance-site
+          python tools/check_provenance.py --site /tmp/provenance-site
+      - name: Check clip and showcase timestamps
+        if: always()
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          def duration(path):
+              return float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','default=nw=1:nk=1',str(path)], text=True))
+          ledger = json.loads(Path('data/out/provenance-ledger.json').read_text())
+          prefix = duration('video/provenance-timelapse.mp4')
+          errors = []
+          for row in ledger['data']:
+              cue = row.get('cue') or {}
+              if not cue.get('src'):
+                  errors.append(row['id'] + ': missing cue')
+                  continue
+              length = duration(cue['src'])
+              start = cue.get('start', 0)
+              beat = cue.get('beat_start')
+              if beat is not None and not 0 <= beat - start <= length:
+                  errors.append(row['id'] + ': beat outside chapter clip')
+              showcase = cue.get('showcase') or {}
+              master = cue.get('master') or {}
+              if cue.get('chapter') != 'overview' and showcase and master:
+                  expected = prefix + master.get('start', 0)
+                  if abs(showcase.get('start', -1) - expected) > 0.5:
+                      errors.append(row['id'] + ': wrong showcase offset')
+          print('\n'.join(errors) if errors else 'Cue timing checks passed')
+          with open(__import__('os').environ['GITHUB_STEP_SUMMARY'], 'a') as f:
+              f.write('## Video cue timing\n' + ('\n'.join('- ' + e for e in errors) if errors else 'Passed') + '\n')
+          raise SystemExit(bool(errors))
+          PY
+      - name: Identify conflicts with main without changing the branch
+        if: always()
+        shell: bash
+        run: |
+          git fetch origin main
+          git config user.name audit
+          git config user.email audit@users.noreply.github.com
+          if git merge --no-commit --no-ff origin/main; then
+            echo 'Merge check passed' >> "$GITHUB_STEP_SUMMARY"
+            git merge --abort || true
+          else
+            { echo '## Conflicting files'; git diff --name-only --diff-filter=U; } >> "$GITHUB_STEP_SUMMARY"
+            git merge --abort || true
+            exit 1
+          fi
