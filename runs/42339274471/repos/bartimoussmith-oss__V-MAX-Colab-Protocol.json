@@ -1,0 +1,123 @@
+{
+  "repository": "bartimoussmith-oss/V-MAX-Colab-Protocol",
+  "archived": false,
+  "fork": false,
+  "checked_at": "2026-11-07T04:38:34.524Z",
+  "controls": [
+    {
+      "id": "architecture",
+      "role": "Architect",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Map producers, consumers, storage, deployment targets and owners.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "agent_handoff",
+      "role": "Agent coordinator",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Provide tested commands, current status, constraints and acceptance criteria.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "setup",
+      "role": "Build engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "Dockerfile",
+        "package.json"
+      ],
+      "next": "Prove installation from a clean checkout with stated tool versions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "tests",
+      "role": "Test engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Add offline tests and a real producer-to-published-output test.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "data_contract",
+      "role": "Data engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "provenance",
+      "role": "Evidence reviewer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "checkpoint",
+      "role": "Reliability engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Prove interrupted runs resume without lost records or duplicates.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "recovery",
+      "role": "Recovery engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Test isolated backup restoration and reversible releases.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "deployment",
+      "role": "Release engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Tie live output to its commit, smoke test and rollback instructions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "dependency_lock",
+      "role": "Supply-chain reviewer",
+      "state": "signal_observed",
+      "evidence": [
+        "package-lock.json"
+      ],
+      "next": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "rights",
+      "role": "Rights reviewer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Separate code licensing from source-data and media reuse rights.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    }
+  ],
+  "runs": [],
+  "pull_requests": [],
+  "gaps": [],
+  "head": "7f134e0e0c0b3dc0e62d8a6ee5324f222a5cb1f7",
+  "files_seen": 6666,
+  "tree_complete": true,
+  "sample_coverage": {
+    "candidates": 0,
+    "selected": 0
+  },
+  "workflow_signals": {}
+}

@@ -1,22 +1,5 @@
 {
-  "newly_observed": [
-    "bartimoussmith-oss/civic-newsroom:deployment",
-    "bartimoussmith-oss/civic-newsroom-data-001:provenance",
-    "bartimoussmith-oss/therealwindycity:data_contract",
-    "bartimoussmith-oss/therealwindycity:recovery",
-    "bartimoussmith-oss/V-MAX-Colab-Protocol:tests",
-    "bartimoussmith-oss/V-MAX-Colab-Protocol:data_contract",
-    "bartimoussmith-oss/V-MAX-Colab-Protocol:provenance",
-    "bartimoussmith-oss/V-MAX-Colab-Protocol:checkpoint",
-    "bartimoussmith-oss/V-MAX-Colab-Protocol:recovery",
-    "bartimoussmith-oss/V-MAX-Colab-Protocol:deployment",
-    "bartimoussmith-oss/V-MAX-Colab-Protocol:rights",
-    "therealwindycity/The-Real-Windy-City-:deployment",
-    "therealwindycity/therealwindycity:data_contract",
-    "therealwindycity/TheReelWindyCity:recovery"
-  ],
-  "no_longer_observed": [
-    "therealwindycity/The-Real-Windy-City-:data_contract"
-  ],
+  "newly_observed": [],
+  "no_longer_observed": [],
   "warning": "Evidence policy changed to version 2: removed findings may be corrected false positives, not completed repairs."
 }

@@ -2,7 +2,7 @@
   "repository": "bartimoussmith-oss/therealwindycity",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-07T04:02:48.871Z",
+  "checked_at": "2026-11-07T04:38:24.907Z",
   "controls": [
     {
       "id": "architecture",
@@ -143,13 +143,13 @@
   "runs": [
     {
       "name": "Engineering control center",
-      "id": 42336510695,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42336510695",
+      "id": 42339274471,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42339274471",
       "sha": "c9c2dbcdab0f9ff92c70912fbf81bd50125c37e8",
       "branch": "main",
       "status": "in_progress",
       "conclusion": null,
-      "created_at": "2026-11-07T04:00:41Z"
+      "created_at": "2026-11-07T04:37:39Z"
     },
     {
       "name": "Fresh records videos",
@@ -252,8 +252,8 @@
       "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42316761098",
       "sha": "456ec35c32ed5c8716a949908de2d5a99c80905d",
       "branch": "main",
-      "status": "in_progress",
-      "conclusion": null,
+      "status": "completed",
+      "conclusion": "success",
       "created_at": "2026-11-07T00:12:08Z"
     },
     {

@@ -1,8 +1,8 @@
 {
   "schema": 2,
-  "started_at": "2026-11-07T04:02:41.914Z",
-  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42336510695",
-  "video_proof_result": "success",
+  "started_at": "2026-11-07T04:38:15.096Z",
+  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42339274471",
+  "video_proof_result": "skipped",
   "repositories": [
     {
       "repository": "bartimoussmith-oss/civic-newsroom",
@@ -433,7 +433,7 @@
       "task": "Check claims against source records and distinguish configured, executed, tested, deployed and verified."
     }
   ],
-  "finished_at": "2026-11-07T04:03:24.090Z",
+  "finished_at": "2026-11-07T04:39:00.795Z",
   "summary": {
     "repositories": 15,
     "declared_edges": 48,
