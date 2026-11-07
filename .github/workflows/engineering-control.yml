@@ -1,0 +1,79 @@
+name: Engineering control center
+on:
+  push:
+    branches: [main]
+    paths: ['engineering_control/**', '.github/workflows/engineering-control.yml']
+  workflow_dispatch: {}
+  schedule:
+    - cron: '37 */6 * * *'
+  workflow_run:
+    workflows: ['Fresh records videos', 'Provenance video audit', 'Repair provenance video timestamps', 'Wyoming source reconnaissance', 'Wyoming fast-track collection']
+    types: [completed]
+permissions:
+  contents: read
+concurrency:
+  group: engineering-control-center
+  cancel-in-progress: false
+jobs:
+  video-proof:
+    if: github.event_name != 'workflow_run'
+    strategy:
+      fail-fast: false
+      matrix:
+        format: [wide, phone]
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Prepare video test environment
+        run: |
+          python -m pip install 'Pillow==11.3.0'
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+      - name: Execute current video builder and its playback tests
+        run: python -u records_video_v2/build.py --format '${{ matrix.format }}'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: engineering-video-${{ matrix.format }}-${{ github.run_id }}
+          path: records-video-output/${{ matrix.format }}/
+          retention-days: 14
+          if-no-files-found: warn
+  inspect-and-report:
+    needs: [video-proof]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Test the auditor itself
+        run: node engineering_control/control.cjs --self-test
+      - name: Inventory, failed-step investigation, dependency map and repair backlog
+        uses: actions/github-script@v7
+        env:
+          VIDEO_PROOF_RESULT: ${{ needs.video-proof.result }}
+        with:
+          script: |
+            await require('./engineering_control/control.cjs').run({github,context,core});
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: engineering-control-${{ github.run_id }}
+          path: engineering-control-output/
+          retention-days: 30
+          if-no-files-found: warn
