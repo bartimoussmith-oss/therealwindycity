@@ -29,6 +29,10 @@ on:
       - "locked-resource/**"
       - "tools/seal_resource.mjs"
       - ".github/workflows/ai-record-pages.yml"
+      - "wyoming/registry.json"
+      - "wyoming/instances/**"
+      - "tools/publish_wyoming.py"
+      - "tools/test_publish_wyoming.py"
   schedule:
     - cron: "41 8 * * *"
   workflow_dispatch:
@@ -41,7 +45,6 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  # Keep the production deploy queue separate from non-deploying branch validation runs.
   group: ai-record-pages-${{ github.ref }}
   cancel-in-progress: false
 jobs:
@@ -63,6 +66,8 @@ jobs:
           python3 tools/publish_media_studio.py --check-only
           python3 -m unittest discover -s tools -p 'test_media_studio.py' -v
           node --check civic_atlas/media/studio.js
+      - name: Test statewide publishing without touching live records
+        run: python3 -m unittest discover -s tools -p 'test_publish_wyoming.py' -v
   build:
     needs: validate-media
     if: ${{ github.ref == 'refs/heads/main' }}
@@ -132,6 +137,8 @@ jobs:
         run: |
           mkdir -p _site/secure-resource
           cp locked-resource/index.html locked-resource/payload.json _site/secure-resource/
+      - name: Add statewide directory without replacing Cheyenne
+        run: python3 tools/publish_wyoming.py --out _site --revision "$GITHUB_SHA"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
@@ -153,6 +160,10 @@ jobs:
         env:
           PUBLISHED_URL: ${{ steps.deployment.outputs.page_url }}
         run: python3 tools/check_ai_record.py --url "$PUBLISHED_URL" --revision "$GITHUB_SHA" --run "$GITHUB_RUN_ID" --attempts 6
+      - name: Verify published statewide index and manifest
+        env:
+          PUBLISHED_URL: ${{ steps.deployment.outputs.page_url }}
+        run: python3 tools/publish_wyoming.py --verify-url "$PUBLISHED_URL" --revision "$GITHUB_SHA"
       - name: Verify published Media Studio bytes against deployed checkout
         env:
           PUBLISHED_URL: ${{ steps.deployment.outputs.page_url }}
