@@ -36,7 +36,7 @@ TEMPLATE = """<!doctype html>
 <meta property="og:title" content="{title}"><meta property="og:description" content="{desc}"><meta property="og:type" content="article"><meta property="og:url" content="{canonical}">
 <script type="application/ld+json">{jsonld}</script>
 <style>{css}</style></head>
-<body><header class="site"><a href="{root}index.html"><b>{name}</b></a><a href="{root}indexes/keywords.html">Keyword index</a><a href="{root}topics/corrections.html">Corrections</a><a href="{root}llms.txt">llms.txt</a><a href="{md_rel}">View as Markdown</a></header>
+<body><header class="site"><a href="{root}index.html"><b>{name}</b></a><a href="{root}game/">Civic Evidence Game</a><a href="{root}indexes/keywords.html">Keyword index</a><a href="{root}topics/corrections.html">Corrections</a><a href="{root}llms.txt">llms.txt</a><a href="{md_rel}">View as Markdown</a></header>
 <main>
 {body}
 <footer>Plain-text mirror of public records of the City of Cheyenne, Wyoming. Not an official city website. Original files: <a href="https://github.com/therealwindycity">github.com/therealwindycity</a>. Markdown source of this page: <a href="{md_rel}">{md_name}</a>.</footer>

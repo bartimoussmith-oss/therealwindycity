@@ -8,6 +8,9 @@ on:
       - "tools/test_ai_record_status.py"
       - "tools/build_ai_record.py"
       - "tools/render_ai_record.py"
+      - "civic_game/**"
+      - "tools/publish_civic_game.py"
+      - "tools/test_publish_civic_game.py"
       - "tools/ai_record_extract.py"
       - "tools/ai_record_ocr.py"
       - "tools/ai_record_static/**"
@@ -68,6 +71,13 @@ jobs:
           node --check civic_atlas/media/studio.js
       - name: Test statewide publishing without touching live records
         run: python3 -m unittest discover -s tools -p 'test_publish_wyoming.py' -v
+      - name: Validate isolated civic game bundle
+        run: |
+          python3 tools/publish_civic_game.py --check-only
+          python3 -m unittest discover -s tools -p 'test_publish_civic_game.py' -v
+          node --check civic_game/history.js
+          node --check civic_game/live.js
+          node --check civic_game/evolution.js
   build:
     needs: validate-media
     if: ${{ github.ref == 'refs/heads/main' }}
@@ -139,6 +149,8 @@ jobs:
           cp locked-resource/index.html locked-resource/payload.json _site/secure-resource/
       - name: Add statewide directory without replacing Cheyenne
         run: python3 tools/publish_wyoming.py --out _site --revision "$GITHUB_SHA"
+      - name: Add Civic Evidence Game without replacing the archive
+        run: python3 tools/publish_civic_game.py --out _site --revision "$GITHUB_SHA"
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
@@ -152,6 +164,8 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          timeout: 1200000
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
@@ -164,6 +178,10 @@ jobs:
         env:
           PUBLISHED_URL: ${{ steps.deployment.outputs.page_url }}
         run: python3 tools/publish_wyoming.py --verify-url "$PUBLISHED_URL" --revision "$GITHUB_SHA"
+      - name: Verify published Civic Evidence Game
+        env:
+          PUBLISHED_URL: ${{ steps.deployment.outputs.page_url }}
+        run: python3 tools/publish_civic_game.py --verify-url "$PUBLISHED_URL" --revision "$GITHUB_SHA"
       - name: Verify published Media Studio bytes against deployed checkout
         env:
           PUBLISHED_URL: ${{ steps.deployment.outputs.page_url }}

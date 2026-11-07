@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FOR THE PERMANENT RECORD — Cheyenne 2026</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230a0a0a'/><text x='16' y='23' font-family='Arial Black' font-size='18' fill='%23ffd93b' text-anchor='middle'>PR</text></svg>">
+<style>
+@font-face{font-family:Bangers;src:url("fonts/bangers.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:Satoshi;src:url("fonts/satoshi-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:Satoshi;src:url("fonts/satoshi-500.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:Satoshi;src:url("fonts/satoshi-700.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:Satoshi;src:url("fonts/satoshi-900.woff2") format("woff2");font-weight:900;font-style:normal;font-display:swap}
+:root{
+  --font-display:'Bangers','Arial Black',sans-serif;
+  --font-body:'Satoshi','Helvetica Neue',sans-serif;
+  --ink:#0a0a0a; --stage:#141414; --paper:#f4ecd8; --paper2:#ddd2b8;
+  --gold:#ffd93b; --red:#b4432f; --green:#2d7a5d; --muted:#a1aebb; --line:#23303d;
+  --text-xs:12px; --text-sm:14px; --text-base:16px; --text-lg:20px;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s6:24px; --s8:32px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:none;text-rendering:optimizeLegibility}
+body{min-height:100dvh;font-family:var(--font-body);font-size:var(--text-base);color:var(--paper);
+  background:#0b0e13;background-image:radial-gradient(#1a2029 1.2px,transparent 1.3px);background-size:15px 15px}
+img,canvas,svg{display:block;max-width:100%}
+button{cursor:pointer;font:inherit;color:inherit;background:none;border:none}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+a{color:var(--gold)}
+#app{max-width:980px;margin:0 auto;padding:var(--s6) var(--s4) var(--s8)}
+
+/* ---------- masthead ---------- */
+.mast{background:#141414;border:4px solid var(--ink);box-shadow:6px 6px 0 var(--red);
+  padding:var(--s4) var(--s6);margin-bottom:var(--s4);transform:rotate(-.4deg)}
+.mast h1{font-family:var(--font-display);font-size:clamp(1.8rem,6vw,3.2rem);letter-spacing:1px;
+  color:#fff;line-height:1.05;text-wrap:balance}
+.mast h1 .gold{color:var(--gold)}
+.mast p{color:var(--gold);font-weight:700;font-size:var(--text-xs);letter-spacing:2px;margin-top:var(--s1)}
+.issue{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700}
+
+/* ---------- panels ---------- */
+.panel{background:#121a24;border:1px solid var(--line);border-radius:10px;padding:var(--s4);margin-bottom:var(--s4)}
+.paper{background:var(--paper);color:var(--ink);border:4px solid var(--ink);border-radius:2px;
+  box-shadow:5px 5px 0 rgba(180,67,47,.85);padding:var(--s4)}
+.paper h3{font-family:var(--font-display);font-size:var(--text-lg);letter-spacing:.5px;margin-bottom:var(--s2)}
+.paper .src{font-size:var(--text-xs);color:#7a6f57;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.paper blockquote{font-style:italic;border-left:4px solid var(--red);padding-left:var(--s3);margin:var(--s2) 0}
+.tagchip{display:inline-block;font-size:11px;font-weight:900;letter-spacing:1px;padding:2px 8px;border-radius:3px;margin-left:var(--s1)}
+.t-RECORD{background:#0f4c2c;color:#b7e4c7}.t-PRESS{background:#4a3a1d;color:#f0c987}
+.t-INFER{background:#1d3a5c;color:#a7c7e8}.t-UNVERIFIED{background:#4a1d1d;color:#f5b3b3}
+
+/* ---------- buttons ---------- */
+.btn{border:none;border-radius:6px;padding:10px 16px;font-size:var(--text-sm);font-weight:700;transition:transform .12s,background .12s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--gold);color:var(--ink)}
+.btn-primary:hover{background:#ffe470}
+.btn-primary:disabled{opacity:.45;cursor:not-allowed}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:#c9553f}
+.btn-ghost{background:#23303d;color:var(--paper)}.btn-ghost:hover{background:#324356}
+.btn-big{font-size:var(--text-lg);padding:14px 28px;font-family:var(--font-display);letter-spacing:1px}
+.btn-row{display:flex;gap:var(--s2);flex-wrap:wrap;margin-top:var(--s3)}
+
+/* ---------- title ---------- */
+.center{text-align:center}
+.title-sub{color:var(--muted);font-size:var(--text-sm);max-width:60ch;margin:var(--s3) auto}
+.stat-strip{display:flex;justify-content:center;gap:var(--s6);flex-wrap:wrap;margin:var(--s4) 0;
+  font-family:var(--font-display);font-size:var(--text-lg);color:var(--gold);letter-spacing:1px}
+.stat-strip span b{color:#fff}
+
+/* ---------- docket select ---------- */
+.docket{display:flex;gap:var(--s3);align-items:center;width:100%;text-align:left;background:#121a24;
+  border:1px solid var(--line);border-radius:8px;padding:var(--s3) var(--s4);margin-bottom:var(--s2)}
+.docket:hover{background:#16212e;border-color:var(--gold)}
+.docket.locked{opacity:.4;cursor:not-allowed}
+.docket .num{font-family:var(--font-display);font-size:var(--text-xl);color:var(--red);min-width:48px}
+.docket .dt{font-size:var(--text-xs);color:var(--gold);font-weight:700;letter-spacing:1px}
+.docket .nm{font-weight:900;font-size:var(--text-base)}
+.docket .bd{font-size:var(--text-xs);color:var(--muted)}
+.docket .done{margin-left:auto;color:var(--green);font-weight:900;font-size:var(--text-xs);white-space:nowrap}
+
+/* ---------- prep ---------- */
+.grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--s3)}
+.pick{position:relative}
+.pick .sel{position:absolute;top:var(--s2);right:var(--s2);background:var(--gold);color:var(--ink);
+  font-weight:900;font-size:11px;padding:2px 8px;border-radius:3px}
+.pick.selected{border-color:var(--gold);background:#fff5ca}
+.hud{display:flex;gap:var(--s4);align-items:center;background:#121a24;border:1px solid var(--line);
+  border-radius:8px;padding:10px var(--s4);flex-wrap:wrap}
+.hud .h{font-size:var(--text-xs);color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+.hud .v{font-family:var(--font-display);font-size:var(--text-lg);color:var(--gold);font-variant-numeric:tabular-nums}
+.hud .v.red{color:#f04747}
+.meter{height:10px;background:#0f1720;border:1px solid var(--line);border-radius:5px;overflow:hidden;flex:1;min-width:120px}
+.meter i{display:block;height:100%;background:var(--green);transition:width .3s,background .3s}
+
+/* ---------- podium ---------- */
+.podium-wrap{display:grid;grid-template-columns:1fr;gap:var(--s3)}
+.timerbar{height:18px;background:#0f1720;border:2px solid var(--ink);border-radius:4px;overflow:hidden}
+.timerbar i{display:block;height:100%;background:var(--gold);transition:width .2s linear}
+.timerbar.low i{background:#f04747;animation:pulse .6s infinite}
+@keyframes pulse{50%{opacity:.55}}
+.timebig{font-family:var(--font-display);font-size:clamp(2rem,8vw,3.5rem);color:var(--gold);font-variant-numeric:tabular-nums}
+.actions{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:var(--s2)}
+.action{background:#16212e;border:1px solid var(--line);border-radius:8px;padding:var(--s3);text-align:left}
+.action:hover:not(:disabled){border-color:var(--gold);background:#1b2942}
+.action:disabled{opacity:.4;cursor:not-allowed}
+.action .k{font-weight:900;font-size:var(--text-sm)}
+.action .c{font-size:var(--text-xs);color:var(--muted)}
+.log{background:#0a0f17;border:1px solid #1c2a3a;border-radius:6px;padding:var(--s3);max-height:220px;
+  overflow-y:auto;font-size:var(--text-xs);line-height:1.7}
+.log .rec{color:#6fc09b}.log .warn{color:#f0a838}.log .bad{color:#f04747}.log .sys{color:#7cc6ff}
+.tagpick{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2)}
+.tagbtn{border:2px solid var(--line);border-radius:6px;padding:var(--s2);font-weight:900;font-size:var(--text-xs)}
+.tagbtn small{display:block;font-weight:400;color:var(--muted);font-size:11px;margin-top:2px}
+
+/* ---------- modal ---------- */
+#modal{position:fixed;inset:0;background:rgba(7,10,17,.88);z-index:100;display:none;align-items:center;justify-content:center;padding:var(--s4)}
+#modal.active{display:flex}
+.modal-card{background:#141414;border:4px solid var(--ink);box-shadow:8px 8px 0 var(--red);max-height:90dvh;overflow-y:auto;
+  border-radius:8px;max-width:560px;width:100%;padding:var(--s6)}
+.modal-card h3{font-family:var(--font-display);font-size:var(--text-xl);color:var(--gold);letter-spacing:1px;margin-bottom:var(--s2)}
+.modal-card .who{color:var(--gold);font-weight:700;font-size:var(--text-xs);letter-spacing:1px;text-transform:uppercase}
+.modal-card p{margin:var(--s2) 0}
+
+/* ---------- vote ---------- */
+.votebar{display:flex;justify-content:center;gap:var(--s6);font-family:var(--font-display);font-size:var(--text-xl)}
+.votebar .yes{color:var(--green)}.votebar .no{color:#f04747}
+.outcome{font-family:var(--font-display);font-size:clamp(1.4rem,5vw,2rem);text-align:center;letter-spacing:1px}
+
+/* ---------- debrief ---------- */
+.scoregrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:var(--s3)}
+.scorecard{background:#121a24;border:1px solid var(--line);border-radius:8px;padding:var(--s3);text-align:center}
+.scorecard b{font-family:var(--font-display);font-size:var(--text-lg);color:var(--gold);display:block}
+.scorecard span{font-size:var(--text-xs);color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:700}
+.rank{font-family:var(--font-display);font-size:clamp(1.6rem,6vw,2.6rem);color:var(--gold);text-align:center;letter-spacing:1px}
+
+/* ---------- misc ---------- */
+.foot{margin-top:var(--s8);padding-top:var(--s4);border-top:1px solid var(--line);font-size:var(--text-xs);
+  color:var(--muted);line-height:1.8}
+#sfx{position:fixed;top:10px;right:10px;z-index:200;background:#121a24;border:1px solid var(--line);
+  border-radius:6px;padding:6px 10px;font-size:var(--text-xs);font-weight:700;color:var(--muted)}
+#dbg{display:none;position:fixed;top:10px;left:10px;z-index:200;background:rgba(0,0,0,.75);color:#0f0;
+  font:11px/1.5 monospace;padding:4px 8px;pointer-events:none;white-space:pre}
+.hint{background:#4a3a1d;border:1px solid #8a6a2a;color:#f0c987;padding:10px var(--s3);border-radius:6px;font-size:var(--text-sm);margin-bottom:var(--s3)}
+.livestrip{font:11px/1.7 monospace;color:#7cc6ff;letter-spacing:.4px;border:1px solid var(--line);border-radius:6px;padding:4px 10px;display:inline-block;margin-bottom:var(--s3)}
+.livestrip a{color:#7cc6ff}
+kbd{background:#1e2a3a;color:#7cc6ff;padding:1px 6px;border-radius:4px;font-size:12px}
+@media (max-width:600px){ .mast{transform:none} .btn-big{width:100%} #dbg{display:none} }
+</style>
+<link rel="stylesheet" href="history.css?v=4">
+<script src="historical-data.js?v=1"></script>
+<script src="evolution-data.js?v=1"></script>
+</head>
+<body>
+<div id="dbg">FPS:--</div>
+<button id="sfx">SOUND: OFF</button>
+<div id="app"></div>
+<div id="modal"><div class="modal-card" id="modalBody"></div></div>
+
+<script>
+/* ============================================================
+   FOR THE PERMANENT RECORD — a civic-audit game
+   All material derived from public meetings, public records,
+   and public pages of the Cheyenne 2026 archive.
+   Epistemic tags throughout: [RECORD] [PRESS] [INFER] [UNVERIFIED]
+   ============================================================ */
+
+const TAGS = {
+  RECORD:{name:"RECORD",desc:"verbatim / primary document",color:"#6fc09b"},
+  PRESS:{name:"PRESS",desc:"named press coverage",color:"#f0a838"},
+  INFER:{name:"INFER",desc:"argued, not observed",color:"#7cc6ff"},
+  UNVERIFIED:{name:"UNVERIFIED",desc:"asserted, unchecked",color:"#f04747"}
+};
+const TAG_ORDER = ["RECORD","PRESS","INFER","UNVERIFIED"];
+const TAG_POINTS = {RECORD:130,PRESS:70,INFER:45,UNVERIFIED:15};
+
+/* ---------------- audio (procedural) ---------------- */
+const SFX = (()=>{
+  let ctx=null, on=false, ambient=null;
+  function init(){ if(!ctx) ctx=new (window.AudioContext||window.webkitAudioContext)(); ctx.resume(); }
+  function tone(f,d,type,vol){ if(!on||!ctx)return; const o=ctx.createOscillator(),g=ctx.createGain();
+    o.type=type||"sine"; o.frequency.value=f; g.gain.setValueAtTime(vol||.2,ctx.currentTime);
+    g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+d); o.connect(g).connect(ctx.destination);
+    o.start(); o.stop(ctx.currentTime+d); }
+  function noise(d,vol,fc){ if(!on||!ctx)return; const b=ctx.createBuffer(1,ctx.sampleRate*d,ctx.sampleRate);
+    const data=b.getChannelData(0); for(let i=0;i<data.length;i++)data[i]=Math.random()*2-1;
+    const src=ctx.createBufferSource(); src.buffer=b; const g=ctx.createGain();
+    g.gain.setValueAtTime(vol||.15,ctx.currentTime); g.gain.exponentialRampToValueAtTime(.001,ctx.currentTime+d);
+    const f=ctx.createBiquadFilter(); f.type="lowpass"; f.frequency.value=fc||800;
+    src.connect(f).connect(g).connect(ctx.destination); src.start(); }
+  function startAmbient(){ if(!on||!ctx||ambient)return; const b=ctx.createBuffer(1,ctx.sampleRate*2,ctx.sampleRate);
+    const d=b.getChannelData(0); for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;
+    ambient=ctx.createBufferSource(); ambient.buffer=b; ambient.loop=true;
+    const f=ctx.createBiquadFilter(); f.type="bandpass"; f.frequency.value=300; f.Q.value=.6;
+    const g=ctx.createGain(); g.gain.value=.025;
+    ambient.connect(f).connect(g).connect(ctx.destination); ambient.start(); }
+  return {
+    init, startAmbient,
+    setEnabled(v){ on=v; if(v){init();startAmbient();} else if(ambient){try{ambient.stop()}catch(e){} ambient=null;} },
+    get enabled(){return on},
+    exhibit(){ tone(880,.12,"triangle",.18); tone(1320,.2,"triangle",.12); },
+    admission(){ tone(523,.1,"square",.15); setTimeout(()=>tone(659,.1,"square",.15),90); setTimeout(()=>tone(784,.25,"square",.18),180); },
+    gavel(){ noise(.18,.5,300); tone(120,.15,"sine",.4); },
+    buzz(){ tone(160,.35,"sawtooth",.22); },
+    tick(){ tone(1000,.03,"sine",.08); },
+    whoosh(){ noise(.25,.1,2000); },
+    vote(){ tone(440,.15,"triangle",.2); setTimeout(()=>tone(660,.3,"triangle",.2),150); }
+  };
+})();
+document.getElementById("sfx").addEventListener("click",e=>{
+  SFX.setEnabled(!SFX.enabled);
+  e.target.textContent = "SOUND: "+(SFX.enabled?"ON":"OFF");
+});
+
+/* ---------------- docket data ---------------- */
+const DOCKETS = [
+{ id:0, title:"THE GAMING OVERLAY", date:"JUNE 2026 · PUBLIC SERVICES CMTE", diff:1,
+  brief:"A text amendment would expand special-use gambling overlays in mixed-use business districts. Staff says it merely 'accommodates existing commercial entities.' You get one 3-minute turn. Make the record.",
+  tutorial:true,
+  evidence:[
+    {t:"Overlay map diff",q:"The amendment retroactively fits existing commercial sites into districts they were never entitled to.",src:"agenda packet, planning maps",tag:"RECORD",chain:true},
+    {t:"Planner's committee answer",q:"'This accommodates existing commercial entities at the expense of city-wide zoning integrity.'",src:"committee transcript",tag:"RECORD",chain:true},
+    {t:"Press framing",q:"Local coverage calls the amendment 'retroactive accommodation.'",src:"WyomingNews.com",tag:"PRESS"},
+    {t:"Your precedent analysis",q:"No staff study exists on the amendment's precedent effects city-wide.",src:"your analysis",tag:"INFER"},
+    {t:"Movement claim",q:"'This overlay was bought and paid for.'",src:"social media",tag:"UNVERIFIED"},
+    {t:"Motion to table",q:"You demand the item be tabled pending a precedent study.",src:"your request, on the record",tag:"RECORD",chain:true}
+  ],
+  questions:[
+    {q:"Was this amendment drafted to fit specific existing businesses?",out:{admit:true,who:"Senior planner",text:"'It was drafted to fit the existing sites, yes.'",pts:250}},
+    {q:"How many other businesses could use this overlay?",out:{admit:false,who:"Planning staff",text:"'That would depend on future applications.'",pts:40}},
+    {q:"Has a city-wide precedent study been done?",out:{admit:false,who:"Planning staff",text:"'We are not aware of one at this time.'",pts:80}}
+  ],
+  interrupts:[
+    {at:120,type:"timecall",who:"CHAIR",text:"'Your three minutes are almost up, sir.'",
+     choices:[{label:"Close on the record",comp:0,rec:60,time:8},{label:"Ask for 30 more seconds",comp:-5,rec:20,time:15}]}
+  ],
+  leans:[1,1,1,0,1,-1,1,0,1],
+  outcome:{passed:true,text:"HISTORICALLY: the item moved forward. Your tabling demand and the map diff entered the record — the precedent argument outlived the vote."}
+},
+{ id:1, title:"CHAPTER 1.28 — THE WARRANT WORDS", date:"JAN–FEB 2026 · GOVERNING BODY", diff:2,
+  brief:"Chapter 1.28 would let municipal judges issue administrative inspection warrants. You identified W.S. 35-7-1046: warrant authority belongs to district courts. The whole fight is over two words — 'determine' and 'discover.'",
+  evidence:[
+    {t:"W.S. 35-7-1046",q:"Warrant authority rests with district court judges — not municipal courts.",src:"Wyoming statute",tag:"RECORD",chain:true},
+    {t:"Your testimony",q:"'A general warrant is a fishing expedition authorized by the government to find a crime it doesn't know exists.'",src:"public comment transcript",tag:"RECORD",chain:true},
+    {t:"Pre-notice absence",q:"The draft ordinance lacks pre-notice to the owner before inspection.",src:"draft ordinance text",tag:"RECORD"},
+    {t:"Press: the dissenters",q:"Coverage notes councilmembers Aldrich, Moody and Rinne cast dissenting votes.",src:"Cap City News",tag:"PRESS"},
+    {t:"Your reading",q:"'Discover' converts an inspection into a search — 'verify' is the viable legal standard.",src:"your analysis",tag:"INFER",chain:true},
+    {t:"Committee chatter",q:"'Municipal judges already handle these warrants.'",src:"committee hallway",tag:"UNVERIFIED"}
+  ],
+  questions:[
+    {q:"Can a municipal judge issue a search warrant under state statute?",out:{admit:true,who:"City attorney",text:"'That authority sits with the district court.'",pts:250}},
+    {q:"Is 'discover' a defined legal standard anywhere in the code?",out:{admit:false,who:"Ordinance sponsor",text:"'It's a drafting choice.'",pts:60}},
+    {q:"Will you amend the operative words?",out:{admit:true,who:"Councilor Aldrich",text:"'We'll strike \"determine\" and \"discover\" from the final ordinance.'",pts:280}}
+  ],
+  interrupts:[
+    {at:130,type:"poo",who:"COUNCIL MEMBER",text:"Point of order — public comment is limited to the item at hand.",
+     choices:[{label:"Yield, restate scope",comp:5,rec:0,time:5},{label:"Stand on the record",comp:-10,rec:80,time:10}]},
+    {at:70,type:"miccut",who:"CLERK",text:"Your audio drops for a moment — the room can't hear you.",
+     choices:[{label:"Wait for reconnection",comp:5,rec:0,time:12},{label:"Keep speaking into the dead mic",comp:-8,rec:0,time:6}]}
+  ],
+  leans:[1,1,0,1,-1,-1,1,0,1],
+  outcome:{passed:true,text:"HISTORICALLY: the ordinance advanced — but the words 'determine' and 'discover' were struck before passage. Syntax surgery, on the record."}
+},
+{ id:2, title:"THE STUDY OF A STUDY", date:"AUGUST 2026 · COUNCIL COMMITTEE", diff:2,
+  brief:"A $186,500 contract to consultant Ardurra to review a previous study of the city's own dual-lane roundabout gateway design. You call the intersection 'a major infrastructure failure' — and the contract 'a premium consultant studying a study of your own failed design.'",
+  evidence:[
+    {t:"Contract 8325",q:"$186,500 to review a study the city already paid for.",src:"council packet",tag:"RECORD",chain:true},
+    {t:"Your line",q:"'You are quite literally paying a premium consultant to study a study of your own failed design.'",src:"public comment transcript",tag:"RECORD",chain:true},
+    {t:"The prior study",q:"The original roundabout study already cost the city tens of thousands.",src:"invoice records",tag:"RECORD"},
+    {t:"Press headline",q:"'Consultant to review own-consultant study' — local coverage.",src:"WyomingNews.com",tag:"PRESS"},
+    {t:"Your inference",q:"The intersection's performance data contradicts the original study's premise.",src:"your analysis",tag:"INFER"},
+    {t:"Blog claim",q:"'The consultant wrote the first study too.'",src:"online comment",tag:"UNVERIFIED"}
+  ],
+  questions:[
+    {q:"Did the city solicit more than one bid for this review?",out:{admit:true,who:"Public works director",text:"'This was a sole-source continuation.'",pts:260}},
+    {q:"What did the first study conclude?",out:{admit:false,who:"Staff",text:"'I'd have to get back to you.'",pts:80}},
+    {q:"Has the roundabout performed as modeled?",out:{admit:true,who:"City engineer",text:"'It has not performed as modeled.'",pts:250}}
+  ],
+  interrupts:[
+    {at:110,type:"poo",who:"COMMITTEE CHAIR",text:"Point of order — the contract terms are not before the committee.",
+     choices:[{label:"Reframe as fiscal finding",comp:5,rec:70,time:8},{label:"Push the contract question",comp:-12,rec:90,time:12}]}
+  ],
+  leans:[1,1,1,0,1,1,-1,0,1],
+  outcome:{passed:true,text:"HISTORICALLY: the contract advanced. The fiscal contrast — $186,500 to re-study a failure — is now part of the permanent record."}
+},
+{ id:3, title:"LEAD LINES & RESERVES", date:"MAY 2026 · GOVERNING BODY", diff:3,
+  brief:"BOPU testing shows homes exceeding the EPA lead action level; 28,000 service lines are of unknown material. Meanwhile, $5.6 million is drafted from reserves for a discretionary real-estate corridor.",
+  evidence:[
+    {t:"BOPU test data",q:"28,000 service lines of unknown material; samples above the EPA lead action level.",src:"Board of Public Utilities records",tag:"RECORD",chain:true},
+    {t:"Your line",q:"'You are leaving families to play Russian roulette with their tap water.'",src:"public comment transcript",tag:"RECORD"},
+    {t:"Reserve transfer",q:"$5.6M drafted from reserves for a discretionary corridor acquisition.",src:"budget packet",tag:"RECORD",chain:true},
+    {t:"Press confirmation",q:"Coverage confirms the service-line figures.",src:"Cap City News",tag:"PRESS"},
+    {t:"Your inference",q:"The replacement sequencing leaves the highest-risk homes for last.",src:"your analysis",tag:"INFER"},
+    {t:"Online thread",q:"'The city knew for decades and hid it.'",src:"social media",tag:"UNVERIFIED"}
+  ],
+  questions:[
+    {q:"How many lines will be replaced this year?",out:{admit:true,who:"BOPU official",text:"'Fewer than 400. The sequencing isn't prioritized by risk.'",pts:270}},
+    {q:"Was the reserve transfer urgent?",out:{admit:false,who:"Finance director",text:"'It's a policy choice.'",pts:70}},
+    {q:"Have the exceedance homes been notified?",out:{admit:true,who:"BOPU official",text:"'Not yet, in all cases.'",pts:250}}
+  ],
+  interrupts:[
+    {at:140,type:"timecall",who:"CHAIR",text:"'Time called, sir.'",
+     choices:[{label:"Close the record cleanly",comp:5,rec:60,time:6},{label:"One more sentence — into the mic",comp:-6,rec:0,time:10}]},
+    {at:80,type:"poo",who:"COUNCIL MEMBER",text:"Point of order — budget items are separate from utility operations.",
+     choices:[{label:"Tie them with the fiscal record",comp:0,rec:90,time:9},{label:"Concede the boundary",comp:8,rec:0,time:5}]}
+  ],
+  leans:[1,1,1,1,0,-1,1,0,0],
+  outcome:{passed:true,text:"HISTORICALLY: the budget passed. The lead-line record did not go away — it reappears at every hearing until the lines are replaced."}
+},
+{ id:4, title:"ROUNDTOP ROAD ANNEXATION", date:"APRIL 2026 · GOVERNING BODY", diff:3,
+  brief:"A 1,200-acre business park annexation of vacant land. Under W.S. 15-1-409, findings must protect the health, safety and welfare of affected residents. You look at the vacant parcel and ask: which residents?",
+  evidence:[
+    {t:"W.S. 15-1-409",q:"Annexation findings require health, safety and welfare of affected residents.",src:"Wyoming statute",tag:"RECORD",chain:true},
+    {t:"Your line",q:"'You cannot check a statutory box claiming you are protecting residents who do not exist. Do not trade our quality of life for a 1,200-acre blind experiment.'",src:"public comment transcript",tag:"RECORD",chain:true},
+    {t:"The parcel today",q:"Vacant land. No residents, no structures, no water taps.",src:"staff report",tag:"RECORD"},
+    {t:"Press coverage",q:"Coverage of the 'blind experiment' exchange.",src:"Cap City News",tag:"PRESS"},
+    {t:"Your inference",q:"The fiscal impact study double-counts projected revenue in years 3–5.",src:"your analysis",tag:"INFER"},
+    {t:"Anonymous post",q:"'The developer bribed the planning commission.'",src:"online thread",tag:"UNVERIFIED"}
+  ],
+  questions:[
+    {q:"How many current residents live on the parcel?",out:{admit:true,who:"Planning staff",text:"'Zero.'",pts:260}},
+    {q:"Can the city serve this parcel with water today?",out:{admit:true,who:"BOPU official",text:"'Not without new lift lines.'",pts:260}},
+    {q:"Was the fiscal study peer-reviewed?",out:{admit:false,who:"Staff",text:"'It follows our standard template.'",pts:60}}
+  ],
+  interrupts:[
+    {at:125,type:"poo",who:"COUNCIL MEMBER",text:"Point of order — annexation is separate from end use.",
+     choices:[{label:"Read the statute back",comp:-5,rec:120,time:12},{label:"Accept the frame, note it",comp:5,rec:30,time:6}]},
+    {at:65,type:"miccut",who:"CLERK",text:"Audio glitch — half the room lost your last sentence.",
+     choices:[{label:"Repeat it for the record",comp:3,rec:40,time:10},{label:"Move on, lose the sentence",comp:0,rec:0,time:0}]}
+  ],
+  leans:[1,1,1,0,1,-1,1,1,0],
+  outcome:{passed:true,text:"HISTORICALLY: the annexation advanced. The statutory-box record was preserved for whoever has standing — see you in district court."}
+},
+{ id:5, title:"COX RANCH — THE GAG ORDER", date:"SEPTEMBER 2026 · ANNEXATION HEARING", diff:4,
+  brief:"During the 1,260-acre Cox Ranch annexation, the chair limits taxpayers to 'annexation only' while the developer presents the full business plan. First Amendment forum doctrine says a city cannot run a viewpoint-based comment policy.",
+  evidence:[
+    {t:"The parameters",q:"Taxpayers restricted to annexation scope; developer presents end-use business plan.",src:"meeting transcript",tag:"RECORD",chain:true},
+    {t:"Your formal warning",q:"Viewpoint discrimination placed on the record — the city cannot allow one side's business plan and gag the other.",src:"public comment transcript",tag:"RECORD",chain:true},
+    {t:"Forum doctrine",q:"A limited public forum cannot discriminate among speakers by viewpoint.",src:"First Amendment doctrine",tag:"RECORD"},
+    {t:"Press: the gag order",q:"Coverage of the 'gag order' exchange.",src:"Cap City News",tag:"PRESS"},
+    {t:"Your inference",q:"The chair's rulings track who is speaking, not what is said.",src:"your analysis",tag:"INFER"},
+    {t:"Social claim",q:"'The mayor takes developer money.'",src:"social media",tag:"UNVERIFIED"}
+  ],
+  questions:[
+    {q:"Can the developer discuss end use while residents cannot?",out:{admit:true,who:"Hearing chair",text:"'That's the custom for these hearings.'",pts:280}},
+    {q:"Is that policy written anywhere?",out:{admit:true,who:"City clerk",text:"'No. It's practice.'",pts:250}},
+    {q:"Will my comment be stricken?",out:{admit:false,who:"Hearing chair",text:"'The record stands as stated.'",pts:80}}
+  ],
+  interrupts:[
+    {at:135,type:"outoforder",who:"MAYOR",text:"The mayor rules you out of order — your data presentation is called 'not accurate in relation to previous agenda items.'",
+     choices:[{label:"Request the ruling be entered in the minutes",comp:-10,rec:150,time:12},{label:"Apologize and move on",comp:10,rec:0,time:6}]},
+    {at:90,type:"poo",who:"COUNCIL MEMBER",text:"Point of order — keep public comment isolated to this item.",
+     choices:[{label:"Note the asymmetry on the record",comp:-5,rec:100,time:10},{label:"Yield the floor",comp:5,rec:0,time:4}]}
+  ],
+  leans:[1,1,0,1,1,-1,1,0,1],
+  outcome:{passed:true,text:"HISTORICALLY: the annexation passed 6–3. The viewpoint record was made — and quoted thereafter."}
+},
+{ id:6, title:"THE HIGHLANDS — 3,459.99 ACRES", date:"JULY 13, 2026 · GOVERNING BODY · 7H44M", diff:5,
+  brief:"The finale. 3,459.99 acres to Microsoft in a single 7-hour-44-minute session, adjourned 1:41 a.m. The three volunteered confessions are on tape. One binding document was never uploaded to the portal. The trap is sprung.",
+  evidence:[
+    {t:"The acreage",q:"3,459.99 acres — roughly 20% of the city's pre-annexation land area, in one ordinance.",src:"ordinance text",tag:"RECORD",chain:true},
+    {t:"Bloom: 'very loose'",q:"'The annexation findings are very loose, very open interpretation.' — planning director",src:"June 22 transcript",tag:"RECORD",chain:true},
+    {t:"Irwing: land bank",q:"'Overall, yes, we do plan to land bank.' — Microsoft, June 1",src:"June 1 transcript",tag:"RECORD"},
+    {t:"The ghost document",q:"A substitute lease, binding in the ordinance, never uploaded to the city portal before the vote.",src:"meeting record",tag:"RECORD",chain:true},
+    {t:"Press: the finale",q:"Coverage of the 7h44m session, adjourned 1:41 a.m.",src:"Cowboy State Daily",tag:"PRESS"},
+    {t:"Your closing",q:"'The administrative record is now closed. See you in district court.'",src:"public comment transcript",tag:"RECORD",chain:true},
+    {t:"Conspiracy thread",q:"'Microsoft bribed the governor.'",src:"online forum",tag:"UNVERIFIED"}
+  ],
+  questions:[
+    {q:"Was the substitute lease uploaded before this meeting?",out:{admit:true,who:"City clerk",text:"'I don't think it was.'",pts:300}},
+    {q:"Is there a staff report before this goes on?",out:{admit:true,who:"Staff",text:"'Nope.'",pts:300}},
+    {q:"Can Microsoft commit to any campus detail tonight?",out:{admit:true,who:"Microsoft representative",text:"'We can't commit to that. We don't know that… that's how early we are.'",pts:280}}
+  ],
+  interrupts:[
+    {at:150,type:"miccut",who:"CLERK",text:"Mic cut mid-sentence — the chair: 'you've got to be prepared, sir.'",
+     choices:[{label:"Keep the thread, restate the exhibit",comp:-8,rec:120,time:12},{label:"Yield, re-queue it",comp:5,rec:0,time:8}]},
+    {at:115,type:"poo",who:"COUNCIL MEMBER",text:"Point of order — this is a zoning item, not a deposition.",
+     choices:[{label:"'I'm building the record.'",comp:-12,rec:140,time:12},{label:"Rephrase as a finding",comp:0,rec:60,time:8}]},
+    {at:75,type:"outoforder",who:"MAYOR",text:"Ruled out of order — remarks stricken from the floor.",
+     choices:[{label:"Demand the ruling be minuted",comp:-15,rec:180,time:12},{label:"Let it go, keep composure",comp:12,rec:0,time:4}]},
+    {at:40,type:"timecall",who:"CHAIR",text:"'Time called. 1:41 a.m.'",
+     choices:[{label:"The record is closed.",comp:5,rec:100,time:4},{label:"One last exhibit — quickly",comp:-10,rec:60,time:10}]}
+  ],
+  leans:[1,1,1,0,1,1,-1,1,1],
+  outcome:{passed:true,text:"HISTORICALLY: the annexation passed. The administrative record closed at 1:41 a.m. — 484 statements, 132 interruptions, 20 months. See you in district court."}
+},
+{ id:7, title:"THE MILLER TAPES — ENDLESS NIGHT", date:"JULY 27, 2026 · SERIALIZATION MODE", diff:5, endless:true,
+  brief:"The epilogue. Forty statements in one night — your heaviest documented session. No single item matters now; the archive itself is the argument. Keep the record building as long as the clock holds.",
+  evidence:[
+    {t:"The running index",q:"484 turns · 132 interruptions · 59 transcripts · 20 tapes.",src:"the archive",tag:"RECORD",chain:true},
+    {t:"Verbatim chain",q:"Each meeting's transcript becomes an exhibit at the next.",src:"transcript archive",tag:"RECORD",chain:true},
+    {t:"Colleague on mic",q:"'Do you know this Charles Miller guy? He's really gaining some traction.'",src:"June 8 transcript",tag:"RECORD",chain:true},
+    {t:"Press designation",q:"'Resident Charles Miller' — the press can't decide your ward either.",src:"Cap City News",tag:"PRESS"},
+    {t:"Your inference",q:"The serialization is the point — absence from one item is presence in the pattern.",src:"your analysis",tag:"INFER"},
+    {t:"Unverified",q:"'He never sleeps.'",src:"audience chatter",tag:"UNVERIFIED"}
+  ],
+  questions:[
+    {q:"Is there any item you won't speak to tonight?",out:{admit:true,who:"The chair",text:"'Apparently not.'",pts:250}},
+    {q:"Does the record ever close?",out:{admit:true,who:"You",text:"'It closes when the city stops making it necessary.'",pts:220}},
+    {q:"Why the whole agenda?",out:{admit:false,who:"Staff",text:"'We still don't know.'",pts:60}}
+  ],
+  interrupts:[
+    {at:130,type:"timecall",who:"CHAIR",text:"'Time called, sir.'",
+     choices:[{label:"Next item.",comp:5,rec:100,time:4},{label:"One more exhibit",comp:-8,rec:60,time:10}]},
+    {at:95,type:"miccut",who:"CLERK",text:"Mic cut — again.",
+     choices:[{label:"Wave it off, keep going",comp:3,rec:80,time:8},{label:"Note the interruption count",comp:-5,rec:120,time:10}]},
+    {at:60,type:"poo",who:"COUNCIL MEMBER",text:"Point of order.",
+     choices:[{label:"Yield with courtesy",comp:8,rec:0,time:4},{label:"Requote your own question",comp:-8,rec:140,time:12}]}
+  ],
+  leans:[1,1,0,1,1,-1,1,1,0],
+  outcome:{passed:true,text:"THE RECORD: 484 statements. 132 interruptions. The record outlasted every vote it was built around."}
+}
+];
+
+/* ---------------- state ---------------- */
+const S = {
+  phase:"title", unlocked:0, lastScore:0, docket:null,
+  hand:[], usedQ:[], time:180, composure:100,
+  recordPts:0, exhibits:0, admissions:0, chain:0, halluc:0,
+  warned:false, strikes:0, log:[], timerId:null, paused:false,
+  done:{}, best:{}
+};
+
+/* ---------------- debug overlay ---------------- */
+let _fr=0,_lt=performance.now(),_fps=0;
+function dbgLoop(){ const n=performance.now(); _fr++; if(n-_lt>=1000){_fps=_fr;_fr=0;_lt=n;
+  document.getElementById("dbg").textContent="FPS:"+_fps; } requestAnimationFrame(dbgLoop); }
+requestAnimationFrame(dbgLoop);
+
+/* ---------------- testing hooks ---------------- */
+window.render_game_to_text = ()=>JSON.stringify({
+  phase:S.phase, docket:S.docket?S.docket.id:null, time:Math.round(S.time),
+  composure:Math.round(S.composure), recordPts:Math.round(S.recordPts),
+  exhibits:S.exhibits, admissions:S.admissions, chain:S.chain, halluc:S.halluc,
+  hand:S.hand.length, usedQ:S.usedQ.length, unlocked:S.unlocked
+});
+window.advanceTime = (ms)=>{ /* time-based UI; timer runs on real clock */ };
+
+/* ---------------- helpers ---------------- */
+const $app=document.getElementById("app");
+const $modal=document.getElementById("modal");
+const $modalBody=document.getElementById("modalBody");
+function esc(s){var E={"&":"&"+"amp;","<":"&"+"lt;",">":"&"+"gt;",'"':"&"+"quot;"};return String(s).replace(/[&<>"]/g,function(c){return E[c];});}
+function log(cls,txt){ S.log.unshift({cls,txt}); S.log=S.log.slice(0,40); renderLog(); }
+function renderLog(){ const el=document.getElementById("logbox"); if(!el)return;
+  el.innerHTML=S.log.map(l=>`<div class="${l.cls}">${l.txt}</div>`).join(""); }
+function openModal(html){ $modalBody.innerHTML=html; $modal.classList.add("active"); }
+function closeModal(){ $modal.classList.remove("active"); }
+
+function masthead(sub){ const sound=document.getElementById("sfx");if(sound)sound.hidden=S.phase==="history";return `<header class="mast"><div class="issue">FOR THE PERMANENT RECORD &middot; CHEYENNE, WY &middot; 2026</div>
+  <h1>${S.phase==="history"?"":"THE "}<span class="gold">${sub||"PODIUM"}</span></h1>
+  <p>${S.phase==="history"?"SOURCE-BOUNDED HISTORICAL PARTICIPATION LEDGER":"PRACTICE SIMULATION · NOT A VERBATIM REENACTMENT"}</p></header>${S.phase==="history"?"":'<div class="archive-note">Practice scenarios use scripted dialogue, evidence tags and votes. They are not authenticated quotations, official procedural advice or verified historical outcomes. Inspect the separate historical ledger for sourced real participation.</div>'}`; }
+
+/* ---------------- screens ---------------- */
+function showTitle(){
+  S.phase="title";
+  $app.innerHTML = masthead("PERMANENT RECORD") + `
+  <div class="livestrip" id="liveStrip">ARCHIVE SNAPSHOT · ${window.HISTORY_DATA?window.HISTORY_DATA.coverage.repositories:15} public repositories inventoried · historical ledger through 2026-11-05</div>
+  <div class="center">
+    <p class="title-sub">You are the record-keeper at the public-comment microphone. The council will vote however it votes — your job is to make the record survive the vote. Enter exhibits, cross-examine officials, tag every claim by its epistemic status, and survive the points of order.</p>
+    <div class="stat-strip"><span><b>8</b> DOCKETS</span><span><b>3:00</b> PER TURN</span><span><b>1</b> MIC</span></div>
+    <button class="btn btn-primary btn-big" id="startBtn">TAKE THE PODIUM</button>
+    <button class="btn btn-ghost btn-big" id="historyBtn" style="margin-top:16px">EXPLORE PLAYED ROUNDS</button>
+    <button class="btn btn-primary btn-big" id="transcriptsBtn" style="margin-top:16px">BROWSE TRANSCRIPTS</button>
+    <button class="btn btn-ghost btn-big" id="liveBtn" style="margin-top:16px">LIVE MEETING WORKSPACE</button>
+    <p class="archive-meta" style="margin-top:16px">Historical meetings and real recorded commenters now have a separate participation ledger. The practice game below remains a simulation.</p>
+  </div>
+  <div class="panel" style="margin-top:var(--s6)">
+    <h3 style="font-family:var(--font-display);color:var(--gold);letter-spacing:1px">HOW SCORING WORKS</h3>
+    <p style="font-size:var(--text-sm);color:#cbd5e0">Evidence is only as good as its tag. Present a <span class="tagchip t-RECORD">RECORD</span> item as record and it scores full weight. Present an <span class="tagchip t-UNVERIFIED">UNVERIFIED</span> item as record and you've entered a hallucination into the record — two of those and the mayor strikes your remarks. The vote was never the win condition. The record is.</p>
+  </div>
+  ${foot()}`;
+  document.getElementById("startBtn").onclick=()=>{ SFX.init(); showSelect(); };
+  document.getElementById("historyBtn").onclick=()=>window.openHistory();
+  document.getElementById("transcriptsBtn").onclick=()=>window.openTranscripts();
+  document.getElementById("liveBtn").onclick=()=>window.CivicLive.open();
+}
+
+function foot(){ return `<footer class="foot">
+  A documentary game built from the public archive of The Real Windy City — Cheyenne meeting transcripts, agenda packets, and minutes.
+  Epistemic tags throughout: <span class="tagchip t-RECORD">RECORD</span> verbatim/primary &middot; <span class="tagchip t-PRESS">PRESS</span> named press &middot;
+  <span class="tagchip t-INFER">INFER</span> argued, not observed &middot; <span class="tagchip t-UNVERIFIED">UNVERIFIED</span> lead, not fact.<br>
+  The archive: <a href="https://bartimoussmith-oss.github.io/therealwindycity/">CHEYENNE RECORDS ARCHIVE</a> &middot;
+  <a href="https://github.com/therealwindycity" target="_blank" rel="noopener">github.com/therealwindycity</a><br>
+  Practice dialogue, tags and outcomes are simulation content, not authenticated quotations. Historical participation is separately sourced to specific archived minutes. Verify facts and current meeting rules against primary sources.
+</footer>`; }
+
+function showSelect(){
+  S.phase="select"; window.scrollTo(0,0);
+  const cards = DOCKETS.map(d=>{
+    const locked = d.id>S.unlocked;
+    const done = S.done[d.id];
+    return `<button class="docket ${locked?"locked":""}" data-id="${d.id}" ${locked?"disabled":""}>
+      <span class="num">${String(d.id).padStart(2,"0")}</span>
+      <span><span class="dt">${d.date}</span><br><span class="nm">${d.title}</span><br><span class="bd">${d.brief.slice(0,90)}…</span></span>
+      ${done?`<span class="done">✓ RECORD ${S.best[d.id]||""}</span>`:locked?`<span class="done" style="color:var(--muted)">LOCKED</span>`:""}
+    </button>`;
+  }).join("");
+  $app.innerHTML = masthead("CASE FILES") + `<p style="color:var(--muted);font-size:var(--text-sm);margin-bottom:var(--s3)">Select a docket. Each is one 3-minute turn at the microphone — choose your evidence, then work the record.</p>` + cards + foot();
+  document.querySelectorAll(".docket:not(.locked)").forEach(b=>{
+    b.onclick=()=>{ const d=DOCKETS[+b.dataset.id]; S.docket=d; showPrep(); };
+  });
+}
+
+/* ---------------- prep ---------------- */
+function showPrep(){
+  S.phase="prep"; S.paused=false; window.scrollTo(0,0);
+  S.hand=[]; S.usedQ=[]; S.time=180; S.composure=100;
+  S.recordPts=0; S.exhibits=0; S.admissions=0; S.chain=0; S.halluc=0;
+  S.warned=false; S.strikes=0; S.log=[];
+  S.docket=JSON.parse(JSON.stringify(S.docket)); // fresh copy: interrupts must re-fire on replay
+  S.docket.interrupts.forEach(x=>x.fired=false);
+  const d=S.docket;
+  const cards=d.evidence.map((e,i)=>`
+    <div class="paper pick" data-i="${i}" role="button" tabindex="0" aria-pressed="false">
+      <div class="src">${esc(e.src)}</div>
+      <h3>${esc(e.t)}</h3>
+      <blockquote>${esc(e.q)}</blockquote>
+      <span class="tagchip t-${e.tag}" style="margin-left:0">${e.tag}</span>
+    </div>`).join("");
+  $app.innerHTML = masthead("CASE "+String(d.id).padStart(2,"0")) + `
+    <div class="panel"><span class="issue">${d.date}</span>
+      <h3 style="font-family:var(--font-display);font-size:var(--text-lg);color:#fff;margin-top:var(--s2)">${d.title}</h3>
+      <p style="font-size:var(--text-sm);color:#cbd5e0;margin-top:var(--s2)">${d.brief}</p>
+      ${d.tutorial?`<div class="hint"><b>TUTORIAL:</b> your evidence cards show their epistemic tag. At the podium you'll present each one and choose the tag yourself — mislabeling strong claims as RECORD is how hallucinations enter records. Cross-examine to harvest admissions. Survive the interruptions.</div>`:""}
+    </div>
+    <div class="hud" style="margin-bottom:var(--s3)">
+      <span class="h">Dossier limit</span><span class="v" id="prepCount">0 / 5</span>
+      <span class="h">Tip</span><span style="font-size:var(--text-xs);color:var(--muted)">Chain cards (⛓) score bonuses in sequence. You don't need to win the vote.</span>
+    </div>
+    <div class="grid2" id="prepGrid">${cards}</div>
+    <div class="panel" style="margin-top:var(--s3)">
+      <span class="issue">PRIMARY SOURCES — THE REAL THING</span>
+      <p style="font-size:var(--text-sm);color:#cbd5e0;margin-top:var(--s2)">Practice cards and dialogue are scripted and their tags are game mechanics, not independent factual verification. Research the underlying topics in the <a href="https://github.com/therealwindycity/The-Real-Windy-City-" target="_blank" rel="noopener">timestamped caption archive</a> and <a href="https://github.com/therealwindycity/cheyenne-archives-2025-2026" target="_blank" rel="noopener">agendas, packets and minutes</a>. Caption accuracy and speaker identity require checking the original video.</p>
+    </div>
+    <div class="btn-row center">
+      <button class="btn btn-primary btn-big" id="goPodium" disabled>TAKE THE PODIUM (3:00)</button>
+    </div>` + foot();
+  document.querySelectorAll(".pick").forEach(el=>{
+    const i=+el.dataset.i;
+    const toggle=()=>{
+      if(S.hand.includes(i)){ S.hand=S.hand.filter(x=>x!==i); el.classList.remove("selected"); el.querySelector(".sel")?.remove(); }
+      else { if(S.hand.length>=5)return; S.hand.push(i); el.classList.add("selected");
+        el.insertAdjacentHTML("beforeend",`<span class="sel">IN DOSSIER ${S.hand.length}</span>`); }
+      document.querySelectorAll(".pick").forEach(card=>{
+        const pos=S.hand.indexOf(+card.dataset.i);
+        card.setAttribute("aria-pressed",String(pos>=0));
+        if(pos>=0)card.querySelector(".sel").textContent="IN DOSSIER "+(pos+1);
+      });
+      document.getElementById("prepCount").textContent=`${S.hand.length} / 5`;
+      document.getElementById("goPodium").disabled = S.hand.length===0;
+    };
+    el.onclick=toggle;
+    el.onkeydown=e=>{ if(e.key===" "||e.key==="Enter"){e.preventDefault();toggle();} };
+  });
+  document.getElementById("goPodium").onclick=()=>showPodium();
+}
+
+/* ---------------- podium ---------------- */
+let tickCount=0;
+function showPodium(){
+  S.phase="podium"; window.scrollTo(0,0);
+  const d=S.docket;
+  $app.innerHTML = masthead("PODIUM") + `
+    <div class="hud" style="margin-bottom:var(--s3)">
+      <span class="h">Clock</span><span class="timebig" id="timeBig">3:00</span>
+      <span class="h">Composure</span><div class="meter"><i id="compBar" style="width:100%"></i></div>
+      <span class="h">Record</span><span class="v" id="recPts">0</span>
+      <span class="h">Chain</span><span class="v" id="chainN">×0</span>
+    </div>
+    <div class="timerbar" id="tbar"><i style="width:100%"></i></div>
+    <div class="podium-wrap" style="margin-top:var(--s3)">
+      <div class="actions">
+        <button class="action" id="aExhibit"><span class="k">ENTER EXHIBIT <kbd>1</kbd></span><span class="c">present evidence — 12s of floor time</span></button>
+        <button class="action" id="aCross"><span class="k">CROSS-EXAMINE <kbd>2</kbd></span><span class="c">ask the record a question — 20s</span></button>
+        <button class="action" id="aWarn"><span class="k">FORMAL WARNING <kbd>3</kbd></span><span class="c">place notice on the record — once per docket</span></button>
+        <button class="action" id="aReserve"><span class="k">RESERVE THE RECORD <kbd>4</kbd></span><span class="c">hold the floor steady — 5s</span></button>
+        <button class="action" id="aWritten"><span class="k">FILE WRITTEN <kbd>5</kbd></span><span class="c">simulated filing only · 4s, 60% game weight</span></button>
+      </div>
+      <div class="log" id="logbox"></div>
+    </div>
+    ${d.tutorial?`<div class="hint">Click <b>ENTER EXHIBIT</b>: choose a tag for a scripted practice card. The mayor's responses are simulated. From CASE 01 on, the practice clock keeps running during interruptions; this does not establish the timing rules at a real meeting.</div>`:""}` + foot();
+  log("sys",`[${d.date}] The chair recognizes you. Three minutes.`);
+  updateHud();
+  document.getElementById("aExhibit").onclick=()=>actExhibit();
+  document.getElementById("aCross").onclick=()=>actCross();
+  document.getElementById("aWarn").onclick=()=>actWarn();
+  document.getElementById("aReserve").onclick=()=>actReserve();
+  document.getElementById("aWritten").onclick=()=>actWritten();
+  document.onkeydown=e=>{
+    if(S.phase!=="podium"||S.paused)return;
+    if(e.key==="1")actExhibit(); else if(e.key==="2")actCross();
+    else if(e.key==="3")actWarn(); else if(e.key==="4")actReserve();
+    else if(e.key==="5")actWritten();
+  };
+  clearInterval(S.timerId);
+  S.timerId=setInterval(()=>{
+    if(S.phase!=="podium")return;
+    if(S.paused&&!liveClock())return; // CASE 01+: the clock runs like real life — interruptions burn your time
+    S.time-=0.24; // 75 real seconds -> 180 game seconds
+    tickCount++;
+    if(S.time<=30&&tickCount%8===0)SFX.tick();
+    if(S.time<=0){ endPodium(); return; }
+    if(!S.paused){ // queued interruptions wait for an open floor
+      const iv=S.docket.interrupts.find(x=>!x.fired && S.time<=x.at);
+      if(iv){ iv.fired=true; fireInterrupt(iv); }
+    }
+    // low composure risk
+    if(S.composure<25 && Math.random()<0.02 && S.strikes<2){ strikeOut(); }
+    updateHud();
+  },100);
+}
+function fmtTime(t){ t=Math.max(0,Math.round(t)); return Math.floor(t/60)+":"+String(t%60).padStart(2,"0"); }
+function liveClock(){ return S.docket && S.docket.id>=1; } // CASE 01+: the clock runs like the real microphone
+function updateHud(){
+  const tb=document.getElementById("timeBig"); if(!tb)return;
+  tb.textContent=fmtTime(S.time);
+  document.getElementById("tbar").firstElementChild.style.width=(S.time/180*100)+"%";
+  document.getElementById("tbar").classList.toggle("low",S.time<=30);
+  const cb=document.getElementById("compBar");
+  cb.style.width=S.composure+"%";
+  cb.style.background = S.composure>60?"var(--green)":S.composure>30?"var(--gold)":"#f04747";
+  document.getElementById("recPts").textContent=Math.round(S.recordPts);
+  document.getElementById("chainN").textContent="×"+S.chain;
+  document.getElementById("aExhibit").disabled = S.hand.length===0;
+  document.getElementById("aCross").disabled = S.usedQ.length>=S.docket.questions.length;
+  document.getElementById("aWarn").disabled = S.warned;
+}
+
+/* ----- actions ----- */
+function spend(sec){ S.time=Math.max(0,S.time-sec); if(S.time<=0)endPodium(); }
+
+function actExhibit(){
+  if(S.hand.length===0||S.paused)return;
+  S.paused=true;
+  const d=S.docket, i=S.hand[0], e=d.evidence[i];
+  const options=TAG_ORDER.map(t=>`<button class="tagbtn" data-tag="${t}" style="border-color:${TAGS[t].color}">
+    PRESENT AS ${t}<small>${TAGS[t].desc}</small></button>`).join("");
+  openModal(`<span class="issue">EXHIBIT — PRESENT AS:</span>
+    <div class="paper" style="margin-top:var(--s2)">
+      <div class="src">${esc(e.src)}</div><h3>${esc(e.t)}</h3>
+      <blockquote>${esc(e.q)}</blockquote>
+      ${e.chain?'<span class="tagchip" style="background:#1d3a5c;color:#a7c7e8">⛓ CHAIN ELIGIBLE</span>':""}
+    </div>
+    <div class="tagpick">${options}</div>`);
+  document.querySelectorAll(".tagbtn").forEach(b=>{
+    b.onclick=()=>{
+      closeModal(); S.paused=false;
+      const claimed=b.dataset.tag, actual=e.tag;
+      S.hand.shift();
+      if(claimed===actual){
+        let pts=TAG_POINTS[actual];
+        if(e.chain){ S.chain++; pts+=60*S.chain; log("rec",`⛓ chain ×${S.chain} — +${60*S.chain} record weight`); }
+        S.recordPts+=pts; S.exhibits++;
+        if(actual==="UNVERIFIED")log("warn","Entered as [UNVERIFIED] — a lead on the record, not a fact. Honest.");
+        else log("rec",`EXHIBIT ENTERED [${actual}] +${pts} — ${esc(e.t)}`);
+        SFX.exhibit();
+      } else if(claimed==="RECORD"&&actual==="UNVERIFIED"){
+        S.halluc++; S.composure-=15; S.strikes++;
+        log("bad",`HALLUCINATION ON THE RECORD — presented as [RECORD], was [UNVERIFIED]. Strike ${S.strikes}/2. -15 composure.`);
+        SFX.buzz();
+        if(S.strikes>=2){ strikeOut(); }
+      } else {
+        const half=Math.round(TAG_POINTS[actual]*0.25);
+        S.recordPts+=half; S.exhibits++; S.composure-=5;
+        S.chain=0;
+        log("warn",`Tagged [${claimed}] but source is [${actual}] · quarter-weight +${half}, chain broken, -5 composure.`);
+        SFX.buzz();
+      }
+      spend(12); updateHud();
+      if(S.time<=0)endPodium();
+    };
+  });
+}
+
+function actCross(){
+  if(S.usedQ.length>=S.docket.questions.length||S.paused)return;
+  S.paused=true;
+  const d=S.docket;
+  const avail=d.questions.map((q,i)=>({q,i})).filter(x=>!S.usedQ.includes(x.i));
+  openModal(`<span class="issue">CROSS-EXAMINE — CHOOSE YOUR QUESTION</span>
+    ${avail.map(x=>`<button class="btn btn-ghost" style="display:block;width:100%;text-align:left;margin-top:var(--s2)" data-q="${x.i}">${esc(x.q.q)}</button>`).join("")}
+    <div class="btn-row"><button class="btn btn-ghost" id="qx">Never mind</button></div>`);
+  document.getElementById("qx").onclick=()=>{closeModal();S.paused=false;};
+  document.querySelectorAll("[data-q]").forEach(b=>{
+    b.onclick=()=>{
+      closeModal(); S.paused=false;
+      const q=d.questions[+b.dataset.q]; S.usedQ.push(+b.dataset.q);
+      spend(20);
+      if(q.out.admit){
+        S.admissions++; S.recordPts+=q.out.pts; S.chain++;
+        log("rec",`ADMISSION HARVESTED — ${esc(q.out.who)}: ${esc(q.out.text)} +${q.out.pts}`);
+        SFX.admission();
+      } else {
+        S.recordPts+=q.out.pts; S.composure+=3;
+        log("warn",`${esc(q.out.who)}: ${esc(q.out.text)} — partial answer, +${q.out.pts}`);
+        SFX.whoosh();
+      }
+      updateHud();
+      if(S.time<=0)endPodium();
+    };
+  });
+}
+
+function actWarn(){
+  if(S.warned||S.paused)return;
+  S.warned=true; spend(15);
+  S.recordPts+=180; S.composure-=20;
+  log("rec","FORMAL WARNING PLACED ON THE RECORD — +180 record weight, -20 composure. They noticed.");
+  SFX.gavel();
+  // formal warnings invite scrutiny
+  if(Math.random()<0.6){
+    const iv={type:"poo",who:"CHAIR",text:"'You have been formally warned' — the chair's gavel comes down hard.",
+      choices:[{label:"Stand. It's on the record.",comp:-10,rec:120,time:10},{label:"Yield the floor",comp:8,rec:0,time:4}]};
+    fireInterrupt(iv);
+  }
+  updateHud();
+}
+
+function actReserve(){
+  if(S.paused)return;
+  spend(5); S.composure=Math.min(100,S.composure+4);
+  log("sys","'I reserve the record on this item.' Steady. +4 composure.");
+  updateHud();
+}
+
+function actWritten(){
+  if(S.paused||S.hand.length===0)return;
+  const d=S.docket, i=S.hand[0], e=d.evidence[i];
+  S.hand.shift();
+  const pts=Math.round(TAG_POINTS[e.tag]*0.6);
+  S.recordPts+=pts; S.exhibits++;
+  log("rec",`SIMULATED WRITTEN COMMENT [${e.tag}] · +${pts} practice points. Nothing was sent to the City or entered in an actual record.`);
+  SFX.exhibit();
+  spend(4); updateHud();
+  if(S.time<=0)endPodium();
+}
+
+/* ----- interruptions ----- */
+function fireInterrupt(iv){
+  S.paused=true;
+  SFX.gavel();
+  openModal(`<h3>⛔ ${iv.type==="miccut"?"MIC CUT":iv.type==="poo"?"POINT OF ORDER":iv.type==="timecall"?"TIME CALLED":iv.type==="outoforder"?"RULED OUT OF ORDER":"INTERRUPTION"}</h3>
+    <span class="who">${esc(iv.who)}</span>
+    <p>${esc(iv.text)}</p>
+    ${iv.choices.map((c,i)=>`<button class="btn ${i===0?"btn-ghost":"btn-red"}" style="display:block;width:100%;text-align:left;margin-top:var(--s2)" data-c="${i}">
+      ${esc(c.label)} <small style="color:var(--muted)">(composure ${c.comp>=0?"+":""}${c.comp} · record +${c.rec} · ${c.time}s)</small></button>`).join("")}`);
+  document.querySelectorAll("[data-c]").forEach(b=>{
+    b.onclick=()=>{
+      closeModal(); S.paused=false;
+      const c=iv.choices[+b.dataset.c];
+      S.composure=Math.max(0,Math.min(100,S.composure+c.comp));
+      S.recordPts+=c.rec;
+      if(c.rec>0)log("rec",`Held the line: +${c.rec} record weight.`);
+      if(c.comp<-5)log("bad",`Cost of standing: ${c.comp} composure.`);
+      spend(c.time); updateHud();
+      if(S.time<=0)endPodium();
+    };
+  });
+}
+
+function strikeOut(){
+  if(S.strikes>=2)return;
+  S.strikes++; S.composure=Math.max(0,S.composure-25);
+  SFX.gavel();
+  log("bad","THE CHAIR: 'You are out of order.' Remarks stricken from the floor — but the minutes remember.");
+  updateHud();
+}
+
+/* ----- end of podium → vote ----- */
+function endPodium(){
+  if(S.phase!=="podium")return;
+  S.phase="vote"; clearInterval(S.timerId); S.paused=true; window.scrollTo(0,0); closeModal();
+  const d=S.docket;
+  const shift = (S.recordPts-700)/450; // record strength sways seats
+  const votes = d.leans.map(l=>{
+    const v = l + (shift>0?Math.min(1.6,shift):(shift<-0.5?-1:0)) + (Math.random()*0.6-0.3);
+    return v>0.15?1:0;
+  });
+  const yes=votes.reduce((a,b)=>a+b,0), no=9-yes;
+  S.passed=yes>4;
+  $app.innerHTML = masthead("VOTE") + `
+    <div class="panel center">
+      <canvas id="council" width="720" height="260" style="margin:0 auto;max-width:100%"></canvas>
+      <div class="votebar" style="margin-top:var(--s3)"><span class="yes">YES ${yes}</span><span class="no">NO ${no}</span></div>
+      <div class="outcome" style="margin-top:var(--s3);color:${S.passed?"#f0a838":"var(--green)"}">${S.passed?"MOTION PASSES":"MOTION FAILS"}</div>
+      <p style="color:#c3ccd8;font-size:var(--text-sm);margin-top:var(--s3)">SCRIPTED SCENARIO OUTCOME. This game does not verify the real vote, officials' dialogue or subsequent legal outcome. Open the historical ledger to inspect sourced participation.</p>
+    </div>
+    <div class="center"><button class="btn btn-primary btn-big" id="toDebrief">CLOSE THE RECORD</button></div>` + foot();
+  drawCouncil(votes);
+  document.getElementById("toDebrief").onclick=showDebrief;
+  SFX.vote();
+}
+
+function drawCouncil(votes){
+  const c=document.getElementById("council"), x=c.getContext("2d");
+  const W=c.width,H=c.height,cx=W/2,cy=H-20,R=200;
+  x.fillStyle="#0a0f17"; x.fillRect(0,0,W,H);
+  // dais
+  x.fillStyle="#1c2a3a"; x.beginPath(); x.arc(cx,cy,R,Math.PI,0); x.fill();
+  x.strokeStyle="#ffd93b"; x.lineWidth=3; x.beginPath(); x.arc(cx,cy,R,Math.PI,0); x.stroke();
+  const labels=["MAYOR"];
+  for(let i=0;i<9;i++){
+    const ang=Math.PI*(1-(i+0.5)/9);
+    const px=cx+Math.cos(ang)*R*0.82, py=cy-Math.sin(ang)*R*0.82-8;
+    x.beginPath(); x.arc(px,py,20,0,Math.PI*2);
+    x.fillStyle=votes[i]?"#2d7a5d":"#b4432f"; x.fill();
+    x.strokeStyle="#0a0a0a"; x.lineWidth=3; x.stroke();
+    x.fillStyle="#fff"; x.font="900 12px Satoshi,sans-serif"; x.textAlign="center";
+    x.fillText(String(i+1),px,py+4);
+  }
+  x.fillStyle="#ffd93b"; x.font="900 14px Satoshi,sans-serif"; x.textAlign="center";
+  x.fillText("9-MEMBER COUNCIL · CHEYENNE",cx,H-6);
+}
+
+/* ----- debrief ----- */
+function rankFor(p){
+  if(p>=3800)return["THE PERMANENT RECORD","#ffd93b"];
+  if(p>=2600)return["RECORD ARCHITECT","#ffd93b"];
+  if(p>=1600)return["FORENSIC AUDITOR","#7cc6ff"];
+  if(p>=800)return["REGULAR COMMENTER","#f0a838"];
+  return["SPEAKER (3:00)","#f0a838"];
+}
+function showDebrief(){
+  S.phase="debrief"; window.scrollTo(0,0);
+  const d=S.docket;
+  S.done[d.id]=true;
+  S.best[d.id]=Math.max(S.best[d.id]||0,Math.round(S.recordPts));
+  if(d.id===S.unlocked && S.unlocked<DOCKETS.length-1) S.unlocked++;
+  S.lastScore=Math.round(S.recordPts);
+  const [rank,color]=rankFor(S.recordPts);
+  const grade = S.halluc===0?"A — clean record":S.halluc===1?"B — one hallucination entered":"C — the record was contaminated";
+  $app.innerHTML = masthead("RECORD CLOSED") + `
+    <div class="panel">
+      <div class="rank" style="color:${color}">${rank}</div>
+      <div class="center" style="color:var(--muted);font-size:var(--text-sm)">FINAL GRADE: ${grade}</div>
+      <div class="scoregrid" style="margin-top:var(--s4)">
+        <div class="scorecard"><b>${Math.round(S.recordPts)}</b><span>record strength</span></div>
+        <div class="scorecard"><b>${S.exhibits}</b><span>exhibits entered</span></div>
+        <div class="scorecard"><b>${S.admissions}</b><span>admissions harvested</span></div>
+        <div class="scorecard"><b>×${S.chain}</b><span>quote chain</span></div>
+        <div class="scorecard"><b>${S.halluc}</b><span>hallucinations</span></div>
+        <div class="scorecard"><b>${Math.round(S.composure)}</b><span>composure left</span></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h3 style="font-family:var(--font-display);color:var(--gold)">THE VOTE vs. THE RECORD</h3>
+      <p style="font-size:var(--text-sm);color:#cbd5e0">In this simulation the ${S.passed?"item passed":"motion failed"}. This is not a verified historical vote or a prediction. Practice points do not change real participants' historical credits, and no actual public record was filed.</p>
+    </div>
+    <div class="panel">
+      <h3 style="font-family:var(--font-display);color:var(--gold)">TAKE THE REAL PODIUM</h3>
+      <p style="font-size:var(--text-sm);color:#cbd5e0">Nothing you do in this game is submitted to the City. Before participating in a real meeting, check the City's <a href="https://www.cheyennecity.org/ecm" target="_blank" rel="noopener">meeting information</a> and <a href="https://www.cheyennecity.org/MinutesandAgendas" target="_blank" rel="noopener">agendas and minutes</a> for the date, location, remote-access instructions, current comment rules and written-submission deadline. Simulation actions such as cross-examination and the three-minute clock do not establish your real procedural rights.</p>
+    </div>
+    <div class="btn-row center">
+      <button class="btn btn-primary btn-big" id="nextCase">${d.id<DOCKETS.length-1?"NEXT DOCKET":"BACK TO CASE FILES"}</button>
+      <button class="btn btn-ghost btn-big" id="replayCase">REPLAY THIS DOCKET</button>
+      <button class="btn btn-ghost btn-big" id="shareCase">SHARE YOUR RECORD</button>
+      <button class="btn btn-ghost btn-big" id="browseHistory">EXPLORE HISTORICAL ROUNDS</button>
+    </div>` + foot();
+  document.getElementById("nextCase").onclick=showSelect;
+  document.getElementById("replayCase").onclick=()=>showPrep();
+  document.getElementById("browseHistory").onclick=()=>window.openHistory();
+  document.getElementById("shareCase").onclick=async()=>{
+    const txt=`FOR THE PERMANENT RECORD · PRACTICE SIMULATION · ${S.docket.title}: ${rankFor(S.recordPts)[0]}, ${Math.round(S.recordPts)} practice points. This is a scripted game result, not an official score or verified historical outcome.`;
+    const fallback=()=>{openModal(`<h3>Copy your practice result</h3><p>Automatic sharing is unavailable here. Copy the text below; nothing has been posted.</p><textarea id="shareText" readonly rows="5" style="width:100%;padding:12px">${esc(txt)}</textarea><button class="btn btn-ghost" id="closeShare">CLOSE</button>`);document.getElementById("closeShare").onclick=closeModal;};
+    try{
+      if(navigator.share){ await navigator.share({title:"FOR THE PERMANENT RECORD",text:txt}); }
+      else if(navigator.clipboard){ await navigator.clipboard.writeText(txt); document.getElementById("shareCase").textContent="COPIED TO CLIPBOARD"; }
+      else fallback();
+    }catch(e){fallback();}
+  };
+}
+
+/* ---------------- boot ---------------- */
+showTitle();
+</script>
+<script src="transcript-data.js?v=2"></script>
+<script src="history.js?v=4"></script>
+<script src="evolution.js?v=2"></script>
+<script src="live.js?v=2"></script>
+</body>
+</html>
