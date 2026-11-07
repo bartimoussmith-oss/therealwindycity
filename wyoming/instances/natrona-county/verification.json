@@ -2,16 +2,17 @@
   "slug": "natrona-county",
   "name": "Natrona County",
   "type": "county",
-  "checked_at": "2026-11-07T20:50:01.852252+00:00",
+  "checked_at": "2026-11-07T21:14:31.882136+00:00",
   "candidates": [
     {
       "url": "https://www.natronacounty-wy.gov/",
-      "status": null,
+      "status": 403,
       "reachable": false,
       "approved": true,
       "denied": false,
-      "robots": "robots.txt unavailable or invalid; probe blocked",
-      "robots_allowed": false
+      "robots": "not checked: owner-directed Wyoming collection policy",
+      "robots_allowed": true,
+      "error": "HTTP 403"
     }
   ],
   "verified_url": null,

@@ -27,8 +27,9 @@ class NoRedirect(urllib.request.HTTPRedirectHandler):
         return None
 
 class Fetcher:
-    def __init__(self, delay, timeout):
+    def __init__(self, delay, timeout, respect_robots=True):
         self.delay, self.timeout = delay, timeout
+        self.respect_robots = respect_robots
         self.last, self.robots = {}, {}
         self.opener = urllib.request.build_opener(NoRedirect())
 
@@ -53,6 +54,8 @@ class Fetcher:
             self.last[host] = time.monotonic()
 
     def allowed(self, url):
+        if not self.respect_robots:
+            return True, 'not checked: owner-directed Wyoming collection policy'
         p = urllib.parse.urlsplit(url)
         origin = p.scheme + '://' + p.netloc
         if origin not in self.robots:
@@ -129,7 +132,7 @@ def main():
         entries = [e for e in entries if e['slug'] == args.slug]
     if not entries:
         parser.error('no registered jurisdictions selected')
-    fetcher = Fetcher(args.delay, args.timeout)
+    fetcher = Fetcher(args.delay, args.timeout, respect_robots=False)
     results = []
     for entry in entries:
         try:

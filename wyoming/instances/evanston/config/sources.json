@@ -4,7 +4,8 @@
     "contact": "https://github.com/bartimoussmith-oss/therealwindycity/issues",
     "delay_seconds_per_host": 3,
     "max_docs_per_source_per_run": 10,
-    "strict_web": true
+    "strict_web": true,
+    "respect_robots": false
   },
   "sources": [
     {
@@ -12,7 +13,7 @@
       "type": "html",
       "url": "https://www.evanstonwy.org/64/Archived-Agendas-Minutes",
       "enabled": true,
-      "notes": "Live-verified 2026-11-07T20:50:36.085405+00:00 by tools/wyoming_verify.py (robots.txt honored). Platform fingerprint: unknown. Official-source review is recorded in wyoming/source-reviews.json. Reachability is not complete coverage."
+      "notes": "Live-verified 2026-11-07T21:14:35.345971+00:00 by tools/wyoming_verify.py (robots.txt not used as a gate). Platform fingerprint: unknown. Official-source review is recorded in wyoming/source-reviews.json. Reachability is not complete coverage."
     },
     {
       "name": "evanston_wyomingnews_search",

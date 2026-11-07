@@ -1,7 +1,7 @@
-"""Module 1 — Ingestion: robots-aware, rate-limited, stdlib-only harvester.
+"""Module 1 — Ingestion: rate-limited, stdlib-only public-document harvester.
 
-Rules enforced here (see LEGAL.md): robots.txt + crawl-delay respected, custom
-identifying User-Agent, per-host minimum delay, document-types only, hard caps.
+Rules enforced here (see LEGAL.md): configurable robots policy, identifying
+User-Agent, per-host minimum delay, document-types only, hard caps.
 Sources of type 'fixture' read a LOCAL directory — used by run.py selftest to
 prove the pipeline offline.
 """
@@ -120,7 +120,7 @@ def _allowed(url: str, cfg: dict) -> bool:
 def _wait(url: str, cfg: dict):
     host = _host(url)
     delay = float(cfg["identity"].get("delay_seconds_per_host", 3))
-    rp = _ROBOTS.get(host)
+    rp = _ROBOTS.get(host) if cfg["identity"].get("respect_robots", True) else None
     if rp is not None:
         cd = rp.crawl_delay(cfg["identity"]["user_agent"])
         if cd:
@@ -137,7 +137,7 @@ def fetch(url: str, cfg: dict) -> bytes | None:
     parsed = urllib.parse.urlsplit(url)
     if strict and (parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password):
         return None
-    if not _allowed(url, cfg):
+    if cfg["identity"].get("respect_robots", True) and not _allowed(url, cfg):
         print(f"    [robots] disallowed: {url}")
         return None
     _wait(url, cfg)
