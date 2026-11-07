@@ -1,0 +1,59 @@
+name: Repair provenance video timestamps
+on:
+  push:
+    branches: ['arena/74a6689f-therealwindycity']
+    paths: ['tools/repair_provenance_cues.py', '.github/workflows/provenance-cue-repair.yml']
+permissions:
+  contents: write
+concurrency:
+  group: provenance-cue-repair
+  cancel-in-progress: false
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install pillow markdown
+      - name: Correct generator and saved timestamps
+        run: python tools/repair_provenance_cues.py
+      - name: Check syntax and ledger assets
+        run: |
+          python -m compileall -q provenance
+          python tools/check_provenance.py
+      - name: Decode all provenance videos
+        run: |
+          set -euo pipefail
+          for file in video/provenance-timelapse.mp4 video/provenance-manual-run.mp4 video/provenance-showcase.mp4 video/clips/*.mp4; do
+            ffmpeg -v error -xerror -i "$file" -f null -
+          done
+      - name: Test page integration
+        run: |
+          mkdir -p /tmp/provenance-smoke/meetings /tmp/provenance-smoke/topics /tmp/provenance-smoke/indexes
+          printf '# Test home\n' > /tmp/provenance-smoke/index.md
+          printf '# Test meeting\n' > /tmp/provenance-smoke/meetings/test.md
+          printf '# Corrections\n' > /tmp/provenance-smoke/topics/corrections.md
+          printf '# Keywords\n' > /tmp/provenance-smoke/indexes/keywords.md
+          python tools/render_ai_record.py --src /tmp/provenance-smoke --out /tmp/provenance-site
+          python tools/check_provenance.py --site /tmp/provenance-site
+      - name: Commit checked timestamp repairs to video branch only
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add provenance/ledger.py data/out/provenance-ledger.json data/out/provenance-manifest.json data/out/PROVENANCE-LEDGER.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'fix(provenance): align chapter and overview cues with showcase order'
+            git push origin HEAD:arena/74a6689f-therealwindycity
+          fi
+          echo 'Timestamp repair checks passed. Merge conflicts and full live deployment are not resolved by this job.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Save proposed changes even if a check fails
+        if: always()
+        run: git diff HEAD > /tmp/provenance-cue-repair.patch
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: provenance-cue-repair
+          path: /tmp/provenance-cue-repair.patch
