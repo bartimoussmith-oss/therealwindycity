@@ -1,0 +1,65 @@
+name: Wyoming source reconnaissance
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/wyoming-reconnaissance.yml']
+  workflow_dispatch: {}
+permissions:
+  contents: read
+concurrency:
+  group: wyoming-source-reconnaissance
+  cancel-in-progress: false
+jobs:
+  reconnaissance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Discover reachable sites and possible meeting pages
+        shell: bash
+        run: |
+          mkdir -p reconnaissance-results
+          python -u - <<'PY'
+          import json, os, sys
+          from pathlib import Path
+          sys.path.insert(0, str(Path('tools').resolve()))
+          import wyoming_verify as v
+          v.UA = 'WyomingCivicRecon/1.0 (+https://github.com/bartimoussmith-oss/therealwindycity; public-records source discovery)'
+          fetcher = v.PoliteFetcher(delay_s=3.0, timeout_s=8.0)
+          out = Path('reconnaissance-results')
+          rows = []
+          for inst in sorted(v.INSTANCES_DIR.iterdir()):
+              if not inst.is_dir() or not (inst / 'ecosystem.json').exists():
+                  continue
+              print('Checking ' + inst.name, flush=True)
+              try:
+                  result = v.verify_instance(inst.name, fetcher, apply=False)
+                  result['discovery_only'] = True
+                  result['official_source_confirmed'] = False
+                  result['warning'] = 'Reachability and keyword matches only; human review required. Sources were not activated.'
+              except Exception as exc:
+                  result = {'slug': inst.name, 'verification': 'error', 'error': str(exc)}
+              (out / (inst.name + '.json')).write_text(json.dumps(result, indent=2))
+              rows.append({'slug': inst.name, 'reachable': bool(result.get('verified_url')), 'possible_meeting_pages': len(result.get('agenda_paths', [])), 'error': result.get('error', '')})
+              (out / 'summary.json').write_text(json.dumps({'checked': len(rows), 'discovery_only': True, 'jurisdictions': rows}, indent=2))
+          lines = ['# Wyoming source reconnaissance', '', 'Discovery only: reachable does not mean official or ready to collect. No sources activated. Other workflows unchanged.', '', '| Place | Reachable candidate | Possible meeting pages | Error |', '|---|---|---:|---|']
+          for row in rows:
+              lines.append('| {} | {} | {} | {} |'.format(row['slug'], row['reachable'], row['possible_meeting_pages'], row['error'].replace('|', '/').replace('\n', ' ')))
+          report = '\n'.join(lines) + '\n'
+          (out / 'report.md').write_text(report)
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
+              f.write(report)
+          if not rows or any(row['error'] for row in rows):
+              sys.exit(1)
+          PY
+      - name: Save reconnaissance results even if interrupted
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wyoming-reconnaissance-${{ github.run_id }}
+          path: reconnaissance-results/
+          if-no-files-found: warn
+          retention-days: 14
