@@ -2,7 +2,7 @@
   "repository": "therealwindycity/therealwindycity",
   "archived": false,
   "fork": true,
-  "checked_at": "2026-11-07T04:38:49.745Z",
+  "checked_at": "2026-11-07T13:32:53.707Z",
   "controls": [
     {
       "id": "architecture",
@@ -121,18 +121,28 @@
   ],
   "runs": [
     {
+      "name": "civic-cycle",
+      "id": 42375440759,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42375440759",
+      "sha": "bb0adf3c01f2daa31e3b617a1f95b528ce6fd031",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T13:06:36Z"
+    },
+    {
       "name": "workdesk-poll",
-      "id": 42298441790,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42298441790",
-      "sha": "a58b67f9e758dc86ed0fe6d12f23eaedd90a11a4",
+      "id": 42346259607,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42346259607",
+      "sha": "bb0adf3c01f2daa31e3b617a1f95b528ce6fd031",
       "branch": "main",
       "status": "completed",
       "conclusion": "failure",
-      "created_at": "2026-11-06T21:38:52Z",
+      "created_at": "2026-11-07T06:16:21Z",
       "failed_jobs": [
         {
           "name": "poll",
-          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42298441790/job/128169661947",
+          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42346259607/job/128324549821",
           "steps": [
             {
               "name": "Commit the feed if it changed",
@@ -145,16 +155,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "civic-cycle",
-      "id": 42279635268,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42279635268",
-      "sha": "d451b6b545211f67d4d2df61247231ccbe1a4bcd",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-06T19:26:27Z"
     },
     {
       "name": "meeting-watch",
@@ -193,7 +193,7 @@
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "a58b67f9e758dc86ed0fe6d12f23eaedd90a11a4",
+  "head": "aafc683781cd0d45efa7b0dff7d8911d7e41d9d8",
   "files_seen": 2724,
   "tree_complete": true,
   "sample_coverage": {

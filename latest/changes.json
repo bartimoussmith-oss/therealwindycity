@@ -1,5 +1,9 @@
 {
-  "newly_observed": [],
-  "no_longer_observed": [],
+  "newly_observed": [
+    "therealwindycity/therealwindycity:run:42346259607"
+  ],
+  "no_longer_observed": [
+    "therealwindycity/therealwindycity:run:42298441790"
+  ],
   "warning": "Evidence policy changed to version 2: removed findings may be corrected false positives, not completed repairs."
 }

@@ -2,7 +2,7 @@
   "repository": "bartimoussmith-oss/therealwindycity",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-07T04:38:24.907Z",
+  "checked_at": "2026-11-07T13:32:28.084Z",
   "controls": [
     {
       "id": "architecture",
@@ -143,13 +143,73 @@
   "runs": [
     {
       "name": "Engineering control center",
-      "id": 42339274471,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42339274471",
-      "sha": "c9c2dbcdab0f9ff92c70912fbf81bd50125c37e8",
+      "id": 42377269742,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42377269742",
+      "sha": "5e1ab11193c17fced444fd57511221d908d69bc5",
       "branch": "main",
       "status": "in_progress",
       "conclusion": null,
-      "created_at": "2026-11-07T04:37:39Z"
+      "created_at": "2026-11-07T13:30:31Z"
+    },
+    {
+      "name": "Hourly public ecosystem diagnostics",
+      "id": 42376092507,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42376092507",
+      "sha": "5e1ab11193c17fced444fd57511221d908d69bc5",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T13:15:06Z"
+    },
+    {
+      "name": "civic-cycle",
+      "id": 42375042860,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42375042860",
+      "sha": "54a9fc0895d850f4d86bf05c6dd6007c5ccaf49c",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T13:01:29Z"
+    },
+    {
+      "name": "Scheduled Audit & Telemetry Sync",
+      "id": 42370680344,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42370680344",
+      "sha": "41f45d5e6b808e0342c68ae83cdd0f85ea2a5190",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T12:02:02Z"
+    },
+    {
+      "name": "Scanner best-effort live and recovery",
+      "id": 42364890249,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42364890249",
+      "sha": "225b17c9c58a6eef067b619e9735e1b6120017ae",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T10:39:44Z"
+    },
+    {
+      "name": "Scanner historical backfill",
+      "id": 42357594253,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42357594253",
+      "sha": "225b17c9c58a6eef067b619e9735e1b6120017ae",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T08:56:42Z"
+    },
+    {
+      "name": "ai-record-pages",
+      "id": 42348128659,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42348128659",
+      "sha": "225b17c9c58a6eef067b619e9735e1b6120017ae",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T06:41:39Z"
     },
     {
       "name": "Fresh records videos",
@@ -160,26 +220,6 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-11-07T03:42:54Z"
-    },
-    {
-      "name": "Scanner best-effort live and recovery",
-      "id": 42332828238,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42332828238",
-      "sha": "a2ffedece2fd2da19f9e070ea7f1b19fd3b2fcd5",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-07T03:11:22Z"
-    },
-    {
-      "name": "Scanner historical backfill",
-      "id": 42327138351,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42327138351",
-      "sha": "a2ffedece2fd2da19f9e070ea7f1b19fd3b2fcd5",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-07T02:01:57Z"
     },
     {
       "name": "Repair provenance video timestamps",
@@ -257,16 +297,6 @@
       "created_at": "2026-11-07T00:12:08Z"
     },
     {
-      "name": "Hourly public ecosystem diagnostics",
-      "id": 42316403452,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42316403452",
-      "sha": "40d191e37eee63f3f9cdb266c79442a5d6575b93",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-07T00:08:44Z"
-    },
-    {
       "name": "Wyoming fast-track collection",
       "id": 42315846316,
       "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42315846316",
@@ -298,8 +328,8 @@
       "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42314850566",
       "sha": "40d191e37eee63f3f9cdb266c79442a5d6575b93",
       "branch": "main",
-      "status": "in_progress",
-      "conclusion": null,
+      "status": "completed",
+      "conclusion": "cancelled",
       "created_at": "2026-11-06T23:53:57Z"
     },
     {
@@ -345,16 +375,6 @@
       "created_at": "2026-11-06T20:16:00Z"
     },
     {
-      "name": "civic-cycle",
-      "id": 42279355816,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42279355816",
-      "sha": "c5c6a61fa28288fa4d0ba18faed2afbf8dee7704",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-06T19:24:33Z"
-    },
-    {
       "name": "wyoming-verify",
       "id": 42268528932,
       "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42268528932",
@@ -363,26 +383,6 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-11-06T18:12:10Z"
-    },
-    {
-      "name": "ai-record-pages",
-      "id": 42250282506,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42250282506",
-      "sha": "298681a223f51103d7fa432a02aed14966532879",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-06T16:13:04Z"
-    },
-    {
-      "name": "Scheduled Audit & Telemetry Sync",
-      "id": 42225139332,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42225139332",
-      "sha": "0fee1eb5d238d3495fdb7c3357a408031f97df78",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-06T13:23:41Z"
     },
     {
       "name": "Transcribe the portal's meeting audio",
@@ -455,16 +455,6 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-11-04T12:45:36Z"
-    },
-    {
-      "name": "meeting-watch",
-      "id": 41788706869,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/41788706869",
-      "sha": "99ad8b372e2fd64a385747eb135d65723dd5725a",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-04T06:55:13Z"
     }
   ],
   "pull_requests": [
@@ -551,8 +541,8 @@
     }
   ],
   "gaps": [],
-  "head": "c9c2dbcdab0f9ff92c70912fbf81bd50125c37e8",
-  "files_seen": 8625,
+  "head": "5e1ab11193c17fced444fd57511221d908d69bc5",
+  "files_seen": 8797,
   "tree_complete": true,
   "sample_coverage": {
     "candidates": 170,
