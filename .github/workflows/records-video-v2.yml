@@ -1,0 +1,39 @@
+name: Fresh records videos
+on:
+  push:
+    branches: [main]
+    paths: ['records_video_v2/**', '.github/workflows/records-video-v2.yml']
+  workflow_dispatch: {}
+permissions:
+  contents: read
+concurrency:
+  group: records-video-v2-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        format: [wide, phone]
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install renderer and video tools
+        run: |
+          python -m pip install 'Pillow==11.3.0'
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+      - name: Build and test fresh videos
+        run: python -u records_video_v2/build.py --format '${{ matrix.format }}'
+      - name: Save videos and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: records-video-v2-${{ matrix.format }}-${{ github.run_id }}
+          path: records-video-output/${{ matrix.format }}/
+          retention-days: 14
+          if-no-files-found: warn
