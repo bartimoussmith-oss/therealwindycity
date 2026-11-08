@@ -4,7 +4,8 @@ on:
   push:
     branches: [main]
     paths:
-      - tools/wyoming_chrome_overlay.py
+      - engine/ingest.py
+      - requirements.txt
       - .github/workflows/wyoming-chrome-collection.yml
 permissions:
   contents: read
@@ -21,9 +22,9 @@ jobs:
         with:
           python-version: '3.11'
       - name: Install dependencies
-        run: python -m pip install -r requirements.txt 'curl_cffi>=0.7,<1'
-      - name: Apply collection transport overlay
-        run: python tools/wyoming_chrome_overlay.py
+        run: python -m pip install -r requirements.txt
+      - name: Check permanent collector syntax
+        run: python -m py_compile engine/ingest.py
       - name: Collect enabled jurisdictions with failure isolation
         env:
           WYOMING_WORKERS: '4'
