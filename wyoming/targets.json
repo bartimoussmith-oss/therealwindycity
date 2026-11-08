@@ -1,0 +1,449 @@
+{
+  "manifest_version": 1,
+  "as_of": "2026-11-07",
+  "title": "Wyoming Statewide Passive OSINT & Public-Records Infrastructure Target Matrix",
+  "policy": {
+    "collection_mode": "passive_metadata_and_polite_vendor_fingerprinting_only",
+    "allowed_spiderfoot_modules": [
+      "sfp_crt",
+      "sfp_dnsresolve",
+      "sfp_whois",
+      "sfp_webframework",
+      "sfp_wappalyzer",
+      "sfp_email",
+      "sfp_accounts"
+    ],
+    "blocked_active_modules_examples": [
+      "sfp_portscan_tcp",
+      "sfp_portscan_udp",
+      "sfp_nmap",
+      "sfp_nuclei",
+      "sfp_vuln",
+      "sfp_sql",
+      "sfp_xss",
+      "sfp_brute"
+    ],
+    "privacy_gate": "LEGAL.md §5 enforced: personal individual email addresses and personal accounts are stripped; only generic institutional/custodian role addresses (clerk@, records@, assessor@, treasurer@, gis@, info@, publicrecords@) and mail-gateway MX hosts (e.g., Mimecast) are retained.",
+    "honesty_note": "Domains not listed in reviewed_official_urls are unverified candidates (verification='candidate_unverified'). Passive DNS/CT discovery or HTTP 200 reachability is not proof of official government ownership; verify before filing records requests."
+  },
+  "targets": [
+    {
+      "jurisdiction": "wyo-gov",
+      "name": "State of Wyoming Portal & Mirror Agencies",
+      "type": "state-portal",
+      "registry_slugs": [
+        "wyoming-legislature",
+        "wyoming-governor",
+        "wyoming-secretary-of-state",
+        "wyoming-attorney-general"
+      ],
+      "county_seat_name": "Cheyenne",
+      "county_seat_slug": "cheyenne",
+      "blueprint_domain": "wyo.gov",
+      "reviewed_official_urls": [
+        "https://wyoleg.gov/",
+        "https://governor.wyo.gov/",
+        "https://sos.wyo.gov/",
+        "https://ag.wyo.gov/"
+      ],
+      "candidate_domains": [
+        "wyo.gov",
+        "wyoleg.gov",
+        "governor.wyo.gov",
+        "sos.wyo.gov",
+        "wyobiz.wyo.gov",
+        "ag.wyo.gov",
+        "wyo-prop-div.wyo.gov",
+        "seoweb.wyo.gov",
+        "wogcc.wyo.gov",
+        "deq.wyoming.gov",
+        "dot.state.wy.us",
+        "wyopen.gov"
+      ],
+      "verification": "partially_reviewed",
+      "notes": "Statewide executive/legislative domains plus DOR CAMA, State Engineer (SEO), WOGCC, DEQ, WYDOT, WYSOS Business Center, and WyOpen checkbook mirrors."
+    },
+    {
+      "jurisdiction": "laramie-county",
+      "name": "Laramie County",
+      "type": "county",
+      "county_seat_name": "Cheyenne",
+      "county_seat_slug": "cheyenne",
+      "blueprint_domain": "laramiecountywy.gov",
+      "reviewed_official_urls": [
+        "https://www.laramiecountywy.gov/Home",
+        "https://www.cheyennecity.org/Your-Government/City-Council/Minutes-and-Agendas"
+      ],
+      "candidate_domains": [
+        "laramiecountywy.gov",
+        "cheyennecity.org"
+      ],
+      "verification": "reviewed_official",
+      "notes": "Reviewed in wyoming/source-reviews.json (county + Cheyenne seat)."
+    },
+    {
+      "jurisdiction": "natrona-county",
+      "name": "Natrona County",
+      "type": "county",
+      "county_seat_name": "Casper",
+      "county_seat_slug": "casper",
+      "blueprint_domain": "natrona.net",
+      "reviewed_official_urls": [
+        "https://www.natronacounty-wy.gov/",
+        "https://www.casperwy.gov/"
+      ],
+      "candidate_domains": [
+        "natronacounty-wy.gov",
+        "natrona.net",
+        "casperwy.gov"
+      ],
+      "verification": "reviewed_official",
+      "notes": "natronacounty-wy.gov and casperwy.gov reviewed in wyoming/source-reviews.json; natrona.net retained as legacy/GIS candidate."
+    },
+    {
+      "jurisdiction": "campbell-county",
+      "name": "Campbell County",
+      "type": "county",
+      "county_seat_name": "Gillette",
+      "county_seat_slug": "gillette",
+      "blueprint_domain": "campbellcountywy.gov",
+      "reviewed_official_urls": [
+        "https://www.gillettewy.gov/Government/Meetings-Agendas-Minutes"
+      ],
+      "candidate_domains": [
+        "campbellcountywy.gov",
+        "ccgov.net",
+        "gillettewy.gov"
+      ],
+      "verification": "seat_reviewed_county_candidate",
+      "notes": "Gillette seat reviewed in wyoming/source-reviews.json; county domains remain candidates."
+    },
+    {
+      "jurisdiction": "sweetwater-county",
+      "name": "Sweetwater County",
+      "type": "county",
+      "county_seat_name": "Green River",
+      "county_seat_slug": "green-river",
+      "blueprint_domain": "sweetwatercountywy.gov",
+      "reviewed_official_urls": [],
+      "candidate_domains": [
+        "sweetwatercountywy.gov",
+        "greenriverwy.gov",
+        "cityofgreenriver.org"
+      ],
+      "verification": "candidate_unverified",
+      "notes": "Unverified candidate domains."
+    },
+    {
+      "jurisdiction": "albany-county",
+      "name": "Albany County",
+      "type": "county",
+      "county_seat_name": "Laramie",
+      "county_seat_slug": "laramie",
+      "blueprint_domain": "albanycountywy.gov",
+      "reviewed_official_urls": [
+        "https://www.cityoflaramie.org/agendacenter"
+      ],
+      "candidate_domains": [
+        "albanycountywy.gov",
+        "co.albany.wy.us",
+        "cityoflaramie.org"
+      ],
+      "verification": "seat_reviewed_county_candidate",
+      "notes": "Laramie seat reviewed in wyoming/source-reviews.json; county domains remain candidates."
+    },
+    {
+      "jurisdiction": "sheridan-county",
+      "name": "Sheridan County",
+      "type": "county",
+      "county_seat_name": "Sheridan",
+      "county_seat_slug": "sheridan",
+      "blueprint_domain": "sheridancountywy.gov",
+      "reviewed_official_urls": [],
+      "candidate_domains": [
+        "sheridancountywy.gov",
+        "sheridancounty.com",
+        "sheridanwy.gov"
+      ],
+      "verification": "candidate_unverified",
+      "notes": "Unverified candidate domains."
+    },
+    {
+      "jurisdiction": "teton-county",
+      "name": "Teton County",
+      "type": "county",
+      "county_seat_name": "Jackson",
+      "county_seat_slug": "jackson",
+      "blueprint_domain": "tetoncountywy.gov",
+      "reviewed_official_urls": [
+        "https://www.tetoncountywy.gov/"
+      ],
+      "candidate_domains": [
+        "tetoncountywy.gov",
+        "jacksonwy.gov"
+      ],
+      "verification": "reviewed_official",
+      "notes": "tetoncountywy.gov reviewed in wyoming/source-reviews.json."
+    },
+    {
+      "jurisdiction": "fremont-county",
+      "name": "Fremont County",
+      "type": "county",
+      "county_seat_name": "Lander",
+      "county_seat_slug": "lander",
+      "blueprint_domain": "fremontcountywy.org",
+      "reviewed_official_urls": [],
+      "candidate_domains": [
+        "fremontcountywy.org",
+        "fremontcountywy.gov",
+        "landerwyoming.org"
+      ],
+      "verification": "candidate_unverified",
+      "notes": "Unverified candidate domains."
+    },
+    {
+      "jurisdiction": "park-county",
+      "name": "Park County",
+      "type": "county",
+      "county_seat_name": "Cody",
+      "county_seat_slug": "cody",
+      "blueprint_domain": "parkcounty-wy.gov",
+      "reviewed_official_urls": [],
+      "candidate_domains": [
+        "parkcounty-wy.gov",
+        "parkcountywy.gov",
+        "codywy.gov"
+      ],
+      "verification": "candidate_unverified",
+      "notes": "Unverified candidate domains."
+    },
+    {
+      "jurisdiction": "uinta-county",
+      "name": "Uinta County",
+      "type": "county",
+      "county_seat_name": "Evanston",
+      "county_seat_slug": "evanston",
+      "blueprint_domain": "uintacounty.com",
+      "reviewed_official_urls": [
+        "https://www.evanstonwy.org/64/Archived-Agendas-Minutes"
+      ],
+      "candidate_domains": [
+        "uintacounty.com",
+        "uintacountywy.gov",
+        "evanstonwy.org"
+      ],
+      "verification": "seat_reviewed_county_candidate",
+      "notes": "Evanston seat reviewed in wyoming/source-reviews.json; county domains remain candidates."
+    },
+    {
+      "jurisdiction": "lincoln-county",
+      "name": "Lincoln County",
+      "type": "county",
+      "county_seat_name": "Kemmerer",
+      "county_seat_slug": "kemmerer",
+      "blueprint_domain": "lincolncountywy.org",
+      "reviewed_official_urls": [],
+      "candidate_domains": [
+        "lincolncountywy.org",
+        "lincolncountywy.gov",
+        "kemmerer.org"
+      ],
+      "verification": "candidate_unverified",
+      "notes": "Unverified candidate domains."
+    },
+    {
+      "jurisdiction": "carbon-county",
+      "name": "Carbon County",
+      "type": "county",
+      "county_seat_name": "Rawlins",
+      "county_seat_slug": "rawlins",
+      "blueprint_domain": "carbonwy.com",
+      "reviewed_official_urls": [
+        "https://carboncountywy.gov/319/Commissioners",
+        "https://www.rawlinswy.gov/"
+      ],
+      "candidate_domains": [
+        "carboncountywy.gov",
+        "carbonwy.com",
+        "rawlinswy.gov"
+      ],
+      "verification": "reviewed_official",
+      "notes": "carboncountywy.gov and rawlinswy.gov reviewed in wyoming/source-reviews.json; carbonwy.com retained as secondary candidate."
+    },
+    {
+      "jurisdiction": "converse-county",
+      "name": "Converse County",
+      "type": "county",
+      "county_seat_name": "Douglas",
+      "county_seat_slug": "douglas",
+      "blueprint_domain": "conversecountywy.gov",
+      "reviewed_official_urls": [],
+      "candidate_domains": [
+        "conversecountywy.gov",
+        "cityofdouglas.org"
+      ],
+      "verification": "candidate_unverified",
+      "notes": "Unverified candidate domains."
+    },
+    {
+      "jurisdiction": "goshen-county",
+      "name": "Goshen County",
+      "type": "county",
+      "county_seat_name": "Torrington",
+      "county_seat_slug": "torrington",
+      "blueprint_domain": "goshencounty.org",
+      "reviewed_official_urls": [],
+      "candidate_domains": [
+        "goshencounty.org",
+        "goshencountywy.gov",
+        "torringtonwy.gov"
+      ],
+      "verification": "candidate_unverified",
+      "notes": "Unverified candidate domains."
+    },
+    {
+      "jurisdiction": "big-horn-county",
+      "name": "Big Horn County",
+      "type": "county",
+      "county_seat_name": "Basin",
+      "county_seat_slug": "basin",
+      "blueprint_domain": "bighorncountywy.gov",
+      "reviewed_official_urls": [],
+      "candidate_domains": [
+        "bighorncountywy.gov",
+        "townofbasin.com"
+      ],
+      "verification": "candidate_unverified",
+      "notes": "Unverified candidate domains."
+    },
+    {
+      "jurisdiction": "sublette-county",
+      "name": "Sublette County",
+      "type": "county",
+      "county_seat_name": "Pinedale",
+      "county_seat_slug": "pinedale",
+      "blueprint_domain": "sublettecountywy.gov",
+      "reviewed_official_urls": [],
+      "candidate_domains": [
+        "sublettecountywy.gov",
+        "townofpinedale.us"
+      ],
+      "verification": "candidate_unverified",
+      "notes": "Unverified candidate domains."
+    },
+    {
+      "jurisdiction": "platte-county",
+      "name": "Platte County",
+      "type": "county",
+      "county_seat_name": "Wheatland",
+      "county_seat_slug": "wheatland",
+      "blueprint_domain": "plattecountywyoming.com",
+      "reviewed_official_urls": [],
+      "candidate_domains": [
+        "plattecountywyoming.com",
+        "plattecountywy.gov",
+        "townofwheatland.org"
+      ],
+      "verification": "candidate_unverified",
+      "notes": "Unverified candidate domains."
+    },
+    {
+      "jurisdiction": "johnson-county",
+      "name": "Johnson County",
+      "type": "county",
+      "county_seat_name": "Buffalo",
+      "county_seat_slug": "buffalo",
+      "blueprint_domain": "johnsoncountywyoming.org",
+      "reviewed_official_urls": [],
+      "candidate_domains": [
+        "johnsoncountywyoming.org",
+        "johnsoncountywy.gov",
+        "cityofbuffalowy.com"
+      ],
+      "verification": "candidate_unverified",
+      "notes": "Unverified candidate domains."
+    },
+    {
+      "jurisdiction": "washakie-county",
+      "name": "Washakie County",
+      "type": "county",
+      "county_seat_name": "Worland",
+      "county_seat_slug": "worland",
+      "blueprint_domain": "washakiecounty.net",
+      "reviewed_official_urls": [],
+      "candidate_domains": [
+        "washakiecounty.net",
+        "washakiecountywy.gov",
+        "cityofworland.org"
+      ],
+      "verification": "candidate_unverified",
+      "notes": "Unverified candidate domains."
+    },
+    {
+      "jurisdiction": "crook-county",
+      "name": "Crook County",
+      "type": "county",
+      "county_seat_name": "Sundance",
+      "county_seat_slug": "sundance",
+      "blueprint_domain": "crookcounty.wy.gov",
+      "reviewed_official_urls": [],
+      "candidate_domains": [
+        "crookcounty.wy.gov",
+        "crookcountywy.gov",
+        "cityofsundancewy.com"
+      ],
+      "verification": "candidate_unverified",
+      "notes": "Unverified candidate domains."
+    },
+    {
+      "jurisdiction": "weston-county",
+      "name": "Weston County",
+      "type": "county",
+      "county_seat_name": "Newcastle",
+      "county_seat_slug": "newcastle",
+      "blueprint_domain": "westoncountygv.org",
+      "reviewed_official_urls": [],
+      "candidate_domains": [
+        "westongov.com",
+        "westoncountywy.gov",
+        "westoncountygv.org",
+        "newcastlewyoming.org"
+      ],
+      "verification": "candidate_unverified",
+      "notes": "Blueprint string 'westoncountygv.org' flagged as probable spelling variant; westongov.com and westoncountywy.gov included alongside it as unverified candidates."
+    },
+    {
+      "jurisdiction": "hot-springs-county",
+      "name": "Hot Springs County",
+      "type": "county",
+      "county_seat_name": "Thermopolis",
+      "county_seat_slug": "thermopolis",
+      "blueprint_domain": "hotscounty.org",
+      "reviewed_official_urls": [],
+      "candidate_domains": [
+        "hscounty.com",
+        "hotspringscountywy.gov",
+        "hotscounty.org",
+        "townofthermopolis.com"
+      ],
+      "verification": "candidate_unverified",
+      "notes": "Blueprint string 'hotscounty.org' flagged as probable spelling variant; hscounty.com and hotspringscountywy.gov included alongside it as unverified candidates."
+    },
+    {
+      "jurisdiction": "niobrara-county",
+      "name": "Niobrara County",
+      "type": "county",
+      "county_seat_name": "Lusk",
+      "county_seat_slug": "lusk",
+      "blueprint_domain": "niobraracounty.org",
+      "reviewed_official_urls": [],
+      "candidate_domains": [
+        "niobraracounty.org",
+        "niobraracountywy.gov",
+        "townoflusk.org"
+      ],
+      "verification": "candidate_unverified",
+      "notes": "Unverified candidate domains."
+    }
+  ]
+}

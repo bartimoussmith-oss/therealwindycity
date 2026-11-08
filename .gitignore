@@ -70,3 +70,9 @@ data/selftest/
 # Wyoming statewide instantiation runtime artifacts
 data/wyoming/
 public/wyoming/
+
+# Statewide passive cartography Tier-4 derived outputs & SQLite bundle
+/data/cartography/
+/cartography-results/
+wyoming_statewide_records_infrastructure.db
+wyoming_statewide_records_infrastructure.db.provenance.json

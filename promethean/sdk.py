@@ -147,8 +147,23 @@ def main(argv=None):
     q=sub.add_parser('query');q.add_argument('--match',required=True);q.add_argument('--limit',type=int,default=20)
     h=sub.add_parser('harvest-granicus');h.add_argument('--url',required=True);h.add_argument('--committee',required=True);h.add_argument('--date',required=True);h.add_argument('--output');h.add_argument('--allow-host',action='append');h.add_argument('--max-pages',type=int,default=40);h.add_argument('--max-docs',type=int,default=20);h.add_argument('--max-depth',type=int,default=3);h.add_argument('--delay',type=float,default=.5)
     a=sub.add_parser('audit-claim');a.add_argument('--official',required=True);a.add_argument('--role',default='Public official');a.add_argument('--date',required=True);a.add_argument('--claim',required=True);a.add_argument('--llm-endpoint')
-    g=sub.add_parser('build-graph');g.add_argument('--export-json',required=True);args=p.parse_args(argv)
+    g=sub.add_parser('build-graph');g.add_argument('--export-json',required=True)
+    ml=sub.add_parser('mirror-ledgers');ml.add_argument('--section',type=int,choices=range(1,8));ml.add_argument('--keyword')
+    pp=sub.add_parser('package-provenance');pp.add_argument('--file',required=True);pp.add_argument('--source-url',required=True);pp.add_argument('--section-tag',required=True)
+    vp=sub.add_parser('verify-provenance');vp.add_argument('--manifest',required=True);vp.add_argument('--file')
+    cr=sub.add_parser('audit-check-register');cr.add_argument('--csv',required=True);cr.add_argument('--amount-col',default='Amount');cr.add_argument('--vendor-col',default='Vendor');cr.add_argument('--threshold',type=float,default=5000.0)
+    pt=sub.add_parser('audit-pra-timeline');pt.add_argument('--submitted',required=True);pt.add_argument('--ack');pt.add_argument('--fulfilled');pt.add_argument('--now')
+    args=p.parse_args(argv)
     if args.command=='sync-mesh':p.error('Automatic repository/cloud sync disabled. Select an explicitly approved destination and reviewed material.')
+    if args.command in ('mirror-ledgers','package-provenance','verify-provenance','audit-check-register','audit-pra-timeline'):
+        from . import forensic_audit as fa
+        if args.command=='mirror-ledgers':result=dict(mirror_ledgers=fa.triangulate_mirror_ledgers(args.section,args.keyword))
+        elif args.command=='package-provenance':result=fa.package_osint_artifact(args.file,args.source_url,args.section_tag)
+        elif args.command=='verify-provenance':
+            result=fa.verify_osint_provenance(args.manifest,args.file);print(json.dumps(result,indent=2));return 0 if result['verified'] else 3
+        elif args.command=='audit-check-register':result=fa.audit_check_register_csv(args.csv,args.amount_col,args.vendor_col,args.threshold)
+        elif args.command=='audit-pra-timeline':result=fa.audit_ws_16_4_202_timeline(args.submitted,args.ack,args.fulfilled,args.now)
+        print(json.dumps(result,indent=2));return 0
     if args.command=='status':
         path=db_path(args.db);result=dict(database=str(path),database_exists=path.exists(),live_deployment_verified=False)
         manifest=ROOT/'promethean_federation_manifest.json'
@@ -166,3 +181,6 @@ def main(argv=None):
                 result=graph(conn);out=Path(args.export_json);out.parent.mkdir(parents=True,exist_ok=True);out.write_text(json.dumps(result,indent=2))
         finally:conn.close()
     print(json.dumps(result,indent=2));return 0
+
+
+if __name__=='__main__':raise SystemExit(main())
