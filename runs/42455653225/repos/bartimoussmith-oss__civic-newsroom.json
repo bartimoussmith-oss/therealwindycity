@@ -1,0 +1,239 @@
+{
+  "repository": "bartimoussmith-oss/civic-newsroom",
+  "archived": false,
+  "fork": false,
+  "checked_at": "2026-11-08T06:41:29.704Z",
+  "controls": [
+    {
+      "id": "architecture",
+      "role": "Architect",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Map producers, consumers, storage, deployment targets and owners.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "agent_handoff",
+      "role": "Agent coordinator",
+      "state": "signal_observed",
+      "evidence": [
+        "AGENTS.md"
+      ],
+      "next": "Provide tested commands, current status, constraints and acceptance criteria.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "setup",
+      "role": "Build engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Prove installation from a clean checkout with stated tool versions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "tests",
+      "role": "Test engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "intelligence/test_engine.py",
+        "intelligence/test_file_parts.py",
+        "scripts/test_build_data.py"
+      ],
+      "next": "Add offline tests and a real producer-to-published-output test.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "data_contract",
+      "role": "Data engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "provenance",
+      "role": "Evidence reviewer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "checkpoint",
+      "role": "Reliability engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Prove interrupted runs resume without lost records or duplicates.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "recovery",
+      "role": "Recovery engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Test isolated backup restoration and reversible releases.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "deployment",
+      "role": "Release engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Tie live output to its commit, smoke test and rollback instructions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "dependency_lock",
+      "role": "Supply-chain reviewer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "rights",
+      "role": "Rights reviewer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Separate code licensing from source-data and media reuse rights.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    }
+  ],
+  "runs": [
+    {
+      "name": "publish-app",
+      "id": 40391605959,
+      "url": "https://github.com/bartimoussmith-oss/civic-newsroom/actions/runs/40391605959",
+      "sha": "6ae4fd16381147ba302b0e78a20c05d58aed5c12",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-26T19:59:14Z"
+    },
+    {
+      "name": "intelligence-review",
+      "id": 40329348268,
+      "url": "https://github.com/bartimoussmith-oss/civic-newsroom/actions/runs/40329348268",
+      "sha": "5caac5a0a86b1670fe09fc8a6e3a50c4daf9aadb",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-26T13:17:48Z"
+    },
+    {
+      "name": "intelligence-failure",
+      "id": 40302321054,
+      "url": "https://github.com/bartimoussmith-oss/civic-newsroom/actions/runs/40302321054",
+      "sha": "c8c941fa0d2d7090a972969e56410d770cf16daf",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-26T09:47:46Z"
+    },
+    {
+      "name": "build-intelligence",
+      "id": 40293851464,
+      "url": "https://github.com/bartimoussmith-oss/civic-newsroom/actions/runs/40293851464",
+      "sha": "18efc5218131792fb311493d4678b700c4d8d71a",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-26T08:40:02Z",
+      "failed_jobs": [
+        {
+          "name": "build",
+          "url": "https://github.com/bartimoussmith-oss/civic-newsroom/actions/runs/40293851464/job/121475024707",
+          "steps": [
+            {
+              "name": "Build, package and verify real-corpus intelligence",
+              "number": 7
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "ValueError",
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "build-report",
+      "id": 40278594483,
+      "url": "https://github.com/bartimoussmith-oss/civic-newsroom/actions/runs/40278594483",
+      "sha": "dac42edaba65ed7500690b0b7816a0d5d95a333e",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-26T06:13:52Z"
+    },
+    {
+      "name": "build-public-data",
+      "id": 40277501462,
+      "url": "https://github.com/bartimoussmith-oss/civic-newsroom/actions/runs/40277501462",
+      "sha": "9acdd31e2e548915d5273adf06ad59daddaddc62",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-26T06:02:09Z"
+    }
+  ],
+  "pull_requests": [],
+  "gaps": [],
+  "head": "158f51ab5b5e044393826d97ee8be82598b3bff2",
+  "files_seen": 35,
+  "tree_complete": true,
+  "sample_coverage": {
+    "candidates": 9,
+    "selected": 9
+  },
+  "workflow_signals": {
+    ".github/workflows/build-intelligence.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": true,
+      "explicit_permissions": true
+    },
+    ".github/workflows/build-public-data.yml": {
+      "timeout": true,
+      "concurrency": false,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/build-report.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/intelligence-failure.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/intelligence-review.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": true,
+      "explicit_permissions": true
+    },
+    ".github/workflows/publish-app.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": true,
+      "explicit_permissions": true
+    }
+  }
+}
