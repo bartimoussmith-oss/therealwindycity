@@ -1,23 +1,23 @@
 [
   {
-    "id": "therealwindycity/therealwindycity:run:42454463769",
+    "id": "therealwindycity/therealwindycity:run:42494624213",
     "priority": "P1",
     "repository": "therealwindycity/therealwindycity",
     "role": "Reliability engineer",
     "status": "confirmed_run_failure_not_current_product_diagnosis",
     "evidence": {
       "name": "workdesk-poll",
-      "id": 42454463769,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42454463769",
-      "sha": "2b1a8731fa8a576ed00163f12114b3bca7c0e078",
+      "id": 42494624213,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42494624213",
+      "sha": "906276498ce3c415c77b838cba67867a045a8ad8",
       "branch": "main",
       "status": "completed",
       "conclusion": "failure",
-      "created_at": "2026-11-08T06:22:15Z",
+      "created_at": "2026-11-08T15:24:08Z",
       "failed_jobs": [
         {
           "name": "poll",
-          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42454463769/job/128650416857",
+          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42494624213/job/128774148436",
           "steps": [
             {
               "name": "Commit the feed if it changed",
@@ -33,6 +33,214 @@
     },
     "task": "Reproduce the recorded failed step and repair its demonstrated cause.",
     "done_when": "Replacement run passes the same checks and output is verified; older failure does not establish current HEAD failure."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:architecture",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:agent_handoff",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:setup",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Build engineer",
+    "status": "needs_inspection",
+    "task": "Prove installation from a clean checkout with stated tool versions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:tests",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Test engineer",
+    "status": "needs_inspection",
+    "task": "Add offline tests and a real producer-to-published-output test.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:data_contract",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Data engineer",
+    "status": "needs_inspection",
+    "task": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:provenance",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Evidence reviewer",
+    "status": "needs_inspection",
+    "task": "Retain source URLs, capture dates, hashes, original records and limitations.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:recovery",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:deployment",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Release engineer",
+    "status": "needs_inspection",
+    "task": "Tie live output to its commit, smoke test and rollback instructions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:dependency_lock",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Supply-chain reviewer",
+    "status": "needs_inspection",
+    "task": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:rights",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Rights reviewer",
+    "status": "needs_inspection",
+    "task": "Separate code licensing from source-data and media reuse rights.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:.github/workflows/analyze.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/analyze.yml",
+      "sha": "cc106b2d713e3a4db0261b8e73522bc112b8042e",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-archive:architecture",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-archive:agent_handoff",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-archive:setup",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
+    "role": "Build engineer",
+    "status": "needs_inspection",
+    "task": "Prove installation from a clean checkout with stated tool versions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-archive:tests",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
+    "role": "Test engineer",
+    "status": "needs_inspection",
+    "task": "Add offline tests and a real producer-to-published-output test.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-archive:recovery",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-archive:deployment",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
+    "role": "Release engineer",
+    "status": "needs_inspection",
+    "task": "Tie live output to its commit, smoke test and rollback instructions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-archive:dependency_lock",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
+    "role": "Supply-chain reviewer",
+    "status": "needs_inspection",
+    "task": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-archive:rights",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
+    "role": "Rights reviewer",
+    "status": "needs_inspection",
+    "task": "Separate code licensing from source-data and media reuse rights.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-archive:.github/workflows/osint.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/osint.yml",
+      "sha": "d8819a96014a1f6051adc154dd30b0271f7e0310",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
   },
   {
     "id": "bartimoussmith-oss/civic-newsroom:architecture",
@@ -546,7 +754,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/ai-record-pages.yml",
-      "sha": "b52208e52daee20f58663a7542837a8c57ad59b9",
+      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -560,7 +768,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/apply-remediation.yml",
-      "sha": "b52208e52daee20f58663a7542837a8c57ad59b9",
+      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -574,7 +782,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/civic-cycle.yml",
-      "sha": "b52208e52daee20f58663a7542837a8c57ad59b9",
+      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -588,7 +796,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/daily_audit.yml",
-      "sha": "b52208e52daee20f58663a7542837a8c57ad59b9",
+      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -602,7 +810,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/historical_harvest.yml",
-      "sha": "b52208e52daee20f58663a7542837a8c57ad59b9",
+      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
       "signal": "timeout"
     },
     "task": "Review missing timeout signal; inspect equivalent controls before editing.",
@@ -616,7 +824,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/historical_harvest.yml",
-      "sha": "b52208e52daee20f58663a7542837a8c57ad59b9",
+      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
       "signal": "concurrency"
     },
     "task": "Review missing concurrency signal; inspect equivalent controls before editing.",
@@ -630,7 +838,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/laramie-archive-fresh-start.yml",
-      "sha": "b52208e52daee20f58663a7542837a8c57ad59b9",
+      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -644,7 +852,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/launch-laramie.yml",
-      "sha": "b52208e52daee20f58663a7542837a8c57ad59b9",
+      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
       "signal": "concurrency"
     },
     "task": "Review missing concurrency signal; inspect equivalent controls before editing.",
@@ -658,7 +866,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/launch-laramie.yml",
-      "sha": "b52208e52daee20f58663a7542837a8c57ad59b9",
+      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -672,7 +880,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/meeting-watch.yml",
-      "sha": "b52208e52daee20f58663a7542837a8c57ad59b9",
+      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
       "signal": "timeout"
     },
     "task": "Review missing timeout signal; inspect equivalent controls before editing.",
@@ -686,7 +894,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/meeting-watch.yml",
-      "sha": "b52208e52daee20f58663a7542837a8c57ad59b9",
+      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -700,7 +908,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/promethean_autoharvest.yml",
-      "sha": "b52208e52daee20f58663a7542837a8c57ad59b9",
+      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
       "signal": "concurrency"
     },
     "task": "Review missing concurrency signal; inspect equivalent controls before editing.",
@@ -1178,7 +1386,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/civic-cycle.yml",
-      "sha": "2b1a8731fa8a576ed00163f12114b3bca7c0e078",
+      "sha": "906276498ce3c415c77b838cba67867a045a8ad8",
       "signal": "timeout"
     },
     "task": "Review missing timeout signal; inspect equivalent controls before editing.",
@@ -1192,7 +1400,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/civic-cycle.yml",
-      "sha": "2b1a8731fa8a576ed00163f12114b3bca7c0e078",
+      "sha": "906276498ce3c415c77b838cba67867a045a8ad8",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -1206,7 +1414,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/meeting-watch.yml",
-      "sha": "2b1a8731fa8a576ed00163f12114b3bca7c0e078",
+      "sha": "906276498ce3c415c77b838cba67867a045a8ad8",
       "signal": "timeout"
     },
     "task": "Review missing timeout signal; inspect equivalent controls before editing.",
@@ -1220,7 +1428,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/meeting-watch.yml",
-      "sha": "2b1a8731fa8a576ed00163f12114b3bca7c0e078",
+      "sha": "906276498ce3c415c77b838cba67867a045a8ad8",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -1234,7 +1442,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/workdesk-pages.yml",
-      "sha": "2b1a8731fa8a576ed00163f12114b3bca7c0e078",
+      "sha": "906276498ce3c415c77b838cba67867a045a8ad8",
       "signal": "timeout"
     },
     "task": "Review missing timeout signal; inspect equivalent controls before editing.",
@@ -1248,7 +1456,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/workdesk-pages.yml",
-      "sha": "2b1a8731fa8a576ed00163f12114b3bca7c0e078",
+      "sha": "906276498ce3c415c77b838cba67867a045a8ad8",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -1262,7 +1470,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/workdesk-poll.yml",
-      "sha": "2b1a8731fa8a576ed00163f12114b3bca7c0e078",
+      "sha": "906276498ce3c415c77b838cba67867a045a8ad8",
       "signal": "timeout"
     },
     "task": "Review missing timeout signal; inspect equivalent controls before editing.",
@@ -1276,7 +1484,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/workdesk-poll.yml",
-      "sha": "2b1a8731fa8a576ed00163f12114b3bca7c0e078",
+      "sha": "906276498ce3c415c77b838cba67867a045a8ad8",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -1300,7 +1508,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/ci.yml",
-      "sha": "3e06af41fc3bb722920adaf8a652fc48f85a4417",
+      "sha": "8f4d6cfe7058230fb7c938a14d93a4a558bbbd20",
       "signal": "timeout"
     },
     "task": "Review missing timeout signal; inspect equivalent controls before editing.",
@@ -1314,7 +1522,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/ci.yml",
-      "sha": "3e06af41fc3bb722920adaf8a652fc48f85a4417",
+      "sha": "8f4d6cfe7058230fb7c938a14d93a4a558bbbd20",
       "signal": "concurrency"
     },
     "task": "Review missing concurrency signal; inspect equivalent controls before editing.",
@@ -1328,7 +1536,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/historical_harvest.yml",
-      "sha": "3e06af41fc3bb722920adaf8a652fc48f85a4417",
+      "sha": "8f4d6cfe7058230fb7c938a14d93a4a558bbbd20",
       "signal": "timeout"
     },
     "task": "Review missing timeout signal; inspect equivalent controls before editing.",
@@ -1342,7 +1550,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/historical_harvest.yml",
-      "sha": "3e06af41fc3bb722920adaf8a652fc48f85a4417",
+      "sha": "8f4d6cfe7058230fb7c938a14d93a4a558bbbd20",
       "signal": "concurrency"
     },
     "task": "Review missing concurrency signal; inspect equivalent controls before editing.",
@@ -1356,7 +1564,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/live_city_sync.yml",
-      "sha": "3e06af41fc3bb722920adaf8a652fc48f85a4417",
+      "sha": "8f4d6cfe7058230fb7c938a14d93a4a558bbbd20",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -1370,7 +1578,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/live_meeting_transcribe.yml",
-      "sha": "3e06af41fc3bb722920adaf8a652fc48f85a4417",
+      "sha": "8f4d6cfe7058230fb7c938a14d93a4a558bbbd20",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -1384,7 +1592,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/live_place_archives.yml",
-      "sha": "3e06af41fc3bb722920adaf8a652fc48f85a4417",
+      "sha": "8f4d6cfe7058230fb7c938a14d93a4a558bbbd20",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -1398,7 +1606,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/promethean_autoharvest.yml",
-      "sha": "3e06af41fc3bb722920adaf8a652fc48f85a4417",
+      "sha": "8f4d6cfe7058230fb7c938a14d93a4a558bbbd20",
       "signal": "timeout"
     },
     "task": "Review missing timeout signal; inspect equivalent controls before editing.",
@@ -1412,7 +1620,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/promethean_autoharvest.yml",
-      "sha": "3e06af41fc3bb722920adaf8a652fc48f85a4417",
+      "sha": "8f4d6cfe7058230fb7c938a14d93a4a558bbbd20",
       "signal": "concurrency"
     },
     "task": "Review missing concurrency signal; inspect equivalent controls before editing.",
@@ -1426,7 +1634,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/promethean_autoharvest.yml",
-      "sha": "3e06af41fc3bb722920adaf8a652fc48f85a4417",
+      "sha": "8f4d6cfe7058230fb7c938a14d93a4a558bbbd20",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",

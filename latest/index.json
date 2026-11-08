@@ -1,9 +1,17 @@
 {
   "schema": 2,
-  "started_at": "2026-11-08T06:41:29.064Z",
-  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42455653225",
+  "started_at": "2026-11-08T18:06:07.666Z",
+  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42508081889",
   "video_proof_result": "success",
   "repositories": [
+    {
+      "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+      "report": "latest/repos/bartimoussmith-oss__cheyenne-laramie-analysis-001.json"
+    },
+    {
+      "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
+      "report": "latest/repos/bartimoussmith-oss__cheyenne-laramie-archive.json"
+    },
     {
       "repository": "bartimoussmith-oss/civic-newsroom",
       "report": "latest/repos/bartimoussmith-oss__civic-newsroom.json"
@@ -98,14 +106,14 @@
       "from": "bartimoussmith-oss/therealwindycity",
       "to": "therealwindycity/TheReelWindyCity",
       "path": ".github/workflows/ai-record-pages.yml",
-      "sha": "b52208e52daee20f58663a7542837a8c57ad59b9",
+      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
       "status": "declared_reference_only"
     },
     {
       "from": "bartimoussmith-oss/therealwindycity",
       "to": "therealwindycity/The-Real-Windy-City-",
       "path": ".github/workflows/ai-record-pages.yml",
-      "sha": "b52208e52daee20f58663a7542837a8c57ad59b9",
+      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
       "status": "declared_reference_only"
     },
     {
@@ -433,11 +441,11 @@
       "task": "Check claims against source records and distinguish configured, executed, tested, deployed and verified."
     }
   ],
-  "finished_at": "2026-11-08T06:42:16.759Z",
+  "finished_at": "2026-11-08T18:06:55.027Z",
   "summary": {
-    "repositories": 15,
+    "repositories": 17,
     "declared_edges": 48,
-    "backlog": 136,
+    "backlog": 156,
     "logs_sampled": 11
   }
 }

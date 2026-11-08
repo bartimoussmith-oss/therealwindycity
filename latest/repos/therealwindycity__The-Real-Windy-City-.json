@@ -2,7 +2,7 @@
   "repository": "therealwindycity/The-Real-Windy-City-",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-08T06:41:57.396Z",
+  "checked_at": "2026-11-08T18:06:38.161Z",
   "controls": [
     {
       "id": "architecture",
@@ -127,13 +127,13 @@
   "runs": [
     {
       "name": "Deploy site",
-      "id": 42387453388,
-      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/42387453388",
+      "id": 42497418002,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/42497418002",
       "sha": "6c5601c11943d70a521d791f62da7336d8a80e54",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-07T15:39:42Z"
+      "created_at": "2026-11-08T15:57:43Z"
     },
     {
       "name": "Live Scanner Service CI",

@@ -2,7 +2,7 @@
   "repository": "therealwindycity/TheReelWindyCity",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-08T06:42:10.207Z",
+  "checked_at": "2026-11-08T18:06:49.235Z",
   "controls": [
     {
       "id": "architecture",
@@ -150,24 +150,44 @@
   ],
   "runs": [
     {
-      "name": "Live Municipal Watch",
-      "id": 42454473594,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42454473594",
+      "name": "Citizen Connect Incident Sync",
+      "id": 42503000121,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42503000121",
       "sha": "3e06af41fc3bb722920adaf8a652fc48f85a4417",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-08T06:22:23Z"
+      "created_at": "2026-11-08T17:03:22Z"
     },
     {
       "name": "Deploy to GitHub Pages",
-      "id": 42438633170,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42438633170",
+      "id": 42501224584,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42501224584",
       "sha": "3e06af41fc3bb722920adaf8a652fc48f85a4417",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-08T02:27:39Z"
+      "created_at": "2026-11-08T16:42:07Z"
+    },
+    {
+      "name": "Promethean Recurring Harvest",
+      "id": 42492044617,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42492044617",
+      "sha": "3e06af41fc3bb722920adaf8a652fc48f85a4417",
+      "branch": "main",
+      "status": "in_progress",
+      "conclusion": null,
+      "created_at": "2026-11-08T14:53:52Z"
+    },
+    {
+      "name": "Live Municipal Watch",
+      "id": 42486387431,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42486387431",
+      "sha": "3e06af41fc3bb722920adaf8a652fc48f85a4417",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-08T13:44:31Z"
     },
     {
       "name": "CI",
@@ -207,16 +227,6 @@
       "created_at": "2026-11-08T00:35:51Z"
     },
     {
-      "name": "Promethean Recurring Harvest",
-      "id": 42425578323,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42425578323",
-      "sha": "f5147cfef379f78612820f175476ae073d7b9174",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "cancelled",
-      "created_at": "2026-11-07T23:30:49Z"
-    },
-    {
       "name": "Live Place Archives",
       "id": 42404140946,
       "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42404140946",
@@ -225,16 +235,6 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-11-07T19:01:16Z"
-    },
-    {
-      "name": "Citizen Connect Incident Sync",
-      "id": 42393287624,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42393287624",
-      "sha": "734ba8ad37bba5c2ed146bf24b07405abab89c21",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-07T16:50:16Z"
     },
     {
       "name": "Promethean Autonomous Granicus Harvester",
@@ -303,16 +303,6 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-11-02T12:32:21Z"
-    },
-    {
-      "name": "Fleet procurement source capture",
-      "id": 41445521950,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/41445521950",
-      "sha": "614f8635ab8f5b539601f0deec71ca6b7b862c47",
-      "branch": "arena/a243c6bf-thereelwindycity",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-02T12:32:21Z"
     }
   ],
   "pull_requests": [
@@ -372,7 +362,7 @@
     }
   ],
   "gaps": [],
-  "head": "3e06af41fc3bb722920adaf8a652fc48f85a4417",
+  "head": "8f4d6cfe7058230fb7c938a14d93a4a558bbbd20",
   "files_seen": 6000,
   "tree_complete": true,
   "sample_coverage": {

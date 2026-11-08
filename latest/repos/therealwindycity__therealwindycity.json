@@ -2,7 +2,7 @@
   "repository": "therealwindycity/therealwindycity",
   "archived": false,
   "fork": true,
-  "checked_at": "2026-11-08T06:42:04.311Z",
+  "checked_at": "2026-11-08T18:06:44.181Z",
   "controls": [
     {
       "id": "architecture",
@@ -122,17 +122,17 @@
   "runs": [
     {
       "name": "workdesk-poll",
-      "id": 42454463769,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42454463769",
-      "sha": "2b1a8731fa8a576ed00163f12114b3bca7c0e078",
+      "id": 42494624213,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42494624213",
+      "sha": "906276498ce3c415c77b838cba67867a045a8ad8",
       "branch": "main",
       "status": "completed",
       "conclusion": "failure",
-      "created_at": "2026-11-08T06:22:15Z",
+      "created_at": "2026-11-08T15:24:08Z",
       "failed_jobs": [
         {
           "name": "poll",
-          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42454463769/job/128650416857",
+          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42494624213/job/128774148436",
           "steps": [
             {
               "name": "Commit the feed if it changed",
@@ -148,13 +148,13 @@
     },
     {
       "name": "civic-cycle",
-      "id": 42453348622,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42453348622",
-      "sha": "1ffb9fdd49fdb0f1dd8c2d62b1b6976625ba9256",
+      "id": 42485146663,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42485146663",
+      "sha": "2b1a8731fa8a576ed00163f12114b3bca7c0e078",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-08T06:06:01Z"
+      "created_at": "2026-11-08T13:28:48Z"
     },
     {
       "name": "meeting-watch",
@@ -193,7 +193,7 @@
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "2b1a8731fa8a576ed00163f12114b3bca7c0e078",
+  "head": "906276498ce3c415c77b838cba67867a045a8ad8",
   "files_seen": 2724,
   "tree_complete": true,
   "sample_coverage": {
