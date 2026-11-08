@@ -2,7 +2,7 @@
   "repository": "bartimoussmith-oss/therealwindycity",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-08T18:06:19.057Z",
+  "checked_at": "2026-11-08T22:29:30.218Z",
   "controls": [
     {
       "id": "architecture",
@@ -143,23 +143,53 @@
   "runs": [
     {
       "name": "Engineering control center",
-      "id": 42508081889,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42508081889",
-      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
+      "id": 42530300716,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42530300716",
+      "sha": "749eff115c54b725bb421cac4e93ca2ac8a462b0",
       "branch": "main",
       "status": "in_progress",
       "conclusion": null,
-      "created_at": "2026-11-08T18:04:00Z"
+      "created_at": "2026-11-08T22:27:10Z"
+    },
+    {
+      "name": "civic-cycle",
+      "id": 42528461409,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42528461409",
+      "sha": "47c75e123dc4b09e432b43a5bd9b88a0f752a906",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-08T22:05:35Z"
     },
     {
       "name": "Hourly public ecosystem diagnostics",
-      "id": 42497868379,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42497868379",
+      "id": 42520786433,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42520786433",
+      "sha": "47c75e123dc4b09e432b43a5bd9b88a0f752a906",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-08T20:34:07Z"
+    },
+    {
+      "name": "Scanner best-effort live and recovery",
+      "id": 42513275528,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42513275528",
       "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-08T16:02:57Z"
+      "created_at": "2026-11-08T19:05:43Z"
+    },
+    {
+      "name": "Scanner historical backfill",
+      "id": 42512251170,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42512251170",
+      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-08T18:53:37Z"
     },
     {
       "name": "ai-record-pages",
@@ -177,39 +207,9 @@
       "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42490968115",
       "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
       "branch": "main",
-      "status": "in_progress",
-      "conclusion": null,
+      "status": "completed",
+      "conclusion": "cancelled",
       "created_at": "2026-11-08T14:40:34Z"
-    },
-    {
-      "name": "Scanner best-effort live and recovery",
-      "id": 42487004496,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42487004496",
-      "sha": "2d2095fa41a8c249d2e27de46ce1b3dc79f09d7a",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-08T13:52:17Z"
-    },
-    {
-      "name": "Scanner historical backfill",
-      "id": 42486133324,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42486133324",
-      "sha": "2d2095fa41a8c249d2e27de46ce1b3dc79f09d7a",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-08T13:41:13Z"
-    },
-    {
-      "name": "civic-cycle",
-      "id": 42484840444,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42484840444",
-      "sha": "0e965d8588341eb589fdea270882bb0e5aa0257c",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-08T13:24:49Z"
     },
     {
       "name": "Scheduled Audit & Telemetry Sync",
@@ -564,8 +564,8 @@
     }
   ],
   "gaps": [],
-  "head": "29fd0829d11399ac485baa30c169169a66bd2b09",
-  "files_seen": 9330,
+  "head": "749eff115c54b725bb421cac4e93ca2ac8a462b0",
+  "files_seen": 9411,
   "tree_complete": true,
   "sample_coverage": {
     "candidates": 172,

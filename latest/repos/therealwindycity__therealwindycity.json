@@ -2,7 +2,7 @@
   "repository": "therealwindycity/therealwindycity",
   "archived": false,
   "fork": true,
-  "checked_at": "2026-11-08T18:06:44.181Z",
+  "checked_at": "2026-11-08T22:29:58.868Z",
   "controls": [
     {
       "id": "architecture",
@@ -121,18 +121,28 @@
   ],
   "runs": [
     {
+      "name": "civic-cycle",
+      "id": 42528791039,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42528791039",
+      "sha": "906276498ce3c415c77b838cba67867a045a8ad8",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-08T22:09:20Z"
+    },
+    {
       "name": "workdesk-poll",
-      "id": 42494624213,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42494624213",
+      "id": 42521151202,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42521151202",
       "sha": "906276498ce3c415c77b838cba67867a045a8ad8",
       "branch": "main",
       "status": "completed",
       "conclusion": "failure",
-      "created_at": "2026-11-08T15:24:08Z",
+      "created_at": "2026-11-08T20:38:24Z",
       "failed_jobs": [
         {
           "name": "poll",
-          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42494624213/job/128774148436",
+          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42521151202/job/128854700909",
           "steps": [
             {
               "name": "Commit the feed if it changed",
@@ -145,16 +155,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "civic-cycle",
-      "id": 42485146663,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42485146663",
-      "sha": "2b1a8731fa8a576ed00163f12114b3bca7c0e078",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-08T13:28:48Z"
     },
     {
       "name": "meeting-watch",
@@ -193,7 +193,7 @@
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "906276498ce3c415c77b838cba67867a045a8ad8",
+  "head": "aa972ce17e58e4d8bf2c04c9fc9307d4ed32774d",
   "files_seen": 2724,
   "tree_complete": true,
   "sample_coverage": {

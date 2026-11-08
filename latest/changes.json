@@ -1,29 +1,9 @@
 {
   "newly_observed": [
-    "therealwindycity/therealwindycity:run:42494624213",
-    "bartimoussmith-oss/cheyenne-laramie-analysis-001:architecture",
-    "bartimoussmith-oss/cheyenne-laramie-analysis-001:agent_handoff",
-    "bartimoussmith-oss/cheyenne-laramie-analysis-001:setup",
-    "bartimoussmith-oss/cheyenne-laramie-analysis-001:tests",
-    "bartimoussmith-oss/cheyenne-laramie-analysis-001:data_contract",
-    "bartimoussmith-oss/cheyenne-laramie-analysis-001:provenance",
-    "bartimoussmith-oss/cheyenne-laramie-analysis-001:recovery",
-    "bartimoussmith-oss/cheyenne-laramie-analysis-001:deployment",
-    "bartimoussmith-oss/cheyenne-laramie-analysis-001:dependency_lock",
-    "bartimoussmith-oss/cheyenne-laramie-analysis-001:rights",
-    "bartimoussmith-oss/cheyenne-laramie-analysis-001:.github/workflows/analyze.yml:always_save",
-    "bartimoussmith-oss/cheyenne-laramie-archive:architecture",
-    "bartimoussmith-oss/cheyenne-laramie-archive:agent_handoff",
-    "bartimoussmith-oss/cheyenne-laramie-archive:setup",
-    "bartimoussmith-oss/cheyenne-laramie-archive:tests",
-    "bartimoussmith-oss/cheyenne-laramie-archive:recovery",
-    "bartimoussmith-oss/cheyenne-laramie-archive:deployment",
-    "bartimoussmith-oss/cheyenne-laramie-archive:dependency_lock",
-    "bartimoussmith-oss/cheyenne-laramie-archive:rights",
-    "bartimoussmith-oss/cheyenne-laramie-archive:.github/workflows/osint.yml:always_save"
+    "therealwindycity/therealwindycity:run:42521151202"
   ],
   "no_longer_observed": [
-    "therealwindycity/therealwindycity:run:42454463769"
+    "therealwindycity/therealwindycity:run:42494624213"
   ],
   "warning": "Evidence policy changed to version 2: removed findings may be corrected false positives, not completed repairs."
 }

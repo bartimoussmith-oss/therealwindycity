@@ -1,0 +1,648 @@
+{
+  "repository": "bartimoussmith-oss/therealwindycity",
+  "archived": false,
+  "fork": false,
+  "checked_at": "2026-11-08T22:29:30.218Z",
+  "controls": [
+    {
+      "id": "architecture",
+      "role": "Architect",
+      "state": "signal_observed",
+      "evidence": [
+        ".github/workflows/ecosystem-hourly-diagnostics.yml",
+        "ECOSYSTEM-INVENTORY-AND-UPGRADE-MEMO-2026-10-28.md",
+        "Entity_Database/ECOSYSTEM-INVENTORY-AND-UPGRADE-MEMO-2026-10-28.json",
+        "docs/ARCHITECTURE-TIERS.md",
+        "docs/ECOSYSTEM-AGENT-GUIDE.md",
+        "wyoming/instances/afton/ecosystem.json"
+      ],
+      "next": "Map producers, consumers, storage, deployment targets and owners.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "agent_handoff",
+      "role": "Agent coordinator",
+      "state": "signal_observed",
+      "evidence": [
+        "AGENTS.md"
+      ],
+      "next": "Provide tested commands, current status, constraints and acceptance criteria.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "setup",
+      "role": "Build engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "agent/requirements.txt",
+        "promethean/requirements.txt",
+        "rag/requirements-rag.txt",
+        "requirements.txt",
+        "youtube-archive/requirements.txt"
+      ],
+      "next": "Prove installation from a clean checkout with stated tool versions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "tests",
+      "role": "Test engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "agent/tests/__init__.py",
+        "agent/tests/test_agent.py",
+        "civic_atlas/test_integration.py",
+        "civic_atlas/test_server.py",
+        "civic_atlas/test_streamlit.py",
+        "tools/test_ai_record_status.py"
+      ],
+      "next": "Add offline tests and a real producer-to-published-output test.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "data_contract",
+      "role": "Data engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "provenance",
+      "role": "Evidence reviewer",
+      "state": "signal_observed",
+      "evidence": [
+        "config/sources.json",
+        "drive-import/manifest.json",
+        "pipeline/media_manifest.json",
+        "promethean_federation_manifest.json",
+        "wyoming/instances/afton/config/sources.json",
+        "wyoming/instances/albany-county/config/sources.json"
+      ],
+      "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "checkpoint",
+      "role": "Reliability engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "drive-import/manifest.json",
+        "pipeline/media_manifest.json",
+        "promethean_federation_manifest.json"
+      ],
+      "next": "Prove interrupted runs resume without lost records or duplicates.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "recovery",
+      "role": "Recovery engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Test isolated backup restoration and reversible releases.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "deployment",
+      "role": "Release engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "DEPLOY.md",
+        "DEPLOYMENT-REPAIR-HANDOFF.md"
+      ],
+      "next": "Tie live output to its commit, smoke test and rollback instructions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "dependency_lock",
+      "role": "Supply-chain reviewer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "rights",
+      "role": "Rights reviewer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Separate code licensing from source-data and media reuse rights.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    }
+  ],
+  "runs": [
+    {
+      "name": "Engineering control center",
+      "id": 42530300716,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42530300716",
+      "sha": "749eff115c54b725bb421cac4e93ca2ac8a462b0",
+      "branch": "main",
+      "status": "in_progress",
+      "conclusion": null,
+      "created_at": "2026-11-08T22:27:10Z"
+    },
+    {
+      "name": "civic-cycle",
+      "id": 42528461409,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42528461409",
+      "sha": "47c75e123dc4b09e432b43a5bd9b88a0f752a906",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-08T22:05:35Z"
+    },
+    {
+      "name": "Hourly public ecosystem diagnostics",
+      "id": 42520786433,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42520786433",
+      "sha": "47c75e123dc4b09e432b43a5bd9b88a0f752a906",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-08T20:34:07Z"
+    },
+    {
+      "name": "Scanner best-effort live and recovery",
+      "id": 42513275528,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42513275528",
+      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-08T19:05:43Z"
+    },
+    {
+      "name": "Scanner historical backfill",
+      "id": 42512251170,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42512251170",
+      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-08T18:53:37Z"
+    },
+    {
+      "name": "ai-record-pages",
+      "id": 42495376591,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42495376591",
+      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-08T15:33:06Z"
+    },
+    {
+      "name": "Promethean Recurring Harvest",
+      "id": 42490968115,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42490968115",
+      "sha": "29fd0829d11399ac485baa30c169169a66bd2b09",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "created_at": "2026-11-08T14:40:34Z"
+    },
+    {
+      "name": "Scheduled Audit & Telemetry Sync",
+      "id": 42479966881,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42479966881",
+      "sha": "b52208e52daee20f58663a7542837a8c57ad59b9",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-08T12:22:47Z"
+    },
+    {
+      "name": "Passive Statewide OSINT Cartography Matrix",
+      "id": 42436836769,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42436836769",
+      "sha": "88dfd89c55c720770363e57c4959da35bbdbaaf9",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-08T02:02:58Z"
+    },
+    {
+      "name": "wyoming-verify",
+      "id": 42430676811,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42430676811",
+      "sha": "88dfd89c55c720770363e57c4959da35bbdbaaf9",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-08T00:38:35Z",
+      "failed_jobs": [
+        {
+          "name": "Offline integrity tests",
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42430676811/job/128578672460",
+          "steps": [
+            {
+              "name": "Registry and generator integrity",
+              "number": 4
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Passive Statewide OSINT Cartography Matrix",
+      "id": 42430645495,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42430645495",
+      "sha": "f74752c9c2247970ae566d9768faa19c567db3cd",
+      "branch": "arena/57d2b00d-therealwindycity",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-08T00:38:11Z"
+    },
+    {
+      "name": "wyoming-verify",
+      "id": 42430645494,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42430645494",
+      "sha": "f74752c9c2247970ae566d9768faa19c567db3cd",
+      "branch": "arena/57d2b00d-therealwindycity",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "created_at": "2026-11-08T00:38:11Z"
+    },
+    {
+      "name": "Wyoming Chrome collection",
+      "id": 42430021523,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42430021523",
+      "sha": "652b2f51a41a2e5f45f0a074a9217b0976236f6a",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-08T00:30:06Z"
+    },
+    {
+      "name": "wyoming-verify",
+      "id": 42414974003,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42414974003",
+      "sha": "a4d2d558176aaa88bc3a0c086dd9f3ba3e515c58",
+      "branch": "remove-wyoming-robots-gate",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T21:15:19Z"
+    },
+    {
+      "name": "Wyoming fast-track collection",
+      "id": 42414972357,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42414972357",
+      "sha": "a4d2d558176aaa88bc3a0c086dd9f3ba3e515c58",
+      "branch": "remove-wyoming-robots-gate",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T21:15:18Z"
+    },
+    {
+      "name": "Wyoming source reconnaissance",
+      "id": 42413237934,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42413237934",
+      "sha": "e2a313c08679eb4070e472f9e01a6916e1bddd23",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T20:53:51Z"
+    },
+    {
+      "name": "Wyoming fast-track collection",
+      "id": 42413176989,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42413176989",
+      "sha": "f79675cdb10992dc800a1da729e6fd6aee3a7e6d",
+      "branch": "activate-reviewed-wyoming-sources",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T20:53:04Z"
+    },
+    {
+      "name": "wyoming-verify",
+      "id": 42413164008,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42413164008",
+      "sha": "f79675cdb10992dc800a1da729e6fd6aee3a7e6d",
+      "branch": "activate-reviewed-wyoming-sources",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T20:52:54Z"
+    },
+    {
+      "name": "Fresh records videos",
+      "id": 42335245428,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42335245428",
+      "sha": "8b99a1216872aefc22c9b795c586224af284a369",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-07T03:42:54Z"
+    },
+    {
+      "name": "Repair provenance video timestamps",
+      "id": 42318186849,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42318186849",
+      "sha": "1ccf652b8a33c59a55aae793fc156f0e8539cebc",
+      "branch": "arena/74a6689f-therealwindycity",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-07T00:26:02Z",
+      "failed_jobs": [
+        {
+          "name": "repair",
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42318186849/job/128237299948",
+          "steps": [
+            {
+              "name": "Correct generator and saved timestamps",
+              "number": 5
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "FileNotFoundError",
+            "Missing executable: ffprobe",
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Provenance video audit",
+      "id": 42317451891,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42317451891",
+      "sha": "7fa6ceecc9025a83f45217e9ebc719ab930d9ba0",
+      "branch": "arena/74a6689f-therealwindycity",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-07T00:18:50Z",
+      "failed_jobs": [
+        {
+          "name": "audit",
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42317451891/job/128233858846",
+          "steps": [
+            {
+              "name": "Decode every provenance film and chapter",
+              "number": 6
+            },
+            {
+              "name": "Check clip and showcase timestamps",
+              "number": 9
+            },
+            {
+              "name": "Identify conflicts with main without changing the branch",
+              "number": 10
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "FileNotFoundError",
+            "Missing executable: ffprobe",
+            "Missing executable: ffmpeg",
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Wyoming fast-track collection",
+      "id": 42315846316,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42315846316",
+      "sha": "40d191e37eee63f3f9cdb266c79442a5d6575b93",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-07T00:03:31Z",
+      "failed_jobs": [
+        {
+          "name": "collect",
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42315846316/job/128228111299",
+          "steps": [
+            {
+              "name": "Collect enabled sources and build pages",
+              "number": 6
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Wyoming verifier safety tests",
+      "id": 42286978024,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42286978024",
+      "sha": "e713a27b367d74c2ad61c7d14ac2fff5c93032d8",
+      "branch": "repair/statewide-activation-safety-2026-11-06",
+      "status": "completed",
+      "conclusion": "action_required",
+      "created_at": "2026-11-06T20:16:46Z",
+      "failed_jobs": []
+    },
+    {
+      "name": "wyoming-verify",
+      "id": 42286977891,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42286977891",
+      "sha": "e713a27b367d74c2ad61c7d14ac2fff5c93032d8",
+      "branch": "repair/statewide-activation-safety-2026-11-06",
+      "status": "completed",
+      "conclusion": "action_required",
+      "created_at": "2026-11-06T20:16:46Z",
+      "failed_jobs": []
+    },
+    {
+      "name": "Prepare Wyoming onboarding upgrade",
+      "id": 42286869562,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42286869562",
+      "sha": "082132d70145d478d6699414c003a30deecda1c2",
+      "branch": "repair/statewide-activation-safety-2026-11-06",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-06T20:16:00Z"
+    }
+  ],
+  "pull_requests": [
+    {
+      "number": 33,
+      "title": "Remove robots.txt gating from Wyoming collection and activation",
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/pull/33",
+      "head": "a4d2d558176aaa88bc3a0c086dd9f3ba3e515c58",
+      "updated_at": "2026-11-07T21:15:16Z",
+      "draft": false,
+      "mergeability": "unverified"
+    },
+    {
+      "number": 30,
+      "title": "Draft: require reviewed sources and protect Wyoming onboarding during sweeps",
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/pull/30",
+      "head": "e713a27b367d74c2ad61c7d14ac2fff5c93032d8",
+      "updated_at": "2026-11-06T20:16:41Z",
+      "draft": true,
+      "mergeability": "unverified"
+    },
+    {
+      "number": 29,
+      "title": "docs(wyoming): operating the statewide sweep + the 403 permission case",
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/pull/29",
+      "head": "b4cb3524df282058dd751175ba7e617df18363e7",
+      "updated_at": "2026-11-06T18:31:04Z",
+      "draft": false,
+      "mergeability": "unverified"
+    },
+    {
+      "number": 26,
+      "title": "Provenance: time-lapse + a cue for every datum on the live pages",
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/pull/26",
+      "head": "1ccf652b8a33c59a55aae793fc156f0e8539cebc",
+      "updated_at": "2026-11-07T00:26:02Z",
+      "draft": false,
+      "mergeability": "unverified"
+    },
+    {
+      "number": 22,
+      "title": "TuneAlong / Play-Along v0.1: learns a song once, then shows its chords, tuning and words (new tune-along/ app)",
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/pull/22",
+      "head": "dbf1642fd37e7252b08b1dfa01488ac7c8c5c815",
+      "updated_at": "2026-10-28T15:36:41Z",
+      "draft": false,
+      "mergeability": "unverified"
+    },
+    {
+      "number": 21,
+      "title": "P0: verified fix for the TheReelWindyCity GitHub Pages outage (staged — write to target is denied)",
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/pull/21",
+      "head": "3e2c51402c17c1e32beb2afa6fa971dd82102a0c",
+      "updated_at": "2026-10-28T10:47:02Z",
+      "draft": false,
+      "mergeability": "unverified"
+    },
+    {
+      "number": 19,
+      "title": "Issue newsroom: full-text dossiers, coverage ledger and reporting queues",
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/pull/19",
+      "head": "357b032ad2881cf25b5a4ca8e5609947521a977f",
+      "updated_at": "2026-10-26T05:11:42Z",
+      "draft": false,
+      "mergeability": "unverified"
+    },
+    {
+      "number": 15,
+      "title": "Draft: integrate Record Atlas archive explorer",
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/pull/15",
+      "head": "4422b6be3055750d6eb8e416813d21a13582f54e",
+      "updated_at": "2026-10-25T06:23:43Z",
+      "draft": true,
+      "mergeability": "unverified"
+    },
+    {
+      "number": 13,
+      "title": "Add source-safe IVIC agenda pre-screen",
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/pull/13",
+      "head": "d760b57dfc807a13c40f99ee4143e770ea90d1b5",
+      "updated_at": "2026-10-19T00:18:12Z",
+      "draft": false,
+      "mergeability": "unverified"
+    },
+    {
+      "number": 6,
+      "title": "tools: Granicus full-archive sweep (nothing excluded — all views, all meetings, all documents, video, in-document links)",
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/pull/6",
+      "head": "1894448ad71083d913593916fd5e264c1ee647d4",
+      "updated_at": "2026-09-13T01:02:56Z",
+      "draft": false,
+      "mergeability": "unverified"
+    }
+  ],
+  "gaps": [],
+  "head": "749eff115c54b725bb421cac4e93ca2ac8a462b0",
+  "files_seen": 9411,
+  "tree_complete": true,
+  "sample_coverage": {
+    "candidates": 172,
+    "selected": 12
+  },
+  "workflow_signals": {
+    ".github/workflows/ai-record-pages.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/apply-remediation.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/civic-cycle.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/daily_audit.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/ecosystem-hourly-diagnostics.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": true,
+      "explicit_permissions": true
+    },
+    ".github/workflows/engineering-control.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": true,
+      "explicit_permissions": true
+    },
+    ".github/workflows/historical_harvest.yml": {
+      "timeout": false,
+      "concurrency": false,
+      "always_save": true,
+      "explicit_permissions": true
+    },
+    ".github/workflows/laramie-archive-fresh-start.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/launch-laramie.yml": {
+      "timeout": true,
+      "concurrency": false,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/meeting-watch.yml": {
+      "timeout": false,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/passive_cartography.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": true,
+      "explicit_permissions": true
+    },
+    ".github/workflows/promethean_autoharvest.yml": {
+      "timeout": true,
+      "concurrency": false,
+      "always_save": true,
+      "explicit_permissions": true
+    }
+  }
+}
