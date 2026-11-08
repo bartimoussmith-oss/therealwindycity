@@ -1,0 +1,151 @@
+name: Passive Statewide OSINT Cartography Matrix
+
+on:
+  push:
+    paths:
+      - '.github/workflows/passive_cartography.yml'
+      - 'promethean/forensic_audit.py'
+      - 'tools/passive_cartography.py'
+      - 'tools/test_statewide_audit_cartography.py'
+      - 'wyoming/targets.json'
+  pull_request:
+    paths:
+      - '.github/workflows/passive_cartography.yml'
+      - 'promethean/forensic_audit.py'
+      - 'tools/passive_cartography.py'
+      - 'tools/test_statewide_audit_cartography.py'
+      - 'wyoming/targets.json'
+  workflow_dispatch:
+    inputs:
+      target_filter:
+        description: 'Optional comma-separated jurisdiction slugs (blank = wyo-gov + all 23 counties)'
+        required: false
+        default: ''
+        type: string
+      use_spiderfoot:
+        description: 'Also run SpiderFoot CLI with passive-only allowlisted modules'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: passive-cartography-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  offline-selfcheck:
+    name: Offline Audit & Matrix Self-Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run forensic audit & passive cartography unit tests
+        run: python3 -m unittest discover -s tools -p 'test_statewide_audit_cartography.py' -v
+
+  prepare-matrix:
+    name: Load Target Matrix Manifest
+    if: github.event_name == 'workflow_dispatch'
+    needs: [offline-selfcheck]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      jurisdictions: ${{ steps.load.outputs.jurisdictions }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - id: load
+        env:
+          TARGET_FILTER: ${{ inputs.target_filter }}
+        run: |
+          MATRIX_JSON="$(python3 tools/passive_cartography.py matrix-json --filter "$TARGET_FILTER")"
+          echo "jurisdictions=$MATRIX_JSON" >> "$GITHUB_OUTPUT"
+
+  passive-scan:
+    name: Passive Scan (${{ matrix.jurisdiction }})
+    if: github.event_name == 'workflow_dispatch'
+    needs: [prepare-matrix]
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        jurisdiction: ${{ fromJson(needs.prepare-matrix.outputs.jurisdictions) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Optional SpiderFoot passive CLI setup
+        if: ${{ inputs.use_spiderfoot }}
+        run: |
+          git clone --depth 1 https://github.com/smicallef/spiderfoot.git /tmp/spiderfoot
+          python3 -m pip install --quiet -r /tmp/spiderfoot/requirements.txt
+          chmod +x /tmp/spiderfoot/sf.py
+          echo "/tmp/spiderfoot" >> "$GITHUB_PATH"
+      - name: Run passive infrastructure cartography + CASE/UCO provenance hash
+        env:
+          JURISDICTION: ${{ matrix.jurisdiction }}
+          USE_SF: ${{ inputs.use_spiderfoot }}
+        run: |
+          EXTRA_ARGS=""
+          if [ "$USE_SF" = "true" ]; then
+            EXTRA_ARGS="--use-spiderfoot"
+          fi
+          python3 tools/passive_cartography.py scan-target \
+            --jurisdiction "$JURISDICTION" \
+            --output-dir results \
+            --modules "sfp_crt,sfp_dnsresolve,sfp_webframework,sfp_email,sfp_accounts" \
+            $EXTRA_ARGS
+      - name: Upload per-jurisdiction JSON + SHA-256 provenance manifest
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cartography-raw-${{ matrix.jurisdiction }}
+          path: |
+            results/${{ matrix.jurisdiction }}.json
+            results/${{ matrix.jurisdiction }}.json.provenance.json
+          retention-days: 14
+          if-no-files-found: warn
+
+  consolidate:
+    name: Consolidate SQLite & Vendor PRA Matrix
+    if: github.event_name == 'workflow_dispatch' && !cancelled()
+    needs: [passive-scan]
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download matrix JSON & provenance artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: cartography-raw-*
+          path: downloaded-results
+          merge-multiple: true
+      - name: Verify SHA-256 provenance and build statewide SQLite + PRA draft matrix
+        run: |
+          mkdir -p bundle
+          python3 tools/passive_cartography.py consolidate \
+            --input-dir downloaded-results \
+            --db bundle/wyoming_statewide_records_infrastructure.db \
+            --summary-json bundle/consolidated_cartography.json \
+            --markdown bundle/vendor_pra_matrix.md
+          cat bundle/vendor_pra_matrix.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Upload consolidated SQLite & Colab/Streamlit bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: wyoming-statewide-records-infrastructure
+          path: bundle/
+          retention-days: 30
+          if-no-files-found: error
