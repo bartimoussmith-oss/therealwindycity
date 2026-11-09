@@ -2,7 +2,7 @@
   "repository": "therealwindycity/TheReelWindyCity",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-08T22:30:05.418Z",
+  "checked_at": "2026-11-09T07:11:15.441Z",
   "controls": [
     {
       "id": "architecture",
@@ -150,14 +150,34 @@
   ],
   "runs": [
     {
-      "name": "Deploy to GitHub Pages",
-      "id": 42523702819,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42523702819",
+      "name": "Live Municipal Watch",
+      "id": 42552747810,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42552747810",
       "sha": "a639b926e5e82acf599545586d4000b27dac30b0",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-08T21:08:45Z"
+      "created_at": "2026-11-09T02:46:19Z"
+    },
+    {
+      "name": "Deploy to GitHub Pages",
+      "id": 42542471304,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42542471304",
+      "sha": "a639b926e5e82acf599545586d4000b27dac30b0",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-09T00:51:49Z"
+    },
+    {
+      "name": "Promethean Recurring Harvest",
+      "id": 42535493701,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42535493701",
+      "sha": "a639b926e5e82acf599545586d4000b27dac30b0",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "created_at": "2026-11-08T23:30:32Z"
     },
     {
       "name": "Live Place Archives",
@@ -168,16 +188,6 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-11-08T19:05:09Z"
-    },
-    {
-      "name": "Live Municipal Watch",
-      "id": 42512317199,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42512317199",
-      "sha": "0cab36eea59cd0960a34a054092e630eac705f96",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-08T18:54:27Z"
     },
     {
       "name": "Live Wyoming Watch",
@@ -198,16 +208,6 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-11-08T17:03:22Z"
-    },
-    {
-      "name": "Promethean Recurring Harvest",
-      "id": 42492044617,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42492044617",
-      "sha": "3e06af41fc3bb722920adaf8a652fc48f85a4417",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "cancelled",
-      "created_at": "2026-11-08T14:53:52Z"
     },
     {
       "name": "CI",

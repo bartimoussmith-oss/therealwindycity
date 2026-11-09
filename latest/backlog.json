@@ -1,5 +1,40 @@
 [
   {
+    "id": "therealwindycity/therealwindycity:run:42576072645",
+    "priority": "P1",
+    "repository": "therealwindycity/therealwindycity",
+    "role": "Reliability engineer",
+    "status": "confirmed_run_failure_not_current_product_diagnosis",
+    "evidence": {
+      "name": "workdesk-poll",
+      "id": 42576072645,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42576072645",
+      "sha": "31b33398b9c1ddca802460264b9667f77babc3b0",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-09T06:55:41Z",
+      "failed_jobs": [
+        {
+          "name": "poll",
+          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42576072645/job/129023959977",
+          "steps": [
+            {
+              "name": "Commit the feed if it changed",
+              "number": 7
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    },
+    "task": "Reproduce the recorded failed step and repair its demonstrated cause.",
+    "done_when": "Replacement run passes the same checks and output is verified; older failure does not establish current HEAD failure."
+  },
+  {
     "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:architecture",
     "priority": "P2",
     "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
@@ -107,7 +142,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/analyze.yml",
-      "sha": "fc8f30542cb247bb427c843154ad6248e9fda25b",
+      "sha": "3801cb03e627df9a6ba84ed5e970a24f1f62c24e",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -201,7 +236,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/osint.yml",
-      "sha": "6f0b32cc529f600d8738910c3d4945d5ccfdf82c",
+      "sha": "dc7f3bf358ec93eb1476f3a5767ea6193db270f6",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -719,7 +754,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/ai-record-pages.yml",
-      "sha": "749eff115c54b725bb421cac4e93ca2ac8a462b0",
+      "sha": "68a6cffd05bec04111cf7a0b7f64c80720297075",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -733,7 +768,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/apply-remediation.yml",
-      "sha": "749eff115c54b725bb421cac4e93ca2ac8a462b0",
+      "sha": "68a6cffd05bec04111cf7a0b7f64c80720297075",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -747,7 +782,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/civic-cycle.yml",
-      "sha": "749eff115c54b725bb421cac4e93ca2ac8a462b0",
+      "sha": "68a6cffd05bec04111cf7a0b7f64c80720297075",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -761,7 +796,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/daily_audit.yml",
-      "sha": "749eff115c54b725bb421cac4e93ca2ac8a462b0",
+      "sha": "68a6cffd05bec04111cf7a0b7f64c80720297075",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -775,7 +810,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/historical_harvest.yml",
-      "sha": "749eff115c54b725bb421cac4e93ca2ac8a462b0",
+      "sha": "68a6cffd05bec04111cf7a0b7f64c80720297075",
       "signal": "timeout"
     },
     "task": "Review missing timeout signal; inspect equivalent controls before editing.",
@@ -789,7 +824,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/historical_harvest.yml",
-      "sha": "749eff115c54b725bb421cac4e93ca2ac8a462b0",
+      "sha": "68a6cffd05bec04111cf7a0b7f64c80720297075",
       "signal": "concurrency"
     },
     "task": "Review missing concurrency signal; inspect equivalent controls before editing.",
@@ -803,7 +838,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/laramie-archive-fresh-start.yml",
-      "sha": "749eff115c54b725bb421cac4e93ca2ac8a462b0",
+      "sha": "68a6cffd05bec04111cf7a0b7f64c80720297075",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -817,7 +852,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/launch-laramie.yml",
-      "sha": "749eff115c54b725bb421cac4e93ca2ac8a462b0",
+      "sha": "68a6cffd05bec04111cf7a0b7f64c80720297075",
       "signal": "concurrency"
     },
     "task": "Review missing concurrency signal; inspect equivalent controls before editing.",
@@ -831,7 +866,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/launch-laramie.yml",
-      "sha": "749eff115c54b725bb421cac4e93ca2ac8a462b0",
+      "sha": "68a6cffd05bec04111cf7a0b7f64c80720297075",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -845,7 +880,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/meeting-watch.yml",
-      "sha": "749eff115c54b725bb421cac4e93ca2ac8a462b0",
+      "sha": "68a6cffd05bec04111cf7a0b7f64c80720297075",
       "signal": "timeout"
     },
     "task": "Review missing timeout signal; inspect equivalent controls before editing.",
@@ -859,7 +894,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/meeting-watch.yml",
-      "sha": "749eff115c54b725bb421cac4e93ca2ac8a462b0",
+      "sha": "68a6cffd05bec04111cf7a0b7f64c80720297075",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -873,7 +908,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/promethean_autoharvest.yml",
-      "sha": "749eff115c54b725bb421cac4e93ca2ac8a462b0",
+      "sha": "68a6cffd05bec04111cf7a0b7f64c80720297075",
       "signal": "concurrency"
     },
     "task": "Review missing concurrency signal; inspect equivalent controls before editing.",
@@ -1351,7 +1386,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/civic-cycle.yml",
-      "sha": "aa972ce17e58e4d8bf2c04c9fc9307d4ed32774d",
+      "sha": "31b33398b9c1ddca802460264b9667f77babc3b0",
       "signal": "timeout"
     },
     "task": "Review missing timeout signal; inspect equivalent controls before editing.",
@@ -1365,7 +1400,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/civic-cycle.yml",
-      "sha": "aa972ce17e58e4d8bf2c04c9fc9307d4ed32774d",
+      "sha": "31b33398b9c1ddca802460264b9667f77babc3b0",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -1379,7 +1414,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/meeting-watch.yml",
-      "sha": "aa972ce17e58e4d8bf2c04c9fc9307d4ed32774d",
+      "sha": "31b33398b9c1ddca802460264b9667f77babc3b0",
       "signal": "timeout"
     },
     "task": "Review missing timeout signal; inspect equivalent controls before editing.",
@@ -1393,7 +1428,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/meeting-watch.yml",
-      "sha": "aa972ce17e58e4d8bf2c04c9fc9307d4ed32774d",
+      "sha": "31b33398b9c1ddca802460264b9667f77babc3b0",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -1407,7 +1442,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/workdesk-pages.yml",
-      "sha": "aa972ce17e58e4d8bf2c04c9fc9307d4ed32774d",
+      "sha": "31b33398b9c1ddca802460264b9667f77babc3b0",
       "signal": "timeout"
     },
     "task": "Review missing timeout signal; inspect equivalent controls before editing.",
@@ -1421,7 +1456,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/workdesk-pages.yml",
-      "sha": "aa972ce17e58e4d8bf2c04c9fc9307d4ed32774d",
+      "sha": "31b33398b9c1ddca802460264b9667f77babc3b0",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -1435,7 +1470,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/workdesk-poll.yml",
-      "sha": "aa972ce17e58e4d8bf2c04c9fc9307d4ed32774d",
+      "sha": "31b33398b9c1ddca802460264b9667f77babc3b0",
       "signal": "timeout"
     },
     "task": "Review missing timeout signal; inspect equivalent controls before editing.",
@@ -1449,7 +1484,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/workdesk-poll.yml",
-      "sha": "aa972ce17e58e4d8bf2c04c9fc9307d4ed32774d",
+      "sha": "31b33398b9c1ddca802460264b9667f77babc3b0",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -1885,41 +1920,6 @@
           "steps": [
             {
               "name": "Sync new meetings",
-              "number": 7
-            }
-          ],
-          "log_status": "bounded_read",
-          "error_signals": [
-            "Nonzero command exit"
-          ]
-        }
-      ]
-    },
-    "task": "Reproduce the recorded failed step and repair its demonstrated cause.",
-    "done_when": "Replacement run passes the same checks and output is verified; older failure does not establish current HEAD failure."
-  },
-  {
-    "id": "therealwindycity/therealwindycity:run:42521151202",
-    "priority": "review",
-    "repository": "therealwindycity/therealwindycity",
-    "role": "Reliability engineer",
-    "status": "confirmed_run_failure_not_current_product_diagnosis",
-    "evidence": {
-      "name": "workdesk-poll",
-      "id": 42521151202,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42521151202",
-      "sha": "906276498ce3c415c77b838cba67867a045a8ad8",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "failure",
-      "created_at": "2026-11-08T20:38:24Z",
-      "failed_jobs": [
-        {
-          "name": "poll",
-          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42521151202/job/128854700909",
-          "steps": [
-            {
-              "name": "Commit the feed if it changed",
               "number": 7
             }
           ],
