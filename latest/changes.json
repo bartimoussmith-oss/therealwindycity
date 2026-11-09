@@ -1,9 +1,13 @@
 {
   "newly_observed": [
-    "therealwindycity/therealwindycity:run:42576072645"
+    "bartimoussmith-oss/therealwindycity:run:42703134184",
+    "therealwindycity/therealwindycity:run:42678608996"
   ],
   "no_longer_observed": [
-    "therealwindycity/therealwindycity:run:42521151202"
+    "therealwindycity/therealwindycity:run:42576072645",
+    "bartimoussmith-oss/therealwindycity:run:42430676811",
+    "bartimoussmith-oss/therealwindycity:run:42286978024",
+    "bartimoussmith-oss/therealwindycity:run:42286977891"
   ],
   "warning": "Evidence policy changed to version 2: removed findings may be corrected false positives, not completed repairs."
 }
