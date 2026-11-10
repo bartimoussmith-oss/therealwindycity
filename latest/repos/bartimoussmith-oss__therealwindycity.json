@@ -2,7 +2,7 @@
   "repository": "bartimoussmith-oss/therealwindycity",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-09T22:43:18.183Z",
+  "checked_at": "2026-11-10T07:45:20.822Z",
   "controls": [
     {
       "id": "architecture",
@@ -143,43 +143,73 @@
   "runs": [
     {
       "name": "Engineering control center",
-      "id": 42714082188,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42714082188",
-      "sha": "6084bd66dc7bc38a11a14bd62e5ce81db2549305",
+      "id": 42777172388,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42777172388",
+      "sha": "157a20e722cc91477c9cd6f03404f709b9136348",
       "branch": "main",
       "status": "in_progress",
       "conclusion": null,
-      "created_at": "2026-11-09T22:41:15Z"
+      "created_at": "2026-11-10T07:42:33Z"
     },
     {
-      "name": "Scanner best-effort live and recovery",
-      "id": 42714030302,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42714030302",
-      "sha": "6084bd66dc7bc38a11a14bd62e5ce81db2549305",
+      "name": "meeting-watch",
+      "id": 42776925339,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42776925339",
+      "sha": "98d2a1f5d7b0fb1a6ac5d3ee4578f2bec2a70a8a",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-09T22:40:54Z"
-    },
-    {
-      "name": "Scanner historical backfill",
-      "id": 42712710464,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42712710464",
-      "sha": "6084bd66dc7bc38a11a14bd62e5ce81db2549305",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-09T22:31:58Z"
+      "created_at": "2026-11-10T07:40:26Z"
     },
     {
       "name": "civic-cycle",
-      "id": 42711186980,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42711186980",
-      "sha": "323a5211427dddc1135df7bda51edfc8ce2bee46",
+      "id": 42774395462,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42774395462",
+      "sha": "9f062eb02e989edea1921ebdc70fa42db4503a0e",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-09T22:21:47Z"
+      "created_at": "2026-11-10T07:18:44Z"
+    },
+    {
+      "name": "Scanner historical backfill",
+      "id": 42757436299,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42757436299",
+      "sha": "9f062eb02e989edea1921ebdc70fa42db4503a0e",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-10T04:41:20Z"
+    },
+    {
+      "name": "Scanner best-effort live and recovery",
+      "id": 42755184533,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42755184533",
+      "sha": "a97275f16a634f82f0b174f552c94e6af6d1a60b",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-10T04:20:02Z"
+    },
+    {
+      "name": "Promethean Recurring Harvest",
+      "id": 42743043408,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42743043408",
+      "sha": "a97275f16a634f82f0b174f552c94e6af6d1a60b",
+      "branch": "main",
+      "status": "in_progress",
+      "conclusion": null,
+      "created_at": "2026-11-10T02:28:48Z"
+    },
+    {
+      "name": "Hourly public ecosystem diagnostics",
+      "id": 42741391163,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42741391163",
+      "sha": "a97275f16a634f82f0b174f552c94e6af6d1a60b",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-10T02:14:38Z"
     },
     {
       "name": "wyoming-verify",
@@ -216,26 +246,6 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-11-09T19:04:59Z"
-    },
-    {
-      "name": "Hourly public ecosystem diagnostics",
-      "id": 42678218515,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42678218515",
-      "sha": "323a5211427dddc1135df7bda51edfc8ce2bee46",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-09T18:54:20Z"
-    },
-    {
-      "name": "Promethean Recurring Harvest",
-      "id": 42670967296,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42670967296",
-      "sha": "323a5211427dddc1135df7bda51edfc8ce2bee46",
-      "branch": "main",
-      "status": "in_progress",
-      "conclusion": null,
-      "created_at": "2026-11-09T18:06:04Z"
     },
     {
       "name": "Scheduled Audit & Telemetry Sync",
@@ -346,97 +356,6 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-11-07T03:42:54Z"
-    },
-    {
-      "name": "Repair provenance video timestamps",
-      "id": 42318186849,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42318186849",
-      "sha": "1ccf652b8a33c59a55aae793fc156f0e8539cebc",
-      "branch": "arena/74a6689f-therealwindycity",
-      "status": "completed",
-      "conclusion": "failure",
-      "created_at": "2026-11-07T00:26:02Z",
-      "failed_jobs": [
-        {
-          "name": "repair",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42318186849/job/128237299948",
-          "steps": [
-            {
-              "name": "Correct generator and saved timestamps",
-              "number": 5
-            }
-          ],
-          "log_status": "bounded_read",
-          "error_signals": [
-            "FileNotFoundError",
-            "Missing executable: ffprobe",
-            "Nonzero command exit"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Provenance video audit",
-      "id": 42317451891,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42317451891",
-      "sha": "7fa6ceecc9025a83f45217e9ebc719ab930d9ba0",
-      "branch": "arena/74a6689f-therealwindycity",
-      "status": "completed",
-      "conclusion": "failure",
-      "created_at": "2026-11-07T00:18:50Z",
-      "failed_jobs": [
-        {
-          "name": "audit",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42317451891/job/128233858846",
-          "steps": [
-            {
-              "name": "Decode every provenance film and chapter",
-              "number": 6
-            },
-            {
-              "name": "Check clip and showcase timestamps",
-              "number": 9
-            },
-            {
-              "name": "Identify conflicts with main without changing the branch",
-              "number": 10
-            }
-          ],
-          "log_status": "bounded_read",
-          "error_signals": [
-            "FileNotFoundError",
-            "Missing executable: ffprobe",
-            "Missing executable: ffmpeg",
-            "Nonzero command exit"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Wyoming fast-track collection",
-      "id": 42315846316,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42315846316",
-      "sha": "40d191e37eee63f3f9cdb266c79442a5d6575b93",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "failure",
-      "created_at": "2026-11-07T00:03:31Z",
-      "failed_jobs": [
-        {
-          "name": "collect",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/42315846316/job/128228111299",
-          "steps": [
-            {
-              "name": "Collect enabled sources and build pages",
-              "number": 6
-            }
-          ],
-          "log_status": "bounded_read",
-          "error_signals": [
-            "Nonzero command exit"
-          ]
-        }
-      ]
     }
   ],
   "pull_requests": [
@@ -532,8 +451,8 @@
     }
   ],
   "gaps": [],
-  "head": "a97275f16a634f82f0b174f552c94e6af6d1a60b",
-  "files_seen": 9571,
+  "head": "157a20e722cc91477c9cd6f03404f709b9136348",
+  "files_seen": 9655,
   "tree_complete": true,
   "sample_coverage": {
     "candidates": 172,
