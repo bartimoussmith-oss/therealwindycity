@@ -1,7 +1,7 @@
 {
   "schema": 2,
-  "started_at": "2026-11-11T19:52:22.393Z",
-  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/43090928883",
+  "started_at": "2026-11-12T07:43:45.719Z",
+  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/43177146437",
   "video_proof_result": "success",
   "repositories": [
     {
@@ -106,14 +106,14 @@
       "from": "bartimoussmith-oss/therealwindycity",
       "to": "therealwindycity/TheReelWindyCity",
       "path": ".github/workflows/ai-record-pages.yml",
-      "sha": "e76ec540f7cb15a5591e4765822401513e8fb8d7",
+      "sha": "ea1782aefdf7a01c89135e38ebccdcb6adf03ef9",
       "status": "declared_reference_only"
     },
     {
       "from": "bartimoussmith-oss/therealwindycity",
       "to": "therealwindycity/The-Real-Windy-City-",
       "path": ".github/workflows/ai-record-pages.yml",
-      "sha": "e76ec540f7cb15a5591e4765822401513e8fb8d7",
+      "sha": "ea1782aefdf7a01c89135e38ebccdcb6adf03ef9",
       "status": "declared_reference_only"
     },
     {
@@ -441,11 +441,11 @@
       "task": "Check claims against source records and distinguish configured, executed, tested, deployed and verified."
     }
   ],
-  "finished_at": "2026-11-11T19:53:36.374Z",
+  "finished_at": "2026-11-12T07:44:55.561Z",
   "summary": {
     "repositories": 17,
     "declared_edges": 48,
-    "backlog": 153,
-    "logs_sampled": 10
+    "backlog": 151,
+    "logs_sampled": 8
   }
 }

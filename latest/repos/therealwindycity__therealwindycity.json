@@ -2,7 +2,7 @@
   "repository": "therealwindycity/therealwindycity",
   "archived": false,
   "fork": true,
-  "checked_at": "2026-11-11T19:53:19.101Z",
+  "checked_at": "2026-11-12T07:44:39.201Z",
   "controls": [
     {
       "id": "architecture",
@@ -122,27 +122,27 @@
   "runs": [
     {
       "name": "civic-cycle",
-      "id": 43089010059,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/43089010059",
-      "sha": "2f0a6f316d54bc1f45405ef21e0a7339d569ad58",
+      "id": 43173819494,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/43173819494",
+      "sha": "32d280baa0930f61c09df9e2ce5d1e63fe7c65b4",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-11T19:38:01Z"
+      "created_at": "2026-11-12T07:14:41Z"
     },
     {
       "name": "workdesk-poll",
-      "id": 43057835913,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/43057835913",
-      "sha": "2f0a6f316d54bc1f45405ef21e0a7339d569ad58",
+      "id": 43137921279,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/43137921279",
+      "sha": "32d280baa0930f61c09df9e2ce5d1e63fe7c65b4",
       "branch": "main",
       "status": "completed",
       "conclusion": "failure",
-      "created_at": "2026-11-11T16:23:25Z",
+      "created_at": "2026-11-12T01:56:31Z",
       "failed_jobs": [
         {
           "name": "poll",
-          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/43057835913/job/130651977303",
+          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/43137921279/job/130917613622",
           "steps": [
             {
               "name": "Commit the feed if it changed",
@@ -193,7 +193,7 @@
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "32d280baa0930f61c09df9e2ce5d1e63fe7c65b4",
+  "head": "e98cd90a374d55875a1a72c280f2262e08dca4f5",
   "files_seen": 2724,
   "tree_complete": true,
   "sample_coverage": {
