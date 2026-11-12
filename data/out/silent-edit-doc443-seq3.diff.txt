@@ -1,0 +1,330 @@
+--- seq2 (2026-11-11T19:40:48Z)
++++ seq3 (2026-11-12T07:15:21Z)
+@@ -104,8 +104,8 @@
+ <script async data-wp-strategy="async" id="broadstreet-analytics-js" src="//flux.broadstreet.ai/emit/6324.js?ver=1.0.0"></script>
+ <script async data-cfasync='false' id="broadstreet-init-js" src="//cdn.broadstreetads.com/init-2.min.js?v=1.53.4&#038;ver=7.1.4"></script>
+ <script async data-cfasync='false' id="broadstreet-init-js-after">
+-window.broadstreetKeywords = ['not_home_page','not_landing_page','is_article_page','crime','general','latest-news','local-2','news','florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards','post']
+-window.broadstreetTargets = {"pagetype":["post","not_home_page"],"category":["crime","general","latest-news","local-2","news","florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards","post"],"url":"florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards"};
++window.broadstreetKeywords = ['not_home_page','not_landing_page','is_article_page','crime','latest-news','general','local-2','news','florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards','post']
++window.broadstreetTargets = {"pagetype":["post","not_home_page"],"category":["crime","latest-news","general","local-2","news","florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards","post"],"url":"florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards"};
+ 
+ window.broadstreet = window.broadstreet || { run: [] };window.broadstreet.run.push(function () {
+ window.broadstreet.loadNetworkJS(6324, {});
+@@ -362,10 +362,10 @@
+ 
+ 			<div class="header-widget above-header-widgets">
+ 			<div class="wrapper">
+-				<section id="block-29" class="below-content widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit alignnone" style="text-align:inherit">		<div class='newspack_global_ad block_6af4ba3b38c77 fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="82907" keywords="not_home_page,not_landing_page,is_article_page,crime,general,latest-news,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias="cc_billboard_reveal"></broadstreet-zone></div>		</div>
+-		</div></section><section id="block-31" class="below-content widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit alignnone" style="text-align:inherit">		<div class='newspack_global_ad block_6af4ba3b3a3fd fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="190771" keywords="not_home_page,not_landing_page,is_article_page,crime,general,latest-news,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
++				<section id="block-29" class="below-content widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit alignnone" style="text-align:inherit">		<div class='newspack_global_ad block_6af4fec96fd30 fixed-height'>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="82907" keywords="not_home_page,not_landing_page,is_article_page,crime,latest-news,general,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias="cc_billboard_reveal"></broadstreet-zone></div>		</div>
++		</div></section><section id="block-31" class="below-content widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit alignnone" style="text-align:inherit">		<div class='newspack_global_ad block_6af4fec97085b fixed-height'>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="190771" keywords="not_home_page,not_landing_page,is_article_page,crime,latest-news,general,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
+ 		</div></section>			</div><!-- .wrapper -->
+ 		</div><!-- .above-header-widgets -->
+ 	
+@@ -490,7 +490,7 @@
+ 			<span class="byline">
+ 				<span>by</span>
+ 				<span class="author vcard"><a class="url fn n" href="https://capcity.news/author/garrett/">Garrett Grochowski</a></span> 			</span><!-- .byline -->
+-			<span class="posted-on"><time class="entry-date published" datetime="2026-11-10T15:24:43-07:00">21 hours ago</time><time class="updated" datetime="2026-11-10T15:56:32-07:00">November 10, 2026</time></span>				</div><!-- .meta-info -->
++			<span class="posted-on"><time class="entry-date published" datetime="2026-11-10T15:24:43-07:00">November 10, 2026</time><time class="updated" datetime="2026-11-10T15:56:32-07:00">November 10, 2026</time></span>				</div><!-- .meta-info -->
+ 							<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer"
+ 				data-shared="sharing-facebook-180015"
+ 				class="share-facebook sd-button share-icon"
+@@ -717,7 +717,7 @@
+ 				
+ <aside id="secondary" class="widget-area">
+ 			<div class='newspack_global_ad sidebar_sidebar-1 sidebar_sidebar-1-before hook-before stick-to-top fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176796" keywords="not_home_page,not_landing_page,is_article_page,crime,general,latest-news,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176796" keywords="not_home_page,not_landing_page,is_article_page,crime,latest-news,general,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
+ 		<section id="jetpack-search-filters-4" class="widget jetpack-filters widget_search">			<div id="jetpack-search-filters-4-wrapper" class="jetpack-instant-search-wrapper">
+ 		<div class="jetpack-search-form">
+ <form role="search" method="get" class="search-form" action="https://capcity.news/">
+@@ -748,12 +748,12 @@
+ 							</div>
+ 							</li></ul>
+ </div></p>
+-</section><section id="block-24" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6af4ba3b53957 fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176793" keywords="not_home_page,not_landing_page,is_article_page,crime,general,latest-news,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
+-		</div></section><section id="block-25" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6af4ba3b54b7f fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176794" keywords="not_home_page,not_landing_page,is_article_page,crime,general,latest-news,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
+-		</div></section><section id="block-26" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6af4ba3b55e12 fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176794" keywords="not_home_page,not_landing_page,is_article_page,crime,general,latest-news,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
++</section><section id="block-24" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6af4fec97c85a fixed-height'>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176793" keywords="not_home_page,not_landing_page,is_article_page,crime,latest-news,general,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
++		</div></section><section id="block-25" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6af4fec97d066 fixed-height'>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176794" keywords="not_home_page,not_landing_page,is_article_page,crime,latest-news,general,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
++		</div></section><section id="block-26" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6af4fec97d7e4 fixed-height'>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176794" keywords="not_home_page,not_landing_page,is_article_page,crime,latest-news,general,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
+ 		</div></section><section id="block-20" class="widget widget_block">	<div
+ 		class="wp-block-newspack-blocks-homepage-articles is-style-borders wpnbha show-image image-alignleft ts-2 is-1 is-square is-style-borders"
+ 		style=""
+@@ -763,6 +763,82 @@
+ 					<span>Latest News</span>
+ 				</h2>
+ 						
++	<article data-post-id="180070"
++		class="category-breaking-news-general category-breaking-news-latest-news category-breaking-news category-latest-news category-general category-local-2 category-news type-post post-has-image"
++				>
++							<figure class="post-thumbnail">
++								<a href="https://capcity.news/latest-news/2026/11/11/breaking-suspect-dead-after-officer-involved-shooting-off-i-80p/" rel="bookmark" tabindex="-1" aria-hidden="true">
++												<img loading="lazy" decoding="async" width="1200" height="1200" src="https://i0.wp.com/capcity.news/wp-content/uploads/2026/04/Laramie-County-Sheriffs.jpg?resize=1200%2C1200&amp;ssl=1" class="attachment-newspack-article-block-square-large size-newspack-article-block-square-large wp-post-image" alt="BREAKING: Suspect dead after officer-involved shooting off I-80" data-hero-candidate="1" srcset="https://i0.wp.com/capcity.news/wp-content/uploads/2026/04/Laramie-County-Sheriffs.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/04/Laramie-County-Sheriffs.jpg?resize=1200%2C1200&amp;ssl=1 1200w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/04/Laramie-County-Sheriffs.jpg?resize=800%2C800&amp;ssl=1 800w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/04/Laramie-County-Sheriffs.jpg?resize=600%2C600&amp;ssl=1 600w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/04/Laramie-County-Sheriffs.jpg?resize=400%2C400&amp;ssl=1 400w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/04/Laramie-County-Sheriffs.jpg?resize=200%2C200&amp;ssl=1 200w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/04/Laramie-County-Sheriffs.jpg?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/04/Laramie-County-Sheriffs.jpg?resize=100%2C100&amp;ssl=1 100w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/04/Laramie-County-Sheriffs.jpg?resize=1200%2C1200&amp;ssl=1&amp;w=370 370w" sizes="auto, (min-width: 782px) 600px, (min-width: 600px) 42.5vw, 90vw" data-attachment-id="165585" data-permalink="https://capcity.news/crime/2026/04/20/sheriffs-report-laramie-county-fatal-crashes-drop-90-after-traffic-unit-launch-arrests-up-57-in-2025/attachment/laramie-county-sheriffs/" data-orig-file="https://i0.wp.com/capcity.news/wp-content/uploads/2026/04/Laramie-County-Sheriffs.jpg?fit=2048%2C1308&amp;ssl=1" data-orig-size="2048,1308" data-comments-opened="0" data-image-title="Laramie County Sheriffs" data-image-description="" data-image-caption="&lt;p&gt;A Laramie County Sheriff&amp;#8217;s Office deputy poses with their vehicle. (LCSO photo)&lt;/p&gt;
++" data-large-file="https://i0.wp.com/capcity.news/wp-content/uploads/2026/04/Laramie-County-Sheriffs.jpg?fit=780%2C498&amp;ssl=1" />												</a>
++				
++							</figure><!-- .featured-image -->
++		
++		<div class="entry-wrapper">
++						<h3 class="entry-title"><a href="https://capcity.news/latest-news/2026/11/11/breaking-suspect-dead-after-officer-involved-shooting-off-i-80p/" rel="bookmark">BREAKING: Suspect dead after officer-involved shooting off I-80</a></h3>										<div class="entry-meta">
++											<span class="byline">
++							<span class="author-prefix">by</span> <span class="author vcard"><a class="url fn n" href="https://capcity.news/author/nickupslope-media/">Nick Perkins</a></span>						</span><!-- .author-name -->
++						<time class="entry-date published" datetime="2026-11-11T16:10:25-07:00">38 minutes ago</time><time class="updated" datetime="2026-11-11T16:32:41-07:00">November 11, 2026</time>				</div><!-- .entry-meta -->
++								</div><!-- .entry-wrapper -->
++	</article>
++
++		
++	<article data-post-id="180037"
++		class="category-court category-general category-latest-news category-news category-statewide category-wyofile category-wyoming-community-2 category-wyoming-news type-post post-has-image"
++				>
++							<figure class="post-thumbnail">
++								<a href="https://capcity.news/crime/court/2026/11/11/did-the-wyoming-boys-school-abuse-young-people-the-first-of-six-trials-to-answer-that-question-is-underway/" rel="bookmark" tabindex="-1" aria-hidden="true">
++												<img loading="lazy" decoding="async" width="800" height="800" src="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Fed-US-court-building-1-Casper-March-30-DBleizeffer.jpg?resize=800%2C800&amp;ssl=1" class="attachment-newspack-article-block-square-medium size-newspack-article-block-square-medium wp-post-image" alt="Did the Wyoming Boys’ School abuse young people? The first of six trials to answer that question is underway." data-hero-candidate="1" srcset="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Fed-US-court-building-1-Casper-March-30-DBleizeffer.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Fed-US-court-building-1-Casper-March-30-DBleizeffer.jpg?resize=800%2C800&amp;ssl=1 800w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Fed-US-court-building-1-Casper-March-30-DBleizeffer.jpg?resize=600%2C600&amp;ssl=1 600w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Fed-US-court-building-1-Casper-March-30-DBleizeffer.jpg?resize=400%2C400&amp;ssl=1 400w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Fed-US-court-building-1-Casper-March-30-DBleizeffer.jpg?resize=200%2C200&amp;ssl=1 200w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Fed-US-court-building-1-Casper-March-30-DBleizeffer.jpg?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Fed-US-court-building-1-Casper-March-30-DBleizeffer.jpg?resize=100%2C100&amp;ssl=1 100w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Fed-US-court-building-1-Casper-March-30-DBleizeffer.jpg?resize=800%2C800&amp;ssl=1&amp;w=370 370w" sizes="auto, (min-width: 782px) 600px, (min-width: 600px) 42.5vw, 90vw" data-attachment-id="180040" data-permalink="https://capcity.news/crime/court/2026/11/11/did-the-wyoming-boys-school-abuse-young-people-the-first-of-six-trials-to-answer-that-question-is-underway/attachment/fed-us-court-building-1-casper-march-30-dbleizeffer/" data-orig-file="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Fed-US-court-building-1-Casper-March-30-DBleizeffer.jpg?fit=1200%2C819&amp;ssl=1" data-orig-size="1200,819" data-comments-opened="0" data-image-meta="{&quot;aperture&quot;:&quot;1.8&quot;,&quot;camera&quot;:&quot;iPhone XR&quot;,&quot;created_timestamp&quot;:&quot;1648630988&quot;,&quot;focal_length&quot;:&quot;4.25&quot;,&quot;iso&quot;:&quot;25&quot;,&quot;shutter_speed&quot;:&quot;0.0010193679918451&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="Fed-US-court-building-1-Casper-March-30-DBleizeffer" data-image-description="" data-image-caption="&lt;p&gt;The U.S. District Court building in Casper, March 30, 2022. (Dustin Bleizeffer/WyoFile)&lt;/p&gt;
++" data-large-file="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Fed-US-court-building-1-Casper-March-30-DBleizeffer.jpg?fit=780%2C532&amp;ssl=1" />												</a>
++				
++							</figure><!-- .featured-image -->
++		
++		<div class="entry-wrapper">
++						<h3 class="entry-title"><a href="https://capcity.news/crime/court/2026/11/11/did-the-wyoming-boys-school-abuse-young-people-the-first-of-six-trials-to-answer-that-question-is-underway/" rel="bookmark">Did the Wyoming Boys’ School abuse young people? The first of six trials to answer that question is underway.</a></h3>										<div class="entry-meta">
++											<span class="byline">
++							<span class="author-prefix">by</span> <span class="author vcard"><a class="url fn n" href="https://capcity.news/author/wyofile/">Wyofile</a></span>						</span><!-- .author-name -->
++						<time class="entry-date published updated" datetime="2026-11-11T15:45:00-07:00">1 hour ago</time>				</div><!-- .entry-meta -->
++								</div><!-- .entry-wrapper -->
++	</article>
++
++		
++	<article data-post-id="180064"
++		class="category-community category-feature category-latest-news category-general category-local-2 category-news type-post post-has-image"
++				>
++							<figure class="post-thumbnail">
++								<a href="https://capcity.news/community/2026/11/11/american-legion-gathers-in-burns-cemetery-to-dedicate-new-flag-pole-on-veterans-day/" rel="bookmark" tabindex="-1" aria-hidden="true">
++												<img loading="lazy" decoding="async" width="1200" height="1200" src="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8633-scaled.jpg?resize=1200%2C1200&amp;ssl=1" class="attachment-newspack-article-block-square-large size-newspack-article-block-square-large wp-post-image" alt="American Legion gathers in Burns Cemetery to dedicate new flagpole on Veterans Day" data-hero-candidate="1" srcset="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8633-scaled.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8633-scaled.jpg?resize=1200%2C1200&amp;ssl=1 1200w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8633-scaled.jpg?resize=800%2C800&amp;ssl=1 800w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8633-scaled.jpg?resize=600%2C600&amp;ssl=1 600w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8633-scaled.jpg?resize=400%2C400&amp;ssl=1 400w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8633-scaled.jpg?resize=200%2C200&amp;ssl=1 200w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8633-scaled.jpg?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8633-scaled.jpg?resize=100%2C100&amp;ssl=1 100w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8633-scaled.jpg?zoom=2&amp;resize=1200%2C1200&amp;ssl=1 2400w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8633-scaled.jpg?resize=1200%2C1200&amp;ssl=1&amp;w=370 370w" sizes="auto, (min-width: 782px) 600px, (min-width: 600px) 42.5vw, 90vw" data-attachment-id="180060" data-permalink="https://capcity.news/img_8633/" data-orig-file="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8633-scaled.jpg?fit=2560%2C1641&amp;ssl=1" data-orig-size="2560,1641" data-comments-opened="0" data-image-meta="{&quot;aperture&quot;:&quot;7.1&quot;,&quot;camera&quot;:&quot;Canon EOS R100&quot;,&quot;created_timestamp&quot;:&quot;1762837969&quot;,&quot;focal_length&quot;:&quot;34&quot;,&quot;iso&quot;:&quot;125&quot;,&quot;shutter_speed&quot;:&quot;0.003125&quot;}" data-image-title="IMG_8633" data-image-description="" data-image-caption="&lt;p&gt;American Legion Post 21 members raise the flag in Burns to dedicate the local cemetery&amp;#8217;s new pole on Veterans Day 2026 (Garrett Grochowski, Cap City News)&lt;/p&gt;
++" data-large-file="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8633-scaled.jpg?fit=780%2C500&amp;ssl=1" />												</a>
++				
++							</figure><!-- .featured-image -->
++		
++		<div class="entry-wrapper">
++						<h3 class="entry-title"><a href="https://capcity.news/community/2026/11/11/american-legion-gathers-in-burns-cemetery-to-dedicate-new-flag-pole-on-veterans-day/" rel="bookmark">American Legion gathers in Burns Cemetery to dedicate new flagpole on Veterans Day</a></h3>										<div class="entry-meta">
++											<span class="byline">
++							<span class="author-prefix">by</span> <span class="author vcard"><a class="url fn n" href="https://capcity.news/author/garrett/">Garrett Grochowski</a></span>						</span><!-- .author-name -->
++						<time class="entry-date published" datetime="2026-11-11T13:10:33-07:00">4 hours ago</time><time class="updated" datetime="2026-11-11T13:30:27-07:00">November 11, 2026</time>				</div><!-- .entry-meta -->
++								</div><!-- .entry-wrapper -->
++	</article>
++
++		
++	<article data-post-id="180055"
++		class="category-obituaries type-post post-has-image"
++				>
++							<figure class="post-thumbnail">
++								<a href="https://capcity.news/obituaries/2026/11/11/obituaries-barhite-engle-hemenover/" rel="bookmark" tabindex="-1" aria-hidden="true">
++												<img loading="lazy" decoding="async" width="600" height="600" src="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Photo-2026-11-11T121839.851.png?resize=600%2C600&amp;ssl=1" class="attachment-newspack-article-block-square-intermediate size-newspack-article-block-square-intermediate wp-post-image" alt="Obituaries: Barhite; Engle; Hemenover" data-hero-candidate="1" srcset="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Photo-2026-11-11T121839.851.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Photo-2026-11-11T121839.851.png?resize=600%2C600&amp;ssl=1 600w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Photo-2026-11-11T121839.851.png?resize=400%2C400&amp;ssl=1 400w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Photo-2026-11-11T121839.851.png?resize=200%2C200&amp;ssl=1 200w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Photo-2026-11-11T121839.851.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Photo-2026-11-11T121839.851.png?resize=100%2C100&amp;ssl=1 100w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Photo-2026-11-11T121839.851.png?zoom=2&amp;resize=600%2C600&amp;ssl=1 1200w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Photo-2026-11-11T121839.851.png?resize=600%2C600&amp;ssl=1&amp;w=370 370w" sizes="auto, (min-width: 782px) 600px, (min-width: 600px) 42.5vw, 90vw" data-attachment-id="180056" data-permalink="https://capcity.news/obituaries/2026/11/11/obituaries-barhite-engle-hemenover/attachment/photo-2026-11-11t121839-851/" data-orig-file="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Photo-2026-11-11T121839.851.png?fit=1200%2C675&amp;ssl=1" data-orig-size="1200,675" data-comments-opened="0" data-image-title="Photo &amp;#8211; 2026-11-11T121839.851" data-image-description="" data-image-caption="&lt;p&gt;Charles &amp;#8220;Chuck&amp;#8221; Barhite&lt;/p&gt;
++" data-large-file="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Photo-2026-11-11T121839.851.png?fit=780%2C439&amp;ssl=1" />												</a>
++				
++							</figure><!-- .featured-image -->
++		
++		<div class="entry-wrapper">
++						<h3 class="entry-title"><a href="https://capcity.news/obituaries/2026/11/11/obituaries-barhite-engle-hemenover/" rel="bookmark">Obituaries: Barhite; Engle; Hemenover</a></h3>										<div class="entry-meta">
++											<span class="byline">
++							<span class="author-prefix">by</span> <span class="author vcard"><a class="url fn n" href="https://capcity.news/author/adbay/">Cap City Staff</a></span>						</span><!-- .author-name -->
++						<time class="entry-date published" datetime="2026-11-11T12:30:12-07:00">4 hours ago</time><time class="updated" datetime="2026-11-11T13:27:13-07:00">November 11, 2026</time>				</div><!-- .entry-meta -->
++								</div><!-- .entry-wrapper -->
++	</article>
++
++		
+ 	<article data-post-id="180044"
+ 		class="category-community category-general category-latest-news category-sports category-sports-wyoming category-wyoming-news type-post post-has-image"
+ 				>
+@@ -777,97 +853,19 @@
+ 						<h3 class="entry-title"><a href="https://capcity.news/latest-news/2026/11/11/uw-and-csu-border-war-to-pause-for-2027-season-after-81-consecutive-years/" rel="bookmark">UW and CSU Border War to pause for 2027 season after 81 consecutive years</a></h3>										<div class="entry-meta">
+ 											<span class="byline">
+ 							<span class="author-prefix">by</span> <span class="author vcard"><a class="url fn n" href="https://oilcity.news">Dan Cepeda</a></span>						</span><!-- .author-name -->
+-						<time class="entry-date published" datetime="2026-11-11T10:47:29-07:00">1 hour ago</time><time class="updated" datetime="2026-11-11T11:17:24-07:00">November 11, 2026</time>				</div><!-- .entry-meta -->
++						<time class="entry-date published" datetime="2026-11-11T10:47:29-07:00">6 hours ago</time><time class="updated" datetime="2026-11-11T11:17:24-07:00">November 11, 2026</time>				</div><!-- .entry-meta -->
+ 								</div><!-- .entry-wrapper -->
+ 	</article>
+ 
+-		
+-	<article data-post-id="180021"
+-		class="category-community category-feature category-government category-general category-latest-news category-news category-politics-wyoming category-politics category-state category-state-politics category-state-politics-politics-wyoming category-wyoming-news type-post post-has-image"
+-				>
+-							<figure class="post-thumbnail">
+-								<a href="https://capcity.news/wyoming-news/politics-wyoming/2026/11/11/civility-quality-of-life-top-new-wyoming-house-dem-britney-tennants-legislative-agenda/" rel="bookmark" tabindex="-1" aria-hidden="true">
+-												<img loading="lazy" decoding="async" width="1200" height="1200" src="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8473-2-scaled.jpg?resize=1200%2C1200&amp;ssl=1" class="attachment-newspack-article-block-square-large size-newspack-article-block-square-large wp-post-image" alt="Civility, quality of life top new Wyoming House Dem Britney Tennant&#8217;s legislative agenda" data-hero-candidate="1" srcset="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8473-2-scaled.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8473-2-scaled.jpg?resize=1200%2C1200&amp;ssl=1 1200w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8473-2-scaled.jpg?resize=800%2C800&amp;ssl=1 800w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8473-2-scaled.jpg?resize=600%2C600&amp;ssl=1 600w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8473-2-scaled.jpg?resize=400%2C400&amp;ssl=1 400w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8473-2-scaled.jpg?resize=200%2C200&amp;ssl=1 200w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8473-2-scaled.jpg?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8473-2-scaled.jpg?resize=100%2C100&amp;ssl=1 100w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8473-2-scaled.jpg?zoom=2&amp;resize=1200%2C1200&amp;ssl=1 2400w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8473-2-scaled.jpg?resize=1200%2C1200&amp;ssl=1&amp;w=370 370w" sizes="auto, (min-width: 782px) 600px, (min-width: 600px) 42.5vw, 90vw" data-attachment-id="180020" data-permalink="https://capcity.news/img_8473-2/" data-orig-file="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8473-2-scaled.jpg?fit=2560%2C1743&amp;ssl=1" data-orig-size="2560,1743" data-comments-opened="0" data-image-meta="{&quot;aperture&quot;:&quot;7.1&quot;,&quot;camera&quot;:&quot;Canon EOS R100&quot;,&quot;created_timestamp&quot;:&quot;1762742848&quot;,&quot;focal_length&quot;:&quot;18&quot;,&quot;iso&quot;:&quot;2000&quot;,&quot;shutter_speed&quot;:&quot;0.025&quot;}" data-image-title="IMG_8473-2" data-image-description="" data-image-caption="&lt;p&gt;Newly-elected Wyoming House District 11 representative Britney Tennant (Garrett Grochowski, Cap City News)&lt;/p&gt;
+-" data-large-file="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/IMG_8473-2-scaled.jpg?fit=780%2C531&amp;ssl=1" />												</a>
+-				
+-							</figure><!-- .featured-image -->
+-		
+-		<div class="entry-wrapper">
+-						<h3 class="entry-title"><a href="https://capcity.news/wyoming-news/politics-wyoming/2026/11/11/civility-quality-of-life-top-new-wyoming-house-dem-britney-tennants-legislative-agenda/" rel="bookmark">Civility, quality of life top new Wyoming House Dem Britney Tennant&#8217;s legislative agenda</a></h3>										<div class="entry-meta">
+-											<span class="byline">
+-							<span class="author-prefix">by</span> <span class="author vcard"><a class="url fn n" href="https://capcity.news/author/garrett/">Garrett Grochowski</a></span>						</span><!-- .author-name -->
+-						<time class="entry-date published updated" datetime="2026-11-11T07:30:00-07:00">4 hours ago</time>				</div><!-- .entry-meta -->
+-								</div><!-- .entry-wrapper -->
+-	</article>
+-
+-		
+-	<article data-post-id="180036"
+-		class="category-business-feature-2 category-energy category-energy-community category-general category-latest-news category-news category-statewide category-wyofile category-wyoming-community-2 category-wyoming-news type-post post-has-image"
+-				>
+-							<figure class="post-thumbnail">
+-								<a href="https://capcity.news/wyoming-news/2026/11/11/wyoming-trona-workers-demonstrate-amid-pending-layoffs-lives-are-at-risk-here/" rel="bookmark" tabindex="-1" aria-hidden="true">
+-												<img loading="lazy" decoding="async" width="600" height="600" src="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-10.04.53-AM-1200x681-1.webp?resize=600%2C600&amp;ssl=1" class="attachment-newspack-article-block-square-intermediate size-newspack-article-block-square-intermediate wp-post-image" alt="Wyoming trona workers demonstrate amid pending layoffs: ‘Lives are at risk here’" data-hero-candidate="1" srcset="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-10.04.53-AM-1200x681-1.webp?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-10.04.53-AM-1200x681-1.webp?resize=600%2C600&amp;ssl=1 600w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-10.04.53-AM-1200x681-1.webp?resize=400%2C400&amp;ssl=1 400w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-10.04.53-AM-1200x681-1.webp?resize=200%2C200&amp;ssl=1 200w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-10.04.53-AM-1200x681-1.webp?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-10.04.53-AM-1200x681-1.webp?resize=100%2C100&amp;ssl=1 100w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-10.04.53-AM-1200x681-1.webp?resize=600%2C600&amp;ssl=1&amp;w=370 370w" sizes="auto, (min-width: 782px) 600px, (min-width: 600px) 42.5vw, 90vw" data-attachment-id="180038" data-permalink="https://capcity.news/wyoming-news/2026/11/11/wyoming-trona-workers-demonstrate-amid-pending-layoffs-lives-are-at-risk-here/attachment/screenshot-2026-11-09-at-10-04-53-am-1200x681/" data-orig-file="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-10.04.53-AM-1200x681-1.webp?fit=1199%2C681&amp;ssl=1" data-orig-size="1199,681" data-comments-opened="0" data-image-title="Screenshot-2026-11-09-at-10.04.53-AM-1200&amp;#215;681" data-image-description="" data-image-caption="&lt;p&gt;Trona workers and supporters gather early Monday, Nov. 9, 2026, outside the WE Soda Westvaco trona mine and soda ash processing plant in Sweetwater County following the recent announcement that 350 jobs will be cut over the next two years. (Stan Blake)&lt;/p&gt;
+-" data-large-file="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Screenshot-2026-11-09-at-10.04.53-AM-1200x681-1.webp?fit=780%2C443&amp;ssl=1" />												</a>
+-				
+-							</figure><!-- .featured-image -->
+-		
+-		<div class="entry-wrapper">
+-						<h3 class="entry-title"><a href="https://capcity.news/wyoming-news/2026/11/11/wyoming-trona-workers-demonstrate-amid-pending-layoffs-lives-are-at-risk-here/" rel="bookmark">Wyoming trona workers demonstrate amid pending layoffs: ‘Lives are at risk here’</a></h3>										<div class="entry-meta">
+-											<span class="byline">
+-							<span class="author-prefix">by</span> <span class="author vcard"><a class="url fn n" href="https://capcity.news/author/wyofile/">Wyofile</a></span>						</span><!-- .author-name -->
+-						<time class="entry-date published" datetime="2026-11-11T07:15:44-07:00">5 hours ago</time><time class="updated" datetime="2026-11-11T07:15:46-07:00">November 11, 2026</time>				</div><!-- .entry-meta -->
+-								</div><!-- .entry-wrapper -->
+-	</article>
+-
+-		
+-	<article data-post-id="180034"
+-		class="category-city category-community category-county-community category-general category-latest-news category-local-2 category-news category-weather-2 category-weather type-post post-has-image"
+-				>
+-							<figure class="post-thumbnail">
+-								<a href="https://capcity.news/weather-2/2026/11/11/warm-sunny-conditions-to-continue-across-cheyenne-through-friday/" rel="bookmark" tabindex="-1" aria-hidden="true">
+-												<img loading="lazy" decoding="async" width="1200" height="1200" src="https://i0.wp.com/capcity.news/wp-content/uploads/2026/10/IMG_7201-scaled.jpg?resize=1200%2C1200&amp;ssl=1" class="attachment-newspack-article-block-square-large size-newspack-article-block-square-large wp-post-image" alt="Warm, sunny conditions to continue across Cheyenne through Friday" data-hero-candidate="1" srcset="https://i0.wp.com/capcity.news/wp-content/uploads/2026/10/IMG_7201-scaled.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/10/IMG_7201-scaled.jpg?resize=1200%2C1200&amp;ssl=1 1200w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/10/IMG_7201-scaled.jpg?resize=800%2C800&amp;ssl=1 800w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/10/IMG_7201-scaled.jpg?resize=600%2C600&amp;ssl=1 600w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/10/IMG_7201-scaled.jpg?resize=400%2C400&amp;ssl=1 400w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/10/IMG_7201-scaled.jpg?resize=200%2C200&amp;ssl=1 200w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/10/IMG_7201-scaled.jpg?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/10/IMG_7201-scaled.jpg?resize=100%2C100&amp;ssl=1 100w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/10/IMG_7201-scaled.jpg?zoom=2&amp;resize=1200%2C1200&amp;ssl=1 2400w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/10/IMG_7201-scaled.jpg?resize=1200%2C1200&amp;ssl=1&amp;w=370 370w" sizes="auto, (min-width: 782px) 600px, (min-width: 600px) 42.5vw, 90vw" data-attachment-id="177134" data-permalink="https://capcity.news/img_7201/" data-orig-file="https://i0.wp.com/capcity.news/wp-content/uploads/2026/10/IMG_7201-scaled.jpg?fit=2560%2C1687&amp;ssl=1" data-orig-size="2560,1687" data-comments-opened="0" data-image-meta="{&quot;aperture&quot;:&quot;13&quot;,&quot;camera&quot;:&quot;Canon EOS R100&quot;,&quot;created_timestamp&quot;:&quot;1759294746&quot;,&quot;focal_length&quot;:&quot;70&quot;,&quot;iso&quot;:&quot;320&quot;,&quot;shutter_speed&quot;:&quot;0.005&quot;}" data-image-title="IMG_7201" data-image-description="&lt;p&gt;fall weather leaves leaf red &lt;/p&gt;
+-" data-image-caption="&lt;p&gt;(Garrett Grochowski, Cap City News)&lt;/p&gt;
+-" data-large-file="https://i0.wp.com/capcity.news/wp-content/uploads/2026/10/IMG_7201-scaled.jpg?fit=780%2C514&amp;ssl=1" />												</a>
+-				
+-							</figure><!-- .featured-image -->
+-		
+-		<div class="entry-wrapper">
+-						<h3 class="entry-title"><a href="https://capcity.news/weather-2/2026/11/11/warm-sunny-conditions-to-continue-across-cheyenne-through-friday/" rel="bookmark">Warm, sunny conditions to continue across Cheyenne through Friday</a></h3>										<div class="entry-meta">
+-											<span class="byline">
+-							<span class="author-prefix">by</span> <span class="author vcard"><a class="url fn n" href="https://capcity.news/author/klark/">Klark Byrd</a></span>						</span><!-- .author-name -->
+-						<time class="entry-date published" datetime="2026-11-11T06:59:25-07:00">5 hours ago</time><time class="updated" datetime="2026-11-11T10:44:49-07:00">November 11, 2026</time>				</div><!-- .entry-meta -->
+-								</div><!-- .entry-wrapper -->
+-	</article>
+-
+-		
+-	<article data-post-id="180024"
+-		class="category-general category-latest-news category-nation category-news category-sports-wyoming category-sports category-statewide category-wyoming-news type-post post-has-image"
+-				>
+-							<figure class="post-thumbnail">
+-								<a href="https://capcity.news/community/sports/2026/11/10/pokes-in-the-pros-week-9-3/" rel="bookmark" tabindex="-1" aria-hidden="true">
+-												<img loading="lazy" decoding="async" width="400" height="400" src="https://i0.wp.com/capcity.news/wp-content/uploads/2026/08/stadium.webp?resize=400%2C400&amp;ssl=1" class="attachment-newspack-article-block-square-small size-newspack-article-block-square-small wp-post-image" alt="Pokes in the Pros: Week 9" data-hero-candidate="1" srcset="https://i0.wp.com/capcity.news/wp-content/uploads/2026/08/stadium.webp?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/08/stadium.webp?resize=400%2C400&amp;ssl=1 400w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/08/stadium.webp?resize=200%2C200&amp;ssl=1 200w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/08/stadium.webp?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/08/stadium.webp?resize=100%2C100&amp;ssl=1 100w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/08/stadium.webp?resize=400%2C400&amp;ssl=1&amp;w=370 370w" sizes="auto, (min-width: 782px) 600px, (min-width: 600px) 42.5vw, 90vw" data-attachment-id="173316" data-permalink="https://capcity.news/wyoming-news/sports-wyoming/2026/08/03/uws-harris-named-to-maxwell-award-preseason-watch-list/attachment/stadium/" data-orig-file="https://i0.wp.com/capcity.news/wp-content/uploads/2026/08/stadium.webp?fit=706%2C471&amp;ssl=1" data-orig-size="706,471" data-comments-opened="0" data-image-title="stadium" data-image-description="&lt;p&gt;uw football pokes cowboys stadium&lt;/p&gt;
+-" data-image-caption="&lt;p&gt;(via University of Wyoming Athletics)&lt;/p&gt;
+-" data-large-file="https://i0.wp.com/capcity.news/wp-content/uploads/2026/08/stadium.webp?fit=706%2C471&amp;ssl=1" />												</a>
+-				
+-							</figure><!-- .featured-image -->
+-		
+-		<div class="entry-wrapper">
+-						<h3 class="entry-title"><a href="https://capcity.news/community/sports/2026/11/10/pokes-in-the-pros-week-9-3/" rel="bookmark">Pokes in the Pros: Week 9</a></h3>										<div class="entry-meta">
+-											<span class="byline">
+-							<span class="author-prefix">by</span> <span class="author vcard"><a class="url fn n" href="https://capcity.news/author/adbay/">Cap City Staff</a></span>						</span><!-- .author-name -->
+-						<time class="entry-date published" datetime="2026-11-10T16:50:30-07:00">19 hours ago</time><time class="updated" datetime="2026-11-10T17:12:46-07:00">November 10, 2026</time>				</div><!-- .entry-meta -->
+-								</div><!-- .entry-wrapper -->
+-	</article>
+-
+ 				</div>
+ 		
+ 	</div>
+-	</section><section id="block-27" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6af4ba3b6a5d8 fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176795" keywords="not_home_page,not_landing_page,is_article_page,crime,general,latest-news,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
+-		</div></section><section id="block-28" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6af4ba3b6bbcd fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176794" keywords="not_home_page,not_landing_page,is_article_page,crime,general,latest-news,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
++	</section><section id="block-27" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6af4fec9868aa fixed-height'>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176795" keywords="not_home_page,not_landing_page,is_article_page,crime,latest-news,general,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
++		</div></section><section id="block-28" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6af4fec9871a8 fixed-height'>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176794" keywords="not_home_page,not_landing_page,is_article_page,crime,latest-news,general,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
+ 		</div></section>		<div class='newspack_global_ad sidebar_sidebar-1 sidebar_sidebar-1-after hook-after stick-to-top fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176796" keywords="not_home_page,not_landing_page,is_article_page,crime,general,latest-news,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176796" keywords="not_home_page,not_landing_page,is_article_page,crime,latest-news,general,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
+ 		</aside><!-- #secondary -->
+ 
+ 		</main><!-- #main -->
+@@ -876,7 +874,7 @@
+ 
+ 	
+ 			<div class='newspack_global_ad global_above_footer fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="156123" keywords="not_home_page,not_landing_page,is_article_page,crime,general,latest-news,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="156123" keywords="not_home_page,not_landing_page,is_article_page,crime,latest-news,general,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
+ 		
+ 	</div><!-- #content -->
+ 
+@@ -901,7 +899,7 @@
+ <li id="menu-item-51454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51454"><a href="https://publisher713175.typeform.com/to/Ac34FmwU">News Tip</a></li>
+ <li id="menu-item-51453" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51453"><a href="https://capcity.news/oil-city-opinions-submit-your-letters-to-our-editors/">Submit Letters</a></li>
+ <li id="menu-item-51450" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51450"><a href="https://capcity.news/corrections-and-clarifications/">Corrections and Clarifications</a></li>
+-</ul></div></section><section id="bs_zones-36" class="widget bs_zones"><div><broadstreet-zone place="" zone-id="190771" keywords="not_home_page,not_landing_page,is_article_page,crime,general,latest-news,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div></section>		</div><!-- .wrapper -->
++</ul></div></section><section id="bs_zones-36" class="widget bs_zones"><div><broadstreet-zone place="" zone-id="190771" keywords="not_home_page,not_landing_page,is_article_page,crime,latest-news,general,local-2,news,florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div></section>		</div><!-- .wrapper -->
+ 	</aside><!-- .widget-area -->
+ 
+ 
+@@ -1013,6 +1011,7 @@
+ 		</div>
+ 						</div>
+ 				<input type="hidden" name="reader-activation-auth-form" value="1" />
++									<input type="hidden" name="referer" value="/" />
+ 								<input type="hidden" name="action" />
+ 				<p data-action="otp">
+ 					<label>Enter the code sent to your email</label>
+@@ -1145,13 +1144,13 @@
+ 			<div style="display:none">
+ 			<div class="grofile-hash-map-b36a5a12695c57e24f9926931480d1bc">
+ 		</div>
+-		<div class="grofile-hash-map-261f73405393d9054f945fabac8039de">
++		<div class="grofile-hash-map-0cbdf923253837f386cc17247ebe9bf6">
+ 		</div>
+ 		<div class="grofile-hash-map-3784a8952b912e9952756eaf52e58448">
+ 		</div>
+-		<div class="grofile-hash-map-a4e88c6dc5c2b2a5585568a48e0aa9a3">
++		<div class="grofile-hash-map-403edec10fda9fbdf34052e63c3541fd">
+ 		</div>
+-		<div class="grofile-hash-map-403edec10fda9fbdf34052e63c3541fd">
++		<div class="grofile-hash-map-261f73405393d9054f945fabac8039de">
+ 		</div>
+ 		</div>
+ 		
+@@ -1198,7 +1197,7 @@
+ <script data-wp-strategy="async" defer id="newspack-recaptcha-js" src="https://capcity.news/wp-content/plugins/newspack-plugin/dist/other-scripts/recaptcha.js?ver=e1f2edd75ff5d2c218f4" type="pmdelayedscript" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1"></script>
+ <script id="newspack-reader-activation-js-extra">
+ var newspack_ras_config = {"auth_intention_cookie":"np_auth_intention","cid_cookie":"newspack-cid","is_logged_in":"","authenticated_email":"","otp_auth_action":"np_otp_auth","otp_rate_interval":"60","auth_action_result":"np_auth_link_result","account_url":"https://capcity.news/shop/my-account/","is_ras_enabled":"1","verify_new_reader_accounts":"1","verification_url":"https://capcity.news/wp-admin/admin-ajax.php","check_email_url":"https://capcity.news/wp-json/newspack/v1/reader-activation/check-email","captcha_site_key":"6LeSzx8rAAAAAAn0Kq90nt6tLLh4wzU47WJ3lUYg","captcha_version":"v3"};
+-var newspack_reader_data = {"store_prefix":"np_reader_1_","is_temporary":"","is_switched_session":"","reader_activity":[{"action":"article_view","data":{"post_id":180015,"permalink":"https://capcity.news/crime/2026/11/10/florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards/","categories":[69,24827,67,24937,24926],"tags":[],"author":"59"}}],"read_only_keys":["active_memberships","active_subscriptions","is_former_donor","newsletter_subscribed_lists","is_donor","accessible_gates","available_deals"],"local_keys":["pageviews","referrer"],"api_url":"https://capcity.news/wp-json/newspack/v1/reader-data","session_url":"https://capcity.news/wp-json/newspack/v1/reader/session"};
++var newspack_reader_data = {"store_prefix":"np_reader_1_","is_temporary":"","is_switched_session":"","reader_activity":[{"action":"article_view","data":{"post_id":180015,"permalink":"https://capcity.news/crime/2026/11/10/florida-man-arrested-for-reportedly-breaking-into-sports-card-store-stealing-9k-worth-of-cards/","categories":[69,67,24827,24937,24926],"tags":[],"author":"59"}}],"read_only_keys":["active_memberships","active_subscriptions","is_former_donor","newsletter_subscribed_lists","is_donor","accessible_gates","available_deals"],"local_keys":["pageviews","referrer"],"api_url":"https://capcity.news/wp-json/newspack/v1/reader-data","session_url":"https://capcity.news/wp-json/newspack/v1/reader/session"};
+ //# sourceURL=newspack-reader-activation-js-extra
+ </script>
+ <script data-wp-strategy="defer" defer id="newspack-reader-activation-js" src="https://capcity.news/wp-content/plugins/newspack-plugin/dist/reader-activation.js?ver=b9a0e20a76505511496a" data-amp-plus-allowed type="pmdelayedscript" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1"></script>
+@@ -1268,12 +1267,12 @@
+ //# sourceURL=wpgroho-js-extra
+ </script>
+ <script id="wpgroho-js" src="https://capcity.news/wp-content/plugins/jetpack/modules/wpgroho.js?ver=16.5-a.1" defer></script>
+-<script id="sourcebuster-js-js" src="https://c0.wp.com/p/woocommerce/11.2.2/assets/js/sourcebuster/sourcebuster.min.js" defer></script>
++<script id="sourcebuster-js-js" src="https://c0.wp.com/p/woocommerce/11.3.0/assets/js/sourcebuster/sourcebuster.min.js" defer></script>
+ <script id="wc-order-attribution-js-extra">
+ var wc_order_attribution = {"params":{"lifetime":1.0e-5,"session":30,"base64":false,"ajaxurl":"https://capcity.news/wp-admin/admin-ajax.php","prefix":"wc_order_attribution_","allowTracking":true},"fields":{"source_type":"current.typ","referrer":"current_add.rf","utm_campaign":"current.cmp","utm_source":"current.src","utm_medium":"current.mdm","utm_content":"current.cnt","utm_id":"current.id","utm_term":"current.trm","utm_source_platform":"current.plt","utm_creative_format":"current.fmt","utm_marketing_tactic":"current.tct","session_entry":"current_add.ep","session_start_time":"current_add.fd","session_pages":"session.pgs","session_count":"udata.vst","user_agent":"udata.uag"}};
+ //# sourceURL=wc-order-attribution-js-extra
+ </script>
+-<script id="wc-order-attribution-js" src="https://c0.wp.com/p/woocommerce/11.2.2/assets/js/frontend/order-attribution.min.js" defer></script>
++<script id="wc-order-attribution-js" src="https://c0.wp.com/p/woocommerce/11.3.0/assets/js/frontend/order-attribution.min.js" defer></script>
+ <script id="newspack-account-frontend-js-extra">
+ var newspackMyAccountV1 = {"myAccountUrl":"https://capcity.news/shop/my-account/","labels":{"resubscribe_title":"Renew subscription","renewal_early_title":"Renew subscription early","change_payment_method_title":"Change payment method","switch_subscription_title":"Change Subscription","invite_link_copied":"Invite link copied.","invite_link_regenerated":"New invite link copied. Any older link no longer works.","invite_link_copy_failed":"Couldn't copy the invite link to your clipboard. Copy it manually:","invite_link_disabled":"Invite link disabled. You can create a new link any time.","group_name_updated":"Name updated."},"rest":{"base_url":"https://capcity.news/wp-json/","nonce":"a67bfed532","namespaces":{"group":"newspack-group-subscription/v1"}}};
+ //# sourceURL=newspack-account-frontend-js-extra
+@@ -1310,6 +1309,8 @@
+ <script id="perfmatters-delayed-scripts-js">(function(){window.pmDC=0;window.pmDT=15;if(window.pmDT){var e=setTimeout(d,window.pmDT*1e3)}const t=["keydown","mousedown","mousemove","wheel","touchmove","touchstart","touchend"];const n={normal:[],defer:[],async:[]};const o=[];const i=[];var r=false;var a="";window.pmIsClickPending=false;t.forEach(function(e){window.addEventListener(e,d,{passive:true})});if(window.pmDC){window.addEventListener("touchstart",b,{passive:true});window.addEventListener("mousedown",b)}function d(){if(typeof e!=="undefined"){clearTimeout(e)}t.forEach(function(e){window.removeEventListener(e,d,{passive:true})});if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",s)}else{s()}}async function s(){c();u();f();m();await w(n.normal);await w(n.defer);await w(n.async);await p();document.querySelectorAll("link[data-pmdelayedstyle]").forEach(function(e){e.setAttribute("href",e.getAttribute("data-pmdelayedstyle"))});window.dispatchEvent(new Event("perfmatters-allScriptsLoaded")),E().then(()=>{h()})}function c(){let o={};function e(t,e){function n(e){return o[t].delayedEvents.indexOf(e)>=0?"perfmatters-"+e:e}if(!o[t]){o[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},delayedEvents:[]};t.addEventListener=function(){arguments[0]=n(arguments[0]);o[t].originalFunctions.add.apply(t,arguments)};t.removeEventListener=function(){arguments[0]=n(arguments[0]);o[t].originalFunctions.remove.apply(t,arguments)}}o[t].delayedEvents.push(e)}function t(t,n){const e=t[n];Object.defineProperty(t,n,{get:!e?function(){}:e,set:function(e){t["perfmatters"+n]=e}})}e(document,"DOMContentLoaded");e(window,"DOMContentLoaded");e(window,"load");e(document,"readystatechange");t(document,"onreadystatechange");t(window,"onload")}function u(){let n=window.jQuery;Object.defineProperty(window,"jQuery",{get(){return n},set(t){if(t&&t.fn&&!o.includes(t)){t.fn.ready=t.fn.init.prototype.ready=function(e){if(r){e.bind(document)(t)}else{document.addEventListener("perfmatters-DOMContentLoaded",function(){e.bind(document)(t)})}};const e=t.fn.on;t.fn.on=t.fn.init.prototype.on=function(){if(this[0]===window){function t(e){e=e.split(" ");e=e.map(function(e){if(e==="load"||e.indexOf("load.")===0){return"perfmatters-jquery-load"}else{return e}});e=e.join(" ");return e}if(typeof arguments[0]=="string"||arguments[0]instanceof String){arguments[0]=t(arguments[0])}else if(typeof arguments[0]=="object"){Object.keys(arguments[0]).forEach(function(e){delete Object.assign(arguments[0],{[t(e)]:arguments[0][e]})[e]})}}return e.apply(this,arguments),this};o.push(t)}n=t}})}function f(){document.querySelectorAll("script[type=pmdelayedscript]").forEach(function(e){if(e.hasAttribute("src")){if(e.hasAttribute("defer")&&e.defer!==false){n.defer.push(e)}else if(e.hasAttribute("async")&&e.async!==false){n.async.push(e)}else{n.normal.push(e)}}else{n.normal.push(e)}})}function m(){var o=document.createDocumentFragment();[...n.normal,...n.defer,...n.async].forEach(function(e){var t=e.getAttribute("src");if(t){var n=document.createElement("link");n.href=t;if(e.getAttribute("data-perfmatters-type")=="module"){n.rel="modulepreload"}else{n.rel="preload";n.as="script"}o.appendChild(n)}});document.head.appendChild(o)}async function w(e){var t=e.shift();if(t){await l(t);return w(e)}return Promise.resolve()}async function l(t){await v();return new Promise(function(e){const n=document.createElement("script");[...t.attributes].forEach(function(e){let t=e.nodeName;if(t!=="type"){if(t==="data-perfmatters-type"){t="type"}n.setAttribute(t,e.nodeValue)}});if(t.hasAttribute("src")){n.addEventListener("load",e);n.addEventListener("error",e)}else{n.text=t.text;e()}t.parentNode?t.parentNode.replaceChild(n,t):e()})}async function p(){r=true;await v();document.dispatchEvent(new Event("perfmatters-DOMContentLoaded"));await v();window.dispatchEvent(new Event("perfmatters-DOMContentLoaded"));await v();document.dispatchEvent(new Event("perfmatters-readystatechange"));await v();if(document.perfmattersonreadystatechange){document.perfmattersonreadystatechange()}await v();window.dispatchEvent(new Event("perfmatters-load"));await v();if(window.perfmattersonload){window.perfmattersonload()}await v();o.forEach(function(e){e(window).trigger("perfmatters-jquery-load")})}async function v(){return new Promise(function(e){requestAnimationFrame(e)})}function h(){window.removeEventListener("touchstart",b,{passive:true});window.removeEventListener("mousedown",b);i.forEach(e=>{if(e.target.outerHTML===a){e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:true,cancelable:true}))}})}function E(){return new Promise(e=>{window.pmIsClickPending?g=e:e()})}function y(){window.pmIsClickPending=true}function g(){window.pmIsClickPending=false}function L(e){e.target.removeEventListener("click",L);C(e.target,"pm-onclick","onclick");i.push(e),e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();g()}function b(e){if(e.target.tagName!=="HTML"){if(!a){a=e.target.outerHTML}window.addEventListener("touchend",A);window.addEventListener("mouseup",A);window.addEventListener("touchmove",k,{passive:true});window.addEventListener("mousemove",k);e.target.addEventListener("click",L);C(e.target,"onclick","pm-onclick");y()}}function k(e){window.removeEventListener("touchend",A);window.removeEventListener("mouseup",A);window.removeEventListener("touchmove",k,{passive:true});window.removeEventListener("mousemove",k);e.target.removeEventListener("click",L);C(e.target,"pm-onclick","onclick");g()}function A(e){window.removeEventListener("touchend",A);window.removeEventListener("mouseup",A);window.removeEventListener("touchmove",k,{passive:true});window.removeEventListener("mousemove",k)}function C(e,t,n){if(e.hasAttribute&&e.hasAttribute(t)){event.target.setAttribute(n,event.target.getAttribute(t));event.target.removeAttribute(t)}}})();</script></body>
+ </html>
+ <!--
+-	generated in 1.133 seconds
+-	251265 bytes batcached for 300 seconds
++	generated 193 seconds ago
++	generated in 0.660 seconds
++	served from batcache in 0.004 seconds
++	expires in 107 seconds
+ -->
