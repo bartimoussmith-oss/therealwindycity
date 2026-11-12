@@ -1,7 +1,7 @@
 {
   "schema": 2,
-  "started_at": "2026-11-12T07:43:45.719Z",
-  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/43177146437",
+  "started_at": "2026-11-12T20:26:06.824Z",
+  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/43299935629",
   "video_proof_result": "success",
   "repositories": [
     {
@@ -27,6 +27,14 @@
     {
       "repository": "bartimoussmith-oss/civic-newsroom-law-001",
       "report": "latest/repos/bartimoussmith-oss__civic-newsroom-law-001.json"
+    },
+    {
+      "repository": "bartimoussmith-oss/promethean-command-center",
+      "report": "latest/repos/bartimoussmith-oss__promethean-command-center.json"
+    },
+    {
+      "repository": "bartimoussmith-oss/promethean-wyoming-data",
+      "report": "latest/repos/bartimoussmith-oss__promethean-wyoming-data.json"
     },
     {
       "repository": "bartimoussmith-oss/therealwindycity",
@@ -106,14 +114,14 @@
       "from": "bartimoussmith-oss/therealwindycity",
       "to": "therealwindycity/TheReelWindyCity",
       "path": ".github/workflows/ai-record-pages.yml",
-      "sha": "ea1782aefdf7a01c89135e38ebccdcb6adf03ef9",
+      "sha": "9901f501a19962e190926dde6e90c45463676300",
       "status": "declared_reference_only"
     },
     {
       "from": "bartimoussmith-oss/therealwindycity",
       "to": "therealwindycity/The-Real-Windy-City-",
       "path": ".github/workflows/ai-record-pages.yml",
-      "sha": "ea1782aefdf7a01c89135e38ebccdcb6adf03ef9",
+      "sha": "9901f501a19962e190926dde6e90c45463676300",
       "status": "declared_reference_only"
     },
     {
@@ -441,11 +449,11 @@
       "task": "Check claims against source records and distinguish configured, executed, tested, deployed and verified."
     }
   ],
-  "finished_at": "2026-11-12T07:44:55.561Z",
+  "finished_at": "2026-11-12T20:27:15.070Z",
   "summary": {
-    "repositories": 17,
+    "repositories": 19,
     "declared_edges": 48,
-    "backlog": 151,
+    "backlog": 159,
     "logs_sampled": 8
   }
 }

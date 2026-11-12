@@ -1,11 +1,17 @@
 {
   "newly_observed": [
-    "therealwindycity/therealwindycity:run:43137921279"
+    "bartimoussmith-oss/promethean-command-center:architecture",
+    "bartimoussmith-oss/promethean-command-center:agent_handoff",
+    "bartimoussmith-oss/promethean-command-center:provenance",
+    "bartimoussmith-oss/promethean-command-center:rights",
+    "bartimoussmith-oss/promethean-wyoming-data:architecture",
+    "bartimoussmith-oss/promethean-wyoming-data:agent_handoff",
+    "bartimoussmith-oss/promethean-wyoming-data:provenance",
+    "bartimoussmith-oss/promethean-wyoming-data:rights",
+    "therealwindycity/therealwindycity:run:43222918374"
   ],
   "no_longer_observed": [
-    "bartimoussmith-oss/therealwindycity:run:43051624279",
-    "therealwindycity/therealwindycity:run:43057835913",
-    "therealwindycity/TheReelWindyCity:run:43053526028"
+    "therealwindycity/therealwindycity:run:43137921279"
   ],
   "warning": "Evidence policy changed to version 2: removed findings may be corrected false positives, not completed repairs."
 }
