@@ -1,0 +1,48 @@
+name: Reconcile existing ASR corpus
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - tools/reconcile_asr.py
+      - .github/workflows/reconcile-asr.yml
+permissions:
+  contents: read
+concurrency:
+  group: asr-reconciliation
+  cancel-in-progress: false
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: source
+          sparse-checkout: |
+            drive-import
+            tools/reconcile_asr.py
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          repository: therealwindycity/The-Real-Windy-City-
+          ref: main
+          path: catalog
+          sparse-checkout: cheyenne-2026-transcripts
+          persist-credentials: false
+      - name: Record exact source revisions
+        run: |
+          git -C source rev-parse HEAD > source-commit.txt
+          git -C catalog rev-parse HEAD > catalog-commit.txt
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Reconcile without retranscribing or changing archives
+        run: python source/tools/reconcile_asr.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: asr-reconciliation
+          path: asr-reconciliation/
+          retention-days: 3
+          if-no-files-found: error
