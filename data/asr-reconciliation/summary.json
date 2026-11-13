@@ -1,0 +1,36 @@
+{
+  "scope": "Checked-out public GitHub masters plus 2026 caption catalog only; live Drive and current Promethean runtime NOT checked",
+  "source_commit": "29c030bfd67ad4b4d7ade065da7a810a8ea315e6",
+  "catalog_commit": "6c5601c11943d70a521d791f62da7336d8a80e54",
+  "inputs": [
+    {
+      "path": "source/drive-import/master_meetings_database.json.gz",
+      "raw_sha256": "9bf6694991633785ab770129c797ab08dad96d69566a3cb3d0dbf188a91aa860",
+      "records": 720
+    },
+    {
+      "path": "source/drive-import/master_meetings_database_linked.json.gz",
+      "raw_sha256": "912c801ca8fd9e965a454dd1d3ec9c85dff22b69445e8ec3f09caef966d4fbec",
+      "records": 720
+    }
+  ],
+  "catalog_sha256": "999226a9e01ee7a1f9b16c8a77216d7dd0cfec5be13440ce9ffa976771b6c892",
+  "master_text_representations": 1440,
+  "unique_exact_texts": 635,
+  "catalog_entries": 129,
+  "status_counts": {
+    "existing_catalog_text": 84,
+    "not_found_in_checked_inputs": 29,
+    "review_date_body_candidates": 11,
+    "no_recording_id_in_catalog": 5
+  },
+  "failures": [],
+  "complete": true,
+  "limitations": [
+    "Exact text deduplication does not establish distinct meetings or source independence",
+    "Date/body candidates are never auto-merged; multipart and same-day meetings require review",
+    "Transcript text existence does not establish full audio coverage or correct attribution",
+    "Missing here is not proof new ASR is needed",
+    "Original archives and catalogs were not modified"
+  ]
+}
