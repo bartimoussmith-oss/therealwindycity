@@ -7,7 +7,7 @@ on:
       - tools/reconcile_asr.py
       - .github/workflows/reconcile-asr.yml
 permissions:
-  contents: read
+  contents: write
 concurrency:
   group: asr-reconciliation
   cancel-in-progress: false
@@ -18,11 +18,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           path: source
+          fetch-depth: 1
           sparse-checkout: |
             drive-import
             tools/reconcile_asr.py
-          persist-credentials: false
+            data/asr-reconciliation
+          persist-credentials: true
       - uses: actions/checkout@v4
         with:
           repository: therealwindycity/The-Real-Windy-City-
@@ -38,11 +41,53 @@ jobs:
         with:
           python-version: '3.11'
       - name: Reconcile without retranscribing or changing archives
+        id: reconcile
         run: python source/tools/reconcile_asr.py
+      - name: Publish durable results or explicit failure status
+        if: always()
+        env:
+          RECONCILE_OUTCOME: ${{ steps.reconcile.outcome }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -d source/.git
+          python - <<'PY'
+          import hashlib, json, os, shutil
+          from datetime import datetime, timezone
+          from pathlib import Path
+          origin = Path('asr-reconciliation')
+          dest = Path('source/data/asr-reconciliation')
+          dest.mkdir(parents=True, exist_ok=True)
+          names = ('summary.json', 'coverage.csv', 'reconciled_catalog.json', 'transcript_inventory.jsonl')
+          copied = []
+          for name in names:
+              src = origin / name
+              if src.is_file():
+                  shutil.copyfile(src, dest / name)
+                  copied.append(name)
+          status = {'updated_at_utc': datetime.now(timezone.utc).isoformat(), 'run_url': f"https://github.com/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{os.environ['GITHUB_RUN_ID']}", 'outcome': os.environ.get('RECONCILE_OUTCOME', 'unknown'), 'published_this_run': copied, 'scope': 'GitHub master snapshots and 2026 catalog only; no live Drive reconciliation or source catalog edits'}
+          (dest / 'run-status.json').write_text(json.dumps(status, indent=2) + '\n')
+          paths = [dest / name for name in copied] + [dest / 'run-status.json']
+          (dest / 'published-SHA256SUMS').write_text(''.join(hashlib.sha256(p.read_bytes()).hexdigest() + '  ' + p.name + '\n' for p in paths))
+          PY
+          cd source
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -f -- data/asr-reconciliation/run-status.json data/asr-reconciliation/published-SHA256SUMS
+          for name in summary.json coverage.csv reconciled_catalog.json transcript_inventory.jsonl; do
+            if test -f "../asr-reconciliation/$name"; then
+              git add -f -- "data/asr-reconciliation/$name"
+            fi
+          done
+          if ! git diff --cached --quiet; then
+            git commit -m 'data: publish ASR reconciliation results and run status'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: asr-reconciliation
           path: asr-reconciliation/
           retention-days: 3
-          if-no-files-found: error
+          if-no-files-found: warn
