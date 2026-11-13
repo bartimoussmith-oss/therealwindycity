@@ -2,7 +2,7 @@
   "repository": "therealwindycity/TheReelWindyCity",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-12T20:27:07.194Z",
+  "checked_at": "2026-11-13T07:17:54.386Z",
   "controls": [
     {
       "id": "architecture",
@@ -150,6 +150,83 @@
   ],
   "runs": [
     {
+      "name": "Live Municipal Watch",
+      "id": 43359078246,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43359078246",
+      "sha": "ec91a123e518d8e91b5fa0d7a9f07f76482ca16c",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-13T03:27:23Z"
+    },
+    {
+      "name": "CI",
+      "id": 43358874447,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43358874447",
+      "sha": "ec91a123e518d8e91b5fa0d7a9f07f76482ca16c",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-13T03:25:34Z",
+      "failed_jobs": [
+        {
+          "name": "checks",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43358874447/job/131667356396",
+          "steps": [
+            {
+              "name": "Wyoming statewide watch",
+              "number": 9
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "TypeError",
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Deploy to GitHub Pages",
+      "id": 43358874222,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43358874222",
+      "sha": "ec91a123e518d8e91b5fa0d7a9f07f76482ca16c",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-13T03:25:33Z"
+    },
+    {
+      "name": "Promethean Recurring Harvest",
+      "id": 43341133147,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43341133147",
+      "sha": "825a51a95265e71063cbbbfd50b6d35b48f3b9bb",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "created_at": "2026-11-13T00:57:12Z"
+    },
+    {
+      "name": "Live Place Archives",
+      "id": 43311588182,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43311588182",
+      "sha": "3b64d7d83bd203f2de36f63473a44d43217c71ea",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-12T21:34:31Z"
+    },
+    {
+      "name": "Live Wyoming Watch",
+      "id": 43303783712,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43303783712",
+      "sha": "08a0ef5acedc039006d4305e58629278fbff2be3",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-12T20:47:29Z"
+    },
+    {
       "name": "Citizen Connect Incident Sync",
       "id": 43284807237,
       "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43284807237",
@@ -158,56 +235,6 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-11-12T18:55:16Z"
-    },
-    {
-      "name": "Deploy to GitHub Pages",
-      "id": 43284540174,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43284540174",
-      "sha": "7500610ab4dafec5cd7c4ccdc8fd16650ba572bf",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-12T18:53:43Z"
-    },
-    {
-      "name": "Live Municipal Watch",
-      "id": 43263803151,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43263803151",
-      "sha": "7500610ab4dafec5cd7c4ccdc8fd16650ba572bf",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-12T16:54:50Z"
-    },
-    {
-      "name": "Promethean Recurring Harvest",
-      "id": 43261325903,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43261325903",
-      "sha": "7500610ab4dafec5cd7c4ccdc8fd16650ba572bf",
-      "branch": "main",
-      "status": "in_progress",
-      "conclusion": null,
-      "created_at": "2026-11-12T16:41:01Z"
-    },
-    {
-      "name": "Live Place Archives",
-      "id": 43103738331,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43103738331",
-      "sha": "0b7c1fb4b4e62ee2ba89c242cb186d490eac081a",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-11T21:31:06Z"
-    },
-    {
-      "name": "Live Wyoming Watch",
-      "id": 43094027240,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43094027240",
-      "sha": "a37c26e958e63686760482596ce2cd1cb75e798e",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-11T20:10:39Z"
     },
     {
       "name": "Promethean Autonomous Granicus Harvester",
@@ -232,33 +259,6 @@
           "error_signals": [
             "ModuleNotFoundError",
             "Missing module: pdfplumber",
-            "Nonzero command exit"
-          ]
-        }
-      ]
-    },
-    {
-      "name": "CI",
-      "id": 42430467394,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42430467394",
-      "sha": "a9b4cd78c18a1850fa8fcf4c3c708f19462c4a51",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "failure",
-      "created_at": "2026-11-08T00:35:51Z",
-      "failed_jobs": [
-        {
-          "name": "checks",
-          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/42430467394/job/128578018664",
-          "steps": [
-            {
-              "name": "Wyoming statewide watch",
-              "number": 9
-            }
-          ],
-          "log_status": "bounded_read",
-          "error_signals": [
-            "TypeError",
             "Nonzero command exit"
           ]
         }
@@ -322,8 +322,8 @@
     }
   ],
   "gaps": [],
-  "head": "08a0ef5acedc039006d4305e58629278fbff2be3",
-  "files_seen": 6008,
+  "head": "ec91a123e518d8e91b5fa0d7a9f07f76482ca16c",
+  "files_seen": 6009,
   "tree_complete": true,
   "sample_coverage": {
     "candidates": 33,

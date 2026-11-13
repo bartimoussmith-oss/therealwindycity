@@ -2,7 +2,7 @@
   "repository": "bartimoussmith-oss/civic-newsroom",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-12T20:26:13.108Z",
+  "checked_at": "2026-11-13T07:17:03.194Z",
   "controls": [
     {
       "id": "architecture",
@@ -113,13 +113,13 @@
   "runs": [
     {
       "name": "publish-app",
-      "id": 40391605959,
-      "url": "https://github.com/bartimoussmith-oss/civic-newsroom/actions/runs/40391605959",
-      "sha": "6ae4fd16381147ba302b0e78a20c05d58aed5c12",
+      "id": 43359031659,
+      "url": "https://github.com/bartimoussmith-oss/civic-newsroom/actions/runs/43359031659",
+      "sha": "630d30b9c5bd12df3cf2cedc1c2a156df5c6c580",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-10-26T19:59:14Z"
+      "created_at": "2026-11-13T03:27:00Z"
     },
     {
       "name": "intelligence-review",
@@ -191,7 +191,7 @@
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "158f51ab5b5e044393826d97ee8be82598b3bff2",
+  "head": "7b98397a6d764322f68b86d9a1b78f05ff4be112",
   "files_seen": 35,
   "tree_complete": true,
   "sample_coverage": {

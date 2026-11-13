@@ -1,7 +1,7 @@
 {
   "schema": 2,
-  "started_at": "2026-11-12T20:26:06.824Z",
-  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/43299935629",
+  "started_at": "2026-11-13T07:16:57.074Z",
+  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/43384281222",
   "video_proof_result": "success",
   "repositories": [
     {
@@ -86,14 +86,14 @@
       "from": "bartimoussmith-oss/civic-newsroom",
       "to": "therealwindycity/TheReelWindyCity",
       "path": ".github/workflows/build-public-data.yml",
-      "sha": "158f51ab5b5e044393826d97ee8be82598b3bff2",
+      "sha": "7b98397a6d764322f68b86d9a1b78f05ff4be112",
       "status": "declared_reference_only"
     },
     {
       "from": "bartimoussmith-oss/civic-newsroom",
       "to": "therealwindycity/The-Real-Windy-City-",
       "path": ".github/workflows/build-public-data.yml",
-      "sha": "158f51ab5b5e044393826d97ee8be82598b3bff2",
+      "sha": "7b98397a6d764322f68b86d9a1b78f05ff4be112",
       "status": "declared_reference_only"
     },
     {
@@ -114,14 +114,14 @@
       "from": "bartimoussmith-oss/therealwindycity",
       "to": "therealwindycity/TheReelWindyCity",
       "path": ".github/workflows/ai-record-pages.yml",
-      "sha": "9901f501a19962e190926dde6e90c45463676300",
+      "sha": "4646469d29ef77898f75bf56062a1beeb0d57e92",
       "status": "declared_reference_only"
     },
     {
       "from": "bartimoussmith-oss/therealwindycity",
       "to": "therealwindycity/The-Real-Windy-City-",
       "path": ".github/workflows/ai-record-pages.yml",
-      "sha": "9901f501a19962e190926dde6e90c45463676300",
+      "sha": "4646469d29ef77898f75bf56062a1beeb0d57e92",
       "status": "declared_reference_only"
     },
     {
@@ -380,42 +380,42 @@
       "from": "therealwindycity/The-Real-Windy-City-",
       "to": "therealwindycity/cheyenne-archives-2008-2013",
       "path": "README.md",
-      "sha": "6c5601c11943d70a521d791f62da7336d8a80e54",
+      "sha": "1685218035435b69b2589bb18b36a0018d2b703a",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/The-Real-Windy-City-",
       "to": "therealwindycity/cheyenne-archives-2014-2017",
       "path": "README.md",
-      "sha": "6c5601c11943d70a521d791f62da7336d8a80e54",
+      "sha": "1685218035435b69b2589bb18b36a0018d2b703a",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/The-Real-Windy-City-",
       "to": "therealwindycity/cheyenne-archives-2018-2021",
       "path": "README.md",
-      "sha": "6c5601c11943d70a521d791f62da7336d8a80e54",
+      "sha": "1685218035435b69b2589bb18b36a0018d2b703a",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/The-Real-Windy-City-",
       "to": "therealwindycity/cheyenne-archives-2022",
       "path": "README.md",
-      "sha": "6c5601c11943d70a521d791f62da7336d8a80e54",
+      "sha": "1685218035435b69b2589bb18b36a0018d2b703a",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/The-Real-Windy-City-",
       "to": "therealwindycity/cheyenne-archives-2023-2024",
       "path": "README.md",
-      "sha": "6c5601c11943d70a521d791f62da7336d8a80e54",
+      "sha": "1685218035435b69b2589bb18b36a0018d2b703a",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/The-Real-Windy-City-",
       "to": "therealwindycity/cheyenne-archives-2025-2026",
       "path": "README.md",
-      "sha": "6c5601c11943d70a521d791f62da7336d8a80e54",
+      "sha": "1685218035435b69b2589bb18b36a0018d2b703a",
       "status": "declared_reference_only"
     }
   ],
@@ -449,7 +449,7 @@
       "task": "Check claims against source records and distinguish configured, executed, tested, deployed and verified."
     }
   ],
-  "finished_at": "2026-11-12T20:27:15.070Z",
+  "finished_at": "2026-11-13T07:18:01.670Z",
   "summary": {
     "repositories": 19,
     "declared_edges": 48,

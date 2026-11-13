@@ -1,11 +1,13 @@
 # Engineering control center
 
-Updated 2026-11-12T20:27:15.070Z. Evidence policy: version 2.
+Updated 2026-11-13T07:18:01.670Z. Evidence policy: version 2.
 Public repositories: 19. Declared connections: 48.
 Current video proof lane: success. Not a deployment result.
 
 ## Repair priorities
 
+- P1 | therealwindycity/therealwindycity | Reliability engineer: Reproduce the recorded failed step and repair its demonstrated cause.
+- P1 | therealwindycity/TheReelWindyCity | Reliability engineer: Reproduce the recorded failed step and repair its demonstrated cause.
 - P2 | bartimoussmith-oss/cheyenne-laramie-analysis-001 | Architect: Map producers, consumers, storage, deployment targets and owners.
 - P2 | bartimoussmith-oss/cheyenne-laramie-analysis-001 | Agent coordinator: Provide tested commands, current status, constraints and acceptance criteria.
 - P2 | bartimoussmith-oss/cheyenne-laramie-analysis-001 | Build engineer: Prove installation from a clean checkout with stated tool versions.
@@ -34,8 +36,6 @@ Current video proof lane: success. Not a deployment result.
 - P2 | bartimoussmith-oss/civic-newsroom | Recovery engineer: Test isolated backup restoration and reversible releases.
 - P2 | bartimoussmith-oss/civic-newsroom | Release engineer: Tie live output to its commit, smoke test and rollback instructions.
 - P2 | bartimoussmith-oss/civic-newsroom | Supply-chain reviewer: Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.
-- P2 | bartimoussmith-oss/civic-newsroom | Rights reviewer: Separate code licensing from source-data and media reuse rights.
-- P2 | bartimoussmith-oss/civic-newsroom | Reliability/security reviewer: Review missing concurrency signal; inspect equivalent controls before editing.
 
 ## Verification still required
 
