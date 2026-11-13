@@ -2,7 +2,7 @@
   "repository": "therealwindycity/The-Real-Windy-City-",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-13T07:17:39.255Z",
+  "checked_at": "2026-11-13T20:02:49.403Z",
   "controls": [
     {
       "id": "architecture",
@@ -126,6 +126,16 @@
   ],
   "runs": [
     {
+      "name": "Deploy site",
+      "id": 43470338642,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/43470338642",
+      "sha": "1685218035435b69b2589bb18b36a0018d2b703a",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-13T17:11:39Z"
+    },
+    {
       "name": "Fetch meeting transcripts",
       "id": 43359174886,
       "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/43359174886",
@@ -133,16 +143,6 @@
       "branch": "main",
       "status": "completed",
       "conclusion": "skipped",
-      "created_at": "2026-11-13T03:28:17Z"
-    },
-    {
-      "name": "Deploy site",
-      "id": 43359174800,
-      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/43359174800",
-      "sha": "1685218035435b69b2589bb18b36a0018d2b703a",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
       "created_at": "2026-11-13T03:28:17Z"
     },
     {
