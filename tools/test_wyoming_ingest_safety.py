@@ -1,7 +1,11 @@
-"""Offline regressions for the strict statewide HTTP policy."""
+"""Offline regressions for the owner-approved Chrome/five-redirect policy.
+
+Robots checks and redirect refusal were intentionally removed in fcae4ea.
+These tests mock the transport, so offline CI needs no curl_cffi installation.
+"""
 import sys
+import types
 import unittest
-import urllib.error
 from pathlib import Path
 from unittest.mock import Mock, patch
 
@@ -11,42 +15,67 @@ from engine import ingest
 URL = 'https://example.gov/agenda'
 CFG = {'identity': {'user_agent': 'CivicTest', 'strict_web': True}}
 
-class StrictFetchTests(unittest.TestCase):
+
+class ChromeFetchTests(unittest.TestCase):
     def setUp(self):
-        ingest._ROBOTS.clear()
         ingest._LAST_HIT.clear()
-        self.addCleanup(ingest._ROBOTS.clear)
         self.addCleanup(ingest._LAST_HIT.clear)
+        self.requests = Mock()
+        self.requests.get.return_value = types.SimpleNamespace(status_code=200, url=URL)
+        self.module = patch.dict(sys.modules, {'curl_cffi': types.SimpleNamespace(requests=self.requests)})
+        self.module.start()
+        self.addCleanup(self.module.stop)
+        wait = patch.object(ingest, '_wait')
+        self.wait = wait.start()
+        self.addCleanup(wait.stop)
 
-    def test_unavailable_robots_fails_closed(self):
-        for status in (301, 302, 403, 429, 500, 503):
-            with self.subTest(status=status), patch('urllib.request.build_opener') as opener:
-                opener.return_value.open.side_effect = urllib.error.HTTPError(URL, status, 'blocked', {}, None)
-                self.assertFalse(ingest._allowed(URL, CFG))
+    def test_chrome_transport_with_five_redirects(self):
+        def response(*args, **kwargs):
+            kwargs['content_callback'](b'hello')
+            kwargs['content_callback'](b' world')
+            return types.SimpleNamespace(status_code=200, url=URL)
+        self.requests.get.side_effect = response
+        self.assertEqual(ingest.fetch(URL, CFG), b'hello world')
+        options = self.requests.get.call_args.kwargs
+        self.assertEqual(options['impersonate'], 'chrome')
+        self.assertTrue(options['allow_redirects'])
+        self.assertEqual(options['max_redirects'], 5)
+        self.assertEqual(options['timeout'], 30)
+        self.assertEqual(options['curl_options'], {84: 2, 85: 2})
+        self.wait.assert_called_once_with(URL, CFG)
 
-    def test_missing_robots_is_allowed(self):
-        with patch('urllib.request.build_opener') as opener:
-            opener.return_value.open.side_effect = urllib.error.HTTPError(URL, 404, 'missing', {}, None)
-            self.assertTrue(ingest._allowed(URL, CFG))
+    def test_http_or_credentials_never_requested_in_strict_mode(self):
+        for url in ('http://example.gov/', 'https://name:password@example.gov/',
+                    'file:///etc/passwd', 'https:///missing-host'):
+            self.assertIsNone(ingest.fetch(url, CFG))
+        self.requests.get.assert_not_called()
+        self.wait.assert_not_called()
 
-    def test_html_robots_is_rejected(self):
-        with patch('urllib.request.build_opener') as opener:
-            opener.return_value.open.return_value.__enter__.return_value.read.return_value = b'<html>Access denied</html>'
-            self.assertFalse(ingest._allowed(URL, CFG))
+    def test_nonstrict_http_retains_bounded_redirects(self):
+        self.assertEqual(ingest.fetch('http://example.gov/', {'identity': {}}), b'')
+        options = self.requests.get.call_args.kwargs
+        self.assertEqual(options['curl_options'], {84: 3, 85: 3})
+        self.assertEqual(options['max_redirects'], 5)
 
-    def test_http_or_credentials_never_requested(self):
-        with patch.object(ingest, '_allowed') as allowed:
-            for url in ('http://example.gov/', 'https://name:password@example.gov/'):
-                self.assertIsNone(ingest.fetch(url, CFG))
-            allowed.assert_not_called()
+    def test_size_limit_is_cumulative(self):
+        def oversized(*args, **kwargs):
+            receive = kwargs['content_callback']
+            receive(b'x' * 10_000_000)
+            receive(b'x' * 10_000_001)
+            self.fail('Oversized response must abort the transport callback')
+        self.requests.get.side_effect = oversized
+        self.assertIsNone(ingest.fetch(URL, CFG))
 
-    def test_redirect_handler_refuses_follow(self):
-        self.assertIsNone(ingest._NoRedirect().redirect_request(None, None, 302, '', {}, 'https://other.gov/'))
+    def test_non_success_status_is_rejected(self):
+        for status in (301, 403, 404, 429, 500, 503):
+            with self.subTest(status=status):
+                self.requests.get.return_value.status_code = status
+                self.assertIsNone(ingest.fetch(URL, CFG))
 
-    def test_size_limit(self):
-        with patch.object(ingest, '_allowed', return_value=True), patch.object(ingest, '_wait'), patch('urllib.request.build_opener') as opener:
-            opener.return_value.open.return_value.__enter__.return_value.read.return_value = b'x' * 20_000_001
-            self.assertIsNone(ingest.fetch(URL, CFG))
+    def test_transport_error_is_rejected(self):
+        self.requests.get.side_effect = RuntimeError('redirect limit or connection failed')
+        self.assertIsNone(ingest.fetch(URL, CFG))
+
 
 if __name__ == '__main__':
     unittest.main()

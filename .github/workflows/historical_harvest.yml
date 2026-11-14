@@ -3,37 +3,67 @@ on:
   schedule:
     - cron: "0 8,20 * * *"
   workflow_dispatch:
+    inputs:
+      max_seconds:
+        description: "Wall-clock budget per source, in seconds"
+        required: false
+        default: "900"
 permissions:
   contents: write
+# One writer at a time for database/promethean_evidence.db (shared with the autonomous harvester).
+concurrency:
+  group: promethean-evidence-db
+  cancel-in-progress: false
 jobs:
   harvest:
     runs-on: ubuntu-latest
+    # Three sources x 15 minutes plus setup. Before 2026-11-13 this job had no budget, ran until
+    # GitHub cancelled it at six hours, and so never reached the publish step below.
+    timeout-minutes: 75
+    env:
+      HARVEST_MAX_SECONDS: ${{ github.event.inputs.max_seconds || '900' }}
+      HARVEST_MAX_NEW: "200"
+      HARVEST_DELAY_SECONDS: "2"
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Install System Dependencies
+      - name: Install System OCR & PDF Dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y tesseract-ocr poppler-utils gh
+          sudo apt-get install -y --no-install-recommends poppler-utils tesseract-ocr sqlite3 gh
       - name: Install Python Dependencies
-        run: pip install requests beautifulsoup4 pdfplumber pytesseract pdf2image pypdf
+        run: pip install requests beautifulsoup4 pypdf pdfplumber pytesseract pdf2image
+      - name: Harvester regression tests (offline)
+        run: python3 -m unittest tests/test_granicus_harvester.py -v
       - name: Execute Extraction Pipelines
         run: |
-          set -e
-          set -o pipefail
+          set -uo pipefail
           echo "# Promethean Harvest Telemetry - $(date -u)" > SYSTEM_DIAGNOSTICS.md
           echo '```text' >> SYSTEM_DIAGNOSTICS.md
-          PROTO="https"
-          HOST="cheyenne.granicus.com"
-          URL_5="${PROTO}://${HOST}/ViewPublisher.php?view_id=5"
-          URL_2="${PROTO}://${HOST}/ViewPublisher.php?view_id=2"
-          python3 scrapers/granicus_harvester.py "$URL_5" --historical 2>&1 | tee -a SYSTEM_DIAGNOSTICS.md
-          python3 scrapers/granicus_harvester.py "$URL_2" --historical 2>&1 | tee -a SYSTEM_DIAGNOSTICS.md
+          HOST="https://cheyenne.granicus.com"
+          reached=0
+          failed=0
+          run_source() {
+            # A source that cannot be reached is reported, but must not stop the other sources.
+            if "$@" 2>&1 | tee -a SYSTEM_DIAGNOSTICS.md; then reached=$((reached + 1)); else failed=$((failed + 1)); fi
+          }
+          run_source python3 scrapers/granicus_harvester.py "${HOST}/ViewPublisher.php?view_id=5" --historical
+          run_source python3 scrapers/granicus_harvester.py "${HOST}/ViewPublisher.php?view_id=2" --historical
           if [ -f "scrapers/connect_cheyenne_harvester.py" ]; then
-            python3 scrapers/connect_cheyenne_harvester.py 2>&1 | tee -a SYSTEM_DIAGNOSTICS.md
+            run_source python3 scrapers/connect_cheyenne_harvester.py
           fi
+          echo "[sources] reached=${reached} failed=${failed}" | tee -a SYSTEM_DIAGNOSTICS.md
+          {
+            echo "### Promethean Recurring Harvest"
+            echo "Sources reached: ${reached}; unreachable: ${failed}. A run is partial by design: it stops at its budget and the next run resumes."
+            echo '```'
+            grep -F '[summary]' SYSTEM_DIAGNOSTICS.md || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          # Red only when nothing could be reached at all.
+          [ "$reached" -gt 0 ]
       - name: Provision Storage Shards
         env:
           GH_TOKEN: ${{ secrets.PROMETHEAN_ARCHIVE_TOKEN }}
@@ -45,12 +75,33 @@ jobs:
       - name: Publish Telemetry & Database Updates (Runs Even On Failure)
         if: always()
         run: |
+          set -uo pipefail
           echo '```' >> SYSTEM_DIAGNOSTICS.md
+          # Fold the write-ahead log back into the database file so the committed file is complete.
+          sqlite3 database/promethean_evidence.db "PRAGMA wal_checkpoint(TRUNCATE);" || true
           git config user.name "Promethean-AutoHarvester"
           git config user.email "cwdm82001@gmail.com"
-          git pull --rebase origin main || true
-          git add STORAGE_MANIFEST.md database/promethean_evidence.db SYSTEM_DIAGNOSTICS.md || true
-          if ! git diff --cached --quiet; then
-            git commit -m "Automated Harvest Telemetry & Data Sync [skip ci]"
-            git push origin HEAD:main
+          # Stage each file on its own. `git add a b c` stages nothing at all when one path is
+          # missing, and STORAGE_MANIFEST.md only exists after a shard has been provisioned, so the
+          # previous single `git add ... || true` silently published nothing.
+          for path in STORAGE_MANIFEST.md database/promethean_evidence.db SYSTEM_DIAGNOSTICS.md; do
+            if [ -e "$path" ]; then git add -- "$path"; fi
+          done
+          if git diff --cached --quiet; then
+            echo "[*] Nothing new to publish in this cycle."
+            exit 0
           fi
+          git commit -m "Automated Harvest Telemetry & Data Sync [skip ci]"
+          # Commit first, then rebase: `git pull --rebase` refuses to run on a dirty tree, and the
+          # old order hid that refusal behind `|| true`, so the push was rejected whenever another
+          # bot had committed in the meantime.
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            echo "[!] Push attempt ${attempt} did not land; retrying."
+            sleep $((attempt * 15))
+          done
+          echo "::error::Harvest results could not be pushed after three attempts."
+          exit 1

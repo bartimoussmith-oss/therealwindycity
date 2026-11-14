@@ -25,7 +25,8 @@ CREATE TABLE IF NOT EXISTS governance_items (
     local_pdf_path TEXT,
     source_url TEXT,
     extracted_text TEXT,
-    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+    robots_advisory_ignored INTEGER DEFAULT 0
 );
 
 CREATE TABLE IF NOT EXISTS voting_record (
@@ -99,3 +100,31 @@ BEGIN
         NEW.contradiction_type || ' ' || COALESCE(NEW.rhetorical_tactic, '')
     );
 END;
+
+-- Harvester bookkeeping. scrapers/granicus_harvester.py also creates these on start
+-- (ensure_schema), so databases created before 2026-11-13 are upgraded in place.
+CREATE TABLE IF NOT EXISTS document_tamper_log (
+    tamper_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    item_id INTEGER,
+    source_url TEXT,
+    original_hash TEXT,
+    new_hash TEXT,
+    detected_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS document_aliases (
+    source_url TEXT PRIMARY KEY,
+    item_id INTEGER NOT NULL,
+    content_hash TEXT NOT NULL,
+    first_seen_at TEXT DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS harvest_progress (
+    endpoint_url TEXT PRIMARY KEY,
+    root_url TEXT NOT NULL,
+    status TEXT NOT NULL,
+    documents_seen INTEGER DEFAULT 0,
+    last_crawled_at TEXT NOT NULL
+);
+
+CREATE INDEX IF NOT EXISTS idx_governance_source_url ON governance_items (source_url);

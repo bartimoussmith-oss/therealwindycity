@@ -1,45 +1,111 @@
-name: Promethean manual evidence review
+name: Promethean Autonomous Granicus Harvester
+
 on:
   workflow_dispatch:
     inputs:
-      agenda_url:
-        description: Specific Cheyenne Granicus meeting agenda or PDF, not publisher listing
+      granicus_url:
+        description: "Target Granicus Agenda / ViewPublisher URL"
         required: true
-        type: string
+        default: "https://cheyenne.granicus.com/ViewPublisher.php?view_id=1"
+      output_prefix:
+        description: "Dossier Prefix"
+        required: true
+        default: "Cheyenne_PS_Committee_Nov2"
+      committee_name:
+        description: "Committee or Body Name"
+        required: true
+        default: "Public Services Committee"
       meeting_date:
-        description: Verified date YYYY-MM-DD
-        required: true
-        type: string
-      committee:
-        description: Verified committee or governing body
-        required: true
-        type: string
+        description: "Meeting Date (YYYY-MM-DD); blank records the harvest date"
+        required: false
+        default: ""
+  schedule:
+    # Runs automatically every Monday and Friday at 13:00 UTC (6:00 AM MST / 7:00 AM MDT)
+    - cron: "0 13 * * 1,5"
+
 permissions:
-  contents: read
+  contents: write
+
+# One writer at a time for database/promethean_evidence.db (shared with the recurring harvest).
+concurrency:
+  group: promethean-evidence-db
+  cancel-in-progress: false
+
 jobs:
-  harvest:
+  harvest-and-index:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 40
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set Up Python 3.11
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
-      - run: python -m pip install -r promethean/requirements.txt
-      - name: Harvest public records
+          python-version: "3.11"
+
+      - name: Install System OCR & PDF Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends poppler-utils tesseract-ocr sqlite3
+
+      - name: Install Forensic Pipeline Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # pdfplumber, pytesseract and pdf2image are what the harvester actually uses; they were
+          # missing here, so every run since the harvester was hardened died on import.
+          pip install requests pypdf pdfplumber pytesseract pdf2image
+
+      - name: Harvester regression tests (offline)
+        run: python3 -m unittest tests/test_granicus_harvester.py -v
+
+      - name: Initialize SQLite Rhetorical Profiling Schema
+        run: |
+          mkdir -p database artifacts
+          sqlite3 database/promethean_evidence.db < database/schema_rhetorical_profiling.sql
+
+      - name: Execute Hardened Granicus Harvester
+        # Inputs reach the shell as environment variables, never by template substitution.
         env:
-          AGENDA_URL: ${{ inputs.agenda_url }}
-          MEETING_DATE: ${{ inputs.meeting_date }}
-          COMMITTEE: ${{ inputs.committee }}
-          PROMETHEAN_DB: ${{ runner.temp }}/promethean/evidence.db
-        run: >-
-          python omnibus_agent_sdk.py harvest-granicus
-          --url "$AGENDA_URL" --date "$MEETING_DATE" --committee "$COMMITTEE"
-          --output "$RUNNER_TEMP/promethean/harvest"
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: promethean-review-only
-          path: ${{ runner.temp }}/promethean/
-          retention-days: 7
-          if-no-files-found: error
+          TARGET_URL: ${{ github.event.inputs.granicus_url || 'https://cheyenne.granicus.com/ViewPublisher.php?view_id=1' }}
+          PREFIX: ${{ github.event.inputs.output_prefix || 'Cheyenne_Auto_Audit' }}
+          COMMITTEE: ${{ github.event.inputs.committee_name || 'Cheyenne Governing Body' }}
+          MDATE: ${{ github.event.inputs.meeting_date || '' }}
+          HARVEST_MAX_SECONDS: "1200"
+          HARVEST_DELAY_SECONDS: "2"
+        run: |
+          set -euo pipefail
+          ARGS=("$TARGET_URL" --prefix "$PREFIX" --committee "$COMMITTEE")
+          # The schedule used to stamp every new row with a fixed 2026-11-02. With no date given,
+          # the harvester records the harvest date instead of a meeting date it does not know.
+          if [ -n "$MDATE" ]; then ARGS+=(--date "$MDATE"); fi
+          python3 scrapers/granicus_harvester.py "${ARGS[@]}" | tee harvest.log
+          {
+            echo "### Promethean Autonomous Granicus Harvester"
+            echo '```'
+            grep -F '[summary]' harvest.log || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit & Push Updated Evidence Archive
+        run: |
+          set -uo pipefail
+          sqlite3 database/promethean_evidence.db "PRAGMA wal_checkpoint(TRUNCATE);" || true
+          git config user.name "Promethean-AutoHarvester"
+          git config user.email "bartimoussmith-oss@users.noreply.github.com"
+          git add database/promethean_evidence.db
+          if git diff --cached --quiet; then
+            echo "[*] No new statutory packets detected in this cycle."
+            exit 0
+          fi
+          git commit -m "Automated Forensic Harvest: Updated SQLite FTS5 & Dossier Summaries"
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            echo "[!] Push attempt ${attempt} did not land; retrying."
+            sleep $((attempt * 15))
+          done
+          echo "::error::Harvest results could not be pushed after three attempts."
+          exit 1
