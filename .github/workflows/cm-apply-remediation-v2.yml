@@ -1,4 +1,4 @@
-name: CM apply backend remediation v2
+name: CM verify remediation v2
 on:
   push:
     branches: [main]
@@ -6,146 +6,81 @@ on:
   workflow_dispatch: {}
 permissions:
   contents: write
+  actions: read
 concurrency:
   group: cm-apply-remediation-v2
   cancel-in-progress: false
 jobs:
-  apply-and-verify:
+  verify:
     if: github.repository == 'bartimoussmith-oss/therealwindycity' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
         with:
           ref: main
-          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install verification dependencies
+      - name: Install test dependencies
         run: python -m pip install requests beautifulsoup4 pypdf pdfplumber curl_cffi
-      - name: Apply pinned backend handoff and sync hardened workflow
+      - name: Verify current backend without modifying source
+        id: checks
         shell: bash
         run: |
           set -euo pipefail
-          git config user.name 'bartimoussmith-oss'
-          git config user.email 'bartimoussmith-oss@users.noreply.github.com'
-          git init -q /tmp/cm-source
-          git -C /tmp/cm-source remote add origin https://github.com/therealwindycity/TheReelWindyCity.git
-          git -C /tmp/cm-source fetch --no-tags origin handoff/remediation-v2
-          pin=f11687893265594703c0c40d210fe51e04d7db06
-          test "$(git -C /tmp/cm-source rev-parse FETCH_HEAD)" = "$pin"
-          git -C /tmp/cm-source config user.name 'bartimoussmith-oss'
-          git -C /tmp/cm-source config user.email 'bartimoussmith-oss@users.noreply.github.com'
-          mkdir -p /tmp/cm-handoff
-          git -C /tmp/cm-source archive "$pin" unpacked/windycity-remediation-handoff/patches | tar -x -C /tmp/cm-handoff
-          python - <<'PY'
-          from pathlib import Path
-          from datetime import datetime,timezone
-          with Path('READ-FIRST.md').open('a') as out:
-              out.write('\n\n### '+datetime.now(timezone.utc).isoformat()+' — CM remediation-v2 backend active scope\n- scope: pinned backend handoff, .github/, database/, scrapers/, harvester tests and tools/test_wyoming_ingest_safety.py. Preserve Chrome transport and five redirects; no collector policy rollback. State: applying, not yet verified.\n')
-          PY
-          git add READ-FIRST.md
-          git commit -m 'CM: register remediation-v2 backend scope'
-          folder=/tmp/cm-handoff/unpacked/windycity-remediation-handoff/patches
-          patch=$(find "$folder/therealwindycity-backend" -maxdepth 1 -name '0001-*.patch')
-          git am --3way "$patch"
-          git -C /tmp/cm-source worktree add --detach /tmp/cm-frontend 2a741e662e6f1a7887207a7d76d35ab9eaa83e40
-          frontend_patch=$(find "$folder/TheReelWindyCity" -maxdepth 1 -name '0003-*.patch')
-          git -C /tmp/cm-frontend am --3way "$frontend_patch"
-          cp /tmp/cm-frontend/.github/workflows/promethean_autoharvest.yml .github/workflows/promethean_autoharvest.yml
-          python - <<'PY'
-          from pathlib import Path
-          folder=Path('/tmp/cm-handoff/unpacked/windycity-remediation-handoff/patches/therealwindycity-backend')
-          patch=next(folder.glob('0002-*.patch')).read_text()
-          addition='\n'.join(line[1:] for line in patch.splitlines() if line.startswith('+') and not line.startswith('+++'))+'\n'
-          log=Path('READ-FIRST.md')
-          if addition.strip() not in log.read_text():
-              with log.open('a') as out: out.write('\n'+addition)
-          with log.open('a') as out:
-              out.write('\nCM owner-decision implementation: keep existing engine/ingest.py Chrome transport and max_redirects=5; replace obsolete robots/urllib tests with six mocked transport regressions. The handoff historical limitations above remain historical observations, not current test results.\n')
-          PY
-          cat > tools/test_wyoming_ingest_safety.py <<'PY'
-          """CM offline regressions for the owner-approved Chrome transport policy."""
-          import sys
-          import unittest
-          from pathlib import Path
-          from unittest.mock import Mock, patch
-          sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-          from engine import ingest
-          URL='https://example.gov/agenda'
-          CFG={'identity':{'strict_web':True}}
-          class ChromeFetchTests(unittest.TestCase):
-              def setUp(self):
-                  ingest._LAST_HIT.clear()
-                  wait=patch.object(ingest,'_wait')
-                  wait.start(); self.addCleanup(wait.stop)
-                  transport=patch('curl_cffi.requests.get')
-                  self.get=transport.start(); self.addCleanup(transport.stop)
-              def response(self, payload=b'fixture', status=200):
-                  def reply(*args,**kwargs):
-                      kwargs['content_callback'](payload)
-                      return Mock(status_code=status,url=URL)
-                  self.get.side_effect=reply
-              def test_chrome_transport_and_five_redirects(self):
-                  self.response()
-                  self.assertEqual(ingest.fetch(URL,CFG),b'fixture')
-                  args=self.get.call_args.kwargs
-                  self.assertEqual(args['impersonate'],'chrome')
-                  self.assertTrue(args['allow_redirects'])
-                  self.assertEqual(args['max_redirects'],5)
-                  self.assertEqual(args['timeout'],30)
-              def test_http_and_credentials_rejected_in_strict_mode(self):
-                  for value in ('http://example.gov/','https://name:password@example.gov/'):
-                      self.assertIsNone(ingest.fetch(value,CFG))
-                  self.get.assert_not_called()
-              def test_non_success_http_is_not_ingested(self):
-                  for code in (301,403,429,500,503):
-                      self.response(status=code)
-                      self.assertIsNone(ingest.fetch(URL,CFG))
-              def test_transport_exception_is_not_success(self):
-                  self.get.side_effect=RuntimeError('synthetic transport failure')
-                  self.assertIsNone(ingest.fetch(URL,CFG))
-              def test_twenty_mb_limit(self):
-                  self.response(payload=b'x'*20_000_001)
-                  self.assertIsNone(ingest.fetch(URL,CFG))
-              def test_invalid_schemes_and_missing_host_are_not_requested(self):
-                  for value in ('file:///tmp/private','javascript:alert(1)','https:///missing-host'):
-                      self.assertIsNone(ingest.fetch(value,CFG))
-                  self.get.assert_not_called()
-          if __name__=='__main__': unittest.main()
-          PY
-          git diff --exit-code -- engine/ingest.py
-          git add READ-FIRST.md tools/test_wyoming_ingest_safety.py .github/workflows/promethean_autoharvest.yml
-          git commit -m 'CM: honor transport decision, sync hardened harvest and preserve work log'
-      - name: Rebase, verify backend and push without force
-        shell: bash
-        run: |
-          set -euo pipefail
-          verify() {
-            python3 -m unittest tests/test_granicus_harvester.py -v && python3 -m unittest tools/test_wyoming_ingest_safety.py -v && python3 -m unittest tools/test_wyoming_instantiate.py -v && python3 -m unittest tools/test_wyoming_verify.py -v
-          }
-          for attempt in 1 2; do
-            git fetch origin main
-            git rebase origin/main
-            verify 2>&1 | tee "/tmp/cm-backend-verification-$attempt.log"
-            git rev-parse HEAD
-            git status -sb
-            git diff --stat origin/main...HEAD | tee /tmp/cm-backend-diff.txt
-            git diff --binary origin/main...HEAD > /tmp/cm-backend-applied.patch
-            if git push origin HEAD:main; then
-              echo "Verified backend remediation pushed: $(git rev-parse HEAD)" >> "$GITHUB_STEP_SUMMARY"
-              exit 0
-            fi
-          done
-          exit 1
-      - name: Preserve verification evidence
+          echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          {
+            python3 -m unittest tests/test_granicus_harvester.py -v
+            python3 -m unittest tools/test_wyoming_ingest_safety.py -v
+            python3 -m unittest tools/test_wyoming_instantiate.py -v
+            python3 -m unittest tools/test_wyoming_verify.py -v
+          } 2>&1 | tee /tmp/cm-backend-current-tests.log
+          git diff --exit-code
+      - name: Record backend result and frontend blockers
+        if: always()
+        uses: actions/github-script@v7
+        env:
+          CHECK_OUTCOME: ${{ steps.checks.outcome }}
+          CHECK_REVISION: ${{ steps.checks.outputs.revision }}
+        with:
+          script: |
+            const target={...context.repo};
+            const report={schema:1,project_credit:'CM',observed_at:new Date().toISOString(),backend:{revision:process.env.CHECK_REVISION||null,tests:process.env.CHECK_OUTCOME||'unknown',run:`https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`},frontend:[],gaps:[],scope:'Current backend tests and bounded public workflow failure evidence; no patch replay, production cutover or source-freshness certification'};
+            const front={owner:'therealwindycity',repo:'TheReelWindyCity'};
+            const names=new Set(['CM apply frontend remediation v2','CM clean candidate validation']);
+            try {
+              const runs=(await github.rest.actions.listWorkflowRunsForRepo({...front,branch:'main',per_page:100})).data.workflow_runs;
+              for(const name of names){
+                const run=runs.find(r=>r.name===name);
+                if(!run){report.gaps.push({workflow:name,error:'Not found in sampled main runs'});continue;}
+                const item={name,id:run.id,sha:run.head_sha,url:run.html_url,status:run.status,conclusion:run.conclusion,jobs:[]};
+                report.frontend.push(item);
+                try{
+                  const jobs=(await github.rest.actions.listJobsForWorkflowRun({...front,run_id:run.id,per_page:30})).data.jobs;
+                  item.jobs=jobs.map(j=>({name:j.name,url:j.html_url,conclusion:j.conclusion,failed_steps:(j.steps||[]).filter(s=>['failure','timed_out'].includes(s.conclusion)).map(s=>s.name)}));
+                  for(const job of jobs.filter(j=>j.conclusion==='failure').slice(0,2)){
+                    try{
+                      const response=await github.request('GET /repos/{owner}/{repo}/actions/jobs/{job_id}/logs',{...front,job_id:job.id});
+                      if(typeof response.data!=='string'){report.gaps.push({job:job.id,error:'Log response not text'});continue;}
+                      const lines=response.data.split(/\r?\n/).filter(line=>/error|fatal|conflict|assertion|traceback/i.test(line)).slice(-8).map(line=>/token|secret|password|authorization/i.test(line)?'[credential-related line omitted]':line.slice(0,400));
+                      item.jobs.find(j=>j.url===job.html_url).error_excerpt=lines;
+                    }catch(e){report.gaps.push({job:job.id,check:'public_error_excerpt',status:e.status||null});}
+                  }
+                }catch(e){report.gaps.push({run:run.id,check:'jobs',status:e.status||null});}
+              }
+            }catch(e){report.gaps.push({check:'frontend_actions',status:e.status||null});}
+            const branch='cm-remediation-status';
+            try{await github.rest.git.getRef({...target,ref:'heads/'+branch});}
+            catch(e){if(e.status!==404)throw e;const head=await github.rest.repos.getCommit({...target,ref:'main'});await github.rest.git.createRef({...target,ref:'refs/heads/'+branch,sha:head.data.sha});}
+            const path='status/remediation-v2.json';let sha;
+            try{sha=(await github.rest.repos.getContent({...target,path,ref:branch})).data.sha;}catch(e){if(e.status!==404)throw e;}
+            await github.rest.repos.createOrUpdateFileContents({...target,branch,path,sha,message:'CM: record remediation verification evidence [skip ci]',content:Buffer.from(JSON.stringify(report,null,2)+'\n').toString('base64')});
+            await core.summary.addHeading('CM remediation verification').addRaw(`Backend tests: ${report.backend.tests}. Evidence saved on cm-remediation-status; gaps are explicit.`).write();
+      - name: Preserve test log
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: cm-remediation-v2-backend-${{ github.run_id }}
-          path: |
-            /tmp/cm-backend-verification-*.log
-            /tmp/cm-backend-diff.txt
-            /tmp/cm-backend-applied.patch
+          name: cm-remediation-current-tests-${{ github.run_id }}
+          path: /tmp/cm-backend-current-tests.log
           if-no-files-found: warn
