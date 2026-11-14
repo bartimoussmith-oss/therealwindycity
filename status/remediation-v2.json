@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "project_credit": "CM",
+  "observed_at": "2026-11-14T11:52:25.331Z",
+  "backend": {
+    "revision": "552038882f80dbe106ed00fcf2cf318ee66f542d",
+    "tests": "failure",
+    "run": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/43592000308"
+  },
+  "frontend": [
+    {
+      "name": "CM apply frontend remediation v2",
+      "id": 43560810138,
+      "sha": "c0c2a62c0b3fd4f302b911290c672d9c20ab5a8e",
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43560810138",
+      "status": "completed",
+      "conclusion": "failure",
+      "jobs": [
+        {
+          "name": "apply-and-verify",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43560810138/job/132343835814",
+          "conclusion": "failure",
+          "failed_steps": [
+            "Rebase, run required verification, and push without force"
+          ],
+          "error_excerpt": [
+            "2026-11-14T05:19:16.4012370Z ✖ 6 problems (0 errors, 6 warnings)",
+            "2026-11-14T05:19:24.9142163Z ##[error]src/lib/civic-data.ts(2,27): error TS2307: Cannot find module '@/data/meetings.json' or its corresponding type declarations.",
+            "2026-11-14T05:19:24.9146422Z ##[error]src/lib/legal-cross-reference.ts(2,22): error TS2307: Cannot find module '@/data/legal-audit-generated.json' or its corresponding type declarations.",
+            "2026-11-14T05:19:24.9149171Z ##[error]src/lib/legal-cross-reference.ts(3,26): error TS2307: Cannot find module '@/data/legal-evidence-generated.json' or its corresponding type declarations.",
+            "2026-11-14T05:19:24.9151360Z ##[error]src/lib/legal-cross-reference.ts(4,25): error TS2307: Cannot find module '@/data/legal-support-generated.json' or its corresponding type declarations.",
+            "2026-11-14T05:19:24.9154442Z ##[error]src/lib/wyoming-ecosystem.ts(1,25): error TS2307: Cannot find module '@/data/wyoming-ecosystem.json' or its corresponding type declarations.",
+            "2026-11-14T05:19:24.9790329Z ##[error]Process completed with exit code 2.",
+            "2026-11-14T05:19:25.5295042Z (node:2961) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "CM clean candidate validation",
+      "id": 43558138124,
+      "sha": "ecaa3be4bf8bb771e8922b7367d1df2c2bd1a030",
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43558138124",
+      "status": "completed",
+      "conclusion": "failure",
+      "jobs": [
+        {
+          "name": "stage",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43558138124/job/132335554269",
+          "conclusion": "failure",
+          "failed_steps": [
+            "Run node clean-web/build.mjs --stage"
+          ],
+          "error_excerpt": [
+            "2026-11-14T04:44:59.2812647Z Error: ENOENT: no such file or directory, open '/home/runner/work/TheReelWindyCity/TheReelWindyCity/src/data/meetings.json'",
+            "2026-11-14T04:44:59.2848929Z ##[error]Process completed with exit code 1."
+          ]
+        },
+        {
+          "name": "build",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43558138124/job/132335661472",
+          "conclusion": "skipped",
+          "failed_steps": []
+        }
+      ]
+    }
+  ],
+  "gaps": [],
+  "scope": "Current backend tests and bounded public workflow failure evidence; no patch replay, production cutover or source-freshness certification"
+}
