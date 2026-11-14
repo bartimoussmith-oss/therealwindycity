@@ -1,18 +1,15 @@
 {
   "newly_observed": [
-    "therealwindycity/therealwindycity:run:43626061872",
-    "therealwindycity/TheReelWindyCity:run:43626313218",
-    "therealwindycity/TheReelWindyCity:run:43626313157",
-    "therealwindycity/TheReelWindyCity:run:43626313141",
-    "bartimoussmith-oss/therealwindycity:run:43606123652",
-    "bartimoussmith-oss/therealwindycity:run:43592000308"
+    "therealwindycity/TheReelWindyCity:.github/workflows/cm-recover-frontend.yml:always_save"
   ],
   "no_longer_observed": [
-    "therealwindycity/TheReelWindyCity:run:43560810138",
-    "therealwindycity/TheReelWindyCity:run:43560810126",
-    "bartimoussmith-oss/therealwindycity:.github/workflows/promethean_autoharvest.yml:always_save",
-    "therealwindycity/therealwindycity:run:43537373114",
-    "therealwindycity/TheReelWindyCity:run:43558138124"
+    "therealwindycity/TheReelWindyCity:run:43626313218",
+    "therealwindycity/TheReelWindyCity:run:43626313157",
+    "therealwindycity/TheReelWindyCity:.github/workflows/historical_harvest.yml:timeout",
+    "therealwindycity/TheReelWindyCity:.github/workflows/historical_harvest.yml:concurrency",
+    "therealwindycity/TheReelWindyCity:.github/workflows/live_city_sync.yml:always_save",
+    "bartimoussmith-oss/therealwindycity:run:43592000308",
+    "therealwindycity/TheReelWindyCity:run:43498673712"
   ],
   "warning": "Evidence policy changed to version 2: removed findings may be corrected false positives, not completed repairs."
 }

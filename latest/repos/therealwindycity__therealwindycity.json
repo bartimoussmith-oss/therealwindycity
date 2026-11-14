@@ -2,7 +2,7 @@
   "repository": "therealwindycity/therealwindycity",
   "archived": false,
   "fork": true,
-  "checked_at": "2026-11-14T18:30:53.230Z",
+  "checked_at": "2026-11-14T22:46:33.319Z",
   "controls": [
     {
       "id": "architecture",
@@ -121,6 +121,16 @@
   ],
   "runs": [
     {
+      "name": "civic-cycle",
+      "id": 43648185963,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/43648185963",
+      "sha": "903e4bfc1c46fd0da652ac021cf9d256d861d303",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-14T22:27:26Z"
+    },
+    {
       "name": "workdesk-poll",
       "id": 43626061872,
       "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/43626061872",
@@ -145,16 +155,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "civic-cycle",
-      "id": 43624793920,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/43624793920",
-      "sha": "c44ff1ca8a2b6e250dba516873339dc29ea4ed5c",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-14T18:07:11Z"
     },
     {
       "name": "meeting-watch",
@@ -193,7 +193,7 @@
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "903e4bfc1c46fd0da652ac021cf9d256d861d303",
+  "head": "3b9e0158ff295944f1a06bfcf91dc871a305350d",
   "files_seen": 2724,
   "tree_complete": true,
   "sample_coverage": {
