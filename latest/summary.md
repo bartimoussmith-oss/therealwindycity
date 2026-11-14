@@ -1,11 +1,13 @@
 # Engineering control center
 
-Updated 2026-11-14T07:02:12.832Z. Evidence policy: version 2.
+Updated 2026-11-14T18:31:10.334Z. Evidence policy: version 2.
 Public repositories: 19. Declared connections: 48.
 Current video proof lane: success. Not a deployment result.
 
 ## Repair priorities
 
+- P1 | therealwindycity/therealwindycity | Reliability engineer: Reproduce the recorded failed step and repair its demonstrated cause.
+- P1 | therealwindycity/TheReelWindyCity | Reliability engineer: Reproduce the recorded failed step and repair its demonstrated cause.
 - P1 | therealwindycity/TheReelWindyCity | Reliability engineer: Reproduce the recorded failed step and repair its demonstrated cause.
 - P1 | therealwindycity/TheReelWindyCity | Reliability engineer: Reproduce the recorded failed step and repair its demonstrated cause.
 - P2 | bartimoussmith-oss/cheyenne-laramie-analysis-001 | Architect: Map producers, consumers, storage, deployment targets and owners.
@@ -34,8 +36,6 @@ Current video proof lane: success. Not a deployment result.
 - P2 | bartimoussmith-oss/civic-newsroom | Evidence reviewer: Retain source URLs, capture dates, hashes, original records and limitations.
 - P2 | bartimoussmith-oss/civic-newsroom | Reliability engineer: Prove interrupted runs resume without lost records or duplicates.
 - P2 | bartimoussmith-oss/civic-newsroom | Recovery engineer: Test isolated backup restoration and reversible releases.
-- P2 | bartimoussmith-oss/civic-newsroom | Release engineer: Tie live output to its commit, smoke test and rollback instructions.
-- P2 | bartimoussmith-oss/civic-newsroom | Supply-chain reviewer: Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.
 
 ## Verification still required
 
