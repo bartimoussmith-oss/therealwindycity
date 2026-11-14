@@ -1,9 +1,29 @@
 {
   "newly_observed": [
-    "therealwindycity/therealwindycity:run:43464110890"
+    "therealwindycity/TheReelWindyCity:run:43560810138",
+    "therealwindycity/TheReelWindyCity:run:43560810126",
+    "bartimoussmith-oss/therealwindycity:.github/workflows/promethean_autoharvest.yml:always_save",
+    "therealwindycity/TheReelWindyCity:.github/workflows/cm-clean-candidate.yml:always_save",
+    "therealwindycity/TheReelWindyCity:.github/workflows/cm-clean-evidence.yml:always_save",
+    "therealwindycity/TheReelWindyCity:.github/workflows/cm-deployment-evidence.yml:always_save",
+    "therealwindycity/TheReelWindyCity:.github/workflows/frequent-public-refresh.yml:always_save",
+    "therealwindycity/therealwindycity:run:43537373114",
+    "therealwindycity/TheReelWindyCity:run:43558138124",
+    "therealwindycity/TheReelWindyCity:run:43498673712"
   ],
   "no_longer_observed": [
-    "therealwindycity/therealwindycity:run:43382385665"
+    "bartimoussmith-oss/therealwindycity:.github/workflows/historical_harvest.yml:timeout",
+    "bartimoussmith-oss/therealwindycity:.github/workflows/historical_harvest.yml:concurrency",
+    "bartimoussmith-oss/therealwindycity:.github/workflows/promethean_autoharvest.yml:concurrency",
+    "therealwindycity/TheReelWindyCity:.github/workflows/live_meeting_transcribe.yml:always_save",
+    "therealwindycity/TheReelWindyCity:.github/workflows/live_place_archives.yml:always_save",
+    "therealwindycity/TheReelWindyCity:.github/workflows/promethean_autoharvest.yml:timeout",
+    "therealwindycity/TheReelWindyCity:.github/workflows/promethean_autoharvest.yml:concurrency",
+    "therealwindycity/TheReelWindyCity:.github/workflows/promethean_autoharvest.yml:always_save",
+    "bartimoussmith-oss/therealwindycity:run:42703134184",
+    "therealwindycity/therealwindycity:run:43464110890",
+    "therealwindycity/TheReelWindyCity:run:43358874447",
+    "therealwindycity/TheReelWindyCity:run:42714686868"
   ],
   "warning": "Evidence policy changed to version 2: removed findings may be corrected false positives, not completed repairs."
 }
