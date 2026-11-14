@@ -157,3 +157,22 @@ it; instances ship zero fabricated local content. Registry:
 [`wyoming/registry.json`](wyoming/registry.json) · architecture, coverage, verification
 lifecycle and how to add school/special districts:
 [`docs/WYOMING-STATEWIDE-INSTANTIATION.md`](docs/WYOMING-STATEWIDE-INSTANTIATION.md).
+
+## Meeting intelligence — the Fireflies mirror (`fireflies/`)
+
+The [`fireflies/`](fireflies/) package runs the fireflies.ai loop over the record this repo
+already holds — **meeting transcripts, agenda items and supporting documents in;
+intelligence out**: extractive per-meeting briefs, outline chapters that jump the tape to
+the exact second (YouTube `&t=` links and Granicus per-item `MediaPlayer` links), motions /
+votes / directives captured verbatim with locators, an agenda-item ↔ supporting-document
+tracker (`fireflies/ledger/agenda_tracker.csv`), corpus-wide search, and topic/entity
+timelines across 17+ years of meetings (1,157 meetings · ~9,300 agenda items · ~16,000
+actions on the full run). The same integrity rule governs it: every quote is a verbatim
+substring of its source, enforced mechanically by `python3 -m fireflies verify` (~84,000
+quotes on the full run). Console page: **Meeting Intelligence** in the Streamlit app.
+
+```bash
+python3 -m fireflies build      # regenerate briefs/ + ledger/ over the whole corpus
+python3 -m fireflies verify     # re-check every stored quote against the sources
+python3 -m fireflies search "water rates"
+```
