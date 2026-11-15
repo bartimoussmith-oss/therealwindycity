@@ -2,7 +2,7 @@
   "repository": "therealwindycity/therealwindycity",
   "archived": false,
   "fork": true,
-  "checked_at": "2026-11-15T07:10:59.508Z",
+  "checked_at": "2026-11-15T19:08:21.804Z",
   "controls": [
     {
       "id": "architecture",
@@ -121,18 +121,28 @@
   ],
   "runs": [
     {
+      "name": "civic-cycle",
+      "id": 43749308275,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/43749308275",
+      "sha": "40e455e9aafb04602950640d0fa7c03b6a27ccff",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-15T18:53:43Z"
+    },
+    {
       "name": "workdesk-poll",
-      "id": 43687317819,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/43687317819",
+      "id": 43731496739,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/43731496739",
       "sha": "40e455e9aafb04602950640d0fa7c03b6a27ccff",
       "branch": "main",
       "status": "completed",
       "conclusion": "failure",
-      "created_at": "2026-11-15T06:51:18Z",
+      "created_at": "2026-11-15T15:43:49Z",
       "failed_jobs": [
         {
           "name": "poll",
-          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/43687317819/job/132730388060",
+          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/43731496739/job/132864704349",
           "steps": [
             {
               "name": "Commit the feed if it changed",
@@ -147,16 +157,6 @@
       ]
     },
     {
-      "name": "civic-cycle",
-      "id": 43686301100,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/43686301100",
-      "sha": "3b9e0158ff295944f1a06bfcf91dc871a305350d",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-15T06:37:36Z"
-    },
-    {
       "name": "meeting-watch",
       "id": 42976195773,
       "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42976195773",
@@ -169,7 +169,7 @@
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "40e455e9aafb04602950640d0fa7c03b6a27ccff",
+  "head": "3aa7eda91cbed2514a787d4103f5149618564492",
   "files_seen": 2724,
   "tree_complete": true,
   "sample_coverage": {

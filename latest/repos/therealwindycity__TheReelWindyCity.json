@@ -2,7 +2,7 @@
   "repository": "therealwindycity/TheReelWindyCity",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-15T07:11:06.168Z",
+  "checked_at": "2026-11-15T19:08:27.720Z",
   "controls": [
     {
       "id": "architecture",
@@ -151,14 +151,90 @@
   ],
   "runs": [
     {
+      "name": "CM deployment evidence",
+      "id": 43746015726,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43746015726",
+      "sha": "e4c5023958441da035214ff9b69ba17618e81111",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-15T18:18:33Z"
+    },
+    {
+      "name": "Verify public meeting features",
+      "id": 43745996705,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43745996705",
+      "sha": "e4c5023958441da035214ff9b69ba17618e81111",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-15T18:18:22Z"
+    },
+    {
+      "name": "CI",
+      "id": 43745581977,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43745581977",
+      "sha": "e4c5023958441da035214ff9b69ba17618e81111",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-15T18:14:08Z"
+    },
+    {
+      "name": "Deploy to GitHub Pages",
+      "id": 43745581937,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43745581937",
+      "sha": "e4c5023958441da035214ff9b69ba17618e81111",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-15T18:14:08Z"
+    },
+    {
+      "name": "Citizen Connect Incident Sync",
+      "id": 43742610386,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43742610386",
+      "sha": "2b74a898797a032eabdfa711abc6ea5bd703c365",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-15T17:42:25Z"
+    },
+    {
       "name": "Live Municipal Watch",
-      "id": 43688660932,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43688660932",
+      "id": 43731546263,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43731546263",
       "sha": "947ca85f364a267e94a39acc2f1c741c7c6a04cf",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-15T07:09:23Z"
+      "created_at": "2026-11-15T15:44:23Z"
+    },
+    {
+      "name": "Promethean Recurring Harvest",
+      "id": 43730150197,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43730150197",
+      "sha": "947ca85f364a267e94a39acc2f1c741c7c6a04cf",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-15T15:29:26Z",
+      "failed_jobs": [
+        {
+          "name": "harvest",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43730150197/job/132860610875",
+          "steps": [
+            {
+              "name": "Provision Storage Shards",
+              "number": 8
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "Nonzero command exit"
+          ]
+        }
+      ]
     },
     {
       "name": "CM completion audit",
@@ -166,49 +242,9 @@
       "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43688633960",
       "sha": "947ca85f364a267e94a39acc2f1c741c7c6a04cf",
       "branch": "main",
-      "status": "in_progress",
-      "conclusion": null,
-      "created_at": "2026-11-15T07:09:02Z"
-    },
-    {
-      "name": "CI",
-      "id": 43688633917,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43688633917",
-      "sha": "947ca85f364a267e94a39acc2f1c741c7c6a04cf",
-      "branch": "main",
-      "status": "in_progress",
-      "conclusion": null,
-      "created_at": "2026-11-15T07:09:02Z"
-    },
-    {
-      "name": "Deploy to GitHub Pages",
-      "id": 43688633868,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43688633868",
-      "sha": "947ca85f364a267e94a39acc2f1c741c7c6a04cf",
-      "branch": "main",
-      "status": "in_progress",
-      "conclusion": null,
-      "created_at": "2026-11-15T07:09:02Z"
-    },
-    {
-      "name": "CM deployment evidence",
-      "id": 43673808652,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43673808652",
-      "sha": "0df1737608da919dc0db91e2589f065858fa9ef8",
-      "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-15T03:45:56Z"
-    },
-    {
-      "name": "Verify public meeting features",
-      "id": 43673804025,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43673804025",
-      "sha": "0df1737608da919dc0db91e2589f065858fa9ef8",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "skipped",
-      "created_at": "2026-11-15T03:45:52Z"
+      "created_at": "2026-11-15T07:09:02Z"
     },
     {
       "name": "CM repair diagnostics",
@@ -229,32 +265,6 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-11-15T03:41:09Z"
-    },
-    {
-      "name": "Promethean Recurring Harvest",
-      "id": 43654802783,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43654802783",
-      "sha": "0dd777c797becd894befac6280358a69c3b510a6",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "failure",
-      "created_at": "2026-11-14T23:45:19Z",
-      "failed_jobs": [
-        {
-          "name": "harvest",
-          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43654802783/job/132630874241",
-          "steps": [
-            {
-              "name": "Provision Storage Shards",
-              "number": 8
-            }
-          ],
-          "log_status": "bounded_read",
-          "error_signals": [
-            "Nonzero command exit"
-          ]
-        }
-      ]
     },
     {
       "name": "CI",
@@ -351,16 +361,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "Citizen Connect Incident Sync",
-      "id": 43619336275,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43619336275",
-      "sha": "c0c2a62c0b3fd4f302b911290c672d9c20ab5a8e",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-14T17:07:07Z"
     }
   ],
   "pull_requests": [
@@ -420,8 +420,8 @@
     }
   ],
   "gaps": [],
-  "head": "947ca85f364a267e94a39acc2f1c741c7c6a04cf",
-  "files_seen": 6027,
+  "head": "e4c5023958441da035214ff9b69ba17618e81111",
+  "files_seen": 6028,
   "tree_complete": true,
   "sample_coverage": {
     "candidates": 45,

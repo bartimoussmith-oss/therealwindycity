@@ -1,16 +1,13 @@
 {
   "newly_observed": [
-    "therealwindycity/therealwindycity:run:43687317819",
-    "therealwindycity/TheReelWindyCity:.github/workflows/cm-public-display-repair.yml:always_save",
-    "therealwindycity/TheReelWindyCity:.github/workflows/cm-repair-diagnostics.yml:always_save",
-    "bartimoussmith-oss/therealwindycity:run:43653860334",
-    "therealwindycity/TheReelWindyCity:run:43654802783"
+    "bartimoussmith-oss/therealwindycity:run:43728357559",
+    "therealwindycity/therealwindycity:run:43731496739",
+    "therealwindycity/TheReelWindyCity:run:43730150197"
   ],
   "no_longer_observed": [
-    "therealwindycity/TheReelWindyCity:.github/workflows/frequent-public-refresh.yml:always_save",
-    "bartimoussmith-oss/therealwindycity:run:43606123652",
-    "therealwindycity/therealwindycity:run:43626061872",
-    "therealwindycity/therealwindycity:run:40718237904"
+    "therealwindycity/therealwindycity:run:43687317819",
+    "bartimoussmith-oss/therealwindycity:run:43653860334",
+    "therealwindycity/TheReelWindyCity:run:43654802783"
   ],
   "warning": "Evidence policy changed to version 2: removed findings may be corrected false positives, not completed repairs."
 }
