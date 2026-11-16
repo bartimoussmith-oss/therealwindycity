@@ -1,0 +1,235 @@
+--- seq2 (2026-11-15T18:55:32Z)
++++ seq3 (2026-11-16T06:34:22Z)
+@@ -103,8 +103,8 @@
+ <script async data-wp-strategy="async" id="broadstreet-analytics-js" src="//flux.broadstreet.ai/emit/6324.js?ver=1.0.0"></script>
+ <script async data-cfasync='false' id="broadstreet-init-js" src="//cdn.broadstreetads.com/init-2.min.js?v=1.53.4&#038;ver=7.1.4"></script>
+ <script async data-cfasync='false' id="broadstreet-init-js-after">
+-window.broadstreetKeywords = ['not_home_page','not_landing_page','is_article_page','community-sports','sports','latest-news','sports-wyoming','wyoming-news','sports','community','wyoming-news','nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie','post']
+-window.broadstreetTargets = {"pagetype":["post","not_home_page"],"category":["community-sports","sports","latest-news","sports-wyoming","wyoming-news","sports","community","wyoming-news","nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie","post"],"url":"nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie"};
++window.broadstreetKeywords = ['not_home_page','not_landing_page','is_article_page','community-sports','sports','latest-news','sports','community','sports-wyoming','wyoming-news','wyoming-news','nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie','post']
++window.broadstreetTargets = {"pagetype":["post","not_home_page"],"category":["community-sports","sports","latest-news","sports","community","sports-wyoming","wyoming-news","wyoming-news","nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie","post"],"url":"nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie"};
+ 
+ window.broadstreet = window.broadstreet || { run: [] };window.broadstreet.run.push(function () {
+ window.broadstreet.loadNetworkJS(6324, {});
+@@ -363,10 +363,10 @@
+ 
+ 			<div class="header-widget above-header-widgets">
+ 			<div class="wrapper">
+-				<section id="block-29" class="below-content widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit alignnone" style="text-align:inherit">		<div class='newspack_global_ad block_6af9ae725e0a9 fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="82907" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports-wyoming,wyoming-news,sports,community,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias="cc_billboard_reveal"></broadstreet-zone></div>		</div>
+-		</div></section><section id="block-31" class="below-content widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit alignnone" style="text-align:inherit">		<div class='newspack_global_ad block_6af9ae725ed2c fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="190771" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports-wyoming,wyoming-news,sports,community,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
++				<section id="block-29" class="below-content widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit alignnone" style="text-align:inherit">		<div class='newspack_global_ad block_6afa460b00b23 fixed-height'>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="82907" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports,community,sports-wyoming,wyoming-news,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias="cc_billboard_reveal"></broadstreet-zone></div>		</div>
++		</div></section><section id="block-31" class="below-content widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit alignnone" style="text-align:inherit">		<div class='newspack_global_ad block_6afa460b01722 fixed-height'>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="190771" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports,community,sports-wyoming,wyoming-news,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
+ 		</div></section>			</div><!-- .wrapper -->
+ 		</div><!-- .above-header-widgets -->
+ 	
+@@ -491,7 +491,7 @@
+ 			<span class="byline">
+ 				<span>by</span>
+ 				<span class="author vcard"><a class="url fn n" href="https://capcity.news/author/dan/">Dan Cepeda</a></span> 			</span><!-- .byline -->
+-			<span class="posted-on"><time class="entry-date published" datetime="2026-11-14T19:43:48-07:00">10 hours ago</time><time class="updated" datetime="2026-11-15T03:42:36-07:00">November 15, 2026</time></span>				</div><!-- .meta-info -->
++			<span class="posted-on"><time class="entry-date published" datetime="2026-11-14T19:43:48-07:00">21 hours ago</time><time class="updated" datetime="2026-11-15T03:42:36-07:00">November 15, 2026</time></span>				</div><!-- .meta-info -->
+ 							<div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-facebook"><a rel="nofollow noopener noreferrer"
+ 				data-shared="sharing-facebook-180313"
+ 				class="share-facebook sd-button share-icon"
+@@ -749,7 +749,7 @@
+ 				
+ <aside id="secondary" class="widget-area">
+ 			<div class='newspack_global_ad sidebar_sidebar-1 sidebar_sidebar-1-before hook-before stick-to-top fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176796" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports-wyoming,wyoming-news,sports,community,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176796" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports,community,sports-wyoming,wyoming-news,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
+ 		<section id="jetpack-search-filters-4" class="widget jetpack-filters widget_search">			<div id="jetpack-search-filters-4-wrapper" class="jetpack-instant-search-wrapper">
+ 		<div class="jetpack-search-form">
+ <form role="search" method="get" class="search-form" action="https://capcity.news/">
+@@ -769,23 +769,23 @@
+ 							</li><li><a href="https://capcity.news/crime/2026/11/13/laramie-county-recent-arrests-11-10-26-11-13-26/" title="Laramie County Recent Arrests (11/10/26–11/13/26)" class="bump-view" data-bump-view="tp"><img decoding="async" loading="lazy" width="240" height="240" src="https://i0.wp.com/capcity.news/wp-content/uploads/2025/04/COWBOYCOUNTRYLAW_ARRESTS_7_JULY2026.jpg?fit=1200%2C675&#038;ssl=1&#038;resize=240%2C240" srcset="https://i0.wp.com/capcity.news/wp-content/uploads/2025/04/COWBOYCOUNTRYLAW_ARRESTS_7_JULY2026.jpg?fit=1200%2C675&amp;ssl=1&amp;resize=240%2C240 1x, https://i0.wp.com/capcity.news/wp-content/uploads/2025/04/COWBOYCOUNTRYLAW_ARRESTS_7_JULY2026.jpg?fit=1200%2C675&amp;ssl=1&amp;resize=360%2C360 1.5x, https://i0.wp.com/capcity.news/wp-content/uploads/2025/04/COWBOYCOUNTRYLAW_ARRESTS_7_JULY2026.jpg?fit=1200%2C675&amp;ssl=1&amp;resize=480%2C480 2x, https://i0.wp.com/capcity.news/wp-content/uploads/2025/04/COWBOYCOUNTRYLAW_ARRESTS_7_JULY2026.jpg?fit=1200%2C675&amp;ssl=1&amp;resize=720%2C720 3x, https://i0.wp.com/capcity.news/wp-content/uploads/2025/04/COWBOYCOUNTRYLAW_ARRESTS_7_JULY2026.jpg?fit=1200%2C675&amp;ssl=1&amp;resize=960%2C960 4x" alt="Laramie County Recent Arrests (11/10/26–11/13/26)" data-pin-nopin="true" class="widgets-list-layout-blavatar" /></a><div class="widgets-list-layout-links">
+ 								<a href="https://capcity.news/crime/2026/11/13/laramie-county-recent-arrests-11-10-26-11-13-26/" title="Laramie County Recent Arrests (11/10/26–11/13/26)" class="bump-view" data-bump-view="tp">Laramie County Recent Arrests (11/10/26–11/13/26)</a>
+ 							</div>
++							</li><li><a href="https://capcity.news/crime/2026/11/14/laramie-county-weekly-arrest-report-11-4-26-11-13-26/" title="Laramie County weekly arrest report (11/4/26–11/13/26)" class="bump-view" data-bump-view="tp"><img decoding="async" loading="lazy" width="240" height="240" src="https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Cap-City-Weekly-Arrest-Report-Image-3.jpg?fit=1200%2C627&#038;ssl=1&#038;resize=240%2C240" srcset="https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Cap-City-Weekly-Arrest-Report-Image-3.jpg?fit=1200%2C627&amp;ssl=1&amp;resize=240%2C240 1x, https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Cap-City-Weekly-Arrest-Report-Image-3.jpg?fit=1200%2C627&amp;ssl=1&amp;resize=360%2C360 1.5x, https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Cap-City-Weekly-Arrest-Report-Image-3.jpg?fit=1200%2C627&amp;ssl=1&amp;resize=480%2C480 2x, https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Cap-City-Weekly-Arrest-Report-Image-3.jpg?fit=1200%2C627&amp;ssl=1&amp;resize=720%2C720 3x, https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Cap-City-Weekly-Arrest-Report-Image-3.jpg?fit=1200%2C627&amp;ssl=1&amp;resize=960%2C960 4x" alt="Laramie County weekly arrest report (11/4/26–11/13/26)" data-pin-nopin="true" class="widgets-list-layout-blavatar" /></a><div class="widgets-list-layout-links">
++								<a href="https://capcity.news/crime/2026/11/14/laramie-county-weekly-arrest-report-11-4-26-11-13-26/" title="Laramie County weekly arrest report (11/4/26–11/13/26)" class="bump-view" data-bump-view="tp">Laramie County weekly arrest report (11/4/26–11/13/26)</a>
++							</div>
+ 							</li><li><a href="https://capcity.news/crime/2026/11/13/detention-center-inmate-charged-with-donkey-kicking-spitting-at-deputies/" title="Detention center inmate charged with &#039;donkey kicking,&#039; spitting at deputies" class="bump-view" data-bump-view="tp"><img decoding="async" loading="lazy" width="240" height="240" src="https://i0.wp.com/capcity.news/wp-content/uploads/2023/07/IMG_20190512_212956-scaled-1.jpg?fit=1200%2C900&#038;ssl=1&#038;resize=240%2C240" srcset="https://i0.wp.com/capcity.news/wp-content/uploads/2023/07/IMG_20190512_212956-scaled-1.jpg?fit=1200%2C900&amp;ssl=1&amp;resize=240%2C240 1x, https://i0.wp.com/capcity.news/wp-content/uploads/2023/07/IMG_20190512_212956-scaled-1.jpg?fit=1200%2C900&amp;ssl=1&amp;resize=360%2C360 1.5x, https://i0.wp.com/capcity.news/wp-content/uploads/2023/07/IMG_20190512_212956-scaled-1.jpg?fit=1200%2C900&amp;ssl=1&amp;resize=480%2C480 2x, https://i0.wp.com/capcity.news/wp-content/uploads/2023/07/IMG_20190512_212956-scaled-1.jpg?fit=1200%2C900&amp;ssl=1&amp;resize=720%2C720 3x, https://i0.wp.com/capcity.news/wp-content/uploads/2023/07/IMG_20190512_212956-scaled-1.jpg?fit=1200%2C900&amp;ssl=1&amp;resize=960%2C960 4x" alt="Detention center inmate charged with &#039;donkey kicking,&#039; spitting at deputies" data-pin-nopin="true" class="widgets-list-layout-blavatar" /></a><div class="widgets-list-layout-links">
+ 								<a href="https://capcity.news/crime/2026/11/13/detention-center-inmate-charged-with-donkey-kicking-spitting-at-deputies/" title="Detention center inmate charged with &#039;donkey kicking,&#039; spitting at deputies" class="bump-view" data-bump-view="tp">Detention center inmate charged with &#039;donkey kicking,&#039; spitting at deputies</a>
+ 							</div>
+ 							</li><li><a href="https://capcity.news/crime/2026/11/14/cheyenne-pd-searching-for-soccer-field-vandals/" title="Cheyenne PD searching for soccer field vandals" class="bump-view" data-bump-view="tp"><img decoding="async" loading="lazy" width="240" height="240" src="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Photo-2026-11-13T232612.765.png?fit=1200%2C675&#038;ssl=1&#038;resize=240%2C240" srcset="https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Photo-2026-11-13T232612.765.png?fit=1200%2C675&amp;ssl=1&amp;resize=240%2C240 1x, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Photo-2026-11-13T232612.765.png?fit=1200%2C675&amp;ssl=1&amp;resize=360%2C360 1.5x, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Photo-2026-11-13T232612.765.png?fit=1200%2C675&amp;ssl=1&amp;resize=480%2C480 2x, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Photo-2026-11-13T232612.765.png?fit=1200%2C675&amp;ssl=1&amp;resize=720%2C720 3x, https://i0.wp.com/capcity.news/wp-content/uploads/2026/11/Photo-2026-11-13T232612.765.png?fit=1200%2C675&amp;ssl=1&amp;resize=960%2C960 4x" alt="Cheyenne PD searching for soccer field vandals" data-pin-nopin="true" class="widgets-list-layout-blavatar" /></a><div class="widgets-list-layout-links">
+ 								<a href="https://capcity.news/crime/2026/11/14/cheyenne-pd-searching-for-soccer-field-vandals/" title="Cheyenne PD searching for soccer field vandals" class="bump-view" data-bump-view="tp">Cheyenne PD searching for soccer field vandals</a>
+ 							</div>
+-							</li><li><a href="https://capcity.news/crime/2026/11/14/laramie-county-weekly-arrest-report-11-4-26-11-13-26/" title="Laramie County weekly arrest report (11/4/26–11/13/26)" class="bump-view" data-bump-view="tp"><img decoding="async" loading="lazy" width="240" height="240" src="https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Cap-City-Weekly-Arrest-Report-Image-3.jpg?fit=1200%2C627&#038;ssl=1&#038;resize=240%2C240" srcset="https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Cap-City-Weekly-Arrest-Report-Image-3.jpg?fit=1200%2C627&amp;ssl=1&amp;resize=240%2C240 1x, https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Cap-City-Weekly-Arrest-Report-Image-3.jpg?fit=1200%2C627&amp;ssl=1&amp;resize=360%2C360 1.5x, https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Cap-City-Weekly-Arrest-Report-Image-3.jpg?fit=1200%2C627&amp;ssl=1&amp;resize=480%2C480 2x, https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Cap-City-Weekly-Arrest-Report-Image-3.jpg?fit=1200%2C627&amp;ssl=1&amp;resize=720%2C720 3x, https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Cap-City-Weekly-Arrest-Report-Image-3.jpg?fit=1200%2C627&amp;ssl=1&amp;resize=960%2C960 4x" alt="Laramie County weekly arrest report (11/4/26–11/13/26)" data-pin-nopin="true" class="widgets-list-layout-blavatar" /></a><div class="widgets-list-layout-links">
+-								<a href="https://capcity.news/crime/2026/11/14/laramie-county-weekly-arrest-report-11-4-26-11-13-26/" title="Laramie County weekly arrest report (11/4/26–11/13/26)" class="bump-view" data-bump-view="tp">Laramie County weekly arrest report (11/4/26–11/13/26)</a>
+-							</div>
+ 							</li></ul>
+ </div></p>
+-</section><section id="block-24" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6af9ae7277795 fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176793" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports-wyoming,wyoming-news,sports,community,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
+-		</div></section><section id="block-25" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6af9ae7278606 fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176794" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports-wyoming,wyoming-news,sports,community,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
+-		</div></section><section id="block-26" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6af9ae7279326 fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176794" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports-wyoming,wyoming-news,sports,community,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
++</section><section id="block-24" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6afa460b15579 fixed-height'>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176793" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports,community,sports-wyoming,wyoming-news,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
++		</div></section><section id="block-25" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6afa460b15e53 fixed-height'>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176794" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports,community,sports-wyoming,wyoming-news,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
++		</div></section><section id="block-26" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6afa460b16617 fixed-height'>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176794" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports,community,sports-wyoming,wyoming-news,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
+ 		</div></section><section id="block-20" class="widget widget_block">	<div
+ 		class="wp-block-newspack-blocks-homepage-articles is-style-borders wpnbha show-image image-alignleft ts-2 is-1 is-square is-style-borders"
+ 		style=""
+@@ -795,6 +795,26 @@
+ 					<span>Latest News</span>
+ 				</h2>
+ 						
++	<article data-post-id="180287"
++		class="category-community category-health category-latest-news category-general category-local-2 category-news type-post post-has-image"
++				>
++							<figure class="post-thumbnail">
++								<a href="https://capcity.news/community/health/2026/11/15/laramie-county-health-and-food-inspections-11-6-26-11-12-26/" rel="bookmark" tabindex="-1" aria-hidden="true">
++												<img loading="lazy" decoding="async" width="800" height="800" src="https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Breeze_FBpost_Image.png?resize=800%2C800&amp;ssl=1" class="attachment-newspack-article-block-square-medium size-newspack-article-block-square-medium wp-post-image" alt="Laramie County health and food inspections (11/6/26–11/12/26)" data-hero-candidate="1" srcset="https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Breeze_FBpost_Image.png?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Breeze_FBpost_Image.png?resize=263%2C263&amp;ssl=1 263w, https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Breeze_FBpost_Image.png?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Breeze_FBpost_Image.png?resize=100%2C100&amp;ssl=1 100w, https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Breeze_FBpost_Image.png?resize=800%2C800&amp;ssl=1&amp;w=370 370w, https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Breeze_FBpost_Image.png?resize=800%2C800&amp;ssl=1&amp;w=400 400w" sizes="auto, (min-width: 782px) 600px, (min-width: 600px) 42.5vw, 90vw" data-attachment-id="51917" data-permalink="https://capcity.news/community/public-records/2022/04/09/laramie-county-health-and-food-inspections-3-28-22-4-3-22/attachment/breeze_fbpost_image-3/" data-orig-file="https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Breeze_FBpost_Image.png?fit=1200%2C800&amp;ssl=1" data-orig-size="1200,800" data-comments-opened="0" data-image-title="Health inspection" data-image-description="&lt;p&gt;Health inspection&lt;/p&gt;
++" data-image-caption="&lt;p&gt;Shutterstock&lt;/p&gt;
++" data-large-file="https://i0.wp.com/capcity.news/wp-content/uploads/2022/06/Breeze_FBpost_Image.png?fit=780%2C520&amp;ssl=1" />												</a>
++				
++							</figure><!-- .featured-image -->
++		
++		<div class="entry-wrapper">
++						<h3 class="entry-title"><a href="https://capcity.news/community/health/2026/11/15/laramie-county-health-and-food-inspections-11-6-26-11-12-26/" rel="bookmark">Laramie County health and food inspections (11/6/26–11/12/26)</a></h3>										<div class="entry-meta">
++											<span class="byline">
++							<span class="author-prefix">by</span> <span class="author vcard"><a class="url fn n" href="https://capcity.news/author/nickupslope-media/">Nick Perkins</a></span>						</span><!-- .author-name -->
++						<time class="entry-date published" datetime="2026-11-15T09:00:00-07:00">8 hours ago</time><time class="updated" datetime="2026-11-15T14:04:23-07:00">November 15, 2026</time>				</div><!-- .entry-meta -->
++								</div><!-- .entry-wrapper -->
++	</article>
++
++		
+ 	<article data-post-id="180312"
+ 		class="category-community category-community-sports category-local-2 category-sports category-sports-wyoming category-wyoming-news type-post post-has-image"
+ 				>
+@@ -809,7 +829,7 @@
+ 						<h3 class="entry-title"><a href="https://capcity.news/community/sports/2026/11/14/wyoming-high-school-football-scoreboard-championships/" rel="bookmark">Wyoming high school football scoreboard (championships)</a></h3>										<div class="entry-meta">
+ 											<span class="byline">
+ 							<span class="author-prefix">by</span> <span class="author vcard"><a class="url fn n" href="https://capcity.news/author/nickupslope-media/">Nick Perkins</a></span>						</span><!-- .author-name -->
+-						<time class="entry-date published" datetime="2026-11-14T19:49:34-07:00">10 hours ago</time><time class="updated" datetime="2026-11-15T03:45:06-07:00">November 15, 2026</time>				</div><!-- .entry-meta -->
++						<time class="entry-date published" datetime="2026-11-14T19:49:34-07:00">21 hours ago</time><time class="updated" datetime="2026-11-15T03:45:06-07:00">November 15, 2026</time>				</div><!-- .entry-meta -->
+ 								</div><!-- .entry-wrapper -->
+ 	</article>
+ 
+@@ -828,7 +848,7 @@
+ 						<h3 class="entry-title"><a href="https://capcity.news/general/2026/11/14/wyoming-senate-republicans-elect-new-leadership-team-including-cheyennes-tara-nethercott/" rel="bookmark">Wyoming Senate Republicans elect new leadership team, including Cheyenne&#8217;s Tara Nethercott</a></h3>										<div class="entry-meta">
+ 											<span class="byline">
+ 							<span class="author-prefix">by</span> <span class="author vcard"><a class="url fn n" href="https://capcity.news/author/nickupslope-media/">Nick Perkins</a></span>						</span><!-- .author-name -->
+-						<time class="entry-date published" datetime="2026-11-14T18:35:11-07:00">12 hours ago</time><time class="updated" datetime="2026-11-15T03:48:27-07:00">November 15, 2026</time>				</div><!-- .entry-meta -->
++						<time class="entry-date published" datetime="2026-11-14T18:35:11-07:00">22 hours ago</time><time class="updated" datetime="2026-11-15T03:48:27-07:00">November 15, 2026</time>				</div><!-- .entry-meta -->
+ 								</div><!-- .entry-wrapper -->
+ 	</article>
+ 
+@@ -847,7 +867,7 @@
+ 						<h3 class="entry-title"><a href="https://capcity.news/crime/2026/11/14/laramie-county-weekly-arrest-report-11-4-26-11-13-26/" rel="bookmark">Laramie County weekly arrest report (11/4/26–11/13/26)</a></h3>										<div class="entry-meta">
+ 											<span class="byline">
+ 							<span class="author-prefix">by</span> <span class="author vcard"><a class="url fn n" href="https://capcity.news/author/nickupslope-media/">Nick Perkins</a></span>						</span><!-- .author-name -->
+-						<time class="entry-date published" datetime="2026-11-14T13:00:00-07:00">17 hours ago</time><time class="updated" datetime="2026-11-14T13:44:34-07:00">November 14, 2026</time>				</div><!-- .entry-meta -->
++						<time class="entry-date published" datetime="2026-11-14T13:00:00-07:00">November 14, 2026</time><time class="updated" datetime="2026-11-14T13:44:34-07:00">November 14, 2026</time>				</div><!-- .entry-meta -->
+ 								</div><!-- .entry-wrapper -->
+ 	</article>
+ 
+@@ -867,38 +887,19 @@
+ 						<h3 class="entry-title"><a href="https://capcity.news/weather-2/2026/11/14/mild-temps-return-to-cheyenne-before-late-week-cold-front/" rel="bookmark">Mild temps return to Cheyenne before late-week cold front</a></h3>										<div class="entry-meta">
+ 											<span class="byline">
+ 							<span class="author-prefix">by</span> <span class="author vcard"><a class="url fn n" href="https://capcity.news/author/nickupslope-media/">Nick Perkins</a></span>						</span><!-- .author-name -->
+-						<time class="entry-date published" datetime="2026-11-14T12:26:19-07:00">18 hours ago</time><time class="updated" datetime="2026-11-14T13:53:39-07:00">November 14, 2026</time>				</div><!-- .entry-meta -->
++						<time class="entry-date published" datetime="2026-11-14T12:26:19-07:00">November 14, 2026</time><time class="updated" datetime="2026-11-14T13:53:39-07:00">November 14, 2026</time>				</div><!-- .entry-meta -->
+ 								</div><!-- .entry-wrapper -->
+ 	</article>
+ 
+-		
+-	<article data-post-id="180299"
+-		class="category-crime category-latest-news category-general category-local-2 category-news category-sponsored-crime category-sponsored-crime-stories type-post post-has-image"
+-				>
+-							<figure class="post-thumbnail">
+-								<a href="https://capcity.news/crime/2026/11/14/deputies-detain-two-after-friday-night-shooting-in-cheyenne/" rel="bookmark" tabindex="-1" aria-hidden="true">
+-												<img loading="lazy" decoding="async" width="800" height="800" src="https://i0.wp.com/capcity.news/wp-content/uploads/2026/03/LCSO-Vehicle-2.jpg?resize=800%2C800&amp;ssl=1" class="attachment-newspack-article-block-square-medium size-newspack-article-block-square-medium wp-post-image" alt="Deputies detain two after Friday night shooting in Cheyenne" data-hero-candidate="1" srcset="https://i0.wp.com/capcity.news/wp-content/uploads/2026/03/LCSO-Vehicle-2.jpg?resize=150%2C150&amp;ssl=1 150w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/03/LCSO-Vehicle-2.jpg?resize=800%2C800&amp;ssl=1 800w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/03/LCSO-Vehicle-2.jpg?resize=600%2C600&amp;ssl=1 600w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/03/LCSO-Vehicle-2.jpg?resize=400%2C400&amp;ssl=1 400w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/03/LCSO-Vehicle-2.jpg?resize=200%2C200&amp;ssl=1 200w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/03/LCSO-Vehicle-2.jpg?resize=300%2C300&amp;ssl=1 300w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/03/LCSO-Vehicle-2.jpg?resize=100%2C100&amp;ssl=1 100w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/03/LCSO-Vehicle-2.jpg?zoom=2&amp;resize=800%2C800&amp;ssl=1 1600w, https://i0.wp.com/capcity.news/wp-content/uploads/2026/03/LCSO-Vehicle-2.jpg?resize=800%2C800&amp;ssl=1&amp;w=370 370w" sizes="auto, (min-width: 782px) 600px, (min-width: 600px) 42.5vw, 90vw" data-attachment-id="163486" data-permalink="https://capcity.news/latest-news/2026/03/11/cheyenne-14-year-old-charged-with-pre-meditated-murder-of-his-mother/attachment/lcso-vehicle-2-2/" data-orig-file="https://i0.wp.com/capcity.news/wp-content/uploads/2026/03/LCSO-Vehicle-2.jpg?fit=1920%2C1041&amp;ssl=1" data-orig-size="1920,1041" data-comments-opened="0" data-image-title="LCSO Vehicle 2" data-image-description="" data-image-caption="&lt;p&gt;Laramie County Sheriff&amp;#8217;s Office car (Courtesy Laramie County Sheriff&amp;#8217;s Office)&lt;/p&gt;
+-" data-large-file="https://i0.wp.com/capcity.news/wp-content/uploads/2026/03/LCSO-Vehicle-2.jpg?fit=780%2C423&amp;ssl=1" />												</a>
+-				
+-							</figure><!-- .featured-image -->
+-		
+-		<div class="entry-wrapper">
+-						<h3 class="entry-title"><a href="https://capcity.news/crime/2026/11/14/deputies-detain-two-after-friday-night-shooting-in-cheyenne/" rel="bookmark">Deputies detain two after Friday night shooting in Cheyenne</a></h3>										<div class="entry-meta">
+-											<span class="byline">
+-							<span class="author-prefix">by</span> <span class="author vcard"><a class="url fn n" href="https://capcity.news/author/klark/">Klark Byrd</a></span>						</span><!-- .author-name -->
+-						<time class="entry-date published" datetime="2026-11-14T11:08:56-07:00">19 hours ago</time><time class="updated" datetime="2026-11-14T11:56:22-07:00">November 14, 2026</time>				</div><!-- .entry-meta -->
+-								</div><!-- .entry-wrapper -->
+-	</article>
+-
+ 				</div>
+ 		
+ 	</div>
+-	</section><section id="block-27" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6af9ae7286bee fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176795" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports-wyoming,wyoming-news,sports,community,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
+-		</div></section><section id="block-28" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6af9ae7287b33 fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176794" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports-wyoming,wyoming-news,sports,community,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
++	</section><section id="block-27" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6afa460b1f134 fixed-height'>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176795" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports,community,sports-wyoming,wyoming-news,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
++		</div></section><section id="block-28" class="widget widget_block"><div class="wp-block-newspack-blocks-wp-block-newspack-ads-blocks-ad-unit aligncenter" style="text-align:center">		<div class='newspack_global_ad block_6afa460b1ff69 fixed-height'>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176794" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports,community,sports-wyoming,wyoming-news,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
+ 		</div></section>		<div class='newspack_global_ad sidebar_sidebar-1 sidebar_sidebar-1-after hook-after stick-to-top fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176796" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports-wyoming,wyoming-news,sports,community,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="176796" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports,community,sports-wyoming,wyoming-news,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
+ 		</aside><!-- #secondary -->
+ 
+ 		</main><!-- #main -->
+@@ -907,7 +908,7 @@
+ 
+ 	
+ 			<div class='newspack_global_ad global_above_footer fixed-height'>
+-						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="156123" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports-wyoming,wyoming-news,sports,community,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
++						<div class="newspack-broadstreet-ad" style='flex: 1 1 100%; width: 100%; height: auto;'><broadstreet-zone zone-id="156123" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports,community,sports-wyoming,wyoming-news,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div>		</div>
+ 		
+ 	</div><!-- #content -->
+ 
+@@ -932,7 +933,7 @@
+ <li id="menu-item-51454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-51454"><a href="https://publisher713175.typeform.com/to/Ac34FmwU">News Tip</a></li>
+ <li id="menu-item-51453" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51453"><a href="https://capcity.news/oil-city-opinions-submit-your-letters-to-our-editors/">Submit Letters</a></li>
+ <li id="menu-item-51450" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51450"><a href="https://capcity.news/corrections-and-clarifications/">Corrections and Clarifications</a></li>
+-</ul></div></section><section id="bs_zones-36" class="widget bs_zones"><div><broadstreet-zone place="" zone-id="190771" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports-wyoming,wyoming-news,sports,community,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div></section>		</div><!-- .wrapper -->
++</ul></div></section><section id="bs_zones-36" class="widget bs_zones"><div><broadstreet-zone place="" zone-id="190771" keywords="not_home_page,not_landing_page,is_article_page,community-sports,sports,latest-news,sports,community,sports-wyoming,wyoming-news,wyoming-news,nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie,post" soft-keywords="true" zone-alias=""></broadstreet-zone></div></section>		</div><!-- .wrapper -->
+ 	</aside><!-- .widget-area -->
+ 
+ 
+@@ -1044,6 +1045,7 @@
+ 		</div>
+ 						</div>
+ 				<input type="hidden" name="reader-activation-auth-form" value="1" />
++									<input type="hidden" name="referer" value="/crime/2026/11/14/deputies-detain-two-after-friday-night-shooting-in-cheyenne/" />
+ 								<input type="hidden" name="action" />
+ 				<p data-action="otp">
+ 					<label>Enter the code sent to your email</label>
+@@ -1178,8 +1180,6 @@
+ 		</div>
+ 		<div class="grofile-hash-map-0cbdf923253837f386cc17247ebe9bf6">
+ 		</div>
+-		<div class="grofile-hash-map-a4e88c6dc5c2b2a5585568a48e0aa9a3">
+-		</div>
+ 		</div>
+ 		
+ 	<script type="text/javascript">
+@@ -1384,7 +1384,7 @@
+ <script data-wp-strategy="async" defer id="newspack-recaptcha-js" src="https://capcity.news/wp-content/plugins/newspack-plugin/dist/other-scripts/recaptcha.js?ver=e1f2edd75ff5d2c218f4" type="pmdelayedscript" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1"></script>
+ <script id="newspack-reader-activation-js-extra">
+ var newspack_ras_config = {"auth_intention_cookie":"np_auth_intention","cid_cookie":"newspack-cid","is_logged_in":"","authenticated_email":"","otp_auth_action":"np_otp_auth","otp_rate_interval":"60","auth_action_result":"np_auth_link_result","account_url":"https://capcity.news/shop/my-account/","is_ras_enabled":"1","verify_new_reader_accounts":"1","verification_url":"https://capcity.news/wp-admin/admin-ajax.php","check_email_url":"https://capcity.news/wp-json/newspack/v1/reader-activation/check-email","captcha_site_key":"6LeSzx8rAAAAAAn0Kq90nt6tLLh4wzU47WJ3lUYg","captcha_version":"v3"};
+-var newspack_reader_data = {"store_prefix":"np_reader_1_","is_temporary":"","is_switched_session":"","reader_activity":[{"action":"article_view","data":{"post_id":180313,"permalink":"https://capcity.news/community/sports/2026/11/14/nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie/","categories":[25816,67,24466,70,103],"tags":[],"author":"3"}}],"read_only_keys":["active_memberships","active_subscriptions","is_former_donor","newsletter_subscribed_lists","is_donor","accessible_gates","available_deals"],"local_keys":["pageviews","referrer"],"api_url":"https://capcity.news/wp-json/newspack/v1/reader-data","session_url":"https://capcity.news/wp-json/newspack/v1/reader/session"};
++var newspack_reader_data = {"store_prefix":"np_reader_1_","is_temporary":"","is_switched_session":"","reader_activity":[{"action":"article_view","data":{"post_id":180313,"permalink":"https://capcity.news/community/sports/2026/11/14/nchs-takes-2026-championship-with-28-13-win-over-cheyenne-east-in-laramie/","categories":[25816,67,70,24466,103],"tags":[],"author":"3"}}],"read_only_keys":["active_memberships","active_subscriptions","is_former_donor","newsletter_subscribed_lists","is_donor","accessible_gates","available_deals"],"local_keys":["pageviews","referrer"],"api_url":"https://capcity.news/wp-json/newspack/v1/reader-data","session_url":"https://capcity.news/wp-json/newspack/v1/reader/session"};
+ //# sourceURL=newspack-reader-activation-js-extra
+ </script>
+ <script data-wp-strategy="defer" defer id="newspack-reader-activation-js" src="https://capcity.news/wp-content/plugins/newspack-plugin/dist/reader-activation.js?ver=b9a0e20a76505511496a" data-amp-plus-allowed type="pmdelayedscript" data-cfasync="false" data-no-optimize="1" data-no-defer="1" data-no-minify="1"></script>
+@@ -1502,8 +1502,8 @@
+ <script id="perfmatters-delayed-scripts-js">(function(){window.pmDC=0;window.pmDT=15;if(window.pmDT){var e=setTimeout(d,window.pmDT*1e3)}const t=["keydown","mousedown","mousemove","wheel","touchmove","touchstart","touchend"];const n={normal:[],defer:[],async:[]};const o=[];const i=[];var r=false;var a="";window.pmIsClickPending=false;t.forEach(function(e){window.addEventListener(e,d,{passive:true})});if(window.pmDC){window.addEventListener("touchstart",b,{passive:true});window.addEventListener("mousedown",b)}function d(){if(typeof e!=="undefined"){clearTimeout(e)}t.forEach(function(e){window.removeEventListener(e,d,{passive:true})});if(document.readyState==="loading"){document.addEventListener("DOMContentLoaded",s)}else{s()}}async function s(){c();u();f();m();await w(n.normal);await w(n.defer);await w(n.async);await p();document.querySelectorAll("link[data-pmdelayedstyle]").forEach(function(e){e.setAttribute("href",e.getAttribute("data-pmdelayedstyle"))});window.dispatchEvent(new Event("perfmatters-allScriptsLoaded")),E().then(()=>{h()})}function c(){let o={};function e(t,e){function n(e){return o[t].delayedEvents.indexOf(e)>=0?"perfmatters-"+e:e}if(!o[t]){o[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},delayedEvents:[]};t.addEventListener=function(){arguments[0]=n(arguments[0]);o[t].originalFunctions.add.apply(t,arguments)};t.removeEventListener=function(){arguments[0]=n(arguments[0]);o[t].originalFunctions.remove.apply(t,arguments)}}o[t].delayedEvents.push(e)}function t(t,n){const e=t[n];Object.defineProperty(t,n,{get:!e?function(){}:e,set:function(e){t["perfmatters"+n]=e}})}e(document,"DOMContentLoaded");e(window,"DOMContentLoaded");e(window,"load");e(document,"readystatechange");t(document,"onreadystatechange");t(window,"onload")}function u(){let n=window.jQuery;Object.defineProperty(window,"jQuery",{get(){return n},set(t){if(t&&t.fn&&!o.includes(t)){t.fn.ready=t.fn.init.prototype.ready=function(e){if(r){e.bind(document)(t)}else{document.addEventListener("perfmatters-DOMContentLoaded",function(){e.bind(document)(t)})}};const e=t.fn.on;t.fn.on=t.fn.init.prototype.on=function(){if(this[0]===window){function t(e){e=e.split(" ");e=e.map(function(e){if(e==="load"||e.indexOf("load.")===0){return"perfmatters-jquery-load"}else{return e}});e=e.join(" ");return e}if(typeof arguments[0]=="string"||arguments[0]instanceof String){arguments[0]=t(arguments[0])}else if(typeof arguments[0]=="object"){Object.keys(arguments[0]).forEach(function(e){delete Object.assign(arguments[0],{[t(e)]:arguments[0][e]})[e]})}}return e.apply(this,arguments),this};o.push(t)}n=t}})}function f(){document.querySelectorAll("script[type=pmdelayedscript]").forEach(function(e){if(e.hasAttribute("src")){if(e.hasAttribute("defer")&&e.defer!==false){n.defer.push(e)}else if(e.hasAttribute("async")&&e.async!==false){n.async.push(e)}else{n.normal.push(e)}}else{n.normal.push(e)}})}function m(){var o=document.createDocumentFragment();[...n.normal,...n.defer,...n.async].forEach(function(e){var t=e.getAttribute("src");if(t){var n=document.createElement("link");n.href=t;if(e.getAttribute("data-perfmatters-type")=="module"){n.rel="modulepreload"}else{n.rel="preload";n.as="script"}o.appendChild(n)}});document.head.appendChild(o)}async function w(e){var t=e.shift();if(t){await l(t);return w(e)}return Promise.resolve()}async function l(t){await v();return new Promise(function(e){const n=document.createElement("script");[...t.attributes].forEach(function(e){let t=e.nodeName;if(t!=="type"){if(t==="data-perfmatters-type"){t="type"}n.setAttribute(t,e.nodeValue)}});if(t.hasAttribute("src")){n.addEventListener("load",e);n.addEventListener("error",e)}else{n.text=t.text;e()}t.parentNode?t.parentNode.replaceChild(n,t):e()})}async function p(){r=true;await v();document.dispatchEvent(new Event("perfmatters-DOMContentLoaded"));await v();window.dispatchEvent(new Event("perfmatters-DOMContentLoaded"));await v();document.dispatchEvent(new Event("perfmatters-readystatechange"));await v();if(document.perfmattersonreadystatechange){document.perfmattersonreadystatechange()}await v();window.dispatchEvent(new Event("perfmatters-load"));await v();if(window.perfmattersonload){window.perfmattersonload()}await v();o.forEach(function(e){e(window).trigger("perfmatters-jquery-load")})}async function v(){return new Promise(function(e){requestAnimationFrame(e)})}function h(){window.removeEventListener("touchstart",b,{passive:true});window.removeEventListener("mousedown",b);i.forEach(e=>{if(e.target.outerHTML===a){e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:true,cancelable:true}))}})}function E(){return new Promise(e=>{window.pmIsClickPending?g=e:e()})}function y(){window.pmIsClickPending=true}function g(){window.pmIsClickPending=false}function L(e){e.target.removeEventListener("click",L);C(e.target,"pm-onclick","onclick");i.push(e),e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();g()}function b(e){if(e.target.tagName!=="HTML"){if(!a){a=e.target.outerHTML}window.addEventListener("touchend",A);window.addEventListener("mouseup",A);window.addEventListener("touchmove",k,{passive:true});window.addEventListener("mousemove",k);e.target.addEventListener("click",L);C(e.target,"onclick","pm-onclick");y()}}function k(e){window.removeEventListener("touchend",A);window.removeEventListener("mouseup",A);window.removeEventListener("touchmove",k,{passive:true});window.removeEventListener("mousemove",k);e.target.removeEventListener("click",L);C(e.target,"pm-onclick","onclick");g()}function A(e){window.removeEventListener("touchend",A);window.removeEventListener("mouseup",A);window.removeEventListener("touchmove",k,{passive:true});window.removeEventListener("mousemove",k)}function C(e,t,n){if(e.hasAttribute&&e.hasAttribute(t)){event.target.setAttribute(n,event.target.getAttribute(t));event.target.removeAttribute(t)}}})();</script></body>
+ </html>
+ <!--
+-	generated 273 seconds ago
+-	generated in 0.887 seconds
+-	served from batcache in 0.006 seconds
+-	expires in 27 seconds
++	generated 23 seconds ago
++	generated in 0.697 seconds
++	served from batcache in 0.004 seconds
++	expires in 277 seconds
+ -->
