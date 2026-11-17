@@ -2,7 +2,7 @@
   "repository": "therealwindycity/TheReelWindyCity",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-16T22:32:33.091Z",
+  "checked_at": "2026-11-17T08:30:36.235Z",
   "controls": [
     {
       "id": "architecture",
@@ -151,38 +151,18 @@
   ],
   "runs": [
     {
-      "name": "Citizen Connect Incident Sync",
-      "id": 43955769767,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43955769767",
-      "sha": "c115c10985cdf589a2c636bc2e510118c46a3497",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-16T21:01:26Z"
-    },
-    {
-      "name": "Live Municipal Watch",
-      "id": 43931540444,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43931540444",
-      "sha": "21398cc668bcb6edea6f5dbb99bc679dceea8343",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-16T18:41:52Z"
-    },
-    {
       "name": "Promethean Recurring Harvest",
-      "id": 43925859017,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43925859017",
-      "sha": "21398cc668bcb6edea6f5dbb99bc679dceea8343",
+      "id": 44005861017,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/44005861017",
+      "sha": "ae326802bef7588e2dc78c90bdf63a2a1f663720",
       "branch": "main",
       "status": "completed",
       "conclusion": "failure",
-      "created_at": "2026-11-16T18:09:28Z",
+      "created_at": "2026-11-17T02:50:14Z",
       "failed_jobs": [
         {
           "name": "harvest",
-          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43925859017/job/133504999638",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/44005861017/job/133780943780",
           "steps": [
             {
               "name": "Publish Payloads In Existing Repository",
@@ -197,44 +177,100 @@
       ]
     },
     {
-      "name": "CM deployment evidence",
-      "id": 43913994535,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43913994535",
-      "sha": "21398cc668bcb6edea6f5dbb99bc679dceea8343",
+      "name": "Live Municipal Watch",
+      "id": 44003622045,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/44003622045",
+      "sha": "cdbe550ec569a7539e9e778b23d1954a64fecf51",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-16T17:02:00Z"
+      "created_at": "2026-11-17T02:31:29Z"
+    },
+    {
+      "name": "CM deployment evidence",
+      "id": 43990944089,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43990944089",
+      "sha": "cdbe550ec569a7539e9e778b23d1954a64fecf51",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-17T00:51:02Z"
     },
     {
       "name": "Verify public meeting features",
-      "id": 43913958430,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43913958430",
-      "sha": "21398cc668bcb6edea6f5dbb99bc679dceea8343",
+      "id": 43990925931,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43990925931",
+      "sha": "cdbe550ec569a7539e9e778b23d1954a64fecf51",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-16T17:01:48Z"
+      "created_at": "2026-11-17T00:50:54Z"
     },
     {
       "name": "Deploy to GitHub Pages",
-      "id": 43913158272,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43913158272",
-      "sha": "21398cc668bcb6edea6f5dbb99bc679dceea8343",
+      "id": 43990350327,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43990350327",
+      "sha": "cdbe550ec569a7539e9e778b23d1954a64fecf51",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-16T16:57:23Z"
+      "created_at": "2026-11-17T00:46:36Z"
     },
     {
       "name": "Live Place Archives",
-      "id": 43755145715,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43755145715",
-      "sha": "3622f9e1dbeccbfb5fdefbbebf491581d209c699",
+      "id": 43979713262,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43979713262",
+      "sha": "b52096d76f21d9b717e358c5595bf8865560c405",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-15T19:55:49Z"
+      "created_at": "2026-11-16T23:29:26Z"
+    },
+    {
+      "name": "Live Wyoming Watch",
+      "id": 43974120748,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43974120748",
+      "sha": "dcf22bb923d574b4dd6ae993acc54014bd6b1085",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-16T22:52:17Z"
+    },
+    {
+      "name": "Promethean Autonomous Granicus Harvester",
+      "id": 43971588480,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43971588480",
+      "sha": "dcf22bb923d574b4dd6ae993acc54014bd6b1085",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-16T22:35:56Z",
+      "failed_jobs": [
+        {
+          "name": "harvest-and-index",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43971588480/job/133664823351",
+          "steps": [
+            {
+              "name": "Execute Hardened Granicus Harvester",
+              "number": 8
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Citizen Connect Incident Sync",
+      "id": 43955769767,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43955769767",
+      "sha": "c115c10985cdf589a2c636bc2e510118c46a3497",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-16T21:01:26Z"
     },
     {
       "name": "CI",
@@ -245,16 +281,6 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-11-15T19:24:42Z"
-    },
-    {
-      "name": "Live Wyoming Watch",
-      "id": 43751984986,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43751984986",
-      "sha": "e4c5023958441da035214ff9b69ba17618e81111",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-15T19:21:38Z"
     },
     {
       "name": "CM completion audit",
@@ -285,16 +311,6 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-11-15T03:41:09Z"
-    },
-    {
-      "name": "CI",
-      "id": 43640995322,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/43640995322",
-      "sha": "ae919c2e65d56371a94dab3f27bbd1cf5fe520da",
-      "branch": "cm/remediation-v2-reviewed",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-14T21:06:06Z"
     }
   ],
   "pull_requests": [
@@ -354,7 +370,7 @@
     }
   ],
   "gaps": [],
-  "head": "dcf22bb923d574b4dd6ae993acc54014bd6b1085",
+  "head": "359b275585f5560f5d43fe0223f73224ea371070",
   "files_seen": 6028,
   "tree_complete": true,
   "sample_coverage": {

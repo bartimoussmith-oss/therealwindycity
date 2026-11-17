@@ -1,18 +1,15 @@
 {
   "newly_observed": [
-    "bartimoussmith-oss/promethean-civic-atlas:architecture",
-    "bartimoussmith-oss/promethean-civic-atlas:agent_handoff",
-    "bartimoussmith-oss/promethean-civic-atlas:provenance",
-    "bartimoussmith-oss/promethean-civic-atlas:rights",
-    "bartimoussmith-oss/promethean-civic-atlas:.github/workflows/pages.yml:always_save",
+    "bartimoussmith-oss/therealwindycity:run:44005008987",
+    "bartimoussmith-oss/therealwindycity:run:43973050670",
+    "therealwindycity/therealwindycity:run:44006939098",
+    "therealwindycity/TheReelWindyCity:run:44005861017",
+    "therealwindycity/TheReelWindyCity:run:43971588480"
+  ],
+  "no_longer_observed": [
     "bartimoussmith-oss/therealwindycity:run:43921529609",
     "therealwindycity/therealwindycity:run:43931547917",
     "therealwindycity/TheReelWindyCity:run:43925859017"
-  ],
-  "no_longer_observed": [
-    "therealwindycity/therealwindycity:run:43819750392",
-    "bartimoussmith-oss/therealwindycity:run:43776110533",
-    "therealwindycity/TheReelWindyCity:run:43777048993"
   ],
   "warning": "Evidence policy changed to version 2: removed findings may be corrected false positives, not completed repairs."
 }

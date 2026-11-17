@@ -2,7 +2,7 @@
   "repository": "therealwindycity/therealwindycity",
   "archived": false,
   "fork": true,
-  "checked_at": "2026-11-16T22:32:26.625Z",
+  "checked_at": "2026-11-17T08:30:28.948Z",
   "controls": [
     {
       "id": "architecture",
@@ -121,28 +121,38 @@
   ],
   "runs": [
     {
-      "name": "civic-cycle",
-      "id": 43966933074,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/43966933074",
-      "sha": "ab9a2961a2d65c4a9550fa6c1ba0a0165144ce7c",
+      "name": "meeting-watch",
+      "id": 44046242695,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44046242695",
+      "sha": "99b977bebba8ba04c0fad50ea394135a11f52d52",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-16T22:07:30Z"
+      "created_at": "2026-11-17T08:22:56Z"
+    },
+    {
+      "name": "civic-cycle",
+      "id": 44042712231,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44042712231",
+      "sha": "bfe27bedc81c4438e246ef08cc93ac33774424e2",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-17T07:57:33Z"
     },
     {
       "name": "workdesk-poll",
-      "id": 43931547917,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/43931547917",
-      "sha": "ab9a2961a2d65c4a9550fa6c1ba0a0165144ce7c",
+      "id": 44006939098,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44006939098",
+      "sha": "bfe27bedc81c4438e246ef08cc93ac33774424e2",
       "branch": "main",
       "status": "completed",
       "conclusion": "failure",
-      "created_at": "2026-11-16T18:41:54Z",
+      "created_at": "2026-11-17T02:59:32Z",
       "failed_jobs": [
         {
           "name": "poll",
-          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/43931547917/job/133524982437",
+          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44006939098/job/133784464700",
           "steps": [
             {
               "name": "Commit the feed if it changed",
@@ -155,21 +165,11 @@
           ]
         }
       ]
-    },
-    {
-      "name": "meeting-watch",
-      "id": 42976195773,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/42976195773",
-      "sha": "1aba184bfa4f4144e6f3f53d0ab41b47100efaed",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-11T06:59:04Z"
     }
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "bfe27bedc81c4438e246ef08cc93ac33774424e2",
+  "head": "33e72278e2c65befacd00af100b6e7cfdedda55c",
   "files_seen": 2724,
   "tree_complete": true,
   "sample_coverage": {
