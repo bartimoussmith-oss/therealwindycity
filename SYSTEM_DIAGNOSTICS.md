@@ -1,5 +1,32 @@
-# Promethean Harvest Telemetry - Wed Nov 18 02:00:36 UTC 2026
+# Promethean Harvest Telemetry - Wed Nov 18 16:52:53 UTC 2026
 ```text
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+[*] Scanned PDF detected. Engaging OCR...
+[*] Scanned PDF detected. Engaging OCR...
+[summary] {"aliases": 131, "budget_exhausted": true, "changed": 0, "endpoints_crawled": 19, "endpoints_listed": 962, "endpoints_remaining": 943, "errors": 0, "known_not_refetched": 0, "new": 43, "reachable": true, "robots_allowed": false, "root": "https://cheyenne.granicus.com/ViewPublisher.php?view_id=5", "unchanged": 18}
 [*] Scanned PDF detected. Engaging OCR...
 [*] Scanned PDF detected. Engaging OCR...
 [*] Scanned PDF detected. Engaging OCR...
@@ -8,25 +35,12 @@
 [*] Scanned PDF detected. Engaging OCR...
 [*] Scanned PDF detected. Engaging OCR...
 [*] Scanned PDF detected. Engaging OCR...
-[*] Scanned PDF detected. Engaging OCR...
-[*] Scanned PDF detected. Engaging OCR...
-[summary] {"aliases": 113, "budget_exhausted": true, "changed": 0, "endpoints_crawled": 13, "endpoints_listed": 962, "endpoints_remaining": 949, "errors": 0, "known_not_refetched": 0, "new": 40, "reachable": true, "robots_allowed": false, "root": "https://cheyenne.granicus.com/ViewPublisher.php?view_id=5", "unchanged": 6}
-[*] Scanned PDF detected. Engaging OCR...
-[*] Scanned PDF detected. Engaging OCR...
-[*] Scanned PDF detected. Engaging OCR...
-[*] Scanned PDF detected. Engaging OCR...
-[*] Scanned PDF detected. Engaging OCR...
-[*] Scanned PDF detected. Engaging OCR...
-[*] Scanned PDF detected. Engaging OCR...
-[*] Scanned PDF detected. Engaging OCR...
-[*] Scanned PDF detected. Engaging OCR...
-[*] Scanned PDF detected. Engaging OCR...
-[summary] {"aliases": 98, "budget_exhausted": true, "changed": 0, "endpoints_crawled": 10, "endpoints_listed": 863, "endpoints_remaining": 853, "errors": 0, "known_not_refetched": 0, "new": 61, "reachable": true, "robots_allowed": false, "root": "https://cheyenne.granicus.com/ViewPublisher.php?view_id=2", "unchanged": 8}
+[summary] {"aliases": 125, "budget_exhausted": true, "changed": 0, "endpoints_crawled": 7, "endpoints_listed": 863, "endpoints_remaining": 856, "errors": 0, "known_not_refetched": 0, "new": 61, "reachable": true, "robots_allowed": false, "root": "https://cheyenne.granicus.com/ViewPublisher.php?view_id=2", "unchanged": 27}
 [!] Target unreachable https://connectcheyenne.org/: HTTPSConnectionPool(host='connectcheyenne.org', port=443): Max retries exceeded with url: / (Caused by NameResolutionError("HTTPSConnection(host='connectcheyenne.org', port=443): Failed to resolve 'connectcheyenne.org' ([Errno -2] Name or service not known)"))
 [summary] {"aliases": 0, "budget_exhausted": false, "changed": 0, "endpoints_crawled": 0, "endpoints_listed": 0, "endpoints_remaining": 0, "errors": 0, "known_not_refetched": 0, "new": 0, "reachable": false, "robots_allowed": true, "root": "https://connectcheyenne.org/", "unchanged": 0}
 [sources] reached=3 failed=0
 [*] Auditing payload size for Shard Provisioning...
-[*] Provisioning Linked Shard: therealwindycity/Promethean-Archive-2026-11-18-0231
+[*] Provisioning Linked Shard: therealwindycity/Promethean-Archive-2026-11-18-1722
 Flag --confirm has been deprecated, Pass any argument to skip confirmation prompt
 gh: To use GitHub CLI in a GitHub Actions workflow, set the GH_TOKEN environment variable. Example:
   env:
@@ -45,7 +59,7 @@ hint:
 hint: 	git branch -m <name>
 hint:
 hint: Disable this message with "git config set advice.defaultBranchName false"
-Initialized empty Git repository in /home/runner/work/therealwindycity/therealwindycity/shard_staging_2026-11-18-0231/.git/
+Initialized empty Git repository in /home/runner/work/therealwindycity/therealwindycity/shard_staging_2026-11-18-1722/.git/
 Author identity unknown
 
 *** Please tell me who you are.
@@ -58,5 +72,5 @@ Run
 to set your account's default identity.
 Omit --global to set the identity only in this repository.
 
-fatal: empty ident name (for <runner@ip-10-0-140-24.us-west-2.compute.internal>) not allowed
+fatal: empty ident name (for <runner@runnervmccnms.thxx2gxdaygezazefspxpfaoed.gx.internal.cloudapp.net>) not allowed
 ```
