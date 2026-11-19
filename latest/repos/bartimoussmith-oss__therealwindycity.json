@@ -2,7 +2,7 @@
   "repository": "bartimoussmith-oss/therealwindycity",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-19T08:06:34.415Z",
+  "checked_at": "2026-11-19T20:59:12.221Z",
   "controls": [
     {
       "id": "architecture",
@@ -143,77 +143,47 @@
   "runs": [
     {
       "name": "Engineering control center",
-      "id": 44483096795,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44483096795",
-      "sha": "553e6137361cbf645c50b1d73eed0a6f0ad2e44e",
+      "id": 44613769749,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44613769749",
+      "sha": "8afafc71f7669da113782804e737ccbe2c68c4e6",
       "branch": "main",
       "status": "in_progress",
       "conclusion": null,
-      "created_at": "2026-11-19T07:53:29Z"
+      "created_at": "2026-11-19T20:56:44Z"
     },
     {
       "name": "civic-cycle",
-      "id": 44479536939,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44479536939",
-      "sha": "47f944a9f91653af730ce60e03312cc7ff04530a",
+      "id": 44610510332,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44610510332",
+      "sha": "b605256f7c78a4d9b9f5c131cf7b66e2559b51ce",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-19T07:25:44Z"
+      "created_at": "2026-11-19T20:37:09Z"
     },
     {
-      "name": "Civic harvest safety regression",
-      "id": 44459138525,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44459138525",
-      "sha": "537873d3918d42948e47f5e4c990dabb1e2a8541",
-      "branch": "repair/civic-polis-hardening-2026-11-18",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-19T04:33:27Z"
-    },
-    {
-      "name": "Scanner best-effort live and recovery",
-      "id": 44454123439,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44454123439",
-      "sha": "fe2afcd5ce277240c8cced81872a6ab7921e6ec9",
+      "name": "ai-record-pages",
+      "id": 44579039619,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44579039619",
+      "sha": "b605256f7c78a4d9b9f5c131cf7b66e2559b51ce",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-19T03:49:39Z"
-    },
-    {
-      "name": "Scanner historical backfill",
-      "id": 44453116340,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44453116340",
-      "sha": "fe2afcd5ce277240c8cced81872a6ab7921e6ec9",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-19T03:40:48Z"
-    },
-    {
-      "name": "Hourly public ecosystem diagnostics",
-      "id": 44452861880,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44452861880",
-      "sha": "fe2afcd5ce277240c8cced81872a6ab7921e6ec9",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-19T03:38:32Z"
+      "created_at": "2026-11-19T17:36:42Z"
     },
     {
       "name": "Promethean Recurring Harvest",
-      "id": 44438109345,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44438109345",
-      "sha": "8afd6949ff6cbfc920d7ad739cb767c13c0bb219",
+      "id": 44572055651,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44572055651",
+      "sha": "cbdfca273607c643551e4445cbe598dc6d53ec1c",
       "branch": "main",
       "status": "completed",
       "conclusion": "failure",
-      "created_at": "2026-11-19T01:35:55Z",
+      "created_at": "2026-11-19T16:58:28Z",
       "failed_jobs": [
         {
           "name": "harvest",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44438109345/job/135271938172",
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44572055651/job/135729500854",
           "steps": [
             {
               "name": "Provision Storage Shards",
@@ -228,24 +198,54 @@
       ]
     },
     {
-      "name": "ai-record-pages",
-      "id": 44359327835,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44359327835",
-      "sha": "e477b0dfbdc2e9d486fee2fbe52dabcb574404ba",
+      "name": "Scheduled Audit & Telemetry Sync",
+      "id": 44548236170,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44548236170",
+      "sha": "b570e1958c0e9d5a24687a31066d86bf954a2126",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-18T17:29:56Z"
+      "created_at": "2026-11-19T14:51:09Z"
     },
     {
-      "name": "Scheduled Audit & Telemetry Sync",
-      "id": 44327504293,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44327504293",
-      "sha": "7379b8b9a1947bc37dd88f84247635296b0d7a73",
+      "name": "Scanner best-effort live and recovery",
+      "id": 44537690248,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44537690248",
+      "sha": "553e6137361cbf645c50b1d73eed0a6f0ad2e44e",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-18T14:44:04Z"
+      "created_at": "2026-11-19T13:51:50Z"
+    },
+    {
+      "name": "Scanner historical backfill",
+      "id": 44534537969,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44534537969",
+      "sha": "553e6137361cbf645c50b1d73eed0a6f0ad2e44e",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-19T13:32:55Z"
+    },
+    {
+      "name": "Hourly public ecosystem diagnostics",
+      "id": 44533446570,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44533446570",
+      "sha": "553e6137361cbf645c50b1d73eed0a6f0ad2e44e",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-19T13:26:21Z"
+    },
+    {
+      "name": "Civic harvest safety regression",
+      "id": 44459138525,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44459138525",
+      "sha": "537873d3918d42948e47f5e4c990dabb1e2a8541",
+      "branch": "repair/civic-polis-hardening-2026-11-18",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-19T04:33:27Z"
     },
     {
       "name": "meeting-watch",
@@ -415,8 +415,8 @@
     }
   ],
   "gaps": [],
-  "head": "553e6137361cbf645c50b1d73eed0a6f0ad2e44e",
-  "files_seen": 11081,
+  "head": "8afafc71f7669da113782804e737ccbe2c68c4e6",
+  "files_seen": 11082,
   "tree_complete": true,
   "sample_coverage": {
     "candidates": 174,
