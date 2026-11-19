@@ -1,0 +1,29 @@
+name: Civic harvest safety regression
+on:
+  pull_request:
+    paths:
+      - tools/civic_harvest_gate.py
+      - tests/test_civic_harvest_gate.py
+      - .github/workflows/civic_harvest_safety.yml
+  push:
+    branches: [repair/civic-polis-hardening-2026-11-18]
+    paths:
+      - tools/civic_harvest_gate.py
+      - tests/test_civic_harvest_gate.py
+      - .github/workflows/civic_harvest_safety.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  offline-tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Run isolated gate regression suite
+        run: python -m unittest discover -s tests -p test_civic_harvest_gate.py -v
