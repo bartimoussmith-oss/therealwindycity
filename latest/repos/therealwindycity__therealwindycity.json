@@ -2,7 +2,7 @@
   "repository": "therealwindycity/therealwindycity",
   "archived": false,
   "fork": true,
-  "checked_at": "2026-11-19T20:59:45.538Z",
+  "checked_at": "2026-11-20T07:47:01.722Z",
   "controls": [
     {
       "id": "architecture",
@@ -121,28 +121,18 @@
   ],
   "runs": [
     {
-      "name": "civic-cycle",
-      "id": 44611088941,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44611088941",
-      "sha": "1e4f029ff8b9fed196c9390eda7f9b0cd49aa759",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-19T20:40:36Z"
-    },
-    {
       "name": "workdesk-poll",
-      "id": 44535028407,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44535028407",
-      "sha": "1e4f029ff8b9fed196c9390eda7f9b0cd49aa759",
+      "id": 44695631718,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44695631718",
+      "sha": "ceb7ab74e9abf488f1beb915bb0ec598dd34bba4",
       "branch": "main",
       "status": "completed",
       "conclusion": "failure",
-      "created_at": "2026-11-19T13:35:48Z",
+      "created_at": "2026-11-20T07:31:49Z",
       "failed_jobs": [
         {
           "name": "poll",
-          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44535028407/job/135598045564",
+          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44695631718/job/136151584240",
           "steps": [
             {
               "name": "Commit the feed if it changed",
@@ -157,6 +147,16 @@
       ]
     },
     {
+      "name": "civic-cycle",
+      "id": 44694191036,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44694191036",
+      "sha": "d2561beb17b4e33d4e83f736ea6be144a4fe8704",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-20T07:20:04Z"
+    },
+    {
       "name": "meeting-watch",
       "id": 44262321647,
       "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44262321647",
@@ -169,7 +169,7 @@
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "d2561beb17b4e33d4e83f736ea6be144a4fe8704",
+  "head": "ceb7ab74e9abf488f1beb915bb0ec598dd34bba4",
   "files_seen": 2724,
   "tree_complete": true,
   "sample_coverage": {

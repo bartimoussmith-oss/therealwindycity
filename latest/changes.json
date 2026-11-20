@@ -1,13 +1,16 @@
 {
   "newly_observed": [
+    "therealwindycity/therealwindycity:run:44695631718",
+    "bartimoussmith-oss/therealwindycity:.github/workflows/civic_harvest_safety.yml:timeout",
+    "bartimoussmith-oss/therealwindycity:.github/workflows/civic_harvest_safety.yml:concurrency",
+    "bartimoussmith-oss/therealwindycity:.github/workflows/civic_harvest_safety.yml:always_save",
+    "bartimoussmith-oss/therealwindycity:run:44654692869",
+    "therealwindycity/TheReelWindyCity:run:44655574701"
+  ],
+  "no_longer_observed": [
     "bartimoussmith-oss/therealwindycity:run:44572055651",
     "therealwindycity/therealwindycity:run:44535028407",
     "therealwindycity/TheReelWindyCity:run:44574505409"
-  ],
-  "no_longer_observed": [
-    "bartimoussmith-oss/therealwindycity:run:44438109345",
-    "therealwindycity/therealwindycity:run:44440446692",
-    "therealwindycity/TheReelWindyCity:run:44439555860"
   ],
   "warning": "Evidence policy changed to version 2: removed findings may be corrected false positives, not completed repairs."
 }
