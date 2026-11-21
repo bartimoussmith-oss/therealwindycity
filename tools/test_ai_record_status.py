@@ -15,6 +15,19 @@ class SnapshotTests(unittest.TestCase):
         self.assertIsNone(status["latest_verified_outcome"])
         self.assertIn("Not recorded", status_panel(status))
 
+    def test_future_meeting_is_scheduled_not_latest(self):
+        today = dt.date(2026, 11, 21)
+        status = snapshot_status([{"date": "2026-11-17"}, {"date": "2026-11-23"}, {"date": "2026-12-08"}],
+                                 {"meetings": 3}, today=today)
+        self.assertEqual(status["latest_indexed_meeting"], "2026-11-17")
+        self.assertEqual(status["next_scheduled_meeting"], "2026-11-23")
+        self.assertIn("not yet held", status_panel(status))
+
+    def test_only_future_meetings(self):
+        status = snapshot_status([{"date": "2026-11-23"}], {}, today=dt.date(2026, 11, 21))
+        self.assertIsNone(status["latest_indexed_meeting"])
+        self.assertEqual(status["next_scheduled_meeting"], "2026-11-23")
+
     def test_empty_dates(self):
         self.assertIsNone(snapshot_status([{"date": "unknown"}], {})["latest_indexed_meeting"])
 
