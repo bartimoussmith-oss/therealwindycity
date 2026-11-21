@@ -31,6 +31,12 @@ def validate(read, revision=None, run=None):
         assert dt.date.fromisoformat(latest_meeting) <= today, (
             f"future-dated latest_indexed_meeting: {latest_meeting} > {today.isoformat()}"
         )
+    upcoming = status.get("next_scheduled_meeting")
+    if upcoming is not None:
+        if not isinstance(upcoming, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", upcoming):
+            raise AssertionError(f"invalid next_scheduled_meeting date: {upcoming!r}")
+        if latest_meeting is not None:
+            assert upcoming > latest_meeting, "next_scheduled_meeting must follow latest_indexed_meeting"
     # Catch an explicit dated 'upcoming' label in either date/label order.
     text = re.sub(r"<[^>]+>", " ", home)
     for match in re.finditer(r"upcoming.{0,60}?(\d{4}-\d{2}-\d{2})|(\d{4}-\d{2}-\d{2}).{0,60}?upcoming", text, re.I):
