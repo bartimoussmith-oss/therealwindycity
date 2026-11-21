@@ -23,8 +23,15 @@ def validate(read, revision=None, run=None):
         assert status["build_revision"] == revision, "published revision differs"
     if run:
         assert status["build_run"] == run, "published workflow run differs"
-    # Catch an explicit dated 'upcoming' label in either date/label order.
     today = dt.datetime.now(dt.timezone.utc).date()
+    latest_meeting = status.get("latest_indexed_meeting")
+    if latest_meeting is not None:
+        if not isinstance(latest_meeting, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", latest_meeting):
+            raise AssertionError(f"invalid latest_indexed_meeting date: {latest_meeting!r}")
+        assert dt.date.fromisoformat(latest_meeting) <= today, (
+            f"future-dated latest_indexed_meeting: {latest_meeting} > {today.isoformat()}"
+        )
+    # Catch an explicit dated 'upcoming' label in either date/label order.
     text = re.sub(r"<[^>]+>", " ", home)
     for match in re.finditer(r"upcoming.{0,60}?(\d{4}-\d{2}-\d{2})|(\d{4}-\d{2}-\d{2}).{0,60}?upcoming", text, re.I):
         assert dt.date.fromisoformat(match.group(1) or match.group(2)) >= today, "past meeting labeled upcoming"

@@ -229,5 +229,24 @@ class HarvesterTests(unittest.TestCase):
         self.assertEqual(down.returncode, 1)   # an unreachable source is a failed run, not a silent success
 
 
+    def test_unreachable_root_returns_exit_code_1_and_reachable_false(self):
+        """An unreachable target must report reachable=false in [summary] and exit 1."""
+        import io
+        import json
+        from contextlib import redirect_stdout
+        from unittest.mock import patch
+        import requests
+
+        buf = io.StringIO()
+        with patch.object(harvester.requests.Session, "get", side_effect=requests.ConnectionError("DNS fail")):
+            with redirect_stdout(buf):
+                rc = harvester.main(["https://unreachable.invalid/ViewPublisher.php?view_id=1", "--delay", "0"])
+        self.assertEqual(rc, 1)
+        summary_lines = [ln for ln in buf.getvalue().splitlines() if ln.startswith("[summary] ")]
+        self.assertTrue(summary_lines, "expected [summary] JSON line")
+        payload = json.loads(summary_lines[-1][len("[summary] "):])
+        self.assertFalse(payload["reachable"])
+
+
 if __name__ == "__main__":
     unittest.main()

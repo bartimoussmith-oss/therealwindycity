@@ -6,7 +6,7 @@ on:
       granicus_url:
         description: "Target Granicus Agenda / ViewPublisher URL"
         required: true
-        default: "https://cheyenne.granicus.com/ViewPublisher.php?view_id=1"
+        default: "https://cheyenne.granicus.com/ViewPublisher.php?view_id=5"
       output_prefix:
         description: "Dossier Prefix"
         required: true
@@ -67,7 +67,7 @@ jobs:
       - name: Execute Hardened Granicus Harvester
         # Inputs reach the shell as environment variables, never by template substitution.
         env:
-          TARGET_URL: ${{ github.event.inputs.granicus_url || 'https://cheyenne.granicus.com/ViewPublisher.php?view_id=1' }}
+          TARGET_URL: ${{ github.event.inputs.granicus_url || 'https://cheyenne.granicus.com/ViewPublisher.php?view_id=5' }}
           PREFIX: ${{ github.event.inputs.output_prefix || 'Cheyenne_Auto_Audit' }}
           COMMITTEE: ${{ github.event.inputs.committee_name || 'Cheyenne Governing Body' }}
           MDATE: ${{ github.event.inputs.meeting_date || '' }}

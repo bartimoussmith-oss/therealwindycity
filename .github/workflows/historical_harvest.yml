@@ -47,7 +47,20 @@ jobs:
           failed=0
           run_source() {
             # A source that cannot be reached is reported, but must not stop the other sources.
-            if "$@" 2>&1 | tee -a SYSTEM_DIAGNOSTICS.md; then reached=$((reached + 1)); else failed=$((failed + 1)); fi
+            # Verify both command exit code and the structured [summary] JSON "reachable": true flag.
+            local tmp_log rc reachable_ok
+            tmp_log=$(mktemp)
+            set +e
+            "$@" 2>&1 | tee "$tmp_log" | tee -a SYSTEM_DIAGNOSTICS.md
+            rc=${PIPESTATUS[0]}
+            set -e
+            reachable_ok=$(python3 -c 'import json, sys; lines = [ln for ln in open(sys.argv[1], encoding="utf-8", errors="replace") if ln.startswith("[summary] ")]; print("true" if lines and json.loads(lines[-1][10:]).get("reachable") is True else "false")' "$tmp_log" 2>/dev/null || echo "false")
+            rm -f "$tmp_log"
+            if [ "$rc" -eq 0 ] && [ "$reachable_ok" = "true" ]; then
+              reached=$((reached + 1))
+            else
+              failed=$((failed + 1))
+            fi
           }
           run_source python3 scrapers/granicus_harvester.py "${HOST}/ViewPublisher.php?view_id=5" --historical
           run_source python3 scrapers/granicus_harvester.py "${HOST}/ViewPublisher.php?view_id=2" --historical
