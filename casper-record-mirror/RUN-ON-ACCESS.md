@@ -11,17 +11,22 @@ repo, follow these steps.
 
 ## Prerequisite
 
-Confirm write access to the repo, e.g.:
+Confirm write access to the repo. `gh api ... --jq '.permissions.push'` reads
+back `true` even for a read-only token (this happened), so do **not** trust it
+as the real test — attempt the actual push and treat only a successful write as
+proof of access:
 
 ```bash
-gh api /repos/bartimoussmith-oss/casper-record-mirror --jq '.permissions.push'
+gh repo view bartimoussmith-oss/casper-record-mirror   # sanity: exists
+# real test: push, and watch the output. On 403, STOP.
 ```
 
-If that returns `true`, Continue. If it returns `false`/`null`, **stop and report** —
-the user must grant the sandbox's GitHub integration write access to the repo
-(e.g. by re-granting the Arena ↔ GitHub connection or by pushing from their own
-credentials). Do not push anything to any other repo in order to work around the
-sandbox's permission boundary.
+If the push is denied (403 / "Resource not accessible by integration"), **stop
+and report the exact error to the user** — the user must grant the sandbox's
+GitHub integration write access to the repo (e.g. by re-granting the Arena ↔
+GitHub connection) or push the files from their own credentials. Do not push
+anything to any other repo in order to work around the sandbox's permission
+boundary, and do not fake a success by skipping the push.
 
 ## Pre-check: does the repo exist?
 
