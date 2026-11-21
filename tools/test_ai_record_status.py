@@ -1,3 +1,4 @@
+import datetime as dt
 import json
 import os
 import unittest
@@ -44,6 +45,29 @@ class SnapshotTests(unittest.TestCase):
         files = self.fixture()
         files["indexes/meetings.json"] = '{"count":1,"meetings":[]}'
         with self.assertRaises(AssertionError):
+            validate(files.__getitem__)
+
+    def test_future_latest_indexed_meeting_rejected(self):
+        files = self.fixture()
+        status = json.loads(files["indexes/status.json"])
+        status["latest_indexed_meeting"] = (dt.datetime.now(dt.timezone.utc).date() + dt.timedelta(days=1)).isoformat()
+        files["indexes/status.json"] = json.dumps(status)
+        with self.assertRaisesRegex(AssertionError, "future-dated latest_indexed_meeting"):
+            validate(files.__getitem__)
+
+    def test_today_latest_indexed_meeting_allowed(self):
+        files = self.fixture()
+        status = json.loads(files["indexes/status.json"])
+        status["latest_indexed_meeting"] = dt.datetime.now(dt.timezone.utc).date().isoformat()
+        files["indexes/status.json"] = json.dumps(status)
+        validate(files.__getitem__)
+
+    def test_invalid_latest_indexed_meeting_format_rejected(self):
+        files = self.fixture()
+        status = json.loads(files["indexes/status.json"])
+        status["latest_indexed_meeting"] = "not-a-date"
+        files["indexes/status.json"] = json.dumps(status)
+        with self.assertRaisesRegex(AssertionError, "invalid latest_indexed_meeting"):
             validate(files.__getitem__)
 
 
