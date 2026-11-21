@@ -2,7 +2,7 @@
   "repository": "therealwindycity/therealwindycity",
   "archived": false,
   "fork": true,
-  "checked_at": "2026-11-21T07:44:06.089Z",
+  "checked_at": "2026-11-21T19:48:43.229Z",
   "controls": [
     {
       "id": "architecture",
@@ -27,6 +27,7 @@
       "role": "Build engineer",
       "state": "signal_observed",
       "evidence": [
+        "exhibit/pipeline/package.json",
         "rag/requirements-rag.txt",
         "requirements.txt",
         "youtube-archive/requirements.txt"
@@ -40,6 +41,8 @@
       "role": "Test engineer",
       "state": "signal_observed",
       "evidence": [
+        "exhibit/tests/core.test.mjs",
+        "exhibit/tests/video-pipeline.test.mjs",
         "tests/test_engine_pipeline.py",
         "tests/test_publish_freshness.py",
         "workdesk/tests/boot.test.mjs",
@@ -104,8 +107,10 @@
     {
       "id": "dependency_lock",
       "role": "Supply-chain reviewer",
-      "state": "not_observed",
-      "evidence": [],
+      "state": "signal_observed",
+      "evidence": [
+        "exhibit/pipeline/package-lock.json"
+      ],
       "next": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
       "runtime_verified": false,
       "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
@@ -123,23 +128,44 @@
   "runs": [
     {
       "name": "civic-cycle",
-      "id": 44879221405,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44879221405",
-      "sha": "6298619d9aac875dd7545ef592d455ed0d92377b",
+      "id": 44940267110,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44940267110",
+      "sha": "72818da1486bc71ff060ee21424ca22b002e198f",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-21T07:13:20Z"
+      "created_at": "2026-11-21T19:18:57Z"
+    },
+    {
+      "name": "Deploy static content to Pages",
+      "id": 44929669918,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44929669918",
+      "sha": "72818da1486bc71ff060ee21424ca22b002e198f",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-21T17:22:14Z"
+    },
+    {
+      "name": "youtube-meeting-harvest",
+      "id": 44925458014,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44925458014",
+      "sha": "e4c1ba4b2a22c1fa390387685e31add5da24e5ba",
+      "branch": "arena/610170da-therealwindycity",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-21T16:36:00Z",
+      "failed_jobs": []
     },
     {
       "name": "workdesk-poll",
-      "id": 44851175307,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44851175307",
-      "sha": "6298619d9aac875dd7545ef592d455ed0d92377b",
+      "id": 44905899214,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44905899214",
+      "sha": "7e0c78bd587fcb4ddb8fe99d349faeb8a2ec4832",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-21T01:36:36Z"
+      "created_at": "2026-11-21T12:50:39Z"
     },
     {
       "name": "workdesk-pages",
@@ -178,11 +204,11 @@
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "eb60bd8ae4c76a83323bd265475f6733cf4f99dd",
-  "files_seen": 2850,
+  "head": "93e8dbdfcae0fea8557ef795cd31b8d56bfd615f",
+  "files_seen": 3052,
   "tree_complete": true,
   "sample_coverage": {
-    "candidates": 13,
+    "candidates": 15,
     "selected": 12
   },
   "workflow_signals": {
@@ -193,6 +219,12 @@
       "explicit_permissions": true
     },
     ".github/workflows/meeting-watch.yml": {
+      "timeout": false,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/static.yml": {
       "timeout": false,
       "concurrency": true,
       "always_save": false,

@@ -1,20 +1,15 @@
 {
   "newly_observed": [
-    "bartimoussmith-oss/promethean-civic-atlas:.github/workflows/import-workbook-exports.yml:concurrency",
-    "bartimoussmith-oss/promethean-civic-atlas:.github/workflows/import-workbook-exports.yml:always_save",
-    "bartimoussmith-oss/therealwindycity:run:44851738460",
-    "bartimoussmith-oss/therealwindycity:run:44847439395",
-    "therealwindycity/therealwindycity:run:44824711978",
-    "therealwindycity/TheReelWindyCity:run:44848876545",
-    "therealwindycity/TheReelWindyCity:run:44814744752"
+    "therealwindycity/therealwindycity:.github/workflows/static.yml:timeout",
+    "therealwindycity/therealwindycity:.github/workflows/static.yml:always_save",
+    "bartimoussmith-oss/therealwindycity:run:44921299715",
+    "therealwindycity/therealwindycity:run:44925458014",
+    "therealwindycity/TheReelWindyCity:run:44922021678"
   ],
   "no_longer_observed": [
-    "bartimoussmith-oss/promethean-civic-atlas:provenance",
-    "bartimoussmith-oss/therealwindycity:run:44774717442",
-    "bartimoussmith-oss/therealwindycity:run:43973050670",
-    "therealwindycity/therealwindycity:run:44779524048",
-    "therealwindycity/TheReelWindyCity:run:44777263795",
-    "therealwindycity/TheReelWindyCity:run:43971588480"
+    "therealwindycity/therealwindycity:dependency_lock",
+    "bartimoussmith-oss/therealwindycity:run:44847439395",
+    "therealwindycity/TheReelWindyCity:run:44848876545"
   ],
   "warning": "Evidence policy changed to version 2: removed findings may be corrected false positives, not completed repairs."
 }
