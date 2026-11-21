@@ -2,7 +2,7 @@
   "repository": "bartimoussmith-oss/therealwindycity",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-20T20:45:39.170Z",
+  "checked_at": "2026-11-21T07:43:32.826Z",
   "controls": [
     {
       "id": "architecture",
@@ -143,47 +143,103 @@
   "runs": [
     {
       "name": "Engineering control center",
-      "id": 44813754091,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44813754091",
-      "sha": "18be03e234a04acf286038f321df1a901bc17bd4",
+      "id": 44881343363,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44881343363",
+      "sha": "d7e7157fc0c497debc349845c45defe09faae46b",
       "branch": "main",
       "status": "in_progress",
       "conclusion": null,
-      "created_at": "2026-11-20T20:42:19Z"
+      "created_at": "2026-11-21T07:40:40Z"
     },
     {
       "name": "civic-cycle",
-      "id": 44810405344,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44810405344",
-      "sha": "bfd5a4454855e1f1cebeecf67aaf6f673964b407",
+      "id": 44878793670,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44878793670",
+      "sha": "e8db63361500398dd2734e44a675008d0dcaeb3a",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-20T20:20:07Z"
+      "created_at": "2026-11-21T07:08:00Z"
+    },
+    {
+      "name": "Scanner best-effort live and recovery",
+      "id": 44857826775,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44857826775",
+      "sha": "eced13bcf15f05698b76d13eaba3164c1596515d",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-21T02:48:03Z"
+    },
+    {
+      "name": "Scanner historical backfill",
+      "id": 44856626613,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44856626613",
+      "sha": "eced13bcf15f05698b76d13eaba3164c1596515d",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-21T02:34:21Z"
+    },
+    {
+      "name": "Hourly public ecosystem diagnostics",
+      "id": 44856405398,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44856405398",
+      "sha": "eced13bcf15f05698b76d13eaba3164c1596515d",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-21T02:31:55Z"
     },
     {
       "name": "ai-record-pages",
-      "id": 44781177120,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44781177120",
-      "sha": "bfd5a4454855e1f1cebeecf67aaf6f673964b407",
+      "id": 44856328394,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44856328394",
+      "sha": "eced13bcf15f05698b76d13eaba3164c1596515d",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-20T17:13:19Z"
+      "created_at": "2026-11-21T02:31:05Z"
     },
     {
-      "name": "Promethean Recurring Harvest",
-      "id": 44774717442,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44774717442",
-      "sha": "38b9e5d36fdd913f00ae518b5384b1a31945fbd2",
+      "name": "Promethean Autonomous Granicus Harvester",
+      "id": 44851738460,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44851738460",
+      "sha": "d0a5f28d9eb806c108c429cf359cf2515bffd02b",
       "branch": "main",
       "status": "completed",
       "conclusion": "failure",
-      "created_at": "2026-11-20T16:34:21Z",
+      "created_at": "2026-11-21T01:42:20Z",
+      "failed_jobs": [
+        {
+          "name": "harvest-and-index",
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44851738460/job/136684422238",
+          "steps": [
+            {
+              "name": "Commit & Push Updated Evidence Archive",
+              "number": 9
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Promethean Recurring Harvest",
+      "id": 44847439395,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44847439395",
+      "sha": "91962c70149dfc0a6a566411ea157891116eb3cf",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-21T01:00:02Z",
       "failed_jobs": [
         {
           "name": "harvest",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44774717442/job/136421335057",
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44847439395/job/136670524836",
           "steps": [
             {
               "name": "Provision Storage Shards",
@@ -208,36 +264,6 @@
       "created_at": "2026-11-20T14:32:53Z"
     },
     {
-      "name": "Scanner best-effort live and recovery",
-      "id": 44745434849,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44745434849",
-      "sha": "d616204a7c79e601fabf91a19236f7c9b5456639",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-20T13:34:05Z"
-    },
-    {
-      "name": "Scanner historical backfill",
-      "id": 44742502385,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44742502385",
-      "sha": "d616204a7c79e601fabf91a19236f7c9b5456639",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-20T13:14:01Z"
-    },
-    {
-      "name": "Hourly public ecosystem diagnostics",
-      "id": 44741554175,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44741554175",
-      "sha": "d616204a7c79e601fabf91a19236f7c9b5456639",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-20T13:07:30Z"
-    },
-    {
       "name": "Civic harvest safety regression",
       "id": 44626244418,
       "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/44626244418",
@@ -258,32 +284,6 @@
       "created_at": "2026-11-18T07:52:25Z"
     },
     {
-      "name": "Promethean Autonomous Granicus Harvester",
-      "id": 43973050670,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/43973050670",
-      "sha": "485ca92996298a398dd78aad22cdf87df780845a",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "failure",
-      "created_at": "2026-11-16T22:45:17Z",
-      "failed_jobs": [
-        {
-          "name": "harvest-and-index",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/43973050670/job/133669897398",
-          "steps": [
-            {
-              "name": "Execute Hardened Granicus Harvester",
-              "number": 8
-            }
-          ],
-          "log_status": "bounded_read",
-          "error_signals": [
-            "Nonzero command exit"
-          ]
-        }
-      ]
-    },
-    {
       "name": "wyoming-verify",
       "id": 43956863244,
       "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/43956863244",
@@ -295,15 +295,6 @@
     }
   ],
   "pull_requests": [
-    {
-      "number": 39,
-      "title": "fix: update _site/indexes/status.json build_revision and build_run to match checkpoint scanner live run 44669580422",
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/pull/39",
-      "head": "b2146c04bd432e68911ee3778a20f0d6d71a9291",
-      "updated_at": "2026-11-20T03:55:46Z",
-      "draft": true,
-      "mergeability": "unverified"
-    },
     {
       "number": 37,
       "title": "Fix archive shard authentication, backup integrity, and verified publication",
@@ -414,8 +405,8 @@
     }
   ],
   "gaps": [],
-  "head": "18be03e234a04acf286038f321df1a901bc17bd4",
-  "files_seen": 11108,
+  "head": "d7e7157fc0c497debc349845c45defe09faae46b",
+  "files_seen": 11135,
   "tree_complete": true,
   "sample_coverage": {
     "candidates": 175,

@@ -1,13 +1,20 @@
 {
   "newly_observed": [
-    "bartimoussmith-oss/therealwindycity:run:44774717442",
-    "therealwindycity/therealwindycity:run:44779524048",
-    "therealwindycity/TheReelWindyCity:run:44777263795"
+    "bartimoussmith-oss/promethean-civic-atlas:.github/workflows/import-workbook-exports.yml:concurrency",
+    "bartimoussmith-oss/promethean-civic-atlas:.github/workflows/import-workbook-exports.yml:always_save",
+    "bartimoussmith-oss/therealwindycity:run:44851738460",
+    "bartimoussmith-oss/therealwindycity:run:44847439395",
+    "therealwindycity/therealwindycity:run:44824711978",
+    "therealwindycity/TheReelWindyCity:run:44848876545",
+    "therealwindycity/TheReelWindyCity:run:44814744752"
   ],
   "no_longer_observed": [
-    "therealwindycity/therealwindycity:run:44695631718",
-    "bartimoussmith-oss/therealwindycity:run:44654692869",
-    "therealwindycity/TheReelWindyCity:run:44655574701"
+    "bartimoussmith-oss/promethean-civic-atlas:provenance",
+    "bartimoussmith-oss/therealwindycity:run:44774717442",
+    "bartimoussmith-oss/therealwindycity:run:43973050670",
+    "therealwindycity/therealwindycity:run:44779524048",
+    "therealwindycity/TheReelWindyCity:run:44777263795",
+    "therealwindycity/TheReelWindyCity:run:43971588480"
   ],
   "warning": "Evidence policy changed to version 2: removed findings may be corrected false positives, not completed repairs."
 }

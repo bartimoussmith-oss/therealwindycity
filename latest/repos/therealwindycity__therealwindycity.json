@@ -2,7 +2,7 @@
   "repository": "therealwindycity/therealwindycity",
   "archived": false,
   "fork": true,
-  "checked_at": "2026-11-20T20:46:12.271Z",
+  "checked_at": "2026-11-21T07:44:06.089Z",
   "controls": [
     {
       "id": "architecture",
@@ -40,6 +40,7 @@
       "role": "Test engineer",
       "state": "signal_observed",
       "evidence": [
+        "tests/test_engine_pipeline.py",
         "tests/test_publish_freshness.py",
         "workdesk/tests/boot.test.mjs",
         "workdesk/tests/core.test.mjs"
@@ -122,37 +123,45 @@
   "runs": [
     {
       "name": "civic-cycle",
-      "id": 44811071918,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44811071918",
-      "sha": "ceb7ab74e9abf488f1beb915bb0ec598dd34bba4",
+      "id": 44879221405,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44879221405",
+      "sha": "6298619d9aac875dd7545ef592d455ed0d92377b",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-20T20:24:24Z"
+      "created_at": "2026-11-21T07:13:20Z"
     },
     {
       "name": "workdesk-poll",
-      "id": 44779524048,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44779524048",
-      "sha": "ceb7ab74e9abf488f1beb915bb0ec598dd34bba4",
+      "id": 44851175307,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44851175307",
+      "sha": "6298619d9aac875dd7545ef592d455ed0d92377b",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-21T01:36:36Z"
+    },
+    {
+      "name": "workdesk-pages",
+      "id": 44824711978,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44824711978",
+      "sha": "6298619d9aac875dd7545ef592d455ed0d92377b",
       "branch": "main",
       "status": "completed",
       "conclusion": "failure",
-      "created_at": "2026-11-20T17:03:28Z",
+      "created_at": "2026-11-20T21:56:37Z",
       "failed_jobs": [
         {
-          "name": "poll",
-          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44779524048/job/136438177683",
+          "name": "deploy",
+          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44824711978/job/136594400218",
           "steps": [
             {
-              "name": "Commit the feed if it changed",
-              "number": 7
+              "name": "Deploy to GitHub Pages",
+              "number": 2
             }
           ],
           "log_status": "bounded_read",
-          "error_signals": [
-            "Nonzero command exit"
-          ]
+          "error_signals": []
         }
       ]
     },
@@ -169,8 +178,8 @@
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "4d072a3c63dabe22083ffae74bb150a004628c9c",
-  "files_seen": 2724,
+  "head": "eb60bd8ae4c76a83323bd265475f6733cf4f99dd",
+  "files_seen": 2850,
   "tree_complete": true,
   "sample_coverage": {
     "candidates": 13,
