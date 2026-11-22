@@ -2,7 +2,7 @@
   "repository": "therealwindycity/The-Real-Windy-City-",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-22T07:28:09.454Z",
+  "checked_at": "2026-11-22T19:59:56.624Z",
   "controls": [
     {
       "id": "architecture",
@@ -127,13 +127,13 @@
   "runs": [
     {
       "name": "Deploy site",
-      "id": 44926399651,
-      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/44926399651",
+      "id": 45047722887,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/45047722887",
       "sha": "1685218035435b69b2589bb18b36a0018d2b703a",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-21T16:46:32Z"
+      "created_at": "2026-11-22T17:08:14Z"
     },
     {
       "name": "Fetch meeting transcripts",
@@ -360,16 +360,6 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-09-25T02:14:02Z"
-    },
-    {
-      "name": "civic-cycle",
-      "id": 36075481979,
-      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/36075481979",
-      "sha": "7dc9814ede5df1b6db38424fe4051d9abb7e96a6",
-      "branch": "arena/01a0d566-the-real-windy-city",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-09-25T00:00:21Z"
     }
   ],
   "pull_requests": [
