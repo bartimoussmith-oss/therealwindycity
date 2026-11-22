@@ -1,11 +1,22 @@
 # Engineering control center
 
-Updated 2026-11-21T19:48:56.151Z. Evidence policy: version 2.
-Public repositories: 20. Declared connections: 48.
+Updated 2026-11-22T07:28:30.100Z. Evidence policy: version 2.
+Public repositories: 21. Declared connections: 49.
 Current video proof lane: success. Not a deployment result.
 
 ## Repair priorities
 
+- P2 | bartimoussmith-oss/casper-record-mirror | Architect: Map producers, consumers, storage, deployment targets and owners.
+- P2 | bartimoussmith-oss/casper-record-mirror | Agent coordinator: Provide tested commands, current status, constraints and acceptance criteria.
+- P2 | bartimoussmith-oss/casper-record-mirror | Build engineer: Prove installation from a clean checkout with stated tool versions.
+- P2 | bartimoussmith-oss/casper-record-mirror | Test engineer: Add offline tests and a real producer-to-published-output test.
+- P2 | bartimoussmith-oss/casper-record-mirror | Data engineer: Validate schemas, stable IDs and compatibility between producers and consumers.
+- P2 | bartimoussmith-oss/casper-record-mirror | Recovery engineer: Test isolated backup restoration and reversible releases.
+- P2 | bartimoussmith-oss/casper-record-mirror | Release engineer: Tie live output to its commit, smoke test and rollback instructions.
+- P2 | bartimoussmith-oss/casper-record-mirror | Supply-chain reviewer: Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.
+- P2 | bartimoussmith-oss/casper-record-mirror | Rights reviewer: Separate code licensing from source-data and media reuse rights.
+- P2 | bartimoussmith-oss/casper-record-mirror | Reliability/security reviewer: Review missing concurrency signal; inspect equivalent controls before editing.
+- P2 | bartimoussmith-oss/casper-record-mirror | Reliability/security reviewer: Review missing always_save signal; inspect equivalent controls before editing.
 - P2 | bartimoussmith-oss/cheyenne-laramie-analysis-001 | Architect: Map producers, consumers, storage, deployment targets and owners.
 - P2 | bartimoussmith-oss/cheyenne-laramie-analysis-001 | Agent coordinator: Provide tested commands, current status, constraints and acceptance criteria.
 - P2 | bartimoussmith-oss/cheyenne-laramie-analysis-001 | Build engineer: Prove installation from a clean checkout with stated tool versions.
@@ -25,17 +36,6 @@ Current video proof lane: success. Not a deployment result.
 - P2 | bartimoussmith-oss/cheyenne-laramie-archive | Release engineer: Tie live output to its commit, smoke test and rollback instructions.
 - P2 | bartimoussmith-oss/cheyenne-laramie-archive | Supply-chain reviewer: Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.
 - P2 | bartimoussmith-oss/cheyenne-laramie-archive | Rights reviewer: Separate code licensing from source-data and media reuse rights.
-- P2 | bartimoussmith-oss/cheyenne-laramie-archive | Reliability/security reviewer: Review missing always_save signal; inspect equivalent controls before editing.
-- P2 | bartimoussmith-oss/civic-newsroom | Architect: Map producers, consumers, storage, deployment targets and owners.
-- P2 | bartimoussmith-oss/civic-newsroom | Build engineer: Prove installation from a clean checkout with stated tool versions.
-- P2 | bartimoussmith-oss/civic-newsroom | Data engineer: Validate schemas, stable IDs and compatibility between producers and consumers.
-- P2 | bartimoussmith-oss/civic-newsroom | Evidence reviewer: Retain source URLs, capture dates, hashes, original records and limitations.
-- P2 | bartimoussmith-oss/civic-newsroom | Reliability engineer: Prove interrupted runs resume without lost records or duplicates.
-- P2 | bartimoussmith-oss/civic-newsroom | Recovery engineer: Test isolated backup restoration and reversible releases.
-- P2 | bartimoussmith-oss/civic-newsroom | Release engineer: Tie live output to its commit, smoke test and rollback instructions.
-- P2 | bartimoussmith-oss/civic-newsroom | Supply-chain reviewer: Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.
-- P2 | bartimoussmith-oss/civic-newsroom | Rights reviewer: Separate code licensing from source-data and media reuse rights.
-- P2 | bartimoussmith-oss/civic-newsroom | Reliability/security reviewer: Review missing concurrency signal; inspect equivalent controls before editing.
 
 ## Verification still required
 

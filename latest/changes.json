@@ -1,15 +1,22 @@
 {
   "newly_observed": [
-    "therealwindycity/therealwindycity:.github/workflows/static.yml:timeout",
-    "therealwindycity/therealwindycity:.github/workflows/static.yml:always_save",
-    "bartimoussmith-oss/therealwindycity:run:44921299715",
-    "therealwindycity/therealwindycity:run:44925458014",
-    "therealwindycity/TheReelWindyCity:run:44922021678"
+    "bartimoussmith-oss/casper-record-mirror:architecture",
+    "bartimoussmith-oss/casper-record-mirror:agent_handoff",
+    "bartimoussmith-oss/casper-record-mirror:setup",
+    "bartimoussmith-oss/casper-record-mirror:tests",
+    "bartimoussmith-oss/casper-record-mirror:data_contract",
+    "bartimoussmith-oss/casper-record-mirror:recovery",
+    "bartimoussmith-oss/casper-record-mirror:deployment",
+    "bartimoussmith-oss/casper-record-mirror:dependency_lock",
+    "bartimoussmith-oss/casper-record-mirror:rights",
+    "bartimoussmith-oss/casper-record-mirror:.github/workflows/collect.yml:concurrency",
+    "bartimoussmith-oss/casper-record-mirror:.github/workflows/collect.yml:always_save",
+    "bartimoussmith-oss/therealwindycity:run:44964469427",
+    "therealwindycity/TheReelWindyCity:run:44965348882"
   ],
   "no_longer_observed": [
-    "therealwindycity/therealwindycity:dependency_lock",
-    "bartimoussmith-oss/therealwindycity:run:44847439395",
-    "therealwindycity/TheReelWindyCity:run:44848876545"
+    "bartimoussmith-oss/therealwindycity:run:44921299715",
+    "therealwindycity/TheReelWindyCity:run:44922021678"
   ],
   "warning": "Evidence policy changed to version 2: removed findings may be corrected false positives, not completed repairs."
 }
