@@ -1,0 +1,39 @@
+name: Archive Casper WY documents
+
+# Manual, resumable only. The sitemap gives the full enumeration; a run
+# walks it politely and commits whatever it downloaded. Re-dispatch to
+# pick up new documents published since the last run.
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Download documents
+        run: python3 collect.py --delay 3.0
+
+      - name: Commit the archive
+        run: |
+          set -e
+          git config user.name "casper-record-mirror[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add documents manifest.json MANIFEST.md
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Nothing to add — archive is current."
+            exit 0
+          fi
+          git commit -m "Archive casperwy.gov documents (${{ github.run_number }})"
+          git push
