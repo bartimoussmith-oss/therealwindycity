@@ -1,12 +1,15 @@
 {
   "newly_observed": [
-    "bartimoussmith-oss/therealwindycity:run:45251740970",
-    "therealwindycity/TheReelWindyCity:run:45254436229"
+    "bartimoussmith-oss/therealwindycity:run:45327116590",
+    "bartimoussmith-oss/therealwindycity:run:45298670877",
+    "therealwindycity/TheReelWindyCity:run:45328163554",
+    "therealwindycity/TheReelWindyCity:run:45297188154"
   ],
   "no_longer_observed": [
-    "bartimoussmith-oss/promethean-civic-atlas:rights",
-    "bartimoussmith-oss/therealwindycity:run:45089518215",
-    "therealwindycity/TheReelWindyCity:run:45090004270"
+    "bartimoussmith-oss/therealwindycity:run:45251740970",
+    "bartimoussmith-oss/therealwindycity:run:44851738460",
+    "therealwindycity/TheReelWindyCity:run:45254436229",
+    "therealwindycity/TheReelWindyCity:run:44814744752"
   ],
   "warning": "Evidence policy changed to version 2: removed findings may be corrected false positives, not completed repairs."
 }
