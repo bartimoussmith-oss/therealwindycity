@@ -2,7 +2,7 @@
   "repository": "therealwindycity/cheyenne-archives-2022",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-24T10:27:03.333Z",
+  "checked_at": "2026-11-24T22:47:22.165Z",
   "controls": [
     {
       "id": "architecture",
@@ -25,7 +25,7 @@
     {
       "id": "setup",
       "role": "Build engineer",
-      "state": "not_applicable_to_detected_role",
+      "state": "not_observed",
       "evidence": [],
       "next": "Prove installation from a clean checkout with stated tool versions.",
       "runtime_verified": false,
@@ -34,7 +34,7 @@
     {
       "id": "tests",
       "role": "Test engineer",
-      "state": "not_applicable_to_detected_role",
+      "state": "not_observed",
       "evidence": [],
       "next": "Add offline tests and a real producer-to-published-output test.",
       "runtime_verified": false,
@@ -43,7 +43,7 @@
     {
       "id": "data_contract",
       "role": "Data engineer",
-      "state": "not_applicable_to_detected_role",
+      "state": "not_observed",
       "evidence": [],
       "next": "Validate schemas, stable IDs and compatibility between producers and consumers.",
       "runtime_verified": false,
@@ -52,8 +52,12 @@
     {
       "id": "provenance",
       "role": "Evidence reviewer",
-      "state": "not_observed",
-      "evidence": [],
+      "state": "signal_observed",
+      "evidence": [
+        "speaker-videos/2022-12-20_Finance_Committee_12-19-22/manifest.json",
+        "speaker-videos/2022-12-27_City_Counci_12-27-22/manifest.json",
+        "speaker-videos/2022-12-28_Committee_of_the_Whole_12-27-22_Postponed_from_12/manifest.json"
+      ],
       "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
       "runtime_verified": false,
       "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
@@ -61,8 +65,13 @@
     {
       "id": "checkpoint",
       "role": "Reliability engineer",
-      "state": "not_applicable_to_detected_role",
-      "evidence": [],
+      "state": "signal_observed",
+      "evidence": [
+        "speaker-videos/2022-12-20_Finance_Committee_12-19-22/manifest.json",
+        "speaker-videos/2022-12-27_City_Counci_12-27-22/manifest.json",
+        "speaker-videos/2022-12-28_Committee_of_the_Whole_12-27-22_Postponed_from_12/manifest.json",
+        "speaker-videos/state.json"
+      ],
       "next": "Prove interrupted runs resume without lost records or duplicates.",
       "runtime_verified": false,
       "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
@@ -70,7 +79,7 @@
     {
       "id": "recovery",
       "role": "Recovery engineer",
-      "state": "not_applicable_to_detected_role",
+      "state": "not_observed",
       "evidence": [],
       "next": "Test isolated backup restoration and reversible releases.",
       "runtime_verified": false,
@@ -79,7 +88,7 @@
     {
       "id": "deployment",
       "role": "Release engineer",
-      "state": "not_applicable_to_detected_role",
+      "state": "not_observed",
       "evidence": [],
       "next": "Tie live output to its commit, smoke test and rollback instructions.",
       "runtime_verified": false,
@@ -88,7 +97,7 @@
     {
       "id": "dependency_lock",
       "role": "Supply-chain reviewer",
-      "state": "not_applicable_to_detected_role",
+      "state": "not_observed",
       "evidence": [],
       "next": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
       "runtime_verified": false,
@@ -106,15 +115,33 @@
       "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     }
   ],
-  "runs": [],
+  "runs": [
+    {
+      "name": "Cheyenne Speaker Video Splitter (2022-2022)",
+      "id": 45405988931,
+      "url": "https://github.com/therealwindycity/cheyenne-archives-2022/actions/runs/45405988931",
+      "sha": "22e710991e073923876de42992b25d0e5cd9c866",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-24T13:41:11Z"
+    }
+  ],
   "pull_requests": [],
   "gaps": [],
-  "head": "e9ded74d71fde778b9c3d7e20ff741f126cb8024",
-  "files_seen": 637,
+  "head": "a415d067f54bee0d2c9bfacd8d3f8be1754aad48",
+  "files_seen": 649,
   "tree_complete": true,
   "sample_coverage": {
-    "candidates": 1,
-    "selected": 1
+    "candidates": 5,
+    "selected": 5
   },
-  "workflow_signals": {}
+  "workflow_signals": {
+    ".github/workflows/speaker-video-archive.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    }
+  }
 }

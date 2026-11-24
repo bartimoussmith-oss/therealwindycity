@@ -1,7 +1,7 @@
 {
   "schema": 2,
-  "started_at": "2026-11-24T10:26:22.974Z",
-  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45374378602",
+  "started_at": "2026-11-24T22:46:38.435Z",
+  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45503686988",
   "video_proof_result": "success",
   "repositories": [
     {
@@ -77,6 +77,10 @@
       "report": "latest/repos/therealwindycity__cheyenne-archives-2025-2026.json"
     },
     {
+      "repository": "therealwindycity/real-windy-city-tv",
+      "report": "latest/repos/therealwindycity__real-windy-city-tv.json"
+    },
+    {
       "repository": "therealwindycity/The-Real-Windy-City-",
       "report": "latest/repos/therealwindycity__The-Real-Windy-City-.json"
     },
@@ -129,266 +133,273 @@
       "from": "bartimoussmith-oss/therealwindycity",
       "to": "therealwindycity/TheReelWindyCity",
       "path": ".github/workflows/ai-record-pages.yml",
-      "sha": "b6cdfb9a112c9b9ad87b90cdd1d5db53b1009f8e",
+      "sha": "405b75f5e30fe15502fac0744ad0ee4853b9cef4",
       "status": "declared_reference_only"
     },
     {
       "from": "bartimoussmith-oss/therealwindycity",
       "to": "therealwindycity/The-Real-Windy-City-",
       "path": ".github/workflows/ai-record-pages.yml",
-      "sha": "b6cdfb9a112c9b9ad87b90cdd1d5db53b1009f8e",
+      "sha": "405b75f5e30fe15502fac0744ad0ee4853b9cef4",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2008-2013",
       "to": "therealwindycity/The-Real-Windy-City-",
       "path": "README.md",
-      "sha": "e196265f60e6387dea6302783323403f5cc7dec0",
+      "sha": "00f3854e3c4c674a3b82c4132ea73f8556541b6b",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2008-2013",
       "to": "therealwindycity/cheyenne-archives-2014-2017",
       "path": "README.md",
-      "sha": "e196265f60e6387dea6302783323403f5cc7dec0",
+      "sha": "00f3854e3c4c674a3b82c4132ea73f8556541b6b",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2008-2013",
       "to": "therealwindycity/cheyenne-archives-2018-2021",
       "path": "README.md",
-      "sha": "e196265f60e6387dea6302783323403f5cc7dec0",
+      "sha": "00f3854e3c4c674a3b82c4132ea73f8556541b6b",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2008-2013",
       "to": "therealwindycity/cheyenne-archives-2022",
       "path": "README.md",
-      "sha": "e196265f60e6387dea6302783323403f5cc7dec0",
+      "sha": "00f3854e3c4c674a3b82c4132ea73f8556541b6b",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2008-2013",
       "to": "therealwindycity/cheyenne-archives-2023-2024",
       "path": "README.md",
-      "sha": "e196265f60e6387dea6302783323403f5cc7dec0",
+      "sha": "00f3854e3c4c674a3b82c4132ea73f8556541b6b",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2008-2013",
       "to": "therealwindycity/cheyenne-archives-2025-2026",
       "path": "README.md",
-      "sha": "e196265f60e6387dea6302783323403f5cc7dec0",
+      "sha": "00f3854e3c4c674a3b82c4132ea73f8556541b6b",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2014-2017",
       "to": "therealwindycity/The-Real-Windy-City-",
       "path": "README.md",
-      "sha": "e23950b20292b2cccfa9fa5453c7f6bcfe5a14b2",
+      "sha": "c0af1f68906d27581a630842d4b84025b1396270",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2014-2017",
       "to": "therealwindycity/cheyenne-archives-2008-2013",
       "path": "README.md",
-      "sha": "e23950b20292b2cccfa9fa5453c7f6bcfe5a14b2",
+      "sha": "c0af1f68906d27581a630842d4b84025b1396270",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2014-2017",
       "to": "therealwindycity/cheyenne-archives-2018-2021",
       "path": "README.md",
-      "sha": "e23950b20292b2cccfa9fa5453c7f6bcfe5a14b2",
+      "sha": "c0af1f68906d27581a630842d4b84025b1396270",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2014-2017",
       "to": "therealwindycity/cheyenne-archives-2022",
       "path": "README.md",
-      "sha": "e23950b20292b2cccfa9fa5453c7f6bcfe5a14b2",
+      "sha": "c0af1f68906d27581a630842d4b84025b1396270",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2014-2017",
       "to": "therealwindycity/cheyenne-archives-2023-2024",
       "path": "README.md",
-      "sha": "e23950b20292b2cccfa9fa5453c7f6bcfe5a14b2",
+      "sha": "c0af1f68906d27581a630842d4b84025b1396270",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2014-2017",
       "to": "therealwindycity/cheyenne-archives-2025-2026",
       "path": "README.md",
-      "sha": "e23950b20292b2cccfa9fa5453c7f6bcfe5a14b2",
+      "sha": "c0af1f68906d27581a630842d4b84025b1396270",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2018-2021",
       "to": "therealwindycity/The-Real-Windy-City-",
       "path": "README.md",
-      "sha": "448e04248ea0ce0df4d9599f9740aa3468c7bde3",
+      "sha": "3fc2dc5bc245540af9d1ff08ea8caa4c2f7b57de",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2018-2021",
       "to": "therealwindycity/cheyenne-archives-2008-2013",
       "path": "README.md",
-      "sha": "448e04248ea0ce0df4d9599f9740aa3468c7bde3",
+      "sha": "3fc2dc5bc245540af9d1ff08ea8caa4c2f7b57de",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2018-2021",
       "to": "therealwindycity/cheyenne-archives-2014-2017",
       "path": "README.md",
-      "sha": "448e04248ea0ce0df4d9599f9740aa3468c7bde3",
+      "sha": "3fc2dc5bc245540af9d1ff08ea8caa4c2f7b57de",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2018-2021",
       "to": "therealwindycity/cheyenne-archives-2022",
       "path": "README.md",
-      "sha": "448e04248ea0ce0df4d9599f9740aa3468c7bde3",
+      "sha": "3fc2dc5bc245540af9d1ff08ea8caa4c2f7b57de",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2018-2021",
       "to": "therealwindycity/cheyenne-archives-2023-2024",
       "path": "README.md",
-      "sha": "448e04248ea0ce0df4d9599f9740aa3468c7bde3",
+      "sha": "3fc2dc5bc245540af9d1ff08ea8caa4c2f7b57de",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2018-2021",
       "to": "therealwindycity/cheyenne-archives-2025-2026",
       "path": "README.md",
-      "sha": "448e04248ea0ce0df4d9599f9740aa3468c7bde3",
+      "sha": "3fc2dc5bc245540af9d1ff08ea8caa4c2f7b57de",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2022",
       "to": "therealwindycity/The-Real-Windy-City-",
       "path": "README.md",
-      "sha": "e9ded74d71fde778b9c3d7e20ff741f126cb8024",
+      "sha": "a415d067f54bee0d2c9bfacd8d3f8be1754aad48",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2022",
       "to": "therealwindycity/cheyenne-archives-2008-2013",
       "path": "README.md",
-      "sha": "e9ded74d71fde778b9c3d7e20ff741f126cb8024",
+      "sha": "a415d067f54bee0d2c9bfacd8d3f8be1754aad48",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2022",
       "to": "therealwindycity/cheyenne-archives-2014-2017",
       "path": "README.md",
-      "sha": "e9ded74d71fde778b9c3d7e20ff741f126cb8024",
+      "sha": "a415d067f54bee0d2c9bfacd8d3f8be1754aad48",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2022",
       "to": "therealwindycity/cheyenne-archives-2018-2021",
       "path": "README.md",
-      "sha": "e9ded74d71fde778b9c3d7e20ff741f126cb8024",
+      "sha": "a415d067f54bee0d2c9bfacd8d3f8be1754aad48",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2022",
       "to": "therealwindycity/cheyenne-archives-2023-2024",
       "path": "README.md",
-      "sha": "e9ded74d71fde778b9c3d7e20ff741f126cb8024",
+      "sha": "a415d067f54bee0d2c9bfacd8d3f8be1754aad48",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2022",
       "to": "therealwindycity/cheyenne-archives-2025-2026",
       "path": "README.md",
-      "sha": "e9ded74d71fde778b9c3d7e20ff741f126cb8024",
+      "sha": "a415d067f54bee0d2c9bfacd8d3f8be1754aad48",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2023-2024",
       "to": "therealwindycity/The-Real-Windy-City-",
       "path": "README.md",
-      "sha": "6ccc8667d38e5d6838d49d976fe9e271c2ec4011",
+      "sha": "dc1c2f4c13140e86e3fb5326d4077fb409ae29b4",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2023-2024",
       "to": "therealwindycity/cheyenne-archives-2008-2013",
       "path": "README.md",
-      "sha": "6ccc8667d38e5d6838d49d976fe9e271c2ec4011",
+      "sha": "dc1c2f4c13140e86e3fb5326d4077fb409ae29b4",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2023-2024",
       "to": "therealwindycity/cheyenne-archives-2014-2017",
       "path": "README.md",
-      "sha": "6ccc8667d38e5d6838d49d976fe9e271c2ec4011",
+      "sha": "dc1c2f4c13140e86e3fb5326d4077fb409ae29b4",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2023-2024",
       "to": "therealwindycity/cheyenne-archives-2018-2021",
       "path": "README.md",
-      "sha": "6ccc8667d38e5d6838d49d976fe9e271c2ec4011",
+      "sha": "dc1c2f4c13140e86e3fb5326d4077fb409ae29b4",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2023-2024",
       "to": "therealwindycity/cheyenne-archives-2022",
       "path": "README.md",
-      "sha": "6ccc8667d38e5d6838d49d976fe9e271c2ec4011",
+      "sha": "dc1c2f4c13140e86e3fb5326d4077fb409ae29b4",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2023-2024",
       "to": "therealwindycity/cheyenne-archives-2025-2026",
       "path": "README.md",
-      "sha": "6ccc8667d38e5d6838d49d976fe9e271c2ec4011",
+      "sha": "dc1c2f4c13140e86e3fb5326d4077fb409ae29b4",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2025-2026",
       "to": "therealwindycity/The-Real-Windy-City-",
       "path": "README.md",
-      "sha": "266b7a49650dd801eeef031d42c6b34171ade9df",
+      "sha": "aba69abbd2e729d57853b7f6abf2135d22ad5bae",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2025-2026",
       "to": "therealwindycity/cheyenne-archives-2008-2013",
       "path": "README.md",
-      "sha": "266b7a49650dd801eeef031d42c6b34171ade9df",
+      "sha": "aba69abbd2e729d57853b7f6abf2135d22ad5bae",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2025-2026",
       "to": "therealwindycity/cheyenne-archives-2014-2017",
       "path": "README.md",
-      "sha": "266b7a49650dd801eeef031d42c6b34171ade9df",
+      "sha": "aba69abbd2e729d57853b7f6abf2135d22ad5bae",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2025-2026",
       "to": "therealwindycity/cheyenne-archives-2018-2021",
       "path": "README.md",
-      "sha": "266b7a49650dd801eeef031d42c6b34171ade9df",
+      "sha": "aba69abbd2e729d57853b7f6abf2135d22ad5bae",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2025-2026",
       "to": "therealwindycity/cheyenne-archives-2022",
       "path": "README.md",
-      "sha": "266b7a49650dd801eeef031d42c6b34171ade9df",
+      "sha": "aba69abbd2e729d57853b7f6abf2135d22ad5bae",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2025-2026",
       "to": "therealwindycity/cheyenne-archives-2023-2024",
       "path": "README.md",
-      "sha": "266b7a49650dd801eeef031d42c6b34171ade9df",
+      "sha": "aba69abbd2e729d57853b7f6abf2135d22ad5bae",
+      "status": "declared_reference_only"
+    },
+    {
+      "from": "therealwindycity/real-windy-city-tv",
+      "to": "bartimoussmith-oss/therealwindycity",
+      "path": "provenance/provenance-manifest.json",
+      "sha": "8245dc516d0b34230c8524eb231ff0ead070ea51",
       "status": "declared_reference_only"
     },
     {
@@ -464,11 +475,11 @@
       "task": "Check claims against source records and distinguish configured, executed, tested, deployed and verified."
     }
   ],
-  "finished_at": "2026-11-24T10:27:38.527Z",
+  "finished_at": "2026-11-24T22:47:55.750Z",
   "summary": {
-    "repositories": 21,
-    "declared_edges": 49,
-    "backlog": 175,
-    "logs_sampled": 8
+    "repositories": 22,
+    "declared_edges": 50,
+    "backlog": 219,
+    "logs_sampled": 9
   }
 }

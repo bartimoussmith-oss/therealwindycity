@@ -2,7 +2,7 @@
   "repository": "therealwindycity/cheyenne-archives-2025-2026",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-24T10:27:11.841Z",
+  "checked_at": "2026-11-24T22:47:27.333Z",
   "controls": [
     {
       "id": "architecture",
@@ -25,7 +25,7 @@
     {
       "id": "setup",
       "role": "Build engineer",
-      "state": "not_applicable_to_detected_role",
+      "state": "not_observed",
       "evidence": [],
       "next": "Prove installation from a clean checkout with stated tool versions.",
       "runtime_verified": false,
@@ -34,7 +34,7 @@
     {
       "id": "tests",
       "role": "Test engineer",
-      "state": "not_applicable_to_detected_role",
+      "state": "not_observed",
       "evidence": [],
       "next": "Add offline tests and a real producer-to-published-output test.",
       "runtime_verified": false,
@@ -43,7 +43,7 @@
     {
       "id": "data_contract",
       "role": "Data engineer",
-      "state": "not_applicable_to_detected_role",
+      "state": "not_observed",
       "evidence": [],
       "next": "Validate schemas, stable IDs and compatibility between producers and consumers.",
       "runtime_verified": false,
@@ -52,8 +52,14 @@
     {
       "id": "provenance",
       "role": "Evidence reviewer",
-      "state": "not_observed",
-      "evidence": [],
+      "state": "signal_observed",
+      "evidence": [
+        "speaker-videos/2026-11-03_November_2_2026_Cheyenne_Planning_Commission_Meet/manifest.json",
+        "speaker-videos/2026-11-09_November_5_2026_Cheyenne_Urban_Renewal_Authority_/manifest.json",
+        "speaker-videos/2026-11-10_City_Council_-_11-09-26/manifest.json",
+        "speaker-videos/2026-11-16_Public_Services_Committee_-_11-16-26/manifest.json",
+        "speaker-videos/2026-11-17_Finance_Committee_-_11-17-26/manifest.json"
+      ],
       "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
       "runtime_verified": false,
       "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
@@ -61,8 +67,15 @@
     {
       "id": "checkpoint",
       "role": "Reliability engineer",
-      "state": "not_applicable_to_detected_role",
-      "evidence": [],
+      "state": "signal_observed",
+      "evidence": [
+        "speaker-videos/2026-11-03_November_2_2026_Cheyenne_Planning_Commission_Meet/manifest.json",
+        "speaker-videos/2026-11-09_November_5_2026_Cheyenne_Urban_Renewal_Authority_/manifest.json",
+        "speaker-videos/2026-11-10_City_Council_-_11-09-26/manifest.json",
+        "speaker-videos/2026-11-16_Public_Services_Committee_-_11-16-26/manifest.json",
+        "speaker-videos/2026-11-17_Finance_Committee_-_11-17-26/manifest.json",
+        "speaker-videos/state.json"
+      ],
       "next": "Prove interrupted runs resume without lost records or duplicates.",
       "runtime_verified": false,
       "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
@@ -70,7 +83,7 @@
     {
       "id": "recovery",
       "role": "Recovery engineer",
-      "state": "not_applicable_to_detected_role",
+      "state": "not_observed",
       "evidence": [],
       "next": "Test isolated backup restoration and reversible releases.",
       "runtime_verified": false,
@@ -79,7 +92,7 @@
     {
       "id": "deployment",
       "role": "Release engineer",
-      "state": "not_applicable_to_detected_role",
+      "state": "not_observed",
       "evidence": [],
       "next": "Tie live output to its commit, smoke test and rollback instructions.",
       "runtime_verified": false,
@@ -88,7 +101,7 @@
     {
       "id": "dependency_lock",
       "role": "Supply-chain reviewer",
-      "state": "not_applicable_to_detected_role",
+      "state": "not_observed",
       "evidence": [],
       "next": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
       "runtime_verified": false,
@@ -106,15 +119,33 @@
       "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
     }
   ],
-  "runs": [],
+  "runs": [
+    {
+      "name": "Cheyenne Speaker Video Splitter (2025-2026)",
+      "id": 45405974378,
+      "url": "https://github.com/therealwindycity/cheyenne-archives-2025-2026/actions/runs/45405974378",
+      "sha": "87519590f9ad667c1f98792091ab168a18d80a72",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-24T13:41:06Z"
+    }
+  ],
   "pull_requests": [],
   "gaps": [],
-  "head": "266b7a49650dd801eeef031d42c6b34171ade9df",
-  "files_seen": 729,
+  "head": "aba69abbd2e729d57853b7f6abf2135d22ad5bae",
+  "files_seen": 745,
   "tree_complete": true,
   "sample_coverage": {
-    "candidates": 1,
-    "selected": 1
+    "candidates": 7,
+    "selected": 7
   },
-  "workflow_signals": {}
+  "workflow_signals": {
+    ".github/workflows/speaker-video-archive.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    }
+  }
 }

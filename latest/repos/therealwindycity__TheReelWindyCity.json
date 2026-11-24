@@ -2,7 +2,7 @@
   "repository": "therealwindycity/TheReelWindyCity",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-24T10:27:31.017Z",
+  "checked_at": "2026-11-24T22:47:49.503Z",
   "controls": [
     {
       "id": "architecture",
@@ -151,48 +151,58 @@
   ],
   "runs": [
     {
-      "name": "CM deployment evidence",
-      "id": 45372998324,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45372998324",
-      "sha": "b4a4a0ea96c95b1a5ef534c0a2b4b92142a30628",
+      "name": "Citizen Connect Incident Sync",
+      "id": 45488414501,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45488414501",
+      "sha": "ab72ccf1fab1404d1bab4ff9823d03cf11a9f5d6",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-24T10:15:16Z"
+      "created_at": "2026-11-24T21:10:43Z"
+    },
+    {
+      "name": "CM deployment evidence",
+      "id": 45484528009,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45484528009",
+      "sha": "ab72ccf1fab1404d1bab4ff9823d03cf11a9f5d6",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-24T20:48:00Z"
     },
     {
       "name": "Verify public meeting features",
-      "id": 45372961866,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45372961866",
-      "sha": "b4a4a0ea96c95b1a5ef534c0a2b4b92142a30628",
+      "id": 45484495441,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45484495441",
+      "sha": "ab72ccf1fab1404d1bab4ff9823d03cf11a9f5d6",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-24T10:15:02Z"
+      "created_at": "2026-11-24T20:47:48Z"
     },
     {
       "name": "Deploy to GitHub Pages",
-      "id": 45372294453,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45372294453",
-      "sha": "b4a4a0ea96c95b1a5ef534c0a2b4b92142a30628",
+      "id": 45483696866,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45483696866",
+      "sha": "ab72ccf1fab1404d1bab4ff9823d03cf11a9f5d6",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-24T10:10:55Z"
+      "created_at": "2026-11-24T20:43:10Z"
     },
     {
       "name": "Promethean Recurring Harvest",
-      "id": 45328163554,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45328163554",
-      "sha": "307a63b50faa14203db4b3bb7782244797346650",
+      "id": 45470163081,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45470163081",
+      "sha": "89637b97f234782a5a0f8fa4341717956552c543",
       "branch": "main",
       "status": "completed",
       "conclusion": "failure",
-      "created_at": "2026-11-24T04:41:51Z",
+      "created_at": "2026-11-24T19:26:05Z",
       "failed_jobs": [
         {
           "name": "harvest",
-          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45328163554/job/138222654430",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45470163081/job/138715644560",
           "steps": [
             {
               "name": "Publish Payloads In Existing Repository",
@@ -208,13 +218,13 @@
     },
     {
       "name": "Live Municipal Watch",
-      "id": 45312150577,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45312150577",
-      "sha": "f06ed78ad73a20b0046149471bdad72aa5430810",
+      "id": 45409184957,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45409184957",
+      "sha": "b4a4a0ea96c95b1a5ef534c0a2b4b92142a30628",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-24T02:24:34Z"
+      "created_at": "2026-11-24T13:59:43Z"
     },
     {
       "name": "Live Place Archives",
@@ -261,16 +271,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "Citizen Connect Incident Sync",
-      "id": 45281582777,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45281582777",
-      "sha": "90c600cda488f45bbd418cc36e4a68ea052c2544",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-23T22:38:21Z"
     }
   ],
   "pull_requests": [
@@ -330,7 +330,7 @@
     }
   ],
   "gaps": [],
-  "head": "b4a4a0ea96c95b1a5ef534c0a2b4b92142a30628",
+  "head": "2657ecf82405e3e33b024fd3bd869bd28744e8d5",
   "files_seen": 6040,
   "tree_complete": true,
   "sample_coverage": {

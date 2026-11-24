@@ -1,0 +1,414 @@
+{
+  "repository": "therealwindycity/TheReelWindyCity",
+  "archived": false,
+  "fork": false,
+  "checked_at": "2026-11-24T22:47:49.503Z",
+  "controls": [
+    {
+      "id": "architecture",
+      "role": "Architect",
+      "state": "signal_observed",
+      "evidence": [
+        "ECOSYSTEM-INVENTORY-AND-UPGRADE-MEMO-2026-10-28.md",
+        "Entity_Database/ECOSYSTEM-INVENTORY-AND-UPGRADE-MEMO-2026-10-28.json",
+        "docs/ARCHITECTURE-TIERS.md",
+        "docs/ECOSYSTEM-AGENT-GUIDE.md"
+      ],
+      "next": "Map producers, consumers, storage, deployment targets and owners.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "agent_handoff",
+      "role": "Agent coordinator",
+      "state": "signal_observed",
+      "evidence": [
+        "AGENTS.md"
+      ],
+      "next": "Provide tested commands, current status, constraints and acceptance criteria.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "setup",
+      "role": "Build engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "agent/requirements.txt",
+        "package.json",
+        "promethean/requirements.txt",
+        "rag/requirements-rag.txt",
+        "requirements.txt",
+        "youtube-archive/requirements.txt"
+      ],
+      "next": "Prove installation from a clean checkout with stated tool versions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "tests",
+      "role": "Test engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "agent/tests/__init__.py",
+        "agent/tests/test_agent.py",
+        "civic_atlas/test_integration.py",
+        "civic_atlas/test_server.py",
+        "civic_atlas/test_streamlit.py",
+        "tests/civic-calendar.test.mjs"
+      ],
+      "next": "Add offline tests and a real producer-to-published-output test.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "data_contract",
+      "role": "Data engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "scripts/lib/validate.mjs"
+      ],
+      "next": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "provenance",
+      "role": "Evidence reviewer",
+      "state": "signal_observed",
+      "evidence": [
+        "config/release_manifest.json",
+        "config/sources.json",
+        "drive-import/manifest.json",
+        "pipeline/media_manifest.json",
+        "promethean_federation_manifest.json",
+        "public/promethean_federation_manifest.json"
+      ],
+      "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "checkpoint",
+      "role": "Reliability engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "config/release_manifest.json",
+        "data/sync-state.json",
+        "data/wyoming-sync-state.json",
+        "drive-import/manifest.json",
+        "pipeline/media_manifest.json",
+        "promethean_federation_manifest.json"
+      ],
+      "next": "Prove interrupted runs resume without lost records or duplicates.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "recovery",
+      "role": "Recovery engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Test isolated backup restoration and reversible releases.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "deployment",
+      "role": "Release engineer",
+      "state": "signal_observed",
+      "evidence": [
+        ".github/workflows/deploy-pages.yml",
+        "DEPLOY.md",
+        "DEPLOYMENT-REPAIR-HANDOFF.md"
+      ],
+      "next": "Tie live output to its commit, smoke test and rollback instructions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "dependency_lock",
+      "role": "Supply-chain reviewer",
+      "state": "signal_observed",
+      "evidence": [
+        "package-lock.json"
+      ],
+      "next": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "rights",
+      "role": "Rights reviewer",
+      "state": "signal_observed",
+      "evidence": [
+        "public/maps/LICENSE-maplibre.txt"
+      ],
+      "next": "Separate code licensing from source-data and media reuse rights.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    }
+  ],
+  "runs": [
+    {
+      "name": "Citizen Connect Incident Sync",
+      "id": 45488414501,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45488414501",
+      "sha": "ab72ccf1fab1404d1bab4ff9823d03cf11a9f5d6",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-24T21:10:43Z"
+    },
+    {
+      "name": "CM deployment evidence",
+      "id": 45484528009,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45484528009",
+      "sha": "ab72ccf1fab1404d1bab4ff9823d03cf11a9f5d6",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-24T20:48:00Z"
+    },
+    {
+      "name": "Verify public meeting features",
+      "id": 45484495441,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45484495441",
+      "sha": "ab72ccf1fab1404d1bab4ff9823d03cf11a9f5d6",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-24T20:47:48Z"
+    },
+    {
+      "name": "Deploy to GitHub Pages",
+      "id": 45483696866,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45483696866",
+      "sha": "ab72ccf1fab1404d1bab4ff9823d03cf11a9f5d6",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-24T20:43:10Z"
+    },
+    {
+      "name": "Promethean Recurring Harvest",
+      "id": 45470163081,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45470163081",
+      "sha": "89637b97f234782a5a0f8fa4341717956552c543",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-24T19:26:05Z",
+      "failed_jobs": [
+        {
+          "name": "harvest",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45470163081/job/138715644560",
+          "steps": [
+            {
+              "name": "Publish Payloads In Existing Repository",
+              "number": 9
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Live Municipal Watch",
+      "id": 45409184957,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45409184957",
+      "sha": "b4a4a0ea96c95b1a5ef534c0a2b4b92142a30628",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-24T13:59:43Z"
+    },
+    {
+      "name": "Live Place Archives",
+      "id": 45308196366,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45308196366",
+      "sha": "370bdb94f2e20cd034e8a944e2de8d415e2d8e5a",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-24T01:52:09Z"
+    },
+    {
+      "name": "Live Wyoming Watch",
+      "id": 45300155147,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45300155147",
+      "sha": "dcf0ffc47401d9233a2d6b9af9805a99ccca6dcc",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-24T00:48:37Z"
+    },
+    {
+      "name": "Promethean Autonomous Granicus Harvester",
+      "id": 45297188154,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45297188154",
+      "sha": "dcf0ffc47401d9233a2d6b9af9805a99ccca6dcc",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-24T00:26:37Z",
+      "failed_jobs": [
+        {
+          "name": "harvest-and-index",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45297188154/job/138120453411",
+          "steps": [
+            {
+              "name": "Execute Hardened Granicus Harvester",
+              "number": 8
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    }
+  ],
+  "pull_requests": [
+    {
+      "number": 34,
+      "title": "Add source-aware civic evidence pipeline and hosted retrieval",
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/pull/34",
+      "head": "cf8c2445c27e9e2bb87788e78e04e6ca64ee443d",
+      "updated_at": "2026-11-02T12:51:01Z",
+      "draft": false,
+      "mergeability": "unverified"
+    },
+    {
+      "number": 26,
+      "title": "Draft: Pages repair — source fixes, validation and release blockers",
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/pull/26",
+      "head": "34c04e53b39d4e91c97686cd680b5d66b7765a79",
+      "updated_at": "2026-11-02T11:53:48Z",
+      "draft": true,
+      "mergeability": "unverified"
+    },
+    {
+      "number": 25,
+      "title": "Draft: GitHub-first connected evidence foundation",
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/pull/25",
+      "head": "71aa9d3618287bd3538b78017bdba1df16ec9a12",
+      "updated_at": "2026-10-27T06:46:36Z",
+      "draft": true,
+      "mergeability": "unverified"
+    },
+    {
+      "number": 22,
+      "title": "Fix stale upcoming-agenda view; un-wedge the agenda ingestion pipeline",
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/pull/22",
+      "head": "792bd80c31a4bc7ad62d1cd6cfa06ed9defc3f1f",
+      "updated_at": "2026-10-11T23:39:18Z",
+      "draft": false,
+      "mergeability": "unverified"
+    },
+    {
+      "number": 6,
+      "title": "Live municipal sync pipeline — red-teamed, all findings pre-fixed",
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/pull/6",
+      "head": "9f357ee8156340e1c0629bc48bbb7bfbc1b239ba",
+      "updated_at": "2026-10-04T02:07:46Z",
+      "draft": false,
+      "mergeability": "unverified"
+    },
+    {
+      "number": 5,
+      "title": "Meeting-page indexing: sitemap lastmod, single canonical per view, full-surface SEO audit",
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/pull/5",
+      "head": "b44b5e9b78ed068c0ae745a2c64ab3b3ff7f5bb4",
+      "updated_at": "2026-10-04T01:42:55Z",
+      "draft": false,
+      "mergeability": "unverified"
+    }
+  ],
+  "gaps": [],
+  "head": "2657ecf82405e3e33b024fd3bd869bd28744e8d5",
+  "files_seen": 6040,
+  "tree_complete": true,
+  "sample_coverage": {
+    "candidates": 45,
+    "selected": 12
+  },
+  "workflow_signals": {
+    ".github/workflows/broadcastify-archive-fetch.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": true,
+      "explicit_permissions": true
+    },
+    ".github/workflows/ci.yml": {
+      "timeout": false,
+      "concurrency": false,
+      "always_save": true,
+      "explicit_permissions": true
+    },
+    ".github/workflows/citizen_connect_sync.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": true,
+      "explicit_permissions": true
+    },
+    ".github/workflows/cm-apply-remediation-v2.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": true,
+      "explicit_permissions": true
+    },
+    ".github/workflows/cm-clean-candidate.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/cm-clean-evidence.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/cm-completion-audit.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": true,
+      "explicit_permissions": true
+    },
+    ".github/workflows/cm-deployment-evidence.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/cm-public-display-repair.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/cm-recover-frontend.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/cm-repair-diagnostics.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    },
+    ".github/workflows/cm-stage-recovered-remediation.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": true,
+      "explicit_permissions": true
+    }
+  }
+}
