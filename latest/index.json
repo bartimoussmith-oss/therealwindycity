@@ -1,7 +1,7 @@
 {
   "schema": 2,
-  "started_at": "2026-11-23T08:12:27.426Z",
-  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45136418462",
+  "started_at": "2026-11-24T00:21:27.769Z",
+  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45296217883",
   "video_proof_result": "success",
   "repositories": [
     {
@@ -94,7 +94,7 @@
       "from": "bartimoussmith-oss/casper-record-mirror",
       "to": "bartimoussmith-oss/therealwindycity",
       "path": "README.md",
-      "sha": "9197a8ef117e895026e5b5802be19be3e2a70669",
+      "sha": "f91e23292c0a18c2d16f5512595175b2c3d3ca51",
       "status": "declared_reference_only"
     },
     {
@@ -129,14 +129,14 @@
       "from": "bartimoussmith-oss/therealwindycity",
       "to": "therealwindycity/TheReelWindyCity",
       "path": ".github/workflows/ai-record-pages.yml",
-      "sha": "00015a77ae82b4f65a6e7ef2bbc79861b9535348",
+      "sha": "9c0acd833da7531ab9fab6c13446add45284cd5a",
       "status": "declared_reference_only"
     },
     {
       "from": "bartimoussmith-oss/therealwindycity",
       "to": "therealwindycity/The-Real-Windy-City-",
       "path": ".github/workflows/ai-record-pages.yml",
-      "sha": "00015a77ae82b4f65a6e7ef2bbc79861b9535348",
+      "sha": "9c0acd833da7531ab9fab6c13446add45284cd5a",
       "status": "declared_reference_only"
     },
     {
@@ -464,11 +464,11 @@
       "task": "Check claims against source records and distinguish configured, executed, tested, deployed and verified."
     }
   ],
-  "finished_at": "2026-11-23T08:13:34.977Z",
+  "finished_at": "2026-11-24T00:22:41.404Z",
   "summary": {
     "repositories": 21,
     "declared_edges": 49,
-    "backlog": 176,
+    "backlog": 175,
     "logs_sampled": 8
   }
 }

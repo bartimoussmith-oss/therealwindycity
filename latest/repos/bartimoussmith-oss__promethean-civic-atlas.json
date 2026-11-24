@@ -2,7 +2,7 @@
   "repository": "bartimoussmith-oss/promethean-civic-atlas",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-23T08:12:46.468Z",
+  "checked_at": "2026-11-24T00:21:48.531Z",
   "controls": [
     {
       "id": "architecture",
@@ -101,8 +101,10 @@
     {
       "id": "rights",
       "role": "Rights reviewer",
-      "state": "not_observed",
-      "evidence": [],
+      "state": "signal_observed",
+      "evidence": [
+        "national/LICENSE-COMMERCIAL.md"
+      ],
       "next": "Separate code licensing from source-data and media reuse rights.",
       "runtime_verified": false,
       "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
@@ -132,12 +134,12 @@
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "0f88e3d476b310b16e46b76f56fe867cdc79d5ea",
-  "files_seen": 9,
+  "head": "c6a2401f2db3d00697bdab89b88b51e331f782a0",
+  "files_seen": 77,
   "tree_complete": true,
   "sample_coverage": {
-    "candidates": 4,
-    "selected": 4
+    "candidates": 6,
+    "selected": 6
   },
   "workflow_signals": {
     ".github/workflows/import-workbook-exports.yml": {
