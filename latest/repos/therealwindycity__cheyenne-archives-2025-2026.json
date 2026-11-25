@@ -2,7 +2,7 @@
   "repository": "therealwindycity/cheyenne-archives-2025-2026",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-25T09:09:07.669Z",
+  "checked_at": "2026-11-25T22:00:58.922Z",
   "controls": [
     {
       "id": "architecture",
@@ -123,22 +123,22 @@
   "runs": [
     {
       "name": "Cheyenne Speaker Video Splitter (2025-2026)",
-      "id": 45575788508,
-      "url": "https://github.com/therealwindycity/cheyenne-archives-2025-2026/actions/runs/45575788508",
-      "sha": "a9871d87ceb43b384f6805ecd4f02cfa0965f09c",
+      "id": 45689650967,
+      "url": "https://github.com/therealwindycity/cheyenne-archives-2025-2026/actions/runs/45689650967",
+      "sha": "e6d8a410b98d5d5a892d2202a2ca93cbc3357c2c",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-25T08:23:04Z"
+      "created_at": "2026-11-25T19:53:44Z"
     }
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "e6d8a410b98d5d5a892d2202a2ca93cbc3357c2c",
-  "files_seen": 763,
+  "head": "42f91918e4410dd0b7b80df4fba9d26a35c6820b",
+  "files_seen": 772,
   "tree_complete": true,
   "sample_coverage": {
-    "candidates": 13,
+    "candidates": 16,
     "selected": 12
   },
   "workflow_signals": {

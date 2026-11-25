@@ -2,7 +2,7 @@
   "repository": "therealwindycity/cheyenne-archives-2018-2021",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-25T09:08:56.914Z",
+  "checked_at": "2026-11-25T22:00:47.716Z",
   "controls": [
     {
       "id": "architecture",
@@ -54,12 +54,12 @@
       "role": "Evidence reviewer",
       "state": "signal_observed",
       "evidence": [
+        "speaker-videos/2021-09-17_POW-MIA_Proclamation_Event/manifest.json",
+        "speaker-videos/2021-09-18_Work_Session_-_Eradicating_Homelessness/manifest.json",
+        "speaker-videos/2021-09-21_Past_Sixth_Penny_Projects/manifest.json",
         "speaker-videos/2021-09-28_Bill_Dubois_Resolution/manifest.json",
         "speaker-videos/2021-10-04_Press_Conference_for_Capitol_Ave._Bronze_Project/manifest.json",
-        "speaker-videos/2021-10-15_Work_Session_-_American_Rescue_Plan_Funding/manifest.json",
-        "speaker-videos/2021-10-22_Work_Session_-_Railroad_Experience_Project/manifest.json",
-        "speaker-videos/2021-10-29_Work_Session_--_American_Rescue_Plan_ARP_Public_H/manifest.json",
-        "speaker-videos/2021-11-05_Work_Session_--_American_Rescue_Plan_ARP_Infrastr/manifest.json"
+        "speaker-videos/2021-10-15_Work_Session_-_American_Rescue_Plan_Funding/manifest.json"
       ],
       "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
       "runtime_verified": false,
@@ -70,12 +70,12 @@
       "role": "Reliability engineer",
       "state": "signal_observed",
       "evidence": [
+        "speaker-videos/2021-09-17_POW-MIA_Proclamation_Event/manifest.json",
+        "speaker-videos/2021-09-18_Work_Session_-_Eradicating_Homelessness/manifest.json",
+        "speaker-videos/2021-09-21_Past_Sixth_Penny_Projects/manifest.json",
         "speaker-videos/2021-09-28_Bill_Dubois_Resolution/manifest.json",
         "speaker-videos/2021-10-04_Press_Conference_for_Capitol_Ave._Bronze_Project/manifest.json",
-        "speaker-videos/2021-10-15_Work_Session_-_American_Rescue_Plan_Funding/manifest.json",
-        "speaker-videos/2021-10-22_Work_Session_-_Railroad_Experience_Project/manifest.json",
-        "speaker-videos/2021-10-29_Work_Session_--_American_Rescue_Plan_ARP_Public_H/manifest.json",
-        "speaker-videos/2021-11-05_Work_Session_--_American_Rescue_Plan_ARP_Infrastr/manifest.json"
+        "speaker-videos/2021-10-15_Work_Session_-_American_Rescue_Plan_Funding/manifest.json"
       ],
       "next": "Prove interrupted runs resume without lost records or duplicates.",
       "runtime_verified": false,
@@ -123,23 +123,23 @@
   "runs": [
     {
       "name": "Cheyenne Speaker Video Splitter (2018-2021)",
-      "id": 45556739792,
-      "url": "https://github.com/therealwindycity/cheyenne-archives-2018-2021/actions/runs/45556739792",
-      "sha": "d1e7c7cd8897f0a136970ddfdb85bd768ea00a61",
+      "id": 45652935680,
+      "url": "https://github.com/therealwindycity/cheyenne-archives-2018-2021/actions/runs/45652935680",
+      "sha": "8e6620df9f1682ef95a4ed539561c90dd42c7ca1",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-25T05:54:00Z"
+      "created_at": "2026-11-25T16:21:29Z"
     }
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "8e6620df9f1682ef95a4ed539561c90dd42c7ca1",
-  "files_seen": 867,
+  "head": "40be4b604d091595153c4b42898dc84a70ad775b",
+  "files_seen": 876,
   "tree_complete": true,
   "sample_coverage": {
-    "candidates": 11,
-    "selected": 11
+    "candidates": 14,
+    "selected": 12
   },
   "workflow_signals": {
     ".github/workflows/speaker-video-archive.yml": {

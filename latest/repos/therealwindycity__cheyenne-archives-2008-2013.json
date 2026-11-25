@@ -2,7 +2,7 @@
   "repository": "therealwindycity/cheyenne-archives-2008-2013",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-25T09:08:50.404Z",
+  "checked_at": "2026-11-25T22:00:40.386Z",
   "controls": [
     {
       "id": "architecture",
@@ -54,12 +54,12 @@
       "role": "Evidence reviewer",
       "state": "signal_observed",
       "evidence": [
+        "speaker-videos/2012-10-22_City_Of_Cheyenne_Fifth_Penny_Tax/manifest.json",
+        "speaker-videos/2012-11-16_Holiday_Turkey_Fryer_Safety_Video/manifest.json",
+        "speaker-videos/2013-10-04_AFire_Stafety_Home_Heating/manifest.json",
         "speaker-videos/2013-10-04_Cheyenne_Wyo._Fire_Rescue_Fire_Safety_Escape_Plan/manifest.json",
         "speaker-videos/2013-10-04_Cheyenne_Wyo._Fire_Rescue_Kitchen_Safety/manifest.json",
-        "speaker-videos/2013-10-04_Cheyenne_Wyo._Fire_Rescue_Microwave_Safety/manifest.json",
-        "speaker-videos/2013-10-23_Fire_Safety_Smoke_Alarms/manifest.json",
-        "speaker-videos/2013-11-22_Cheyenne_Wyo_Fire_Rescue_Presents_Vehicle_Safety_/manifest.json",
-        "speaker-videos/2013-12-31_Learn_How_To_Drive_Cheyenne_s_Wyo_Two_Lane_Rounda/manifest.json"
+        "speaker-videos/2013-10-04_Cheyenne_Wyo._Fire_Rescue_Microwave_Safety/manifest.json"
       ],
       "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
       "runtime_verified": false,
@@ -70,12 +70,12 @@
       "role": "Reliability engineer",
       "state": "signal_observed",
       "evidence": [
+        "speaker-videos/2012-10-22_City_Of_Cheyenne_Fifth_Penny_Tax/manifest.json",
+        "speaker-videos/2012-11-16_Holiday_Turkey_Fryer_Safety_Video/manifest.json",
+        "speaker-videos/2013-10-04_AFire_Stafety_Home_Heating/manifest.json",
         "speaker-videos/2013-10-04_Cheyenne_Wyo._Fire_Rescue_Fire_Safety_Escape_Plan/manifest.json",
         "speaker-videos/2013-10-04_Cheyenne_Wyo._Fire_Rescue_Kitchen_Safety/manifest.json",
-        "speaker-videos/2013-10-04_Cheyenne_Wyo._Fire_Rescue_Microwave_Safety/manifest.json",
-        "speaker-videos/2013-10-23_Fire_Safety_Smoke_Alarms/manifest.json",
-        "speaker-videos/2013-11-22_Cheyenne_Wyo_Fire_Rescue_Presents_Vehicle_Safety_/manifest.json",
-        "speaker-videos/2013-12-31_Learn_How_To_Drive_Cheyenne_s_Wyo_Two_Lane_Rounda/manifest.json"
+        "speaker-videos/2013-10-04_Cheyenne_Wyo._Fire_Rescue_Microwave_Safety/manifest.json"
       ],
       "next": "Prove interrupted runs resume without lost records or duplicates.",
       "runtime_verified": false,
@@ -123,23 +123,23 @@
   "runs": [
     {
       "name": "Cheyenne Speaker Video Splitter (2008-2013)",
-      "id": 45522755223,
-      "url": "https://github.com/therealwindycity/cheyenne-archives-2008-2013/actions/runs/45522755223",
-      "sha": "00f3854e3c4c674a3b82c4132ea73f8556541b6b",
+      "id": 45639077367,
+      "url": "https://github.com/therealwindycity/cheyenne-archives-2008-2013/actions/runs/45639077367",
+      "sha": "8c5e0888b0c9094442f1c1d22bfbb9fdb572ec52",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-25T01:02:43Z"
+      "created_at": "2026-11-25T14:53:51Z"
     }
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "8c5e0888b0c9094442f1c1d22bfbb9fdb572ec52",
-  "files_seen": 1027,
+  "head": "373edb07f665e1db654492c3f893ce52dc01c5ba",
+  "files_seen": 1036,
   "tree_complete": true,
   "sample_coverage": {
-    "candidates": 8,
-    "selected": 8
+    "candidates": 11,
+    "selected": 11
   },
   "workflow_signals": {
     ".github/workflows/speaker-video-archive.yml": {

@@ -2,7 +2,7 @@
   "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-25T09:08:16.261Z",
+  "checked_at": "2026-11-25T22:00:03.689Z",
   "controls": [
     {
       "id": "architecture",
@@ -109,18 +109,18 @@
   "runs": [
     {
       "name": "Scheduled cross-domain civic engine",
-      "id": 45581543918,
-      "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-analysis-001/actions/runs/45581543918",
-      "sha": "3b9be1c8dc3977e60d263a494ff14bc2f7d33fc0",
+      "id": 45708857562,
+      "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-analysis-001/actions/runs/45708857562",
+      "sha": "81457b10b1e2a40bbdafe1b866039a9d61c283f2",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-25T09:01:55Z"
+      "created_at": "2026-11-25T21:56:26Z"
     }
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "81457b10b1e2a40bbdafe1b866039a9d61c283f2",
+  "head": "1f2652e76b4cede6c11e8ec9021a15d92885e0f5",
   "files_seen": 11,
   "tree_complete": true,
   "sample_coverage": {
