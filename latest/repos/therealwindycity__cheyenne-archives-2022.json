@@ -2,7 +2,7 @@
   "repository": "therealwindycity/cheyenne-archives-2022",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-24T22:47:22.165Z",
+  "checked_at": "2026-11-25T09:09:00.690Z",
   "controls": [
     {
       "id": "architecture",
@@ -54,7 +54,10 @@
       "role": "Evidence reviewer",
       "state": "signal_observed",
       "evidence": [
+        "speaker-videos/2022-12-16_Work_Session_12-16-22/manifest.json",
+        "speaker-videos/2022-12-16_Work_Session_12-16-22_Transit_Program/manifest.json",
         "speaker-videos/2022-12-20_Finance_Committee_12-19-22/manifest.json",
+        "speaker-videos/2022-12-20_Public_Services_Committee_12-20-22/manifest.json",
         "speaker-videos/2022-12-27_City_Counci_12-27-22/manifest.json",
         "speaker-videos/2022-12-28_Committee_of_the_Whole_12-27-22_Postponed_from_12/manifest.json"
       ],
@@ -67,10 +70,12 @@
       "role": "Reliability engineer",
       "state": "signal_observed",
       "evidence": [
+        "speaker-videos/2022-12-16_Work_Session_12-16-22/manifest.json",
+        "speaker-videos/2022-12-16_Work_Session_12-16-22_Transit_Program/manifest.json",
         "speaker-videos/2022-12-20_Finance_Committee_12-19-22/manifest.json",
+        "speaker-videos/2022-12-20_Public_Services_Committee_12-20-22/manifest.json",
         "speaker-videos/2022-12-27_City_Counci_12-27-22/manifest.json",
-        "speaker-videos/2022-12-28_Committee_of_the_Whole_12-27-22_Postponed_from_12/manifest.json",
-        "speaker-videos/state.json"
+        "speaker-videos/2022-12-28_Committee_of_the_Whole_12-27-22_Postponed_from_12/manifest.json"
       ],
       "next": "Prove interrupted runs resume without lost records or duplicates.",
       "runtime_verified": false,
@@ -118,23 +123,23 @@
   "runs": [
     {
       "name": "Cheyenne Speaker Video Splitter (2022-2022)",
-      "id": 45405988931,
-      "url": "https://github.com/therealwindycity/cheyenne-archives-2022/actions/runs/45405988931",
-      "sha": "22e710991e073923876de42992b25d0e5cd9c866",
+      "id": 45515585959,
+      "url": "https://github.com/therealwindycity/cheyenne-archives-2022/actions/runs/45515585959",
+      "sha": "a415d067f54bee0d2c9bfacd8d3f8be1754aad48",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-24T13:41:11Z"
+      "created_at": "2026-11-25T00:07:31Z"
     }
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "a415d067f54bee0d2c9bfacd8d3f8be1754aad48",
-  "files_seen": 649,
+  "head": "e6b9fe2ce66e722b196f4e0936f2587007c2b261",
+  "files_seen": 658,
   "tree_complete": true,
   "sample_coverage": {
-    "candidates": 5,
-    "selected": 5
+    "candidates": 8,
+    "selected": 8
   },
   "workflow_signals": {
     ".github/workflows/speaker-video-archive.yml": {

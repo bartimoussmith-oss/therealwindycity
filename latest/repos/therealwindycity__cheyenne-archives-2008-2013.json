@@ -2,7 +2,7 @@
   "repository": "therealwindycity/cheyenne-archives-2008-2013",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-24T22:47:13.167Z",
+  "checked_at": "2026-11-25T09:08:50.404Z",
   "controls": [
     {
       "id": "architecture",
@@ -54,6 +54,9 @@
       "role": "Evidence reviewer",
       "state": "signal_observed",
       "evidence": [
+        "speaker-videos/2013-10-04_Cheyenne_Wyo._Fire_Rescue_Fire_Safety_Escape_Plan/manifest.json",
+        "speaker-videos/2013-10-04_Cheyenne_Wyo._Fire_Rescue_Kitchen_Safety/manifest.json",
+        "speaker-videos/2013-10-04_Cheyenne_Wyo._Fire_Rescue_Microwave_Safety/manifest.json",
         "speaker-videos/2013-10-23_Fire_Safety_Smoke_Alarms/manifest.json",
         "speaker-videos/2013-11-22_Cheyenne_Wyo_Fire_Rescue_Presents_Vehicle_Safety_/manifest.json",
         "speaker-videos/2013-12-31_Learn_How_To_Drive_Cheyenne_s_Wyo_Two_Lane_Rounda/manifest.json"
@@ -67,10 +70,12 @@
       "role": "Reliability engineer",
       "state": "signal_observed",
       "evidence": [
+        "speaker-videos/2013-10-04_Cheyenne_Wyo._Fire_Rescue_Fire_Safety_Escape_Plan/manifest.json",
+        "speaker-videos/2013-10-04_Cheyenne_Wyo._Fire_Rescue_Kitchen_Safety/manifest.json",
+        "speaker-videos/2013-10-04_Cheyenne_Wyo._Fire_Rescue_Microwave_Safety/manifest.json",
         "speaker-videos/2013-10-23_Fire_Safety_Smoke_Alarms/manifest.json",
         "speaker-videos/2013-11-22_Cheyenne_Wyo_Fire_Rescue_Presents_Vehicle_Safety_/manifest.json",
-        "speaker-videos/2013-12-31_Learn_How_To_Drive_Cheyenne_s_Wyo_Two_Lane_Rounda/manifest.json",
-        "speaker-videos/state.json"
+        "speaker-videos/2013-12-31_Learn_How_To_Drive_Cheyenne_s_Wyo_Two_Lane_Rounda/manifest.json"
       ],
       "next": "Prove interrupted runs resume without lost records or duplicates.",
       "runtime_verified": false,
@@ -118,23 +123,23 @@
   "runs": [
     {
       "name": "Cheyenne Speaker Video Splitter (2008-2013)",
-      "id": 45406010679,
-      "url": "https://github.com/therealwindycity/cheyenne-archives-2008-2013/actions/runs/45406010679",
-      "sha": "30b3638d0f7e8562352e88976084dd13a90cd5dc",
+      "id": 45522755223,
+      "url": "https://github.com/therealwindycity/cheyenne-archives-2008-2013/actions/runs/45522755223",
+      "sha": "00f3854e3c4c674a3b82c4132ea73f8556541b6b",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-24T13:41:18Z"
+      "created_at": "2026-11-25T01:02:43Z"
     }
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "00f3854e3c4c674a3b82c4132ea73f8556541b6b",
-  "files_seen": 1018,
+  "head": "8c5e0888b0c9094442f1c1d22bfbb9fdb572ec52",
+  "files_seen": 1027,
   "tree_complete": true,
   "sample_coverage": {
-    "candidates": 5,
-    "selected": 5
+    "candidates": 8,
+    "selected": 8
   },
   "workflow_signals": {
     ".github/workflows/speaker-video-archive.yml": {

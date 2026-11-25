@@ -1,0 +1,2645 @@
+[
+  {
+    "id": "therealwindycity/cheyenne-archives-2014-2017:run:45520436924",
+    "priority": "P1",
+    "repository": "therealwindycity/cheyenne-archives-2014-2017",
+    "role": "Reliability engineer",
+    "status": "confirmed_run_failure_not_current_product_diagnosis",
+    "evidence": {
+      "name": "Cheyenne Speaker Video Splitter (2014-2017)",
+      "id": 45520436924,
+      "url": "https://github.com/therealwindycity/cheyenne-archives-2014-2017/actions/runs/45520436924",
+      "sha": "c0af1f68906d27581a630842d4b84025b1396270",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-25T00:44:33Z",
+      "failed_jobs": [
+        {
+          "name": "archive-speaker-videos",
+          "url": "https://github.com/therealwindycity/cheyenne-archives-2014-2017/actions/runs/45520436924/job/138890616489",
+          "steps": [
+            {
+              "name": "Split speaker video clips & publish Releases + Episode JSON (2014-2017)",
+              "number": 5
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "RuntimeError",
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    },
+    "task": "Reproduce the recorded failed step and repair its demonstrated cause.",
+    "done_when": "Replacement run passes the same checks and output is verified; older failure does not establish current HEAD failure."
+  },
+  {
+    "id": "bartimoussmith-oss/casper-record-mirror:architecture",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/casper-record-mirror",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/casper-record-mirror:agent_handoff",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/casper-record-mirror",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/casper-record-mirror:setup",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/casper-record-mirror",
+    "role": "Build engineer",
+    "status": "needs_inspection",
+    "task": "Prove installation from a clean checkout with stated tool versions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/casper-record-mirror:tests",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/casper-record-mirror",
+    "role": "Test engineer",
+    "status": "needs_inspection",
+    "task": "Add offline tests and a real producer-to-published-output test.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/casper-record-mirror:data_contract",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/casper-record-mirror",
+    "role": "Data engineer",
+    "status": "needs_inspection",
+    "task": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/casper-record-mirror:recovery",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/casper-record-mirror",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/casper-record-mirror:deployment",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/casper-record-mirror",
+    "role": "Release engineer",
+    "status": "needs_inspection",
+    "task": "Tie live output to its commit, smoke test and rollback instructions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/casper-record-mirror:dependency_lock",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/casper-record-mirror",
+    "role": "Supply-chain reviewer",
+    "status": "needs_inspection",
+    "task": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/casper-record-mirror:rights",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/casper-record-mirror",
+    "role": "Rights reviewer",
+    "status": "needs_inspection",
+    "task": "Separate code licensing from source-data and media reuse rights.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/casper-record-mirror:.github/workflows/collect.yml:concurrency",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/casper-record-mirror",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/collect.yml",
+      "sha": "f91e23292c0a18c2d16f5512595175b2c3d3ca51",
+      "signal": "concurrency"
+    },
+    "task": "Review missing concurrency signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/casper-record-mirror:.github/workflows/collect.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/casper-record-mirror",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/collect.yml",
+      "sha": "f91e23292c0a18c2d16f5512595175b2c3d3ca51",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:architecture",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:agent_handoff",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:setup",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Build engineer",
+    "status": "needs_inspection",
+    "task": "Prove installation from a clean checkout with stated tool versions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:tests",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Test engineer",
+    "status": "needs_inspection",
+    "task": "Add offline tests and a real producer-to-published-output test.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:data_contract",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Data engineer",
+    "status": "needs_inspection",
+    "task": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:provenance",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Evidence reviewer",
+    "status": "needs_inspection",
+    "task": "Retain source URLs, capture dates, hashes, original records and limitations.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:recovery",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:deployment",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Release engineer",
+    "status": "needs_inspection",
+    "task": "Tie live output to its commit, smoke test and rollback instructions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:dependency_lock",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Supply-chain reviewer",
+    "status": "needs_inspection",
+    "task": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:rights",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Rights reviewer",
+    "status": "needs_inspection",
+    "task": "Separate code licensing from source-data and media reuse rights.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-analysis-001:.github/workflows/analyze.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-analysis-001",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/analyze.yml",
+      "sha": "81457b10b1e2a40bbdafe1b866039a9d61c283f2",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-archive:architecture",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-archive:agent_handoff",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-archive:setup",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
+    "role": "Build engineer",
+    "status": "needs_inspection",
+    "task": "Prove installation from a clean checkout with stated tool versions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-archive:tests",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
+    "role": "Test engineer",
+    "status": "needs_inspection",
+    "task": "Add offline tests and a real producer-to-published-output test.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-archive:recovery",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-archive:deployment",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
+    "role": "Release engineer",
+    "status": "needs_inspection",
+    "task": "Tie live output to its commit, smoke test and rollback instructions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-archive:dependency_lock",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
+    "role": "Supply-chain reviewer",
+    "status": "needs_inspection",
+    "task": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-archive:rights",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
+    "role": "Rights reviewer",
+    "status": "needs_inspection",
+    "task": "Separate code licensing from source-data and media reuse rights.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/cheyenne-laramie-archive:.github/workflows/osint.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/osint.yml",
+      "sha": "7013e4e1a8384a84cc6b2fdb58675a10d6327c8b",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom:architecture",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom:setup",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom",
+    "role": "Build engineer",
+    "status": "needs_inspection",
+    "task": "Prove installation from a clean checkout with stated tool versions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom:data_contract",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom",
+    "role": "Data engineer",
+    "status": "needs_inspection",
+    "task": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom:provenance",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom",
+    "role": "Evidence reviewer",
+    "status": "needs_inspection",
+    "task": "Retain source URLs, capture dates, hashes, original records and limitations.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom:checkpoint",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom",
+    "role": "Reliability engineer",
+    "status": "needs_inspection",
+    "task": "Prove interrupted runs resume without lost records or duplicates.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom:recovery",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom:deployment",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom",
+    "role": "Release engineer",
+    "status": "needs_inspection",
+    "task": "Tie live output to its commit, smoke test and rollback instructions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom:dependency_lock",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom",
+    "role": "Supply-chain reviewer",
+    "status": "needs_inspection",
+    "task": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom:rights",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom",
+    "role": "Rights reviewer",
+    "status": "needs_inspection",
+    "task": "Separate code licensing from source-data and media reuse rights.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom:.github/workflows/build-public-data.yml:concurrency",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/build-public-data.yml",
+      "sha": "7b98397a6d764322f68b86d9a1b78f05ff4be112",
+      "signal": "concurrency"
+    },
+    "task": "Review missing concurrency signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom:.github/workflows/build-public-data.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/build-public-data.yml",
+      "sha": "7b98397a6d764322f68b86d9a1b78f05ff4be112",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom:.github/workflows/build-report.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/build-report.yml",
+      "sha": "7b98397a6d764322f68b86d9a1b78f05ff4be112",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom:.github/workflows/intelligence-failure.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/intelligence-failure.yml",
+      "sha": "7b98397a6d764322f68b86d9a1b78f05ff4be112",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-data-001:architecture",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-data-001",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-data-001:agent_handoff",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-data-001",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-data-001:setup",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-data-001",
+    "role": "Build engineer",
+    "status": "needs_inspection",
+    "task": "Prove installation from a clean checkout with stated tool versions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-data-001:tests",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-data-001",
+    "role": "Test engineer",
+    "status": "needs_inspection",
+    "task": "Add offline tests and a real producer-to-published-output test.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-data-001:data_contract",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-data-001",
+    "role": "Data engineer",
+    "status": "needs_inspection",
+    "task": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-data-001:provenance",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-data-001",
+    "role": "Evidence reviewer",
+    "status": "needs_inspection",
+    "task": "Retain source URLs, capture dates, hashes, original records and limitations.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-data-001:checkpoint",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-data-001",
+    "role": "Reliability engineer",
+    "status": "needs_inspection",
+    "task": "Prove interrupted runs resume without lost records or duplicates.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-data-001:recovery",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-data-001",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-data-001:deployment",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-data-001",
+    "role": "Release engineer",
+    "status": "needs_inspection",
+    "task": "Tie live output to its commit, smoke test and rollback instructions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-data-001:dependency_lock",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-data-001",
+    "role": "Supply-chain reviewer",
+    "status": "needs_inspection",
+    "task": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-data-001:rights",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-data-001",
+    "role": "Rights reviewer",
+    "status": "needs_inspection",
+    "task": "Separate code licensing from source-data and media reuse rights.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-data-001:.github/workflows/export-ai.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-data-001",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/export-ai.yml",
+      "sha": "f04597d58e416cd574e7f9f3cff38fd5d975ab2d",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-data-001:.github/workflows/publish-public-data.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-data-001",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/publish-public-data.yml",
+      "sha": "f04597d58e416cd574e7f9f3cff38fd5d975ab2d",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-intelligence-001:architecture",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-intelligence-001",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-intelligence-001:agent_handoff",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-intelligence-001",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-intelligence-001:setup",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-intelligence-001",
+    "role": "Build engineer",
+    "status": "needs_inspection",
+    "task": "Prove installation from a clean checkout with stated tool versions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-intelligence-001:data_contract",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-intelligence-001",
+    "role": "Data engineer",
+    "status": "needs_inspection",
+    "task": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-intelligence-001:checkpoint",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-intelligence-001",
+    "role": "Reliability engineer",
+    "status": "needs_inspection",
+    "task": "Prove interrupted runs resume without lost records or duplicates.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-intelligence-001:recovery",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-intelligence-001",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-intelligence-001:deployment",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-intelligence-001",
+    "role": "Release engineer",
+    "status": "needs_inspection",
+    "task": "Tie live output to its commit, smoke test and rollback instructions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-intelligence-001:dependency_lock",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-intelligence-001",
+    "role": "Supply-chain reviewer",
+    "status": "needs_inspection",
+    "task": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-intelligence-001:rights",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-intelligence-001",
+    "role": "Rights reviewer",
+    "status": "needs_inspection",
+    "task": "Separate code licensing from source-data and media reuse rights.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-law-001:architecture",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-law-001",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-law-001:agent_handoff",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-law-001",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-law-001:setup",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-law-001",
+    "role": "Build engineer",
+    "status": "needs_inspection",
+    "task": "Prove installation from a clean checkout with stated tool versions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-law-001:data_contract",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-law-001",
+    "role": "Data engineer",
+    "status": "needs_inspection",
+    "task": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-law-001:checkpoint",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-law-001",
+    "role": "Reliability engineer",
+    "status": "needs_inspection",
+    "task": "Prove interrupted runs resume without lost records or duplicates.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-law-001:recovery",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-law-001",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-law-001:deployment",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-law-001",
+    "role": "Release engineer",
+    "status": "needs_inspection",
+    "task": "Tie live output to its commit, smoke test and rollback instructions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-law-001:dependency_lock",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-law-001",
+    "role": "Supply-chain reviewer",
+    "status": "needs_inspection",
+    "task": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom-law-001:rights",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/civic-newsroom-law-001",
+    "role": "Rights reviewer",
+    "status": "needs_inspection",
+    "task": "Separate code licensing from source-data and media reuse rights.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/promethean-civic-atlas:architecture",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/promethean-civic-atlas",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/promethean-civic-atlas:agent_handoff",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/promethean-civic-atlas",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/promethean-civic-atlas:.github/workflows/import-workbook-exports.yml:concurrency",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/promethean-civic-atlas",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/import-workbook-exports.yml",
+      "sha": "c6a2401f2db3d00697bdab89b88b51e331f782a0",
+      "signal": "concurrency"
+    },
+    "task": "Review missing concurrency signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/promethean-civic-atlas:.github/workflows/import-workbook-exports.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/promethean-civic-atlas",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/import-workbook-exports.yml",
+      "sha": "c6a2401f2db3d00697bdab89b88b51e331f782a0",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/promethean-civic-atlas:.github/workflows/pages.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/promethean-civic-atlas",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/pages.yml",
+      "sha": "c6a2401f2db3d00697bdab89b88b51e331f782a0",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/promethean-command-center:architecture",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/promethean-command-center",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/promethean-command-center:agent_handoff",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/promethean-command-center",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/promethean-command-center:provenance",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/promethean-command-center",
+    "role": "Evidence reviewer",
+    "status": "needs_inspection",
+    "task": "Retain source URLs, capture dates, hashes, original records and limitations.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/promethean-command-center:rights",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/promethean-command-center",
+    "role": "Rights reviewer",
+    "status": "needs_inspection",
+    "task": "Separate code licensing from source-data and media reuse rights.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/promethean-wyoming-data:architecture",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/promethean-wyoming-data",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/promethean-wyoming-data:agent_handoff",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/promethean-wyoming-data",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/promethean-wyoming-data:provenance",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/promethean-wyoming-data",
+    "role": "Evidence reviewer",
+    "status": "needs_inspection",
+    "task": "Retain source URLs, capture dates, hashes, original records and limitations.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/promethean-wyoming-data:rights",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/promethean-wyoming-data",
+    "role": "Rights reviewer",
+    "status": "needs_inspection",
+    "task": "Separate code licensing from source-data and media reuse rights.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/therealwindycity:data_contract",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/therealwindycity",
+    "role": "Data engineer",
+    "status": "needs_inspection",
+    "task": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/therealwindycity:recovery",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/therealwindycity",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/therealwindycity:dependency_lock",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/therealwindycity",
+    "role": "Supply-chain reviewer",
+    "status": "needs_inspection",
+    "task": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/therealwindycity:rights",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/therealwindycity",
+    "role": "Rights reviewer",
+    "status": "needs_inspection",
+    "task": "Separate code licensing from source-data and media reuse rights.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/therealwindycity:.github/workflows/ai-record-pages.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/ai-record-pages.yml",
+      "sha": "a612ea0039b03653fe19ff821d363c2330ec6887",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/therealwindycity:.github/workflows/apply-remediation.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/apply-remediation.yml",
+      "sha": "a612ea0039b03653fe19ff821d363c2330ec6887",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/therealwindycity:.github/workflows/civic-cycle.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/civic-cycle.yml",
+      "sha": "a612ea0039b03653fe19ff821d363c2330ec6887",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/therealwindycity:.github/workflows/civic_harvest_safety.yml:timeout",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/civic_harvest_safety.yml",
+      "sha": "a612ea0039b03653fe19ff821d363c2330ec6887",
+      "signal": "timeout"
+    },
+    "task": "Review missing timeout signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/therealwindycity:.github/workflows/civic_harvest_safety.yml:concurrency",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/civic_harvest_safety.yml",
+      "sha": "a612ea0039b03653fe19ff821d363c2330ec6887",
+      "signal": "concurrency"
+    },
+    "task": "Review missing concurrency signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/therealwindycity:.github/workflows/civic_harvest_safety.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/civic_harvest_safety.yml",
+      "sha": "a612ea0039b03653fe19ff821d363c2330ec6887",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/therealwindycity:.github/workflows/daily_audit.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/daily_audit.yml",
+      "sha": "a612ea0039b03653fe19ff821d363c2330ec6887",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/therealwindycity:.github/workflows/laramie-archive-fresh-start.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/laramie-archive-fresh-start.yml",
+      "sha": "a612ea0039b03653fe19ff821d363c2330ec6887",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/therealwindycity:.github/workflows/launch-laramie.yml:concurrency",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/launch-laramie.yml",
+      "sha": "a612ea0039b03653fe19ff821d363c2330ec6887",
+      "signal": "concurrency"
+    },
+    "task": "Review missing concurrency signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/therealwindycity:.github/workflows/launch-laramie.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/launch-laramie.yml",
+      "sha": "a612ea0039b03653fe19ff821d363c2330ec6887",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/therealwindycity:.github/workflows/meeting-watch.yml:timeout",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/meeting-watch.yml",
+      "sha": "a612ea0039b03653fe19ff821d363c2330ec6887",
+      "signal": "timeout"
+    },
+    "task": "Review missing timeout signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/therealwindycity:.github/workflows/meeting-watch.yml:always_save",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/meeting-watch.yml",
+      "sha": "a612ea0039b03653fe19ff821d363c2330ec6887",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/V-MAX-Colab-Protocol:architecture",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/V-MAX-Colab-Protocol",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/V-MAX-Colab-Protocol:agent_handoff",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/V-MAX-Colab-Protocol",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/V-MAX-Colab-Protocol:tests",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/V-MAX-Colab-Protocol",
+    "role": "Test engineer",
+    "status": "needs_inspection",
+    "task": "Add offline tests and a real producer-to-published-output test.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/V-MAX-Colab-Protocol:data_contract",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/V-MAX-Colab-Protocol",
+    "role": "Data engineer",
+    "status": "needs_inspection",
+    "task": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/V-MAX-Colab-Protocol:provenance",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/V-MAX-Colab-Protocol",
+    "role": "Evidence reviewer",
+    "status": "needs_inspection",
+    "task": "Retain source URLs, capture dates, hashes, original records and limitations.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/V-MAX-Colab-Protocol:checkpoint",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/V-MAX-Colab-Protocol",
+    "role": "Reliability engineer",
+    "status": "needs_inspection",
+    "task": "Prove interrupted runs resume without lost records or duplicates.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/V-MAX-Colab-Protocol:recovery",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/V-MAX-Colab-Protocol",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/V-MAX-Colab-Protocol:deployment",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/V-MAX-Colab-Protocol",
+    "role": "Release engineer",
+    "status": "needs_inspection",
+    "task": "Tie live output to its commit, smoke test and rollback instructions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "bartimoussmith-oss/V-MAX-Colab-Protocol:rights",
+    "priority": "P2",
+    "repository": "bartimoussmith-oss/V-MAX-Colab-Protocol",
+    "role": "Rights reviewer",
+    "status": "needs_inspection",
+    "task": "Separate code licensing from source-data and media reuse rights.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2008-2013:architecture",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2008-2013",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2008-2013:agent_handoff",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2008-2013",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2008-2013:setup",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2008-2013",
+    "role": "Build engineer",
+    "status": "needs_inspection",
+    "task": "Prove installation from a clean checkout with stated tool versions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2008-2013:tests",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2008-2013",
+    "role": "Test engineer",
+    "status": "needs_inspection",
+    "task": "Add offline tests and a real producer-to-published-output test.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2008-2013:data_contract",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2008-2013",
+    "role": "Data engineer",
+    "status": "needs_inspection",
+    "task": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2008-2013:recovery",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2008-2013",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2008-2013:deployment",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2008-2013",
+    "role": "Release engineer",
+    "status": "needs_inspection",
+    "task": "Tie live output to its commit, smoke test and rollback instructions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2008-2013:dependency_lock",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2008-2013",
+    "role": "Supply-chain reviewer",
+    "status": "needs_inspection",
+    "task": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2008-2013:.github/workflows/speaker-video-archive.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2008-2013",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/speaker-video-archive.yml",
+      "sha": "8c5e0888b0c9094442f1c1d22bfbb9fdb572ec52",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2014-2017:architecture",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2014-2017",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2014-2017:agent_handoff",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2014-2017",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2014-2017:setup",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2014-2017",
+    "role": "Build engineer",
+    "status": "needs_inspection",
+    "task": "Prove installation from a clean checkout with stated tool versions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2014-2017:tests",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2014-2017",
+    "role": "Test engineer",
+    "status": "needs_inspection",
+    "task": "Add offline tests and a real producer-to-published-output test.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2014-2017:data_contract",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2014-2017",
+    "role": "Data engineer",
+    "status": "needs_inspection",
+    "task": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2014-2017:recovery",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2014-2017",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2014-2017:deployment",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2014-2017",
+    "role": "Release engineer",
+    "status": "needs_inspection",
+    "task": "Tie live output to its commit, smoke test and rollback instructions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2014-2017:dependency_lock",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2014-2017",
+    "role": "Supply-chain reviewer",
+    "status": "needs_inspection",
+    "task": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2014-2017:.github/workflows/speaker-video-archive.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2014-2017",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/speaker-video-archive.yml",
+      "sha": "c0af1f68906d27581a630842d4b84025b1396270",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2018-2021:architecture",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2018-2021",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2018-2021:agent_handoff",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2018-2021",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2018-2021:setup",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2018-2021",
+    "role": "Build engineer",
+    "status": "needs_inspection",
+    "task": "Prove installation from a clean checkout with stated tool versions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2018-2021:tests",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2018-2021",
+    "role": "Test engineer",
+    "status": "needs_inspection",
+    "task": "Add offline tests and a real producer-to-published-output test.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2018-2021:data_contract",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2018-2021",
+    "role": "Data engineer",
+    "status": "needs_inspection",
+    "task": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2018-2021:recovery",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2018-2021",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2018-2021:deployment",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2018-2021",
+    "role": "Release engineer",
+    "status": "needs_inspection",
+    "task": "Tie live output to its commit, smoke test and rollback instructions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2018-2021:dependency_lock",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2018-2021",
+    "role": "Supply-chain reviewer",
+    "status": "needs_inspection",
+    "task": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2018-2021:.github/workflows/speaker-video-archive.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2018-2021",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/speaker-video-archive.yml",
+      "sha": "8e6620df9f1682ef95a4ed539561c90dd42c7ca1",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2022:architecture",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2022",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2022:agent_handoff",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2022",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2022:setup",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2022",
+    "role": "Build engineer",
+    "status": "needs_inspection",
+    "task": "Prove installation from a clean checkout with stated tool versions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2022:tests",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2022",
+    "role": "Test engineer",
+    "status": "needs_inspection",
+    "task": "Add offline tests and a real producer-to-published-output test.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2022:data_contract",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2022",
+    "role": "Data engineer",
+    "status": "needs_inspection",
+    "task": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2022:recovery",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2022",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2022:deployment",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2022",
+    "role": "Release engineer",
+    "status": "needs_inspection",
+    "task": "Tie live output to its commit, smoke test and rollback instructions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2022:dependency_lock",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2022",
+    "role": "Supply-chain reviewer",
+    "status": "needs_inspection",
+    "task": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2022:.github/workflows/speaker-video-archive.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2022",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/speaker-video-archive.yml",
+      "sha": "e6b9fe2ce66e722b196f4e0936f2587007c2b261",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2023-2024:architecture",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2023-2024",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2023-2024:agent_handoff",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2023-2024",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2023-2024:setup",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2023-2024",
+    "role": "Build engineer",
+    "status": "needs_inspection",
+    "task": "Prove installation from a clean checkout with stated tool versions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2023-2024:tests",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2023-2024",
+    "role": "Test engineer",
+    "status": "needs_inspection",
+    "task": "Add offline tests and a real producer-to-published-output test.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2023-2024:data_contract",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2023-2024",
+    "role": "Data engineer",
+    "status": "needs_inspection",
+    "task": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2023-2024:recovery",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2023-2024",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2023-2024:deployment",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2023-2024",
+    "role": "Release engineer",
+    "status": "needs_inspection",
+    "task": "Tie live output to its commit, smoke test and rollback instructions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2023-2024:dependency_lock",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2023-2024",
+    "role": "Supply-chain reviewer",
+    "status": "needs_inspection",
+    "task": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2023-2024:.github/workflows/speaker-video-archive.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2023-2024",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/speaker-video-archive.yml",
+      "sha": "1a0fcaf427599ed63bbaf55da60704a75bf7ee6d",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2025-2026:architecture",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2025-2026",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2025-2026:agent_handoff",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2025-2026",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2025-2026:setup",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2025-2026",
+    "role": "Build engineer",
+    "status": "needs_inspection",
+    "task": "Prove installation from a clean checkout with stated tool versions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2025-2026:tests",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2025-2026",
+    "role": "Test engineer",
+    "status": "needs_inspection",
+    "task": "Add offline tests and a real producer-to-published-output test.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2025-2026:data_contract",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2025-2026",
+    "role": "Data engineer",
+    "status": "needs_inspection",
+    "task": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2025-2026:recovery",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2025-2026",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2025-2026:deployment",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2025-2026",
+    "role": "Release engineer",
+    "status": "needs_inspection",
+    "task": "Tie live output to its commit, smoke test and rollback instructions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2025-2026:dependency_lock",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2025-2026",
+    "role": "Supply-chain reviewer",
+    "status": "needs_inspection",
+    "task": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/cheyenne-archives-2025-2026:.github/workflows/speaker-video-archive.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/cheyenne-archives-2025-2026",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/speaker-video-archive.yml",
+      "sha": "e6d8a410b98d5d5a892d2202a2ca93cbc3357c2c",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/real-windy-city-tv:architecture",
+    "priority": "P2",
+    "repository": "therealwindycity/real-windy-city-tv",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/real-windy-city-tv:agent_handoff",
+    "priority": "P2",
+    "repository": "therealwindycity/real-windy-city-tv",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/real-windy-city-tv:tests",
+    "priority": "P2",
+    "repository": "therealwindycity/real-windy-city-tv",
+    "role": "Test engineer",
+    "status": "needs_inspection",
+    "task": "Add offline tests and a real producer-to-published-output test.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/real-windy-city-tv:data_contract",
+    "priority": "P2",
+    "repository": "therealwindycity/real-windy-city-tv",
+    "role": "Data engineer",
+    "status": "needs_inspection",
+    "task": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/real-windy-city-tv:recovery",
+    "priority": "P2",
+    "repository": "therealwindycity/real-windy-city-tv",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/real-windy-city-tv:deployment",
+    "priority": "P2",
+    "repository": "therealwindycity/real-windy-city-tv",
+    "role": "Release engineer",
+    "status": "needs_inspection",
+    "task": "Tie live output to its commit, smoke test and rollback instructions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/real-windy-city-tv:rights",
+    "priority": "P2",
+    "repository": "therealwindycity/real-windy-city-tv",
+    "role": "Rights reviewer",
+    "status": "needs_inspection",
+    "task": "Separate code licensing from source-data and media reuse rights.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/The-Real-Windy-City-:agent_handoff",
+    "priority": "P2",
+    "repository": "therealwindycity/The-Real-Windy-City-",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/The-Real-Windy-City-:recovery",
+    "priority": "P2",
+    "repository": "therealwindycity/The-Real-Windy-City-",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/The-Real-Windy-City-:deployment",
+    "priority": "P2",
+    "repository": "therealwindycity/The-Real-Windy-City-",
+    "role": "Release engineer",
+    "status": "needs_inspection",
+    "task": "Tie live output to its commit, smoke test and rollback instructions.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/The-Real-Windy-City-:dependency_lock",
+    "priority": "P2",
+    "repository": "therealwindycity/The-Real-Windy-City-",
+    "role": "Supply-chain reviewer",
+    "status": "needs_inspection",
+    "task": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/The-Real-Windy-City-:rights",
+    "priority": "P2",
+    "repository": "therealwindycity/The-Real-Windy-City-",
+    "role": "Rights reviewer",
+    "status": "needs_inspection",
+    "task": "Separate code licensing from source-data and media reuse rights.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/The-Real-Windy-City-:.github/workflows/city-mirror-tests.yml:timeout",
+    "priority": "P2",
+    "repository": "therealwindycity/The-Real-Windy-City-",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/city-mirror-tests.yml",
+      "sha": "1685218035435b69b2589bb18b36a0018d2b703a",
+      "signal": "timeout"
+    },
+    "task": "Review missing timeout signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/The-Real-Windy-City-:.github/workflows/city-mirror-tests.yml:concurrency",
+    "priority": "P2",
+    "repository": "therealwindycity/The-Real-Windy-City-",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/city-mirror-tests.yml",
+      "sha": "1685218035435b69b2589bb18b36a0018d2b703a",
+      "signal": "concurrency"
+    },
+    "task": "Review missing concurrency signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/The-Real-Windy-City-:.github/workflows/city-mirror-tests.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/The-Real-Windy-City-",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/city-mirror-tests.yml",
+      "sha": "1685218035435b69b2589bb18b36a0018d2b703a",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/The-Real-Windy-City-:.github/workflows/pages.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/The-Real-Windy-City-",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/pages.yml",
+      "sha": "1685218035435b69b2589bb18b36a0018d2b703a",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/The-Real-Windy-City-:.github/workflows/scanner-ci.yml:concurrency",
+    "priority": "P2",
+    "repository": "therealwindycity/The-Real-Windy-City-",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/scanner-ci.yml",
+      "sha": "1685218035435b69b2589bb18b36a0018d2b703a",
+      "signal": "concurrency"
+    },
+    "task": "Review missing concurrency signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/The-Real-Windy-City-:.github/workflows/scanner-ci.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/The-Real-Windy-City-",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/scanner-ci.yml",
+      "sha": "1685218035435b69b2589bb18b36a0018d2b703a",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/therealwindycity:architecture",
+    "priority": "P2",
+    "repository": "therealwindycity/therealwindycity",
+    "role": "Architect",
+    "status": "needs_inspection",
+    "task": "Map producers, consumers, storage, deployment targets and owners.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/therealwindycity:agent_handoff",
+    "priority": "P2",
+    "repository": "therealwindycity/therealwindycity",
+    "role": "Agent coordinator",
+    "status": "needs_inspection",
+    "task": "Provide tested commands, current status, constraints and acceptance criteria.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/therealwindycity:data_contract",
+    "priority": "P2",
+    "repository": "therealwindycity/therealwindycity",
+    "role": "Data engineer",
+    "status": "needs_inspection",
+    "task": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/therealwindycity:recovery",
+    "priority": "P2",
+    "repository": "therealwindycity/therealwindycity",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/therealwindycity:rights",
+    "priority": "P2",
+    "repository": "therealwindycity/therealwindycity",
+    "role": "Rights reviewer",
+    "status": "needs_inspection",
+    "task": "Separate code licensing from source-data and media reuse rights.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/therealwindycity:.github/workflows/civic-cycle.yml:timeout",
+    "priority": "P2",
+    "repository": "therealwindycity/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/civic-cycle.yml",
+      "sha": "bc5414fc4877a6f9435e4ff185801ffbfb298145",
+      "signal": "timeout"
+    },
+    "task": "Review missing timeout signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/therealwindycity:.github/workflows/civic-cycle.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/civic-cycle.yml",
+      "sha": "bc5414fc4877a6f9435e4ff185801ffbfb298145",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/therealwindycity:.github/workflows/meeting-watch.yml:timeout",
+    "priority": "P2",
+    "repository": "therealwindycity/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/meeting-watch.yml",
+      "sha": "bc5414fc4877a6f9435e4ff185801ffbfb298145",
+      "signal": "timeout"
+    },
+    "task": "Review missing timeout signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/therealwindycity:.github/workflows/meeting-watch.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/meeting-watch.yml",
+      "sha": "bc5414fc4877a6f9435e4ff185801ffbfb298145",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/therealwindycity:.github/workflows/static.yml:timeout",
+    "priority": "P2",
+    "repository": "therealwindycity/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/static.yml",
+      "sha": "bc5414fc4877a6f9435e4ff185801ffbfb298145",
+      "signal": "timeout"
+    },
+    "task": "Review missing timeout signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/therealwindycity:.github/workflows/static.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/static.yml",
+      "sha": "bc5414fc4877a6f9435e4ff185801ffbfb298145",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/therealwindycity:.github/workflows/workdesk-pages.yml:timeout",
+    "priority": "P2",
+    "repository": "therealwindycity/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/workdesk-pages.yml",
+      "sha": "bc5414fc4877a6f9435e4ff185801ffbfb298145",
+      "signal": "timeout"
+    },
+    "task": "Review missing timeout signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/therealwindycity:.github/workflows/workdesk-pages.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/workdesk-pages.yml",
+      "sha": "bc5414fc4877a6f9435e4ff185801ffbfb298145",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/therealwindycity:.github/workflows/workdesk-poll.yml:timeout",
+    "priority": "P2",
+    "repository": "therealwindycity/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/workdesk-poll.yml",
+      "sha": "bc5414fc4877a6f9435e4ff185801ffbfb298145",
+      "signal": "timeout"
+    },
+    "task": "Review missing timeout signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/therealwindycity:.github/workflows/workdesk-poll.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/therealwindycity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/workdesk-poll.yml",
+      "sha": "bc5414fc4877a6f9435e4ff185801ffbfb298145",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/TheReelWindyCity:recovery",
+    "priority": "P2",
+    "repository": "therealwindycity/TheReelWindyCity",
+    "role": "Recovery engineer",
+    "status": "needs_inspection",
+    "task": "Test isolated backup restoration and reversible releases.",
+    "evidence": "No eligible engineering filename signal observed; equivalent implementation may exist.",
+    "done_when": "Implementation reviewed and relevant tests and output verified."
+  },
+  {
+    "id": "therealwindycity/TheReelWindyCity:.github/workflows/ci.yml:timeout",
+    "priority": "P2",
+    "repository": "therealwindycity/TheReelWindyCity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/ci.yml",
+      "sha": "cf7a30862d93ca68f66d32af69ca466a1accd038",
+      "signal": "timeout"
+    },
+    "task": "Review missing timeout signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/TheReelWindyCity:.github/workflows/ci.yml:concurrency",
+    "priority": "P2",
+    "repository": "therealwindycity/TheReelWindyCity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/ci.yml",
+      "sha": "cf7a30862d93ca68f66d32af69ca466a1accd038",
+      "signal": "concurrency"
+    },
+    "task": "Review missing concurrency signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/TheReelWindyCity:.github/workflows/cm-clean-candidate.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/TheReelWindyCity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/cm-clean-candidate.yml",
+      "sha": "cf7a30862d93ca68f66d32af69ca466a1accd038",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/TheReelWindyCity:.github/workflows/cm-clean-evidence.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/TheReelWindyCity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/cm-clean-evidence.yml",
+      "sha": "cf7a30862d93ca68f66d32af69ca466a1accd038",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/TheReelWindyCity:.github/workflows/cm-deployment-evidence.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/TheReelWindyCity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/cm-deployment-evidence.yml",
+      "sha": "cf7a30862d93ca68f66d32af69ca466a1accd038",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/TheReelWindyCity:.github/workflows/cm-public-display-repair.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/TheReelWindyCity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/cm-public-display-repair.yml",
+      "sha": "cf7a30862d93ca68f66d32af69ca466a1accd038",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/TheReelWindyCity:.github/workflows/cm-recover-frontend.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/TheReelWindyCity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/cm-recover-frontend.yml",
+      "sha": "cf7a30862d93ca68f66d32af69ca466a1accd038",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "therealwindycity/TheReelWindyCity:.github/workflows/cm-repair-diagnostics.yml:always_save",
+    "priority": "P2",
+    "repository": "therealwindycity/TheReelWindyCity",
+    "role": "Reliability/security reviewer",
+    "status": "needs_inspection",
+    "evidence": {
+      "path": ".github/workflows/cm-repair-diagnostics.yml",
+      "sha": "cf7a30862d93ca68f66d32af69ca466a1accd038",
+      "signal": "always_save"
+    },
+    "task": "Review missing always_save signal; inspect equivalent controls before editing.",
+    "done_when": "Control tested or documented as inapplicable."
+  },
+  {
+    "id": "bartimoussmith-oss/civic-newsroom:run:40293851464",
+    "priority": "review",
+    "repository": "bartimoussmith-oss/civic-newsroom",
+    "role": "Reliability engineer",
+    "status": "confirmed_run_failure_not_current_product_diagnosis",
+    "evidence": {
+      "name": "build-intelligence",
+      "id": 40293851464,
+      "url": "https://github.com/bartimoussmith-oss/civic-newsroom/actions/runs/40293851464",
+      "sha": "18efc5218131792fb311493d4678b700c4d8d71a",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-26T08:40:02Z",
+      "failed_jobs": [
+        {
+          "name": "build",
+          "url": "https://github.com/bartimoussmith-oss/civic-newsroom/actions/runs/40293851464/job/121475024707",
+          "steps": [
+            {
+              "name": "Build, package and verify real-corpus intelligence",
+              "number": 7
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "ValueError",
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    },
+    "task": "Reproduce the recorded failed step and repair its demonstrated cause.",
+    "done_when": "Replacement run passes the same checks and output is verified; older failure does not establish current HEAD failure."
+  },
+  {
+    "id": "bartimoussmith-oss/therealwindycity:run:45538925820",
+    "priority": "review",
+    "repository": "bartimoussmith-oss/therealwindycity",
+    "role": "Reliability engineer",
+    "status": "confirmed_run_failure_not_current_product_diagnosis",
+    "evidence": {
+      "name": "Promethean Recurring Harvest",
+      "id": 45538925820,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45538925820",
+      "sha": "277c93d63cd16e2faef3f1226658949c441c8a30",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-25T03:17:19Z",
+      "failed_jobs": [
+        {
+          "name": "harvest",
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45538925820/job/138952344013",
+          "steps": [
+            {
+              "name": "Provision Storage Shards",
+              "number": 8
+            },
+            {
+              "name": "Publish Telemetry & Database Updates (Runs Even On Failure)",
+              "number": 9
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    },
+    "task": "Reproduce the recorded failed step and repair its demonstrated cause.",
+    "done_when": "Replacement run passes the same checks and output is verified; older failure does not establish current HEAD failure."
+  },
+  {
+    "id": "bartimoussmith-oss/therealwindycity:run:45298670877",
+    "priority": "review",
+    "repository": "bartimoussmith-oss/therealwindycity",
+    "role": "Reliability engineer",
+    "status": "confirmed_run_failure_not_current_product_diagnosis",
+    "evidence": {
+      "name": "Promethean Autonomous Granicus Harvester",
+      "id": 45298670877,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45298670877",
+      "sha": "9c0acd833da7531ab9fab6c13446add45284cd5a",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-24T00:37:31Z",
+      "failed_jobs": [
+        {
+          "name": "harvest-and-index",
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45298670877/job/138125405107",
+          "steps": [
+            {
+              "name": "Commit & Push Updated Evidence Archive",
+              "number": 9
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    },
+    "task": "Reproduce the recorded failed step and repair its demonstrated cause.",
+    "done_when": "Replacement run passes the same checks and output is verified; older failure does not establish current HEAD failure."
+  },
+  {
+    "id": "therealwindycity/The-Real-Windy-City-:run:37696562749",
+    "priority": "review",
+    "repository": "therealwindycity/The-Real-Windy-City-",
+    "role": "Reliability engineer",
+    "status": "confirmed_run_failure_not_current_product_diagnosis",
+    "evidence": {
+      "name": "Deploy site",
+      "id": 37696562749,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/37696562749",
+      "sha": "373ccff1eefac8c32db0ca8a4485358b0b237248",
+      "branch": "arena/850039e7-the-real-windy-city",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-07T22:30:01Z",
+      "failed_jobs": [
+        {
+          "name": "deploy",
+          "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/37696562749/job/113049734956",
+          "steps": [],
+          "log_status": "unavailable",
+          "error_signals": [],
+          "http": 404
+        }
+      ]
+    },
+    "task": "Reproduce the recorded failed step and repair its demonstrated cause.",
+    "done_when": "Replacement run passes the same checks and output is verified; older failure does not establish current HEAD failure."
+  },
+  {
+    "id": "therealwindycity/The-Real-Windy-City-:run:36308690644",
+    "priority": "review",
+    "repository": "therealwindycity/The-Real-Windy-City-",
+    "role": "Reliability engineer",
+    "status": "confirmed_run_failure_not_current_product_diagnosis",
+    "evidence": {
+      "name": "Sync new meeting transcripts",
+      "id": 36308690644,
+      "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/36308690644",
+      "sha": "a5813c13e87579293c2b3e65d8da9410d8b6b905",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-09-27T09:13:39Z",
+      "failed_jobs": [
+        {
+          "name": "sync",
+          "url": "https://github.com/therealwindycity/The-Real-Windy-City-/actions/runs/36308690644/job/108590271847",
+          "steps": [
+            {
+              "name": "Sync new meetings",
+              "number": 7
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    },
+    "task": "Reproduce the recorded failed step and repair its demonstrated cause.",
+    "done_when": "Replacement run passes the same checks and output is verified; older failure does not establish current HEAD failure."
+  },
+  {
+    "id": "therealwindycity/therealwindycity:run:44925458014",
+    "priority": "review",
+    "repository": "therealwindycity/therealwindycity",
+    "role": "Reliability engineer",
+    "status": "confirmed_run_failure_not_current_product_diagnosis",
+    "evidence": {
+      "name": "youtube-meeting-harvest",
+      "id": 44925458014,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44925458014",
+      "sha": "e4c1ba4b2a22c1fa390387685e31add5da24e5ba",
+      "branch": "arena/610170da-therealwindycity",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-21T16:36:00Z",
+      "failed_jobs": []
+    },
+    "task": "Reproduce the recorded failed step and repair its demonstrated cause.",
+    "done_when": "Replacement run passes the same checks and output is verified; older failure does not establish current HEAD failure."
+  },
+  {
+    "id": "therealwindycity/therealwindycity:run:44824711978",
+    "priority": "review",
+    "repository": "therealwindycity/therealwindycity",
+    "role": "Reliability engineer",
+    "status": "confirmed_run_failure_not_current_product_diagnosis",
+    "evidence": {
+      "name": "workdesk-pages",
+      "id": 44824711978,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44824711978",
+      "sha": "6298619d9aac875dd7545ef592d455ed0d92377b",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-20T21:56:37Z",
+      "failed_jobs": [
+        {
+          "name": "deploy",
+          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/44824711978/job/136594400218",
+          "steps": [
+            {
+              "name": "Deploy to GitHub Pages",
+              "number": 2
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": []
+        }
+      ]
+    },
+    "task": "Reproduce the recorded failed step and repair its demonstrated cause.",
+    "done_when": "Replacement run passes the same checks and output is verified; older failure does not establish current HEAD failure."
+  },
+  {
+    "id": "therealwindycity/TheReelWindyCity:run:45539967730",
+    "priority": "review",
+    "repository": "therealwindycity/TheReelWindyCity",
+    "role": "Reliability engineer",
+    "status": "confirmed_run_failure_not_current_product_diagnosis",
+    "evidence": {
+      "name": "Promethean Recurring Harvest",
+      "id": 45539967730,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45539967730",
+      "sha": "1dc99e69c32c735f828c05490a8135a6e2b19b4a",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-25T03:26:15Z",
+      "failed_jobs": [
+        {
+          "name": "harvest",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45539967730/job/138955813455",
+          "steps": [
+            {
+              "name": "Publish Payloads In Existing Repository",
+              "number": 9
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    },
+    "task": "Reproduce the recorded failed step and repair its demonstrated cause.",
+    "done_when": "Replacement run passes the same checks and output is verified; older failure does not establish current HEAD failure."
+  },
+  {
+    "id": "therealwindycity/TheReelWindyCity:run:45297188154",
+    "priority": "review",
+    "repository": "therealwindycity/TheReelWindyCity",
+    "role": "Reliability engineer",
+    "status": "confirmed_run_failure_not_current_product_diagnosis",
+    "evidence": {
+      "name": "Promethean Autonomous Granicus Harvester",
+      "id": 45297188154,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45297188154",
+      "sha": "dcf0ffc47401d9233a2d6b9af9805a99ccca6dcc",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-24T00:26:37Z",
+      "failed_jobs": [
+        {
+          "name": "harvest-and-index",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45297188154/job/138120453411",
+          "steps": [
+            {
+              "name": "Execute Hardened Granicus Harvester",
+              "number": 8
+            }
+          ],
+          "log_status": "bounded_read",
+          "error_signals": [
+            "Nonzero command exit"
+          ]
+        }
+      ]
+    },
+    "task": "Reproduce the recorded failed step and repair its demonstrated cause.",
+    "done_when": "Replacement run passes the same checks and output is verified; older failure does not establish current HEAD failure."
+  }
+]

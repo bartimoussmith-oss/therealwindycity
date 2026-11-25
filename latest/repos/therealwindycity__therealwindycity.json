@@ -2,7 +2,7 @@
   "repository": "therealwindycity/therealwindycity",
   "archived": false,
   "fork": true,
-  "checked_at": "2026-11-24T22:47:40.937Z",
+  "checked_at": "2026-11-25T09:09:24.643Z",
   "controls": [
     {
       "id": "architecture",
@@ -127,34 +127,34 @@
   ],
   "runs": [
     {
-      "name": "civic-cycle",
-      "id": 45501304802,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/45501304802",
-      "sha": "ccef3fca043f359e6891b445fd632b0a41b42ae4",
+      "name": "meeting-watch",
+      "id": 45581458284,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/45581458284",
+      "sha": "7af8c2cda132129d687a2d6108a373966f93f425",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-24T22:28:47Z"
+      "created_at": "2026-11-25T09:01:22Z"
+    },
+    {
+      "name": "civic-cycle",
+      "id": 45578219945,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/45578219945",
+      "sha": "079c94bb6c826fd4ef80880af3964ef275d400a9",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-25T08:39:33Z"
     },
     {
       "name": "workdesk-poll",
-      "id": 45420683781,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/45420683781",
-      "sha": "ccef3fca043f359e6891b445fd632b0a41b42ae4",
+      "id": 45521784047,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/45521784047",
+      "sha": "079c94bb6c826fd4ef80880af3964ef275d400a9",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-24T15:01:35Z"
-    },
-    {
-      "name": "meeting-watch",
-      "id": 45373790624,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/45373790624",
-      "sha": "e80b988cb11b46bc9133d4bcf5cdc9bfe96b0e53",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-24T10:20:07Z"
+      "created_at": "2026-11-25T00:54:59Z"
     },
     {
       "name": "Deploy static content to Pages",
@@ -204,8 +204,8 @@
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "079c94bb6c826fd4ef80880af3964ef275d400a9",
-  "files_seen": 3618,
+  "head": "bc5414fc4877a6f9435e4ff185801ffbfb298145",
+  "files_seen": 3792,
   "tree_complete": true,
   "sample_coverage": {
     "candidates": 15,

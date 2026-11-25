@@ -2,7 +2,7 @@
   "repository": "therealwindycity/cheyenne-archives-2023-2024",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-24T22:47:24.487Z",
+  "checked_at": "2026-11-25T09:09:04.218Z",
   "controls": [
     {
       "id": "architecture",
@@ -54,9 +54,12 @@
       "role": "Evidence reviewer",
       "state": "signal_observed",
       "evidence": [
-        "speaker-videos/2024-12-16_Finance_Committee_12-16-24/manifest.json",
-        "speaker-videos/2024-12-18_Public_Services_Committee_12-17-24/manifest.json",
-        "speaker-videos/2024-12-24_City_Council_12-23-24/manifest.json"
+        "speaker-videos/2024-11-26_City_Council_Meeting_11-25-24/manifest.json",
+        "speaker-videos/2024-12-02_Finance_Committee_12-02-24/manifest.json",
+        "speaker-videos/2024-12-03_Public_Services_Committee_12-03-24/manifest.json",
+        "speaker-videos/2024-12-05_Committee_of_the_Whole-12-04-24/manifest.json",
+        "speaker-videos/2024-12-10_City_Council_Meeting_12-09-24/manifest.json",
+        "speaker-videos/2024-12-14_Work_Session_-_12-13-24_-_Municipal_Building_Spat/manifest.json"
       ],
       "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
       "runtime_verified": false,
@@ -67,10 +70,12 @@
       "role": "Reliability engineer",
       "state": "signal_observed",
       "evidence": [
-        "speaker-videos/2024-12-16_Finance_Committee_12-16-24/manifest.json",
-        "speaker-videos/2024-12-18_Public_Services_Committee_12-17-24/manifest.json",
-        "speaker-videos/2024-12-24_City_Council_12-23-24/manifest.json",
-        "speaker-videos/state.json"
+        "speaker-videos/2024-11-26_City_Council_Meeting_11-25-24/manifest.json",
+        "speaker-videos/2024-12-02_Finance_Committee_12-02-24/manifest.json",
+        "speaker-videos/2024-12-03_Public_Services_Committee_12-03-24/manifest.json",
+        "speaker-videos/2024-12-05_Committee_of_the_Whole-12-04-24/manifest.json",
+        "speaker-videos/2024-12-10_City_Council_Meeting_12-09-24/manifest.json",
+        "speaker-videos/2024-12-14_Work_Session_-_12-13-24_-_Municipal_Building_Spat/manifest.json"
       ],
       "next": "Prove interrupted runs resume without lost records or duplicates.",
       "runtime_verified": false,
@@ -118,23 +123,23 @@
   "runs": [
     {
       "name": "Cheyenne Speaker Video Splitter (2023-2024)",
-      "id": 45405981840,
-      "url": "https://github.com/therealwindycity/cheyenne-archives-2023-2024/actions/runs/45405981840",
-      "sha": "63964ec6295cc1fe9c780ba8c2072d01a874faf1",
+      "id": 45581131238,
+      "url": "https://github.com/therealwindycity/cheyenne-archives-2023-2024/actions/runs/45581131238",
+      "sha": "42421213d82c1d1112a754613029a260d5ab08f0",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-24T13:41:08Z"
+      "created_at": "2026-11-25T08:59:18Z"
     }
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "dc1c2f4c13140e86e3fb5326d4077fb409ae29b4",
-  "files_seen": 1395,
+  "head": "1a0fcaf427599ed63bbaf55da60704a75bf7ee6d",
+  "files_seen": 1413,
   "tree_complete": true,
   "sample_coverage": {
-    "candidates": 5,
-    "selected": 5
+    "candidates": 11,
+    "selected": 11
   },
   "workflow_signals": {
     ".github/workflows/speaker-video-archive.yml": {
