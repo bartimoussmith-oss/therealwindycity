@@ -1,8 +1,8 @@
 {
   "schema": 2,
-  "started_at": "2026-11-26T21:56:21.593Z",
-  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45901188512",
-  "video_proof_result": "success",
+  "started_at": "2026-11-26T22:57:29.949Z",
+  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45907899329",
+  "video_proof_result": "skipped",
   "repositories": [
     {
       "repository": "bartimoussmith-oss/casper-record-mirror",
@@ -105,14 +105,14 @@
       "from": "bartimoussmith-oss/civic-newsroom",
       "to": "therealwindycity/TheReelWindyCity",
       "path": ".github/workflows/build-public-data.yml",
-      "sha": "7b98397a6d764322f68b86d9a1b78f05ff4be112",
+      "sha": "aa237738b4fa8904bca17e1b3ec3327e0081eb42",
       "status": "declared_reference_only"
     },
     {
       "from": "bartimoussmith-oss/civic-newsroom",
       "to": "therealwindycity/The-Real-Windy-City-",
       "path": ".github/workflows/build-public-data.yml",
-      "sha": "7b98397a6d764322f68b86d9a1b78f05ff4be112",
+      "sha": "aa237738b4fa8904bca17e1b3ec3327e0081eb42",
       "status": "declared_reference_only"
     },
     {
@@ -133,14 +133,14 @@
       "from": "bartimoussmith-oss/therealwindycity",
       "to": "therealwindycity/TheReelWindyCity",
       "path": ".github/workflows/ai-record-pages.yml",
-      "sha": "0e9bfba608f5ce17bc45d4f7be011686ce094041",
+      "sha": "9f132874f2fe97b852aa96fc16502e7c42279a88",
       "status": "declared_reference_only"
     },
     {
       "from": "bartimoussmith-oss/therealwindycity",
       "to": "therealwindycity/The-Real-Windy-City-",
       "path": ".github/workflows/ai-record-pages.yml",
-      "sha": "0e9bfba608f5ce17bc45d4f7be011686ce094041",
+      "sha": "9f132874f2fe97b852aa96fc16502e7c42279a88",
       "status": "declared_reference_only"
     },
     {
@@ -475,11 +475,11 @@
       "task": "Check claims against source records and distinguish configured, executed, tested, deployed and verified."
     }
   ],
-  "finished_at": "2026-11-26T21:57:46.102Z",
+  "finished_at": "2026-11-26T22:58:29.382Z",
   "summary": {
     "repositories": 22,
     "declared_edges": 50,
-    "backlog": 217,
-    "logs_sampled": 7
+    "backlog": 216,
+    "logs_sampled": 5
   }
 }

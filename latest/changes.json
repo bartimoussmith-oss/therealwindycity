@@ -1,15 +1,12 @@
 {
   "newly_observed": [
-    "bartimoussmith-oss/therealwindycity:run:45872424092",
-    "therealwindycity/TheReelWindyCity:run:45829352720",
-    "therealwindycity/TheReelWindyCity:run:45823132637"
+    "bartimoussmith-oss/civic-newsroom:.github/workflows/build-intelligence.yml:always_save",
+    "bartimoussmith-oss/therealwindycity:run:45907766242"
   ],
   "no_longer_observed": [
-    "therealwindycity/cheyenne-archives-2014-2017:run:45728111700",
-    "bartimoussmith-oss/therealwindycity:run:45743421437",
-    "therealwindycity/therealwindycity:run:44824711978",
-    "therealwindycity/TheReelWindyCity:run:45744204674",
-    "therealwindycity/TheReelWindyCity:run:45297188154"
+    "bartimoussmith-oss/civic-newsroom:run:40293851464",
+    "bartimoussmith-oss/therealwindycity:run:45872424092",
+    "bartimoussmith-oss/therealwindycity:run:45298670877"
   ],
   "warning": "Evidence policy changed to version 2: removed findings may be corrected false positives, not completed repairs."
 }

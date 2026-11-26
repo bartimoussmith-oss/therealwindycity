@@ -1,8 +1,8 @@
 # Engineering control center
 
-Updated 2026-11-26T21:57:46.102Z. Evidence policy: version 2.
+Updated 2026-11-26T22:58:29.382Z. Evidence policy: version 2.
 Public repositories: 22. Declared connections: 50.
-Current video proof lane: success. Not a deployment result.
+Current video proof lane: skipped. Not a deployment result.
 
 ## Repair priorities
 

@@ -2,7 +2,7 @@
   "repository": "therealwindycity/TheReelWindyCity",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-26T21:57:37.992Z",
+  "checked_at": "2026-11-26T22:58:23.215Z",
   "controls": [
     {
       "id": "architecture",
@@ -151,6 +151,26 @@
   ],
   "runs": [
     {
+      "name": "Live Municipal Watch",
+      "id": 45904931239,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45904931239",
+      "sha": "cc5f2aa6d900fa13a4b01ad4d5a5595cd4fa464b",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-26T22:27:42Z"
+    },
+    {
+      "name": "Live Wyoming Watch",
+      "id": 45903989395,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45903989395",
+      "sha": "e29cf01c76bb2b5992e2a04dfa030955f464c665",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-26T22:19:01Z"
+    },
+    {
       "name": "Citizen Connect Incident Sync",
       "id": 45889044736,
       "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45889044736",
@@ -227,16 +247,6 @@
       ]
     },
     {
-      "name": "Live Municipal Watch",
-      "id": 45824106311,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45824106311",
-      "sha": "f6e5c7338502dcfe787d53db91ef9504f85e9bcd",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-26T12:54:58Z"
-    },
-    {
       "name": "Live Meeting Transcribe (stream to transcript)",
       "id": 45823344724,
       "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45823344724",
@@ -281,16 +291,6 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-11-25T23:16:32Z"
-    },
-    {
-      "name": "Live Wyoming Watch",
-      "id": 45713509967,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45713509967",
-      "sha": "afa62b10318684e8da7b9374bcb094c13dacbd50",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-25T22:28:23Z"
     }
   ],
   "pull_requests": [
@@ -350,7 +350,7 @@
     }
   ],
   "gaps": [],
-  "head": "e29cf01c76bb2b5992e2a04dfa030955f464c665",
+  "head": "c3237b6a126a5846af85803188d2300cf7ee7394",
   "files_seen": 5265,
   "tree_complete": true,
   "sample_coverage": {
