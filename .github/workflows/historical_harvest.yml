@@ -26,6 +26,10 @@ jobs:
       HARVEST_DELAY_SECONDS: "2"
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Queued runs (shared concurrency group) must start from the latest DB, not the
+          # trigger-time SHA, or the binary database can never rebase onto main.
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"

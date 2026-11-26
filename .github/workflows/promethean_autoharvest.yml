@@ -38,6 +38,10 @@ jobs:
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+        with:
+          # Queued runs (shared concurrency group) must start from the latest DB, not the
+          # trigger-time SHA, or the binary database can never rebase onto main.
+          ref: main
 
       - name: Set Up Python 3.11
         uses: actions/setup-python@v5
