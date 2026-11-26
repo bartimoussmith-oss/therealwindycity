@@ -1,12 +1,11 @@
 # Engineering control center
 
-Updated 2026-11-26T09:01:25.361Z. Evidence policy: version 2.
+Updated 2026-11-26T21:57:46.102Z. Evidence policy: version 2.
 Public repositories: 22. Declared connections: 50.
 Current video proof lane: success. Not a deployment result.
 
 ## Repair priorities
 
-- P1 | therealwindycity/cheyenne-archives-2014-2017 | Reliability engineer: Reproduce the recorded failed step and repair its demonstrated cause.
 - P2 | bartimoussmith-oss/casper-record-mirror | Architect: Map producers, consumers, storage, deployment targets and owners.
 - P2 | bartimoussmith-oss/casper-record-mirror | Agent coordinator: Provide tested commands, current status, constraints and acceptance criteria.
 - P2 | bartimoussmith-oss/casper-record-mirror | Build engineer: Prove installation from a clean checkout with stated tool versions.
@@ -36,6 +35,7 @@ Current video proof lane: success. Not a deployment result.
 - P2 | bartimoussmith-oss/cheyenne-laramie-archive | Recovery engineer: Test isolated backup restoration and reversible releases.
 - P2 | bartimoussmith-oss/cheyenne-laramie-archive | Release engineer: Tie live output to its commit, smoke test and rollback instructions.
 - P2 | bartimoussmith-oss/cheyenne-laramie-archive | Supply-chain reviewer: Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.
+- P2 | bartimoussmith-oss/cheyenne-laramie-archive | Rights reviewer: Separate code licensing from source-data and media reuse rights.
 
 ## Verification still required
 

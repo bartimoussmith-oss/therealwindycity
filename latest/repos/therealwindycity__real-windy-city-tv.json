@@ -2,7 +2,7 @@
   "repository": "therealwindycity/real-windy-city-tv",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-26T09:00:58.971Z",
+  "checked_at": "2026-11-26T21:57:22.530Z",
   "controls": [
     {
       "id": "architecture",
@@ -120,19 +120,19 @@
   "runs": [
     {
       "name": "pages build and deployment",
-      "id": 45754739442,
-      "url": "https://github.com/therealwindycity/real-windy-city-tv/actions/runs/45754739442",
-      "sha": "4bbb758a9683dfe3776580224fad5d0e7feafbfe",
+      "id": 45830569863,
+      "url": "https://github.com/therealwindycity/real-windy-city-tv/actions/runs/45830569863",
+      "sha": "2406102e5e418c64508f11164a1fe161950f6d8a",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-26T04:21:58Z"
+      "created_at": "2026-11-26T13:35:10Z"
     }
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "4bbb758a9683dfe3776580224fad5d0e7feafbfe",
-  "files_seen": 127,
+  "head": "2406102e5e418c64508f11164a1fe161950f6d8a",
+  "files_seen": 126,
   "tree_complete": true,
   "sample_coverage": {
     "candidates": 2,
