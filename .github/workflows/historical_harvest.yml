@@ -99,6 +99,14 @@ jobs:
         run: |
           set -e
           set -o pipefail
+          # Overflow shards are new public repos under the therealwindycity account, which needs the
+          # cross-account PROMETHEAN_ARCHIVE_TOKEN secret. Without it, skip with a warning instead of
+          # failing a harvest whose database was published.
+          if [ -z "${GH_TOKEN:-}" ]; then
+            echo "::warning title=Storage shards skipped::PROMETHEAN_ARCHIVE_TOKEN is not set, so artifacts over 90 MB are not mirrored to an overflow repo."
+            echo "[storage] Shard provisioning skipped: PROMETHEAN_ARCHIVE_TOKEN secret not configured." | tee -a SYSTEM_DIAGNOSTICS.md
+            exit 0
+          fi
           chmod +x tools/storage_shard_manager.sh
           ./tools/storage_shard_manager.sh 2>&1 | tee -a SYSTEM_DIAGNOSTICS.md
       - name: Publish Telemetry & Database Updates (Runs Even On Failure)
