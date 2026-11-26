@@ -358,8 +358,8 @@ def build(root: Path, inv=None, story=None, generated_at: str | None = None) -> 
                 "master": {"src": "video/provenance-manual-run.mp4", "start": round(start, 2),
                            "end": round(start + dur, 2)},
                 # …and where it sits in the 20-second everything-at-once edit
-                "showcase": {"src": CLIP_SHOWCASE, "start": schedule["timelapse"],
-                             "end": round(schedule["timelapse"] + _timelapse_total(), 2)},
+                "showcase": {"src": CLIP_SHOWCASE, "start": round(_timelapse_total() + start, 2),
+                             "end": round(_timelapse_total() + start + dur, 2)},
                 "src": f"{CLIP_DIR}/{clip}",
                 # the whole chapter…
                 "start": round(start, 2),
@@ -374,11 +374,11 @@ def build(root: Path, inv=None, story=None, generated_at: str | None = None) -> 
                 "chapter": "overview",
                 "master": {"src": "video/provenance-manual-run.mp4", "start": 0.0,
                            "end": round(schedule["total"], 2)},
-                "showcase": {"src": CLIP_SHOWCASE, "start": schedule["timelapse"],
-                             "end": round(schedule["timelapse"] + _timelapse_total(), 2)},
+                "showcase": {"src": CLIP_SHOWCASE, "start": 0.0,
+                             "end": round(_timelapse_total(), 2)},
                 "src": CLIP_SHOWCASE,
-                "start": schedule["timelapse"],
-                "end": round(schedule["timelapse"] + _timelapse_total(), 2),
+                "start": 0.0,
+                "end": round(_timelapse_total(), 2),
             }
 
     ledger = {
@@ -429,7 +429,7 @@ def _schedule(story) -> dict:
     total = t + ENDCARD
     tl_total = _timelapse_total()
     return {
-        "timelapse": round(total + 0.4, 2),
+        "timelapse": round(total, 2),
         "timelapse_seconds": round(tl_total, 2),
         "intro": [0.0, INTRO],
         "detect": [INTRO, INTRO + DETECT],
