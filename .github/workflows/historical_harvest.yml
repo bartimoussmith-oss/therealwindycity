@@ -71,7 +71,10 @@ jobs:
           }
           run_source python3 scrapers/granicus_harvester.py "${HOST}/ViewPublisher.php?view_id=5" --historical
           run_source python3 scrapers/granicus_harvester.py "${HOST}/ViewPublisher.php?view_id=2" --historical
-          if [ -f "scrapers/connect_cheyenne_harvester.py" ]; then
+          # connectcheyenne.org stopped resolving (NXDOMAIN, checked 2026-11-26): report it as skipped, not as a failed source.
+          if [ -f "scrapers/connect_cheyenne_harvester.py" ] && ! getent hosts connectcheyenne.org >/dev/null; then
+            echo "[sources] connectcheyenne.org does not resolve; Connect Cheyenne skipped (domain retired)" | tee -a SYSTEM_DIAGNOSTICS.md
+          elif [ -f "scrapers/connect_cheyenne_harvester.py" ]; then
             run_source python3 scrapers/connect_cheyenne_harvester.py
           fi
           echo "[sources] reached=${reached} failed=${failed}" | tee -a SYSTEM_DIAGNOSTICS.md
