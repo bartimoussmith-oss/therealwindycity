@@ -1,13 +1,13 @@
 {
   "newly_observed": [
+    "therealwindycity/cheyenne-archives-2014-2017:run:45728111700",
+    "bartimoussmith-oss/therealwindycity:run:45743421437",
+    "therealwindycity/TheReelWindyCity:run:45744204674"
+  ],
+  "no_longer_observed": [
     "therealwindycity/cheyenne-archives-2014-2017:run:45633455807",
     "bartimoussmith-oss/therealwindycity:run:45674094848",
     "therealwindycity/TheReelWindyCity:run:45676029888"
-  ],
-  "no_longer_observed": [
-    "therealwindycity/cheyenne-archives-2014-2017:run:45520436924",
-    "bartimoussmith-oss/therealwindycity:run:45538925820",
-    "therealwindycity/TheReelWindyCity:run:45539967730"
   ],
   "warning": "Evidence policy changed to version 2: removed findings may be corrected false positives, not completed repairs."
 }
