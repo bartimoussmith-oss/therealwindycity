@@ -1801,7 +1801,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/speaker-video-archive.yml",
-      "sha": "a961fa699e5c6535ab28ede8196f07a44d78c4b1",
+      "sha": "debf44432497c081232a8791cc67d8d637dc869b",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -2219,7 +2219,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/ci.yml",
-      "sha": "c3237b6a126a5846af85803188d2300cf7ee7394",
+      "sha": "a553a20223bc1911281d8bea2fdeedf1ab0b5aec",
       "signal": "timeout"
     },
     "task": "Review missing timeout signal; inspect equivalent controls before editing.",
@@ -2233,7 +2233,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/ci.yml",
-      "sha": "c3237b6a126a5846af85803188d2300cf7ee7394",
+      "sha": "a553a20223bc1911281d8bea2fdeedf1ab0b5aec",
       "signal": "concurrency"
     },
     "task": "Review missing concurrency signal; inspect equivalent controls before editing.",
@@ -2247,7 +2247,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/cm-clean-candidate.yml",
-      "sha": "c3237b6a126a5846af85803188d2300cf7ee7394",
+      "sha": "a553a20223bc1911281d8bea2fdeedf1ab0b5aec",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -2261,7 +2261,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/cm-clean-evidence.yml",
-      "sha": "c3237b6a126a5846af85803188d2300cf7ee7394",
+      "sha": "a553a20223bc1911281d8bea2fdeedf1ab0b5aec",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -2275,7 +2275,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/cm-deployment-evidence.yml",
-      "sha": "c3237b6a126a5846af85803188d2300cf7ee7394",
+      "sha": "a553a20223bc1911281d8bea2fdeedf1ab0b5aec",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -2289,7 +2289,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/cm-public-display-repair.yml",
-      "sha": "c3237b6a126a5846af85803188d2300cf7ee7394",
+      "sha": "a553a20223bc1911281d8bea2fdeedf1ab0b5aec",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -2303,7 +2303,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/cm-recover-frontend.yml",
-      "sha": "c3237b6a126a5846af85803188d2300cf7ee7394",
+      "sha": "a553a20223bc1911281d8bea2fdeedf1ab0b5aec",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -2317,7 +2317,7 @@
     "status": "needs_inspection",
     "evidence": {
       "path": ".github/workflows/cm-repair-diagnostics.yml",
-      "sha": "c3237b6a126a5846af85803188d2300cf7ee7394",
+      "sha": "a553a20223bc1911281d8bea2fdeedf1ab0b5aec",
       "signal": "always_save"
     },
     "task": "Review missing always_save signal; inspect equivalent controls before editing.",
@@ -2442,41 +2442,6 @@
       "conclusion": "failure",
       "created_at": "2026-11-21T16:36:00Z",
       "failed_jobs": []
-    },
-    "task": "Reproduce the recorded failed step and repair its demonstrated cause.",
-    "done_when": "Replacement run passes the same checks and output is verified; older failure does not establish current HEAD failure."
-  },
-  {
-    "id": "therealwindycity/TheReelWindyCity:run:45829352720",
-    "priority": "review",
-    "repository": "therealwindycity/TheReelWindyCity",
-    "role": "Reliability engineer",
-    "status": "confirmed_run_failure_not_current_product_diagnosis",
-    "evidence": {
-      "name": "CI",
-      "id": 45829352720,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45829352720",
-      "sha": "0d697efdae9e94573bdf7c2b5925a398c1161d8e",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "failure",
-      "created_at": "2026-11-26T13:27:38Z",
-      "failed_jobs": [
-        {
-          "name": "checks",
-          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45829352720/job/139941716388",
-          "steps": [
-            {
-              "name": "Serve and run browser smoke tests (GitHub Pages path)",
-              "number": 20
-            }
-          ],
-          "log_status": "bounded_read",
-          "error_signals": [
-            "Nonzero command exit"
-          ]
-        }
-      ]
     },
     "task": "Reproduce the recorded failed step and repair its demonstrated cause.",
     "done_when": "Replacement run passes the same checks and output is verified; older failure does not establish current HEAD failure."

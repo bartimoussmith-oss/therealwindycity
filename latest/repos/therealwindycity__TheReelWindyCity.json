@@ -2,7 +2,7 @@
   "repository": "therealwindycity/TheReelWindyCity",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-26T22:58:23.215Z",
+  "checked_at": "2026-11-26T23:00:04.260Z",
   "controls": [
     {
       "id": "architecture",
@@ -151,6 +151,36 @@
   ],
   "runs": [
     {
+      "name": "CI",
+      "id": 45908188797,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45908188797",
+      "sha": "a553a20223bc1911281d8bea2fdeedf1ab0b5aec",
+      "branch": "main",
+      "status": "in_progress",
+      "conclusion": null,
+      "created_at": "2026-11-26T22:59:37Z"
+    },
+    {
+      "name": "Deploy to GitHub Pages",
+      "id": 45908188783,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45908188783",
+      "sha": "a553a20223bc1911281d8bea2fdeedf1ab0b5aec",
+      "branch": "main",
+      "status": "in_progress",
+      "conclusion": null,
+      "created_at": "2026-11-26T22:59:37Z"
+    },
+    {
+      "name": "Promethean Recurring Harvest",
+      "id": 45908188738,
+      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45908188738",
+      "sha": "a553a20223bc1911281d8bea2fdeedf1ab0b5aec",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "skipped",
+      "created_at": "2026-11-26T22:59:37Z"
+    },
+    {
       "name": "Live Municipal Watch",
       "id": 45904931239,
       "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45904931239",
@@ -181,16 +211,6 @@
       "created_at": "2026-11-26T20:10:13Z"
     },
     {
-      "name": "Promethean Recurring Harvest",
-      "id": 45874493361,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45874493361",
-      "sha": "0d697efdae9e94573bdf7c2b5925a398c1161d8e",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-26T18:15:44Z"
-    },
-    {
       "name": "CM deployment evidence",
       "id": 45840932940,
       "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45840932940",
@@ -209,42 +229,6 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-11-26T14:37:33Z"
-    },
-    {
-      "name": "Deploy to GitHub Pages",
-      "id": 45840095645,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45840095645",
-      "sha": "0d697efdae9e94573bdf7c2b5925a398c1161d8e",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-26T14:32:49Z"
-    },
-    {
-      "name": "CI",
-      "id": 45829352720,
-      "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45829352720",
-      "sha": "0d697efdae9e94573bdf7c2b5925a398c1161d8e",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "failure",
-      "created_at": "2026-11-26T13:27:38Z",
-      "failed_jobs": [
-        {
-          "name": "checks",
-          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/45829352720/job/139941716388",
-          "steps": [
-            {
-              "name": "Serve and run browser smoke tests (GitHub Pages path)",
-              "number": 20
-            }
-          ],
-          "log_status": "bounded_read",
-          "error_signals": [
-            "Nonzero command exit"
-          ]
-        }
-      ]
     },
     {
       "name": "Live Meeting Transcribe (stream to transcript)",
@@ -350,7 +334,7 @@
     }
   ],
   "gaps": [],
-  "head": "c3237b6a126a5846af85803188d2300cf7ee7394",
+  "head": "a553a20223bc1911281d8bea2fdeedf1ab0b5aec",
   "files_seen": 5265,
   "tree_complete": true,
   "sample_coverage": {

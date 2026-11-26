@@ -1,7 +1,7 @@
 {
   "schema": 2,
-  "started_at": "2026-11-26T22:57:29.949Z",
-  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45907899329",
+  "started_at": "2026-11-26T22:59:18.806Z",
+  "run_url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45907940905",
   "video_proof_result": "skipped",
   "repositories": [
     {
@@ -357,42 +357,42 @@
       "from": "therealwindycity/cheyenne-archives-2025-2026",
       "to": "therealwindycity/The-Real-Windy-City-",
       "path": "README.md",
-      "sha": "a961fa699e5c6535ab28ede8196f07a44d78c4b1",
+      "sha": "debf44432497c081232a8791cc67d8d637dc869b",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2025-2026",
       "to": "therealwindycity/cheyenne-archives-2008-2013",
       "path": "README.md",
-      "sha": "a961fa699e5c6535ab28ede8196f07a44d78c4b1",
+      "sha": "debf44432497c081232a8791cc67d8d637dc869b",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2025-2026",
       "to": "therealwindycity/cheyenne-archives-2014-2017",
       "path": "README.md",
-      "sha": "a961fa699e5c6535ab28ede8196f07a44d78c4b1",
+      "sha": "debf44432497c081232a8791cc67d8d637dc869b",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2025-2026",
       "to": "therealwindycity/cheyenne-archives-2018-2021",
       "path": "README.md",
-      "sha": "a961fa699e5c6535ab28ede8196f07a44d78c4b1",
+      "sha": "debf44432497c081232a8791cc67d8d637dc869b",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2025-2026",
       "to": "therealwindycity/cheyenne-archives-2022",
       "path": "README.md",
-      "sha": "a961fa699e5c6535ab28ede8196f07a44d78c4b1",
+      "sha": "debf44432497c081232a8791cc67d8d637dc869b",
       "status": "declared_reference_only"
     },
     {
       "from": "therealwindycity/cheyenne-archives-2025-2026",
       "to": "therealwindycity/cheyenne-archives-2023-2024",
       "path": "README.md",
-      "sha": "a961fa699e5c6535ab28ede8196f07a44d78c4b1",
+      "sha": "debf44432497c081232a8791cc67d8d637dc869b",
       "status": "declared_reference_only"
     },
     {
@@ -475,11 +475,11 @@
       "task": "Check claims against source records and distinguish configured, executed, tested, deployed and verified."
     }
   ],
-  "finished_at": "2026-11-26T22:58:29.382Z",
+  "finished_at": "2026-11-26T23:00:08.673Z",
   "summary": {
     "repositories": 22,
     "declared_edges": 50,
-    "backlog": 216,
-    "logs_sampled": 5
+    "backlog": 215,
+    "logs_sampled": 4
   }
 }

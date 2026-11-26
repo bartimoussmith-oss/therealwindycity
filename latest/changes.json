@@ -1,12 +1,7 @@
 {
-  "newly_observed": [
-    "bartimoussmith-oss/civic-newsroom:.github/workflows/build-intelligence.yml:always_save",
-    "bartimoussmith-oss/therealwindycity:run:45907766242"
-  ],
+  "newly_observed": [],
   "no_longer_observed": [
-    "bartimoussmith-oss/civic-newsroom:run:40293851464",
-    "bartimoussmith-oss/therealwindycity:run:45872424092",
-    "bartimoussmith-oss/therealwindycity:run:45298670877"
+    "therealwindycity/TheReelWindyCity:run:45829352720"
   ],
   "warning": "Evidence policy changed to version 2: removed findings may be corrected false positives, not completed repairs."
 }

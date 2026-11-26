@@ -2,7 +2,7 @@
   "repository": "therealwindycity/cheyenne-archives-2025-2026",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-26T22:58:08.621Z",
+  "checked_at": "2026-11-26T22:59:51.971Z",
   "controls": [
     {
       "id": "architecture",
@@ -54,12 +54,12 @@
       "role": "Evidence reviewer",
       "state": "signal_observed",
       "evidence": [
+        "speaker-videos/2026-10-19_Public_Services_Committee_-_10-19-26/manifest.json",
         "speaker-videos/2026-10-20_August_11_2026_Cheyenne_Historic_Preservation_Boa/manifest.json",
         "speaker-videos/2026-10-20_Finance_Committee_-_10-20-26/manifest.json",
         "speaker-videos/2026-10-20_October_13_2026_Cheyenne_Historic_Preservation_Bo/manifest.json",
         "speaker-videos/2026-10-20_October_15_2026_Cheyenne_Board_of_Adjustment_Meet/manifest.json",
-        "speaker-videos/2026-10-20_October_19_2026_Cheyenne_Planning_Commission_Meet/manifest.json",
-        "speaker-videos/2026-10-20_September_9_2026_Cheyenne_Historic_Preservation_B/manifest.json"
+        "speaker-videos/2026-10-20_October_19_2026_Cheyenne_Planning_Commission_Meet/manifest.json"
       ],
       "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
       "runtime_verified": false,
@@ -70,12 +70,12 @@
       "role": "Reliability engineer",
       "state": "signal_observed",
       "evidence": [
+        "speaker-videos/2026-10-19_Public_Services_Committee_-_10-19-26/manifest.json",
         "speaker-videos/2026-10-20_August_11_2026_Cheyenne_Historic_Preservation_Boa/manifest.json",
         "speaker-videos/2026-10-20_Finance_Committee_-_10-20-26/manifest.json",
         "speaker-videos/2026-10-20_October_13_2026_Cheyenne_Historic_Preservation_Bo/manifest.json",
         "speaker-videos/2026-10-20_October_15_2026_Cheyenne_Board_of_Adjustment_Meet/manifest.json",
-        "speaker-videos/2026-10-20_October_19_2026_Cheyenne_Planning_Commission_Meet/manifest.json",
-        "speaker-videos/2026-10-20_September_9_2026_Cheyenne_Historic_Preservation_B/manifest.json"
+        "speaker-videos/2026-10-20_October_19_2026_Cheyenne_Planning_Commission_Meet/manifest.json"
       ],
       "next": "Prove interrupted runs resume without lost records or duplicates.",
       "runtime_verified": false,
@@ -134,11 +134,11 @@
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "a961fa699e5c6535ab28ede8196f07a44d78c4b1",
-  "files_seen": 790,
+  "head": "debf44432497c081232a8791cc67d8d637dc869b",
+  "files_seen": 793,
   "tree_complete": true,
   "sample_coverage": {
-    "candidates": 22,
+    "candidates": 23,
     "selected": 12
   },
   "workflow_signals": {
