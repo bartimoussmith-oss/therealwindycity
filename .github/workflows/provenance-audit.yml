@@ -16,6 +16,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install FFmpeg (ffmpeg/ffprobe are not on the runner image)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - run: python -m pip install pillow markdown
       - name: Check Python syntax
         run: python -m compileall -q provenance rwc_provenance.py tools/check_provenance.py tools/render_ai_record.py
