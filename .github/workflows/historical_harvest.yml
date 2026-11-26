@@ -37,6 +37,9 @@ jobs:
         run: pip install requests beautifulsoup4 pypdf pdfplumber pytesseract pdf2image
       - name: Harvester regression tests (offline)
         run: python3 -m unittest tests/test_granicus_harvester.py -v
+      - name: Unpack evidence database
+        # Stored as .db.gz: the raw database passed GitHub's 100 MB file limit and every push was rejected.
+        run: python3 tools/evidence_db.py unpack
       - name: Execute Extraction Pipelines
         run: |
           set -uo pipefail
@@ -96,14 +99,15 @@ jobs:
         run: |
           set -uo pipefail
           echo '```' >> SYSTEM_DIAGNOSTICS.md
-          # Fold the write-ahead log back into the database file so the committed file is complete.
-          sqlite3 database/promethean_evidence.db "PRAGMA wal_checkpoint(TRUNCATE);" || true
+          # Checkpoint the WAL and compress: GitHub refuses files over 100 MB (the raw .db is 102+ MB).
+          if [ -f database/promethean_evidence.db ]; then python3 tools/evidence_db.py pack; fi
+          git rm --cached --quiet --ignore-unmatch -- database/promethean_evidence.db
           git config user.name "Promethean-AutoHarvester"
           git config user.email "cwdm82001@gmail.com"
           # Stage each file on its own. `git add a b c` stages nothing at all when one path is
           # missing, and STORAGE_MANIFEST.md only exists after a shard has been provisioned, so the
           # previous single `git add ... || true` silently published nothing.
-          for path in STORAGE_MANIFEST.md database/promethean_evidence.db SYSTEM_DIAGNOSTICS.md; do
+          for path in STORAGE_MANIFEST.md database/promethean_evidence.db.gz SYSTEM_DIAGNOSTICS.md; do
             if [ -e "$path" ]; then git add -- "$path"; fi
           done
           if git diff --cached --quiet; then

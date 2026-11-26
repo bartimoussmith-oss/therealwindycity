@@ -47,6 +47,19 @@ from urllib.robotparser import RobotFileParser
 import requests
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
+
+
+def _unpack_if_needed(db_file):
+    """The database is committed as <name>.db.gz (GitHub's 100 MB limit); decompress it when only the .gz exists."""
+    db = Path(db_file)
+    gz = db.with_name(db.name + ".gz")
+    if gz.exists() and not db.exists():
+        import gzip
+        import shutil
+        tmp = db.with_name(db.name + ".unpacking")
+        with gzip.open(gz, "rb") as src, open(tmp, "wb") as dst:
+            shutil.copyfileobj(src, dst, 1 << 20)
+        os.replace(tmp, db)
 DB_PATH = os.environ.get("PROMETHEAN_DB", "database/promethean_evidence.db")
 SCHEMA_PATH = REPO_ROOT / "database" / "schema_rhetorical_profiling.sql"
 HEADERS = {"User-Agent": "Promethean_CivicWatch_Auditor/4.4 (+https://github.com/bartimoussmith-oss/therealwindycity)"}
@@ -258,6 +271,7 @@ def harvest_and_ingest(target_url, prefix="Cheyenne_Historical", historical=Fals
                      DEFAULT_DELAY if delay is None else delay)
     db_file = db_path or DB_PATH
     Path(db_file).parent.mkdir(parents=True, exist_ok=True)
+    _unpack_if_needed(db_file)
     conn = sqlite3.connect(db_file, timeout=60)
     try:
         ensure_schema(conn)

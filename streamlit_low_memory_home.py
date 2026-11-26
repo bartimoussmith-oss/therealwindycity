@@ -10,8 +10,21 @@ import streamlit as st
 ROOT = Path(__file__).resolve().parent
 PAGE_SIZE = 50
 
+def _unpack_if_needed(path):
+    """The database is committed as <name>.db.gz (GitHub's 100 MB limit); decompress it when only the .gz exists."""
+    gz = path.with_name(path.name + ".gz")
+    if gz.is_file() and not path.is_file():
+        import gzip
+        import shutil
+        tmp = path.with_name(path.name + ".unpacking")
+        with gzip.open(gz, "rb") as src, open(tmp, "wb") as dst:
+            shutil.copyfileobj(src, dst, 1 << 20)
+        os.replace(tmp, path)
+
+
 def query_rows(path, sql, params=()):
     path = Path(path).resolve()
+    _unpack_if_needed(path)
     if not path.is_file():
         raise FileNotFoundError("Evidence database is not installed at the configured path.")
     with closing(sqlite3.connect(path.as_uri() + "?mode=ro", uri=True, timeout=5)) as conn:

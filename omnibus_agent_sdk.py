@@ -5,6 +5,12 @@ from datetime import datetime, timezone
 class PrometheanOmnibusAgent:
     def __init__(self):
         self.db_path = "database/promethean_evidence.db"
+        gz = self.db_path + ".gz"  # committed compressed (GitHub's 100 MB limit)
+        if os.path.exists(gz) and not os.path.exists(self.db_path):
+            import gzip, shutil
+            with gzip.open(gz, "rb") as src, open(self.db_path + ".unpacking", "wb") as dst:
+                shutil.copyfileobj(src, dst, 1 << 20)
+            os.replace(self.db_path + ".unpacking", self.db_path)
 
     def status(self):
         counts = {}

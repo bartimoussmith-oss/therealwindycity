@@ -77,3 +77,9 @@ public/wyoming/
 /cartography-results/
 wyoming_statewide_records_infrastructure.db
 wyoming_statewide_records_infrastructure.db.provenance.json
+
+# The evidence database is committed compressed (database/promethean_evidence.db.gz) because the raw
+# file passed GitHub's 100 MB limit. Run `python3 tools/evidence_db.py unpack` to get the .db.
+database/promethean_evidence.db
+database/*.unpacking
+database/*.gz.tmp
