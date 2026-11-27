@@ -40,7 +40,7 @@ jobs:
       - name: Install Python Dependencies
         run: pip install requests beautifulsoup4 pypdf pdfplumber pytesseract pdf2image
       - name: Harvester regression tests (offline)
-        run: python3 -m unittest tests/test_granicus_harvester.py -v
+        run: python3 -m unittest tests/test_granicus_harvester.py tests/test_harvest_publication.py -v
       - name: Unpack evidence database
         # Stored as .db.gz: the raw database passed GitHub's 100 MB file limit and every push was rejected.
         run: python3 tools/evidence_db.py unpack
@@ -87,26 +87,15 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
           # Red only when nothing could be reached at all.
           [ "$reached" -gt 0 ]
-      - name: Provision Storage Shards
+      - name: Publish Payloads In This Repository
         env:
-          GH_TOKEN: ${{ secrets.PROMETHEAN_ARCHIVE_TOKEN }}
-          # The shard manager commits inside a freshly initialized staging repository,
-          # which has no identity; without these the step fails "empty ident name".
-          GIT_AUTHOR_NAME: Promethean-AutoHarvester
-          GIT_AUTHOR_EMAIL: cwdm82001@gmail.com
-          GIT_COMMITTER_NAME: Promethean-AutoHarvester
-          GIT_COMMITTER_EMAIL: cwdm82001@gmail.com
+          # A release per run in THIS repository, with the workflow's own token (contents: write).
+          # The old overflow-repo shards needed a cross-account PROMETHEAN_ARCHIVE_TOKEN secret that was
+          # never configured, so payloads were silently not archived.
+          GH_TOKEN: ${{ github.token }}
+          INCLUDE_DB: "0"   # the evidence database is committed to the repository as .db.gz
         run: |
-          set -e
-          set -o pipefail
-          # Overflow shards are new public repos under the therealwindycity account, which needs the
-          # cross-account PROMETHEAN_ARCHIVE_TOKEN secret. Without it, skip with a warning instead of
-          # failing a harvest whose database was published.
-          if [ -z "${GH_TOKEN:-}" ]; then
-            echo "::warning title=Storage shards skipped::PROMETHEAN_ARCHIVE_TOKEN is not set, so artifacts over 90 MB are not mirrored to an overflow repo."
-            echo "[storage] Shard provisioning skipped: PROMETHEAN_ARCHIVE_TOKEN secret not configured." | tee -a SYSTEM_DIAGNOSTICS.md
-            exit 0
-          fi
+          set -euo pipefail
           chmod +x tools/storage_shard_manager.sh
           ./tools/storage_shard_manager.sh 2>&1 | tee -a SYSTEM_DIAGNOSTICS.md
       - name: Publish Telemetry & Database Updates (Runs Even On Failure)
