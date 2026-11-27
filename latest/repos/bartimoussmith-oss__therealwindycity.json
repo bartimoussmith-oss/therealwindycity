@@ -2,7 +2,7 @@
   "repository": "bartimoussmith-oss/therealwindycity",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-26T22:59:35.384Z",
+  "checked_at": "2026-11-27T09:04:16.496Z",
   "controls": [
     {
       "id": "architecture",
@@ -76,12 +76,12 @@
       "role": "Evidence reviewer",
       "state": "signal_observed",
       "evidence": [
+        "STORAGE_MANIFEST.md",
         "config/sources.json",
         "drive-import/manifest.json",
         "pipeline/media_manifest.json",
         "promethean_federation_manifest.json",
-        "wyoming/instances/afton/config/sources.json",
-        "wyoming/instances/albany-county/config/sources.json"
+        "wyoming/instances/afton/config/sources.json"
       ],
       "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
       "runtime_verified": false,
@@ -92,6 +92,7 @@
       "role": "Reliability engineer",
       "state": "signal_observed",
       "evidence": [
+        "STORAGE_MANIFEST.md",
         "drive-import/manifest.json",
         "pipeline/media_manifest.json",
         "promethean_federation_manifest.json"
@@ -143,13 +144,103 @@
   "runs": [
     {
       "name": "Engineering control center",
-      "id": 45907940905,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45907940905",
-      "sha": "9f132874f2fe97b852aa96fc16502e7c42279a88",
+      "id": 45970300013,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45970300013",
+      "sha": "8974515d88f6b050e8b3af5f46cd1d4062731695",
       "branch": "main",
       "status": "in_progress",
       "conclusion": null,
-      "created_at": "2026-11-26T22:56:57Z"
+      "created_at": "2026-11-27T09:01:48Z"
+    },
+    {
+      "name": "civic-cycle",
+      "id": 45966625395,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45966625395",
+      "sha": "51231b608831767123ec9a5b3666b8119ff4129c",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-27T08:33:44Z"
+    },
+    {
+      "name": "Hourly public ecosystem diagnostics",
+      "id": 45943894599,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45943894599",
+      "sha": "51231b608831767123ec9a5b3666b8119ff4129c",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-27T05:07:28Z"
+    },
+    {
+      "name": "wyoming-verify",
+      "id": 45935733406,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45935733406",
+      "sha": "393a7fe7c3239b1848ff396fcd04990463b307bc",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-27T03:42:33Z"
+    },
+    {
+      "name": "Wyoming Chrome collection",
+      "id": 45935733398,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45935733398",
+      "sha": "393a7fe7c3239b1848ff396fcd04990463b307bc",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-27T03:42:33Z"
+    },
+    {
+      "name": "ai-record-pages",
+      "id": 45935733384,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45935733384",
+      "sha": "393a7fe7c3239b1848ff396fcd04990463b307bc",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-27T03:42:33Z"
+    },
+    {
+      "name": "Promethean Recurring Harvest",
+      "id": 45932672453,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45932672453",
+      "sha": "0d650a0174ad553627c7319f5aa20c2a89044db8",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-27T03:11:09Z"
+    },
+    {
+      "name": "Scanner historical backfill",
+      "id": 45931378464,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45931378464",
+      "sha": "939351920db181db318240c4a664fef3882a875b",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-27T02:57:57Z"
+    },
+    {
+      "name": "Scanner best-effort live and recovery",
+      "id": 45918756960,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45918756960",
+      "sha": "491143a167aac903fadbb7fd2f83831142689cb7",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-27T00:47:05Z"
+    },
+    {
+      "name": "Promethean Autonomous Granicus Harvester",
+      "id": 45911014279,
+      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45911014279",
+      "sha": "5d8eb24cb0c4b5e403df3e1c60980f7345d40e10",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-26T23:27:05Z"
     },
     {
       "name": "Provenance video audit",
@@ -192,66 +283,6 @@
       "created_at": "2026-11-26T22:55:11Z"
     },
     {
-      "name": "Promethean Autonomous Granicus Harvester",
-      "id": 45907604593,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45907604593",
-      "sha": "9f132874f2fe97b852aa96fc16502e7c42279a88",
-      "branch": "main",
-      "status": "pending",
-      "conclusion": null,
-      "created_at": "2026-11-26T22:53:33Z"
-    },
-    {
-      "name": "Promethean Recurring Harvest",
-      "id": 45907601921,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45907601921",
-      "sha": "9f132874f2fe97b852aa96fc16502e7c42279a88",
-      "branch": "main",
-      "status": "in_progress",
-      "conclusion": null,
-      "created_at": "2026-11-26T22:53:32Z"
-    },
-    {
-      "name": "Hourly public ecosystem diagnostics",
-      "id": 45904599196,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45904599196",
-      "sha": "0e9bfba608f5ce17bc45d4f7be011686ce094041",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-26T22:24:31Z"
-    },
-    {
-      "name": "civic-cycle",
-      "id": 45898759315,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45898759315",
-      "sha": "0f4c06cbfabddd89889537c97a46e42df78c4c38",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-26T21:31:48Z"
-    },
-    {
-      "name": "Scanner historical backfill",
-      "id": 45889990256,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45889990256",
-      "sha": "0f4c06cbfabddd89889537c97a46e42df78c4c38",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-26T20:17:42Z"
-    },
-    {
-      "name": "ai-record-pages",
-      "id": 45877306548,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45877306548",
-      "sha": "0f4c06cbfabddd89889537c97a46e42df78c4c38",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-26T18:36:40Z"
-    },
-    {
       "name": "Scheduled Audit & Telemetry Sync",
       "id": 45854145186,
       "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45854145186",
@@ -262,16 +293,6 @@
       "created_at": "2026-11-26T15:57:24Z"
     },
     {
-      "name": "Scanner best-effort live and recovery",
-      "id": 45852098798,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45852098798",
-      "sha": "afb5e223cca4dad601e1c1ef49385f1e584f021f",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-26T15:44:36Z"
-    },
-    {
       "name": "meeting-watch",
       "id": 45581484499,
       "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45581484499",
@@ -280,16 +301,6 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-11-25T09:01:32Z"
-    },
-    {
-      "name": "wyoming-verify",
-      "id": 45282803321,
-      "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45282803321",
-      "sha": "e2757dc83a45e07dfefd8031a21cb350b2f06bcf",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-23T22:46:15Z"
     }
   ],
   "pull_requests": [
@@ -412,8 +423,8 @@
     }
   ],
   "gaps": [],
-  "head": "9f132874f2fe97b852aa96fc16502e7c42279a88",
-  "files_seen": 11241,
+  "head": "8974515d88f6b050e8b3af5f46cd1d4062731695",
+  "files_seen": 11247,
   "tree_complete": true,
   "sample_coverage": {
     "candidates": 175,

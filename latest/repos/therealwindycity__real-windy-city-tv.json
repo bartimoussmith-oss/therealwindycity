@@ -2,7 +2,7 @@
   "repository": "therealwindycity/real-windy-city-tv",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-26T22:59:54.217Z",
+  "checked_at": "2026-11-27T09:04:46.309Z",
   "controls": [
     {
       "id": "architecture",
@@ -120,19 +120,29 @@
   "runs": [
     {
       "name": "pages build and deployment",
-      "id": 45830569863,
-      "url": "https://github.com/therealwindycity/real-windy-city-tv/actions/runs/45830569863",
-      "sha": "2406102e5e418c64508f11164a1fe161950f6d8a",
+      "id": 45965288467,
+      "url": "https://github.com/therealwindycity/real-windy-city-tv/actions/runs/45965288467",
+      "sha": "a5c5b918e88f51364394f3595daca783076bc654",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-26T13:35:10Z"
+      "created_at": "2026-11-27T08:23:27Z"
+    },
+    {
+      "name": "voice-extract (one-off audit; branch is deleted afterwards)",
+      "id": 45915484197,
+      "url": "https://github.com/therealwindycity/real-windy-city-tv/actions/runs/45915484197",
+      "sha": "a2f9eefc8569b366941182a0207991eacde3b5dd",
+      "branch": "audit/voice-extract",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "created_at": "2026-11-27T00:13:35Z"
     }
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "2406102e5e418c64508f11164a1fe161950f6d8a",
-  "files_seen": 126,
+  "head": "a5c5b918e88f51364394f3595daca783076bc654",
+  "files_seen": 140,
   "tree_complete": true,
   "sample_coverage": {
     "candidates": 2,

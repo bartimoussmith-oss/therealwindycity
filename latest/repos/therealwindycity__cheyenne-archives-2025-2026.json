@@ -2,7 +2,7 @@
   "repository": "therealwindycity/cheyenne-archives-2025-2026",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-26T22:59:51.971Z",
+  "checked_at": "2026-11-27T09:04:41.594Z",
   "controls": [
     {
       "id": "architecture",
@@ -54,12 +54,12 @@
       "role": "Evidence reviewer",
       "state": "signal_observed",
       "evidence": [
+        "speaker-videos/2026-10-06_Finance_Committee_-_10-06-26/manifest.json",
+        "speaker-videos/2026-10-06_September_8_2026_Cheyenne_Planning_Commission_Mee/manifest.json",
+        "speaker-videos/2026-10-13_City_Council_-_10-12-26/manifest.json",
+        "speaker-videos/2026-10-16_Board_of_Adjustment/manifest.json",
         "speaker-videos/2026-10-19_Public_Services_Committee_-_10-19-26/manifest.json",
-        "speaker-videos/2026-10-20_August_11_2026_Cheyenne_Historic_Preservation_Boa/manifest.json",
-        "speaker-videos/2026-10-20_Finance_Committee_-_10-20-26/manifest.json",
-        "speaker-videos/2026-10-20_October_13_2026_Cheyenne_Historic_Preservation_Bo/manifest.json",
-        "speaker-videos/2026-10-20_October_15_2026_Cheyenne_Board_of_Adjustment_Meet/manifest.json",
-        "speaker-videos/2026-10-20_October_19_2026_Cheyenne_Planning_Commission_Meet/manifest.json"
+        "speaker-videos/2026-10-20_August_11_2026_Cheyenne_Historic_Preservation_Boa/manifest.json"
       ],
       "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
       "runtime_verified": false,
@@ -70,12 +70,12 @@
       "role": "Reliability engineer",
       "state": "signal_observed",
       "evidence": [
+        "speaker-videos/2026-10-06_Finance_Committee_-_10-06-26/manifest.json",
+        "speaker-videos/2026-10-06_September_8_2026_Cheyenne_Planning_Commission_Mee/manifest.json",
+        "speaker-videos/2026-10-13_City_Council_-_10-12-26/manifest.json",
+        "speaker-videos/2026-10-16_Board_of_Adjustment/manifest.json",
         "speaker-videos/2026-10-19_Public_Services_Committee_-_10-19-26/manifest.json",
-        "speaker-videos/2026-10-20_August_11_2026_Cheyenne_Historic_Preservation_Boa/manifest.json",
-        "speaker-videos/2026-10-20_Finance_Committee_-_10-20-26/manifest.json",
-        "speaker-videos/2026-10-20_October_13_2026_Cheyenne_Historic_Preservation_Bo/manifest.json",
-        "speaker-videos/2026-10-20_October_15_2026_Cheyenne_Board_of_Adjustment_Meet/manifest.json",
-        "speaker-videos/2026-10-20_October_19_2026_Cheyenne_Planning_Commission_Meet/manifest.json"
+        "speaker-videos/2026-10-20_August_11_2026_Cheyenne_Historic_Preservation_Boa/manifest.json"
       ],
       "next": "Prove interrupted runs resume without lost records or duplicates.",
       "runtime_verified": false,
@@ -123,22 +123,28 @@
   "runs": [
     {
       "name": "Cheyenne Speaker Video Splitter (2025-2026)",
-      "id": 45907964026,
-      "url": "https://github.com/therealwindycity/cheyenne-archives-2025-2026/actions/runs/45907964026",
-      "sha": "a961fa699e5c6535ab28ede8196f07a44d78c4b1",
+      "id": 45964620241,
+      "url": "https://github.com/therealwindycity/cheyenne-archives-2025-2026/actions/runs/45964620241",
+      "sha": "d42aab45ac7dd3381fe21f4dd6e67cdb5fa78793",
       "branch": "main",
-      "status": "in_progress",
-      "conclusion": null,
-      "created_at": "2026-11-26T22:57:12Z"
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-27T08:18:14Z"
     }
   ],
   "pull_requests": [],
-  "gaps": [],
-  "head": "debf44432497c081232a8791cc67d8d637dc869b",
-  "files_seen": 793,
+  "gaps": [
+    {
+      "check": "sample",
+      "path": "speaker-videos/2026-10-13_City_Council_-_10-12-26/manifest.json",
+      "reason": "Content too large or unavailable"
+    }
+  ],
+  "head": "0a59085a90d58fe40858f981ab7611610eb49391",
+  "files_seen": 805,
   "tree_complete": true,
   "sample_coverage": {
-    "candidates": 23,
+    "candidates": 27,
     "selected": 12
   },
   "workflow_signals": {

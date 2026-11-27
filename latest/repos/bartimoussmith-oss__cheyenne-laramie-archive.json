@@ -2,7 +2,7 @@
   "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-26T22:59:22.214Z",
+  "checked_at": "2026-11-27T09:03:56.506Z",
   "controls": [
     {
       "id": "architecture",
@@ -114,23 +114,23 @@
   "runs": [
     {
       "name": "Civic OSINT scans",
-      "id": 45899072361,
-      "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/actions/runs/45899072361",
-      "sha": "c5c3570bae67be8ccbc1ad3be3b11822240a3ec3",
+      "id": 45967084965,
+      "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/actions/runs/45967084965",
+      "sha": "e979c4219b2d1e567dedb885d2b7fda050b75aa2",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-26T21:34:31Z"
+      "created_at": "2026-11-27T08:37:18Z"
     },
     {
       "name": "Continue bounded archive backlog",
-      "id": 45899030104,
-      "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/actions/runs/45899030104",
-      "sha": "ef9f2a586bd1f6793401704603f4f8f9fa470661",
+      "id": 45967035631,
+      "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/actions/runs/45967035631",
+      "sha": "8ca64ef3a91fcacd64d2658ffab69d3e64922f2f",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-26T21:34:09Z"
+      "created_at": "2026-11-27T08:36:55Z"
     },
     {
       "name": "Collect and process approved public sources",
@@ -141,21 +141,11 @@
       "status": "completed",
       "conclusion": "success",
       "created_at": "2026-11-08T17:06:37Z"
-    },
-    {
-      "name": "Resume county collection and processing",
-      "id": 42501680108,
-      "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/actions/runs/42501680108",
-      "sha": "e9430e16db78f4ed48fdc64c575f9a88db21f53c",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-08T16:47:34Z"
     }
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "8ca64ef3a91fcacd64d2658ffab69d3e64922f2f",
+  "head": "43be0d5fe2142d930f087e7322089587e1e16a13",
   "files_seen": 1815,
   "tree_complete": true,
   "sample_coverage": {

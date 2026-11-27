@@ -1,0 +1,152 @@
+{
+  "repository": "therealwindycity/cheyenne-archives-2008-2013",
+  "archived": false,
+  "fork": false,
+  "checked_at": "2026-11-27T09:04:24.749Z",
+  "controls": [
+    {
+      "id": "architecture",
+      "role": "Architect",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Map producers, consumers, storage, deployment targets and owners.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "agent_handoff",
+      "role": "Agent coordinator",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Provide tested commands, current status, constraints and acceptance criteria.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "setup",
+      "role": "Build engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Prove installation from a clean checkout with stated tool versions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "tests",
+      "role": "Test engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Add offline tests and a real producer-to-published-output test.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "data_contract",
+      "role": "Data engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "provenance",
+      "role": "Evidence reviewer",
+      "state": "signal_observed",
+      "evidence": [
+        "speaker-videos/2012-10-16_Solid_Waste_Director_Dennis_Pino_talks_about_curb/manifest.json",
+        "speaker-videos/2012-10-22_Cheyenne_Fire_Rescue_Offers_These_Halloween_Safet/manifest.json",
+        "speaker-videos/2012-10-22_City_Of_Cheyenne_Fifth_Penny_Tax/manifest.json",
+        "speaker-videos/2012-11-16_Holiday_Turkey_Fryer_Safety_Video/manifest.json",
+        "speaker-videos/2013-10-04_AFire_Stafety_Home_Heating/manifest.json",
+        "speaker-videos/2013-10-04_Cheyenne_Wyo._Fire_Rescue_Fire_Safety_Escape_Plan/manifest.json"
+      ],
+      "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "checkpoint",
+      "role": "Reliability engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "speaker-videos/2012-10-16_Solid_Waste_Director_Dennis_Pino_talks_about_curb/manifest.json",
+        "speaker-videos/2012-10-22_Cheyenne_Fire_Rescue_Offers_These_Halloween_Safet/manifest.json",
+        "speaker-videos/2012-10-22_City_Of_Cheyenne_Fifth_Penny_Tax/manifest.json",
+        "speaker-videos/2012-11-16_Holiday_Turkey_Fryer_Safety_Video/manifest.json",
+        "speaker-videos/2013-10-04_AFire_Stafety_Home_Heating/manifest.json",
+        "speaker-videos/2013-10-04_Cheyenne_Wyo._Fire_Rescue_Fire_Safety_Escape_Plan/manifest.json"
+      ],
+      "next": "Prove interrupted runs resume without lost records or duplicates.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "recovery",
+      "role": "Recovery engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Test isolated backup restoration and reversible releases.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "deployment",
+      "role": "Release engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Tie live output to its commit, smoke test and rollback instructions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "dependency_lock",
+      "role": "Supply-chain reviewer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "rights",
+      "role": "Rights reviewer",
+      "state": "signal_observed",
+      "evidence": [
+        "NOTICE.md"
+      ],
+      "next": "Separate code licensing from source-data and media reuse rights.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    }
+  ],
+  "runs": [
+    {
+      "name": "Cheyenne Speaker Video Splitter (2008-2013)",
+      "id": 45970106988,
+      "url": "https://github.com/therealwindycity/cheyenne-archives-2008-2013/actions/runs/45970106988",
+      "sha": "9c9b7eca0e8b5d93923d4d1a30713557b09e508b",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-27T09:00:29Z"
+    }
+  ],
+  "pull_requests": [],
+  "gaps": [],
+  "head": "9c9b7eca0e8b5d93923d4d1a30713557b09e508b",
+  "files_seen": 1042,
+  "tree_complete": true,
+  "sample_coverage": {
+    "candidates": 13,
+    "selected": 12
+  },
+  "workflow_signals": {
+    ".github/workflows/speaker-video-archive.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    }
+  }
+}

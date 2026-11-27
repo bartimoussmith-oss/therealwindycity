@@ -2,7 +2,7 @@
   "repository": "therealwindycity/therealwindycity",
   "archived": false,
   "fork": true,
-  "checked_at": "2026-11-26T22:59:59.821Z",
+  "checked_at": "2026-11-27T09:04:57.283Z",
   "controls": [
     {
       "id": "architecture",
@@ -128,33 +128,33 @@
   "runs": [
     {
       "name": "workdesk-pages",
-      "id": 45899845500,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/45899845500",
+      "id": 45967852844,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/45967852844",
+      "sha": "8f91524f69628c85df22e8f7db797417401bf048",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-27T08:43:15Z"
+    },
+    {
+      "name": "civic-cycle",
+      "id": 45967270350,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/45967270350",
       "sha": "48e7fe8dcd38a0e417fcf3e590f660da2af88b69",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-26T21:41:21Z"
-    },
-    {
-      "name": "civic-cycle",
-      "id": 45899329720,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/45899329720",
-      "sha": "6a6a6ced05ec40d695cc6c4702091189cee8d977",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-26T21:36:43Z"
+      "created_at": "2026-11-27T08:38:45Z"
     },
     {
       "name": "workdesk-poll",
-      "id": 45835294926,
-      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/45835294926",
-      "sha": "6a6a6ced05ec40d695cc6c4702091189cee8d977",
+      "id": 45918165153,
+      "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/45918165153",
+      "sha": "48e7fe8dcd38a0e417fcf3e590f660da2af88b69",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-26T14:04:14Z"
+      "created_at": "2026-11-27T00:41:08Z"
     },
     {
       "name": "meeting-watch",
@@ -190,8 +190,8 @@
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "48e7fe8dcd38a0e417fcf3e590f660da2af88b69",
-  "files_seen": 3565,
+  "head": "8f91524f69628c85df22e8f7db797417401bf048",
+  "files_seen": 3570,
   "tree_complete": true,
   "sample_coverage": {
     "candidates": 15,
