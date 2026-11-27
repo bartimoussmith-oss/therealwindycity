@@ -1,23 +1,13 @@
 {
   "newly_observed": [
-    "therealwindycity/real-windy-city-site:architecture",
-    "therealwindycity/real-windy-city-site:agent_handoff",
-    "therealwindycity/real-windy-city-site:provenance",
-    "therealwindycity/real-windy-city-site:rights",
-    "therealwindycity/real-windy-city-tv-dev:architecture",
-    "therealwindycity/real-windy-city-tv-dev:agent_handoff",
-    "therealwindycity/real-windy-city-tv-dev:setup",
-    "therealwindycity/real-windy-city-tv-dev:tests",
-    "therealwindycity/real-windy-city-tv-dev:data_contract",
-    "therealwindycity/real-windy-city-tv-dev:recovery",
-    "therealwindycity/real-windy-city-tv-dev:deployment",
-    "therealwindycity/real-windy-city-tv-dev:dependency_lock",
-    "therealwindycity/real-windy-city-tv-dev:rights",
-    "therealwindycity/real-windy-city-tv-dev:.github/workflows/collect-feedback.yml:always_save",
-    "therealwindycity/TheReelWindyCity:run:45935534184"
+    "therealwindycity/real-windy-city-mcp:architecture",
+    "therealwindycity/real-windy-city-mcp:agent_handoff",
+    "therealwindycity/real-windy-city-mcp:data_contract",
+    "therealwindycity/real-windy-city-mcp:provenance",
+    "therealwindycity/real-windy-city-mcp:checkpoint",
+    "therealwindycity/real-windy-city-mcp:recovery",
+    "therealwindycity/real-windy-city-mcp:deployment"
   ],
-  "no_longer_observed": [
-    "therealwindycity/TheReelWindyCity:run:45823132637"
-  ],
+  "no_longer_observed": [],
   "warning": "Evidence policy changed to version 2: removed findings may be corrected false positives, not completed repairs."
 }

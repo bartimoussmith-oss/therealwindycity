@@ -1,0 +1,152 @@
+{
+  "repository": "therealwindycity/cheyenne-archives-2014-2017",
+  "archived": false,
+  "fork": false,
+  "checked_at": "2026-11-27T21:39:54.941Z",
+  "controls": [
+    {
+      "id": "architecture",
+      "role": "Architect",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Map producers, consumers, storage, deployment targets and owners.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "agent_handoff",
+      "role": "Agent coordinator",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Provide tested commands, current status, constraints and acceptance criteria.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "setup",
+      "role": "Build engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Prove installation from a clean checkout with stated tool versions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "tests",
+      "role": "Test engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Add offline tests and a real producer-to-published-output test.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "data_contract",
+      "role": "Data engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Validate schemas, stable IDs and compatibility between producers and consumers.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "provenance",
+      "role": "Evidence reviewer",
+      "state": "signal_observed",
+      "evidence": [
+        "speaker-videos/2015-07-10_Bob_Bradshaw_Talks_About_the_1985_Flood_in_Cheyen/manifest.json",
+        "speaker-videos/2015-07-10_Cheyenne_FIre_Chief_James_Martin_talks_about_the_/manifest.json",
+        "speaker-videos/2015-07-15_Cheyenne_Fire_Rescue_1931_American_LaFrance_Fire_/manifest.json",
+        "speaker-videos/2015-07-15_Gary_Stogsdill_from_the_City_of_Cheyenne_Wyo_talk/manifest.json",
+        "speaker-videos/2015-08-04_Cheyenne_Botanic_Gardens_Project_Update_Aug_4_201/manifest.json",
+        "speaker-videos/2016-05-16_Lonetree_Creek_at_the_Belvoir_Ranch_Cheyenne_Wy./manifest.json"
+      ],
+      "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "checkpoint",
+      "role": "Reliability engineer",
+      "state": "signal_observed",
+      "evidence": [
+        "speaker-videos/2015-07-10_Bob_Bradshaw_Talks_About_the_1985_Flood_in_Cheyen/manifest.json",
+        "speaker-videos/2015-07-10_Cheyenne_FIre_Chief_James_Martin_talks_about_the_/manifest.json",
+        "speaker-videos/2015-07-15_Cheyenne_Fire_Rescue_1931_American_LaFrance_Fire_/manifest.json",
+        "speaker-videos/2015-07-15_Gary_Stogsdill_from_the_City_of_Cheyenne_Wyo_talk/manifest.json",
+        "speaker-videos/2015-08-04_Cheyenne_Botanic_Gardens_Project_Update_Aug_4_201/manifest.json",
+        "speaker-videos/2016-05-16_Lonetree_Creek_at_the_Belvoir_Ranch_Cheyenne_Wy./manifest.json"
+      ],
+      "next": "Prove interrupted runs resume without lost records or duplicates.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "recovery",
+      "role": "Recovery engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Test isolated backup restoration and reversible releases.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "deployment",
+      "role": "Release engineer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Tie live output to its commit, smoke test and rollback instructions.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "dependency_lock",
+      "role": "Supply-chain reviewer",
+      "state": "not_observed",
+      "evidence": [],
+      "next": "Review lockfiles or equivalent pins; missing filenames alone do not establish unpinned dependencies.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    },
+    {
+      "id": "rights",
+      "role": "Rights reviewer",
+      "state": "signal_observed",
+      "evidence": [
+        "NOTICE.md"
+      ],
+      "next": "Separate code licensing from source-data and media reuse rights.",
+      "runtime_verified": false,
+      "evidence_policy": "engineering paths and explicit filenames only; contents and behavior still require review"
+    }
+  ],
+  "runs": [
+    {
+      "name": "Cheyenne Speaker Video Splitter (2014-2017)",
+      "id": 46010926665,
+      "url": "https://github.com/therealwindycity/cheyenne-archives-2014-2017/actions/runs/46010926665",
+      "sha": "5d20976d622e5a61c7229ca5ce09009846617328",
+      "branch": "main",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-27T13:52:54Z"
+    }
+  ],
+  "pull_requests": [],
+  "gaps": [],
+  "head": "a543f04c119d8d52b65a3bdd374c8c3f2e1f9ab2",
+  "files_seen": 587,
+  "tree_complete": true,
+  "sample_coverage": {
+    "candidates": 14,
+    "selected": 12
+  },
+  "workflow_signals": {
+    ".github/workflows/speaker-video-archive.yml": {
+      "timeout": true,
+      "concurrency": true,
+      "always_save": false,
+      "explicit_permissions": true
+    }
+  }
+}

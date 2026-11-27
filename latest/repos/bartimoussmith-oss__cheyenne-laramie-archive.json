@@ -2,7 +2,7 @@
   "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-27T09:03:56.506Z",
+  "checked_at": "2026-11-27T21:39:27.936Z",
   "controls": [
     {
       "id": "architecture",
@@ -114,38 +114,28 @@
   "runs": [
     {
       "name": "Civic OSINT scans",
-      "id": 45967084965,
-      "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/actions/runs/45967084965",
-      "sha": "e979c4219b2d1e567dedb885d2b7fda050b75aa2",
+      "id": 46069530764,
+      "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/actions/runs/46069530764",
+      "sha": "8f8d8afb2d15c71e65daf43a250966086d283bfd",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-27T08:37:18Z"
+      "created_at": "2026-11-27T21:19:23Z"
     },
     {
       "name": "Continue bounded archive backlog",
-      "id": 45967035631,
-      "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/actions/runs/45967035631",
-      "sha": "8ca64ef3a91fcacd64d2658ffab69d3e64922f2f",
+      "id": 46069493661,
+      "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/actions/runs/46069493661",
+      "sha": "b58efb4e10eeeb853c52a857e8e658ded16acf27",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-27T08:36:55Z"
-    },
-    {
-      "name": "Collect and process approved public sources",
-      "id": 42503285392,
-      "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/actions/runs/42503285392",
-      "sha": "38463a9869791ee56c3f68ef4cbad559219409d5",
-      "branch": "main",
-      "status": "completed",
-      "conclusion": "success",
-      "created_at": "2026-11-08T17:06:37Z"
+      "created_at": "2026-11-27T21:19:03Z"
     }
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "43be0d5fe2142d930f087e7322089587e1e16a13",
+  "head": "c46d2d75d348fe7173e69e01c46729e31d6b01dc",
   "files_seen": 1815,
   "tree_complete": true,
   "sample_coverage": {

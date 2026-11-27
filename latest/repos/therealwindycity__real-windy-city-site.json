@@ -2,7 +2,7 @@
   "repository": "therealwindycity/real-windy-city-site",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-27T09:04:44.763Z",
+  "checked_at": "2026-11-27T21:40:13.714Z",
   "controls": [
     {
       "id": "architecture",
@@ -107,19 +107,19 @@
   "runs": [
     {
       "name": "pages build and deployment",
-      "id": 45940490070,
-      "url": "https://github.com/therealwindycity/real-windy-city-site/actions/runs/45940490070",
-      "sha": "2c4264c385e7595145ba5c682d5be37ee10bd8fb",
+      "id": 45986248348,
+      "url": "https://github.com/therealwindycity/real-windy-city-site/actions/runs/45986248348",
+      "sha": "9bf84b553a9878e37432ce4d2abec08ade098c22",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-27T04:31:59Z"
+      "created_at": "2026-11-27T10:56:06Z"
     }
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "2c4264c385e7595145ba5c682d5be37ee10bd8fb",
-  "files_seen": 35,
+  "head": "9bf84b553a9878e37432ce4d2abec08ade098c22",
+  "files_seen": 36,
   "tree_complete": true,
   "sample_coverage": {
     "candidates": 1,

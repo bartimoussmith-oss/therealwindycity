@@ -2,7 +2,7 @@
   "repository": "therealwindycity/real-windy-city-tv-dev",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-27T09:04:48.023Z",
+  "checked_at": "2026-11-27T21:40:16.613Z",
   "controls": [
     {
       "id": "architecture",
@@ -117,28 +117,28 @@
   "runs": [
     {
       "name": "pages build and deployment",
-      "id": 45965931919,
-      "url": "https://github.com/therealwindycity/real-windy-city-tv-dev/actions/runs/45965931919",
-      "sha": "6855ec359decd4b34a7db9029f4fef01e8aa12cc",
+      "id": 46048630961,
+      "url": "https://github.com/therealwindycity/real-windy-city-tv-dev/actions/runs/46048630961",
+      "sha": "2f1861bf08ff30d705971e88fd8e75f7e4b80347",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-27T08:28:29Z"
+      "created_at": "2026-11-27T18:19:47Z"
     },
     {
       "name": "Collect site feedback",
-      "id": 45965906825,
-      "url": "https://github.com/therealwindycity/real-windy-city-tv-dev/actions/runs/45965906825",
-      "sha": "4c122378b130ef3eb728b210aca400667535eb5f",
+      "id": 46048610663,
+      "url": "https://github.com/therealwindycity/real-windy-city-tv-dev/actions/runs/46048610663",
+      "sha": "eacf329ee2246e825a2ac3f2f2ebf6cccc547d46",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-27T08:28:17Z"
+      "created_at": "2026-11-27T18:19:37Z"
     }
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "6855ec359decd4b34a7db9029f4fef01e8aa12cc",
+  "head": "2f1861bf08ff30d705971e88fd8e75f7e4b80347",
   "files_seen": 62,
   "tree_complete": true,
   "sample_coverage": {
