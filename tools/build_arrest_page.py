@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 """
-build_arrest_page.py -- render the public, de-identified arrest database as a
-password-gated static page for GitHub Pages.
+build_arrest_page.py -- render the public arrest database (WITH names and ages,
+owner decision 2026-11-27) as a static page for GitHub Pages.
+
+    POLICY CHANGE 2026-11-27: the owner asked for the arrest records to be published
+    unredacted. The page is now built OPEN by default (data.json, no password) and
+    shows each record's name and age as printed in the Cap City News source article.
+    Sealing with a password is still available with --seal. The notes below describe
+    the earlier de-identified design and are kept for history.
 
 WHY A STATIC PAGE
     The live site (https://bartimousssmith-oss.github.io/therealwindycity/) is
@@ -87,15 +93,17 @@ def structural_gate(records: list[dict], dataset: str) -> list[str]:
     data rather than matching against known names, so it runs everywhere
     including CI, where the sealed files do not exist.
     """
+    # Since 2026-11-27 names ARE published (owner decision). The gate now checks the
+    # opposite: every record is complete (has its name) and nothing is still redacted.
     problems: list[str] = []
     for i, r in enumerate(records):
         rid = r.get("record_id") or f"index {i}"
-        if r.get("name") is not None:
-            problems.append(f"{dataset}:{rid} has a non-null name")
-        if r.get("age") is not None:
-            problems.append(f"{dataset}:{rid} has a non-null age: {r.get('age')!r}")
-        if r.get("name") is None and not r.get("name_withheld"):
-            problems.append(f"{dataset}:{rid} has name=null but name_withheld is not true")
+        if not r.get("record_id"):
+            problems.append(f"{dataset}: record at index {i} has no record_id")
+        if not (r.get("name") or "").strip():
+            problems.append(f"{dataset}:{rid} has no name (still redacted?)")
+        if "[WITHHELD]" in json.dumps(r, ensure_ascii=False):
+            problems.append(f"{dataset}:{rid} still contains a [WITHHELD] placeholder")
     return problems
 
 
@@ -220,8 +228,8 @@ def shape_dataset(ds_id: str, title: str, blurb: str, doc: dict, records: list[d
         raw_date = str(r.get(date_key) or "")
         date = raw_date[:10]
         flags = 0
-        if r.get("age_withheld"):
-            flags |= 1
+        if r.get("age") is None:
+            flags |= 1                      # no age printed in the source
         if r.get("name_uncertain") or r.get("uncertain"):
             flags |= 2
         rows.append([
@@ -231,6 +239,8 @@ def shape_dataset(ds_id: str, title: str, blurb: str, doc: dict, records: list[d
             d.idx_many("cat", r.get("categories") or []),
             d.idx_many("chg", r.get("charges") or []),
             flags,
+            d.idx("name", str(r.get("name") or "")),
+            r.get("age"),
         ])
     ids = [str(r.get("record_id") or "") for r in records]
     dates = sorted(v for v in d.table("date") if v)
@@ -266,8 +276,8 @@ def build_payload() -> dict:
             "master",
             "Cap City News weekly arrest reports",
             "Every arrest entry published in the Cap City News weekly arrest reports "
-            "that could be parsed with a determinable name/charge boundary. Names and "
-            "exact ages are withheld; each row still cites the article it came from.",
+            "that could be parsed with a determinable name/charge boundary, with the name and "
+            "age as printed. Each row cites the article it came from.",
             doc, recs, "report_date", "report_window",
         ))
     else:
@@ -423,33 +433,20 @@ border-top-color:var(--acc);border-radius:50%;animation:s .7s linear infinite;ve
   <p class="sub" id="appSub"></p>
 
   <div class="panel" id="integrity">
-    <h2>What this dataset is, and what it deliberately leaves out</h2>
+    <h2>What this dataset is</h2>
     <div class="okbox">
-      <strong>Names published: 0. Exact ages published: 0.</strong>
-      Every row carries <code>name: null</code> and <code>name_withheld: true</code>.
+      <strong>Arrest is not a conviction.</strong>
+      Each row is a recommended charge at booking, with the name and age as printed in the
+      Cap City News compilation of Laramie County law-enforcement logs. Cases may have been
+      dropped, reduced or dismissed; no outcomes are recorded here.
     </div>
     <div class="note" id="policyNote"></div>
     <p class="sub" style="margin:8px 0 0">
-      Record ids are opaque sequential labels, not hashes of anything identifying.
-      Ages are withheld entirely because an exact age plus a report date plus a
-      charge is a quasi-identifier that can re-identify a person in a small
-      jurisdiction. Each row keeps the URL of the article it was parsed from, so
-      any figure on this page can be checked against the source.
+      Different people can share a name: do not assume two rows with the same name are
+      the same person, or that a row is about someone you know. Each row keeps the URL
+      of the article it was parsed from, so every entry can be checked against the source.
+      To report an error or a dismissed case, open an issue on the repository.
     </p>
-    <details style="margin-top:10px">
-      <summary>How this page is protected, and the honest limits of that</summary>
-      <ul class="tight">
-        <li>The encrypted blob is publicly downloadable. That is fine: it is
-            ciphertext. But it means the gate is only as strong as the password,
-            and it can be attacked offline. A short or dictionary password would
-            fall; a long passphrase will not.</li>
-        <li>This is an <em>access gate</em>, not secrecy about the underlying
-            arrests, which were published by a news outlet and are public record.</li>
-        <li>Names are <strong>never</strong> in this encrypted blob. Putting them
-            here would mean one leaked password publishes thousands of real names
-            permanently, with no way to revoke a file that has been mirrored.</li>
-      </ul>
-    </details>
   </div>
 
   <div class="metrics" id="metrics"></div>
@@ -465,15 +462,15 @@ border-top-color:var(--acc);border-radius:50%;animation:s .7s linear infinite;ve
       </div>
     </div>
     <div class="filters">
-      <div><label for="q">Search charges</label>
-        <input type="search" id="q" placeholder="e.g. DUI, warrant, possession"></div>
+      <div><label for="q">Search names or charges</label>
+        <input type="search" id="q" placeholder="e.g. a surname, DUI, warrant"></div>
       <div><label for="yr">Year</label><select id="yr"><option value="">All years</option></select></div>
       <div><label for="mc">Charge count</label>
         <select id="mc"><option value="">Any</option><option value="2">2 or more</option>
         <option value="3">3 or more</option><option value="4">4 or more</option></select></div>
       <div><label>&nbsp;</label>
         <div class="check"><input type="checkbox" id="unc"><span for="unc">Uncertain name/charge split only</span></div>
-        <div class="check"><input type="checkbox" id="aged"><span for="aged">Age withheld (adult at arrest)</span></div>
+        <div class="check"><input type="checkbox" id="aged"><span for="aged">No age listed in source</span></div>
       </div>
     </div>
     <div class="cats" id="cats"></div>
@@ -483,6 +480,8 @@ border-top-color:var(--acc);border-radius:50%;animation:s .7s linear infinite;ve
     <table id="tbl">
       <thead><tr>
         <th data-k="id">Record</th>
+        <th data-k="name">Name</th>
+        <th data-k="age" class="num">Age</th>
         <th data-k="date">Report date</th>
         <th data-k="win" class="hide-s">Window</th>
         <th data-k="ncat">Categories</th>
@@ -588,6 +587,8 @@ function expand(ds) {
     cats: r[3].map(x => D.cat[x]),
     chgs: r[4].map(x => D.chg[x]),
     flags: r[5] || 0,
+    name: (D.name && D.name[r[6]]) || "",
+    age: (r[7] === null || r[7] === undefined) ? "" : r[7],
     year: (D.date[r[0]] || "").slice(0,4)
   }));
 }
@@ -595,7 +596,7 @@ function expand(ds) {
 function start() {
   $("gate").classList.add("hidden");
   $("app").classList.remove("hidden");
-  $("appSub").textContent = PAYLOAD.datasets.length + " de-identified public dataset(s) \u00b7 built " + PAYLOAD.built;
+  $("appSub").textContent = PAYLOAD.datasets.length + " public dataset(s) \u00b7 built " + PAYLOAD.built;
   $("policyNote").textContent = PAYLOAD.datasets[0].policy || "";
   buildTabs(); selectDataset(PAYLOAD.datasets[0].id);
 }
@@ -647,10 +648,8 @@ function renderMetrics() {
     ["Weekly reports", fmt(DS.report_count)],
     ["Date span", DS.date_span ? DS.date_span[0] + " \u2192 " + DS.date_span[1] : "\u2014"],
     ["Charge entries", chg.toLocaleString()],
-    // Both of these are 0 by construction: build_arrest_page.py refuses to
-    // write the page at all if any record carries a name or an exact age.
-    ["Names published", "0"],
-    ["Ages published", "0"]
+    ["Records with a name", rows.filter(r => r.name).length.toLocaleString()],
+    ["Records with an age", rows.filter(r => r.age !== "").length.toLocaleString()]
   ];
   $("metrics").innerHTML = m.map(([k,v]) =>
     `<div class="metric"><div class="k">${esc(k)}</div><div class="v">${esc(v)}</div></div>`).join("");
@@ -689,6 +688,7 @@ function apply() {
     if (aged && !(r.flags & 1)) return false;
     if (ACTIVE_CATS.size && ![...ACTIVE_CATS].every(c => r.cats.includes(c))) return false;
     if (q && !r.chgs.some(c => c.toLowerCase().includes(q)) && !r.id.toLowerCase().includes(q)
+        && !r.name.toLowerCase().includes(q)
         && !r.win.toLowerCase().includes(q)) return false;
     return true;
   });
@@ -714,9 +714,10 @@ function render() {
   $("tb").innerHTML = slice.map(r => {
     const fl = [];
     if (r.flags & 2) fl.push('<span class="flag" title="The name/charge boundary in the source could not be determined; the charge text may be incomplete.">&#9888; uncertain split</span>');
-    if (r.flags & 1) fl.push('<span class="flag" title="An exact age was present in the source and has been withheld.">age withheld</span>');
     return `<tr data-i="${r.i}">
       <td class="id">${esc(r.id)}</td>
+      <td><strong>${esc(r.name || "\u2014")}</strong></td>
+      <td class="num">${esc(r.age)}</td>
       <td>${esc(r.date)}</td>
       <td class="hide-s">${esc(r.win)}</td>
       <td>${r.cats.map(c => `<span class="pill">${esc(c.replace(/_/g," "))}</span>`).join("")}</td>
@@ -724,11 +725,11 @@ function render() {
       <td>${esc(r.chgs[0] || "\u2014")}${r.chgs.length > 1 ? ` <span class="pill">+${r.chgs.length-1} more</span>` : ""} ${fl.join(" ")}</td>
       <td class="hide-s">${r.url ? `<a href="${esc(r.url)}" rel="noopener noreferrer nofollow" target="_blank">article</a>` : "\u2014"}</td>
     </tr>
-    <tr class="detail hidden" id="d-${r.i}"><td colspan="7">
-      <strong>${esc(r.id)}</strong> \u00b7 ${esc(r.date)} \u00b7 window ${esc(r.win)}
+    <tr class="detail hidden" id="d-${r.i}"><td colspan="9">
+      <strong>${esc(r.name)}</strong>${r.age !== "" ? ", " + esc(r.age) : ""} \u00b7 ${esc(r.id)} \u00b7 ${esc(r.date)} \u00b7 window ${esc(r.win)}
       <ul>${r.chgs.map(c => `<li>${esc(c)}</li>`).join("") || "<li>no charge text recorded</li>"}</ul>
       <div class="sub">Categories: ${esc(r.cats.join(", ") || "\u2014")} \u00b7 charge_count ${r.chgs.length}
-      \u00b7 name <code>null</code> (withheld) \u00b7 age <code>null</code>${(r.flags&1)?" (withheld)":" (not present)"}</div>
+      \u00b7 age ${r.age !== "" ? esc(r.age) : "not listed in source"} \u00b7 arrest is not a conviction</div>
       ${r.url ? `<div class="sub">Source: <a href="${esc(r.url)}" rel="noopener noreferrer nofollow" target="_blank">${esc(r.url)}</a></div>` : ""}
     </td></tr>`;
   }).join("");
@@ -742,9 +743,9 @@ function render() {
 function toCSV(rows) {
   const q = v => '"' + String(v ?? "").replace(/"/g,'""') + '"';
   const head = ["record_id","report_date","report_window","charge_count","categories","charges",
-                "name","name_withheld","age","age_withheld","name_split_uncertain","source_url"];
+                "name","age","name_split_uncertain","source_url"];
   const lines = rows.map(r => [r.id, r.date, r.win, r.chgs.length, r.cats.join("; "),
-    r.chgs.join("; "), "", "true", "", (r.flags&1)?"true":"false", (r.flags&2)?"true":"false", r.url
+    r.chgs.join("; "), r.name, r.age, (r.flags&2)?"true":"false", r.url
   ].map(q).join(","));
   return [head.map(q).join(","), ...lines].join("\r\n");
 }
@@ -752,6 +753,12 @@ function toCSV(rows) {
 /* ---------------- wiring ---------------- */
 
 $("unlockForm").addEventListener("submit", unlock);
+if (MODE === "open") {
+  // Open mode (the default since 2026-11-27): no password, load the records straight away.
+  $("lock").classList.add("hidden");
+  openPlain().then(p => { PAYLOAD = p; start(); })
+    .catch(e => { $("gateErr").textContent = "Could not open the database: " + (e && e.message ? e.message : e); });
+}
 $("q").addEventListener("input", () => { PAGE = 0; apply(); });
 ["yr","mc"].forEach(id => $(id).addEventListener("change", () => { PAGE = 0; apply(); }));
 ["unc","aged"].forEach(id => $(id).addEventListener("change", () => { PAGE = 0; apply(); }));
@@ -846,13 +853,17 @@ def main(argv: list[str] | None = None) -> int:
                     help=f"PBKDF2 iterations (default {DEFAULT_ITERATIONS}, min 100000)")
     ap.add_argument("--min-password-length", type=int, default=MIN_PASSWORD_LENGTH)
     ap.add_argument("--allow-open", action="store_true",
-                    help="DEV ONLY: publish unencrypted data.json with no password")
+                    help="publish data.json with no password (the default since 2026-11-27)")
+    ap.add_argument("--seal", action="store_true",
+                    help="encrypt the payload with ARREST_PAGE_PASSWORD instead of publishing it openly")
     ap.add_argument("--strict", action="store_true",
                     help="exit 3 instead of writing a notice page when no password is available")
     ap.add_argument("--quiet", action="store_true")
     a = ap.parse_args(argv)
 
     say = (lambda *m: None) if a.quiet else (lambda *m: print(*m))
+    if not a.seal:
+        a.allow_open = True   # owner decision 2026-11-27: publish the records unredacted
 
     if a.iterations < 100000:
         print(f"--iterations must be >= 100000 (got {a.iterations})", file=sys.stderr)
@@ -881,12 +892,7 @@ def main(argv: list[str] | None = None) -> int:
     say(f"payload: {len(body):,} B sealed-ready "
         f"(from {raw_mb:,} B of public JSON; string-interned and columnar)")
 
-    # -- keyring audit, when the keyring is present -------------------------
-    ran, msg = keyring_audit(body)
-    say(f"name audit: {msg}")
-    if ran and msg.startswith("FAIL"):
-        print("GATE FAIL (name audit): refusing to publish", file=sys.stderr)
-        return EXIT_GATE
+    # The keyring name audit is retired: names are published by owner decision (2026-11-27).
 
     out = Path(a.out)
     try:
@@ -911,8 +917,7 @@ def main(argv: list[str] | None = None) -> int:
             password = None
 
     if a.allow_open:
-        say("WARNING: --allow-open publishes UNENCRYPTED data. Development use only; "
-            "never point this at the deployed site directory.")
+        say("open mode: publishing the records with names (owner decision 2026-11-27)")
         mode, data_file = "open", "data.json"
         try:
             (out / data_file).write_bytes(body)
@@ -921,7 +926,11 @@ def main(argv: list[str] | None = None) -> int:
         except OSError as exc:
             print(f"write error: {exc}", file=sys.stderr)
             return EXIT_WRITE
-        say(f"wrote {out/'index.html'} and {out/data_file} (OPEN, no password)")
+        say(f"wrote {out/'index.html'} and {out/data_file} (open, no password)")
+        say("datasets: " + ", ".join(f"{d['id']}={d['record_count']:,}" for d in payload["datasets"]))
+        for stale in ("data.enc",):
+            if (out / stale).exists():
+                (out / stale).unlink()
         return EXIT_OK
 
     if password is None:
@@ -994,7 +1003,7 @@ def main(argv: list[str] | None = None) -> int:
     say(f"wrote {out/'index.html'} ({(out/'index.html').stat().st_size:,} B)")
     say(f"wrote {enc} ({enc.stat().st_size:,} B, sha256 {digest}...)")
     say(f"datasets: " + ", ".join(f"{d['id']}={d['record_count']:,}" for d in payload["datasets"]))
-    say("names published: 0 | exact ages published: 0 | gate: AES-256-GCM + PBKDF2-SHA256 "
+    say("gate: AES-256-GCM + PBKDF2-SHA256 "
         f"{a.iterations:,} iters, min password {a.min_password_length}")
     return EXIT_OK
 

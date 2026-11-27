@@ -1,9 +1,8 @@
-"""Arrest Record Explorer — the PUBLIC, de-identified tier, live.
+"""Arrest Record Explorer — the public arrest records, with names, live.
 
-Standalone Streamlit app. It reads ONLY the public artefacts in data/arrests/
-and refuses by construction to open the sealed ones: names and exact ages are
-withheld by owner policy, and this viewer is the proof that the public surface
-carries no identifiers.
+Standalone Streamlit app. It reads ONLY the public artefacts in data/arrests/.
+Owner decision 2026-11-27: the records are published WITH names and ages, as Cap
+City News printed them. Legacy sealed files (if any exist locally) are never opened.
 
 Run it:
     streamlit run tools/arrest_explorer.py --server.port 8600 --server.address 0.0.0.0
@@ -38,8 +37,8 @@ SEALED_FILES = ("keyring.jsonl", "name_key.json", "access_ledger.json")
 _EMBEDDED = bool(os.environ.get("ARREST_EXPLORER_EMBEDDED"))
 
 if not _EMBEDDED:
-    st.set_page_config(page_title="Arrest Record Explorer — de-identified",
-                       page_icon="🔒", layout="wide")
+    st.set_page_config(page_title="Arrest Record Explorer",
+                       page_icon="🗂️", layout="wide")
 
 
 @st.cache_data(show_spinner=False)
@@ -62,20 +61,18 @@ def guard() -> None:
 
 # --------------------------------------------------------------------- header
 st.markdown(
-    "<h2 style='margin-bottom:0'>🔒 Arrest Record Explorer</h2>"
+    "<h2 style='margin-bottom:0'>🗂️ Arrest Record Explorer</h2>"
     "<div style='color:#666;margin-bottom:6px'>Laramie County weekly arrest "
-    "reports · de-identified public tier</div>",
+    "reports · as published by Cap City News</div>",
     unsafe_allow_html=True,
 )
 
 st.info(
-    "**Names and exact ages are withheld from this dataset by owner policy.** "
-    "Records are published as arrest *events* — charge, date, reporting source — "
-    "under opaque sequential IDs (`AR-000123`) that are **not** derived from any "
-    "name, so there is nothing to reverse. Names are released only on request or "
-    "by paid access code, for **public-safety and non-discriminatory research "
-    "only**.",
-    icon="🔐",
+    "**Arrest is not a conviction.** Names and ages are shown as printed in Cap City "
+    "News' weekly compilation of Laramie County arrest logs. Every row is a recommended "
+    "charge at booking; this dataset contains no case outcomes. Different people can "
+    "share a name.",
+    icon="⚖️",
 )
 
 guard()
@@ -87,24 +84,21 @@ payload, meta = loaded
 records: list[dict] = payload["records"]
 
 # ------------------------------------------------------------------- integrity
-# Prove, at render time, that what is on screen came from a public file and
-# carries no identifiers.
+# Show, at render time, which public file is on screen and how complete it is.
 with st.expander("✅ Integrity checks on the data being displayed", expanded=False):
     named = [r for r in records if r.get("name")]
     aged = [r for r in records if r.get("age") is not None]
     st.write(f"- Source artefact: `data/arrests/{meta['file']}` (public tier)")
     st.write(f"- Records: **{len(records):,}**")
-    st.write(f"- Records carrying a name: **{len(named)}** "
-             f"{'✅' if not named else '❌ POLICY VIOLATION'}")
-    st.write(f"- Records carrying an exact age: **{len(aged)}** "
-             f"{'✅' if not aged else '❌ POLICY VIOLATION'}")
+    st.write(f"- Records carrying a name: **{len(named):,}**")
+    st.write(f"- Records carrying an age (source printed one): **{len(aged):,}**")
     st.write(f"- Sealed files present but never opened by this app: "
              f"{', '.join(f for f in SEALED_FILES if (ARREST_DIR / f).exists()) or 'none'}")
     id_shape = re.compile(r"AR-[0-9]{6}|LC-[0-9-]+")
     opaque = all(id_shape.fullmatch(r["record_id"]) for r in records)
-    st.write(f"- Record IDs opaque (no name hash): {'✅' if opaque else '❌'}")
-    if named or aged:
-        st.error("This tier contains identifiers. Do not publish it.")
+    st.write(f"- Record IDs well-formed: {'✅' if opaque else '❌'}")
+    if len(named) < len(records):
+        st.warning(f"{len(records) - len(named):,} record(s) have no name.")
 
 # ------------------------------------------------------------------------ KPIs
 years = sorted({r["report_date"][:4] for r in records if r.get("report_date")})
@@ -114,14 +108,14 @@ c1.metric("Arrest events", f"{len(records):,}")
 c2.metric("Weekly reports", len(reports))
 c3.metric("Date span", f"{min(reports)} → {max(reports)}" if reports else "—")
 c4.metric("Charge entries", f"{sum(r['charge_count'] for r in records):,}")
-c5.metric("Names published", "0")
+c5.metric("Named records", f"{sum(1 for r in records if r.get('name')):,}")
 
 # --------------------------------------------------------------------- filters
 st.sidebar.header("Filter")
 cats_all = sorted({c for r in records for c in r["categories"]})
 cats = st.sidebar.multiselect("Charge category", cats_all, default=[])
 yrs = st.sidebar.multiselect("Report year", years, default=[])
-q = st.sidebar.text_input("Charge contains", placeholder="e.g. methamphetamine").strip().lower()
+q = st.sidebar.text_input("Name or charge contains", placeholder="e.g. Smith or methamphetamine").strip().lower()
 multi = st.sidebar.checkbox("Multi-charge events only", value=False)
 uncertain_only = st.sidebar.checkbox(
     "Only rows flagged name/charge-uncertain", value=False,
@@ -136,7 +130,7 @@ def keep(r: dict) -> bool:
         return False
     if yrs and r.get("report_date", "")[:4] not in yrs:
         return False
-    if q and not any(q in c.lower() for c in r["charges"]):
+    if q and q not in (r.get("name") or "").lower() and not any(q in c.lower() for c in r["charges"]):
         return False
     if multi and r["charge_count"] < 2:
         return False
@@ -168,12 +162,13 @@ if view:
 st.subheader("Records")
 rows = [{
     "record_id": r["record_id"],
+    "name": r.get("name") or "",
+    "age": r.get("age"),
     "report_date": r.get("report_date", ""),
     "window": r.get("report_window", ""),
     "charges": " · ".join(r["charges"]),
     "n": r["charge_count"],
     "categories": ", ".join(r["categories"]),
-    "name": "— withheld —",
     "flag": "⚠ uncertain" if r["record_id"] in uncertain_ids else "",
 } for r in view[:5000]]
 
@@ -187,25 +182,20 @@ if rows:
     w = csv.DictWriter(buf, fieldnames=list(rows[0].keys()), lineterminator="\n")
     w.writeheader()
     w.writerows(rows)
-st.download_button("⬇️ Download this filtered view (CSV, de-identified)",
+st.download_button("⬇️ Download this filtered view (CSV)",
                    buf.getvalue(), mime="text/csv",
-                   file_name="arrest_records_deidentified.csv")
+                   file_name="arrest_records.csv")
 
 # ------------------------------------------------------------------------ gate
 st.divider()
 g1, g2 = st.columns([1, 1])
 with g1:
-    st.subheader("🔑 Getting names")
+    st.subheader("✏️ Corrections")
     st.markdown(
-        "Names and exact ages are sealed. Two routes, both owner-reviewed:\n\n"
-        "1. **Request** — open a GitHub issue with the *Arrest record name "
-        "request* template. State the purpose and the `record_id`s.\n"
-        "2. **Paid access code** — purchase a code, then enter it in the gated "
-        "full version.\n\n"
-        "Both are limited to **public safety** and **non-discriminatory "
-        "research**. Denied: targeting, screening, employment/tenancy/credit "
-        "decisions, resale, and any use that ranks people by a protected "
-        "characteristic."
+        "If a record is wrong, or you can show a case was dropped or dismissed, "
+        "open a GitHub issue with the `record_id` and it will be corrected or "
+        "annotated. Please don't use these records for employment, tenancy or "
+        "credit screening."
     )
 with g2:
     st.subheader("⚠️ Read before analysing")
@@ -221,10 +211,9 @@ with st.expander("🧹 What was cleaned on the way in (measured, not assumed)"):
                   "unique_names_sealed"):
             if k in cl:
                 st.write(f"- **{k.replace('_', ' ')}**: {cl[k]:,}")
-    st.caption("Reproduce with `python3 tools/import_master_arrest_db.py "
-               "--json <extracted> --dry-run`. The build fails closed (exit 3) "
-               "if any withheld name, name token, or exact age reaches the "
-               "public tier.")
+    st.caption("Reproduce with `python3 tools/import_master_arrest_db.py --json <extracted>` "
+               "followed by `python3 tools/publish_arrest_names.py`, which refuses to write "
+               "unless every record id, source URL and charge list matches.")
 
 st.caption("Arrest is not a finding of guilt. Every row is a recommended charge "
            "at booking. This dataset publishes no outcomes, because it contains "

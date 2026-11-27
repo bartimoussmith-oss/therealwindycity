@@ -139,9 +139,9 @@ jobs:
           python3 -m civic_atlas.build_osint_index --out _site/osint/search-index.json
       - name: Add separate Media Studio without replacing existing pages
         run: python3 tools/publish_media_studio.py --out _site
-      - name: Arrest database page (sealed, AES-256-GCM)
-        env:
-          ARREST_PAGE_PASSWORD: ${{ secrets.ARREST_PAGE_PASSWORD }}
+      - name: Arrest database page (open, with names -- owner decision 2026-11-27)
+        # Published openly. To password-protect it again, add --seal and an
+        # ARREST_PAGE_PASSWORD secret (env: ARREST_PAGE_PASSWORD: ${{ secrets.ARREST_PAGE_PASSWORD }}).
         run: python3 -u tools/build_arrest_page.py --out _site/arrest
       - name: Publish sealed static resource (ciphertext only)
         run: |

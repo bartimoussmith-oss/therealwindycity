@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Import MASTER_ARREST_DATABASE into the two-tier arrest record set.
+"""NOTE (2026-11-27): the owner now publishes the arrest records WITH names. This tool still
+writes the de-identified tier; run tools/publish_arrest_names.py afterwards to add the names.
+
+Import MASTER_ARREST_DATABASE into the two-tier arrest record set.
 
 Input is the owner's consolidated export: 6,569 {"name","charges","source"}
 records drawn from 97 weekly Cap City News arrest reports (2021-01-09 to

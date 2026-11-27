@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Build the de-identified public arrest-record tier from captured arrest logs.
+"""NOTE (2026-11-27): the owner now publishes the arrest records WITH names. This tool still
+writes the de-identified tier; run tools/publish_arrest_names.py afterwards to add the names.
+
+Build the de-identified public arrest-record tier from captured arrest logs.
 
 Policy this implements (owner directive, 2026-10-17):
 

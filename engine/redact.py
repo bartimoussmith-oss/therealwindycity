@@ -1,4 +1,9 @@
-"""Ingest-time redaction for arrest-log captures.
+"""Ingest-time redaction for arrest-log captures -- SWITCHED OFF (owner decision 2026-11-27).
+
+The owner asked for the arrest records to be published unredacted, so ingest now keeps
+arrest-report captures exactly as published. REDACT_ARREST_NAMES (env, default "0") turns
+the redaction below back on; tools/unredact_captures.py restored the earlier captures.
+The rest of this docstring describes the previous policy and is kept for history.
 
 WHY THIS EXISTS
 ---------------
@@ -39,6 +44,10 @@ ARREST_DIR = ROOT / "data" / "arrests"
 KEYRING = ARREST_DIR / "keyring.jsonl"
 
 REPLACEMENT = "[WITHHELD]"
+
+# Owner decision 2026-11-27: arrest records are published WITH names. Redaction only runs
+# when this is explicitly re-enabled (REDACT_ARREST_NAMES=1).
+REDACT_ARREST_NAMES = os.environ.get("REDACT_ARREST_NAMES", "0") == "1"
 
 # An arrest-log capture: the weekly compiled log published by local news.
 ARREST_HINT = re.compile(r"arrest[- _]?report|weekly arrest log", re.I)

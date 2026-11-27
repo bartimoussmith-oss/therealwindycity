@@ -121,7 +121,7 @@ def _hashable_bytes(url: str, raw: bytes) -> bytes:
 def _ingest_one(conn, source: str, url: str, title: str, raw: bytes, published_at: str = '') -> str:
     url = _normalize_url(url)
     sealed_names = []
-    if redact.is_arrest_document(url=url, title=title):
+    if redact.REDACT_ARREST_NAMES and redact.is_arrest_document(url=url, title=title):
         try:
             raw, sealed_names = redact.redact_bytes(raw, url=url, title=title)
         except redact.RedactionError as exc:

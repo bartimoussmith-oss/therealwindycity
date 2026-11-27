@@ -208,7 +208,7 @@ def index_text(conn, doc_id: int, source: str, title: str, content: str):
     # index are committed and public, so they must not carry names either.
     # Ingest already redacted the snapshot; if a name reaches this point
     # something upstream failed, so fail CLOSED and index nothing.
-    if redact.is_arrest_document(title=title):
+    if redact.REDACT_ARREST_NAMES and redact.is_arrest_document(title=title):
         content, sealed = redact.redact_text(content, title=title)
         if sealed:
             redact.seal_names(sealed, title=title, source=source,
