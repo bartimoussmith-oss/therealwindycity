@@ -1,127 +1,126 @@
 #!/usr/bin/env python3
-"""R2PO-Enforced Read-Only Export: Promethean Vault -> The Real Windy City Public Snapshot."""
-import argparse, hashlib, json, os, re, sqlite3
+"""Fail-closed public snapshot bridge. Only allowlisted fields leave the source vault.
+Discovery coverage is not a misconduct finding. Findings require a matching content
+hash and an explicit reviewer approval; source evidence labels alone are insufficient.
+"""
+import argparse
+import hashlib
+import json
+import os
+import re
+import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import urlsplit
 
-SECRET_RE = re.compile(r"(ghp_|github_pat_|sk-[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|BEGIN PRIVATE KEY)", re.I)
+SCHEMA = 'sunshine-public-1.0'
+PUBLIC = 'PUB_TIER_1_PUBLIC'
+ALLOWED_EVIDENCE = {'TIER_A', 'TIER_B', 'EVID_TIER_A_FACIAL', 'EVID_TIER_B_TRANSCRIPT'}
 
-def open_ro(path: Path):
-    if not path or not path.exists():
-        return None
-    conn = sqlite3.connect(f"file:{path.resolve()}?mode=ro", uri=True, timeout=5.0)
-    conn.row_factory = sqlite3.Row
-    return conn
+def readonly(path):
+    path=Path(path).resolve()
+    if not path.is_file(): raise FileNotFoundError('Required source database is missing')
+    c=sqlite3.connect(path.as_uri()+'?mode=ro',uri=True,timeout=15)
+    c.row_factory=sqlite3.Row
+    c.execute('PRAGMA query_only=ON')
+    return c
 
-def q_rows(conn, sql, params=()):
-    if conn is None:
-        return []
+def table_exists(c,name):
+    return c.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name=?",(name,)).fetchone() is not None
+
+def clean_string(value,limit=1000):
+    if value is None:return None
+    if not isinstance(value,str):raise ValueError('Expected text')
+    if len(value)>limit:raise ValueError('Oversized public field')
+    # Reject path, credential, private-classification and private-address content.
+    forbidden=[r'/home/',r'/Users/',r'(?i)bearer\s+\S+',
+      r'(?i)(?:gh[pousr]_|github_pat_|AIza|AKIA)[A-Za-z0-9_-]{12,}',
+      r'-----BEGIN [A-Z ]*PRIVATE KEY-----',r'(?i)sk-[a-z0-9_-]{20,}',
+      r'\b10\.\d+\.\d+\.\d+\b',r'\b192\.168\.\d+\.\d+\b',
+      'PUB_'+'TIER_3_'+'PRIVATE','PUB_'+'TIER_2_'+'COMMERCIAL']
+    if any(re.search(p,value) for p in forbidden):raise ValueError('Disallowed public field content')
+    return value
+
+def public_url(value):
+    clean_string(value,2000)
+    u=urlsplit(value)
+    if u.scheme!='https' or not u.hostname or u.username or u.password:
+        raise ValueError('Public sources require an HTTPS URL without embedded credentials')
+    if u.query or u.fragment:raise ValueError('Query-bearing source URLs require separate review')
+    if u.hostname in {'localhost','127.0.0.1','0.0.0.0'}:raise ValueError('Local source URL not public')
+    if re.fullmatch(r'[\d.]+',u.hostname) or ':' in u.hostname:raise ValueError('Numeric hosts require separate source review')
+    return value
+
+def build_public_export(vault_path):
+    c=readonly(vault_path)
     try:
-        return [dict(r) for r in conn.execute(sql, params).fetchall()]
-    except Exception:
-        return []
+        # Required schema errors propagate; never turn failed queries into clearance.
+        towns=[]
+        for r in c.execute('SELECT municipality,county FROM wy_99_municipalities ORDER BY county,municipality'):
+            towns.append({'municipality':clean_string(r['municipality'],120),
+              'county':clean_string(r['county'],120),'review_status':'NOT_CLEARED',
+              'coverage_type':'SUPPLIED_ROSTER','verified_legal_violations':None})
+        candidates=[]
+        for r in c.execute('SELECT domain,org_name,city,state FROM panopticon_municipalities ORDER BY state,org_name LIMIT 200'):
+            candidates.append({'domain':clean_string(r['domain'],253),'organization_candidate':clean_string(r['org_name'],250),
+              'city':clean_string(r['city'],120),'state':clean_string(r['state'],10),
+              'review_status':'DISCOVERY_ONLY','government_identity_verified':False})
+        findings=[]
+        if table_exists(c,'sunshine_publication_approvals'):
+            q='''SELECT a.*,d.sha256 AS actual_sha256,d.url AS artifact_url
+              FROM sunshine_publication_approvals a JOIN wy_wpma_documents d ON d.id=a.document_id
+              WHERE a.publication_tier=? AND a.legal_review_approved=1 AND a.right_of_reply_completed=1'''
+            for r in c.execute(q,(PUBLIC,)):
+                if r['evidence_tier'] not in ALLOWED_EVIDENCE:continue
+                if not re.fullmatch(r'[a-f0-9]{64}',r['sha256'] or '') or r['sha256']!=r['actual_sha256']:continue
+                if not r['approved_by'] or not r['approved_utc']:continue
+                if r['source_url']!=r['artifact_url']:continue
+                findings.append({'municipality':clean_string(r['municipality'],120),
+                  'meeting_date':clean_string(r['meeting_date'],30),'source_url':public_url(r['source_url']),
+                  'sha256':r['sha256'],'evidence_tier':r['evidence_tier'],
+                  'summary':clean_string(r['public_summary'],2000),'quote':clean_string(r['public_quote'],3000),
+                  'review_status':'APPROVED_FOR_PUBLICATION'})
+        private=[dict(r) for r in c.execute("SELECT id,municipality,county,meeting_date,url,sha256,evidence_tier,flags_json FROM wy_wpma_documents WHERE evidence_tier='TIER_C'")]
+        registry_count=c.execute('SELECT COUNT(*) FROM cisa_domain_registry').fetchone()[0] if table_exists(c,'cisa_domain_registry') else None
+        payload={'schema_version':SCHEMA,'publication_tier':PUBLIC,'generated_utc':datetime.now(timezone.utc).isoformat(),
+          'summary_metrics':{'wyoming_roster_rows':len(towns),'approved_findings':len(findings),
+            'nationwide_pilot_candidates':len(candidates),'national_registry_domain_rows':registry_count},
+          'wyoming_roster':towns,'approved_findings':findings,'nationwide_discovery':candidates,
+          'limitations':['Roster coverage is not a completed municipal audit.',
+            'Domain candidates are not reconciled to a national government census.',
+            'No public misconduct, hostility, tampering, or litigation-success score is exported.',
+            'Unreviewed findings, private infrastructure metadata and raw search results are excluded.',
+            'An empty approved-findings list is not a finding of compliance.']}
+        return payload,{'generated_utc':payload['generated_utc'],'review_queue':private}
+    finally:c.close()
 
-def clean(rec: dict) -> dict:
-    out = {}
-    for k, v in rec.items():
-        if k in ("full_text", "raw_credentials"):
-            continue
-        out[k] = "[REDACTED]" if (isinstance(v, str) and SECRET_RE.search(v)) else v
-    return out
+def write_outputs(vault,rwc_repo,private_out=None):
+    repo=Path(rwc_repo).resolve()
+    if private_out:
+        private_path=Path(private_out).resolve()
+        if private_path.is_relative_to(repo):raise ValueError('Review queue must remain outside the public repository')
+    public,private=build_public_export(vault)
+    raw=(json.dumps(public,indent=2,ensure_ascii=False)+'\n').encode()
+    targets=[repo/'data/sunshine_public_export.json',repo/'public/sunshine_scorecard.json']
+    for p in targets:
+        if p.exists() and p.is_symlink():raise ValueError('Snapshot destination must not be a symlink')
+        if not p.resolve().is_relative_to(repo):raise ValueError('Snapshot destination outside repository')
+        p.parent.mkdir(parents=True,exist_ok=True)
+        temp=p.with_suffix('.tmp');temp.write_bytes(raw);temp.replace(p)
+    if private_out:
+        private_path.mkdir(parents=True,exist_ok=True,mode=0o700)
+        os.chmod(private_path,0o700)
+        p=private_path/'tier_c_review_queue.json'
+        if p.is_symlink():raise ValueError('Review queue must not be a symlink')
+        fd=os.open(p,os.O_WRONLY|os.O_CREAT|os.O_TRUNC,0o600)
+        with os.fdopen(fd,'w') as f:json.dump(private,f,indent=2)
+        os.chmod(p,0o600)
+    return public,hashlib.sha256(raw).hexdigest()
 
 def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--vault", default="/home/ubuntu/promethean_fortress/vault/promethean_omni_vault.db")
-    ap.add_argument("--rwc-repo", default="/home/ubuntu/repos/therealwindycity")
-    ap.add_argument("--private-out", default="/home/ubuntu/promethean-national-core/private_review")
-    args = ap.parse_args()
-
-    rwc = Path(args.rwc_repo).resolve()
-    vault = open_ro(Path(args.vault))
-    wd = open_ro(rwc / "cheyenne_watchdog.db")
-
-    wy_towns = [clean(r) for r in q_rows(vault, """
-        SELECT municipality, county, tier AS access_tier, domain, remote_comment, email,
-               wayback_pdfs_found, wayback_tamper_alerts, tier_a_defects,
-               nullification_status, last_audited_utc
-        FROM wy_99_municipalities
-        ORDER BY tier_a_defects DESC, wayback_tamper_alerts DESC, municipality ASC
-    """)]
-    wy_verified = [clean(r) for r in q_rows(vault, """
-        SELECT municipality, county, meeting_date, doc_type, url, wayback_ts,
-               captured_utc, sha256, evidence_tier, flags_json
-        FROM wy_wpma_documents
-        WHERE evidence_tier IN ('TIER_A','TIER_B','EVID_TIER_A_FACIAL','EVID_TIER_B_TRANSCRIPT')
-        ORDER BY meeting_date DESC, municipality ASC LIMIT 500
-    """)]
-    wy_tier_c = [clean(r) for r in q_rows(vault, """
-        SELECT municipality, county, meeting_date, doc_type, url, sha256, evidence_tier, flags_json
-        FROM wy_wpma_documents
-        WHERE evidence_tier IN ('TIER_C','EVID_TIER_C_WPRA_PENDING')
-        ORDER BY meeting_date DESC LIMIT 500
-    """)]
-    tamper = [clean(r) for r in q_rows(vault, """
-        SELECT municipality, original_url, earliest_ts, latest_ts,
-               earliest_digest, latest_digest, unique_versions, detected_utc
-        FROM wy_wayback_tamper_alerts ORDER BY detected_utc DESC LIMIT 250
-    """)]
-    nationwide = []
-    for r in q_rows(vault, """
-        SELECT domain, org_name, domain_type, city, state, platform, agenda_url,
-               legistar_client, has_zoom_comment, wayback_pdf_count, tamper_count,
-               illegality_score, composite_score, flags_json, last_scanned_utc
-        FROM panopticon_municipalities
-        ORDER BY illegality_score DESC, tamper_count DESC, composite_score DESC LIMIT 200
-    """):
-        cr = clean(r)
-        try:
-            cr["flags"] = [f for f in json.loads(cr.pop("flags_json", "[]") or "[]") if not f.startswith("PRIVATE_")]
-        except Exception:
-            cr["flags"] = []
-        nationwide.append(cr)
-
-    contradictions = [clean(r) for r in q_rows(wd, "SELECT * FROM veracity_contradictions LIMIT 100")]
-    battles = [clean(r) for r in q_rows(wd, "SELECT * FROM public_comment_battles LIMIT 100")]
-    if vault: vault.close()
-    if wd: wd.close()
-
-    now = datetime.now(timezone.utc).isoformat()
-    pub = {
-        "schema_version": "4.0.0-rwc-sunshine",
-        "publication_tier": "PUB_TIER_1_PUBLIC",
-        "evidence_gate": "EVID_TIER_A_FACIAL + EVID_TIER_B_TRANSCRIPT ONLY",
-        "generated_utc": now,
-        "summary_metrics": {
-            "wyoming_municipalities_tracked": len(wy_towns),
-            "wyoming_verified_defects": len(wy_verified),
-            "wayback_tamper_alerts": len(tamper),
-            "nationwide_municipalities_indexed": len(nationwide),
-            "cheyenne_contradictions_linked": len(contradictions),
-            "cheyenne_battles_linked": len(battles),
-        },
-        "wyoming_99_scorecard": wy_towns,
-        "wyoming_verified_wpma_ledger": wy_verified,
-        "wayback_tampering_alerts": tamper,
-        "nationwide_sunshine_index": nationwide,
-        "cheyenne_watchdog_bridge": {
-            "veracity_contradictions": contradictions,
-            "public_comment_battles": battles,
-        },
-    }
-    raw = json.dumps(pub, indent=2)
-    if SECRET_RE.search(raw):
-        raise SystemExit("[ABORT] Secret pattern detected in public export.")
-
-    for out_path in (rwc / "data" / "sunshine_public_export.json", rwc / "public" / "sunshine_scorecard.json"):
-        out_path.write_text(raw, encoding="utf-8")
-    print(f"[R2PO-OK] Exported PUB_TIER_1_PUBLIC snapshot sha256={hashlib.sha256(raw.encode()).hexdigest()[:12]}")
-    print("          Metrics:", json.dumps(pub["summary_metrics"]))
-
-    pdir = Path(args.private_out)
-    pdir.mkdir(parents=True, exist_ok=True)
-    pfile = pdir / "tier_c_review_queue.json"
-    pfile.write_text(json.dumps({"publication_tier": "PUB_TIER_3_PRIVATE_REVIEW", "generated_utc": now, "wyoming_tier_c_queue": wy_tier_c}, indent=2), encoding="utf-8")
-    os.chmod(pfile, 0o600)
-
-if __name__ == "__main__":
-    main()
+    ap=argparse.ArgumentParser(description=__doc__)
+    ap.add_argument('--vault',required=True);ap.add_argument('--rwc-repo',required=True)
+    ap.add_argument('--private-out');a=ap.parse_args()
+    public,sha=write_outputs(a.vault,a.rwc_repo,a.private_out)
+    print(json.dumps({'status':'PUBLIC_ALLOWLIST_EXPORT_READY','sha256':sha,'counts':public['summary_metrics']},indent=2))
+if __name__=='__main__':main()

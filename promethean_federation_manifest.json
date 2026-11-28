@@ -1,10 +1,31 @@
 {
   "system_name": "Promethean CivicWatch Federated Mesh",
-  "architect": {"name": "Charles Walter Diaz Miller"},
+  "architect": {
+    "name": "Charles Walter Diaz Miller"
+  },
   "federated_nodes": {
     "repositories": [
-      {"id": "primary", "url": "https://github.com/bartimoussmith-oss/therealwindycity.git"},
-      {"id": "secondary", "url": "https://github.com/therealwindycity/TheReelWindyCity.git"}
+      {
+        "id": "primary",
+        "url": "https://github.com/bartimoussmith-oss/therealwindycity.git"
+      },
+      {
+        "id": "secondary",
+        "url": "https://github.com/therealwindycity/TheReelWindyCity.git"
+      }
     ]
+  },
+  "sunshine_integration": {
+    "schema_version": "sunshine-public-1.0",
+    "publication_tier": "PUB_TIER_1_PUBLIC",
+    "page": "pages/28_Sunshine_Nullification_Panopticon.py",
+    "bridge": "tools/sync_sunshine_to_rwc.py",
+    "snapshots": [
+      "data/sunshine_public_export.json",
+      "public/sunshine_scorecard.json"
+    ],
+    "mode": "SNAPSHOT_ONLY",
+    "findings_require_explicit_approval": true,
+    "live_site_changed": false
   }
 }
