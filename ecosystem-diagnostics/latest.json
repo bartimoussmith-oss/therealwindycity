@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "started_at": "2026-11-27T23:33:06.642Z",
+  "started_at": "2026-11-28T07:59:59.824Z",
   "scope": "Public GitHub repository inventory, recent public workflow runs, public issues and pull requests, declared homepage HTTP availability",
   "limitations": [
     "Not an exhaustive code, security, accessibility, factual-content or historical audit",
@@ -17,8 +17,22 @@
       "archived": false,
       "fork": false,
       "default_branch": "main",
-      "pushed_at": "2026-11-23T23:35:11Z",
-      "findings": [],
+      "pushed_at": "2026-11-28T03:55:44Z",
+      "findings": [
+        {
+          "severity": "review",
+          "code": "WORKFLOW_FAILURE",
+          "evidence": {
+            "run": "https://github.com/bartimoussmith-oss/casper-record-mirror/actions/runs/46104882321",
+            "sha": "6a48dc62dab4da33bf880e4bf822e2a040987075",
+            "branch": "feat/casper-wayback-source",
+            "conclusion": "failure",
+            "jobs": []
+          },
+          "next_step": "Open the failed job and obtain its first substantive exception, stack trace and surrounding lines. Reproduce on commit 6a48dc62dab4da33bf880e4bf822e2a040987075. Repair the demonstrated cause without suppressing exit codes, then rerun the same check. A failure on an older SHA does not establish current HEAD failure.",
+          "diagnosis": "Evidence-based observation; repair requires verification against the referenced commit and logs"
+        }
+      ],
       "gaps": [
         {
           "check": "homepage",
@@ -31,6 +45,16 @@
         "date": "2026-11-23T23:35:10Z"
       },
       "runs": [
+        {
+          "id": 46104882321,
+          "name": ".github/workflows/collect.yml",
+          "branch": "feat/casper-wayback-source",
+          "sha": "6a48dc62dab4da33bf880e4bf822e2a040987075",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/bartimoussmith-oss/casper-record-mirror/actions/runs/46104882321",
+          "created_at": "2026-11-28T03:52:11Z"
+        },
         {
           "id": 44976382760,
           "name": "Archive Casper WY documents",
@@ -83,7 +107,7 @@
       "archived": false,
       "fork": false,
       "default_branch": "main",
-      "pushed_at": "2026-11-27T21:19:37Z",
+      "pushed_at": "2026-11-28T07:51:52Z",
       "findings": [],
       "gaps": [
         {
@@ -92,30 +116,30 @@
         }
       ],
       "head": {
-        "sha": "c46d2d75d348fe7173e69e01c46729e31d6b01dc",
-        "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/commit/c46d2d75d348fe7173e69e01c46729e31d6b01dc",
-        "date": "2026-11-27T21:19:36Z"
+        "sha": "fb4d6d095a39c7273b871a9fc1c4bae73ac3bac4",
+        "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/commit/fb4d6d095a39c7273b871a9fc1c4bae73ac3bac4",
+        "date": "2026-11-28T07:51:51Z"
       },
       "runs": [
         {
-          "id": 46069530764,
+          "id": 46123121492,
           "name": "Civic OSINT scans",
           "branch": "main",
-          "sha": "8f8d8afb2d15c71e65daf43a250966086d283bfd",
+          "sha": "adab39ebb089e89ec3de1694b37a1d88b9568da8",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/actions/runs/46069530764",
-          "created_at": "2026-11-27T21:19:23Z"
+          "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/actions/runs/46123121492",
+          "created_at": "2026-11-28T07:51:37Z"
         },
         {
-          "id": 46069493661,
+          "id": 46123092361,
           "name": "Continue bounded archive backlog",
           "branch": "main",
-          "sha": "b58efb4e10eeeb853c52a857e8e658ded16acf27",
+          "sha": "c46d2d75d348fe7173e69e01c46729e31d6b01dc",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/actions/runs/46069493661",
-          "created_at": "2026-11-27T21:19:03Z"
+          "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/actions/runs/46123092361",
+          "created_at": "2026-11-28T07:51:14Z"
         }
       ],
       "open_items": []
@@ -405,39 +429,8 @@
       "archived": false,
       "fork": false,
       "default_branch": "main",
-      "pushed_at": "2026-11-27T22:11:06Z",
-      "findings": [
-        {
-          "severity": "review",
-          "code": "WORKFLOW_FAILURE",
-          "evidence": {
-            "run": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45907766242",
-            "sha": "a7a6f0934046b6c69371a1e0f1daf7fa53533476",
-            "branch": "arena/74a6689f-therealwindycity",
-            "conclusion": "failure",
-            "jobs": [
-              {
-                "name": "audit",
-                "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45907766242/job/140208526139",
-                "failed_steps": [
-                  {
-                    "name": "Check clip and showcase timestamps",
-                    "number": 10,
-                    "conclusion": "failure"
-                  },
-                  {
-                    "name": "Identify conflicts with main without changing the branch",
-                    "number": 11,
-                    "conclusion": "failure"
-                  }
-                ]
-              }
-            ]
-          },
-          "next_step": "Open the failed job and obtain its first substantive exception, stack trace and surrounding lines. Reproduce on commit a7a6f0934046b6c69371a1e0f1daf7fa53533476. Repair the demonstrated cause without suppressing exit codes, then rerun the same check. A failure on an older SHA does not establish current HEAD failure.",
-          "diagnosis": "Evidence-based observation; repair requires verification against the referenced commit and logs"
-        }
-      ],
+      "pushed_at": "2026-11-28T07:53:29Z",
+      "findings": [],
       "gaps": [
         {
           "check": "homepage",
@@ -445,30 +438,70 @@
         }
       ],
       "head": {
-        "sha": "dd14bdfa25fe8ba0229401b1907a19d4f1529c20",
-        "url": "https://github.com/bartimoussmith-oss/therealwindycity/commit/dd14bdfa25fe8ba0229401b1907a19d4f1529c20",
-        "date": "2026-11-27T22:10:59Z"
+        "sha": "7e124459d7b41a844710e81a0d753c6be39fec86",
+        "url": "https://github.com/bartimoussmith-oss/therealwindycity/commit/7e124459d7b41a844710e81a0d753c6be39fec86",
+        "date": "2026-11-28T07:53:23Z"
       },
       "runs": [
         {
-          "id": 46083116686,
+          "id": 46123721492,
           "name": "Hourly public ecosystem diagnostics",
           "branch": "main",
-          "sha": "dd14bdfa25fe8ba0229401b1907a19d4f1529c20",
+          "sha": "7e124459d7b41a844710e81a0d753c6be39fec86",
           "status": "in_progress",
           "conclusion": null,
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/46083116686",
-          "created_at": "2026-11-27T23:33:02Z"
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/46123721492",
+          "created_at": "2026-11-28T07:59:56Z"
         },
         {
-          "id": 46074772586,
-          "name": "Scanner historical backfill",
+          "id": 46122945894,
+          "name": "civic-cycle",
           "branch": "main",
-          "sha": "630c698e20230281779f73277610313c38917b56",
+          "sha": "52cbf8e87fe6cccd810f415ce8091cc3e3859f2a",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/46074772586",
-          "created_at": "2026-11-27T22:08:33Z"
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/46122945894",
+          "created_at": "2026-11-28T07:49:18Z"
+        },
+        {
+          "id": 46105456271,
+          "name": "Scanner historical backfill",
+          "branch": "main",
+          "sha": "52cbf8e87fe6cccd810f415ce8091cc3e3859f2a",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/46105456271",
+          "created_at": "2026-11-28T04:00:06Z"
+        },
+        {
+          "id": 46098439087,
+          "name": "Wyoming Chrome collection",
+          "branch": "main",
+          "sha": "0dde8a41df6a830b50ecf119260ed94fd21e2579",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/46098439087",
+          "created_at": "2026-11-28T02:30:47Z"
+        },
+        {
+          "id": 46098016455,
+          "name": "Promethean Recurring Harvest",
+          "branch": "main",
+          "sha": "5a6c67483375a37ac7545226e6834ac04e347ae2",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/46098016455",
+          "created_at": "2026-11-28T02:25:42Z"
+        },
+        {
+          "id": 46096664210,
+          "name": "Scanner best-effort live and recovery",
+          "branch": "main",
+          "sha": "dd14bdfa25fe8ba0229401b1907a19d4f1529c20",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/46096664210",
+          "created_at": "2026-11-28T02:09:28Z"
         },
         {
           "id": 46072779088,
@@ -491,26 +524,6 @@
           "created_at": "2026-11-27T21:37:02Z"
         },
         {
-          "id": 46069330622,
-          "name": "civic-cycle",
-          "branch": "main",
-          "sha": "fccaa29aa4a037bbd294932b09f6627d8cbfccbf",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/46069330622",
-          "created_at": "2026-11-27T21:17:32Z"
-        },
-        {
-          "id": 46058102341,
-          "name": "Scanner best-effort live and recovery",
-          "branch": "main",
-          "sha": "6e8d2bd1d7c3d0f3e144fde1186f96aa079b5066",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/46058102341",
-          "created_at": "2026-11-27T19:38:17Z"
-        },
-        {
           "id": 46049368006,
           "name": "ai-record-pages",
           "branch": "main",
@@ -519,16 +532,6 @@
           "conclusion": "success",
           "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/46049368006",
           "created_at": "2026-11-27T18:25:32Z"
-        },
-        {
-          "id": 46044391042,
-          "name": "Promethean Recurring Harvest",
-          "branch": "main",
-          "sha": "72d8d083441abd4eb72c36e61e30e6afc6d5549b",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/46044391042",
-          "created_at": "2026-11-27T17:46:04Z"
         },
         {
           "id": 46027755320,
@@ -549,36 +552,6 @@
           "conclusion": "success",
           "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45935733406",
           "created_at": "2026-11-27T03:42:33Z"
-        },
-        {
-          "id": 45935733398,
-          "name": "Wyoming Chrome collection",
-          "branch": "main",
-          "sha": "393a7fe7c3239b1848ff396fcd04990463b307bc",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45935733398",
-          "created_at": "2026-11-27T03:42:33Z"
-        },
-        {
-          "id": 45907766242,
-          "name": "Provenance video audit",
-          "branch": "arena/74a6689f-therealwindycity",
-          "sha": "a7a6f0934046b6c69371a1e0f1daf7fa53533476",
-          "status": "completed",
-          "conclusion": "failure",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45907766242",
-          "created_at": "2026-11-26T22:55:11Z"
-        },
-        {
-          "id": 45907766221,
-          "name": "Repair provenance video timestamps",
-          "branch": "arena/74a6689f-therealwindycity",
-          "sha": "a7a6f0934046b6c69371a1e0f1daf7fa53533476",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/bartimoussmith-oss/therealwindycity/actions/runs/45907766221",
-          "created_at": "2026-11-26T22:55:11Z"
         }
       ],
       "open_items": [
@@ -744,7 +717,7 @@
       "archived": false,
       "fork": false,
       "default_branch": "main",
-      "pushed_at": "2026-11-27T13:54:18Z",
+      "pushed_at": "2026-11-28T07:50:46Z",
       "findings": [],
       "gaps": [
         {
@@ -754,20 +727,20 @@
         }
       ],
       "head": {
-        "sha": "a543f04c119d8d52b65a3bdd374c8c3f2e1f9ab2",
-        "url": "https://github.com/therealwindycity/cheyenne-archives-2014-2017/commit/a543f04c119d8d52b65a3bdd374c8c3f2e1f9ab2",
-        "date": "2026-11-27T13:54:18Z"
+        "sha": "d008c1ac3caa652c1c885d41b1e7e5c5c96f5d56",
+        "url": "https://github.com/therealwindycity/cheyenne-archives-2014-2017/commit/d008c1ac3caa652c1c885d41b1e7e5c5c96f5d56",
+        "date": "2026-11-28T07:50:46Z"
       },
       "runs": [
         {
-          "id": 46010926665,
+          "id": 46122927217,
           "name": "Cheyenne Speaker Video Splitter (2014-2017)",
           "branch": "main",
-          "sha": "5d20976d622e5a61c7229ca5ce09009846617328",
+          "sha": "269903ed8116422834ebb8f32d74382580ba66be",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/therealwindycity/cheyenne-archives-2014-2017/actions/runs/46010926665",
-          "created_at": "2026-11-27T13:52:54Z"
+          "url": "https://github.com/therealwindycity/cheyenne-archives-2014-2017/actions/runs/46122927217",
+          "created_at": "2026-11-28T07:49:02Z"
         }
       ],
       "open_items": []
@@ -778,7 +751,7 @@
       "archived": false,
       "fork": false,
       "default_branch": "main",
-      "pushed_at": "2026-11-27T15:47:56Z",
+      "pushed_at": "2026-11-28T00:48:48Z",
       "findings": [],
       "gaps": [
         {
@@ -788,20 +761,20 @@
         }
       ],
       "head": {
-        "sha": "17ea1be3eea34d76d956e5ce7d752ea68c66092c",
-        "url": "https://github.com/therealwindycity/cheyenne-archives-2018-2021/commit/17ea1be3eea34d76d956e5ce7d752ea68c66092c",
-        "date": "2026-11-27T15:47:56Z"
+        "sha": "597e0850d2198157c33d0579e924d811bd574c6a",
+        "url": "https://github.com/therealwindycity/cheyenne-archives-2018-2021/commit/597e0850d2198157c33d0579e924d811bd574c6a",
+        "date": "2026-11-28T00:48:48Z"
       },
       "runs": [
         {
-          "id": 46027618569,
+          "id": 46089740324,
           "name": "Cheyenne Speaker Video Splitter (2018-2021)",
           "branch": "main",
-          "sha": "c463382a6cde8d4cc976f87715de23e66d7d74ef",
+          "sha": "17ea1be3eea34d76d956e5ce7d752ea68c66092c",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/therealwindycity/cheyenne-archives-2018-2021/actions/runs/46027618569",
-          "created_at": "2026-11-27T15:44:49Z"
+          "url": "https://github.com/therealwindycity/cheyenne-archives-2018-2021/actions/runs/46089740324",
+          "created_at": "2026-11-28T00:47:11Z"
         }
       ],
       "open_items": []
@@ -812,7 +785,7 @@
       "archived": false,
       "fork": false,
       "default_branch": "main",
-      "pushed_at": "2026-11-27T13:10:29Z",
+      "pushed_at": "2026-11-27T23:50:13Z",
       "findings": [],
       "gaps": [
         {
@@ -822,20 +795,20 @@
         }
       ],
       "head": {
-        "sha": "14b83c139eeaee9cf8fc2bccee97b83c6c6cff88",
-        "url": "https://github.com/therealwindycity/cheyenne-archives-2022/commit/14b83c139eeaee9cf8fc2bccee97b83c6c6cff88",
-        "date": "2026-11-27T13:10:28Z"
+        "sha": "49b77e4ca4196e11d31d46b5cfdf8c140852514c",
+        "url": "https://github.com/therealwindycity/cheyenne-archives-2022/commit/49b77e4ca4196e11d31d46b5cfdf8c140852514c",
+        "date": "2026-11-27T23:50:13Z"
       },
       "runs": [
         {
-          "id": 46004579453,
+          "id": 46084150381,
           "name": "Cheyenne Speaker Video Splitter (2022-2022)",
           "branch": "main",
-          "sha": "c7b6c3b5278539e7ba4ab590212334a9b2ee1d5f",
+          "sha": "14b83c139eeaee9cf8fc2bccee97b83c6c6cff88",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/therealwindycity/cheyenne-archives-2022/actions/runs/46004579453",
-          "created_at": "2026-11-27T13:08:48Z"
+          "url": "https://github.com/therealwindycity/cheyenne-archives-2022/actions/runs/46084150381",
+          "created_at": "2026-11-27T23:44:24Z"
         }
       ],
       "open_items": []
@@ -846,7 +819,7 @@
       "archived": false,
       "fork": false,
       "default_branch": "main",
-      "pushed_at": "2026-11-27T19:36:56Z",
+      "pushed_at": "2026-11-28T02:54:52Z",
       "findings": [],
       "gaps": [
         {
@@ -856,20 +829,20 @@
         }
       ],
       "head": {
-        "sha": "6c49cc9424d9292ace1ef31a9906122f79ff7fda",
-        "url": "https://github.com/therealwindycity/cheyenne-archives-2023-2024/commit/6c49cc9424d9292ace1ef31a9906122f79ff7fda",
-        "date": "2026-11-27T19:36:56Z"
+        "sha": "4ece666118524d16e73a6d5563b854a5fb695020",
+        "url": "https://github.com/therealwindycity/cheyenne-archives-2023-2024/commit/4ece666118524d16e73a6d5563b854a5fb695020",
+        "date": "2026-11-28T02:54:51Z"
       },
       "runs": [
         {
-          "id": 46057799511,
+          "id": 46100249334,
           "name": "Cheyenne Speaker Video Splitter (2023-2024)",
           "branch": "main",
-          "sha": "8e76943569909ce5ced2e2cd014eea5b9a0fc010",
+          "sha": "6c49cc9424d9292ace1ef31a9906122f79ff7fda",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/therealwindycity/cheyenne-archives-2023-2024/actions/runs/46057799511",
-          "created_at": "2026-11-27T19:35:40Z"
+          "url": "https://github.com/therealwindycity/cheyenne-archives-2023-2024/actions/runs/46100249334",
+          "created_at": "2026-11-28T02:53:37Z"
         }
       ],
       "open_items": []
@@ -880,7 +853,7 @@
       "archived": false,
       "fork": false,
       "default_branch": "main",
-      "pushed_at": "2026-11-27T19:32:36Z",
+      "pushed_at": "2026-11-28T02:46:54Z",
       "findings": [],
       "gaps": [
         {
@@ -890,20 +863,20 @@
         }
       ],
       "head": {
-        "sha": "596be3439b8594ae52cc732a77ce3a4370805a39",
-        "url": "https://github.com/therealwindycity/cheyenne-archives-2025-2026/commit/596be3439b8594ae52cc732a77ce3a4370805a39",
-        "date": "2026-11-27T19:32:35Z"
+        "sha": "dfb79d9dd8faa958daa00fd16fb0e40c93ba509d",
+        "url": "https://github.com/therealwindycity/cheyenne-archives-2025-2026/commit/dfb79d9dd8faa958daa00fd16fb0e40c93ba509d",
+        "date": "2026-11-28T02:46:54Z"
       },
       "runs": [
         {
-          "id": 46056760489,
+          "id": 46099136294,
           "name": "Cheyenne Speaker Video Splitter (2025-2026)",
           "branch": "main",
-          "sha": "0a59085a90d58fe40858f981ab7611610eb49391",
+          "sha": "596be3439b8594ae52cc732a77ce3a4370805a39",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/therealwindycity/cheyenne-archives-2025-2026/actions/runs/46056760489",
-          "created_at": "2026-11-27T19:26:55Z"
+          "url": "https://github.com/therealwindycity/cheyenne-archives-2025-2026/actions/runs/46099136294",
+          "created_at": "2026-11-28T02:39:16Z"
         }
       ],
       "open_items": []
@@ -927,7 +900,7 @@
       "homepage": {
         "url": "https://therealwindycity.github.io/real-windy-city-tv/",
         "status": 200,
-        "checked_at": "2026-11-27T23:33:27.307Z"
+        "checked_at": "2026-11-28T08:00:19.871Z"
       }
     },
     {
@@ -1003,7 +976,7 @@
       "homepage": {
         "url": "https://therealwindycity.github.io/real-windy-city-tv/",
         "status": 200,
-        "checked_at": "2026-11-27T23:33:29.681Z"
+        "checked_at": "2026-11-28T08:00:21.715Z"
       }
     },
     {
@@ -1012,41 +985,41 @@
       "archived": false,
       "fork": false,
       "default_branch": "main",
-      "pushed_at": "2026-11-27T18:19:46Z",
+      "pushed_at": "2026-11-28T01:30:23Z",
       "findings": [],
       "gaps": [],
       "head": {
-        "sha": "2f1861bf08ff30d705971e88fd8e75f7e4b80347",
-        "url": "https://github.com/therealwindycity/real-windy-city-tv-dev/commit/2f1861bf08ff30d705971e88fd8e75f7e4b80347",
-        "date": "2026-11-27T18:19:44Z"
+        "sha": "ad9b79026e6008948c50c7044c7a84c47d31f6a4",
+        "url": "https://github.com/therealwindycity/real-windy-city-tv-dev/commit/ad9b79026e6008948c50c7044c7a84c47d31f6a4",
+        "date": "2026-11-28T01:30:22Z"
       },
       "runs": [
         {
-          "id": 46048630961,
+          "id": 46093435737,
           "name": "pages build and deployment",
+          "branch": "main",
+          "sha": "ad9b79026e6008948c50c7044c7a84c47d31f6a4",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/therealwindycity/real-windy-city-tv-dev/actions/runs/46093435737",
+          "created_at": "2026-11-28T01:30:25Z"
+        },
+        {
+          "id": 46093419145,
+          "name": "Collect site feedback",
           "branch": "main",
           "sha": "2f1861bf08ff30d705971e88fd8e75f7e4b80347",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/therealwindycity/real-windy-city-tv-dev/actions/runs/46048630961",
-          "created_at": "2026-11-27T18:19:47Z"
-        },
-        {
-          "id": 46048610663,
-          "name": "Collect site feedback",
-          "branch": "main",
-          "sha": "eacf329ee2246e825a2ac3f2f2ebf6cccc547d46",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/therealwindycity/real-windy-city-tv-dev/actions/runs/46048610663",
-          "created_at": "2026-11-27T18:19:37Z"
+          "url": "https://github.com/therealwindycity/real-windy-city-tv-dev/actions/runs/46093419145",
+          "created_at": "2026-11-28T01:30:14Z"
         }
       ],
       "open_items": [],
       "homepage": {
         "url": "https://therealwindycity.github.io/real-windy-city-tv-dev/",
         "status": 200,
-        "checked_at": "2026-11-27T23:33:30.897Z"
+        "checked_at": "2026-11-28T08:00:22.703Z"
       }
     },
     {
@@ -1124,7 +1097,7 @@
       "archived": false,
       "fork": true,
       "default_branch": "main",
-      "pushed_at": "2026-11-27T21:27:13Z",
+      "pushed_at": "2026-11-28T07:57:34Z",
       "findings": [],
       "gaps": [
         {
@@ -1133,40 +1106,40 @@
         }
       ],
       "head": {
-        "sha": "0e2467c77dfe3c938acdc4d26ac117ce693b4a03",
-        "url": "https://github.com/therealwindycity/therealwindycity/commit/0e2467c77dfe3c938acdc4d26ac117ce693b4a03",
-        "date": "2026-11-27T21:27:11Z"
+        "sha": "3e483204eec03a16d7bd3c8fc41bf29a72b8ba20",
+        "url": "https://github.com/therealwindycity/therealwindycity/commit/3e483204eec03a16d7bd3c8fc41bf29a72b8ba20",
+        "date": "2026-11-28T07:57:32Z"
       },
       "runs": [
         {
-          "id": 46070404120,
+          "id": 46123558186,
           "name": "workdesk-pages",
+          "branch": "main",
+          "sha": "3e483204eec03a16d7bd3c8fc41bf29a72b8ba20",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/46123558186",
+          "created_at": "2026-11-28T07:57:35Z"
+        },
+        {
+          "id": 46123235619,
+          "name": "civic-cycle",
           "branch": "main",
           "sha": "0e2467c77dfe3c938acdc4d26ac117ce693b4a03",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/46070404120",
-          "created_at": "2026-11-27T21:27:15Z"
+          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/46123235619",
+          "created_at": "2026-11-28T07:53:09Z"
         },
         {
-          "id": 46069674867,
-          "name": "civic-cycle",
-          "branch": "main",
-          "sha": "8f91524f69628c85df22e8f7db797417401bf048",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/46069674867",
-          "created_at": "2026-11-27T21:20:39Z"
-        },
-        {
-          "id": 46012399567,
+          "id": 46086225319,
           "name": "workdesk-poll",
           "branch": "main",
-          "sha": "8f91524f69628c85df22e8f7db797417401bf048",
+          "sha": "0e2467c77dfe3c938acdc4d26ac117ce693b4a03",
           "status": "completed",
           "conclusion": "success",
-          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/46012399567",
-          "created_at": "2026-11-27T14:03:05Z"
+          "url": "https://github.com/therealwindycity/therealwindycity/actions/runs/46086225319",
+          "created_at": "2026-11-28T00:07:50Z"
         },
         {
           "id": 45581458284,
@@ -1187,7 +1160,7 @@
       "archived": false,
       "fork": false,
       "default_branch": "main",
-      "pushed_at": "2026-11-27T22:56:41Z",
+      "pushed_at": "2026-11-28T05:06:24Z",
       "findings": [
         {
           "severity": "review",
@@ -1222,11 +1195,61 @@
         }
       ],
       "head": {
-        "sha": "604056b0ce85e27f302b59fe58ec1be7d43d17ca",
-        "url": "https://github.com/therealwindycity/TheReelWindyCity/commit/604056b0ce85e27f302b59fe58ec1be7d43d17ca",
-        "date": "2026-11-27T22:56:39Z"
+        "sha": "f9dbe3bd6298783950ad6ead306114cceb3de0c0",
+        "url": "https://github.com/therealwindycity/TheReelWindyCity/commit/f9dbe3bd6298783950ad6ead306114cceb3de0c0",
+        "date": "2026-11-28T03:03:42Z"
       },
       "runs": [
+        {
+          "id": 46110548725,
+          "name": "CM deployment evidence",
+          "branch": "main",
+          "sha": "f9dbe3bd6298783950ad6ead306114cceb3de0c0",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/46110548725",
+          "created_at": "2026-11-28T05:06:06Z"
+        },
+        {
+          "id": 46110537996,
+          "name": "Verify public meeting features",
+          "branch": "main",
+          "sha": "f9dbe3bd6298783950ad6ead306114cceb3de0c0",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/46110537996",
+          "created_at": "2026-11-28T05:05:58Z"
+        },
+        {
+          "id": 46110224390,
+          "name": "Deploy to GitHub Pages",
+          "branch": "main",
+          "sha": "f9dbe3bd6298783950ad6ead306114cceb3de0c0",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/46110224390",
+          "created_at": "2026-11-28T05:01:57Z"
+        },
+        {
+          "id": 46098578089,
+          "name": "Promethean Recurring Harvest",
+          "branch": "main",
+          "sha": "8d789b1c549c21f893cd64234d695931a2d57361",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/46098578089",
+          "created_at": "2026-11-28T02:32:26Z"
+        },
+        {
+          "id": 46083574254,
+          "name": "Live Municipal Watch",
+          "branch": "main",
+          "sha": "604056b0ce85e27f302b59fe58ec1be7d43d17ca",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/46083574254",
+          "created_at": "2026-11-27T23:38:00Z"
+        },
         {
           "id": 46079410600,
           "name": "Live Place Archives",
@@ -1266,56 +1289,6 @@
           "conclusion": "success",
           "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/46060163517",
           "created_at": "2026-11-27T19:56:24Z"
-        },
-        {
-          "id": 46045791384,
-          "name": "Promethean Recurring Harvest",
-          "branch": "main",
-          "sha": "96ddae03710599b66eb9cd6a380b3943525acf9f",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/46045791384",
-          "created_at": "2026-11-27T17:57:25Z"
-        },
-        {
-          "id": 46024968468,
-          "name": "CM deployment evidence",
-          "branch": "main",
-          "sha": "96ddae03710599b66eb9cd6a380b3943525acf9f",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/46024968468",
-          "created_at": "2026-11-27T15:26:44Z"
-        },
-        {
-          "id": 46024942062,
-          "name": "Verify public meeting features",
-          "branch": "main",
-          "sha": "96ddae03710599b66eb9cd6a380b3943525acf9f",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/46024942062",
-          "created_at": "2026-11-27T15:26:33Z"
-        },
-        {
-          "id": 46024349058,
-          "name": "Live Municipal Watch",
-          "branch": "main",
-          "sha": "16313a21fb9c37749364bf8bd4518c4ca7f5afda",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/46024349058",
-          "created_at": "2026-11-27T15:22:36Z"
-        },
-        {
-          "id": 46024340027,
-          "name": "Deploy to GitHub Pages",
-          "branch": "main",
-          "sha": "16313a21fb9c37749364bf8bd4518c4ca7f5afda",
-          "status": "completed",
-          "conclusion": "success",
-          "url": "https://github.com/therealwindycity/TheReelWindyCity/actions/runs/46024340027",
-          "created_at": "2026-11-27T15:22:32Z"
         },
         {
           "id": 45935534184,
@@ -1375,7 +1348,7 @@
     }
   ],
   "coverage_gaps": [],
-  "finished_at": "2026-11-27T23:33:35.487Z",
+  "finished_at": "2026-11-28T08:00:28.048Z",
   "summary": {
     "repositories": 25,
     "findings": 2,
