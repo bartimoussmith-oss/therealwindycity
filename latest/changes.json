@@ -1,12 +1,6 @@
 {
   "newly_observed": [
-    "therealwindycity/real-windy-city-mcp:architecture",
-    "therealwindycity/real-windy-city-mcp:agent_handoff",
-    "therealwindycity/real-windy-city-mcp:data_contract",
-    "therealwindycity/real-windy-city-mcp:provenance",
-    "therealwindycity/real-windy-city-mcp:checkpoint",
-    "therealwindycity/real-windy-city-mcp:recovery",
-    "therealwindycity/real-windy-city-mcp:deployment"
+    "bartimoussmith-oss/casper-record-mirror:run:46104882321"
   ],
   "no_longer_observed": [],
   "warning": "Evidence policy changed to version 2: removed findings may be corrected false positives, not completed repairs."

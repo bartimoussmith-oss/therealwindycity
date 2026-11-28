@@ -2,7 +2,7 @@
   "repository": "therealwindycity/cheyenne-archives-2018-2021",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-27T21:39:58.228Z",
+  "checked_at": "2026-11-28T08:26:48.181Z",
   "controls": [
     {
       "id": "architecture",
@@ -54,12 +54,12 @@
       "role": "Evidence reviewer",
       "state": "signal_observed",
       "evidence": [
+        "speaker-videos/2021-05-25_2020-21_Mayor_s_Youth_Council_Appreciation_Ceremo/manifest.json",
+        "speaker-videos/2021-05-25_Swearing-in_of_Fire_Chief_John_Kopper/manifest.json",
+        "speaker-videos/2021-05-27_Open_Container_Ordinance/manifest.json",
         "speaker-videos/2021-06-01_Capitol_North_Public_Meeting_5_25_21/manifest.json",
         "speaker-videos/2021-06-10_Committee_of_the_Whole_June_9_at_6pm/manifest.json",
-        "speaker-videos/2021-06-16_Sanitation_route_with_Kenny_Alvarado_and_Mayor_Pa/manifest.json",
-        "speaker-videos/2021-06-18_Work_Session_Short_Term_Vacation_Rentals/manifest.json",
-        "speaker-videos/2021-06-24_East_Park_Community_Open_Space/manifest.json",
-        "speaker-videos/2021-06-25_Work_Session_Emergency_Shelters/manifest.json"
+        "speaker-videos/2021-06-16_Sanitation_route_with_Kenny_Alvarado_and_Mayor_Pa/manifest.json"
       ],
       "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
       "runtime_verified": false,
@@ -70,12 +70,12 @@
       "role": "Reliability engineer",
       "state": "signal_observed",
       "evidence": [
+        "speaker-videos/2021-05-25_2020-21_Mayor_s_Youth_Council_Appreciation_Ceremo/manifest.json",
+        "speaker-videos/2021-05-25_Swearing-in_of_Fire_Chief_John_Kopper/manifest.json",
+        "speaker-videos/2021-05-27_Open_Container_Ordinance/manifest.json",
         "speaker-videos/2021-06-01_Capitol_North_Public_Meeting_5_25_21/manifest.json",
         "speaker-videos/2021-06-10_Committee_of_the_Whole_June_9_at_6pm/manifest.json",
-        "speaker-videos/2021-06-16_Sanitation_route_with_Kenny_Alvarado_and_Mayor_Pa/manifest.json",
-        "speaker-videos/2021-06-18_Work_Session_Short_Term_Vacation_Rentals/manifest.json",
-        "speaker-videos/2021-06-24_East_Park_Community_Open_Space/manifest.json",
-        "speaker-videos/2021-06-25_Work_Session_Emergency_Shelters/manifest.json"
+        "speaker-videos/2021-06-16_Sanitation_route_with_Kenny_Alvarado_and_Mayor_Pa/manifest.json"
       ],
       "next": "Prove interrupted runs resume without lost records or duplicates.",
       "runtime_verified": false,
@@ -123,22 +123,22 @@
   "runs": [
     {
       "name": "Cheyenne Speaker Video Splitter (2018-2021)",
-      "id": 46027618569,
-      "url": "https://github.com/therealwindycity/cheyenne-archives-2018-2021/actions/runs/46027618569",
-      "sha": "c463382a6cde8d4cc976f87715de23e66d7d74ef",
+      "id": 46089740324,
+      "url": "https://github.com/therealwindycity/cheyenne-archives-2018-2021/actions/runs/46089740324",
+      "sha": "17ea1be3eea34d76d956e5ce7d752ea68c66092c",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-27T15:44:49Z"
+      "created_at": "2026-11-28T00:47:11Z"
     }
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "17ea1be3eea34d76d956e5ce7d752ea68c66092c",
-  "files_seen": 921,
+  "head": "597e0850d2198157c33d0579e924d811bd574c6a",
+  "files_seen": 930,
   "tree_complete": true,
   "sample_coverage": {
-    "candidates": 29,
+    "candidates": 32,
     "selected": 12
   },
   "workflow_signals": {

@@ -2,7 +2,7 @@
   "repository": "bartimoussmith-oss/casper-record-mirror",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-27T21:39:24.063Z",
+  "checked_at": "2026-11-28T08:26:16.393Z",
   "controls": [
     {
       "id": "architecture",
@@ -111,6 +111,17 @@
     }
   ],
   "runs": [
+    {
+      "name": ".github/workflows/collect.yml",
+      "id": 46104882321,
+      "url": "https://github.com/bartimoussmith-oss/casper-record-mirror/actions/runs/46104882321",
+      "sha": "6a48dc62dab4da33bf880e4bf822e2a040987075",
+      "branch": "feat/casper-wayback-source",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-28T03:52:11Z",
+      "failed_jobs": []
+    },
     {
       "name": "Archive Casper WY documents",
       "id": 44976382760,

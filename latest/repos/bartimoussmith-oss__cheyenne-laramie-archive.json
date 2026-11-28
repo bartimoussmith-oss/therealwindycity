@@ -2,7 +2,7 @@
   "repository": "bartimoussmith-oss/cheyenne-laramie-archive",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-27T21:39:27.936Z",
+  "checked_at": "2026-11-28T08:26:20.287Z",
   "controls": [
     {
       "id": "architecture",
@@ -114,28 +114,28 @@
   "runs": [
     {
       "name": "Civic OSINT scans",
-      "id": 46069530764,
-      "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/actions/runs/46069530764",
-      "sha": "8f8d8afb2d15c71e65daf43a250966086d283bfd",
+      "id": 46123121492,
+      "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/actions/runs/46123121492",
+      "sha": "adab39ebb089e89ec3de1694b37a1d88b9568da8",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-27T21:19:23Z"
+      "created_at": "2026-11-28T07:51:37Z"
     },
     {
       "name": "Continue bounded archive backlog",
-      "id": 46069493661,
-      "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/actions/runs/46069493661",
-      "sha": "b58efb4e10eeeb853c52a857e8e658ded16acf27",
+      "id": 46123092361,
+      "url": "https://github.com/bartimoussmith-oss/cheyenne-laramie-archive/actions/runs/46123092361",
+      "sha": "c46d2d75d348fe7173e69e01c46729e31d6b01dc",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-27T21:19:03Z"
+      "created_at": "2026-11-28T07:51:14Z"
     }
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "c46d2d75d348fe7173e69e01c46729e31d6b01dc",
+  "head": "fb4d6d095a39c7273b871a9fc1c4bae73ac3bac4",
   "files_seen": 1815,
   "tree_complete": true,
   "sample_coverage": {

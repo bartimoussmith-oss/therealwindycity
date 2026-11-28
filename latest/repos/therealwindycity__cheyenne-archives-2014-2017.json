@@ -2,7 +2,7 @@
   "repository": "therealwindycity/cheyenne-archives-2014-2017",
   "archived": false,
   "fork": false,
-  "checked_at": "2026-11-27T21:39:54.941Z",
+  "checked_at": "2026-11-28T08:26:44.937Z",
   "controls": [
     {
       "id": "architecture",
@@ -54,12 +54,12 @@
       "role": "Evidence reviewer",
       "state": "signal_observed",
       "evidence": [
-        "speaker-videos/2015-07-10_Bob_Bradshaw_Talks_About_the_1985_Flood_in_Cheyen/manifest.json",
-        "speaker-videos/2015-07-10_Cheyenne_FIre_Chief_James_Martin_talks_about_the_/manifest.json",
-        "speaker-videos/2015-07-15_Cheyenne_Fire_Rescue_1931_American_LaFrance_Fire_/manifest.json",
-        "speaker-videos/2015-07-15_Gary_Stogsdill_from_the_City_of_Cheyenne_Wyo_talk/manifest.json",
-        "speaker-videos/2015-08-04_Cheyenne_Botanic_Gardens_Project_Update_Aug_4_201/manifest.json",
-        "speaker-videos/2016-05-16_Lonetree_Creek_at_the_Belvoir_Ranch_Cheyenne_Wy./manifest.json"
+        "speaker-videos/2014-08-29_Mayor_Rick_Kaysen_Accepts_The_Ice_Bucket_Challeng/manifest.json",
+        "speaker-videos/2015-07-08_Bill_Gonzales_Talks_About_The_1985_Flood_In_Cheye/manifest.json",
+        "speaker-videos/2015-07-09_Bill_Obermeier_Talks_About_the_1985_Flood_In_Chey/manifest.json",
+        "speaker-videos/2015-07-09_Dennis_Pino_talks_about_the_1985_Flood_in_Cheyenn/manifest.json",
+        "speaker-videos/2015-07-09_Paul_Munoz_talks_about_the_1985_Flood_in_Cheyenne/manifest.json",
+        "speaker-videos/2015-07-09_Tom_Coonts_Talks_About_1985_Flood_In_Cheyenne_Wyo/manifest.json"
       ],
       "next": "Retain source URLs, capture dates, hashes, original records and limitations.",
       "runtime_verified": false,
@@ -70,12 +70,12 @@
       "role": "Reliability engineer",
       "state": "signal_observed",
       "evidence": [
-        "speaker-videos/2015-07-10_Bob_Bradshaw_Talks_About_the_1985_Flood_in_Cheyen/manifest.json",
-        "speaker-videos/2015-07-10_Cheyenne_FIre_Chief_James_Martin_talks_about_the_/manifest.json",
-        "speaker-videos/2015-07-15_Cheyenne_Fire_Rescue_1931_American_LaFrance_Fire_/manifest.json",
-        "speaker-videos/2015-07-15_Gary_Stogsdill_from_the_City_of_Cheyenne_Wyo_talk/manifest.json",
-        "speaker-videos/2015-08-04_Cheyenne_Botanic_Gardens_Project_Update_Aug_4_201/manifest.json",
-        "speaker-videos/2016-05-16_Lonetree_Creek_at_the_Belvoir_Ranch_Cheyenne_Wy./manifest.json"
+        "speaker-videos/2014-08-29_Mayor_Rick_Kaysen_Accepts_The_Ice_Bucket_Challeng/manifest.json",
+        "speaker-videos/2015-07-08_Bill_Gonzales_Talks_About_The_1985_Flood_In_Cheye/manifest.json",
+        "speaker-videos/2015-07-09_Bill_Obermeier_Talks_About_the_1985_Flood_In_Chey/manifest.json",
+        "speaker-videos/2015-07-09_Dennis_Pino_talks_about_the_1985_Flood_in_Cheyenn/manifest.json",
+        "speaker-videos/2015-07-09_Paul_Munoz_talks_about_the_1985_Flood_in_Cheyenne/manifest.json",
+        "speaker-videos/2015-07-09_Tom_Coonts_Talks_About_1985_Flood_In_Cheyenne_Wyo/manifest.json"
       ],
       "next": "Prove interrupted runs resume without lost records or duplicates.",
       "runtime_verified": false,
@@ -123,22 +123,22 @@
   "runs": [
     {
       "name": "Cheyenne Speaker Video Splitter (2014-2017)",
-      "id": 46010926665,
-      "url": "https://github.com/therealwindycity/cheyenne-archives-2014-2017/actions/runs/46010926665",
-      "sha": "5d20976d622e5a61c7229ca5ce09009846617328",
+      "id": 46122927217,
+      "url": "https://github.com/therealwindycity/cheyenne-archives-2014-2017/actions/runs/46122927217",
+      "sha": "269903ed8116422834ebb8f32d74382580ba66be",
       "branch": "main",
       "status": "completed",
       "conclusion": "success",
-      "created_at": "2026-11-27T13:52:54Z"
+      "created_at": "2026-11-28T07:49:02Z"
     }
   ],
   "pull_requests": [],
   "gaps": [],
-  "head": "a543f04c119d8d52b65a3bdd374c8c3f2e1f9ab2",
-  "files_seen": 587,
+  "head": "d008c1ac3caa652c1c885d41b1e7e5c5c96f5d56",
+  "files_seen": 605,
   "tree_complete": true,
   "sample_coverage": {
-    "candidates": 14,
+    "candidates": 20,
     "selected": 12
   },
   "workflow_signals": {
